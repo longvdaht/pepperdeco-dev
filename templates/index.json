@@ -8,6 +8,1206 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hero_video_a3dQyA": {
+      "type": "hero-video",
+      "blocks": {
+        "video_hGHCNM": {
+          "type": "video",
+          "settings": {
+            "enable_overlay": false,
+            "overlay": "#000000",
+            "overlay_opacity": 0.2,
+            "style_text": "style-1",
+            "desktop_image": "shopify://shop_images/Hero-Desktop-SofasAndSectionals.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-SofasAndSectionals.png",
+            "heading": "Make Yourself at Home",
+            "graphic_heading": "",
+            "subheading": "Distinctive patterns, custom pieces, and thoughtful details for every room.",
+            "link": "shopify://collections/new",
+            "label": "SHOP NEW"
+          }
+        },
+        "video_zV9kUj": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "enable_overlay": false,
+            "overlay": "#000000",
+            "overlay_opacity": 0.2,
+            "style_text": "style-1",
+            "desktop_image": "shopify://shop_images/Hero-Desktop-SofasAndSectionals.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-SofasAndSectionals.png",
+            "heading": "Introducing Sofas & Sectionals",
+            "graphic_heading": "",
+            "subheading": "Discover five timeless designs across a range of exclusive fabrics",
+            "link": "shopify://collections/custom-furniture-sofas",
+            "label": "SHOP NOW"
+          }
+        }
+      },
+      "block_order": [
+        "video_hGHCNM",
+        "video_zV9kUj"
+      ],
+      "name": "Hero video",
+      "settings": {
+        "color_scheme": "background-secondary",
+        "show_dots": true,
+        "show_buttons": false,
+        "autoplay": false,
+        "autoplay_timing": 5
+      }
+    },
+    "163260885930e91f97": {
+      "type": "hero-carousel",
+      "blocks": {
+        "image_8fwfxr": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-BlackFriday.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-BlackFriday.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://pages/custom-furniture",
+            "label": "SHOP FURNITURE"
+          }
+        },
+        "image_bDHcHp": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Curtains4.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Curtains4.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/custom-curtains",
+            "label": "Shop Curtains"
+          }
+        },
+        "fe772ecc-c61e-4666-beb4-036f404ecdc9": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Wallpaper.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Wallpaper3.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/wallpaper",
+            "label": "Shop Wallpaper"
+          }
+        },
+        "image_TXTUkg": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Pillows.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Pillows.v3.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/throw-pillows",
+            "label": "Shop Pillows"
+          }
+        },
+        "4949f7fc-fc68-4f96-b634-ca42307729aa": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-CafeCurtains.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-CafeCurtains2.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/custom-cafe-curtains",
+            "label": "SHOP CAFE CURTAINS"
+          }
+        },
+        "image_rt44Pr": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Nursery-2.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Nursery-2.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/the-nursery-collection",
+            "label": "SHOP NURSERY & KIDS"
+          }
+        },
+        "image_jAWzxD": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Bath-3.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Bath-3.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/bath",
+            "label": "SHOP Bath"
+          }
+        },
+        "11928fac-c2b3-40c0-b22b-06a5c5baeb41": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Fabric.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Fabric.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/fabric",
+            "label": "SHOP FABRIC"
+          }
+        },
+        "8e79c0ce-d2d2-4941-99c2-fc7e128a0727": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Desktop-ShowerCurtain.png",
+            "mobile_image": "shopify://shop_images/Mobile-Shower_Curtain2.png",
+            "heading": "Give Your Bathroom an Instant Upgrade",
+            "graphic_heading": "showercurtains",
+            "link": "shopify://collections/custom-shower-curtains",
+            "label": "SHOP SHOWER CURTAINS"
+          }
+        },
+        "7adb31b2-39db-4b97-956a-8dd91f544e71": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Desktop-MollyPillows.jpg",
+            "mobile_image": "shopify://shop_images/Mobile-PillowBundles.png",
+            "heading": "Soft, Stylish, and Completely Customized",
+            "graphic_heading": "customized",
+            "link": "shopify://collections/throw-pillows",
+            "label": "Shop Pillows"
+          }
+        },
+        "163260885930e91f97-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Full-Length-Sheer.jpg",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Full-Length-Sheer.jpg",
+            "heading": "Delicate Designs for Serious Style",
+            "graphic_heading": "delicate-designs",
+            "link": "shopify://collections/custom-sheer-curtains",
+            "label": "Shop Sheer Curtains"
+          }
+        },
+        "427d48d8-5b4b-4e3e-9c3f-068be28090c7": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Desktop-NurseryHockney.jpg",
+            "mobile_image": "shopify://shop_images/Mobile-JackRoom.jpg",
+            "heading": "Sustainable Decor Your Little One Won’t Outgrow",
+            "graphic_heading": "sustainabledecor",
+            "link": "shopify://collections/the-nursery-collection-original",
+            "label": "Shop Nursery & Kids"
+          }
+        },
+        "13f825b4-6d98-4dbc-89fe-c5ee8eeea15f": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Desktop-PillowBundles.png",
+            "mobile_image": "shopify://shop_images/Mobile-PillowBundles.png",
+            "heading": "Handpicked by the experts for exceptional style",
+            "graphic_heading": "bundles",
+            "link": "shopify://collections/pillow-bundles",
+            "label": "Shop Pillow Bundles"
+          }
+        },
+        "1cc4c5d6-1829-447e-a178-0812be8f75b5": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-HolidayBazaar.jpg",
+            "mobile_image": "shopify://shop_images/Moodboard-square.jpg",
+            "heading": "The Festive Collective",
+            "graphic_heading": "",
+            "link": "shopify://collections/giftables",
+            "label": "Get Gifting"
+          }
+        },
+        "image_HV8fh8": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Desktop-WellAndWonder1_c9a4dde3-d283-4d28-a6b8-b76cb22a04fe.png",
+            "mobile_image": "shopify://shop_images/Mobile-Pillows1.png",
+            "heading": "Mix, Match and Make Them Your Own",
+            "graphic_heading": "mixandmatch",
+            "link": "shopify://collections/throw-pillows",
+            "label": "Shop Pillows"
+          }
+        },
+        "ac602558-b9d0-432d-81f6-78315a0303f7": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hero-Desktop-Claire.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-Claire.png",
+            "heading": "",
+            "graphic_heading": "",
+            "link": "shopify://collections/from-france-with-love",
+            "label": "SHOP Claire de Quénetain"
+          }
+        }
+      },
+      "block_order": [
+        "image_8fwfxr",
+        "image_bDHcHp",
+        "fe772ecc-c61e-4666-beb4-036f404ecdc9",
+        "image_TXTUkg",
+        "4949f7fc-fc68-4f96-b634-ca42307729aa",
+        "image_rt44Pr",
+        "image_jAWzxD",
+        "11928fac-c2b3-40c0-b22b-06a5c5baeb41",
+        "8e79c0ce-d2d2-4941-99c2-fc7e128a0727",
+        "7adb31b2-39db-4b97-956a-8dd91f544e71",
+        "163260885930e91f97-1",
+        "427d48d8-5b4b-4e3e-9c3f-068be28090c7",
+        "13f825b4-6d98-4dbc-89fe-c5ee8eeea15f",
+        "1cc4c5d6-1829-447e-a178-0812be8f75b5",
+        "image_HV8fh8",
+        "ac602558-b9d0-432d-81f6-78315a0303f7"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-secondary",
+        "show_dots": true,
+        "show_buttons": false,
+        "autoplay": true,
+        "autoplay_timing": 5
+      }
+    },
+    "simple_7TUkxJ": {
+      "type": "simple",
+      "disabled": true,
+      "settings": {
+        "heading": "Furniture & Decor, Tailored To Your Taste",
+        "subheading": "",
+        "content": "<p>At Pepper, we make it easier than ever to customize your perfect piece. Choose from exclusive prints, rich colors, and polished finishes, then bring them to life with complimentary design tools that make every project a breeze.</p>",
+        "link": "",
+        "label": "",
+        "invert_text": false,
+        "color_scheme": "background-secondary",
+        "hub_section": ""
+      }
+    },
+    "section_collection_block_7AywMG": {
+      "type": "section-collection-block",
+      "blocks": {
+        "slide_aTNxAt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Spring_25_100_jpg.png",
+            "title": "Window Treatments",
+            "url": "shopify://collections/curtains"
+          }
+        },
+        "slide_aMmQMh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Bench-Blaire-ChenilleJaquard-Quinn-Chestnut-3x4.jpg",
+            "title": "Furniture",
+            "url": "shopify://pages/custom-furniture"
+          }
+        },
+        "slide_9nkDLE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Bed-Hudson-Camel-Velvet-Pillow-Walnut-Velvet-3x4.jpg",
+            "title": "Decor",
+            "url": "shopify://collections/decor"
+          }
+        },
+        "slide_h8FPVj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Wallpaper-Annabelle-Maroon-Wellesley-3x4.png",
+            "title": "Wallpaper",
+            "url": "shopify://collections/wallpaper"
+          }
+        },
+        "slide_mEqrmB": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Fabric-ChenilleJacqaurd-Willow-Orchid-3x4.jpg",
+            "title": "Fabric",
+            "url": "shopify://collections/fabric"
+          }
+        }
+      },
+      "block_order": [
+        "slide_aTNxAt",
+        "slide_aMmQMh",
+        "slide_9nkDLE",
+        "slide_h8FPVj",
+        "slide_mEqrmB"
+      ],
+      "name": "Collection block",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Whatever You Do, Make It Yours",
+        "subheading": "Your destination for custom window treatments, furniture and decor.",
+        "cta_text": "SHOP ALL",
+        "cta_link": "shopify://pages/shop-all",
+        "slide_to_show": 4,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "16326819803176babd": {
+      "type": "collection-carousel",
+      "blocks": {
+        "16326819803176babd-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "curtains",
+            "custom_title": "",
+            "custom_link": "",
+            "image": "shopify://shop_images/Styled-Nantucket-CafeCurtain-Millie-Sage.jpg"
+          }
+        },
+        "0a347a6c-90c1-4150-834f-df94cfe92a33": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_title": "Furniture",
+            "custom_link": "shopify://pages/custom-furniture",
+            "image": "shopify://shop_images/HomePage-Spring-2026-Furniture.jpg"
+          }
+        },
+        "16326819803176babd-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "decor",
+            "custom_title": "",
+            "custom_link": "",
+            "image": "shopify://shop_images/HomePage-Spring-2026-Pillows.jpg"
+          }
+        },
+        "16326819803176babd-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "wallpaper",
+            "custom_title": "",
+            "custom_link": "",
+            "image": "shopify://shop_images/HomePage-Spring-2026-Wallpaper.jpg"
+          }
+        },
+        "16326819803176babd-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "fabric",
+            "custom_title": "",
+            "custom_link": "",
+            "image": "shopify://shop_images/Category-Fabric-SerenaSS.png"
+          }
+        }
+      },
+      "block_order": [
+        "16326819803176babd-1",
+        "0a347a6c-90c1-4150-834f-df94cfe92a33",
+        "16326819803176babd-0",
+        "16326819803176babd-2",
+        "16326819803176babd-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-primary",
+        "by_category": "<ul><li><a href=\"/collections/curtains\" title=\"Window Treatments\">WINDOW TREATMENTS</a></li><li><a href=\"/pages/custom-furniture\" title=\"Furniture Landing Page\">FURNITURE</a></li><li><a href=\"/collections/decor\" title=\"Decor\">DECOR</a></li><li><a href=\"/collections/wallpaper\" title=\"Wallpaper\">WALLPAPER</a></li><li><a href=\"/collections/fabric\" title=\"Fabric By The Yard\">FABRIC BY YARD</a></li></ul>",
+        "by_collection": "<ul><li><a href=\"/collections/best-sellers\" title=\"Best Sellers\">BEST SELLERS</a></li><li><a href=\"/collections/the-nursery-collection\" title=\"The Nursery & Kids Collection\">NURSERY & KIDS</a></li><li><a href=\"/collections/pillow-bundles\" title=\"Designer Pillow Bundles\">DESIGNER PILLOW BUNDLES</a></li><li><a href=\"/collections/founder-favorites\" title=\"Founder Favorites\">FOUNDER FAVES</a></li></ul>",
+        "word_graphic": "new"
+      }
+    },
+    "featured_collection_rxAiHH": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-secondary",
+        "word": "",
+        "word_graphic": "shopify://shop_images/New_1ffd51c2-3f48-4f08-b1f2-1f817e0cf63f.png",
+        "word_graphic_width": 70,
+        "image": "shopify://shop_images/Featured-FromFranceWithLove.jpg",
+        "image_width": "",
+        "square_video_mobile": false,
+        "heading": "From France with Love",
+        "heading_font_size": 32,
+        "subheading": "",
+        "subheading_max_width": "",
+        "link": "shopify://collections/from-france-with-love",
+        "label": "Shop Now",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "featured_collection_FXMb3z": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-secondary",
+        "word": "",
+        "word_graphic": "shopify://shop_images/Introducing-large.png",
+        "word_graphic_width": 168,
+        "image": "shopify://shop_images/StyledImage-Furniture-Dorothy-Chair-Florence-Harbor-Pillow.png",
+        "image_width": "",
+        "square_video_mobile": true,
+        "heading": "Custom Furniture",
+        "heading_font_size": 32,
+        "subheading": "",
+        "subheading_max_width": "",
+        "link": "shopify://pages/custom-furniture",
+        "label": "Shop Now",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "featured_collection_PKhT3d": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "background-secondary",
+        "word": "",
+        "word_graphic_width": 168,
+        "image": "shopify://shop_images/moodboard-wovenwoods-crop.png",
+        "image_width": "69%",
+        "square_video_mobile": true,
+        "heading": "Introducing Woven Wood Shades.",
+        "heading_font_size": 32,
+        "subheading": "Timeless texture meets a laidback, organic feel.",
+        "subheading_max_width": "170px",
+        "link": "shopify://collections/custom-woven-wood-shades",
+        "label": "Shop Now",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "featured_collection_carousel_VH8fna": {
+      "type": "featured-collection-carousel",
+      "name": "Best seller collection",
+      "settings": {
+        "background_color": "#ffffff",
+        "title": "Best Sellers",
+        "featured_collection": "best-sellers",
+        "cta_text": "SHOP ALL",
+        "cta_link": "shopify://collections/best-sellers",
+        "max_products": 4,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "featured_collection_carousel_At3qiY": {
+      "type": "featured-collection-carousel",
+      "disabled": true,
+      "name": "Best seller collection",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "New Arrivals",
+        "featured_collection": "new",
+        "cta_text": "SHOP NOW",
+        "cta_link": "",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "1632610237eba13822": {
+      "type": "image-columns",
+      "blocks": {
+        "1632610237eba13822-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HowItWorks-Step2.png",
+            "heading": "Select Your Item(s)",
+            "subheading": "<p>Design a whole room or start with a single piece—pillows, curtains, and more.</p>",
+            "link": ""
+          }
+        },
+        "1632610237eba13822-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HowItWorks-Step1.png",
+            "heading": "Pick Your Fabric",
+            "subheading": "<p>Explore our extensive fabric library—expertly curated and exclusive to us.</p>",
+            "link": ""
+          }
+        },
+        "1632610237eba13822-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HowItWorks-Step3.png",
+            "heading": "Customize",
+            "subheading": "<p>Designed by you, down to the last detail—measurements, finishes and more.</p>",
+            "link": ""
+          }
+        },
+        "image_4wJxDh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HowItWorks-Step4.png",
+            "heading": "Ready In Days",
+            "subheading": "<p>Sustainably made, your custom piece ships in days—not months.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1632610237eba13822-0",
+        "1632610237eba13822-1",
+        "1632610237eba13822-2",
+        "image_4wJxDh"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_full_width": "no",
+        "heading": "THE PEPPER PROCESS",
+        "heading_size": "h2",
+        "subheading": "How it works",
+        "link": "",
+        "label": "",
+        "image_ratio": "adapt",
+        "image_order": "image-first",
+        "enable_slider": false,
+        "mobile_columns": "one",
+        "desktop_columns": "one-third",
+        "card_color_scheme": "background-primary",
+        "show_numerals": true,
+        "color_scheme": "background-tertiary",
+        "hub_section": ""
+      }
+    },
+    "simple_Hr7xVj": {
+      "type": "simple",
+      "disabled": true,
+      "settings": {
+        "heading": "Want complimentary design help from an expert?",
+        "subheading": "",
+        "content": "",
+        "link": "shopify://pages/design-assistance",
+        "label": "Speak with a designer",
+        "background_image": "shopify://shop_images/Home-DesignHelp-Divider-18.png",
+        "invert_text": true,
+        "color_scheme": "background-tertiary",
+        "hub_section": ""
+      }
+    },
+    "section_design_resources_kfYdt8": {
+      "type": "section-design-resources",
+      "blocks": {
+        "resources_nGFzkN": {
+          "type": "resources",
+          "settings": {
+            "page": "wallpaper-calculator",
+            "image": "shopify://shop_images/Calculator-Wallpaper-Annabelle.png"
+          }
+        },
+        "resources_MHgDMF": {
+          "type": "resources",
+          "settings": {
+            "page": "curtain-calculator",
+            "image": "shopify://shop_images/Calculator-Curtain-Madeline.png"
+          }
+        }
+      },
+      "block_order": [
+        "resources_nGFzkN",
+        "resources_MHgDMF"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-secondary",
+        "word_graphic": "new",
+        "heading": "Design Resources",
+        "subheading": "Helpful tools that make every project a breeze",
+        "get_help_with": "<ul><li><a href=\"/pages/design-hub?curtains\" title=\"/pages/design-hub?curtains\">Curtains</a></li><li>Furniture</li><li><a href=\"/pages/design-hub#pillows\" title=\"/pages/design-hub#pillows\">Pillows</a></li><li><a href=\"/pages/design-hub#wallpaper\" title=\"/pages/design-hub#wallpaper\">Wallpaper</a></li></ul>",
+        "popular": "<ul><li><a href=\"/pages/wallpaper-calculator\" title=\"Wallpaper Calculator\">Wallpaper Calculator</a></li><li><a href=\"/pages/curtain-calculator\" title=\"Curtain Calculator\">Curtain Calculator</a></li><li><a href=\"/blogs/pep-talk/paint-guide-fabric\" title=\"Paint Guide: Fabric\">Paint Matching Guide</a></li><li><a href=\"https://pepper-home.com/blogs/pep-talk/cafe-curtain-hardware\" title=\"Cafe Curtain Hardware\">Cafe Curtain Hardware</a></li><li><a href=\"/pages/design-assistance\" title=\"Complimentary Design Assistance\">Complimentary Design Assistance</a></li></ul>",
+        "footer_text": "Wondering how much you need to order? Our calculators will tell you.",
+        "link": "shopify://pages/design-hub",
+        "label": "See All"
+      }
+    },
+    "16326856498e4250ca": {
+      "type": "customer-reviews",
+      "blocks": {
+        "55f2a418-c25d-4b64-9a76-e50700013162": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/UGC-SnowPillowBedroom.png",
+            "stars": 5,
+            "content": "<p>I never write this stuff… but I’m impressed by this company! It’s about time someone brought quality and custom decorating to people’s homes in an available, cost effective and FAST way! Bravo!</p>",
+            "source": "Martha P",
+            "product": ""
+          }
+        },
+        "66f9b9d6-2053-4181-904b-1c75a58ecf6d": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/UGC-BlakeMossNursery.png",
+            "stars": 5,
+            "content": "<p>The wallpaper was more beautiful than I could have anticipated. The colors are crisp and the design is so fun. I am so happy with our purchase.</p>",
+            "source": "Julia N.",
+            "product": ""
+          }
+        },
+        "16326856498e4250ca-2": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/UGC-JuliaBedroom-1.png",
+            "stars": 5,
+            "content": "<p>Drapes are beautiful, fabric is heavy weight and quality. I had received an outrageous quote for drapes and looked for alternatives and found Pepper. I took a chance and I'm so glad I did! They are beautiful- better than I expected.</p>",
+            "source": "Lauren E.",
+            "product": ""
+          }
+        },
+        "16326856498e4250ca-1": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-ThatcherMidnight-Okendo_1.jpg",
+            "stars": 5,
+            "content": "<p>The quality of the wallpaper was extremely high! The detail in the print is absolutely amazing and brings any room to life!</p>",
+            "source": "Taylor O.",
+            "product": ""
+          }
+        },
+        "1332fa63-5bf3-47d8-9e3c-f1ba68d3b6c9": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/UGC-PenelopeMossShower.png",
+            "stars": 5,
+            "content": "<p>Incredible quality and a fast turnaround time. I reached out to Pepper Home for advice picking the perfect fabric and they nailed it!</p>",
+            "source": "Michelle G.",
+            "product": ""
+          }
+        },
+        "3e1a3545-6909-4f85-875d-2def89cdfd65": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/UGC-WalnutCurtainBedroom.png",
+            "stars": 5,
+            "content": "<p>I love our new curtains! It was so simple to order and came so quickly! I love the tools they give you to help order the correct size and length. Will definitely be ordering for other rooms soon!</p>",
+            "source": "Miriam W.",
+            "product": ""
+          }
+        },
+        "16326856498e4250ca-0": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/FeaturedCollections-CURTAIN1.jpg",
+            "stars": 5,
+            "content": "<p>Pepper Home not only offers beautiful high quality home accents, but also remarkable customer service. Will always use Pepper Home for our interior design projects.</p>",
+            "source": "Marissa S.",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "55f2a418-c25d-4b64-9a76-e50700013162",
+        "66f9b9d6-2053-4181-904b-1c75a58ecf6d",
+        "16326856498e4250ca-2",
+        "16326856498e4250ca-1",
+        "1332fa63-5bf3-47d8-9e3c-f1ba68d3b6c9",
+        "3e1a3545-6909-4f85-875d-2def89cdfd65",
+        "16326856498e4250ca-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "From Our Customers",
+        "subheading": "",
+        "color_scheme": "background-tertiary",
+        "card_color_scheme": "background-secondary",
+        "show_dots": false,
+        "show_buttons": true,
+        "image_link": "shopify://pages/reviews",
+        "link": "shopify://pages/justaddpepper",
+        "label": "SHOP CUSTOMER PHOTOS"
+      }
+    },
+    "best_sellers_6ER4dT": {
+      "type": "best-sellers",
+      "blocks": {
+        "product_kNbcpP": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Pillows-WillowAmalfi2.png",
+            "product": "pillow-chenillejacquard-willow-amalfi-custom",
+            "product_title": "WILLOW PILLOW"
+          }
+        },
+        "product_nACUai": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Wallpaper-GingerNavy.png",
+            "product": "wallpaper-claycoated-ginger-navy",
+            "product_title": "GINGER WALLPAPER"
+          }
+        },
+        "product_FgVjbE": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/Curtains-Sage_94dfa935-2d22-4c67-9576-264aa7ce7edb.png",
+            "product": "curtain-solid-cotton-sage-custom",
+            "product_title": "SAGE CURTAIN"
+          }
+        },
+        "product_DnyatQ": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/CafeCurtains-Madeline3.png",
+            "product": "cafecurtain-sheer-madeline-flour-custom",
+            "product_title": "MADELINE CAFE"
+          }
+        }
+      },
+      "block_order": [
+        "product_kNbcpP",
+        "product_nACUai",
+        "product_FgVjbE",
+        "product_DnyatQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "word_graphic": "new",
+        "heading": "The Best Sellers",
+        "heading_size": "h2",
+        "subheading": "",
+        "link": "shopify://collections/best-sellers",
+        "label": "Shop All Best Sellers",
+        "color_scheme": "background-primary",
+        "image_ratio": "adapt"
+      }
+    },
+    "1632686446d95cce99": {
+      "type": "image-grid",
+      "blocks": {
+        "1632686446d95cce99-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0001_logo-apartment-therapy.png",
+            "link": "https://www.apartmenttherapy.com/this-new-tabletop-brand-is-shaking-up-the-complicated-textile-industry-36665976"
+          }
+        },
+        "2f16e274-467f-417e-be44-27a6cd5c35f8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-architectural-digest_b50f2d81-41c1-4d3a-bff6-dd591c3fb903.png",
+            "link": "https://www.architecturaldigest.com/story/nicholas-obeid-kelsey-brown-brooklyn-home"
+          }
+        },
+        "1632686446d95cce99-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-house-beautiful.png",
+            "link": "https://www.housebeautiful.com/shopping/a40884883/live-better-awards-2022/"
+          }
+        },
+        "1632686446d95cce99-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0007_logo-traditional-co.png",
+            "link": ""
+          }
+        },
+        "1632686446d95cce99-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0009_logo-clever.png",
+            "link": "https://www.architecturaldigest.com/story/pattern-wallpaper-pepper-design-advice"
+          }
+        },
+        "d3108093-3bba-49c2-9479-b1aab472b21c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-elle-decor_3f4dc360-46e3-4d4e-b376-58e16b309d43.png",
+            "link": "https://www.elledecor.com/shopping/home-accessories/advice/g942/best-throw-pillows/?slide=34"
+          }
+        },
+        "0334ff62-2614-42b5-a69a-e15d554ad844": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-fast-company_73ab98b8-2625-4ae7-90bf-8388b0ba940f.png",
+            "link": "https://www.fastcompany.com/90652000/8-home-decor-upgrades-that-are-easy-and-affordable"
+          }
+        },
+        "be77580c-a384-4419-8179-5e6898d28ecc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0002_logo-my-domaine.png",
+            "link": "https://www.mydomaine.com/best-bedroom-curtains-5119251"
+          }
+        }
+      },
+      "block_order": [
+        "1632686446d95cce99-0",
+        "2f16e274-467f-417e-be44-27a6cd5c35f8",
+        "1632686446d95cce99-1",
+        "1632686446d95cce99-2",
+        "1632686446d95cce99-3",
+        "d3108093-3bba-49c2-9479-b1aab472b21c",
+        "0334ff62-2614-42b5-a69a-e15d554ad844",
+        "be77580c-a384-4419-8179-5e6898d28ecc"
+      ],
+      "settings": {
+        "heading": "Featured In",
+        "subheading": "",
+        "padded": false,
+        "enable_slider": true,
+        "autoplay": true,
+        "autoplay_timing": 5,
+        "desktop_per_row": 6,
+        "mobile_per_row": 2,
+        "color_scheme": "background-secondary"
+      }
+    },
+    "two_column_features_wtVGbC": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_KNtPna": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Sofa-Simone-ChenilleJacquard-Willow-Mint-Square.jpg",
+            "title": "Made-to-Order Furniture",
+            "description": "Explore sofas, beds, chairs and more, custom made to suit your space.",
+            "button_label": "Shop all",
+            "button_url": "shopify://pages/custom-furniture"
+          }
+        },
+        "feature_column_FzJ8Bi": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-RomanShade-Solid-Linen-Flour-Square.jpg",
+            "title": "Bespoke Roman Shades",
+            "description": "Customize every detail with signature fabrics and finishing touches.",
+            "button_label": "shop all",
+            "button_url": "shopify://collections/custom-roman-shades"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_KNtPna",
+        "feature_column_FzJ8Bi"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_r89nCX": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_F8yQaa": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-pillow-woven-millie-moss-3x4.jpg",
+            "product": "pillow-printedlinen-gemma-rose-custom"
+          }
+        },
+        "slide_KFwm7i": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Lila-Chair-FlorenceEucalyptus-MonicaLavin-10-Cropped.jpg",
+            "product": "chair-lila-printedlinen-florence-eucalyptus"
+          }
+        },
+        "slide_wUTJzf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-furniture-bed-theodora-quinn-sage-_hannahsmckenna-Cropped.jpg",
+            "product": "headboard-theodora-chenillejacquard-quinn-sage"
+          }
+        },
+        "slide_D3byGf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-ShowerCurtain-Woven-Louisa-Camel-_rose_hill_designs_and_tamara_flanagan_photo-20251110-1-AdApproved-Cropped.jpg",
+            "product": "showercurtain-woven-louisa-camel"
+          }
+        },
+        "slide_eAdcpT": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-cafecurtain-printedsheer-madeline-flour-3x4.jpg",
+            "product": "cafecurtain-sheer-madeline-flour-custom"
+          }
+        },
+        "slide_FKrcAw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-curtain-solid-cotton-snow-3x4.jpg",
+            "product": "curtain-solid-cotton-snow-custom"
+          }
+        },
+        "slide_zcPaRD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-RomanShade-Woven-MillieMoss-_homeworthy-20260106-1-AdApproved_with_Credit.jpg",
+            "product": "romanshade-woven-millie-moss-custom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_F8yQaa",
+        "slide_KFwm7i",
+        "slide_wUTJzf",
+        "slide_D3byGf",
+        "slide_eAdcpT",
+        "slide_FKrcAw",
+        "slide_zcPaRD"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at Your Place",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "hero_video_cnbt3D": {
+      "type": "hero-video",
+      "blocks": {
+        "video_Y3wcax": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "enable_overlay": false,
+            "overlay": "#000000",
+            "overlay_opacity": 0.2,
+            "style_text": "style-1",
+            "desktop_image": "shopify://shop_images/Hero-Desktop-SofasAndSectionals.png",
+            "mobile_image": "shopify://shop_images/Hero-Mobile-SofasAndSectionals.png",
+            "heading": "Introducing Roman Shades",
+            "graphic_heading": "",
+            "subheading": "Tailored to your windows—and your taste",
+            "link": "shopify://collections/custom-roman-shades",
+            "label": "SHOP NOW"
+          }
+        },
+        "video_3U3dfi": {
+          "type": "video",
+          "settings": {
+            "enable_overlay": true,
+            "overlay": "#000000",
+            "overlay_opacity": 0.2,
+            "style_text": "style-2",
+            "desktop_image": "shopify://shop_images/e9a64134c428bb4b9b8c0ac1a83101e0f4ff94e7.jpg",
+            "heading": "Your Partners in Great Design",
+            "graphic_heading": "",
+            "subheading": "Not sure where to start? Our team of design experts is here to help bring your vision to life.",
+            "link": "shopify://pages/design-assistance-1",
+            "label": "SHOP NOW"
+          }
+        }
+      },
+      "block_order": [
+        "video_Y3wcax",
+        "video_3U3dfi"
+      ],
+      "name": "Hero video",
+      "settings": {
+        "color_scheme": "background-secondary",
+        "show_dots": true,
+        "show_buttons": false,
+        "autoplay": false,
+        "autoplay_timing": 5
+      }
+    },
+    "1633919852698f21d8": {
+      "type": "ugc-images",
+      "blocks": {
+        "1633919852698f21d8-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Curtains-Serena-Sea-Salt-_kyrosedesigns_AND__langthomasinteriors_4.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "1633919852698f21d8-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-EmmaSand-HallieHesslein_2.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "1633919852698f21d8-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Trim-Piping-DustyRose-_MaggieDillion_1.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "1633919852698f21d8-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-MadelineFlour-_haas_design.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "1633919852698f21d8-1",
+        "1633919852698f21d8-0",
+        "1633919852698f21d8-3",
+        "1633919852698f21d8-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Real <em>Customers</em>. Curated <em>Spaces</em>.",
+        "subheading": "See how our customers peppered their homes.",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_column_qq6gPg": {
+      "type": "section-text-column",
+      "blocks": {
+        "column_8YekcL": {
+          "type": "column",
+          "settings": {
+            "title": "Trade Program",
+            "content": "for interior designers or architects"
+          }
+        },
+        "column_kdNPbm": {
+          "type": "column",
+          "settings": {
+            "title": "Free Design Help",
+            "content": "our in-house design experts"
+          }
+        },
+        "column_NyKR3t": {
+          "type": "column",
+          "settings": {
+            "title": "product guides",
+            "content": "resources for every pepper product"
+          }
+        }
+      },
+      "block_order": [
+        "column_8YekcL",
+        "column_kdNPbm",
+        "column_NyKR3t"
+      ],
+      "disabled": true,
+      "name": "Text column",
+      "settings": {
+        "background_color": "#d4d1bd",
+        "text_color": "#000000",
+        "border_color": "#000000"
+      }
+    },
+    "section_image_with_text_column_xkNK8t": {
+      "type": "section-image-with-text-column",
+      "disabled": true,
+      "name": "Image with text column",
+      "settings": {
+        "background_color": "",
+        "heading": "Your Partners in Great Design",
+        "heading_size": "h3",
+        "subheading": "<p>Not sure where to start? Our team of design experts is here to help bring your vision to life. </p>",
+        "content": "",
+        "image": "shopify://shop_images/Styled-FallsVillage-Florence-Eucalyptus-Curtain-cropped.png",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "shopify://pages/design-assistance",
+        "label": "learn more",
+        "button_type": "button"
+      }
+    },
+    "section_text_with_icon_column_gemgFF": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_QVRUCX": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_AaJDLk": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance"
+          }
+        },
+        "column_VQzgit": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/headboards.png",
+            "image_width": 140,
+            "title": "View Product Guides",
+            "content": "Get all the answers—from customization to measuring.",
+            "link_text": "EXPLORE",
+            "link_url": "shopify://pages/design-hub"
+          }
+        }
+      },
+      "block_order": [
+        "column_QVRUCX",
+        "column_AaJDLk",
+        "column_VQzgit"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "hero_video_a3dQyA",
+    "163260885930e91f97",
+    "simple_7TUkxJ",
+    "section_collection_block_7AywMG",
+    "16326819803176babd",
+    "featured_collection_rxAiHH",
+    "featured_collection_FXMb3z",
+    "featured_collection_PKhT3d",
+    "featured_collection_carousel_VH8fna",
+    "featured_collection_carousel_At3qiY",
+    "1632610237eba13822",
+    "simple_Hr7xVj",
+    "section_design_resources_kfYdt8",
+    "16326856498e4250ca",
+    "best_sellers_6ER4dT",
+    "1632686446d95cce99",
+    "two_column_features_wtVGbC",
+    "curated_spaces_r89nCX",
+    "hero_video_cnbt3D",
+    "1633919852698f21d8",
+    "section_text_column_qq6gPg",
+    "section_image_with_text_column_xkNK8t",
+    "section_text_with_icon_column_gemgFF"
+  ]
 }
