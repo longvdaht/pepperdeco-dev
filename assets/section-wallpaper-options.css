@@ -1,0 +1,411 @@
+.section-product-wallpaper-option {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-product-wallpaper-option .section-heading-outer {
+  margin-bottom: 4rem;
+}
+
+.section-product-wallpaper-option .section-heading-outer h2 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  scroll-margin-top: calc(5rem + 100px);
+}
+@media (min-width: 768px) {
+  .section-product-wallpaper-option .section-heading-outer h2 {
+    scroll-margin-top: calc(5rem + 145px);
+  }
+}
+
+.section-product-wallpaper-option .section-subheading {
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: none;
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  letter-spacing: var(--font-heading-spacing);
+  line-height: 1.5;
+  text-wrap: balance;
+  margin-bottom: 0;
+}
+
+.section-product-wallpaper-option .section-product-option-wrapper {
+  margin: 0 0.8rem;
+  width: 100%;
+  flex: 1 0 calc(67% - 0.8rem*2);
+  max-width: calc(67% - 0.8rem*2);
+}
+.section-product-wallpaper-option .wallpaper-option-block-wrapper {
+  padding: 2.4rem;
+  background-color: #fff;
+}
+.section-product-wallpaper-option .wallpaper-title {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-medium);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-top: 0.3rem;
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .section-product-wallpaper-option .section-product-option-wrapper {
+    flex: 1 0 calc(45% - 0.8rem*2);
+    max-width: calc(45% - 0.8rem*2);
+  }
+}
+@media (min-width: 768px) {
+  .section-product-wallpaper-option .section-product-option-wrapper {
+    flex: 1 0 calc(40% - 1.2rem*3);
+    max-width: calc(40% - 1.2rem*3);
+    margin: 0 1.2rem;
+  }
+  .section-product-wallpaper-option .product-slider-3-items .section-product-option-wrapper {
+    flex: 1 0 calc(100% / 3 - 1.2rem*2);
+    max-width: calc(100% / 3 - 1.2rem*2);
+  }
+}
+@media (min-width: 992px) {
+  .section-product-wallpaper-option .section-product-option-wrapper {
+    flex: 1 0 calc(30% - 1.2rem*3);
+    max-width: calc(30% - 1.2rem*3);
+  }
+}
+@media (min-width: 1400px) {
+  .section-product-wallpaper-option .section-product-option-wrapper {
+    flex: 1 0 calc(100% / 4 - 1.2rem*2);
+    max-width: calc(100% / 4 - 1.2rem*2);
+  }
+}
+
+.section-product-wallpaper-option .wallpaper-option-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.section-product-wallpaper-option .wallpaper-option-block .wallpaper-option-top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-product-wallpaper-option .metafield-rich_text_field {
+  font-size: 1.2rem;
+}
+.section-product-wallpaper-option .rte strong {
+  font-weight: 500;
+  letter-spacing: var(--font-body-spacing);
+}
+.section-product-wallpaper-option .rte p {
+  line-height: 1.5;
+  white-space: normal;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+.section-product-wallpaper-option .rte p:first-child {
+  margin-top: 1.6rem;
+}
+.section-product-wallpaper-option .rte.content-wrapper p + p {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+.section-product-wallpaper-option .rte.content-wrapper p + details[open] {
+  margin-top: -1.6rem;
+}
+.section-product-wallpaper-option .rte.content-wrapper p:last-child, .section-product-wallpaper-option .rte p:last-child {
+  margin-bottom: 0;
+}
+.section-product-wallpaper-option .rte.content-wrapper p + ul {
+  margin-top: -8px;
+}
+.section-product-wallpaper-option .rte.content-wrapper ul li {
+  list-style: none;
+  padding: 0;
+  white-space: normal;
+}
+.section-product-wallpaper-option slider-component:not(.slider-hide-buttons) .slider-buttons {
+  justify-content: flex-end;
+  margin-right: 1.5rem;
+}
+.section-product-wallpaper-option slider-component.slider-only-page .slider {
+  justify-content: center;
+}
+.section-product-wallpaper-option slider-component.slider-only-page .slider-buttons {
+  display: none;
+}
+.section-product-wallpaper-option .slider-buttons .slider-counter {
+  display: none;
+}
+.section-product-wallpaper-option .button.button--secondary {
+  background-color: rgb(var(--color-base-background-quaternary));
+  color: rgb(var(--color-base-text));
+}
+.section-product-wallpaper-option .button.button--secondary:hover {
+  background-color: rgb(var(--color-base-button-background-secondary-hover));
+}
+/* compare fabric furniture */
+.section-compare-fabric-furniture {
+  background: var(--background-color);
+  padding-top: 84px;
+  padding-bottom: 84px;
+}
+.section-compare-fabric-furniture .wallpaper-option-block-wrapper {
+  text-align: left;
+}
+.section-compare-fabric-furniture .wallpaper-title {
+  margin-bottom: 0;
+  white-space: normal;
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+.section-compare-fabric-furniture .wallpaper-subtitle {
+  font-size: 1.2rem;
+  font-weight: var(--font-body-weight);
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+  display: block;
+  color: rgb(var(--color-base-text), 0.5);
+}
+.section-compare-fabric-furniture .metafield-rich_text_field p:first-child {
+  margin-top: 0;
+}
+.section-compare-fabric-furniture .metafield-rich_text_field p, .section-compare-fabric-furniture .metafield-multi_line_text_field p {
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+}
+.section-compare-fabric-furniture .rte.content-wrapper {
+  margin-bottom: 1.6rem;
+}
+.section-compare-fabric-furniture .rte.content-wrapper.content-weight {
+  margin-bottom: 0;
+}
+.section-compare-fabric-furniture .rte.content-wrapper.content-rub p {
+  margin-top: 0;
+}
+.section-compare-fabric-furniture .rte.content-wrapper.content-rub strong {
+  margin-bottom: 4px;
+}
+.section-compare-fabric-furniture .rte.content-wrapper .content-title + span {
+  margin-top: 4px;
+}
+.section-compare-fabric-furniture .rte.content-wrapper + details[open] {
+  margin-top: 1.6rem;
+}
+.section-compare-fabric-furniture .rte.content-wrapper:last-child {
+  margin-bottom: 0;
+}
+.section-compare-fabric-furniture span.metafield-single_line_text_field, .section-compare-fabric-furniture .metafield-multi_line_text_field {
+  font-weight: var(--font-body-weight);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.section-compare-fabric-furniture .metafield-multi_line_text_field {
+  white-space: break-spaces;
+}
+.section-compare-fabric-furniture .wallpaper-option-block .wallpaper-option-top {
+  align-items: flex-start;
+}
+.section-compare-fabric-furniture .button, .section-product-wallpaper-option .button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1.45rem 0.45rem;
+  white-space: normal;
+  background-color: rgb(var(--color-base-button-background-hover));
+}
+.section-compare-fabric-furniture .button:hover, .section-product-wallpaper-option .button:hover {
+  background-color: rgb(var(--color-base-button-background));
+}
+.section-compare-fabric-furniture .content-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.2;
+  display: block;
+}
+.section-compare-fabric-furniture .section-product-wallpaper-option-content {
+  padding-left: 1.6rem;
+}
+.section-compare-fabric-furniture slider-component:not(.slider-only-page) .product-slider-mobile {
+  padding-right: 1.6rem;
+  margin-top: 0;
+}
+.section-compare-fabric-furniture .section-heading-outer .section-heading, .section-compare-fabric-furniture .section-heading-outer .section-subheading {
+  padding: 0 1.6rem;
+}
+.section-compare-fabric-furniture slider-component:not(.slider-hide-buttons) .slider-buttons svg {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+}
+.section-compare-fabric-furniture slider-component:not(.slider-hide-buttons) .slider-buttons {
+  margin-right: 1.5rem;
+}
+.section-compare-fabric-furniture .section-product-wallpaper-option-content slider-component:not(.slider-only-page) {
+  padding-left: 1.6rem;
+}
+@media (min-width: 1200px) {
+  .section-compare-fabric-furniture .section-heading-outer .section-heading, .section-compare-fabric-furniture .section-heading-outer .section-subheading {
+    padding: 0 120px;
+  }
+  .section-compare-fabric-furniture .section-product-wallpaper-option-content slider-component:not(.slider-only-page) {
+    padding-left: 120px;
+  }
+  .section-compare-fabric-furniture slider-component:not(.slider-only-page) .product-slider-mobile {
+    padding-right: 120px;
+  }
+  .section-compare-fabric-furniture slider-component:not(.slider-hide-buttons) .slider-buttons {
+    margin-right: 12rem;
+  }
+}
+@media (min-width: 1300px) {
+  .section-compare-fabric-furniture .section-product-option-wrapper {
+    flex: 1 0 calc(100% / 4 - 1.2rem * 3);
+    max-width: calc(100% / 4 - 1.2rem * 3);
+  }
+}
+@media (min-width: 1625px) {
+  .section-compare-fabric-furniture .section-product-option-wrapper {
+    flex: 1 0 calc(21% - 1.2rem * 3);
+    max-width: calc(21% - 1.2rem * 3);
+  }
+}
+@media (max-width: 767px) {
+  .section-compare-fabric-furniture { 
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+  .section-compare-fabric-furniture .section-product-option-wrapper {
+    flex: 1 0 calc(45% - 0.8rem);
+    max-width: calc(45% - 0.8rem);
+  }
+  .section-compare-fabric-furniture .rte.content-wrapper {
+    margin-bottom: 1.5rem;
+  }
+  .section-product-wallpaper-option .section-subheading {
+    margin-bottom: 0;
+  }
+  .section-product-wallpaper-option .wallpaper-option-top-top img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-compare-fabric-furniture .product-slider-mobile {
+    margin-top: 0;
+  }
+}
+@media (max-width: 480px) {
+  .section-compare-fabric-furniture .section-product-option-wrapper {
+    flex: 1 0 calc(67% - 1.6rem);
+    max-width: calc(67% - 1.6rem);
+  }
+}
+/* end compare fabric furniture */
+.section-product-wallpaper-option .wallpaper-option-top-top {
+  width: 100%;
+  text-align: left;
+}
+.section-product-wallpaper-option .content-toggle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.section-product-wallpaper-option .content-toggle summary {
+  order: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.section-product-wallpaper-option .content-toggle[open] summary {
+  margin-top: 16px;
+}
+.section-product-wallpaper-option .content-toggle .content-toggle-open {
+  display: none;
+}
+.section-product-wallpaper-option .content-toggle[open] .content-toggle-open {
+  display: block;
+}
+.section-product-wallpaper-option .content-toggle[open] .content-toggle-close {
+  display: none;
+}
+.section-product-wallpaper-option .content-toggle summary svg {
+  margin-bottom: 2px;
+  display: inline-block;
+}
+.section-product-wallpaper-option .content-toggle[open] summary svg {
+  transform: rotate(180deg);
+} 
+/* Construction options */
+.section-contruction-options .wallpaper-option-block, .section-contruction-options .wallpaper-option-block-wrapper {
+  height: 100%;
+}
+.section-product-wallpaper-option .content-wrapper {
+  height: auto;
+  min-height: auto;
+  text-align: left;
+  max-width: 100%;
+  width: 100%;
+}
+.section-contruction-options .rte.content-wrapper ul li, .section-product-wallpaper-option .rte.content-wrapper ul li {
+  list-style: disc;
+}
+@media (min-width: 1400px) {
+  .section-contruction-options .section-product-option-wrapper, .section-compare-fabric-furniture .section-product-option-wrapper {
+    flex: 1 0 calc(23% - 3*1.2rem);
+    max-width: calc(23% - 3*1.2rem);
+  }
+}
+@media (min-width: 1625px) {
+  .section-contruction-options .section-product-option-wrapper, .section-compare-fabric-furniture .section-product-option-wrapper {
+    flex: 1 0 calc(24% - 4*1.2rem);
+    max-width: calc(24% - 4*1.2rem);
+  }
+}
+/* end construction options */
+.section-product-wallpaper-option-content slider-component:not(.slider-only-page) {
+  margin-left: -1.2rem;
+  padding-left: 1.6rem;
+}
+.section-product-wallpaper-option-content slider-component:not(.slider-only-page) ul.slider {
+  padding-right: 0.8rem;
+}
+@media (max-width: 767px) {
+  .section-compare-fabric-furniture .section-product-wallpaper-option-content {
+    padding-left: 0;
+  }
+  .section-product-wallpaper-option-content slider-component:not(.slider-only-page) {
+    padding-left: 1.6rem;
+    margin-left: -0.8rem;
+  }
+}
+.section-contruction-options .rte strong {
+  font-size: 12px;
+  line-height: 1.2;
+}
+@media (max-width: 480px) {
+  .section-contruction-options .section-product-option-wrapper {
+    flex: 1 0 calc(68% - 1.6rem);
+    max-width: calc(68% - 1.6rem);
+  }
+  .section-contruction-options .wallpaper-option-top-top img {
+    max-width: 80%;
+    text-align: center;
+    display: block;
+  }
+  .section-contruction-options .wallpaper-option-block-wrapper {
+    padding-top: 0.5rem;
+  }
+}

@@ -1,0 +1,101 @@
+.section-color-swatch {
+  background-color: var(--background-color);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.section-color-swatch .page-width {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  margin-bottom: 3rem;
+}
+.section-color-swatch .section-heading.display.body {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+.section-color-swatch .section-subheading {
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: none;
+  font-size: 1.2rem;
+  font-weight: var(--font-button-weight);
+  letter-spacing: var(--font-heading-spacing);
+  text-wrap: balance;
+}
+.section-color-swatch .color-swatch-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px 10px;
+  max-width: 85%;
+}
+
+.section-color-swatch .color-swatch-item {
+  text-align: center;
+}
+.section-color-swatch .color-swatch-item .swatch {
+  display: block;
+  max-width: 62px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background-color: var(--swatch-color);
+  background-image: var(--swatch-image);
+  border: 1px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-color-swatch .color-swatch-item .swatch.swatch-snow {
+  border-color: rgba(212, 208, 181, 1);
+}
+.section-color-swatch .color-swatch-item .swatch-title {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  white-space: normal;
+}
+.section-color-swatch .color-swatch-item strong {
+  display: block;
+}
+@media (min-width: 768px) {
+  .section-color-swatch {
+    padding-top: 8.4rem;
+    padding-bottom: 8.4rem;
+  }
+  .section-color-swatch .color-swatch-wrapper {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 570px;
+  }
+  .section-color-swatch .color-swatch-item .swatch {
+    display: block;
+    max-width: 90px;
+  }
+  .section-color-swatch .color-swatch-item .swatch-title {
+    font-size: 1.3rem;
+  }
+}
+.section-color-swatch .color-swatch-action {
+  margin-top: 30px;
+}
+.section-color-swatch .color-swatch-action .button--secondary {
+  background-color: rgb(var(--color-base-background-quaternary));
+  color: rgb(var(--color-base-text));
+  max-width: 240px;
+  width: 100%;
+}
+.section-color-swatch .color-swatch-action .button--secondary:hover {
+  background-color: rgb(var(--color-base-button-background-secondary-hover));
+}
+@media(max-width: 767px) {
+  .section-color-swatch .section-subheading {
+    margin-bottom: 0;
+  }
+  .section-color-swatch .page-width {
+    margin-bottom: 2rem;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .section-color-swatch .color-swatch-wrapper {
+    max-width: 400px;
+  }
+}

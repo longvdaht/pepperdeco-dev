@@ -1,0 +1,83 @@
+.section-text-column {
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+  background-color: var(--background-color);
+}
+.section-text-column-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 2.8rem;
+}
+.section-text-column-wrapper .column-item {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.section-text-column-wrapper.column-grid-3 .column-item {
+  max-width: calc(100% / 3);
+}
+.section-text-column-wrapper.column-grid-2 .column-item {
+  max-width: calc(100% / 2);
+}
+.section-text-column-wrapper .column-item .title {
+  font-size: 1.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: var(--font-button-weight);
+  letter-spacing: var(--font-body-spacing);
+  margin: 0 0 8px;
+}
+.section-text-column-wrapper .column-item .content {
+  letter-spacing: var(--font-body-spacing);
+  max-width: 235px;
+  margin: 0 auto;
+  font-family: var(--font-body-family);
+  line-height: 20px;
+  font-weight: var(--font-body-weight);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.section-text-column-wrapper .column-item.has-divided:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1.4rem;
+  width: 1px;
+  height: 100%;
+  display: block;
+  background-color: rgb(var(--color-base-text));
+}
+.section-text-column {
+  padding: 1rem;
+}
+@media (max-width: 767px) {
+  /* .section-text-column-wrapper .svg-divided, .section-text-column-wrapper .column-item .content, .section-text-column-wrapper .column-item .link--text {
+    display: none;
+  } */
+  .section-text-column-wrapper.column-grid-3 .column-item, .section-text-column-wrapper.column-grid-2 .column-item {
+    max-width: 100%;
+  }
+  .section-text-column-wrapper {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .section-text-column-wrapper .column-item .content-wrapper {
+    max-width: 224px;
+  }
+  .section-text-column-wrapper .column-item.has-divided:before {
+    width: 224px;
+    height: 1px;
+    right: 50%;
+    transform: translateX(50%);
+    top: auto;
+  }
+  .section-text-column {
+    padding: 0 3rem;
+  } 
+}

@@ -1,0 +1,45 @@
+.section-best-sellers .grid {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: start stretch;
+}
+.section-best-sellers .word-shop > svg {
+  height: auto;
+  margin-inline: auto;
+  max-width: 5.5rem;
+}
+.section-best-sellers .section-heading {
+  margin-block: -.8rem 3rem;
+}
+.card--best-seller {
+  position: relative;
+}
+.card--best-seller .full-unstyled-link:before {
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+.card--best-seller:hover .card-title {
+  color: rgb(var(--color-base-text-hover));
+}
+
+.section-best-sellers .button--underline {
+  margin-block: 2rem;
+}
+
+.section-best-sellers .card-title {
+  font-size: 1.1rem;
+  font-family: var(--font-body-family);
+  font-weight: var(--font-button-weight);
+  letter-spacing: var(--font-body-spacing);
+  margin-block: .5rem 2rem;
+}
+
+@media (min-width: 40em) {
+  .section-best-sellers .grid {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+  }
+}

@@ -1,0 +1,345 @@
+.template-login main .page-width-narrow,
+.template-register main .page-width-narrow {
+  background: rgb(var(--color-base-background-secondary));
+  margin-block: 5rem;
+  max-width: 35rem;
+  padding: 1.4rem;
+}
+
+.template-login label,
+.template-register label,
+.template-login .text-link,
+.template-register .text-link {
+  font-weight: var(--font-heading-weight);
+  letter-spacing: var(--font-heading-spacing);
+  text-transform: uppercase;
+}
+
+.section-customer:not(.section-customer-account):not(.section-customer-order) {
+  margin: 4rem auto 9rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.section-customer p {
+  font-weight: var(--font-body-weight);
+  letter-spacing: var(--font-body-spacing);
+}
+
+.section-customer .field {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 1.4rem 0 0 0;
+}
+
+.section-customer .field:first-of-type {
+  margin-top: 0;
+}
+
+/* Customer Table */
+.section-customer table {
+  table-layout: auto;
+  border-collapse: collapse;
+  box-shadow: none;
+  width: 100%;
+  font-size: 1.6rem;
+  position: relative;
+}
+.section-customer tbody {
+  color: rgb(var(--color-foreground));
+}
+
+.section-customer th {
+  letter-spacing: var(--font-heading-spacing);
+  text-transform: uppercase;
+}
+
+.section-customer th,
+.section-customer td {
+  font-size: 1.2rem;
+  font-weight: var(--font-body-light);
+  letter-spacing: var(--font-body-spacing);
+  line-height: 1;
+  border: none;
+  padding: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .section-customer th,
+  .section-customer td {
+    padding-right: 2.2rem;
+  }
+}
+
+.section-customer tbody td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.section-customer td:empty {
+  display: initial;
+}
+
+.section-customer thead th {
+  font-weight: var(--font-button-weight);
+}
+
+.section-customer tfoot td:first-of-type,
+.section-customer tfoot td {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.section-customer tfoot td:first-of-type {
+  text-align: left;
+}
+.section-customer tfoot td:nth-of-type(2n) {
+  text-align: right;
+}
+
+.section-customer tfoot tr:first-of-type td {
+  padding-top: 4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .section-customer tfoot tr:first-of-type td,
+  .section-customer tfoot tr:first-of-type th {
+    padding-top: 2.4rem;
+  }
+}
+
+.section-customer tfoot tr:last-of-type td {
+  padding-bottom: 4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .section-customer tfoot tr:last-of-type td,
+  .section-customer tfoot tr:last-of-type th {
+    padding-bottom: 2.4rem;
+  }
+}
+
+/* works around colspan phantom border issues */
+.section-customer thead::after,
+.section-customer tfoot::before {
+  content: ' ';
+  height: 0.1rem;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+.section-customer h1,
+.section-customer h2,
+.section-customer h3 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+  .section-customer:not(.account):not(.order) {
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+}
+
+.section-customer form {
+  margin-top: 4rem;
+}
+
+.section-customer .text-link {
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+}
+.section-customer button {
+  margin: 1.4rem 0 1.4rem;
+  background: rgb(var(--color-base-background-quaternary));
+  color: #000000;
+}
+.section-customer .button--outline {
+  background: transparent;
+}
+
+.section-customer .text-link {
+  color: rgb(var(--color-base-button-background));
+  font-size: 11px;
+  font-weight: var(--font-body-medium);
+}
+.section-customer .text-link:hover {
+  color: rgb(var(--color-base-button-background-hover));
+}
+
+
+
+/* Login */
+.section-customer-login a:not(.button, .text-link) {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.section-customer-login a[href='#recover'] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.section-customer-login .field + a {
+  margin-top: 1rem;
+}
+
+.section-customer-login p {
+  margin: 1.5rem 0;
+}
+
+.section-customer-login h3 {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+}
+.section-customer-login .form__message {
+  text-align: center;
+}
+.errors ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#customer_login_guest button {
+  margin-top: 0;
+}
+
+#recover,
+#recover + div {
+  display: none;
+}
+
+#recover:target {
+  display: block;
+}
+
+#recover:target + div {
+  display: block;
+}
+
+#recover:target ~ #login,
+#recover:target ~ #login + div {
+  display: none;
+}
+
+#recover,
+#login {
+  scroll-margin-top: 20rem;
+}
+
+#recover {
+  margin-bottom: 0;
+}
+
+
+
+
+/* Addresses */
+.addresses li > button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.addresses li > button + button,
+.addresses form button + button {
+  margin-top: 0rem;
+}
+
+@media screen and (min-width: 750px) {
+  .addresses li > button:first-of-type {
+    margin-top: 3rem;
+  }
+}
+
+.addresses form button:first-of-type {
+  margin-right: 1rem;
+}
+
+label[for='AddressCountryNew'],
+label[for='AddressProvinceNew'] {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.addresses form {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.addresses form > div {
+  width: 100%;
+  text-align: left;
+}
+
+.addresses ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+li[data-address] {
+  margin-top: 5rem;
+}
+
+.addresses [aria-expanded='false'] ~ div[id] {
+  display: none;
+}
+
+.addresses [aria-expanded='true'] ~ div[id] {
+  display: block;
+}
+
+.addresses h2 {
+  text-align: left;
+}
+
+li[data-address] > h2 {
+  text-align: center;
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 750px) {
+  li[data-address] > h2 {
+    font-size: calc(var(--font-heading-scale) * 2.2rem);
+  }
+}
+
+.addresses ul p {
+  margin-bottom: 0;
+}
+
+.addresses input[type='checkbox'] {
+  margin-top: 2rem;
+  margin-left: 0;
+}
+
+@media only screen and (min-width: 750px) {
+  .addresses form > div:nth-of-type(1) {
+    padding-right: 2rem;
+  }
+
+  .addresses form > div:nth-of-type(2) {
+    margin-top: 0;
+  }
+
+  .addresses form > div:nth-of-type(1),
+  .addresses form > div:nth-of-type(2) {
+    flex-basis: 50%;
+    box-sizing: border-box;
+  }
+}
+
+.addresses form > div:nth-of-type(7),
+.addresses form > div:nth-of-type(7) + div[id] {
+  margin-top: 1.5rem;
+}

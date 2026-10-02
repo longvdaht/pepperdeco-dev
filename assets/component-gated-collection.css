@@ -1,0 +1,33 @@
+gated-collection {
+  display: block;
+  padding-block: 3rem 5rem;
+}
+
+gated-collection input[type="email"] {
+  background-color: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.6);
+  border-radius: 0;
+  color: rgb(var(--color-base-button-background-secondary));
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: var(--font-heading-weight);
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0 .2rem 0 0;
+  min-width: 20rem;
+  padding: 1.45rem 1rem;
+  text-align: left;
+  transition: border var(--duration-short) ease;
+  vertical-align: middle;
+}
+
+gated-collection .form__fields {
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+}
+
+gated-collection .inline_richtext {
+  font-weight: var(--font-body-weight);
+  margin: 1rem auto;
+}

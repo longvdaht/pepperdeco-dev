@@ -1,0 +1,70 @@
+.section-accordion .section-heading {
+  padding: 0;
+  margin: 0 0 1.6rem;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-align: center;
+}
+.section-accordion .page-width {
+  padding: 0 1.6rem;
+  max-width: 752px;
+}
+@media (min-width: 768px) {
+  .section-accordion .section-heading {
+    font-size: 3.2rem;
+  }
+}
+.section-accordion details {
+  border-bottom: 1px solid #7D736433;
+  padding-bottom: 0;
+}
+.section-accordion summary {
+  color: rgb(var(--color-foreground));
+  padding: 1.75rem 3rem 1.75rem 0;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  letter-spacing: var(--font-body-spacing);
+  font-weight: var(--font-body-medium);
+}
+.section-accordion summary .svg-wrapper {
+  position: absolute;
+  right: 0;
+  top: 1.75rem;
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.section-accordion summary svg {
+  max-width: 3rem;
+  width: 10px;
+  height: 10px;
+  padding: 3px;
+  display: block;
+}
+.section-accordion summary .minus-icon svg {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+.section-accordion details summary .minus-icon {
+  display: none;
+}
+.section-accordion details[open] summary .minus-icon {
+  display: block;
+}
+.section-accordion details[open] summary .plus-icon {
+  display: none;
+}
+.section-accordion details[open] summary {
+  color: rgb(var(--color-foreground));
+}
+.section-accordion details p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  padding-bottom: 1.6rem;
+  margin-top: 0;
+  letter-spacing: 0;
+}

@@ -1,0 +1,33 @@
+.section-newsletter .section-outer {
+  padding-block: 2rem;
+}
+
+.section-newsletter .section-heading {
+  font-size: 1.2rem;
+  margin-block: 0;
+  padding: 0;
+}
+.section-newsletter .section-subheading {
+  font-family: var(--font-heading-family);
+  letter-spacing: var(--font-heading-spacing);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.section-newsletter .section-content p {
+  font-weight: var(--font-body-weight);
+  margin-block-end: 0;
+}
+
+.section-newsletter .grid {
+  row-gap: 1rem;
+}
+
+@media (min-width: 60em) {
+  .section-newsletter .page-width {
+    max-width: calc(var(--page-width) * .9);
+  }
+  .section-newsletter .section-outer {
+    padding-block: 3.5rem;
+  }
+}

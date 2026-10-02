@@ -1,0 +1,239 @@
+.section-page-hero .hero-content {
+  padding: 2rem 3rem 2rem 4rem;
+  text-align: center;
+  width: 70%;
+}
+
+.section-page-hero .hero-content .metafield-rich_text_field * {
+  margin: 0;
+}
+
+.section-page-hero .hero-content h1 + div > .metafield-rich_text_field * {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-lightest);
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.section-page-hero .hero-image img {
+  display: block;
+}
+.section-page-hero h1 {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.section-page-hero .h2.body.rte,
+.section-page-hero .h2.body.rte > * {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-lightest);
+  line-height: 1.4;
+    letter-spacing: normal;
+  text-wrap: balance;
+}
+
+.secondary-color {
+  color: #D5D0B5;
+}
+.secondary-color svg {
+  height: auto;
+  max-width: 6rem;
+}
+
+.template-page-gallery .secondary-color svg {
+  max-width: 7rem;
+}
+
+.template-page-gallery .secondary-color {
+  position: relative;
+  top: 12px;
+}
+
+@media (max-width: 450px) {
+  .secondary-color svg {
+    width: 50px;
+    max-width: none;
+  }
+
+  .page-justaddpepper .media--cropped {
+    padding-bottom: 70%;
+  }
+}
+
+.template-page-curtain-calculator .section-page-hero.section-color-background-secondary,
+.template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary {
+  /* background: #e9e7df !important; */
+  background: rgb(var(--color-base-background-secondary)) !important;
+}
+.template-page-curtain-calculator .section-page-hero.section-color-background-secondary .grid,
+.template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-content: center center;
+}
+.template-page-curtain-calculator .section-page-hero.section-color-background-secondary .grid > .grid__item,
+.template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid > .grid__item {
+  grid-area: -1 / 1;
+}
+.template-page-curtain-calculator .section-page-hero.section-color-background-secondary .grid > .hero-content,
+.template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid > .hero-content {
+  /* background: rgba(233,231,223,0.9); */
+  background: rgb(var(--color-base-background-secondary));
+  place-self: center;
+  z-index: 2;
+}
+.template-page-curtain-calculator .section-page-hero h1,
+.template-page-wallpaper-calculator .section-page-hero h1 {
+  font-size: clamp(4.5rem, 5vw + 1rem, 6rem);
+  font-weight: 100;
+  max-width: 23rem;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+}
+.template-page-curtain-calculator .section-page-hero .secondary-color,
+.template-page-wallpaper-calculator .section-page-hero .secondary-color,
+.template-page-trade .section-page-hero .secondary-color {
+  text-align: left;
+}
+.template-page-curtain-calculator .section-page-hero .media--cropped,
+.template-page-wallpaper-calculator .section-page-hero .media--cropped {
+  padding-bottom: 70%;
+}
+.template-page-gallery .section-page-hero h1,
+.template-page-design-hub .section-page-hero h1,
+.template-page-trade .section-page-hero h1 {
+  font-family: var(--font-heading-family);
+  font-size: clamp(4.5rem, 5vw + 1rem, 6rem);
+  font-weight: var(--font-heading-weight);
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+}
+.template-page-design-hub .section-page-hero p.section-subheading {
+  padding-left: 0;
+  padding-right: 0;
+}
+.template-page-gallery .section-page-hero .hero-content,
+.template-page-design-hub .section-page-hero .hero-content  {
+  text-align: left;
+}
+
+@media (min-width: 40em) and (max-width: 1200px) {
+  .section-page-hero .grid .content-grid {
+   max-width: 335px;
+ }
+}
+
+@media (min-width: 40em) {
+  .desktop-hidden {
+    display: none;
+  }
+
+  .section-page-hero .grid {
+    flex-flow: row-reverse nowrap;
+  }
+  .section-page-hero .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.4rem;
+    text-align: left;
+  }
+  .template-page-gallery .section-page-hero h1,
+  .template-page-design-hub .section-page-hero h1,
+  .template-page-trade .section-page-hero h1 {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3.5rem, 5vw + 1rem, 6rem);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: 0;
+    text-align: left;
+    text-transform: none;
+    line-height: 60px;
+  }
+  .section-page-hero .intro {         
+    margin-top: 1rem;
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 60em) {
+  .template-page-curtain-calculator .section-page-hero.section-color-background-secondary .grid,
+  .template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    flex-flow: row-reverse nowrap;
+  }
+  .template-page-curtain-calculator .section-page-hero.section-color-background-secondary .grid > .grid__item, .template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid > .grid__item {
+    grid-area: initial;
+  }
+  .template-page-curtain-calculator .section-page-hero.section-color-background-secondary .grid > .hero-content,
+  .template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid > .hero-content {
+    grid-column: initial;
+  }
+  .template-page-curtain-calculator .section-page-hero .media--cropped,
+  .template-page-wallpaper-calculator .section-page-hero .media--cropped {
+    max-height: 60vh;
+    padding-bottom: 45%;
+  }
+  .template-page-wallpaper-calculator .section-page-hero h1 {
+    /* max-width: unset; */
+    font-size: clamp(4.5rem,5vw + 1rem, 7rem)
+  }
+   .template-page-wallpaper-calculator .section-page-hero.section-color-background-secondary .grid>.hero-content {
+    justify-content: flex-start;
+   }
+  .template-page-curtain-calculator .section-page-hero h1 {
+    max-width: 8ch;
+  }
+  .template-page-gallery .spaced-section .section-outer.section-image-grid {
+    padding-inline: 6.2rem;
+  }
+}
+
+@media (max-width: 40em) {
+  .mobile-hidden {
+    display: none;
+  }
+  .template-collection .section-page-hero .hero-content {
+    padding: 1rem;
+    text-align: center;
+    width: 60%;
+  }
+}
+
+@media (max-width: 959px) {
+  .section-page-hero.modile-display--type2 .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-content: center center;
+  }
+
+  .section-page-hero.modile-display--type2 .grid > .grid__item {
+    grid-area: -1 / 1;
+  }
+  .section-page-hero.modile-display--type2 .grid > .hero-content {
+    background: rgba(233, 231, 223, 0.9);
+    place-self: center;
+    z-index: 1;
+    grid-area: -1 / 1;
+  }
+}
+
+@media (min-width: 80em) {
+  .section-page-hero .hero-content {
+    padding: 8.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .template-collection-curtains .section-page-hero .hero-content, .template-collection-window-treatments .section-page-hero .hero-content {
+    width: 80%;
+  }
+}

@@ -1,0 +1,219 @@
+slider-component {
+  position: relative;
+  display: block;
+}
+
+.slider {
+  position: relative;
+  flex-wrap: inherit;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+
+.slider.grid {
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 989px) {
+  .no-js slider-component .slider {
+    padding-bottom: 3rem;
+  }
+}
+
+.carousel-cell {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .slider.slider--mobile {
+    position: relative;
+    flex-wrap: inherit;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slider.slider--mobile .carousel-cell {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .slider.slider--tablet {
+    position: relative;
+    flex-wrap: inherit;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slider.slider--tablet .carousel-cell {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Scrollbar */
+
+.slider {
+  scrollbar-color: rgb(var(--color-foreground)) rgba(var(--color-foreground), 0.04);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  height: 0.4rem;
+  width: 0.4rem;
+  display: none;
+}
+
+.no-js .slider {
+  -ms-overflow-style: auto;
+  scrollbar-width: auto;
+}
+
+.no-js .slider::-webkit-scrollbar {
+  display: initial;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--color-foreground));
+  border-radius: 0.4rem;
+  border: 0;
+}
+
+.slider::-webkit-scrollbar-track {
+  background: rgba(var(--color-foreground), 0.04);
+  border-radius: 0.4rem;
+}
+
+.slider-counter {
+  margin: 0 1.2rem;
+}
+
+.slider-buttons {
+  display: none;
+}
+
+slider-component:not(.slider-hide-buttons) .slider-buttons {
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-heading-weight);
+  justify-content: center;
+}
+@media (max-width: 639px) {
+  slider-component.slider-show-buttons-mobile .slider-buttons {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-heading-weight);
+    justify-content: center;
+  }
+  slider-component.slider-show-buttons-mobile .slider-counter {
+    display: none;
+  }
+  slider-component.slider-show-buttons-mobile .slider-button {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  slider-component.slider-show-buttons-mobile .slider-button.slider-button--next {
+    left: auto;
+    right: 0;
+  }
+}
+
+.slider-button svg {
+  max-width: 3rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .slider--mobile + .slider-buttons {
+    display: none;
+  }
+}
+
+.slider-button {
+  background: transparent;
+  border: none;
+  color: rgb(var(--color-arrow));
+  cursor: pointer;
+  font-size: 2.5rem;
+  line-height: 1;
+  min-width: 44px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+}
+
+.slider-button:not([disabled]):hover {
+  color: rgb(var(--color-arrow));
+}
+
+.slider-button[disabled] {
+  color: rgba(var(--color-arrow), 0.3);
+}
+
+.slider-button--next:not([disabled]):hover svg path {
+  color: #a49f73;
+}
+
+.slider-button--prev:not([disabled]):hover svg path {
+  color: #a49f73;
+}
+
+.slider-button:focus-visible {
+  z-index: 1;
+}
+
+.slider-dots {
+  display: none;
+}
+
+@media (max-width: 749px) {
+  slider-component.section-hero-carousel:not(.slider-hide-dots) .slider-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+}
+
+slider-component:not(.slider-hide-dots) .slider-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3.2rem;
+}
+
+.slider-dot {
+  background-color: rgb(var(--color-base-button-background));
+  border: .1rem solid rgb(var(--color-base-button-background));
+  border-radius: 4rem;
+  cursor: pointer;
+  height: 1rem;
+  line-height: 0;
+  margin: 0 1rem;
+  padding: 0;
+  width: 1rem;
+}
+.slider-dot:not(.is-active) {
+  background: transparent;
+}
+
+.slider-dot.is-active {
+  opacity: 0.3;
+  cursor: default;
+}

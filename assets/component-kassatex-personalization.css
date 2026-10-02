@@ -1,0 +1,90 @@
+.template-product-kassatex .product-form__input.product-form__input-size input[type='radio'].input-size + label {
+  aspect-ratio: unset;
+  flex: unset;
+  background-color: rgb(var(--color-background));
+  border: 0.1rem solid rgba(var(--color-base-button-background-secondary), 1);
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: var(--font-button-weight);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin: .2rem .2rem .2rem 0;
+  min-width: 13.3rem;
+  padding: 1.45rem 2rem;
+  text-align: center;
+  transition: border var(--duration-short) ease;
+  vertical-align: middle;
+  width: auto;
+}
+
+.product-form__input-embroidery input[type="checkbox"] {
+  margin: 0 .3rem .2rem 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.product-form__input.ks-type-options .ks-type-options-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 9.3rem);
+  column-gap: .8rem;
+  width: 100%;
+}
+.typeface-wrapper {
+  flex: 1;
+  height: 100%;
+}
+.product-form__input.ks-type-options input[type="radio"] {
+  grid-area: -1 span 1;
+}
+.product-form__input.ks-type-options input[type="radio"] + label {
+  align-items: flex-end;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex: 1;
+  font-size: .9rem;
+  hyphens: none;
+  justify-content: center;
+  min-width: unset;
+  padding: 0 0 0.5rem;
+}
+.product-form__input.ks-type-options input[type="radio"]:hover + label,
+.product-form__input.ks-type-options input[type="radio"]:focus + label,
+.product-form__input.ks-type-options input[type="radio"]:checked + label {
+  background-color: transparent;
+  box-shadow: none;
+  color: rgb(var(--color-base-button-background-secondary-hover));
+  mix-blend-mode: multiply;
+  position: relative;
+}
+.product-form__input.ks-type-options input[type="radio"]:checked + label::after {
+  background-color: rgba(var(--color-base-button-background-secondary), var(--alpha-low));
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+.product-form__input.ks-type-options input[type="radio"].hidden + label {
+  display: none
+}
+
+.embroidery-text {
+  background-position: center .5rem;
+  background-repeat: no-repeat;
+  background-size: auto 85%;
+  position: relative;
+}
+
+.embroidery-text.type-option-english-script {
+  background-image: url('typeface-script-kassatex.png');
+}
+.embroidery-text.type-option-felix-tilting {
+  background-image: url('typeface-felixtilting-kassatex.png');
+}
+.embroidery-text.type-option-point-monogram {
+  background-image: url('typeface-monogram-kassatex.png');
+}
+.product-form__input.product-form__input-ks-type input[type="radio"] + label {
+  min-width: 13.3rem;
+}

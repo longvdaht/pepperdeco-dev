@@ -1,0 +1,242 @@
+.template-index .section-image-columns .section-heading-outer {
+    margin-block-end: 3rem;
+}
+
+.template-index .section-image-columns {
+    padding-block: 7rem 9rem;
+}
+
+.template-index .section-image-columns .h2.section-heading {
+    margin-block: 0 0.7rem;
+}
+
+.template-index .section-image-columns .media {
+    margin: 0 auto 1rem;
+    max-width: 70% !important;
+    padding-top: 70% !important;
+}
+
+.section-image-columns .h2.section-heading {
+    font-size: 1.6rem;
+}
+
+.template-page-reviews .section-image-columns .media {
+    margin: 0 auto;
+}
+
+.template-index .section-image-columns .column-grid.grid {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.section-image-columns .grid__item {
+    padding: 1.4rem;
+}
+
+.template-index .section-image-columns .grid__item {
+    padding: 3rem 1.2rem;
+}
+
+.template-page-about .section-simple + .image-columns .section-image-columns .grid__item {
+    padding: 3rem 1.2rem;
+}
+
+.template-page-reviews .section-image-columns .grid__item {
+    padding: 0 2rem;
+}
+
+.template-page-reviews .section-image-columns .h5 {
+    font-style: italic;
+    padding: 0 2rem;
+}
+
+.template-page-reviews .section-image-columns a {
+    display: block;
+    padding: 0 20%;
+}
+
+.section-image-columns .grid__item .h5.numerals {
+    font-size: 1.2rem;
+    font-weight: var(--font-body-bold);
+    margin-block-end: 0.5rem;
+}
+
+.section-image-columns .grid__item .h5,
+.section-image-columns .grid__item .h6 {
+    font-size: 1rem;
+    font-weight: var(--font-body-bold);
+    letter-spacing: var(--font-body-spacing);
+    margin-block: 0;
+}
+
+.section-image-columns .grid__item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem auto;
+    max-width: 22rem;
+    letter-spacing: 0.1rem;
+}
+
+.section-image-columns.image-order-image-last .grid__item {
+    align-items: stretch;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column-reverse;
+}
+
+.section-image-columns .slider.grid {
+    justify-content: flex-start;
+}
+
+.section-image-columns .slider .grid__item {
+    padding: 0 1.4rem;
+}
+
+.template-page-about .section-image-columns .column-grid.grid.mobile-one-half {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    display: grid;
+}
+
+.template-page-about .section-image-columns .column-grid.grid.mobile-one {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    display: grid;
+}
+
+.template-page-about .section-image-columns.section-image-columns-fw-has-p .column-grid.grid.desktop-one-third {
+    gap: 1rem;
+}
+
+.template-page-about .section-image-columns .column-grid.grid.desktop-one-quarter .grid__item,
+.template-page-about .section-image-columns .column-grid.grid.grid.desktop-one-third .grid__item {
+    width: 100%;
+    height: 100%;
+}
+
+.template-page-about .section-image-columns .column-grid .grid__item .media {
+    margin: 0 0 .5rem;
+    margin: auto;
+}
+
+.section-image-columns .grid__item .h5.numerals {
+    font-weight: var(--font-body-bold);
+}
+
+.template-page-about .section-image-columns.section-image-columns-full-w {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.template-page-about .section-image-columns.section-image-columns-full-w .column-grid.grid.grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .3rem;
+}
+
+.template-page-about .section-image-columns.section-image-columns-full-w .column-grid.grid.grid .grid__item {
+    padding: 0;
+}
+
+.spaced-section .section-outer.section-image-columns-fw-has-p {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.template-page-about .section-image-columns .grid__item .h6 {
+    font-size: 1rem;
+    font-weight: var(--font-body-bold);
+    letter-spacing: var(--font-body-spacing);
+    font-family: var(--font-body-family);
+}
+
+@media (max-width: 40em) {
+    .section-image-columns .grid__item {
+        padding: 1.4rem 4.5rem;
+    }
+}
+
+@media (min-width: 40em) {
+    .template-index .section-image-columns .h2.section-heading {
+        margin-block: 0;
+    }
+
+    .template-index .section-image-columns .media {
+        margin: 0 auto;
+        max-width: 20rem !important;
+        padding-top: 23rem !important;
+    }
+
+    .template-page-about .section-simple + .image-columns .section-image-columns .media {
+        margin: 0 auto !important;
+        max-width: 20rem !important;
+        padding-top: 23rem !important;
+    }
+
+    .template-index .section-image-columns .column-grid.grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem;
+    }
+
+    .template-index .section-image-columns .grid__item {
+        padding: 3rem;
+    }
+
+    .template-page-about .section-simple + .image-columns .section-image-columns .grid__item {
+        padding: 3rem;
+    }
+
+    .template-page-reviews .section-image-columns .grid__item img {
+        display: block;
+        margin: 0 auto;
+        opacity: 0.6;
+        transition: opacity 0.1s ease-in-out;
+    }
+
+    .template-page-reviews .section-image-columns a:hover img {
+        opacity: 1;
+    }
+
+    .template-page-about .section-image-columns .column-grid.grid.desktop-one-fifth {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    .template-page-about .section-image-columns .column-grid.grid.desktop-one-quarter {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .template-page-about .section-image-columns .column-grid.grid.desktop-one-third {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .template-page-about .section-image-columns .column-grid.grid.desktop-one-half {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .template-page-about .section-image-columns .column-grid.grid.desktop-one {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .template-page-about .section-image-columns.section-image-columns-fw-has-p .column-grid.grid.desktop-one-third {
+        gap: 1rem;
+    }
+
+    .template-page-about .section-image-columns.section-image-columns-fw-has-p .column-grid.grid.desktop-one-quarter {
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 60em) {
+    .spaced-section .section-outer.section-image-columns-fw-has-p {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+
+    .template-page-about .section-image-columns .column-grid.grid.desktop-one-quarter {
+        gap: 4rem;
+    }
+}

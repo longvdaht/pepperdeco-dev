@@ -1,0 +1,29 @@
+.section-instructable .section-heading {
+  text-align: left;
+}
+
+.section-instructable .section-heading + .expand-on-hover {
+  border: 0;
+}
+
+.section-instructable .button {
+  margin-top: 3rem;
+}
+
+@media (min-width: 40em) {
+  .section-instructable .expand-on-hover .expand-heading {
+    padding-bottom: 1rem;
+  }
+  .section-instructable.section-image-content .section-content {
+    padding: 8rem;
+  }
+  .section-instructable .media--type-video {
+    padding: 8rem;
+  }
+}
+/*
+@media (min-width: 60em) {
+  .section-instructable.section-image-content .section-content {
+    padding-left: 8rem;
+  }
+} */

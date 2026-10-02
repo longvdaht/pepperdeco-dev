@@ -1,0 +1,247 @@
+.section-shop-by-categories.show-border-bottom {
+  padding-bottom: 0;
+}
+.section-shop-by-categories {
+  padding-bottom: 8rem;
+}
+.spaced-section .section-outer {
+  padding: 5rem 1.6rem;
+}
+.section-shop-by-categories.show-border-bottom .section-shop-by-categories-wrapper {
+  /* border-bottom: 1px solid rgba(var(--color-base-border), 0.2); */
+  padding-bottom: 50px;
+  position: relative;
+}
+.section-shop-by-categories.show-border-bottom .section-shop-by-categories-wrapper:after {
+  content: '';
+  width: calc(100% - 16px);
+  height: 1px;
+  background-color: rgba(var(--color-base-border), 0.2);
+  display: block;
+  margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section-shop-by-categories .section-heading-outer {
+  text-align: center;
+}
+.section-shop-by-categories .section-heading {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  letter-spacing: var(--font-body-spacing);
+  font-weight: var(--font-body-medium);
+  margin-bottom: 8px;
+}
+.section-shop-by-categories .section-heading a {
+  text-decoration: none;
+}
+.section-shop-by-categories .section-shop-by-categories-heading .rte {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.section-shop-by-categories .collection-title {
+  margin-top: 0;
+}
+.section-shop-by-categories .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.8rem;
+  justify-content: center;
+  margin-right: -1.4rem;
+  margin-left: -1.4rem;
+}
+.section-shop-by-categories .product-grid .grid__item {
+  width: 100%;
+  max-width: 100%;
+}
+.section-shop-by-categories .collection-item .media {
+  background-color: transparent;
+}
+.section-shop-by-categories .collection-item .media > img {
+  object-fit: cover;
+  max-width: 100%;
+}
+.template-page-landing-page-furniture .section-shop-by-categories .collection-item .media > img {
+  object-fit: contain;
+  max-width: 88%;
+}
+.section-shop-by-categories .product-grid.grid--3-col-desktop .collection-item {
+  max-width: calc(33.3% - 2.8rem);
+  flex: 0 0 33.3%;
+}
+.section-shop-by-categories .collection-item {
+  text-align: center;
+}
+.section-shop-by-categories .collection-item .heading {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: var(--font-body-weight);
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+.section-shop-by-categories .collection-item .subheading {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-weight: var(--font-body-weight);
+  display: block;
+  letter-spacing: 0;
+}
+
+.section-shop-by-categories .button-wrapper {
+  margin-top: 60px;
+  text-align: center;
+}
+.section-shop-by-categories .section-shop-by-categories-heading .button-wrapper {
+  margin: 0;
+}
+.section-shop-by-categories .button-wrapper .btn {
+  background-color: #A39F73; 
+  color: #fff;
+}
+.section-shop-by-categories .button-wrapper .btn:hover {
+  background-color: rgb(var(--color-base-button-background));
+  color: #fff;
+}
+.section-shop-by-categories.section-shop-grid .section-heading {
+  text-align: center;
+}
+/* Slider */
+.section-shop-by-categories.section-shop-slider .section-heading {
+  text-align: left;
+  margin-left: 0;
+}
+.section-shop-by-categories.section-shop-slider .section-heading-outer {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-shop-by-categories.section-shop-slider .shop-by-categories-wrapper {
+  padding-left: 0;
+}
+.section-shop-by-categories.section-shop-slider slider-component .slider.grid {
+  margin-left: -15px;
+  margin-right: -1.6rem;
+  padding-left: 0;
+}
+.section-shop-by-categories slider-component .grid__item {
+  max-width: 28%;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.section-shop-by-categories slider-component .collection-item .heading, .section-shop-by-categories slider-component .collection-item .subheading {
+  text-align: left;
+}
+.section-shop-by-categories.section-shop-slider .section-shop-by-categories-wrapper .button-wrapper {
+  margin-top: 45px;
+  text-align: left;
+}
+.section-shop-by-categories .button-wrapper .btn--link {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-medium);
+  letter-spacing: var(--font-body-spacing);
+  font-size: 1.1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  text-underline-offset: .5rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.section-shop-by-categories .button-wrapper .btn--link svg {
+  margin-left: .4rem;
+  width: 16px;
+  height: 16px;
+}
+.section-shop-by-categories .button-wrapper .btn--link svg path {
+  filter: drop-shadow(0 0 0.5px rgb(var(--color-base-text))) drop-shadow(0 0 0.5px rgb(var(--color-base-text)));
+}
+.section-shop-by-categories.section-shop-slider slider-component .slider-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  gap: 1rem;
+}
+
+.section-shop-by-categories.section-shop-slider slider-component .slider-button[disabled] {
+  opacity: 0.5;
+}
+.section-shop-by-categories.section-shop-slider .button-wrapper.desktop-hide {
+  display: none;
+}
+.section-shop-by-categories .slider-button {
+  min-width: 3rem;
+}
+.section-shop-by-categories .slider-button svg {
+  max-width: 3rem;
+  height: auto;
+}
+.section-shop-by-categories slider-component {
+  padding-bottom: 45px;
+}
+@media (min-width: 1400px) {
+  .section-shop-by-categories.section-shop-slider .shop-by-categories-wrapper {
+    padding-left: 104px;
+  }
+  .section-shop-by-categories.section-shop-slider slider-component .slider-buttons {
+    right: 104px;
+  }
+  .section-shop-by-categories.show-border-bottom .section-shop-by-categories-wrapper:after {
+    width: calc(100% - 204px);
+  }
+}
+@media (max-width: 1200px) {
+  .section-shop-by-categories.section-shop-slider slider-component .slider-buttons {
+    right: -1.6px;
+  }
+  .template-page-landing-page-furniture .section-shop-by-categories .collection-item .media > img {
+    max-width: 95%;
+  }
+}
+@media (max-width: 767px) {
+  .section-shop-by-categories.section-shop-slider .button-wrapper.desktop-hide {
+    display: block;
+    margin-top: 25px;
+  }
+  .section-shop-by-categories .mobile-hide {
+    display: none;
+  }
+  .section-shop-by-categories .section-shop-by-categories-heading .rte {
+    line-height: 13px;
+  }
+  .section-shop-by-categories slider-component .grid__item {
+    max-width: 65%;
+  }
+  .section-shop-by-categories slider-component .slider-button {
+    min-width: 30px;
+  }
+}
+@media (max-width: 750px) {
+  .spaced-section .section-shop-by-categories.section-outer {
+    padding-bottom: 2.5rem;
+  }
+  .section-shop-by-categories .product-grid {
+    gap: 1.4rem;
+  }
+  .section-shop-by-categories .product-grid.grid--3-col-desktop.grid--2-col-tablet-down .grid__item {
+    max-width: calc(50% - 1.4rem);
+    flex: 0 0 50%;
+  }
+  .section-shop-by-categories .product-grid.grid--3-col-desktop.grid--1-col-tablet-down .grid__item,
+  .section-shop-by-categories .product-grid.grid--4-col-desktop.grid--1-col-tablet-down .grid__item {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}

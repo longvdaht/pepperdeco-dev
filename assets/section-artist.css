@@ -1,0 +1,42 @@
+.h2.artist-heading {
+  font-size: 3.8rem;
+  line-height: 4.6rem;
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-lightest);
+  letter-spacing: 0;
+  padding: 0;
+  text-transform: none;
+  margin: 0 0 2rem;
+}
+
+.rte.artist-description p {
+  font-size: 1.2rem;
+  font-weight: var(--font-body-weight);
+  letter-spacing: 0.2px;
+  line-height: 19.5px;
+}
+
+.artist-button.button--secondary {
+  background-color: rgb(var(--color-base-button-background-hover));
+  min-height: 4.5rem;
+  color: rgb(var(--color-base-text));
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+
+.artist-button.button--secondary:hover {
+  background-color: rgb(var(--color-base-button-background));
+}
+
+.section-image-content.section-color-background .grid__item.has-background-image {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 40em) {
+  .spaced-section .section-outer.section-artist {
+    padding: 3.5rem 2rem;
+  }
+}

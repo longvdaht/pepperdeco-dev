@@ -1,0 +1,110 @@
+.section-main-gallery {
+  padding: 5rem 0;
+}
+.section-main-gallery h1 {
+  margin-block: 0 1rem;
+}
+.collection-radios {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+}
+
+gallery-switcher {
+  display: block;
+  padding: 0 1rem;
+}
+
+.collection-radio + label {
+  appearance: none;
+  border: .1rem solid rgb(var(--color-base-text));
+  box-shadow: none;
+  color: rgb(var(--color-base-text));
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: var(--font-body-weight);
+  letter-spacing: var(--font-body-spacing);
+  line-height: 1;
+  margin: .2rem;
+  min-width: 12rem;
+  padding: 1.35rem 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .15s ease-in-out;
+}
+.collection-radio:not(:checked) + label:hover {
+  background-color: #D1CFBB;
+  color: rgb(var(--color-base-text));
+  /* border: .1rem solid rgb(var(--color-base-button-background-secondary)); */
+}
+.collection-radio:checked + label {
+  background-color: #D1CFBB;
+  /* border: .1rem solid rgb(var(--color-base-button-background-secondary)); */
+  color: rgb(var(--color-base-text));
+}
+
+.section-main-gallery .card {
+  position: relative;
+  padding: 1.4rem;
+}
+.section-main-gallery .card a {
+  text-decoration: none;
+}
+.section-main-gallery .card a::after {
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+.section-main-gallery .card-information {
+  padding-bottom: 0;
+}
+
+.section-main-gallery .slider {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.section-main-gallery .slider > .carousel-cell {
+  scroll-snap-align: center;
+}
+.section-main-gallery .intro {
+  margin-block-start: 0;
+}
+div.section-main-gallery gallery-switcher h2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 2.4rem;
+}
+
+@media (min-width: 60em) {
+  .collection-radio + label {
+    min-width: 13.8rem;
+    margin: .2rem .5rem;
+  }
+}
+
+@media (min-width: 40em) {
+
+  gallery-switcher {
+    padding: 0 1.5rem;
+  }
+  .section-main-gallery .slider {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section-main-gallery .slider > .carousel-cell:nth-child(n + 2) {
+    margin-left: 0;
+  }
+  .section-main-gallery gallery-switcher h2,
+  .section-main-gallery gallery-switcher .collection-radios {
+    display: inline-flex;
+    margin-block-start: 0;
+  }
+}
+
+.template-page-gallery .card-information .h5 {
+  font-size: 1.2rem;
+}

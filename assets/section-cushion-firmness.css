@@ -1,0 +1,103 @@
+.cushion-firmness-section {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.cushion-firmness__inner {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2.4rem;
+  align-items: center;
+  margin: 0 auto;
+}
+.cushion-firmness__image {
+  overflow: hidden;
+}
+
+.cushion-firmness__image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cushion-firmness__title {
+  margin: 0 0 1.6rem;
+}
+.cushion-firmness__desc {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  margin: 0;
+}
+.firmness-bar {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(var(--color-base-text-hover), 0.2);
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2.4rem;
+}
+.firmness-bar__item {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgb(var(--color-base-text));
+  transition: background 0.2s, color 0.2s;
+  border-right: 1px solid rgba(var(--color-base-text-hover), 0.2);
+  position: relative;
+  z-index: 1;
+  width: calc(33.33% + 25px);
+}
+.firmness-bar__item:first-child {
+  margin-left: 0;
+}
+.firmness-bar__item.is-active {
+  background-color: rgb(var(--color-base-button-background-hover));
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  border-right: 1px solid rgba(var(--color-base-text-hover), .2);
+}
+.firmness-bar__item.is-active + .firmness-bar__item {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  border-right: 1px solid rgba(var(--color-base-text-hover), .2);
+}
+.firmness-bar__item:last-child {
+  border-right: none!important;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.cushion-firmness__content {
+  max-width: 320px;
+  margin: 0 auto;  
+}
+.cushion-firmness__content.text-center {
+  text-align: center;
+}
+.cushion-firmness__content.text-right {
+  text-align: right;
+}
+
+/* Mobile */
+@media (min-width: 768px) {
+  .cushion-firmness__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .cushion-firmness__content {
+    max-width: 352px;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cushion-firmness-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cushion-firmness__image-wrap {
+    padding-left: 80px;
+  }
+}

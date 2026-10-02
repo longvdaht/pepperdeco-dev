@@ -1,0 +1,63 @@
+.section-help-center {
+    background-image: url('bg-help-center-image.png');
+    background-repeat: no-repeat;
+    background-position: bottom right -11rem;
+    padding: 13.5rem 2rem;
+    margin-top: 3rem;
+}
+.template-page-design-hub .section-help-center {
+    background-image: none;
+}
+.section-help-center .section-heading {
+    margin: 0 0 20px;
+}
+.section-help-center .section-heading,
+.section-help-center .section-heading a {
+    color: rgb(var(--color-base-text));
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    letter-spacing: var(--font-body-spacing);
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+.section-help-center .section-heading a {
+    text-decoration: underline;
+}
+.section-help-center .text-or {
+    display: block;
+    color: rgb(var(--color-base-text));
+    font-size: 2rem;
+    line-height: 2.4rem;
+    letter-spacing: normal;
+    font-weight: 100;
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 2rem;
+}
+.help-center-item,
+.help-center-item a {
+    color: rgb(var(--color-base-text));
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    letter-spacing: .15rem;
+    font-weight: var(--font-button-weight);
+    text-align: center;
+}
+.help-center-item a:hover,
+.help-center-item a:focus {
+    color: rgb(var(--color-base-text));
+}
+.help-center-item {
+    margin: 0 0 .5rem;
+}
+.help-center-item .help-center-value {
+    text-decoration: underline;
+}
+
+@media (min-width: 60rem) {
+    .section-help-center {
+        padding: 12.5rem 6.5rem;
+    }
+}

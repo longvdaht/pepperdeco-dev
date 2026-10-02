@@ -1,0 +1,145 @@
+.section-resources .display {
+  margin-block: 1rem;
+}
+.section-resources .section-heading .intro {
+  margin-block-end: 2rem;
+}
+.section-resources .section-heading-outer {
+  padding-bottom: 3rem;
+}
+
+.section-resources .display,
+.section-resources .display + .details-heading {
+  margin-bottom: 2rem;
+}
+.section-resources .details-heading {
+  font-size: 1.2rem;
+  font-weight: var(--font-body-medium);
+  letter-spacing: var(--font-body-spacing);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.section-resources details-collapse {
+  display: block;
+}
+.section-resources details-collapse + details-collapse {
+  margin-block: 1rem 2rem;
+}
+.section-resources details-collapse details[open] .rte {
+  margin-block: 1rem 3rem;
+}
+.section-resources details > summary .details-heading {
+  font-size: 1.1rem;
+}
+.section-resources details > summary {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-start;
+}
+.section-resources details > summary .icon {
+  font-size: 3rem;
+  font-weight: var(--font-body-light);
+  left: .25rem;
+  line-height: 0;
+  position: relative;
+  top: .25rem;
+  transform-origin: center center;
+}
+.section-resources details:not([open]) .icon {
+  transform: rotate(90deg);
+}
+.section-resources details[open] .icon {
+  left: -.35rem;
+  top: -.25rem;
+  transform: rotate(270deg);
+}
+.section-resources details .rte a {
+  color: inherit;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.section-resources details .rte > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.section-resources details .rte li {
+  padding: 0.35rem 0;
+  text-transform: uppercase;
+}
+
+.section-resources .section-content {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr auto;
+}
+
+.section-resources .stack--item {
+  position: relative;
+}
+
+.section-resources .block-design-resource .overlay {
+  display: none;
+}
+
+.section-resources .block-design-resource:hover .overlay {
+  display: block;
+  z-index: 1;
+  background: rgba(var(--color-base-button-background-secondary), calc(var(--alpha-low) * 2));
+}
+
+.block-heading {
+  font-size: 1.1rem;
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-bold);
+  letter-spacing: var(--font-body-spacing);
+  line-height: 1.2;
+  margin: 0 auto;
+  max-width: 15ch;
+  word-break: break-word;
+  text-transform: uppercase;
+}
+
+.block-content svg {
+  color: rgb(var(--color-background));
+  height: auto;
+  max-width: 3rem;
+}
+
+.block-design-resource .media::after {
+  background-color: rgba(var(--color-base-text), var(--alpha-low));
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.section-resources .section-footer-text {
+  font-size: 12px;
+  grid-column: span 2;
+  margin-block: 0;
+}
+
+@media (min-width: 60em) {
+  .section-resources .section-inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    margin-inline: auto;
+    max-width: var(--page-width);
+  }
+  .section-resources .section-heading-outer {
+    order: 1;
+    padding: 5rem 8rem;
+    padding-right: 0;
+  }
+  .section-resources .section-footer-text {
+    text-align: center;
+    font-size: clamp(0.8rem, 1vw + .1rem, 1.2rem);
+  }
+  .section-resources details > summary {
+    gap: 0;
+  }
+}

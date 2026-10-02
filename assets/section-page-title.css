@@ -1,0 +1,48 @@
+.section-page-title h1 {
+  margin: 0;
+}
+.section-page-title h1.title-type-1 {
+  font-family: var(--font-body-family);
+  text-transform: uppercase;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+.section-page-title h1.title-type-2 {
+  text-transform: capitalize;
+  font-size: 3.6rem;
+  margin-bottom: 1.6rem;
+}
+.section-page-title .section-page-title-wrapper {
+  text-align: center;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+body.page-custom-window-treatments h3.arrow-hover {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+.section-page-title .rte, .section-page-title .rte > * {
+  font-size: 1.4rem;
+  letter-spacing: 0;
+  max-width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-page-title .rte strong {
+  font-weight: 800;
+}
+@media (min-width: 768px) {
+  .section-page-title h1.title-type-2 {
+    font-size: 4rem;
+  }
+  /* .section-page-title .section-page-title-wrapper {
+    text-align: center;
+    padding: 80px 2rem;
+  } */
+  .section-page-title .rte, .section-page-title .rte > * {
+    font-size: 1.6rem;
+    max-width: 1200px;
+  }
+}

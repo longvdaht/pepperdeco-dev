@@ -1,0 +1,129 @@
+
+.line-item__customization.letter__color-black {
+  --color-background: 0,0,0;
+  --color-foreground: 255,255,255;
+}
+.line-item__customization.letter__color-white {
+  --color-background: 255,255,255;
+  --color-foreground: 0,0,0;
+}
+.line-item__customization.letter__color-silver {
+  --color-background: 192,192,192;
+  --color-foreground: 255,255,255;
+}
+
+.line-item__customization {
+  --color-background: 255,255,255;
+  --color-foreground: 0,0,0;
+}
+
+.line-item__customization {
+  margin: 0;
+}
+.line-item__customization .field {
+  align-items: center;
+}
+.line-item__customization p {
+  font-family: var(--font-body-family);
+  font-style: italic;
+  font-weight: var(--font-body-light);
+  letter-spacing: var(--font-heading-spacing);
+  margin-block: 0.5rem 0;
+  text-transform: none;
+}
+.line-item__customization input[type="text"] {
+  border: 0.1rem solid rgba(var(--color-base-button-background-secondary), 0.6);
+  box-shadow: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 18ch;
+}
+@media (max-width: 40em) {
+  .line-item__customization input[type="text"]:focus {
+    font-size: 1.6rem;
+  }
+}
+.line-item__customization .customization-error {
+  font-family: var(--font-body-family);
+  font-style: italic;
+  font-weight: var(--font-body-light);
+  letter-spacing: var(--font-heading-spacing);
+  text-transform: capitalize;
+}
+.line-item__customization .customization-output {
+  align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  flex-flow: row wrap;
+  padding-block-start: .5rem;
+}
+.line-item__customization .customization-output p {
+  margin: 0;
+  padding: 0;
+}
+.line-item__customization .customization-output:empty {
+  padding: 0;
+}
+
+.line-item__customization .circle {
+  align-items: center;
+  background-color: rgb(var(--color-background));
+  border: .1rem solid rgba(var(--color-foreground), .6);
+  border-radius: 5rem;
+  color: rgb(var(--color-foreground));
+  display: grid;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  height: 4rem;
+  justify-content: center;
+  line-height: 1;
+  place-items: center center;
+  text-align: center;
+  text-transform: uppercase;
+  width: 4rem;
+}
+.line-item__customization .circle.spacer,
+.line-item__customization .circle.spacer.small-spacer {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+.line-item__customization .circle.spacer.large-spacer {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.line-item__customization .circle.heart {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.customization-options-wrapper {
+  position: relative;
+}
+.customization-options-wrapper summary {
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+.customization-options-wrapper summary > .icon {
+  color: rgb(var(--color-base-button-background-secondary));
+  position: relative;
+  right: 4.5rem;
+}
+.customization-options-wrapper[open] .customization-options {
+  background: rgb(var(--color-background));
+  border: .1rem solid rgb(var(--color-base-button-background-secondary));
+  border-radius: var(--radius-button-default);
+  left: -150%;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+}
+.line-item__customization .customization-symbols {
+  display: flex;
+  gap: .5rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.customization-symbols li {
+  cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

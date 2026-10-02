@@ -1,0 +1,167 @@
+/* .section-design-hub */
+
+.section-design-hub {
+  overflow: hidden;
+  padding: 5rem 0 0;
+}
+.section-trade-hub {
+  padding: 5rem 0;
+}
+.section-design-hub .page-width {
+  max-width: calc(var(--page-width) * 1.05);
+}
+.section-design-hub .section-heading {
+  margin-top: 0;
+}
+.design-hub-carousel-outer {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 1.5rem;
+  max-width: 660px;
+  padding: 0 0 0;
+}
+.section-design-hub:not(.section-trade-hub) .slider-buttons {
+  position: relative;
+  z-index: 1;
+}
+.design-hub-carousel-outer > li {
+  position: relative;
+  width: 100%;
+}
+.section-design-hub .card-wrapper {
+  padding: 0;
+}
+.section-design-hub .design-links {
+  padding: 0 2rem 2rem;
+}
+.section-design-hub .card-design {
+  margin: 0;
+}
+.section-design-hub .card-design.card-with-background {
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+}
+.section-design-hub .card-design .card-content p,
+.section-design-hub .card-design .card-content strong,
+.section-design-hub .card-design .card-content a {
+  color: rgb(var(--color-foreground));
+}
+.section-design-hub .card-design .card-content strong:hover,
+.section-design-hub .card-design .card-content a:hover {
+  color: rgb(var(--color-base-button-background-hover));
+}
+.section-design-hub .card-design .tip-heading svg {
+  color: rgb(var(--color-base-button-background-hover));
+  max-width: 20rem;
+}
+.section-design-hub .grid {
+  align-items: flex-start;
+}
+.section-design-hub:not(.section-trade-hub) .slider-counter,
+.section-design-hub:not(.section-trade-hub) .slider-button {
+  color: rgb(var(--color-base-button-background));
+}
+
+@media (min-width: 40em) {
+  .section-trade-hub .grid {
+    align-items: center;
+  }
+  .design-hub-carousel-outer {
+    margin: 5rem auto 0;
+  }
+  .section-design-hub .card-design .card-content p {
+    padding-inline: 5rem;
+  }
+  .section-design-hub .grid__item-design-card {
+    padding: 0 3rem 3rem;
+  }
+  .section-design-hub:not(.section-trade-hub) .slider-buttons {
+    transform: translateY(-9rem);
+  }
+  .section-design-hub .card-design .tip-heading {
+    padding-bottom: 3rem;
+  }
+  .section-design-hub .card-design.card-with-background .rte {
+    flex: 1;
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 65em) {
+
+  .section-design-hub .design-links {
+    padding: 10rem;
+  }
+  .section-design-hub .card-design.card-with-background .rte {
+    padding-top: 15%;
+  }
+}
+
+.template-page-trade .section-design-hub .section-heading {
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+.template-page-trade .section-subheading.intro {
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.template-page-trade .section-design-hub-content p {
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.template-page-trade .h1.section-heading {
+  font-size: 16px;
+  line-height: 29px;
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--font-body-spacing);
+}
+.template-page-trade .section-design-hub-content .section-content p a {
+  text-transform: uppercase;
+  font-weight: var(--font-body-medium);
+}
+.template-page-trade .expand-on-hover .expand-heading {
+  font-size: 11px;
+  line-height: 17px;
+}
+.expand-on-hover .expand-heading svg {
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: -1px;
+  padding-left: 3px;
+}
+
+.expand-on-hover[open] .expand-heading svg {
+  transform: rotate(180deg);
+  right: 5px;
+}
+.template-page-trade .section-collection-carousel .section-heading {
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  margin-top: 0;
+}
+.collections-carousel-outer .full-unstyled-link:hover .collection-title {
+  padding-left: 0;
+}
+.collections-carousel-outer .full-unstyled-link:hover .collection-title svg {
+  display: none;
+}
+@media(min-width: 60rem) {
+  .template-page-trade .header__full .slider--everywhere {
+    border-bottom: solid 2px #fff;
+  }
+}
+.template-page-trade .section-design-hub-content .button {
+  color: #000;
+}

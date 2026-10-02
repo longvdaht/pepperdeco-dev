@@ -1,0 +1,105 @@
+.section-hub-nav {
+  background-color: rgb(var(--color-base-button-background-secondary));
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+.section-hub-nav select {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: .1rem solid rgb(var(--color-base-button-label));
+  color: rgb(var(--color-base-button-label));
+  font-family: var(--font-body-family);
+  font-style: italic;
+  font-weight: var(--font-body-light);
+  letter-spacing: var(--font-body-spacing);
+  padding: 0 2rem 0 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+.section-hub-nav .section-design-hub-select {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+}
+.section-hub-nav .section-design-hub-select svg {
+  fill: white;
+  height: auto;
+  max-width: 1.8rem;
+  position: absolute;
+  right: 0;
+  transform: rotate(90deg);
+  transform-origin: center center;
+}
+
+.section-hub-content.section-image-columns .grid {
+  align-items: flex-start;
+}
+.section-hub-content.section-image-columns .media {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+.template-page-design-hub .spaced-section .section-outer {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.template-page-design-hub .section-ugc-images .section-heading {
+  color: rgb(var(--color-foreground));
+}
+
+@media (max-width: 60em) {
+  .template-page-design-hub .section-image-content .section-content {
+    padding: 0;
+    text-align: center;
+  }
+  .template-page-design-hub .spaced-section + .spaced-section {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.template-page-design-hub .section-ugc-images .heading,
+.template-page-design-hub .section-accordion .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.template-page-design-hub .section-ugc-images .grid {
+  align-items: flex-start;
+}
+
+.template-page-design-hub .section-image-columns .section-heading {
+  line-height: 1.4;
+  padding-bottom: 2rem;
+}
+
+.template-page-design-hub .section-image-columns .button {
+  margin: 3rem auto;
+}
+.section-hub-pillows.section-image-columns .grid__item {
+  padding: 0 3rem;
+}
+
+@media (min-width: 60em) {
+  .section-design-hub-select select {
+    padding-right: 3rem;
+  }
+  .section-hub-nav select:hover {
+    cursor: pointer;
+  }
+  .section-hub-nav .section-design-hub-select:hover svg {
+    fill: rgb(var(--color-base-button-background));
+  }
+  .template-page-design-hub .section-image-columns .section-heading {
+    line-height: 1.3;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .section-hub-pillows.section-image-columns .grid__item {
+    padding: 0 5rem;
+  }
+
+}

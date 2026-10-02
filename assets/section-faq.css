@@ -1,0 +1,90 @@
+.section-faq {
+    padding: 3rem 2rem;
+}
+.section-faq .section-heading {
+    font-size: 3.8rem;
+    line-height: 4.6rem;
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    letter-spacing: 0;
+    text-transform: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 2.5rem;
+}
+.section-faq-content {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.section-faq .faq-item {
+    border-bottom: 1px solid #a29d73;
+    text-align: left;
+    padding: 0 0 3rem;
+    margin-bottom: 3rem;
+}
+.section-faq .faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.section-faq .faq-item .faq-item-heading {
+    font-size: 1.2rem;
+    letter-spacing: 0.16rem;
+    font-weight: var(--font-button-weight);
+    letter-spacing: var(--font-body-spacing);
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin: 0 0 2rem;
+    line-height: 1.5;
+}
+.faq-item-content {
+    margin: 0 0 2rem;
+    font-size: 1.2rem;
+    font-weight: var(--font-body-weight);
+    letter-spacing: var(--font-heading-spacing);
+    line-height: 1.5;
+}
+.faq-item-content p {
+    margin: 0 0 1rem;
+}
+.faq-item-content p:last-child {
+    margin-bottom: 0;
+}
+.faq-item-content p:last-child {
+    margin-bottom: 0;
+}
+.faq-item-action {
+    display: inline-block;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    color: rgb(var(--color-arrow));
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: var(--font-button-weight);
+    letter-spacing: var(--font-body-spacing);
+    line-height: 1;
+    text-transform: uppercase;
+    text-underline-offset: .5rem;
+    transition: background-color .15s ease-in-out;
+    text-align: left;
+}
+@media screen and (min-width: 60em) {
+    .section-faq {
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
+    }
+    .section-faq .faq-item {
+        width: calc(100% / 3);
+        padding: 0 3rem 3rem;
+        margin-bottom: 0;
+        border-bottom: none;
+        border-left: 1px solid #a29d73;
+        margin-left: -1px;
+    }
+    .section-faq .faq-item:first-child {
+        padding-left: 0;
+    }
+}

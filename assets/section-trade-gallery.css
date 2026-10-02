@@ -1,0 +1,129 @@
+.section-trade-gallery {
+  overflow: hidden;
+}
+.section-trade-gallery .section-heading-outer {
+  margin-bottom: 4rem;
+}
+.section-trade-gallery .section-heading-outer h2 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  line-height: 1.1;
+}
+.section-trade-gallery .section-subheading {
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: none;
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  letter-spacing: var(--font-heading-spacing);
+  line-height: 1.5;
+  text-wrap: balance;
+  margin-bottom: 0;
+  padding: 0 1.6rem;
+}
+.section-trade-gallery slider-component {
+  padding-left: 1.6rem;
+  padding-right: 0;
+}
+.section-trade-gallery .slider {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 1.6rem 0 0;
+  margin: 0 -0.8rem;
+}
+.section-trade-gallery .trade-gallery-slide {
+  width: 100%;
+  flex: 1 0 89%;
+  max-width: 89%;
+  list-style: none;
+  padding: 0 0.8rem;
+}
+.section-trade-gallery .trade-gallery-slide-wrapper {
+  padding: 2.4rem;
+  background-color: #fff;
+  text-align: left;
+  display: block;
+  text-decoration: none;
+}
+.section-trade-gallery .trade-gallery-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+.section-trade-gallery .trade-gallery-image-wrapper.image-portrait {
+  aspect-ratio: 336 / 462;
+}
+.section-trade-gallery .trade-gallery-image-wrapper.image-landscape {
+  aspect-ratio: 16 / 9;
+}
+.section-trade-gallery .trade-gallery-image-wrapper img {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.section-trade-gallery .trade-gallery-caption {
+  margin-top: 1.6rem;
+  color: rgb(var(--color-base-text-hover));
+  font-size: 1.1rem;
+  line-height: 1.2;
+  letter-spacing: var(--font-body-spacing);
+  font-weight: var(--font-body-medium);
+  text-transform: uppercase;
+}
+.section-trade-gallery .trade-gallery-designer {
+  margin-bottom: 0.4rem;
+}
+.section-trade-gallery .trade-gallery-photo-credit {
+  margin: 0;
+}
+.section-trade-gallery slider-component:not(.slider-hide-buttons) .slider-buttons {
+  justify-content: flex-end;
+  margin-right: 1.6rem;
+  margin-top: 1.6rem;
+}
+.section-trade-gallery slider-component.slider-only-page .slider {
+  justify-content: center;
+}
+.section-trade-gallery slider-component.slider-only-page .slider-buttons {
+  display: none;
+}
+.section-trade-gallery .slider-buttons .slider-counter {
+  display: none;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .section-trade-gallery .trade-gallery-slide {
+    flex: 1 0 55%;
+    max-width: 55%;
+  }
+}
+@media (min-width: 768px) {
+  .section-trade-gallery slider-component {
+    padding: 0 1.6rem;
+  }
+  .section-trade-gallery .slider {
+    margin: 0 -1.2rem;
+    padding-right: 0;
+  }
+  .section-trade-gallery .trade-gallery-slide {
+    flex: 1 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+    padding: 0 1.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .section-trade-gallery .trade-gallery-slide {
+    flex: 1 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 1224px) {
+  .section-trade-gallery slider-component {
+    padding: 0;
+  }
+  .section-trade-gallery slider-component:not(.slider-hide-buttons) .slider-buttons {
+    margin-right: 0;
+  }
+}

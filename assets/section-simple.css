@@ -1,0 +1,203 @@
+.section-simple .section-subheading.intro {
+    font-family: var(--font-heading-family);
+}
+
+.section-simple .rte > p {
+    padding: 0 2rem;
+    font-size: 1.4rem;
+}
+
+.template-index .section-simple.spaced-section .section-outer {
+    padding: 5rem 2rem 7rem;
+}
+
+.template-index .section-simple .button {
+    margin-block-start: 2.5rem;
+    padding-inline: 7rem;
+}
+
+/* .section-simple .section-heading {
+    font-size: 1.4rem;
+    font-weight: var(--font-body-medium);
+    line-height: 1.2;
+    text-transform: uppercase;
+} */
+
+#shopify-section-template--16176832249916__simple_7TUkxJ .rte {
+    padding-inline: 5rem;
+}
+
+#shopify-section-template--16176832249916__simple_Hr7xVj .section-outer {
+    background-position: center center;
+    padding: 5rem 2rem;
+}
+
+.template-page-about .section-simple .section-heading {
+    font-family: var(--font-heading-family);
+    font-weight: var(--font-heading-weight);
+    text-transform: initial;
+    font-size: 2.6rem;
+    letter-spacing: 0;
+    line-height: 2.8rem;
+    padding: 0;
+    margin: 0 auto 2rem;
+    max-width: 79rem;
+    width: 100%;
+}
+
+.template-page-about .review-slider .slider {
+    gap: 0;
+}
+
+@media screen and (max-width: 40em) {
+    .template-page-about .section-image-columns .section-heading {
+        font-size: 16px;
+    }
+
+    .template-page-about .section-image-columns .section-subheading.intro {
+        font-size: 12px;
+    }
+
+    .template-page-about .section-image-columns .grid__item {
+      padding: 3rem 1.2rem;
+        /* padding-left: 1.2rem; */
+        /* padding-right: 1.2rem; */
+      
+    }
+}
+
+.template-page-about .section-simple .rte {
+    max-width: 69rem;
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: .05rem;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 3rem;
+}
+
+.template-page-about .section-image-columns .section-heading-outer {
+    margin-bottom: 3.6rem;
+}
+
+.template-page-about .section-image-columns .section-heading {
+    font-size: 1.6rem;
+    line-height: 1.166666;
+    font-family: var(--font-body-family);
+    font-weight: var(--font-body-bold);
+    letter-spacing: var(--font-body-spacing);
+    text-transform: uppercase;
+    padding: 0 1rem;
+    margin: 0 0 .7rem;
+}
+
+.template-page-about .section-image-columns .section-subheading.intro {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: var(--font-body-weight);
+    letter-spacing: var(--font-body-spacing);
+    line-height: 1.625;
+    text-transform: uppercase;
+}
+
+.template-page-about .section-simple .button--secondary {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+    text-decoration: underline;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    color: rgb(var(--color-base-text));
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    font-weight: var(--font-button-weight);
+    letter-spacing: var(--font-body-spacing);
+    line-height: 1;
+    text-transform: uppercase;
+    text-underline-offset: .5rem;
+    transition: background-color .15s ease-in-out;
+}
+
+.template-page-about .section-simple .button--secondary:hover {
+    color: #a39f73;
+}
+
+@media (min-width: 60em) {
+    #shopify-section-template--16176832249916__simple_Hr7xVj .section-outer {
+        padding: 10rem 2rem 7rem;
+    }
+
+    .section-simple .rte {
+        padding-inline: 6rem;
+    }
+
+    .template-page-about .section-simple .section-heading {
+        max-width: 45%;
+    }
+}
+
+.template-index .section-simple .rte {
+    padding: 0 2rem;
+}
+
+.template-page-about .section-image-grid .grid__item .overlay:hover img {
+    opacity: 1;
+}
+
+.template-page-about .section-image-content-full-w .rte p {
+      line-height: 2;
+    font-size: 1.2rem;
+}
+
+.template-page-about .section-image-columns.image-columns-not-with .grid__item .h6 {
+    font-size: 1rem;
+  color: rgb(var(--color-base-text));
+}
+
+.template-page-about .image-columns-with-hover .content-image-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+}
+
+.template-page-about .image-columns-with-hover .grid__item .image-text {
+    position: relative;
+    bottom: -10px;
+}
+
+.template-page-about .content-image-text .text-in-image{
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    line-height: 1.166666;
+    margin: 0;
+    color: #FFF;
+    font-weight: var(--font-body-medium);
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media(max-width: 767px) {
+    .template-page-about .section-image-columns.section-image-columns-full-w ul.column-grid.grid.grid {
+        grid-template-columns: 1fr 2fr 1fr;
+    } 
+     
+    .template-page-about .section-image-columns-full-w .column-grid .grid__item .media.media--contain {
+       height: 100%;
+    }
+    .template-page-about .section-image-columns .column-grid .grid__item .media.media--contain > img {
+       height: 100%;
+       width: 100%;
+       object-fit: cover;
+    }
+}

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'mulberry';
+  src: url('embroidery-ambassador-script-webfont.woff2') format('woff2'),
+       url('embroidery-ambassador-script-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ludlow';
+  src: url('embroidery-cheltenhambt-boldextracondensed-webfont.woff2') format('woff2'),
+       url('embroidery-cheltenhambt-boldextracondensed-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'love-lane';
+  src: url('embroidery-curlybabe-webfont.woff2') format('woff2'),
+       url('embroidery-curlybabe-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'bowery';
+  src: url('embroidery-futura-condensed-regular-webfont.woff2') format('woff2'),
+       url('embroidery-futura-condensed-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'cornelia-center';
+  src: url('embroidery-monogramcenter-regular-webfont.woff2') format('woff2'),
+       url('embroidery-monogramcenter-regular-webfont.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'cornelia-left';
+  src: url('embroidery-monogramleft-regular-webfont.woff2') format('woff2'),
+       url('embroidery-monogramleft-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'cornelia-right';
+  src: url('embroidery-monogramright-regular-webfont.woff2') format('woff2'),
+       url('embroidery-monogramright-regular-webfont.woff') format('woff');
+}

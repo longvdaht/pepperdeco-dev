@@ -1,0 +1,540 @@
+/* Typefaces */
+.typeface-cornelia {
+  font-family: 'cornelia-center';
+}
+.typeface-cornelia .char-0 {
+  font-family: 'cornelia-left';
+}
+.typeface-cornelia .char-2 {
+  font-family: 'cornelia-right';
+}
+.typeface-love-lane {
+  font-family: 'love-lane';
+}
+.typeface-bowery {
+  font-family: 'bowery';
+}
+.typeface-mulberry {
+  font-family: 'mulberry';
+  font-weight: bold;
+}
+.typeface-ludlow {
+  font-family: 'ludlow';
+}
+/* Thread colors */
+embroidery-options,
+pouch-embroidery-options {
+  margin: 0 auto;
+  max-width: calc(var(--page-width) - 8rem);
+}
+
+embroidery-options,
+pouch-embroidery-options,
+image-wrapper,
+piping-radios-embroidery {
+  display: block;
+}
+piping-radios-embroidery {
+  margin: 1.2rem 0;
+}
+embroidery-options,
+pouch-embroidery-options {
+  padding: 2.4rem 1.6rem 4rem;
+}
+
+image-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+image-wrapper #personalization-text,
+image-wrapper img {
+  grid-area: 1 / 1;
+  place-self: center center;
+}
+image-wrapper img {
+  transform-origin: center center;
+  z-index: 0;
+}
+image-wrapper #personalization-text {
+  position: relative;
+  z-index: 1;
+}
+
+image-wrapper.size-18-square img {
+  transform: scale(1.2);
+}
+image-wrapper.size-20-square img {
+  transform: scale(1.08);
+}
+image-wrapper.size-22-square img {
+  transform: scale(1.08);
+}
+image-wrapper.size-euro-sham img {
+  transform: scale(0.88);
+}
+image-wrapper.size-euro-sham-square img {
+  transform: scale(0.88);
+}
+image-wrapper.size-bolster img {
+  transform: scale(1);
+}
+image-wrapper.size-petite-lumbar img {
+  transform: scale(1.2);
+}
+image-wrapper.size-midi-lumbar img {
+  transform: scale(0.96);
+}
+image-wrapper.size-xl-lumbar img {
+  transform: scale(0.96);
+}
+
+#personalization-text {
+  color: rgb(var(--color-foreground));
+  font-size: clamp(3rem,3vw,7rem);
+  line-height: 1;
+  max-width: 100%;
+  white-space: nowrap;
+}
+.preview-statement {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: var(--font-body-weight);
+  letter-spacing: 0;
+  margin: 1.6rem 0 0 0;
+  text-transform: none;
+  color: rgba(var(--color-base-text), .5);
+}
+#personalization-text .char {
+  display: inline-block;
+}
+#personalization-text .char.char-empty {
+  width: 1rem;
+}
+.type-monogram #personalization-text .char {
+  vertical-align: middle;
+}
+.type-monogram:not(.typeface-cornelia) .char-0,
+.type-monogram:not(.typeface-cornelia) .char-2 {
+  font-size: 70%;
+}
+
+.type-monogram.typeface-love-lane .char {
+  padding: 0 0.5rem;
+  transform: translateY(-1.5rem);
+}
+.type-text.typeface-love-lane .char {
+  transform: translateY(-0.5rem);
+}
+.typeface-bowery .char {
+  transform: translateY(1rem);
+}
+.typeface-mulberry .char {
+  transform: translateY(0.5rem);
+}
+@media (min-width: 60em) {
+  .typeface-mulberry .char {
+    transform: translateY(0);
+  }
+  .type-monogram.typeface-love-lane .char {
+    transform: translateY(-4rem);
+  }
+  .type-text.typeface-love-lane .char {
+    transform: translateY(-1.5rem);
+  }
+  .type-monogram.size-xl-lumbar.typeface-love-lane .char {
+    transform: translateY(-3rem);
+  }
+  .typeface-bowery .char {
+    transform: translateY(1.5rem);
+  }
+  .type-monogram.size-xl-lumbar.typeface-bowery .char {
+    transform: translateY(2rem);
+  }
+}
+
+embroidery-options .product-form__buy,
+pouch-embroidery-options .product-form__buy {
+  margin-left: 0;
+  width: 100%;
+}
+embroidery-options .product-form__buy .button,
+pouch-embroidery-options .product-form__buy .button {
+  margin: 16px auto 0;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+embroidery-options .product-form__buy .button:before, 
+pouch-embroidery-options .product-form__buy .button:before {
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+}
+embroidery-options .form-wrapper,
+pouch-embroidery-options .form-wrapper {
+  padding: 16px 0 0 0;
+}
+
+.form-wrapper .h3 {
+  margin: 0;
+}
+
+.template-embroidery .product-form__input.trim-options.thread button,
+.template-embroidery pouch-embroidery-options .product-form__input {
+  margin: 0 0 0 -4px;
+}
+.thread .thread-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+.template-embroidery .product-form__input.trim-options [data-dropdown-panel] .embroidery-type-radio:first-child {
+  margin-top: 4px;
+}
+.template-embroidery .product-form__input.trim-options [data-dropdown-panel] .embroidery-type-radio:last-child {
+  margin-bottom: 16px;
+}
+.template-embroidery .product-form__input.trim-options button[data-dropdown-trigger][aria-expanded=true]+[data-dropdown-panel],
+.template-embroidery .type-embroidery button[data-dropdown-trigger][aria-expanded=true]+[data-dropdown-panel] {
+  padding-bottom: 0;
+}
+
+.product-form__input.welf-options option-dropdown button[data-dropdown-trigger] {
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: var(--primary-stone-20, #7D736433);
+}
+.product-form__input.confirmation {
+  padding: 16px 0;
+}
+embroidery-options .button--quick-add,
+pouch-embroidery-options .button--quick-add {
+  padding-block: 0;
+}
+.product-form__input.embroidery-type,
+.product-form__input.type-options {
+  padding-bottom: 8px;
+}
+.product-form__input.embroidery-type {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.product-form__input.embroidery-type input[type="radio"] + label {
+  border: 1px solid rgba(var(--color-stone-button), 1);
+  padding: 0 16px;
+  min-width: 5.8rem;
+}
+.product-form__input.embroidery-type input[type="radio"]:checked + label,
+.product-form__input.embroidery-type input[type="radio"]:focus + label {
+  background: rgba(var(--color-base-button-background), 0.2); 
+  color: rgb(var(--color-foreground));
+}
+
+/* main-product.css .trim-radios */
+.product-form__input.trim-options input[type="radio"].embroidery-type-radio + label {
+  border: 1px solid transparent;
+  border-radius: 5rem;
+  display: inline-block;
+  height: 2.4rem;
+  margin-right: 0;
+  min-width: unset;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-indent: 10rem;
+  transition: box-shadow var(--duration-short) ease-in-out;
+  white-space: nowrap;
+  width: 2.4rem;
+  min-height: 2.4rem;
+}
+.product-form__input.trim-options input[type="radio"].embroidery-type-radio + label:hover,
+.product-form__input.trim-options input[type="radio"].embroidery-type-radio:focus + label,
+.product-form__input.trim-options input[type="radio"].embroidery-type-radio:checked + label,
+.product-form__input.trim-options input[type="radio"].embroidery-type-radio:checked:focus + label {
+  background-color: rgb(var(--color-background));
+  box-shadow: 0 0 0 2px rgba(255,255,255, 1), 0 0 0 4px rgb(var(--color-base-border));
+}
+
+.product-form__input.type-options .type-options-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  width: 100%;
+}
+.product-form__input.type-options input[type="radio"] {
+  grid-area: -1 span 1;
+}
+.product-form__input.type-options input[type="radio"] + label {
+  align-items: flex-end;
+  aspect-ratio: 1/1;
+  display: flex;
+  width: 86px;
+  font-size: 1.1rem;
+  hyphens: none;
+  justify-content: center;
+  min-width: unset;
+  padding: 8px 6px 6px;
+}
+.product-form__input.type-options input[type="radio"]:checked + label {
+  background-color: transparent;
+  box-shadow: none;
+  color: rgb(var(--color-base-text));
+  mix-blend-mode: multiply;
+  position: relative;
+  border-width: 2px;
+}
+.product-form__input.type-options input[type="radio"] + label:hover:after {
+  background-color: rgba(var(--color-base-button-background-secondary), .2);
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.product-form__input.type-options input[type="radio"]:checked + label::after {
+  background-color: rgba(var(--color-base-button-background-secondary), var(--alpha-low));
+  content: '';
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+  display: none;
+}
+.product-form__input.type-options input[type="radio"]:not(.is-active) + label {
+  display: none
+}
+
+.embroidery-text {
+  background-position: center .5rem;
+  background-repeat: no-repeat;
+  background-size: auto 85%;
+  position: relative;
+}
+
+.embroidery-text.type-option-cornelia {
+  background-image: url('cornelia-monogram-new.png')
+}
+
+.embroidery-text.type-option-bowery {
+  background-image: url('bowery-monogram.png')
+}
+
+.embroidery-text.type-option-love-lane {
+  background-image: url('love-lane-monogram.png')
+}
+
+.embroidery-text.type-option-mulberry {
+  background-image: url('mulberry-monogram.png')
+}
+
+.embroidery-text.type-option-ludlow {
+  background-image: url('ludlow-name.png')
+}
+
+#personalization-helper {
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: var(--font-body-weight);
+  color: rgb(var(--color-base-text));
+  letter-spacing: 0;
+  padding-top: .8rem;
+  text-transform: none;
+  width: 100%;
+}
+
+.product-form__input.personalization {
+  margin-block-end: 0;
+}
+
+.product-form__input.personalization .button--quick-add {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 16px 0; 
+}
+embroidery-options .trim-options.product-form__input {
+  max-width: 100%;
+}
+.product-form__input.personalization input[type="text"] {
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  margin: 0;
+  transition: border var(--duration-short) ease;
+  vertical-align: middle;
+  width: 100%;
+  max-width: calc(208/361*100%);
+  text-transform: none;
+}
+.product-form__input.personalization input[type="text"]:hover {
+  background: rgba(var(--color-base-button-background), 0.2); 
+}
+.product-form__input.personalization input[type="text"]:focus,
+.product-form__input.personalization input[type="text"]:active {
+  border-width: 2px; 
+}
+.product-form__input.confirmation > label {
+  font-weight: var(--font-body-weight);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  position: relative;
+}
+.product-form__input.confirmation > label input {
+  vertical-align: middle;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.product-form__input.confirmation > label.field__checkbox span:before {
+  width: 1.4rem;
+  height: 1.6rem;
+  top: 4px;
+  transform: none;
+}
+
+.loading-overlay {
+  display: none;
+}
+
+.loading-overlay.active {
+  background: rgba(255,255,255,0.7);
+  display: grid;
+  color: black;
+  font-size: 2.4rem;
+  font-weight: var(--font-button-weight);
+  letter-spacing: 0.1em;
+  inset: 0;
+  position: fixed;
+  place-items: center;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+@media (max-width: 60em) {
+  .product-form__input.personalization input[type="text"]:focus {
+    font-size: 16px;
+  }
+
+  image-wrapper.size-18-square img {
+    transform: scale(1.4);
+  }
+  image-wrapper.size-20-square img {
+    transform: scale(1.25);
+  }
+  image-wrapper.size-22-square img {
+    transform: scale(1.25);
+  }
+  image-wrapper.size-euro-sham img {
+    transform: scale(1);
+  }
+  image-wrapper.size-euro-sham-square img {
+    transform: scale(1);
+  }
+  image-wrapper.size-bolster img {
+    transform: scale(1.17);
+  }
+  image-wrapper.size-petite-lumbar img {
+    transform: scale(1.35);
+  }
+  image-wrapper.size-midi-lumbar img {
+    transform: scale(1.12);
+  }
+  image-wrapper.size-xl-lumbar img {
+    transform: scale(1.15);
+  }
+}
+
+@media (min-width: 60em) {
+  embroidery-options,
+  pouch-embroidery-options {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 80px;
+    background: rgb(var(--color-background));
+    position: relative;
+  }
+  /* image-wrapper.size-18-square img {
+    transform: none;
+  }
+  image-wrapper.size-20-square img {
+    transform: none;
+  }
+  image-wrapper.size-22-square img {
+    transform: none;
+  }
+  image-wrapper.size-euro-sham img {
+    transform: none;
+  }
+  image-wrapper.size-euro-sham-square img {
+    transform: none;
+  }
+  image-wrapper.size-bolster img {
+    transform: none;
+  }
+  image-wrapper.size-petite-lumbar img {
+    transform: none;
+  }
+  image-wrapper.size-midi-lumbar img {
+    transform: none;
+  }
+  image-wrapper.size-xl-lumbar img {
+    transform: none;
+  } */
+  image-wrapper {
+    width: calc(50% + 8rem);
+  }
+  embroidery-options .form-wrapper,
+  pouch-embroidery-options .form-wrapper {
+    width: calc(50% - 12rem);
+    padding-left: 4rem;
+    padding-top: 0;
+  }
+  .form-wrapper .h3 {
+    margin-bottom: 24px;
+    line-height: 1.1;
+    font-size: 3.2rem;
+    text-align: left;
+  }
+}
+
+.embroidery__error-message-wrapper .icon, .embroidery-modal__error-message-wrapper .icon {
+  vertical-align: top;
+  max-width: 15px;
+}
+.embroidery__error-message-wrapper, .embroidery-modal__error-message-wrapper {
+  color: rgb(var(--color-error));
+  /* white-space: nowrap; */
+  word-break: break-all;
+  color: #D2393D;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 .4rem 0;
+  line-height: 2;
+  width: 100%;
+}
+.embroidery__error-message-wrapper[hidden], .embroidery-modal__error-message-wrapper[hidden] {
+  display: none;
+}
+.embroidery__error-message {
+  font-style: normal;
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: var(--font-button-weight);
+}

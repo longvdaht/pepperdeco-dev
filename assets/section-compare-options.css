@@ -1,0 +1,108 @@
+.section-product-compare-option {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.section-product-compare-option .page-width {
+  /* max-width: calc(var(--page-width)* 1.08); */
+  padding: 0 1.6rem;
+}
+.section-product-compare-option .section-heading {
+  margin: 0 0 1.6rem;
+}
+.section-product-compare-option .section-heading-outer {
+  margin-top: 0;
+  margin-bottom: 4rem;
+}
+.section-product-compare-option .section-subheading {
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: none;
+  font-size: 1.4rem;
+  font-weight: var(--font-body-weight);
+  letter-spacing: var(--font-heading-spacing);
+  line-height: 1.5;
+  text-wrap: balance;
+  margin-bottom: 0;
+}
+.section-product-compare-option-content .section-product-option-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4rem;
+}
+.section-product-compare-option-content .section-product-option-wrapper + .section-product-option-wrapper {
+  margin-top: 2.5rem;
+}
+.section-product-compare-option-content .fabric-option-title {
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-weight: var(--font-body-medium);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  line-height: 1.5;
+}
+.section-product-compare-option-content .fabric-option-block-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.section-product-compare-option-content .fabric-option-block {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100%;
+}
+.section-product-compare-option-content .fabric-option-block img {
+  width: 100%;
+}
+.section-color-background-primary.section-product-compare-option .fabric-option-block {
+  background-color: rgb(var(--color-base-background-secondary));
+  padding: 1rem;
+}
+.section-product-compare-option-content .fabric-option-block .rte {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.section-product-compare-option-content .fabric-option-block .rte ul {
+  margin-top: 0;
+}
+.section-product-compare-option-content .fabric-option-block .rte ul li {
+  text-align: left;
+  list-style: inherit;
+}
+.section-product-compare-option-content .fabric-option-block .rte ul li::marker {
+  font-size: 1.2rem;
+}
+.section-product-compare-option-content .button {
+  color: rgb(var(--color-base-text));
+  margin-top: 4rem;
+  background-color: rgb(var(--color-base-background-quaternary));
+}
+.section-product-compare-option-content .button:hover {
+  background-color: rgb(var(--color-base-button-background-secondary-hover));
+}
+@media screen and (max-width: 991px) {
+  .section-product-compare-option-content .section-product-option-wrapper {
+    gap: 1.6rem;
+  }
+  .section-product-compare-option-content .fabric-option-block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .section-product-compare-option-content .fabric-option-block .rte {
+    align-items: flex-start;
+    padding: 0 2.4rem 2.4rem 2.4rem;
+    width: 100%;
+  }
+  .section-product-compare-option-content .fabric-option-block .rte ul {
+    margin-left: -2.4rem;
+    width: 100%;
+  }
+  .section-product-compare-option-content .fabric-option-block img {
+    padding: 2.4rem;
+  }
+}
