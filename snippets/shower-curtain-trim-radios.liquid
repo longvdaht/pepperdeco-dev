@@ -1,0 +1,384 @@
+{% comment %}
+  ORDER:
+  Band
+  Tassel
+  Rick Rack
+  Pom Pom
+{% endcomment %}
+<shower-curtain-trim-radios class="line-item-property__field" data-section="{{ section.id }}">
+  {%- liquid
+    assign luxe_trim = 'Snow Pom Pom,Lilac Pom Pom,Olive Pom Pom,Powder Pom Pom,Cadet Pom Pom,Rose Pom Pom,Copper Pom Pom,Nutmeg Pom Pom' | split: ','
+    assign band_label = true
+    assign tassel_label = true
+    assign rick_rack_label = true
+    assign pom_pom_label = true
+  -%}
+  {%- liquid
+    assign trim_options = product.metafields.pepper.trim_options.value
+    if trim_options == blank
+      assign trim_options = product.metafields.pepper.parent_product.value.metafields.pepper.trim_options.value
+    endif
+
+    assign product_enable_trim_images = product
+    if product.metafields.pepper.parent_product
+      assign product_enable_trim_images = product.metafields.pepper.parent_product.value
+    endif
+  -%}
+
+  {%- assign trim_sides = 'None,Sides,Bottom,Sides + Bottom' | split: ',' -%}
+  <div class="trim-sides product-form__input">
+    {%- for side in trim_sides -%}
+      <input
+        class="input-trim-side"
+        id="{{ section.id }}-trim-{{ side | handleize }}"
+        name="properties[Trim]"
+        value="{{ side | escape }}"
+        form="product-form-{{ section.id }}"
+        type="radio"
+        {% comment %} {%- if forloop.first -%}
+          checked
+        {%- endif -%} {% endcomment %}
+      >
+      <label
+        for="{{ section.id }}-trim-{{ side | handleize }}"
+        class="trim-side-radio trim-{{ side | handleize }}"
+      >
+        {{ side | replace: 'Side + ', '+ ' | escape }}
+      </label>
+    {%- endfor -%}
+    <div class="trim-toggle plus" id="trimToggleIcon">
+      <div class="minus-icon">
+      {% render 'icon-minus' %}
+      </div>
+      <div class="plus-icon">
+        {% render 'icon-plus' %}
+      </div>
+    </div>
+  </div>
+
+  <div class="trim-options product-form__input trim-options-hide">
+    <span class="trim-options-message" data-trim-option="{{ 'products.product.trim_options_message' | t }}" data-trim-option-none="{{ 'products.product.trim_options_none_message' | t }}">{{ 'products.product.trim_options_message' | t }}</span>
+    <div class="trim-option__error-message-wrapper" role="alert" hidden>
+      <span class="trim-option__error-message">Please select: trim location</span>
+    </div>
+    <div class="trim-options product-form__input">
+      {%- for trim_option in trim_options -%}
+        {%- if trim_option contains 'Band' -%}
+          {%- liquid
+            if product.metafields.pepper.trim_images.value == blank
+              assign trim_images = product.metafields.pepper.parent_product.value.metafields.pepper.trim_images.value
+            else
+              assign trim_images = product.metafields.pepper.trim_images.value
+            endif
+            for image in trim_images
+              assign trim_option_handle = trim_option | handleize
+              if image contains trim_option_handle
+                assign trim_image = image
+              endif
+              if image contains 'none'
+                assign trim_image_none = image
+              endif
+            endfor
+
+            if product_enable_trim_images.metafields.pepper.trim_options.value.size > 0 and product_enable_trim_images.metafields.custom.enable_metaobject_trim_curtains_images
+              paginate metaobjects['curtain_trim_images'].values by 999
+                for curtain_trim_image in metaobjects['curtain_trim_images'].values
+                  assign trim_curtain_option_handle = curtain_trim_image.name | handle
+                  if trim_curtain_option_handle == trim_option_handle
+                    assign trim_image = curtain_trim_image.name | handleize
+                    break
+                  endif
+                endfor
+              endpaginate
+            endif
+          -%}
+          {%- if band_label -%}
+            <div class="js product-form__input product-form__input-band">
+              <aside class="form__label">
+                Band:
+                <span id="{{ section.id }}-option-band"></span>
+              </aside>
+            </div>
+            <input
+              required
+              class="input-trim-option"
+              id="{{ section.id }}-trim-option-band-none"
+              type="radio"
+              name="properties[Trim Style]"
+              value="None"
+              form="product-form-{{ section.id }}"
+              data-luxe="false"
+              {% if trim_image_none != blank %}
+                data-trim-image="{{ section.id }}-{{ trim_image_none | handleize }}"
+              {% endif %}
+              checked
+            >
+            <label
+              for="{{ section.id }}-trim-option-band-none"
+              class="trim-option-radio trim-none trim-options-hide"
+            >
+              None
+            </label>
+            {%- assign band_label = false -%}
+          {%- endif -%}
+          <input
+            required
+            class="input-trim-option"
+            id="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            type="radio"
+            name="properties[Trim Style]"
+            value="{{ trim_option | escape }}"
+            form="product-form-{{ section.id }}"
+            data-luxe="{% if luxe_trim contains trim_option %}true{% else %}false{% endif %}"
+            data-type="{%- if trim_option contains 'Band' -%}Band{%- elsif trim_option contains 'Tassel' -%}Tassel{%- elsif trim_option contains 'Rick Rack' -%}Rick Rack{%- elsif trim_option contains 'Pom Pom' -%}Pom Pom{%- endif -%}"
+            data-trim-handle="{{ section.id }}-{{ trim_option | handleize }}"
+            data-trim-image="{{ section.id }}-{{ trim_image | handleize }}"
+          >
+          <label
+            for="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            class="trim-option-radio trim-{{ trim_option | handleize }}"
+          >
+            {{ trim_option | escape }}
+          </label>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for trim_option in trim_options -%}
+        {%- if trim_option contains 'Tassel' -%}
+          {%- liquid
+            if product.metafields.pepper.trim_images.value == blank
+              assign trim_images = product.metafields.pepper.parent_product.value.metafields.pepper.trim_images.value
+            else
+              assign trim_images = product.metafields.pepper.trim_images.value
+            endif
+            for image in trim_images
+              assign trim_option_handle = trim_option | handleize
+              if image contains trim_option_handle
+                assign trim_image = image
+              endif
+              if image contains 'none'
+                assign trim_image_none = image
+              endif
+            endfor
+
+            if product_enable_trim_images.metafields.pepper.trim_options.value.size > 0 and product_enable_trim_images.metafields.custom.enable_metaobject_trim_curtains_images
+              paginate metaobjects['curtain_trim_images'].values by 999
+                for curtain_trim_image in metaobjects['curtain_trim_images'].values
+                  assign trim_curtain_option_handle = curtain_trim_image.name | handle
+                  if trim_curtain_option_handle == trim_option_handle
+                    assign trim_image = curtain_trim_image.name | handleize
+                    break
+                  endif
+                endfor
+              endpaginate
+            endif
+          -%}
+          {%- if tassel_label -%}
+            <div class="js product-form__input product-form__input-tassel">
+              <aside class="form__label">
+                Tassel:
+                <span id="{{ section.id }}-option-tassel"></span>
+              </aside>
+            </div>
+            <input
+              required
+              class="input-trim-option"
+              id="{{ section.id }}-trim-option-tassel-none"
+              type="radio"
+              name="properties[Trim Style]"
+              value="None"
+              form="product-form-{{ section.id }}"
+              data-luxe="false"
+              {% if trim_image_none != blank %}
+                data-trim-image="{{ section.id }}-{{ trim_image_none | handleize }}"
+              {% endif %}
+            >
+            <label
+              for="{{ section.id }}-trim-option-tassel-none"
+              class="trim-option-radio trim-none trim-options-hide"
+            >
+              None
+            </label>
+            {%- assign tassel_label = false -%}
+          {%- endif -%}
+          <input
+            required
+            class="input-trim-option"
+            id="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            type="radio"
+            name="properties[Trim Style]"
+            value="{{ trim_option | escape }}"
+            form="product-form-{{ section.id }}"
+            data-luxe="{% if luxe_trim contains trim_option %}true{% else %}false{% endif %}"
+            data-type="{%- if trim_option contains 'Band' -%}Band{%- elsif trim_option contains 'Tassel' -%}Tassel{%- elsif trim_option contains 'Rick Rack' -%}Rick Rack{%- elsif trim_option contains 'Pom Pom' -%}Pom Pom{%- endif -%}"
+            data-trim-handle="{{ section.id }}-{{ trim_option | handleize }}"
+            data-trim-image="{{ section.id }}-{{ trim_image | handleize }}"
+          >
+          <label
+            for="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            class="trim-option-radio trim-{{ trim_option | handleize }}"
+          >
+            {{ trim_option | escape }}
+          </label>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for trim_option in trim_options -%}
+        {%- if trim_option contains 'Rick Rack' -%}
+          {%- liquid
+            if product.metafields.pepper.trim_images.value == blank
+              assign trim_images = product.metafields.pepper.parent_product.value.metafields.pepper.trim_images.value
+            else
+              assign trim_images = product.metafields.pepper.trim_images.value
+            endif
+            for image in trim_images
+              assign trim_option_handle = trim_option | handleize
+              if image contains trim_option_handle
+                assign trim_image = image
+              endif
+              if image contains 'none'
+                assign trim_image_none = image
+              endif
+            endfor
+
+            if product_enable_trim_images.metafields.pepper.trim_options.value.size > 0 and product_enable_trim_images.metafields.custom.enable_metaobject_trim_curtains_images
+              paginate metaobjects['curtain_trim_images'].values by 999
+                for curtain_trim_image in metaobjects['curtain_trim_images'].values
+                  assign trim_curtain_option_handle = curtain_trim_image.name | handle
+                  if trim_curtain_option_handle == trim_option_handle
+                    assign trim_image = curtain_trim_image.name | handleize
+                    break
+                  endif
+                endfor
+              endpaginate
+            endif
+          -%}
+          {%- if rick_rack_label -%}
+            <div class="js product-form__input product-form__input-rick-rack">
+              <aside class="form__label">
+                Rick Rack:
+                <span id="{{ section.id }}-option-rick-rack"></span>
+              </aside>
+            </div>
+            <input
+              required
+              class="input-trim-option"
+              id="{{ section.id }}-trim-option-rack-none"
+              type="radio"
+              name="properties[Trim Style]"
+              value="None"
+              form="product-form-{{ section.id }}"
+              data-luxe="false"
+              {% if trim_image_none != blank %}
+                data-trim-image="{{ section.id }}-{{ trim_image_none | handleize }}"
+              {% endif %}
+            >
+            <label
+              for="{{ section.id }}-trim-option-rack-none"
+              class="trim-option-radio trim-none trim-options-hide"
+            >
+              None
+            </label>
+            {%- assign rick_rack_label = false -%}
+          {%- endif -%}
+          <input
+            required
+            class="input-trim-option"
+            id="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            type="radio"
+            name="properties[Trim Style]"
+            value="{{ trim_option | escape }}"
+            form="product-form-{{ section.id }}"
+            data-luxe="{% if luxe_trim contains trim_option %}true{% else %}false{% endif %}"
+            data-type="{%- if trim_option contains 'Band' -%}Band{%- elsif trim_option contains 'Tassel' -%}Tassel{%- elsif trim_option contains 'Rick Rack' -%}Rick Rack{%- elsif trim_option contains 'Pom Pom' -%}Pom Pom{%- endif -%}"
+            data-trim-handle="{{ section.id }}-{{ trim_option | handleize }}"
+            data-trim-image="{{ section.id }}-{{ trim_image | handleize }}"
+          >
+          <label
+            for="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            class="trim-option-radio trim-{{ trim_option | handleize }}"
+          >
+            {{ trim_option | escape }}
+          </label>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for trim_option in trim_options -%}
+        {%- if trim_option contains 'Pom Pom' -%}
+          {%- liquid
+            if product.metafields.pepper.trim_images.value == blank
+              assign trim_images = product.metafields.pepper.parent_product.value.metafields.pepper.trim_images.value
+            else
+              assign trim_images = product.metafields.pepper.trim_images.value
+            endif
+            for image in trim_images
+              assign trim_option_handle = trim_option | handleize
+              if image contains trim_option_handle
+                assign trim_image = image
+              endif
+              if image contains 'none'
+                assign trim_image_none = image
+              endif
+            endfor
+
+            if product_enable_trim_images.metafields.pepper.trim_options.value.size > 0 and product_enable_trim_images.metafields.custom.enable_metaobject_trim_curtains_images
+              paginate metaobjects['curtain_trim_images'].values by 999
+                for curtain_trim_image in metaobjects['curtain_trim_images'].values
+                  assign trim_curtain_option_handle = curtain_trim_image.name | handle
+                  if trim_curtain_option_handle == trim_option_handle
+                    assign trim_image = curtain_trim_image.name | handleize
+                    break
+                  endif
+                endfor
+              endpaginate
+            endif
+          -%}
+          {%- if pom_pom_label -%}
+            <div class="js product-form__input product-form__input-pom-pom">
+              <aside class="form__label">
+                Pom Pom:
+                <span id="{{ section.id }}-option-pom-pom"></span>
+              </aside>
+            </div>
+            <input
+              required
+              class="input-trim-option"
+              id="{{ section.id }}-trim-option-pom-none"
+              type="radio"
+              name="properties[Trim Style]"
+              value="None"
+              form="product-form-{{ section.id }}"
+              data-luxe="false"
+              {% if trim_image_none != blank %}
+                data-trim-image="{{ section.id }}-{{ trim_image_none | handleize }}"
+              {% endif %}
+            >
+            <label
+              for="{{ section.id }}-trim-option-pom-none"
+              class="trim-option-radio trim-none trim-options-hide"
+            >
+              None
+            </label>
+            {%- assign pom_pom_label = false -%}
+          {%- endif -%}
+          <input
+            required
+            class="input-trim-option"
+            id="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            type="radio"
+            name="properties[Trim Style]"
+            value="{{ trim_option | escape }}"
+            form="product-form-{{ section.id }}"
+            data-luxe="{% if luxe_trim contains trim_option %}true{% else %}false{% endif %}"
+            data-type="{%- if trim_option contains 'Band' -%}Band{%- elsif trim_option contains 'Tassel' -%}Tassel{%- elsif trim_option contains 'Rick Rack' -%}Rick Rack{%- elsif trim_option contains 'Pom Pom' -%}Pom Pom{%- endif -%}"
+            data-trim-handle="{{ section.id }}-{{ trim_option | handleize }}"
+            data-trim-image="{{ section.id }}-{{ trim_image | handleize }}"
+          >
+          <label
+            for="{{ section.id }}-trim-option-{{ trim_option | handleize }}"
+            class="trim-option-radio trim-{{ trim_option | handleize }}"
+          >
+            {{ trim_option | escape }}
+          </label>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</shower-curtain-trim-radios>

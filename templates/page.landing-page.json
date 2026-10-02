@@ -1,0 +1,150 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "curtains-blues-and-greens"
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sample-cafecurtains"
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fabric-chenillejacquard"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw"
+      ],
+      "name": "Collection List",
+      "settings": {}
+    },
+    "section_product_carousel_gKUHwE": {
+      "type": "section-product-carousel",
+      "blocks": {
+        "product_CYwt7h": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_zkEhmz": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_GyM8Pb": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_FNLkyd": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_CYwt7h",
+        "product_zkEhmz",
+        "product_GyM8Pb",
+        "product_FNLkyd"
+      ],
+      "name": "Product carousel",
+      "settings": {
+        "color_scheme": "background-primary",
+        "heading": "Collection #1 Products",
+        "product_list": [
+          "curtain-printedcotton-alice-blue-custom",
+          "fabricswatch-printedcotton-alice-blue",
+          "showercurtain-printedcotton-alice-blue",
+          "pillow-printedcotton-alice-blue-custom",
+          "cafecurtain-printedcotton-alice-blue-custom",
+          "fabric-printedlinen-alice-blue"
+        ]
+      }
+    },
+    "section_product_carousel_erG89y": {
+      "type": "section-product-carousel",
+      "blocks": {
+        "product_kqczBV": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_7AGYKJ": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_KXYigQ": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_hjfAK7": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_kqczBV",
+        "product_7AGYKJ",
+        "product_KXYigQ",
+        "product_hjfAK7"
+      ],
+      "name": "Product carousel",
+      "settings": {
+        "color_scheme": "background-primary",
+        "heading": "Collection #2 Products",
+        "product_list": [
+          "curtain-printedcotton-alice-blue-pinch-pleat",
+          "cafecurtain-printedcotton-alice-blue-rod-pocket",
+          "showercurtain-printedcotton-alice-blue-unlined",
+          "curtain-printedcotton-annabelle-orchid-grommet",
+          "curtain-printedcotton-annabelle-orchid-ring-top",
+          "cafecurtain-printedcotton-annabelle-orchid-ring-top"
+        ]
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_list_collections_nL3Jjb",
+    "section_product_carousel_gKUHwE",
+    "section_product_carousel_erG89y"
+  ]
+}

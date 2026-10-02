@@ -1,0 +1,1005 @@
+<cart-drawer class="page-width cart-page-wrapper">
+  <div class="grid mobile-one">
+    <div class="grid__item">
+      <div class="cart-drawer-outer cart-page {% if cart == empty %}is-empty{% endif %}">
+        <div class="cart-content">
+          <div class="cart-empty center">
+            <p>{{ 'sections.cart.empty' | t }}</p>
+            {% if section.settings.link != blank %}
+              <a href="{{ section.settings.link }}" class="button">
+                {{ 'sections.cart.continue' | t }}
+              </a>
+            {% endif %}
+          </div>
+          <div id="main-cart-items" class="js-contents" data-id="{{ section.id }}">
+            <div class="cart-header">
+              <div class="h3">
+                {%- liquid
+                  assign total_count = 0
+                  for item in cart.items
+                    if item.title contains 'Rush' or item.title contains 'Setup' or item.title contains 'Embroidery' or item.title == 'Monogramming fee' or item.title contains "Order Processing Fee" or item.properties['_hidden'] == 'true'
+                      continue
+                    endif
+                    assign quantity = item.quantity | times: 1
+                    assign total_count = total_count | plus: quantity
+                  endfor
+                -%}
+                {{ 'sections.cart.title' | t }}
+                (<span class="cart-count">{{ total_count }}</span>)
+              </div>
+            </div>
+            {%- if cart != empty -%}
+              {%- liquid
+                # Check once whether this customer holds any trade tag
+                assign trade_tag_list = 'trade,trade15,trade20,trade30' | split: ','
+                assign is_trade_member = false
+                for tag in customer.tags
+                  assign tag_clean = tag | downcase | strip
+                  if trade_tag_list contains tag_clean
+                    assign is_trade_member = true
+                    break
+                  endif
+                endfor
+              -%}
+              {%- assign contains_furniture_product = false -%}
+              {%- for item in cart.items -%}
+                {%- assign item_type = item.product.type | handle -%}
+                {%- if item_type contains 'bed' 
+                      or item_type contains 'headboard' 
+                      or item_type contains 'chair' 
+                      or item_type contains 'bench' 
+                      or item_type contains 'sofa'
+                      or item_type contains 'sectional'
+                      or item_type contains 'sleeper'
+                      or item_type contains 'ottoman'
+                      or item_type contains 'settee' 
+                -%}
+                  {%- assign contains_furniture_product = true -%}
+                  {% break %}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- if settings.cart_show_shipping_threshold and contains_furniture_product == false -%}
+                {% assign threshold = settings.shipping_threshold | times: 100 %}
+                {% assign adjusted_total = 0 %}
+
+                {% for item in cart.items %}
+                    {%- assign item_type = item.product.type | handle -%}
+                    {%- unless item_type contains 'bed'
+                          or item_type contains 'headboard' 
+                          or item_type contains 'chair' 
+                          or item_type contains 'bench' 
+                          or item_type contains 'sofa'
+                          or item_type contains 'sectional'
+                          or item_type contains 'sleeper'
+                          or item_type contains 'ottoman'
+                          or item_type contains 'settee' -%}
+                      {%- assign adjusted_total = adjusted_total | plus: item.line_price -%}
+                    {%- endunless -%}
+                  
+                {% endfor %}
+
+                <div class="shipping-progress-container">
+                  {% if adjusted_total < threshold %}
+                    <p class="shipping_statement">
+                      {%- assign amount = threshold | minus: adjusted_total | money_without_trailing_zeros -%}
+                      {{ 'sections.cart.shipping_threshold_not_met' | t: amount: amount }}
+                    </p>
+                  {% else %}
+                    <p class="shipping_statement">{{ 'sections.cart.shipping_threshold_met' | t }}</p>
+                  {% endif %}
+                  <p class="shipping-warning">{{ 'sections.cart.shipping_bar_message' | t }}</p>
+
+                  <progress
+                    class="shipping-progress"
+                    id="shipping-progress"
+                    max="{{ threshold }}"
+                    value="{{ adjusted_total }}"
+                  ></progress>
+                </div>
+              {%- endif -%}
+              
+              {%- assign total_full_count = 0 -%}
+              {%- assign total_count = 0 -%}
+              {%- for item in cart.items -%}
+                {%- assign total_full_count = total_full_count | plus: item.quantity -%}
+                {%- if item.title contains 'Rush' or item.title contains 'Setup' or item.title contains 'Embroidery' or item.title == 'Monogramming fee' or item.title contains "Order Processing Fee" or item.properties['_hidden'] == 'true' -%}
+                  {%- continue -%}
+                {%- endif -%}
+                {%- assign quantity = item.quantity | times: 1 -%}
+                {%- assign total_count = total_count | plus: quantity -%}
+              {%- endfor -%}
+              <div id="cart-products" data-cart-length="{{ total_count | default: null }}" data-cart-full-count="{{ total_full_count | default: null }}">
+                {%- for item in cart.items -%}
+                  {% assign product_type_wallpaper = false %}
+                  {% assign setup_fee = false %}
+                  {% comment %} For setup fee and hiding line item remove button {% endcomment %}
+                  {% unless item.product.type == 'Wallpaper' and item.product.tags contains 'solid grasscloth' %}
+                    {%- liquid
+                      if item.product.type contains 'Wallpaper' or item.properties['_wallpaper_minimum']
+                        assign product_type_wallpaper = true
+                      endif
+
+                      if product_type_wallpaper and item.product.type != 'Wallpaper Swatch'
+                        if item.variant.title contains 'Yards' or item.variant.title contains 'Yardage'
+                          assign yardage = item.variant.title | split: 'Yards' | first | strip | plus: 0
+                          if yardage == 0
+                            assign yardage = item.quantity 
+                          endif
+                          
+                          if yardage < 20
+                            assign setup_fee = true
+                          endif
+                        endif
+                        if item.variant.title contains 'Panels' and item.quantity <= 5
+                          assign setup_fee = true
+                        endif
+                      endif
+                      
+                      if item.properties._Embroidery == 'true' and item.product.type contains 'Pillow' or item.product.type contains 'Pouch' or item.product.type contains 'Bath Towel'
+                        assign embroidered_product = true
+                        assign contains_embroidered_product = true
+                      else
+                        assign embroidered_product = false
+                      endif
+                    -%}
+                  {% endunless %}
+
+                  <div id="cart-product-{{ forloop.index }}" class="{% if item.properties['_hidden'] == 'true' %}hidden{% endif %}">
+                    <div
+                      id="cart-product-{{ item.id }}"
+                      class="cart-line-item{% if item.title contains 'Rush' or item.title contains 'Setup' or item.title contains 'Embroidery' or item.title == 'Monogramming fee' or item.title contains "Order Processing Fee" %} visually-hidden{% endif %}"
+                      {% comment %} class="cart-line-item" {% endcomment %}
+                    >
+                      <div class="cart-image-outer-wrapper">
+                        {% if item.product.metafields.pepper.parent_product.value != blank %}
+                          <div class="cart-image-outer">
+                            <a href="{{ item.product.metafields.pepper.parent_product.value.url }}">
+                              <img
+                                class="cart-product__image"
+                                src="{{ item.product.metafields.pepper.parent_product.value.featured_image | image_url: width: 200 }}"
+                                alt="{{ item.product.metafields.pepper.parent_product.value.featured_image.alt | escape }}"
+                                width="100"
+                                height="{{ 100 | divided_by: item.product.metafields.pepper.parent_product.value.featured_image.aspect_ratio | ceil }}"
+                                loading="lazy"
+                              >
+                            </a>
+                          </div>
+                        {% elsif item.image %}
+                          <div class="cart-image-outer">
+                            <a href="{{ item.url }}">
+                              {% if item.properties._customized_image != blank %}
+                                <img
+                                  class="cart-product__image cart-customized__image"
+                                  src="{{ item.properties._customized_image | replace: 'width=1500', 'width=200' }}"
+                                  alt="{{ item.image.alt | escape }}"
+                                  width="200"
+                                  height="{{ 200 | divided_by: item.image.aspect_ratio | ceil }}"
+                                  loading="lazy"
+                                >
+                              {% elsif item.properties._product_image != blank %}
+                                <img
+                                  class="cart-product__image cart-product__image-trim"
+                                  src="{{ item.properties._product_image | replace: 'width=1500', 'width=200' }}"
+                                  alt="{{ item.image.alt | escape }}"
+                                  width="200"
+                                  height="{{ 200 | divided_by: item.image.aspect_ratio | ceil }}"
+                                  loading="lazy"
+                                >
+                              {% else %}
+                                <img
+                                  class="cart-product__image"
+                                  src="{{ item.image | image_url: width: 300 }}"
+                                  alt="{{ item.image.alt | escape }}"
+                                  width="200"
+                                  height="{{ 200 | divided_by: item.image.aspect_ratio | ceil }}"
+                                  loading="lazy"
+                                >
+                              {% endif %}
+                            </a>
+                          </div>
+                        {% else %}
+                          <div class="cart-image-outer">
+                            <a href="{{ item.url }}">
+                              <img src="{{ 'pp-home.png' | asset_url }}" 
+                              alt="Product" 
+                              class="lazyload"
+                              loading="lazy"
+                              width="300"
+                              height="300"
+                              >
+                            </a>
+                          </div>
+                        {% endif %}
+                        {% comment %}theme-check-enable{% endcomment %}
+                        {% assign property_size = item.properties | size %}
+                        {%- assign rush = false -%}
+                        {% if item.variant.available
+                          and rush == false
+                        %}
+                          <div class="cart-ship-estimate">
+                            {%- liquid
+                              assign trim_value = item.properties['Trim'] | downcase | strip
+                              assign trim_style_value = item.properties['Trim Style'] | downcase | strip
+                              assign has_trim_input = false
+                              if trim_value != blank or trim_style_value != blank
+                                assign has_trim_input = true
+                              endif
+
+                              assign pom_pom_found = false
+                              assign pom_pom_source_used = false
+
+                              assign settings_message = item.properties['_pre_order_eta_message']
+                              assign settings_trims_raw = item.properties['_pre_order_eta_trims']
+
+                              assign metafield_message = item.product.metafields.custom.pre_order_eta.value.text_pom_pom
+                              assign metafield_trims = item.product.metafields.custom.pre_order_eta.value.eta_option.value
+                            -%}
+
+                            {%- comment -%} ===== Source 1: Section settings — authoritative when present ===== {%- endcomment -%}
+                            {%- if settings_message != blank and settings_trims_raw != blank -%}
+                              {%- assign pom_pom_source_used = true -%}
+                              {%- if has_trim_input -%}
+                                {%- assign settings_trims = settings_trims_raw | split: ',' -%}
+                                {%- for trim in settings_trims -%}
+                                  {%- assign trim_clean = trim | downcase | strip -%}
+                                  {%- if trim_clean == trim_value or trim_clean == trim_style_value -%}
+                                    <p class="cart-pom-pom-message">{{ settings_message }}</p>
+                                    {%- assign pom_pom_found = true -%}
+                                    {%- break -%}
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              {%- endif -%}
+                            {%- endif -%}
+
+                            {%- comment -%} ===== Source 2: Metafield — only if Source 1 was NOT configured ===== {%- endcomment -%}
+                            {%- if pom_pom_source_used == false and metafield_message != blank and metafield_trims != blank and has_trim_input -%}
+                              {%- for option in metafield_trims -%}
+                                {%- assign option_clean = option | downcase | strip -%}
+                                {%- if option_clean == trim_value or option_clean == trim_style_value -%}
+                                  <p class="cart-pom-pom-message">{{ metafield_message }}</p>
+                                  {%- assign pom_pom_found = true -%}
+                                  {%- break -%}
+                                {%- endif -%}
+                              {%- endfor -%}
+                            {%- endif -%}
+
+                            {%- comment -%} ===== Fallback: Embroidery / Sample / Estimated Ship Time ===== {%- endcomment -%}
+                            {%- if pom_pom_found == false -%}
+                              {%- if item.properties._Embroidery == 'true' -%}
+                                {%- if item.product.type == 'Pouch' -%}
+                                  Ships in 2 weeks
+                                {%- elsif item.product.type == 'Throw Pillow' -%}
+                                  Ships in 21 days
+                                {%- else -%}
+                                  {{ item.product.metafields.global['Estimated-Ship-Time'] }}
+                                {%- endif -%}
+                              {%- elsif item.product.tags contains 'sample'
+                                        and item.product.selected_or_first_available_variant.inventory_management != nil
+                                        and item.product.selected_or_first_available_variant.inventory_management == 'shopify'
+                                        and item.quantity > item.product.selected_or_first_available_variant.inventory_quantity
+                                        or item.product.selected_or_first_available_variant.inventory_quantity <= 0
+                                        and item.product.selected_or_first_available_variant.inventory_policy == 'continue' -%}
+                                {{ 'sections.cart.preorder_eta' | t }}
+                              {%- else -%}
+                                {{ item.product.metafields.global['Estimated-Ship-Time'] }}
+                              {%- endif -%}
+                            {%- endif -%}
+                          </div>
+                        
+                        {% elsif rush == true %}
+                          <div class="cart-ship-estimate">
+                            {{ all_products[rush_product].title }}
+                          </div>
+                        {% endif %}
+                      </div>
+                      <div class="cart-product-info">
+                        <h3 class="h5 cart-product-title">
+                          {%- if item.product.metafields.pepper.parent_product != blank -%}
+                            <a href="{{ item.product.metafields.pepper.parent_product.value.url }}" class="text-link">
+                              {{- item.product.title | escape -}}
+                              {{-
+                                item.product.metafields.pepper.parent_product.value.metafields.pepper.type.value
+                                | prepend: ' '
+                              -}}
+                            </a> 
+                          {%- else -%}
+                            <a href="{{ item.url }}" class="text-link">
+                              {{- item.product.title | escape -}}
+                              {{- item.product.metafields.pepper.type.value | prepend: ' ' -}}
+                            </a>
+                          {%- endif -%}
+
+                          {%- comment -%} Find platform (bed construction) key — use different loop v ar to avoid overwriting outer item {%- endcomment -%}
+                          {%- assign platform_key = '' -%}
+                          {%- assign current_item_id = item.id -%}
+                          {%- assign current_item_key = item.key -%}
+
+                          {%- for attached_item in cart.items -%}
+                            {%- if attached_item.properties['_is_platform'] == 'true' 
+                              and attached_item.properties['_parent_key'] == current_item_key -%}
+                              {%- assign platform_key = attached_item.key -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+
+                          {%- comment -%} Build combined attached keys: rush + fee + embroidery + platform {%- endcomment -%}
+                          {%- assign rush_key = '' -%}
+                          {%- assign fee_key = '' -%}
+                          {%- assign embroidered_key = '' -%}
+                          {%- for cart_item in cart.items -%}
+                            
+                            {%- if cart_item.properties['_product_id'] == item.id and cart_item.properties['Setup Fee'] -%}
+                              {%- assign fee_key = cart_item.key -%}
+                            {%- endif -%}
+                            {%- if cart_item.properties['_product_id'] == item.id and item.properties['Rush Processing'] and cart_item.properties['Rush Processing'] -%}
+                              {%- assign rush_key = cart_item.key -%}
+                            {%- endif -%}
+                            {%- comment -%}
+                              The embroidery add-on carries no marker of its own, so it is the attached
+                              line that is neither the setup fee nor the rush charge.
+                            {%- endcomment -%}
+                            {%- if cart_item.properties['_product_id'] == item.id
+                              and item.properties['_Embroidery'] == "true"
+                              and cart_item.properties['Setup Fee'] == blank
+                              and cart_item.properties['Rush Processing'] == blank -%}
+                              {%- assign embroidered_key = cart_item.key -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+
+                          {%- assign all_attached_keys = '' -%}
+                          {%- if rush_key != '' -%}{%- assign all_attached_keys = rush_key -%}{%- endif -%}
+                          {%- if fee_key != '' -%}
+                            {%- if all_attached_keys != '' -%}{%- assign all_attached_keys = all_attached_keys | append: ';' -%}{%- endif -%}
+                            {%- assign all_attached_keys = all_attached_keys | append: fee_key -%}
+                          {%- endif -%}
+                          {%- if embroidered_key != '' -%}
+                            {%- if all_attached_keys != '' -%}{%- assign all_attached_keys = all_attached_keys | append: ';' -%}{%- endif -%}
+                            {%- assign all_attached_keys = all_attached_keys | append: embroidered_key -%}
+                          {%- endif -%}
+                          {%- if platform_key != '' -%}
+                            {%- if all_attached_keys != '' -%}{%- assign all_attached_keys = all_attached_keys | append: ';' -%}{%- endif -%}
+                            {%- assign all_attached_keys = all_attached_keys | append: platform_key -%}
+                          {%- endif -%}
+
+                          <cart-remove-button
+                            id="Remove-{{ item.index | plus: 1 }}"
+                            data-key="{{ item.key }}"
+                            data-index="{{ item.index | plus: 1 }}"
+                            data-attached="{{ all_attached_keys }}"
+                            data-platform-key="{{ platform_key }}"
+                            {% if embroidered_key and embroidered_key != '' %} data-embroidery-key="{{ embroidered_key }}"{% endif %}
+                            {% if rush_key and rush_key != '' %} data-rush-key="{{ rush_key }}"{% endif %}
+                            {% if item.properties['Setup Fee'] or item.title == 'Monogramming fee' %}
+                              class="visually-hidden"
+                            {% endif %}
+                          >
+                            <a
+                              href="{{ item.url_to_remove }}"
+                              class="cart-remove"
+                              aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                            >
+                              {% render 'icon-remove' %}
+                              <span class="visually-hidden">{{ 'sections.cart.remove' | t }}</span>
+                            </a>
+                          </cart-remove-button>
+                        </h3>
+                        {%- if item.properties['Fabric Type'] != blank -%}
+                          <p class="cart-fabric-type cart-variant-title"><span class="item-label">{{ 'sections.cart.fabric_type' | t }}: </span> {{ item.properties['Fabric Type'] }}</p>
+                        {%- endif -%}
+
+                        {% unless item.variant.title contains 'Default'
+                          or item.product.type == 'Curtain'
+                          or item.product.type == 'Shower Curtain'
+                          or item.product.type == 'Cafe Curtain'
+                          or item.product.type == 'Sheer Curtain'
+                          or item.product.metafields.pepper.type.value contains 'Pillow'
+                          or item.product.type == 'Roman Shade'
+                          or item.product.type == 'Roman Sheer'
+                          or item.product.type == 'Cornice'
+                          or item.product.type == 'Valance'
+                          or item.product.type == 'Sofa'
+                          or item.product.type == 'Chair'
+                          or item.product.type == 'Bed'
+                          or item.product.type == 'Headboard'
+                          or item.product.type == 'Sectional'
+                          or item.product.type == 'Sleeper'
+                          or item.product.type == 'Ottoman'
+                          or item.product.type == 'Bench'
+                          or item.product.type == 'Settee'
+                        %}
+                          <p class="cart-variant-title"><span class="item-label">{{ item.variant.title | split: ' / ' }}</span><br></p>
+                        {% endunless %}
+                        {%- if item.product.type == 'Curtain'
+                          or item.product.type == 'Shower Curtain'
+                          or item.product.type == 'Cafe Curtain'
+                          or item.product.type == 'Sheer Curtain'
+                        -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Width' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{- option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.metafields.pepper.type.value contains 'Pillow' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- unless option.name == 'Trim' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{- option.value -}}
+                                <br>
+                              {%- endunless -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Cornice' or item.product.type == 'Valance' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Height' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Sofa' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Size' or option.name == 'Base' or option.name == 'Seat' or option.name == 'Detail' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Chair' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Base' or option.name == 'Swivel' or option.name == 'Leg' -%}
+                                <span class="item-label">{{ option.name }}:</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Bed' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Size' or option.name == 'Base' or option.name == 'Detail' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Headboard' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Size' or option.name == 'Detail' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Sectional' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Size' or option.name == 'Configuration' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Sleeper' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Size' or option.name == 'Seat' or option.name == 'Detail' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Ottoman' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Base' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Bench' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Base' or option.name == 'Size' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- elsif item.product.type == 'Settee' -%}
+                          <span class="cart-variant-custom-properties">
+                            {% for option in item.options_with_values %}
+                              {%- if option.name == 'Base' -%}
+                                <span class="item-label">{{ option.name | append: ': ' }}</span>{{ option.value -}}
+                                <br>
+                              {%- endif -%}
+                            {% endfor %}
+                          </span>
+                        {%- endif -%}
+
+                        {% comment %}theme-check-disable{% endcomment %}
+                        
+                        {% if property_size > 0 %}
+                          {% comment %} {{ property_size }} {% endcomment %}
+                          <span class="property">
+                            {% assign properties = item.properties %}
+                            {% for p in properties %}
+                              {% comment %} {{p.first.first }} -- {{ p }} {% endcomment %}
+                              {% if p.first.first == '_' %}{% continue %}{% endif %}
+                              {% if p.first == 'Fabric Type' %}{% continue %}{% endif %}
+                              {% unless p.last == blank %}
+                                {% if p.first contains 'Estimated' %}
+                                  <span class="item-label">{{ p.first }}: </span>
+                                {% else %}
+                                  <span class="item-label">{{ p.first }}: </span>
+                                {% endif %}
+
+                                {% if p.last contains '/uploads/' %}
+                                  <a href="{{ p.last }}">{{ p.last | split: '<br>' | last }}</a>
+                                {% else %}
+                                  {% unless p.last == '1'
+                                    or p.last == '2'
+                                    or p.last == '3'
+                                    or p.first contains 'Rush'
+                                  %}
+                                    {%- if item.product.metafields.pepper.type.value == 'Custom Pillow'
+                                      and p.first contains 'Trim'
+                                    -%}
+                                      {%- unless p.last contains 'Fringe'
+                                        or p.last contains 'Ruffle'
+                                        or p.last contains 'Pom Pom'
+                                        or p.last contains 'None'
+                                      -%}
+                                        {{ p.last | append: ' Piping' }}
+                                      {%- else -%}
+                                        {{ p.last }}
+                                      {%- endunless -%}
+                                    {%- else -%}
+                                      {{ p.last }}
+                                    {%- endif -%}
+                                  {% elsif p.first contains 'Rush' %}
+                                    {%- assign rush_product = p.last -%}
+                                    {%- assign rush = true -%}
+                                    {{
+                                      all_products[rush_product].selected_or_first_available_variant.price
+                                      | divided_by: 100
+                                      | prepend: '+$'
+                                    }}
+                                  {% endunless %}
+                                {% endif %}
+                                {% unless forloop.last %}
+                                  <br>
+                                {% endunless %}
+                              {% endunless %}
+                            {% endfor %}
+
+                            {%- if item.properties._Embroidery == 'true' and item.product.type contains 'Pillow' -%}
+                              {%- assign embroidery_product = all_products['pillow-embroidery'] -%}
+                              <span class="item-label">{{ embroidery_product.title | append: ': ' }}</span>
+                              {{
+                                embroidery_product.selected_or_first_available_variant.price
+                                | divided_by: 100
+                                | prepend: '+$'
+                              }}
+                            {%- endif -%}
+
+                            {%- if item.properties._Embroidery == 'true' and item.product.type contains 'Bath Towel' -%}
+                              {%- assign embroidery_product = all_products['monogramming-fee'] -%}
+                              <br>
+                              <span class="item-label">{{ embroidery_product.title | append: ': ' }}</span>
+                              {{
+                                embroidery_product.selected_or_first_available_variant.price
+                                | divided_by: 100
+                                | prepend: '+$'
+                              }}
+                            {%- endif -%}
+
+                            {%- if item.properties._Embroidery == 'true' and item.product.type contains 'Pouch' -%}
+                              {%- assign embroidery_product = all_products['pouch-embroidery'] -%}
+                              <br>
+                              <span class="item-label">{{ embroidery_product.title | append: ': ' }}</span>
+                              {{
+                                embroidery_product.selected_or_first_available_variant.price
+                                | divided_by: 100
+                                | prepend: '+$'
+                              }} 
+                            {%- endif -%}
+                          </span>
+                        {% endif %}
+
+                        {% assign product_type_wallpaper = false %}
+                        
+                        {% if item.product.type contains 'Wallpaper' or item.properties['_wallpaper_minimum'] %}
+                          {% assign product_type_wallpaper = true %}
+                        {% endif %}
+                        
+                        {% if product_type_wallpaper and item.product.type != 'Wallpaper Swatch' %}
+                          <span class="wallpaper-setup-fee{% unless setup_fee %} wallpaper-hide-fee{% endunless %}">
+                            {%- assign setup_product = all_products['wallpaper-setup-fee'] -%}
+                            {% if item.variant.title contains 'Panels' %}
+                              <span class="item-label">2-5 Panels Setup Fee: 
+                                <span>{{
+                                  setup_product.selected_or_first_available_variant.price
+                                  | divided_by: 100
+                                  | prepend: '+$'
+                                }}</span>
+                              </span>
+                            {% else %}
+                              <span class="item-label">{{ setup_product.title }}: 
+                                <span>{{
+                                    setup_product.selected_or_first_available_variant.price
+                                    | divided_by: 100
+                                    | prepend: '+$'
+                                  }}</span>
+                                </span>
+                            {% endif %}
+                            
+                          </span>
+                        {%- endif -%}
+
+                        {%- if cart.total_price >= 20000 and item.product.tags contains 'bfcm2022-exclude' -%}
+                          <p class="cart-ship-estimate{% if customer.tags contains 'trade-access' %} visually-hidden{% endif %}">
+                            {{ 'sections.cart.discounts_not_applied' | t }}
+                          </p>
+                        {%- endif -%}
+                        
+                        {% comment %} {%- if customer and customer.b2b? -%}
+                          {%- liquid
+                          # Check if product has sample tag
+                          assign is_sample = false
+                          for tag in item.product.tags
+                            if tag == 'sample'
+                              assign is_sample = true
+                              break
+                            endif
+                          endfor
+                        -%}
+                          {%- unless is_sample -%}
+                            <div class="cart-product-discounts">
+                              <p class="cart-product-discount">
+                                {% render 'icon-discount' %}
+                                {{ 'sections.cart.trade_discount_applied' | t }}
+                              </p>
+                            </div>
+                          {%- endunless -%}
+                        {%- else -%}
+                          {%- if item.discounts.size > 0 -%}
+                            <div class="cart-product-discounts">
+                              {%- for discount in item.discounts -%}
+                                <p class="cart-product-discount">
+                                  {% render 'icon-discount' %}
+                                  {{ discount.title }}
+                                </p>
+                              {%- endfor -%}
+                            </div>
+                          {%- endif -%}
+                        {%- endif -%} {% endcomment %}
+
+                        {%- if customer and customer.b2b? -%}
+                          {%- liquid
+                            # Legacy 'sample' tag check
+                            assign is_sample = false
+                            for tag in item.product.tags
+                              if tag == 'sample'
+                                assign is_sample = true
+                                break
+                              endif
+                            endfor
+
+                            # Product tagged SAMPLESALE?
+                            assign is_sample_sale = false
+                            for tag in item.product.tags
+                              assign tag_clean = tag | downcase | strip
+                              if tag_clean == 'samplesale'
+                                assign is_sample_sale = true
+                                break
+                              endif
+                            endfor
+
+                            # Hide trade info only when a trade member views a SAMPLESALE product
+                            assign hide_trade_info = false
+                            if is_trade_member and is_sample_sale
+                              assign hide_trade_info = true
+                            endif
+                          -%}
+                          {%- unless is_sample or hide_trade_info -%}
+                            <div class="cart-product-discounts">
+                              <p class="cart-product-discount">
+                                {% render 'icon-discount' %}
+                                {{ 'sections.cart.trade_discount_applied' | t }}
+                              </p>
+                            </div>
+                          {%- endunless -%}
+                        {%- else -%}
+                          {%- if item.discounts.size > 0 -%}
+                            <div class="cart-product-discounts">
+                              {%- for discount in item.discounts -%}
+                                <p class="cart-product-discount">
+                                  {% render 'icon-discount' %}
+                                  {{ discount.title }}
+                                </p>
+                              {%- endfor -%}
+                            </div>
+                          {%- endif -%}
+                        {%- endif -%}
+
+                        {% assign hide_quantity = false %}
+                        {% if item.product.title contains 'Setup' and item.product.type != 'Wallpaper Swatch' and item.product.type != 'Fabric Swatch' %} 
+                          {% unless item.product.type == 'Wallpaper' and item.product.tags contains 'solid grasscloth' %}
+                            {% assign hide_quantity = true %}
+                          {% endunless %}
+                        {% endif %}
+                        {% if embroidered_product == true %} 
+                          {% assign hide_quantity = true %}
+                        {% endif %}
+                        <div class="cart-product-actions{% if hide_quantity %} show-only-price{% endif %}">
+                          <quantity-input class="quantity cart-quantity{% if hide_quantity %} visually-hidden{% endif %}">
+                            <button class="quantity__button no-js-hidden" name="minus" type="button">
+                              <span class="visually-hidden">
+                                {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
+                              </span>
+                              <span class="minus"></span>
+                            </button>
+                            {% assign qty_minimum = item.properties._QtyMinimum | times: 1 %}
+                            <input
+                              class="quantity-input"
+                              type="number"
+                              name="updates[]"
+                              value="{{ item.quantity }}"
+                              min="{% if qty_minimum > 1 %}{{ item.properties._QtyMinimum }}{% else %}0{% endif %}"
+                              aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                              id="Quantity-{{ item.index | plus: 1 }}"
+                              data-index="{{ item.index | plus: 1 }}"
+                            >
+                            <button class="quantity__button no-js-hidden" name="plus" type="button">
+                              <span class="visually-hidden">
+                                {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
+                              </span>
+                              <span class="plus"></span>
+                            </button>
+                          </quantity-input>
+
+
+                          <div class="cart-product-price-wrapper">
+                            {%- if customer and customer.b2b? -%}
+                              {% render 'b2b-cart-line-price', item: item %}
+                            {%- else -%}
+                              <p class="cart-product-price">
+                                {% assign total_original_price = item.original_price | times: item.quantity %}
+                                {% assign total_final_price = item.final_price | times: item.quantity %}
+                                {%- if item.original_price != item.final_price -%}
+                                  <span class="visually-hidden">
+                                    {{ 'products.product.price.regular_price' | t }}
+                                  </span>
+                                  <s class="cart-item__old-price product-option">
+                                    {{- total_original_price | money_without_trailing_zeros -}}
+                                  </s>
+                                  <span class="visually-hidden">
+                                    {{ 'products.product.price.sale_price' | t }}
+                                  </span>
+                                  <span class="cart-item__final-price product-option">
+                                    {{ total_final_price | money_without_trailing_zeros }}
+                                  </span>
+                                {%- else -%}
+                                  <span class="product-option">
+                                    {{ total_original_price | money_without_trailing_zeros }}
+                                  </span>
+                                {%- endif -%}
+                                
+                              </p>
+                            {%- endif -%}
+                            {%- if item.product.metafields.pepper.price_replacement.value != blank -%}
+                              <div class="price-unit-item">{{ item.product.metafields.pepper.price_replacement.value | split: '(' | first | replace: 'Yard', 'YRD' }}</div>
+                            {%- endif -%}
+                          </div>
+                          {% if qty_minimum > 1 %}
+                            <div class="quantity-require-message error__message hidden">
+                              {{ item.properties._QtyMinimum }} yard minimum required
+                            </div>
+                          {% endif %}
+                        </div>
+                        
+                        
+                        <div class="error__message hidden">
+                          All items available are in your cart
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {%- endfor -%}
+              </div>
+
+              {% assign warning_shown = false %}
+              {% assign processed_ids = '' %}
+
+              {% for item in cart.items %}
+                {% assign product_id = item.product.id %}
+                {% assign side = item.properties['Trim'] | downcase %}
+                {% assign style = item.properties['Trim Style'] | downcase %}
+
+                {% unless processed_ids contains product_id %}
+                  {%- if side and style -%}
+                    {% assign processed_ids = processed_ids | append: product_id | append: ',' %}
+
+                    {% assign left_qty = 0 %}
+                    {% assign right_qty = 0 %}
+
+                    {% for i in cart.items %}
+                      {% assign i_id = i.product.id %}
+                      {% assign i_side = i.properties['Trim'] | downcase %}
+                      {% assign i_style = i.properties['Trim Style'] | downcase %}
+                      {% if i_id == product_id and i_side contains 'side' and i_style != 'none' %}
+                        {% if i_side contains 'left' %}
+                          {% assign left_qty = left_qty | plus: i.quantity %}
+                        {% elsif i_side contains 'right' %}
+                          {% assign right_qty = right_qty | plus: i.quantity %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if left_qty > 1 and right_qty == 0 %}
+                      {% assign warning_shown = true %}
+                    {% elsif right_qty > 1 and left_qty == 0 %}
+                      {% assign warning_shown = true %}
+                    {% endif %}
+                  {% endif %}
+                {% endunless %}
+              {% endfor %}
+              
+
+              {%- if contains_embroidered_product or contains_furniture_product or warning_shown -%}
+                <div class="cart-review-message">
+                  <ul>
+                    {%- if contains_embroidered_product -%}
+                      <li>{{ 'sections.cart.review' | t }}</li>
+                    {%- endif -%}
+                    {%- if contains_furniture_product -%}
+                      <li>{{ 'sections.cart.furniture_review' | t }}</li>
+                    {%- endif -%}
+                    {% if warning_shown %}
+                      <li>{{ 'sections.cart.curtain_warning_message' | t }}</li>
+                    {% endif %}
+                  </ul>
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+        <div class="cart-footer center">
+          <h4 class="cart-footer-title">{{ 'sections.cart.order_summary' | t }}</h4>
+          <form action="{{ routes.cart_url }}" method="post" id="cart" class="cart-summary">
+            
+            <div class="cart-original-total-price">
+              <div class="cart-origin-subtotal">
+                <span class="cart-original-total-title">{{ 'sections.cart.subtotal' | t }}</span>
+                <span id="cart-original-total-price">{{ cart.original_total_price | money_without_trailing_zeros }}</span>
+              </div>
+              {% render 'cart-afterpay' %}
+            </div>
+            <div class="cart-discount">
+              {%- if cart.cart_level_discount_applications.size > 0 -%}
+                <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                  {%- for discount in cart.cart_level_discount_applications -%}
+                    <li class="discounts__discount discounts__discount--position">
+                      <span class="discount-title"> 
+                        {% render 'icon-discount' %}
+                        {{ discount.title | escape }}
+                      </span>
+                      (-{{ discount.total_allocated_amount | money }})
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+              {% comment %} {%- if customer and customer.b2b? -%}
+                {%- liquid
+                  assign is_sample = false
+                  for tag in item.product.tags
+                    if tag == 'sample'
+                      assign is_sample = true
+                      break
+                    endif
+                  endfor
+                -%}
+                {%- unless is_sample -%}
+                  <div class="discounts__discount">
+                    <span class="discount-title">
+                      {% render 'icon-discount' %}
+                      {{ 'sections.cart.trade_discount_applied' | t }}
+                    </span>
+                  </div>
+                {%- endunless -%}
+              {%- endif -%} {% endcomment %}
+              {%- if customer and customer.b2b? -%}
+                {%- liquid
+                  # Footer badge: hide only when every line item is excluded from trade pricing.
+                  # NOTE: `item` is out of scope here, so we must re-loop over cart.items.
+                  assign has_trade_priced_item = false
+                  for cart_item in cart.items
+                    assign item_is_sample = false
+                    assign item_is_sample_sale = false
+                    for tag in cart_item.product.tags
+                      assign tag_clean = tag | downcase | strip
+                      if tag_clean == 'sample'
+                        assign item_is_sample = true
+                      endif
+                      if tag_clean == 'samplesale'
+                        assign item_is_sample_sale = true
+                      endif
+                    endfor
+
+                    assign item_hidden = false
+                    if item_is_sample
+                      assign item_hidden = true
+                    endif
+                    if is_trade_member and item_is_sample_sale
+                      assign item_hidden = true
+                    endif
+
+                    unless item_hidden
+                      assign has_trade_priced_item = true
+                      break
+                    endunless
+                  endfor
+                -%}
+                {%- if has_trade_priced_item -%}
+                  <div class="discounts__discount">
+                    <span class="discount-title">
+                      {% render 'icon-discount' %}
+                      {{ 'sections.cart.trade_discount_applied' | t }}
+                    </span>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+            
+            <div class="tax-note">
+              <span class="cart-delivery-title">{{ 'sections.cart.delivery' | t }}</span>
+              <span class="tax-note-content">
+                {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                  {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {%- elsif cart.taxes_included -%}
+                  {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                {%- elsif shop.shipping_policy.body != blank -%}
+                  {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                {%- else -%}
+                  {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+                {%- endif -%}
+              </span>
+            </div>
+            <div class="cart-totals">
+              <div class="cart-subtotal">
+                <span class="cart-subtotal-title">{{ 'sections.cart.total' | t }}</span>
+                <span id="cart-subtotal">{{ cart.total_price | money_without_trailing_zeros }}</span>
+              </div>
+            </div>
+            {% render 'b2b-cart-attributes' %}
+            <div class="button-list">
+              <button class="button button-hover button--full-width" name="checkout" form="cart">
+                {{ 'sections.cart.checkout' | t }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</cart-drawer>
+
+{% schema %}
+{
+  "name": "Items",
+  "settings": [
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ]
+}
+{% endschema %}

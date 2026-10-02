@@ -1,0 +1,16 @@
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="border-top"></div>
+</div>
+
+<div class="page-width page-width--narrow padded-extra main-page-padding">
+  <div class="grid">
+    <div class="grid__item mobile-one desktop-two-thirds">
+      <h1 class="h3 center section-heading body">{{ page.title }}</h1>
+      <div class="section-content rte">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>

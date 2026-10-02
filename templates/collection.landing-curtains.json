@@ -1,0 +1,449 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multi_collection_breadcrumb_qfHUmT": {
+      "type": "multi-collection-breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb multi",
+      "settings": {
+        "current_title": "",
+        "previous_link_1": "shopify://collections/curtains",
+        "previous_text_1": "Custom Curtains",
+        "previous_link_2": "",
+        "previous_text_2": "",
+        "previous_link_3": "",
+        "previous_text_3": ""
+      }
+    },
+    "section_page_title_FeFyHJ": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Custom Curtains",
+        "title_type": "type-2",
+        "description": "Your perfect look, made to order. Our curtains are expertly handcrafted and ship in 2 weeks.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_RBkNyi": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_wrMprV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-green.jpg",
+            "collection_title": "Green",
+            "override_url": "",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_HNzLF8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-blue.jpg",
+            "collection_title": "Blue",
+            "override_url": "",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_yciX7p": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-neutral.jpg",
+            "collection_title": "Neutral",
+            "override_url": "",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_wpm3y9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-pink.jpg",
+            "collection_title": "Pink",
+            "override_url": "",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_RBPb3Q": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-purple.jpg",
+            "collection_title": "Purple",
+            "override_url": "",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_JikYWk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-yellow.jpg",
+            "collection_title": "Yellow",
+            "override_url": "",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_yfWw6z": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-orange.jpg",
+            "collection_title": "Orange",
+            "override_url": "",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_iChRGa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-curtains-red.jpg",
+            "collection_title": "Red",
+            "override_url": "",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_wrMprV",
+        "featured_collection_HNzLF8",
+        "featured_collection_yciX7p",
+        "featured_collection_wpm3y9",
+        "featured_collection_RBPb3Q",
+        "featured_collection_JikYWk",
+        "featured_collection_yfWw6z",
+        "featured_collection_iChRGa"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "main_list_collection_2_NcAB86": {
+      "type": "main-list-collection-2",
+      "blocks": {
+        "featured_collection_LFjc8q": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Green",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85922349116",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_kferfp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Blue",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923299388",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_33N4BW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Neutral",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300207164",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_PzkHwx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Pink",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300272700",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_R4CaCW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Purple",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923397692",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_GbrAen": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Yellow",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923463228",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_DJzgwf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Orange",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923364924",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_eXc9Gy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Red",
+            "override_url": "https://pepper-home.com/collections/wallpaper-claycoated?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923430460",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_LFjc8q",
+        "featured_collection_kferfp",
+        "featured_collection_33N4BW",
+        "featured_collection_PzkHwx",
+        "featured_collection_R4CaCW",
+        "featured_collection_GbrAen",
+        "featured_collection_DJzgwf",
+        "featured_collection_eXc9Gy"
+      ],
+      "disabled": true,
+      "name": "Collection list small",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "design_block_wDbwUw": {
+          "type": "design_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://collections/swatch-fabric",
+            "content": "<p>Can’t decide which print is best for your space? Order some swatches to make sure your choice is solid.</p><p><strong>fabric swatches</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "design_block_wDbwUw"
+      ],
+      "custom_css": [],
+      "settings": {
+        "products_per_page": 48,
+        "columns_desktop": 3,
+        "infinite_scroll": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": false,
+        "enable_sorting": true,
+        "enable_grid_view_mobile": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "main_multi_collections_aVV8Ph": {
+      "type": "main-multi-collections",
+      "blocks": {
+        "collection_rB6Rzr": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "wallpaper-claycoated",
+            "collection_title": "",
+            "collection_description": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_rB6Rzr"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 1440px) {.facets__wrapper, .facets-wrap {padding-left: 115px; padding-right: 115px; max-width: 100%; }}",
+        ".facets__wrapper .facets__summary {padding-left: 0px;}"
+      ],
+      "settings": {
+        "collection_layout": "grid",
+        "product_limit": 50,
+        "product_limit_mobile": 50,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-third",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly-Basile-5_eaff7e7a-5c28-4c07-bf77-2f207cb220a3.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=pillows"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/KristenChambless4_90c15d0c-ee48-4dec-85ae-24e98d6d948b.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Oyster-Creek-1_d545db3f-7677-4d25-a6b8-24767f9ae67a.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=living"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kevin-OGara-6.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=bedroom"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-1",
+        "163284582776ee348a-3",
+        "163284582776ee348a-0",
+        "163284582776ee348a-2"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "multi_collection_breadcrumb_qfHUmT",
+    "section_page_title_FeFyHJ",
+    "main_list_collections_RBkNyi",
+    "main_list_collection_2_NcAB86",
+    "product-grid",
+    "main_multi_collections_aVV8Ph",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

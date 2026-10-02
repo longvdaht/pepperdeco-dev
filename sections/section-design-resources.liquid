@@ -1,0 +1,205 @@
+<link
+  rel="stylesheet"
+  href="{{ 'section-design-resources.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+
+<noscript>{{ 'section-design-resources.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script src="{{ 'details-collapse.js' | asset_url }}" defer="defer"></script>
+
+<div class="section-outer section-color-{{ section.settings.color_scheme }}">
+  <div class="section-inner page-width">
+    <div class="section-heading-outer">
+      <div class="section-heading">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="display">{% render 'no-widows', content: section.settings.heading %}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <div class="details-heading">{% render 'no-widows', content: section.settings.subheading %}</div>
+        {%- endif -%}
+        <details-collapse data-collapse="tablet">
+          <details id="Collapse-{{ section.id }}">
+            <summary>
+              <div class="details-heading">Get Help With</div>
+              <div class="details-heading icon large-up-hide">&rsaquo;</div>
+              <div class="details-heading show-on-desktop">:</div>
+            </summary>
+            {%- if section.settings.get_help_with != blank -%}
+              <div class="rte shop-by-category">
+                {{ section.settings.get_help_with }}
+              </div>
+            {%- endif -%}
+          </details>
+        </details-collapse>
+        <details-collapse data-collapse="tablet">
+          <details id="Collapse-{{ section.id }}">
+            <summary>
+              <div class="details-heading">Popular Resources</div>
+              <div class="details-heading icon large-up-hide">&rsaquo;</div>
+              <div class="details-heading show-on-desktop">:</div>
+            </summary>
+            {%- if section.settings.popular != blank -%}
+              <div class="rte shop-by-collection">
+                {{ section.settings.popular }}
+              </div>
+            {%- endif -%}
+          </details>
+        </details-collapse>
+        {% if section.settings.link != blank and section.settings.label != blank %}
+          <a href="{{ section.settings.link }}" class="button--underline">{{ section.settings.label }}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="section-content">
+      {%- for block in section.blocks -%}
+        <a
+          href="{{ block.settings.page.url }}"
+          class="block-design-resource grid--stack full-unstyled-link"
+          {{ block.shopify_attributes }}
+        >
+          <div
+            class="stack--item media"
+            style="padding-bottom: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;"
+          >
+            {%- if block.settings.image -%}
+              <div class='overlay'></div>
+              <img
+                srcset="
+                  {%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                  {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                  {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                  {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                  {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                  {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                "
+                sizes="(min-width: 60em) 30vw, 50vw"
+                src="{{ block.settings.image | image_url: width: 530 }}"
+                loading="lazy"
+                alt="{{ block.settings.image.alt | escape }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio }}"
+              >
+            {%- endif -%}
+          </div>
+          <div class="block-content stack--item center section-invert-text">
+            {%- render 'word-the', word: section.settings.word_graphic, graphic_width: 50, section_name: 'design-resources' -%}
+            <h3 class="block-heading">{{- block.settings.page.title -}}</h3>
+          </div>
+        </a>
+      {%- endfor -%}
+      <div class="section-footer-text rte inline_richtext">
+        <p>{{ section.settings.footer_text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Design Resources",
+  "class": "section-resources spaced-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "background-secondary"
+    },
+    {
+      "type": "select",
+      "id": "word_graphic",
+      "label": "Word graphic",
+      "default": "new",
+      "options": [
+        {
+          "value": "new",
+          "label": "The 1",
+        },
+        {
+          "value": "old",
+          "label": "The 2",
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "richtext",
+      "id": "get_help_with",
+      "label": "Get help with"
+    },
+    {
+      "type": "richtext",
+      "id": "popular",
+      "label": "Popular Resources"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "footer_text",
+      "label": "Footer text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "resources",
+      "name": "Resource",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "overlay in code"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Design Resources"
+    }
+  ]
+}
+{% endschema %}

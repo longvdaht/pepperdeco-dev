@@ -1,0 +1,504 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Fabric By The Yard",
+        "title_type": "type-2",
+        "description": "PIY (Pepper It Yourself) with patterns and colors by the yard.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-green.jpg",
+            "collection_title": "Green",
+            "override_url": "https://pepper-home.com/collections/custom-curtains",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-blue.jpg",
+            "collection_title": "Blue",
+            "override_url": "",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-neutral.jpg",
+            "collection_title": "Neutral",
+            "override_url": "",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_VdDT39": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-pink.jpg",
+            "collection_title": "Pink",
+            "override_url": "",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_M4B3cy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-purple.jpg",
+            "collection_title": "Purple",
+            "override_url": "",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_A4JjVt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-yellow.jpg",
+            "collection_title": "Yellow",
+            "override_url": "",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_dNnmka": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-orange.jpg",
+            "collection_title": "Orange",
+            "override_url": "",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_a3U3Eq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-fabric-red.jpg",
+            "collection_title": "Red",
+            "override_url": "",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw",
+        "featured_collection_VdDT39",
+        "featured_collection_M4B3cy",
+        "featured_collection_A4JjVt",
+        "featured_collection_dNnmka",
+        "featured_collection_a3U3Eq"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "main_list_collection_2_fftJVF": {
+      "type": "main-list-collection-2",
+      "blocks": {
+        "featured_collection_BaVgzD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Green",
+            "override_url": "",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_4erdVA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Blue",
+            "override_url": "",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_i4cP8a": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Neutral",
+            "override_url": "",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_UQQjrQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Pink",
+            "override_url": "",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_Mhyp33": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Purple",
+            "override_url": "",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_F8WCnQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Yellow",
+            "override_url": "",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_6eHjNk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Orange",
+            "override_url": "",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_LyJP7H": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Red",
+            "override_url": "",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_BaVgzD",
+        "featured_collection_4erdVA",
+        "featured_collection_i4cP8a",
+        "featured_collection_UQQjrQ",
+        "featured_collection_Mhyp33",
+        "featured_collection_F8WCnQ",
+        "featured_collection_6eHjNk",
+        "featured_collection_LyJP7H"
+      ],
+      "disabled": true,
+      "name": "Collection list small",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4"
+      }
+    },
+    "product-grid": {
+      "type": "main-multi-collections",
+      "blocks": {
+        "67897ccc-f572-4b32-ae92-393654a5de3d": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-printedcotton",
+            "collection_title": "Printed Cotton",
+            "collection_description": "Our patterns, digitally printed on 100% cotton.",
+            "button_text": ""
+          }
+        },
+        "collection_dVMAHn": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-cottonlinen",
+            "collection_title": "Cotton & Linen",
+            "collection_description": "Versatile fabric that's the go-to for timeless elegance.",
+            "button_text": ""
+          }
+        },
+        "collection_dP9Lpm": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-sheer",
+            "collection_title": "Sheer",
+            "collection_description": "Light, airy, and made to add subtle texture.",
+            "button_text": ""
+          }
+        },
+        "collection_DAzeLV": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-performancewoven",
+            "collection_title": "Performance Woven",
+            "collection_description": "Durable fabrics designed for every moment.",
+            "button_text": ""
+          }
+        },
+        "collection_n6Vcp8": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-velvets",
+            "collection_title": "Velvet",
+            "collection_description": "Plush with a soft hand and lasting durability.",
+            "button_text": ""
+          }
+        },
+        "collection_heKUT8": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-woven",
+            "collection_title": "Woven",
+            "collection_description": "Timeless styles, woven for everyday elegance.",
+            "button_text": ""
+          }
+        },
+        "collection_ahiF7G": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-chenillejacquard",
+            "collection_title": "Chenille Jacquard",
+            "collection_description": "Add dimension with our versatile jacquards.",
+            "button_text": ""
+          }
+        },
+        "collection_38GMm4": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-embroidered",
+            "collection_title": "Embroidered",
+            "collection_description": "Refined embroidery with subtle dimension.",
+            "button_text": ""
+          }
+        },
+        "collection_yYcmLj": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "solid-silk-fabric",
+            "collection_title": "Silk",
+            "collection_description": "Luxurious, 100% dupioni silks in elegant hues.",
+            "button_text": ""
+          }
+        },
+        "collection_A66x44": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "fabric-printedlinen",
+            "collection_title": "Printed Linen",
+            "collection_description": "Our patterns, printed on luxe Italian linen.",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "67897ccc-f572-4b32-ae92-393654a5de3d",
+        "collection_dVMAHn",
+        "collection_dP9Lpm",
+        "collection_DAzeLV",
+        "collection_n6Vcp8",
+        "collection_heKUT8",
+        "collection_ahiF7G",
+        "collection_38GMm4",
+        "collection_yYcmLj",
+        "collection_A66x44"
+      ],
+      "settings": {
+        "collection_layout": "grid",
+        "product_limit": 48,
+        "product_limit_mobile": 48,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": false,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": false,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-quarter",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Curtain-Pillow.png",
+            "image_width": 140,
+            "title": "View Trim Yardage",
+            "content": "Finish your design with timeless, trim yardage.",
+            "link_text": "VISIT",
+            "link_url": "shopify://collections/trim-piping-yardage"
+          }
+        },
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_4.png",
+            "image_width": 140,
+            "title": "Order Fabric Swatches",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatch-fabric"
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Pencil.png",
+            "image_width": 140,
+            "title": "Join Our Trade Program",
+            "content": "Are you a designer or architect? Join today.",
+            "link_text": "APPLY",
+            "link_url": "shopify://pages/trade"
+          }
+        }
+      },
+      "block_order": [
+        "column_7L6p3y",
+        "column_9NGpgg",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    },
+    "multi_collection_breadcrumb_Gg9K9z": {
+      "type": "multi-collection-breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb multi",
+      "settings": {
+        "current_title": "",
+        "previous_link_1": "",
+        "previous_text_1": "Custom Furniture",
+        "previous_link_2": "",
+        "previous_text_2": "",
+        "previous_link_3": "",
+        "previous_text_3": ""
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "image_rDzpYT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-windowtreatments-louisasage.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=curtains"
+          }
+        },
+        "image_nT6yyK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-windowtreatments-lilithorchid.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=curtains"
+          }
+        },
+        "image_CteDyG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-windowtreatments-viviennepistachio.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=cafe-curtains"
+          }
+        },
+        "image_Nmf9L4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-windowtreatments-madelineflour.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=cafe-curtains"
+          }
+        }
+      },
+      "block_order": [
+        "image_rDzpYT",
+        "image_nT6yyK",
+        "image_CteDyG",
+        "image_Nmf9L4"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "shopify://pages/justaddpepper",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "main_list_collection_2_fftJVF",
+    "product-grid",
+    "section_text_with_icon_column_XBbHQ8",
+    "multi_collection_breadcrumb_Gg9K9z",
+    "16331219115bcaaf78"
+  ]
+}

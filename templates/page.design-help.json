@@ -1,0 +1,319 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1633906520fdc0b68b": {
+      "type": "custom-code",
+      "disabled": true,
+      "settings": {
+        "background_color": "",
+        "include_margins": true,
+        "title": "",
+        "description": "",
+        "code": "<div class=\"powr-form-builder\" id=\"68443a23_1600968047\"></div><script src=\"https://www.powr.io/powr.js?platform=embed\"></script>",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "section_image_with_text_column_JgMzwk": {
+      "type": "section-image-with-text-column",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Design Assistance",
+        "heading_size": "h3",
+        "subheading": "<p>Dream it, Design it, Love it.</p>",
+        "content": "<p>Our designers will help you bring your vision to life—making every detail feel intentional and uniquely yours. The best part? It’s completely complimentary.</p>",
+        "image": "shopify://shop_images/from-france-with-love-collection_3_1.png",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "",
+        "label": "",
+        "button_type": "button"
+      }
+    },
+    "section_image_split_text_drLGXc": {
+      "type": "section-image-split-text",
+      "blocks": {
+        "text_above_a8UE4F": {
+          "type": "text-above",
+          "settings": {
+            "heading": "How it works:",
+            "subheading": "<p>Step 01.</p>",
+            "content": "<p>Tell us about your space—share your questions, design needs, and photos below.</p>",
+            "link": "",
+            "label": "",
+            "button_type": "button"
+          }
+        },
+        "text_above_KwMNJW": {
+          "type": "text-above",
+          "settings": {
+            "heading": "",
+            "subheading": "<p>Step 02</p>",
+            "content": "<p>Sit tight! You’ll get your personalized style guide and product links in 2 business days.</p>",
+            "link": "",
+            "label": "",
+            "button_type": "button"
+          }
+        },
+        "text_under_BWDL6r": {
+          "type": "text-under",
+          "settings": {
+            "heading": "",
+            "subheading": "<p>In the meantime, if you have any other questions:</p>",
+            "content": "<p>Email: <a href=\"mailto:hello@pepper-home.com\" target=\"_blank\" title=\"mailto:hello@pepper-home.com\"><span style=\"text-decoration:underline\">hello@pepper-home.com</span></a><br/>Call or Text: <a href=\"tel: 866.864.7143\" target=\"_blank\" title=\"tel: 866.864.7143\"><span style=\"text-decoration:underline\">866.864.7143</span></a><br/>Live Chat: <a href=\"#\" title=\"7 days a week\"><span style=\"text-decoration:underline\">7 days a week</span></a></p>",
+            "link": "",
+            "label": "",
+            "button_type": "button"
+          }
+        }
+      },
+      "block_order": [
+        "text_above_a8UE4F",
+        "text_above_KwMNJW",
+        "text_under_BWDL6r"
+      ],
+      "name": "Image with split text",
+      "settings": {
+        "background_color": "",
+        "image": "shopify://shop_images/Group_45.png",
+        "image_mobile": "shopify://shop_images/Group_46.png",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "color_scheme": "background-primary"
+      }
+    },
+    "custom_code_fztRQ7": {
+      "type": "custom-code",
+      "name": "Custom Code",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "include_margins": true,
+        "title": "Complimentary Design Assistance",
+        "description": "Submit your information here and we will respond via email within 2 business days.",
+        "code": "<script type=\"text/javascript\" src=\"https://form.jotform.com/jsform/242195537120048\"></script>",
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "1633919852698f21d8": {
+      "type": "ugc-images",
+      "blocks": {
+        "1633919852698f21d8-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Curtain-Embroidered-Beatrice-_averyl_interiordesign_and_jessicabrydsonphotography-20250924-1-AdApproved-Cropped.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "1633919852698f21d8-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Pillow-Embroidered-Hayes-SeaSalt-_mollyboyd-20250519-3-AdApproved-Cropped.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "1633919852698f21d8-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-grasscloth-steel.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "1633919852698f21d8-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_194.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "1633919852698f21d8-1",
+        "1633919852698f21d8-0",
+        "1633919852698f21d8-3",
+        "1633919852698f21d8-2"
+      ],
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": true,
+        "heading": "Real <em>Customers</em>. Curated <em>Spaces</em>.",
+        "subheading": "See how our customers have peppered their homes.",
+        "label_view_all": "see more",
+        "link_view_all": "shopify://pages/justaddpepper",
+        "hub_section": ""
+      }
+    },
+    "customer_reviews_simple_9KeXWA": {
+      "type": "customer-reviews-simple",
+      "blocks": {
+        "review_ptErbt": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>I never write this stuff... but I’m impressed by this company! It’s about time someone brought quality and custom decorating to people’s homes in an available, cost effective, and FAST way! Bravo!</p>",
+            "source": "MARTHA P."
+          }
+        },
+        "review_fmr8Wg": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>Everything about Millie Sage bed is EXCEPTIONTIONAL! I can not say enough about this company... beautiful fabrics, quality furniture, customer service was the best!!! For a completely custom bed lead time was great!</p>",
+            "source": "Elizabeth K"
+          }
+        },
+        "review_bYgxhe": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>Amazing communication with the Pepper Home staff! The turn around on the completed order was way ahead of schedule....and the quality is very good! Easy project for my client!</p>",
+            "source": "KIMBERLY D."
+          }
+        },
+        "review_yFHNAb": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>The heavy cotton fabric holds up well to shipping - no wrinkles. And the quality of the workmanship with the green and sky blue embroidery is flawless. No frayed threads, each colored line is perfectly straight.</p>",
+            "source": "Christy F."
+          }
+        },
+        "review_EmgyeU": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>Our new drapes are stunning and add so much to the room! They are beautifully made and excellent quality. Customer service has been exceptional!</p>",
+            "source": "Susanne W."
+          }
+        },
+        "review_UGVF7d": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>I never write this stuff... but I’m impressed by this company! It’s about time someone brought quality and custom decorating to people’s homes in an available, cost effective, and FAST way! Bravo!</p>",
+            "source": "MARTHA P."
+          }
+        },
+        "review_UNTDM8": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>The customer support is outstanding having answers for the customerin less than 12 hours. And most importantly the quality of the fabrics, customization, and the made to order products is like no other. Not a single thread was out of place!</p>",
+            "source": "Brenda C."
+          }
+        },
+        "review_i6nJ9p": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>I have decorated multiple homes, employed numerous online retail sites and Pepper Home is definitely one of the best! Their prices, quality, production time, and customer service is unmatched!!!</p>",
+            "source": "Elizabeth A."
+          }
+        }
+      },
+      "block_order": [
+        "review_ptErbt",
+        "review_fmr8Wg",
+        "review_bYgxhe",
+        "review_yFHNAb",
+        "review_EmgyeU",
+        "review_UGVF7d",
+        "review_UNTDM8",
+        "review_i6nJ9p"
+      ],
+      "name": "Customer reviews simple",
+      "settings": {
+        "heading": "Read the Design Help Reviews",
+        "subheading": "",
+        "button_text": "Read more",
+        "button_link": "shopify://pages/reviews",
+        "color_scheme": "background-secondary",
+        "show_dots": false,
+        "show_buttons": true,
+        "hub_section": "design-assistance"
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_4.png",
+            "image_width": 140,
+            "title": "Order Fabric Swatches",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatch-fabric"
+          }
+        },
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance, in one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Calculator-1.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and we’ll tailor the perfect fit.",
+            "link_text": "ORDER",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_9NGpgg",
+        "column_7L6p3y",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "#ffffff",
+        "fullwidth": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1633906520fdc0b68b",
+    "section_image_with_text_column_JgMzwk",
+    "section_image_split_text_drLGXc",
+    "custom_code_fztRQ7",
+    "1633919852698f21d8",
+    "customer_reviews_simple_9KeXWA",
+    "section_text_with_icon_column_XBbHQ8"
+  ]
+}

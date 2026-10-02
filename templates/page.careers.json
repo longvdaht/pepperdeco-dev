@@ -1,0 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_content_Nk76gr": {
+      "type": "image-content",
+      "settings": {
+        "section_full_width": "yes",
+        "word_graphic_width_erin_kelsey": 104,
+        "word_graphic_width_xoxo": 104,
+        "section_heading": "",
+        "section_heading_size": "h2",
+        "heading": "Join Our Team",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>At Pepper Home, we’re building more than just beautiful products—we’re creating a brand that inspires people to love where they live. We’re a collaborative, fast-moving team that values creativity, ownership, and thoughtful execution. Whether you’re designing, developing, or supporting our customers, you’ll have the opportunity to make a real impact and help shape the future of our brand. If you’re passionate about home, design, and delivering exceptional experiences, we’d love to hear from you.</p>",
+        "signature": "xo, Erin and Kelsey",
+        "signature_image": "shopify://shop_images/xo_Erin_and_Kelsey.png",
+        "signature_image_width": 250,
+        "image": "shopify://shop_images/portrait.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "color_scheme": "background-secondary",
+        "background_color": "",
+        "link": "",
+        "label": "",
+        "icon_show": "no",
+        "hub_section": ""
+      }
+    },
+    "accordion_section_6YKgN3": {
+      "type": "accordion-section",
+      "blocks": {
+        "accordion_Gy89Vi": {
+          "type": "accordion",
+          "settings": {
+            "title": "Finance | Director",
+            "content": "<p>As Director of Finance at Pepper Home, you will lead the company’s finance function through its next stage of growth, overseeing financial planning, forecasting, cash management, reporting, and day-to-day financial operations. Reporting directly to the CEO, you’ll serve as a key strategic partner to the leadership team, using financial analysis and modeling to evaluate major business decisions, identify opportunities, and support sustainable growth. You’ll also work closely with external accounting partners to ensure Pepper has accurate reporting, strong financial controls, and scalable processes.</p><p>You will be responsible for managing the company’s budgeting and long-range planning processes, monitoring cash flow and working capital, and analyzing inventory, COGS, and product-level profitability. From improving accounts payable and vendor payment workflows to evaluating financing opportunities and building stronger reporting systems, you’ll play a critical role in establishing the financial discipline and infrastructure needed to scale the business. The ideal candidate is highly analytical, collaborative, and equally comfortable developing sophisticated financial models, managing hands-on finance operations, and translating complex data into clear, actionable recommendations.<br/><br/><strong>Location: Boston, MA</strong></p>"
+          }
+        },
+        "accordion_EqEWhG": {
+          "type": "accordion",
+          "settings": {
+            "title": "Director | Brand Marketing ",
+            "content": "<p>As the Brand Marketing Director at Pepper Home, you'll shape how our brand shows up everywhere a customer meets us—positioning, voice, and messaging across web, email, social, advertising, print, and retail. You'll lead campaigns and product launches from brief through rollout, aligning story, audience, channel plan, and timing across ecommerce, retail, social, CRM, paid media, and PR, and you'll write or guide the writing of brand copy across every channel.</p><p>Beyond day-to-day execution, you'll set direction: developing positioning that builds awareness and long-term brand equity, leading our PR agency around launches and cultural moments, and identifying partnerships, collaborations, and activations that deepen our connection with customers. You'll also help shape retail marketing — store launches, local activations, in-store experience — and build the calendar, operating rhythms, and measurement framework that let brand work scale with the company. <br/><br/><strong>Location: Austin, TX</strong></p>"
+          }
+        },
+        "accordion_D9rwEB": {
+          "type": "accordion",
+          "settings": {
+            "title": "Content Creation | Senior Associate",
+            "content": "<p>As a Creative Senior Associate at Pepper Home, you will create compelling photography and video content across our website, social media, paid media, and broader marketing channels. You’ll lead the production process from concept through final delivery, including developing shot lists, shooting, filming, editing, and preparing assets for launch. Working closely with the marketing, social media, and ecommerce teams, you’ll help shape the visual caliber, consistency, and distinct point of view of the Pepper Home brand.</p><p>You will be responsible for capturing product photography and supporting video, creating and testing platform-specific content for Instagram and TikTok, and ensuring visual assets are accurately represented across our ecommerce experience. You’ll also organize and maintain our library of photography, video, UGC, and press assets while staying current on emerging content trends and bringing new creative ideas to the team. The ideal candidate is visually driven, highly organized, and equally comfortable behind the camera, in the editing process, and collaborating across teams in a fast-paced creative environment.<br/><br/><strong>Location: Austin, TX</strong></p>"
+          }
+        },
+        "accordion_hqXWnE": {
+          "type": "accordion",
+          "settings": {
+            "title": " Design Service | Associate",
+            "content": "<p>As a Design Service Associate at Pepper Home, you will help customers confidently bring their spaces together by providing thoughtful, personalized guidance throughout the pre-purchase process. You’ll consult with customers on pattern mixing, fabric and wallpaper pairings, measurements, and product combinations, using your design instincts and product knowledge to help turn ideas into completed orders. Through calls, emails, mood boards, and tailored product recommendations, you’ll play an important role in delivering the elevated, approachable design experience that defines Pepper Home.</p><p>You will be responsible for managing Design Help inquiries, creating visual mood boards, recommending swatches and products, and following up with customers as they make purchasing decisions. You’ll also provide backup customer service support across email, phone, SMS, and chat, assisting with order updates, returns, damages, and general troubleshooting when needed. The ideal candidate is warm, highly organized, and detail-oriented, with a natural eye for interiors and the ability to balance consultative selling with exceptional customer care in a fast-paced environment.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_Gy89Vi",
+        "accordion_EqEWhG",
+        "accordion_D9rwEB",
+        "accordion_hqXWnE"
+      ],
+      "name": "Accordion Section",
+      "settings": {
+        "heading": "Open Roles",
+        "hub_section": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_featured_blog_RAfbyn": {
+      "type": "section-featured-blog",
+      "name": "Featured blog",
+      "settings": {
+        "heading": "Apply",
+        "desktop_per_row": 3,
+        "mobile_per_row": 2,
+        "show_tags": true,
+        "show_date": false,
+        "use_metafields": false,
+        "color_scheme": "background-primary"
+      }
+    },
+    "177792797239cd5fae": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_DxwGzK": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "979271",
+            "text_color": "#242524",
+            "button_background_color": "#d5d0b5",
+            "button_label_color": "#242524",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_DxwGzK"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padded": false,
+        "color_scheme": "background-primary"
+      }
+    },
+    "image_columns_WfEgkC": {
+      "type": "image-columns",
+      "blocks": {
+        "image_DBMhhJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Office-4.jpg",
+            "heading": "Competitive compensation",
+            "subheading": "<p>We offer a comprehensive benefits package designed to support our team both personally and professionally. From competitive compensation and health coverage to generous time off and opportunities for growth, our goal is to create an environment where you can do your best work and feel supported along the way.</p>",
+            "link": ""
+          }
+        },
+        "image_763hWM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HomePage-Spring-2026-curtains.jpg",
+            "heading": "Health, dental, and vision coverage",
+            "subheading": "<p>We offer a comprehensive benefits package designed to support our team both personally and professionally. From competitive compensation and health coverage to generous time off and opportunities for growth, our goal is to create an environment where you can do your best work and feel supported along the way.</p>",
+            "link": ""
+          }
+        },
+        "image_UPB3KD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HomePage-Spring-2026-Wallpaper.jpg",
+            "heading": "Generous paid time off",
+            "subheading": "<p>We offer a comprehensive benefits package designed to support our team both personally and professionally. From competitive compensation and health coverage to generous time off and opportunities for growth, our goal is to create an environment where you can do your best work and feel supported along the way.</p>",
+            "link": ""
+          }
+        },
+        "image_WiEYR3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Pillow-PrintedLinen-Annabelle-Peacock-HighTideHomes-20250819-1-AdApproved-Credited-Cropped.jpg",
+            "heading": "Opportunities for growth and career development",
+            "subheading": "<p>We offer a comprehensive benefits package designed to support our team both personally and professionally. From competitive compensation and health coverage to generous time off and opportunities for growth, our goal is to create an environment where you can do your best work and feel supported along the way.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_DBMhhJ",
+        "image_763hWM",
+        "image_UPB3KD",
+        "image_WiEYR3"
+      ],
+      "disabled": true,
+      "name": "Image columns",
+      "settings": {
+        "section_full_width": "fw_has_padding",
+        "heading": "Benefits",
+        "heading_size": "h1",
+        "subheading": "",
+        "link": "",
+        "label": "",
+        "image_ratio": "square",
+        "image_order": "image-first",
+        "enable_slider": false,
+        "mobile_columns": "one",
+        "desktop_columns": "one-half",
+        "card_color_scheme": "background-primary",
+        "show_numerals": false,
+        "color_scheme": "background-primary",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "image_content_Nk76gr",
+    "accordion_section_6YKgN3",
+    "section_featured_blog_RAfbyn",
+    "177792797239cd5fae",
+    "image_columns_WfEgkC"
+  ]
+}

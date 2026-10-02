@@ -1,0 +1,563 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_8pNkkg": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_68KQRY": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": ""
+          }
+        },
+        "switch_option_type_f8pjiq": {
+          "type": "switch_option_type",
+          "settings": {}
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "embroidery_options_he9xw3": {
+          "type": "embroidery_options",
+          "settings": {
+            "product": "pillow-embroidery"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03",
+        "description_8pNkkg",
+        "switch_option_color_68KQRY",
+        "switch_option_type_f8pjiq",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "embroidery_options_he9xw3",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 430px) {.construction-radio, .size-radio, .trim-side-radio {background-repeat: no-repeat; background-size: auto 77%; position: relative; }}"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "enable_pillow_ruffle": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "Pre-order, ETA 11/15",
+        "pompom_trims": "Peacock Velvet"
+      }
+    },
+    "product_additional_6qctTT": {
+      "type": "product-additional",
+      "blocks": {
+        "tab_BeR9XE": {
+          "type": "tab",
+          "settings": {
+            "heading": "Overview",
+            "image_content_width": 150,
+            "content": "<p>If you thought our custom pillows couldn’t get any better, they just did. Introducing three trim options, from a pop of piping to playful pom pom. </p><p>Try before you buy with our <a href=\"/collections/pillow-trim-samples\" target=\"_blank\" title=\"Pillow Trim Samples\">Pillow Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/PillowTrimArrangement_52b06631-172f-43e9-8d6c-e2dc101903b9.jpg",
+            "image_2": "shopify://shop_images/Moodboard-2.jpg"
+          }
+        },
+        "tab_EgMHhD": {
+          "type": "tab",
+          "settings": {
+            "heading": "PIPING",
+            "image_content_width": 150,
+            "content": "<p>Add a pop of piping to your pillows. Crafted from luxurious velvets and cottons, our assortment of colors and patterns is suitable for any design scheme. </p><p>Try before you buy with our <a href=\"/collections/pillow-trim-samples\" target=\"_blank\" title=\"Pillow Trim Samples\">Pillow Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Piping.jpg",
+            "image_2": "shopify://shop_images/Beatrice-KevinOGara_9b342053-04a0-465c-b7ee-4fc6ec940c14.jpg"
+          }
+        },
+        "tab_fRXBwX": {
+          "type": "tab",
+          "settings": {
+            "heading": "FRINGE",
+            "image_content_width": 150,
+            "content": "<p>Timeless texture that works well in both modern and classic spaces, these tastefully colorful fringes feel as good as they look.</p><p>Try before you buy with our <a href=\"/collections/pillow-trim-samples\" target=\"_blank\" title=\"Pillow Trim Samples\">Pillow Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Fringe.png",
+            "image_2": "shopify://shop_images/Kevin-OGara-6_ab166462-7171-4e45-acaf-cd26b246dc37.png"
+          }
+        },
+        "tab_eHCLjp": {
+          "type": "tab",
+          "settings": {
+            "heading": "POM POM",
+            "image_content_width": 150,
+            "content": "<p>It’s soft, it’s sweet, it’s irresistible. We love pom pom trim for cozy spaces, especially a bedroom or nursery.</p><p>Try before you buy with our <a href=\"/collections/pillow-trim-samples\" target=\"_blank\" title=\"Pillow Trim Samples\">Pillow Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-PomPom.png",
+            "image_2": "shopify://shop_images/PinkBed-CloseUp_6df056be-d576-4197-929d-35e998288e8f.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_BeR9XE",
+        "tab_EgMHhD",
+        "tab_fRXBwX",
+        "tab_eHCLjp"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Trim Selection",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "product_additional_DkNTfh": {
+      "type": "product-additional",
+      "blocks": {
+        "tab_TtcU8b": {
+          "type": "tab",
+          "settings": {
+            "heading": "OVERVIEW",
+            "image_content_width": 150,
+            "content": "<p>Need a hand designing your dream pillow? We’ve put together a few of our fave combos to get the wheels turning.</p>",
+            "image_1": "shopify://shop_images/EmbroideryInspiration-Grid_a28496d2-b744-4ca2-95a3-ea7b52859a5f.jpg"
+          }
+        },
+        "tab_8Qt7pC": {
+          "type": "tab",
+          "settings": {
+            "heading": "Typeface",
+            "image_content_width": 150,
+            "content": "<h3>Monogram</h3><p>Our monogram style displays three initials with a larger center letter—use First, Last, Middle. For example, Anna Beatrice Clark is ACB.</p><h3>Text</h3><p>A name, date, or phrase—as long as it's 15 characters or less, you can choose any letter, number, or keyboard symbol.</p>",
+            "image_1": "shopify://shop_images/EmbroideryMonogram-Grid.jpg",
+            "image_2": "shopify://shop_images/EmbroideryText-Grid.jpg"
+          }
+        },
+        "tab_VdnjXj": {
+          "type": "tab",
+          "settings": {
+            "heading": "Thread",
+            "image_content_width": 150,
+            "content": "<p>Go matchy-matchy with your trim or bring a fun pop to your pillow.</p>",
+            "image_1": "shopify://shop_images/EmbroideryColors.jpg"
+          }
+        },
+        "tab_KCGWX7": {
+          "type": "tab",
+          "settings": {
+            "heading": "Sizing",
+            "image_content_width": 150,
+            "content": "<p>Embroidery sizing depends on the pillow size, number of letters, and font selection. </p>",
+            "image_1": "shopify://shop_images/EmbroiderySizing-Grid.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_TtcU8b",
+        "tab_8Qt7pC",
+        "tab_VdnjXj",
+        "tab_KCGWX7"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "EMBROIDERY SELECTION",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "artist_section_3QVE7f": {
+      "type": "artist-section",
+      "settings": {
+        "section_full_width": "no",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "background_color": "#f3f1ec"
+      }
+    },
+    "two_column_features_ChhPQx": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_p7HDnR": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn't exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_eDRnMM": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-1.jpg",
+            "title": "Sustainable By Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_p7HDnR",
+        "feature_column_eDRnMM"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_content_VnwExT": {
+      "type": "image-content",
+      "disabled": true,
+      "settings": {
+        "section_full_width": "no",
+        "word_graphic_width_erin_kelsey": 104,
+        "word_graphic_width_xoxo": 104,
+        "section_heading": "",
+        "section_heading_size": "h2",
+        "heading": "Pillow Embroidery",
+        "heading_size": "h1",
+        "subheading": "",
+        "content": "<p>Preview your exact pillow monogram and color by clicking the “Personalize” button in each pillow listing.<br/><br/>See an overview of our all the embroidery<br/>details, fonts, thread colors, and more.</p>",
+        "signature": "",
+        "signature_image_width": 150,
+        "image": "shopify://shop_images/PDP-Embroidery.png",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "color_scheme": "custom",
+        "background_color": "#e7e2d8",
+        "link": "shopify://pages/embroidery-guide",
+        "label": "EMBROIDERY GUIDE",
+        "icon_show": "no",
+        "hub_section": ""
+      }
+    },
+    "section_trim_options_cccLqY": {
+      "type": "section-trim-options",
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Trim Options",
+        "heading_size": "h3",
+        "subheading": "<p>It’s all about the finishing touch. Pillow trim options include:</p>",
+        "content": "<p><strong>PIPING</strong><br/>Add a pop of piping to your pillows or upholstery with our piping-crafted from luxurious velvets and cottons.</p><p><strong>FRINGE</strong><br/>Timeless texture that works well in both modern and classic spaces, these tastefully colorful fringes feel as good as they look.</p><p><strong>RUFFLE</strong><br/>Softly structured with a hint of whimsy, our ruffle trim adds a charming touch to every pillow.</p><p><strong>POM POM</strong><br/>It’s soft, it’s sweet, it’s irresistible. Pom pom trim adds a playful element to pillows, upholstery and window treatments.</p>",
+        "image": "shopify://shop_images/Moodboard-Pillow-Trim.png",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "https://pepper-home.com/collections/pillow-trim-samples",
+        "label": "ORDER TRIM SAMPLES"
+      }
+    },
+    "curated_spaces_LHD9KE": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_wXdGtN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-pillow-chenillejacquard-quinn-steel-3x4.jpg",
+            "product": "pillow-printedlinen-gemma-pear-custom"
+          }
+        },
+        "slide_L3fb8F": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-grasscloth-cream.jpg",
+            "product": "pillow-printedlinen-thatcher-forest-custom"
+          }
+        },
+        "slide_T6mFfx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-pillows-millieharbor.jpg",
+            "product": "pillow-woven-millie-harbor-custom"
+          }
+        },
+        "slide_4Wrayi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-bestsellers-beatrice.jpg",
+            "product": "pillow-embroidered-beatrice-amalfi-custom"
+          }
+        },
+        "slide_zgixAr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-pillows-walnutemma.jpg",
+            "product": "pillow-printedcotton-emma-chartreuse-custom"
+          }
+        },
+        "slide_6c4bdH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Pillow-SolidCotton-Sea-_mollyboyd-20240628-14-AdApproved-cropped.jpg",
+            "product": "pillow-chenillejacquard-willow-amalfi-custom"
+          }
+        },
+        "slide_78JzqR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-pillows-matilda.jpg",
+            "product": "pillow-printedcotton-matilda-hunter-custom"
+          }
+        },
+        "slide_AVBN3e": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-founderfavs-walnut.jpg",
+            "product": "pillow-solid-velvet-walnut-custom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wXdGtN",
+        "slide_L3fb8F",
+        "slide_T6mFfx",
+        "slide_4Wrayi",
+        "slide_zgixAr",
+        "slide_6c4bdH",
+        "slide_78JzqR",
+        "slide_AVBN3e"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at <i>Your</i> Place",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "c166d93d-961e-4693-ac9e-2391913f984b": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "c166d93d-961e-4693-ac9e-2391913f984b"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_RBTjwK": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_fKzJGd": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_fKzJGd"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_3LwcqK": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_hHxBrb": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_mCG9qM": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": ""
+          }
+        },
+        "column_THjc4M": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": ""
+          }
+        },
+        "column_W7JgFd": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mCG9qM",
+        "column_THjc4M",
+        "column_W7JgFd"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_additional_6qctTT",
+    "product_additional_DkNTfh",
+    "artist_section_3QVE7f",
+    "two_column_features_ChhPQx",
+    "image_content_VnwExT",
+    "section_trim_options_cccLqY",
+    "curated_spaces_LHD9KE",
+    "product-recommendations",
+    "1633988363790b2161",
+    "163398841244446eb7",
+    "app_review_RBTjwK",
+    "recently_viewed_products_3LwcqK",
+    "section_text_with_icon_column_hHxBrb"
+  ]
+}

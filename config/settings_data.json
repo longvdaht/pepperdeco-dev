@@ -1,0 +1,423 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "colors_background_secondary": "#f3f1ec",
+    "colors_background_tertiary": "#E6E2D9",
+    "colors_background_quaternary": "#D1CFBB",
+    "colors_button_label": "#242524",
+    "colors_button_background": "#a39f73",
+    "colors_button_background_hover": "#d1cfbb",
+    "colors_secondary_button_background": "#FFFFFF",
+    "colors_secondary_button_background_hover": "#d1cfbb",
+    "colors_outline_button_background": "#e5e5e5",
+    "social_twitter_link": "",
+    "social_facebook_link": "https://www.facebook.com/pepperhomedecor",
+    "social_pinterest_link": "https://www.pinterest.com/pepperhome/",
+    "social_instagram_link": "https://www.instagram.com/pepperhome/",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "shopify://shop_images/Letterpress-Circle-Black.png",
+    "cart_show_shipping_threshold": true,
+    "shipping_threshold": 300,
+    "cart_link": "shopify://collections/custom",
+    "checkout_customization": true,
+    "page_width": "1200",
+    "search_menu": "popular-searches",
+    "search_featured_products": [
+      "sheercurtain-sheer-madeline-flour-custom",
+      "bed-cecilia-solid-performancewoven-camel",
+      "romanshade-printedcotton-quinn-eucalyptus-custom",
+      "wallpaper-grasscloth-lucie-clay"
+    ],
+    "search_black_list_collection": [
+      "trim-pompom",
+      "abandoned-cart-email-exclusion",
+      "trim-band",
+      "fabric-chenillejacquard",
+      "swatch-fabric-chenillejacquard",
+      "swatch-wallpaper-claycoated",
+      "swatch-fabric-curtainlining",
+      "swatch-fabric-embroidered",
+      "fabric-embroidered",
+      "trim-fringe",
+      "swatch-wallpaper-patternedgrasscloth",
+      "swatch-wallpaper-performance",
+      "trim-piping",
+      "swatch-fabric-printedcotton",
+      "swatch-fabric-printedlinen",
+      "trim-rickrack",
+      "swatch-fabric-sheer",
+      "fabric-cottonlinen",
+      "swatch-fabric-solidcottonlinen",
+      "swatch-fabric-solidvelvet",
+      "fabric-velvets",
+      "tablecloth",
+      "trim-tassel",
+      "swatch-fabric-woven",
+      "sample-furniture-wood",
+      "swatch-wallpaper-removable",
+      "swatch-wallpaper-grasscloth",
+      "fabric-woven",
+      "swatch-fabric-performancewoven",
+      "trim-samples"
+    ],
+    "search_black_list_page": "",
+    "colors_button_second_background": "#ffffff",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify://shop_images/8-Script.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#a49f73",
+    "checkout_button_color": "#a49f73",
+    "checkout_error_color": "#ea2045",
+    "social_google_link": "",
+    "checkout_use_header_image": false,
+    "checkout_logo": "",
+    "checkout_use_body_background_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "13c954a3-dc00-4f11-8152-ba2b3e28c6fd": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Save  <strong>20% OFF</strong> sitewide now through 11/10.",
+              "link": "shopify://blogs/the-thread/holiday-lead-times"
+            }
+          },
+          "announcement_QwJrxi": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Please allow an extended lead time of 4 weeks for curtains",
+              "link": ""
+            }
+          },
+          "cdc8e559-0bbe-41dc-8063-7c87f3e92df9": {
+            "type": "announcement",
+            "settings": {
+              "text": "Shop the sample sale! Enjoy up to 60% off.",
+              "link": "shopify://collections/sample-sale"
+            }
+          },
+          "62c44688-4731-4047-aeb5-aeca647afd6c": {
+            "type": "announcement",
+            "settings": {
+              "text": "Just in: our newest furniture designs",
+              "link": "shopify://collections/new"
+            }
+          },
+          "announcement_FtU3hA": {
+            "type": "announcement",
+            "settings": {
+              "text": "Introducing Woven Wood Shades!",
+              "link": "shopify://collections/custom-woven-wood-shades"
+            }
+          },
+          "8b28e789-7ecc-4f5b-bd32-e25cb910da4f": {
+            "type": "announcement",
+            "settings": {
+              "text": "Get your Pepper Home gift card",
+              "link": "shopify://products/gift-card-digital"
+            }
+          },
+          "642c7e03-1a51-40ac-b86d-cb391064354f": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Free shipping on orders over $300*",
+              "link": "shopify://policies/shipping-policy"
+            }
+          },
+          "7f80f487-60d4-4f96-bfaf-3f6a802a970f": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Design Your Perfect Sofa",
+              "link": "shopify://collections/custom-furniture-sofas"
+            }
+          },
+          "68947099-1921-4e59-9b90-342a6ccbac64": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Extended holiday lead times for custom items.",
+              "link": "shopify://blogs/the-thread/holiday-lead-times"
+            }
+          },
+          "faa6c813-113b-42b7-befe-b76f16617fca": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "LAST DAY to get your giftables by Christmas! | <strong>SHOP NOW</strong>",
+              "link": "shopify://collections/giftables"
+            }
+          },
+          "55f7c32b-5b67-41de-b160-26f446a87a27": {
+            "type": "announcement",
+            "disabled": true,
+            "settings": {
+              "text": "Holiday shipping deadlines | <strong>VIEW</strong>",
+              "link": "shopify://blogs/pep-talk/holiday-lead-times"
+            }
+          }
+        },
+        "block_order": [
+          "13c954a3-dc00-4f11-8152-ba2b3e28c6fd",
+          "announcement_QwJrxi",
+          "cdc8e559-0bbe-41dc-8063-7c87f3e92df9",
+          "62c44688-4731-4047-aeb5-aeca647afd6c",
+          "announcement_FtU3hA",
+          "8b28e789-7ecc-4f5b-bd32-e25cb910da4f",
+          "642c7e03-1a51-40ac-b86d-cb391064354f",
+          "7f80f487-60d4-4f96-bfaf-3f6a802a970f",
+          "68947099-1921-4e59-9b90-342a6ccbac64",
+          "faa6c813-113b-42b7-befe-b76f16617fca",
+          "55f7c32b-5b67-41de-b160-26f446a87a27"
+        ],
+        "settings": {
+          "color_scheme": "background-quaternary"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "image_efBiKa": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Shop",
+              "child_title": "window treatments",
+              "image": "shopify://shop_images/curtain-solid-linen-flour.jpg"
+            }
+          },
+          "image_CnrgyF": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Shop",
+              "child_title": "furniture",
+              "image": "shopify://shop_images/collection-chairs-blue.jpg"
+            }
+          },
+          "image_3G4Wh7": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Shop",
+              "child_title": "pillows",
+              "image": "shopify://shop_images/UGC-Pillow-SolidCotton-Sea-_mollyboyd-20240628-14-AdApproved-cropped_430x_copy.jpg"
+            }
+          },
+          "image_zg3fxL": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Shop",
+              "child_title": "wallpaper",
+              "image": "shopify://shop_images/StyledImage-Wallpaper-Lucie-Chamomile-_hannahsmckenna-1.jpg"
+            }
+          },
+          "image_LKUbhd": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Shop",
+              "child_title": "shower curtains",
+              "image": "shopify://shop_images/UGC-ShowerCurtain-Woven-Louisa-Camel-_rose_hill_designs_and_tamara_flanagan_photo-20251110-1-AdApproved-Cropped.jpg"
+            }
+          },
+          "image_Vaahw8": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Shop",
+              "child_title": "fabric by the yard",
+              "image": "shopify://shop_images/PDP-CustomToYou-1_copy.png"
+            }
+          },
+          "image_zyxtz9": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Swatches",
+              "child_title": "",
+              "image": "shopify://shop_images/fabric_swatch-madeline_cornflower_720.png"
+            }
+          },
+          "image_CkjHWg": {
+            "type": "image",
+            "settings": {
+              "parent_title": "New",
+              "child_title": "",
+              "image": "shopify://shop_images/Roman-Shade-Scalloped-Vivienne-Inside-nobackground.png"
+            }
+          },
+          "image_dJhnBe": {
+            "type": "image",
+            "settings": {
+              "parent_title": "Best sellers",
+              "child_title": "",
+              "image": "shopify://shop_images/Chair-Florence-Harbor.png"
+            }
+          },
+          "image_mjwgxA": {
+            "type": "image",
+            "settings": {
+              "parent_title": "design resources",
+              "child_title": "",
+              "image": "shopify://shop_images/Image_6.png"
+            }
+          },
+          "image_HTkEDY": {
+            "type": "image",
+            "settings": {
+              "parent_title": "TRADE PROGRAM",
+              "child_title": "",
+              "image": "shopify://shop_images/Image_9.png"
+            }
+          },
+          "image_63YMAn": {
+            "type": "image",
+            "settings": {
+              "parent_title": "FREE DESIGN HELP",
+              "child_title": "",
+              "image": "shopify://shop_images/Image_10_a3f758d7-02bb-48d3-89d5-94879aa49022.png"
+            }
+          },
+          "image_4H9E3e": {
+            "type": "image",
+            "settings": {
+              "parent_title": "FREE DESIGN HELP",
+              "child_title": "Test",
+              "image": "shopify://shop_images/Image_10_a3f758d7-02bb-48d3-89d5-94879aa49022.png"
+            }
+          }
+        },
+        "block_order": [
+          "image_efBiKa",
+          "image_CnrgyF",
+          "image_3G4Wh7",
+          "image_zg3fxL",
+          "image_LKUbhd",
+          "image_Vaahw8",
+          "image_zyxtz9",
+          "image_CkjHWg",
+          "image_dJhnBe",
+          "image_mjwgxA",
+          "image_HTkEDY",
+          "image_63YMAn",
+          "image_4H9E3e"
+        ],
+        "settings": {
+          "logo": "shopify://shop_images/ph-logo.svg",
+          "menu": "2026-desktop-top",
+          "quick-menu-mobile": "",
+          "hide_quick_menu_mobile": true,
+          "desktop_menu": "2026-main-menu-desktop",
+          "mobile_menu": "2026-main-mobile-menu",
+          "enable_sticky_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "disabled": true,
+            "settings": {
+              "heading": "SHOP",
+              "menu": "footer-column-1"
+            }
+          },
+          "d8e00814-1597-4896-a4e8-0db8244a2dce": {
+            "type": "link_list",
+            "settings": {
+              "heading": "PEPPER HOME",
+              "menu": "footer-column-2"
+            }
+          },
+          "dd3da4f9-d0c1-479a-b8d5-9946ffd3b703": {
+            "type": "link_list",
+            "settings": {
+              "heading": "RESOURCES",
+              "menu": "footer-column-3"
+            }
+          },
+          "661915fe-2f18-43f5-8f24-61cb96908d33": {
+            "type": "link_list",
+            "disabled": true,
+            "settings": {
+              "heading": "About",
+              "menu": "footer-column-4"
+            }
+          },
+          "footer-1": {
+            "type": "text",
+            "settings": {
+              "heading": "Need Help?",
+              "subtext": "<p>Email: <a href=\"mailto:hello@pepper-home.com\" title=\"mailto:hello@pepper-home.com\">hello@pepper-home.com</a></p>"
+            }
+          },
+          "67be70ef-859b-4d29-9498-c3b9d9edde0b": {
+            "type": "sms",
+            "settings": {
+              "subtext": "<div>LIVE CHAT: M-F 10 AM - 5 PM EST\n</div>\n<div>\n<a href=\"https://pepper-home.gorgias.help/\">Help Center</a>\n</div>"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "d8e00814-1597-4896-a4e8-0db8244a2dce",
+          "dd3da4f9-d0c1-479a-b8d5-9946ffd3b703",
+          "661915fe-2f18-43f5-8f24-61cb96908d33",
+          "footer-1",
+          "67be70ef-859b-4d29-9498-c3b9d9edde0b"
+        ],
+        "settings": {
+          "color_scheme": "background-1"
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+          "link": "https://pepper-home.com/collections/best-sellers"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "16339721453b2139fe": {
+        "type": "shopify://apps/okendo/blocks/theme-settings/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "disabled": false,
+        "settings": {
+          "show_preview_data": false
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {}
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "body {--covet-pics-font-family: \"sweet-sans-pro\", sans-serif;}"
+    ]
+  }
+}

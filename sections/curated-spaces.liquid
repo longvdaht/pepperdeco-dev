@@ -1,0 +1,252 @@
+{{ 'curated-spaces.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'curated-spaces.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{% style %}
+  [data-section-id="{{ section.id }}"] {
+    width: 100%;
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+    background-color: {{ section.settings.background_color }};
+  }
+  @media (min-width: 768px) {
+    [data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+{% endstyle %}
+
+{%- assign slider_id = 'curated-spaces-slider-' | append: section.id -%}
+
+<div class="section-curated-spaces" id="curated-spaces-{{ section.id }}" data-section-id="{{ section.id }}">
+  {% if section.settings.heading != blank or section.settings.subheading != blank %}
+    <div class="curated-spaces__header">
+      {% if section.settings.heading != blank %}
+        <h2 class="curated-spaces__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="curated-spaces__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <slider-component class="curated-spaces__slider-wrap">
+    <ul
+      id="{{ slider_id }}"
+      class="curated-spaces__track slider__grid list-unstyled slider grid grid-nowrap"
+      role="list"
+    >
+      {% for block in section.blocks %}
+        {% if block.type == 'slide' %}
+          {%- assign product_item = block.settings.product -%}
+          <li class="curated-spaces__slide slider__slide slider__slide carousel-cell grid__item{% if forloop.last %} grid__item--last{% elsif forloop.first %} grid__item--first{% endif %}" {{ block.shopify_attributes }}>
+            <div class="curated-spaces__slide-wrapper">
+              <div class="curated-spaces__image-wrap">
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 800 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    width="800"
+                    height="800"
+                    loading="lazy"
+                  >
+                  <img
+                      srcset="
+                        {%- if product_item.featured_image.width >= 165 -%}{{ product_item.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if product_item.featured_image.width >= 360 -%}{{ product_item.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if product_item.featured_image.width >= 533 -%}{{ product_item.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if product_item.featured_image.width >= 720 -%}{{ product_item.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+                        {%- if product_item.featured_image.width >= 940 -%}{{ product_item.featured_image | image_url: width: 940 }} 940w,{%- endif -%}
+                        {%- if product_item.featured_image.width >= 1066 -%}{{ product_item.featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                        {{ product_item.featured_image | image_url }} {{ product_item.featured_image.width }}w
+                      "
+                      src="{{ product_item.featured_image | image_url: width: 533 }}"
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                      alt="{{ product_item.featured_image.alt | escape }}"
+                      class="motion-reduce"
+                      loading="lazy"
+                      width="{{ product_item.featured_image.width }}"
+                      height="{{ product_item.featured_image.height }}"
+                    >
+                {% else %}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'curated-spaces__placeholder' }}
+                {% endif %}
+              </div>
+
+              {% if product_item != blank %}
+                <div class="curated-spaces__product">
+                  <a href="{{ product_item.url }}" class="curated-spaces__product-info">
+                    <div class="curated-spaces__product-thumb">
+                      {% if product_item.featured_image %}
+                        <img
+                          srcset="
+                            {%- if product_item.featured_image.width >= 165 -%}{{ product_item.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if product_item.featured_image.width >= 360 -%}{{ product_item.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if product_item.featured_image.width >= 533 -%}{{ product_item.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+                            {%- if product_item.featured_image.width >= 720 -%}{{ product_item.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+                            {%- if product_item.featured_image.width >= 940 -%}{{ product_item.featured_image | image_url: width: 940 }} 940w,{%- endif -%}
+                            {%- if product_item.featured_image.width >= 1066 -%}{{ product_item.featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                            {{ product_item.featured_image | image_url }} {{ product_item.featured_image.width }}w
+                          "
+                          src="{{ product_item.featured_image | image_url: width: 533 }}"
+                          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                          alt="{{ product_item.featured_image.alt | escape }}"
+                          {% unless lazy_load == false %}
+                            loading="lazy"
+                          {% endunless %}
+                          width="{{ product_item.featured_image.width }}"
+                          height="{{ product_item.featured_image.height }}"
+                        >
+                      {% else %}
+                        {{ 'product-1' | placeholder_svg_tag }}
+                      {% endif %}
+                    </div>
+                    <div class="curated-spaces__product-text">
+                      <span class="curated-spaces__product-title">{{ product_item.title }}</span>
+                      <span class="curated-spaces__product-price">From {{ product_item.price_min | money_without_trailing_zeros }}</span>
+                    </div>
+                  </a>
+
+                  <a href="{{ product_item.url }}"
+                    type="button"
+                    class="curated-spaces__add-btn"
+                    data-product-id="{{ product_item.id }}"
+                    data-variant-id="{{ product_item.first_available_variant.id }}"
+                    aria-label="Add {{ product_item.title | escape }} to cart"
+                  >
+                    {%- render 'plus-icon' -%}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="slider-buttons no-js-hidden">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'accessibility.previous_slide' | t }}"
+      >
+        {% render 'icon-arrow-left' %}
+      </button>
+      <div class="visually-hidden slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+        <span class="slider-counter--total">{{ section.blocks.size }}</span>
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'accessibility.next_slide' | t }}"
+      >
+        {% render 'icon-arrow-right' %}
+      </button>
+    </div>
+  </slider-component>
+</div>
+
+{% schema %}
+{
+  "name": "Curated Spaces",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F3F1EC"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Real Customers. Curated Spaces."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "See how our customers pepperd their homes."
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Lifestyle image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Linked product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Curated Spaces",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

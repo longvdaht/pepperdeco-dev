@@ -1,0 +1,15 @@
+{% comment %}
+  snippets/b2b-cart-attributes.liquid
+{% endcomment %}
+
+{%- if customer and customer.b2b? -%}
+  {%- liquid
+    assign company = customer.current_company
+    assign trade_tier = company.metafields.custom.trade_tier.value
+    assign company_name = company.name | escape
+  -%}
+  
+  <input type="hidden" name="attributes[_b2b]" value="true">
+  <input type="hidden" name="attributes[_trade_tier]" value="{{ trade_tier }}">
+  <input type="hidden" name="attributes[_company_name]" value="{{ company_name }}">
+{%- endif -%}

@@ -1,0 +1,580 @@
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-article.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign show_tags = section.settings.show_tags
+  assign grid_mobile_column = 'one'
+  assign grid_desktop_column = 'one-half'
+-%}
+
+<div class="page-width">
+  <div class="border-top"></div>
+</div>
+
+{% assign block_banner = section.blocks | where: 'type', 'banner' %}
+{% style %}
+  .main-article {
+    background-color: {{ section.settings.background_color }};
+  }
+{% endstyle %}
+
+<div class="section-outer section-color-{{ section.settings.color_scheme }}{% if block_banner.size == 0 %} no-block-banner{% endif %}">
+  <div class="page-width main-article-page-width">
+    <div class="grid mobile-{{ grid_mobile_column }}">
+      <article
+        class="grid__item article-template{% if blog.title contains 'Spice' %} spice-market{% endif %}{% if blog.tags contains 'flex-content' %} flex-content{% endif %}"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+      >
+        {% if show_tags %}
+          <div class="section-heading-outer page-width desktop-{{ grid_desktop_column }} custom-grid-article">
+            {% for tag in blog.all_tags %}
+              <a
+                href="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                class="blog-tag"
+                {% if article.tags contains tag %}
+                  aria-current="page"
+                {% endif %}
+              >
+                <span>{{ tag }}</span>
+                {% render 'squiggle-menu' %}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              <div {{ block.shopify_attributes }} class="custom-grid-article desktop-{{ grid_desktop_column }}">
+                {% render block %}
+              </div>
+            {%- when 'featured_image' -%}
+              {%- if article.image -%}
+                <div
+                  class="article-template__hero-container custom-grid-article desktop-{{ grid_desktop_column }}"
+                  itemprop="image"
+                >
+                  <img
+                    srcset="
+                      {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                      {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    "
+                    src="{{ article.image.src | image_url: width: 533 }}"
+                    sizes="(min-width: 40em) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, calc(100vw - 2rem)"
+                    alt="{{ article.image.src.alt | escape }}"
+                    width="{{ article.image.width }}"
+                    height="{{ article.image.height }}"
+                    loading="lazy"
+                    class="motion-reduce"
+                  >
+                </div>
+              {%- endif -%}
+
+            {%- when 'title' -%}
+              <div class="custom-grid-article desktop-{{ grid_desktop_column }}" {{ block.shopify_attributes }}>
+                <h1 class="h1 display article-template__title" itemprop="headline">
+                  {{ article.title | escape }}
+                </h1>
+                <div class="article-list-tags">
+                  <a
+                    href="{{ blog.url }}"
+                    class="blog-tag"
+                  >
+                    <span>{{ blog.title }}</span>
+                  </a>
+                  {%- if block.settings.blog_show_tags -%}
+                    {% if article.tags.size > 0 %}
+                      {% for tag in article.tags %}
+                        <a
+                          href="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                          class="blog-tag"
+                        >
+                          <span>{{ tag }}</span>
+                        </a>
+                      {% endfor %}
+                    {%- endif -%}
+                  {%- endif -%}
+                  {%- if block.settings.blog_show_date -%}
+                    <span class="blog-tag blog-date" itemprop="dateCreated datePublished">
+                      <span>{{ article.published_at | date: '%B %Y' }}</span>
+                    </span>
+                  {%- endif -%}
+                  {%- if block.settings.blog_show_author -%}
+                    <span itemprop="author" class="blog-tag" itemscope itemtype="http://schema.org/Person">
+                      <span itemprop="name">{{ article.author }}</span>
+                    </span>
+                  {%- endif -%}
+                </div>
+              </div>
+
+            {%- when 'content' -%}
+              {% if article.content != blank %}
+                <div
+                  class="article-template__content rte custom-grid-article desktop-{{ grid_desktop_column }}"
+                  itemprop="articleBody"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ article.content }}
+                </div>
+              {% endif %}
+
+            {%- when 'share' -%}
+              <div class="h2 custom-grid-article desktop-{{ grid_desktop_column }}" {{ block.shopify_attributes }}>
+                {% if block.settings.share_label != blank %}
+                  {{ block.settings.share_label }}
+                {% endif %}
+              </div>
+              {% comment %} TODO: Share buttons {% endcomment %}
+            {%- when 'blog_grid_image' -%}
+              {% if article.metafields.custom.blog_grid_image %}
+                {{ 'section-main-gallery.css' | asset_url | stylesheet_tag }}
+                {{ 'component-card.css' | asset_url | stylesheet_tag }}
+                <div class="article-template__content section-main-gallery" {{ block.shopify_attributes }}>
+                  <slider-component>
+                    <ul class="grid mobile-1 desktop-3 list-unstyled">
+                      {% for item in article.metafields.custom.blog_grid_image.value %}
+                        {% assign item_image = item.image %}
+                        {% assign item_link = item.link %}
+                        {% assign image_width = 2048 %}
+                        <li class="grid__item carousel-cell">
+                          <div
+                            class="card card-product"
+                          >
+                            <div class="card-inner">
+                              {%- if item_link != blank -%}
+                                <a href="{{ item_link }}">
+                              {%- endif -%}
+                                {%- if item_image != blank -%}
+                                  <div class="media media--square">
+                                    <img
+                                      srcset="
+                                        {%- if image_width >= 375 -%}{{ item_image | image_url: width: 375 }} 375w,{%- endif -%}
+                                        {%- if image_width >= 750 -%}{{ item_image | image_url: width: 750 }} 750w,{%- endif -%}
+                                        {%- if image_width >= 1100 -%}{{ item_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                                        {%- if image_width >= 1500 -%}{{ item_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                                        {%- if image_width >= 1780 -%}{{ item_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                                        {%- if image_width >= 2000 -%}{{ item_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                                        {%- if image_width >= 3000 -%}{{ item_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                                        {%- if image_width >= 3840 -%}{{ item_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                                      "
+                                      sizes="(min-width: 40em) 20vw, calc(100vw - 4rem)"
+                                      src="{{ item_image | image_url: width: 400 }}"
+                                      loading="lazy"
+                                      alt="{{ item_image.alt | escape }}"
+                                      width="{{ 2048 }}"
+                                      height="{{ 2048 | divided_by: 1 }}"
+                                    >
+                                    <div class="card-information">
+                                      <h3 class="h5 card-gallery">{{- 'blogs.article.metaobject_shop' | t -}}</h3>
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                                {%- if item.heading != blank or item.subheading != blank -%}
+                                  <div class="card-info-wrapper">
+                                    {%- if item.heading != blank -%}
+                                      <h2>{{ item.heading }}</h2>
+                                    {%- endif -%}
+                                    {%- if item.subheading != blank -%}
+                                      <p>{{ item.subheading }}</p>
+                                    {%- endif -%}
+                                  </div>
+                                {%- endif -%}
+                              {%- if item_link != blank -%}
+                                </a>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </slider-component>
+                </div>
+              {% endif %}
+            {% when 'blog_swatches' %}
+              {% if article.metafields.custom.paint_guide_swatch %}
+                {{ 'template-collection.css' | asset_url | stylesheet_tag }}
+                {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
+                {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
+                {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+
+                <script src="{{ 'collection-custom-filters.js' | asset_url }}" defer="defer"></script>
+                <script src="{{ 'paint-guide-search.js' | asset_url }}" defer="defer"></script>
+
+                <collection-filters class="swatch-collection-filter">
+                  <aside
+                    aria-labelledby="verticalTitle"
+                    class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
+                    id="main-collection-filters"
+                    data-id="{{ section.id }}"
+                  >
+                    <div class="facets-container">
+                      <facet-filters-form class="facets">
+                        <form id="FacetFiltersForm" class="facets__form wrapper-4-items">
+                          <div class="facets__form--search-wrapper">
+                            <div id="FacetsWrapperDesktop" class="facets__wrapper wrapper-4-items">
+                              {% if block.settings.filter_swatch != blank %}
+                                {% assign filter_label = 'Color' %}
+                                {% render 'article-filter-item',
+                                  block: block,
+                                  filter_label: filter_label,
+                                  filter_values: block.settings.filter_swatch,
+                                  index: 1
+                                %}
+                              {% endif %}
+                              {% if block.settings.filter_material != blank %}
+                                {% assign filter_label = 'Material' %}
+                                {% render 'article-filter-item',
+                                  block: block,
+                                  filter_label: filter_label,
+                                  filter_values: block.settings.filter_material,
+                                  index: 2
+                                %}
+                              {% endif %}
+                              {% if block.settings.filter_print != blank %}
+                                {% assign filter_label = 'Print' %}
+                                {% render 'article-filter-item',
+                                  block: block,
+                                  article: article,
+                                  filter_label: filter_label,
+                                  filter_values: block.settings.filter_print,
+                                  index: 2
+                                %}
+                              {% endif %}
+                            </div>
+
+                            <div class="swatches-search">
+                              <div class="filter-title desktop-hide">
+                                Filter
+                              </div>
+                              <paint-guide-search class="paint-guide-search">
+                                <div class="search-wrapper">
+                                  <input
+                                    type="text"
+                                    class="search__input field__input"
+                                    name="paint-guide-search"
+                                    placeholder="{{ 'blogs.article.search' | t }}"
+                                    value=""
+                                    data-blog-handle="{% if template.name == 'article' %}{{ article.handle | split: '/' | first }}{% else %}{{ blog.handle }}{% endif %}"
+                                  >
+                                </div>
+                              </paint-guide-search>
+                            </div>
+                          </div>
+                          <div class="active-facets active-facets-desktop">
+                            <facet-remove class="active-facets__button-wrapper">
+                              <a
+                                href="{{ collection.url }}?sort_by={{ sort_by }}"
+                                class="active-facets__button-remove underlined-link"
+                              >
+                                <span>{{ 'sections.collection_template.clear_all' | t }}</span>
+                              </a>
+                            </facet-remove>
+                          </div>
+                        </form>
+                      </facet-filters-form>
+                    </div>
+                  </aside>
+                </collection-filters>
+
+                <div class="paint-guides-swatches custom-grid-article">
+                  <div class="paint-guides-swatches-wrapper">
+                    {% assign paint_guide_list = article.metafields.custom.paint_guide_swatch.value %}
+                    {% if paint_guide_list %}
+                      {% for item in paint_guide_list %}
+                        {% render 'paint-guide-item', item: item, tag_class: tag_class %}
+                      {% endfor %}
+                    {% endif %}
+
+                    {% assign paint_guide_list_2 = article.metafields.custom.paint_guide_swatch_2.value %}
+                    {% if paint_guide_list_2 %}
+                      {% for item in paint_guide_list_2 %}
+                        {% render 'paint-guide-item', item: item, tag_class: tag_class %}
+                      {% endfor %}
+                    {% endif %}
+
+                    {% assign paint_guide_list_3 = article.metafields.custom.paint_guide_swatch_3.value %}
+                    {% if paint_guide_list_3 %}
+                      {% for item in paint_guide_list_3 %}
+                        {% render 'paint-guide-item', item: item, tag_class: tag_class %}
+                      {% endfor %}
+                    {% endif %}
+
+                    {% assign paint_guide_list_4 = article.metafields.custom.paint_guide_swatch_4.value %}
+                    {% if paint_guide_list_4 %}
+                      {% for item in paint_guide_list_4 %}
+                        {% render 'paint-guide-item', item: item, tag_class: tag_class %}
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+
+                <div class="paint-guides-swatches--empty visually-hidden">
+                  <div class="title-wrapper center">
+                    <h2 class="title title--primary">
+                      {{ 'blogs.article.empty_swatches' | t -}}
+                      <br>
+                      {{
+                        'sections.collection_template.use_fewer_filters_html'
+                        | t: link: parent_collection.url, class: 'underlined-link link clear-filters'
+                      }}
+                    </h2>
+                  </div>
+                </div>
+              {% endif %}
+          {%- endcase -%}
+        {%- endfor -%}
+
+        {% if blog.previous_article or blog.next_article %}
+          <div class="article-pagination desktop-{{ grid_desktop_column }} custom-grid-article">
+            <div class="grid grid-spread grid-mobile-2 grid-desktop-2">
+              <div class="grid__item">
+                {% if blog.previous_article %}
+                  <a href="{{ blog.previous_article.url }}" class="button button--secondary">
+                    {% render 'icon-arrow-left' %} Previous
+                  </a>
+                {% endif %}
+              </div>
+              <div class="grid__item right">
+                {% if blog.next_article %}
+                  <a href="{{ blog.next_article.url }}" class="button button--secondary">
+                    Next {% render 'icon-arrow-right' %}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if blog.comments_enabled? -%}
+          {% comment %} TODO: Blog comments {% endcomment %}
+          <div class="grid__item visually-hidden desktop-{{ grid_desktop_column }} custom-grid-article blog-comment">
+            <h2>Comments</h2>
+          </div>
+        {%- endif -%}
+      </article>
+    </div>
+  </div>
+</div>
+{% if block_banner.size > 0 %}
+  {% for block in block_banner %}
+    <div class="image-with-btn block-article" style="background-color: {{ block.settings.background_color }}">
+      <p>
+        <img src="{{ block.settings.image | image_url: width: 1920 }}" alt="{{ block.settings.image.alt }}" 
+          width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+      </p>
+      <div class="image-content">
+        {% if block.settings.heading != blank %}
+          <h4>{{ block.settings.heading }}</h4>
+        {% endif %}
+        {% if block.settings.description != blank %}
+          <p>{{ block.settings.description }}</p>
+        {% endif %}
+        {% if block.settings.btn_text != blank %}
+          <a href="{{ block.settings.btn_link }}" class="btn" title="{{ block.settings.btn_text }}">{{ block.settings.btn_text }}</a>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ shop.url | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": [
+        {{ article | image_url: article.image.width | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      {% if settings.share_image %}
+        "logo": {
+          "@type": "ImageObject",
+          "height": {{ settings.share_image.height | json }},
+          "url": {{ settings.share_image | image_url: article.image.width | prepend: "https:" | json }},
+          "width": {{ settings.share_image.width | json }}
+        },
+      {% endif %}
+      "name": {{ shop.name | json }}
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Blog post",
+  "tag": "section",
+  "class": "main-article",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f7f2ec"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show Blog Tags",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "Featured image",
+      "limit": 1
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "Show date"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "Show author"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_tags",
+          "label": "Show tags",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Content",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "Share",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "Text",
+          "default": "Share"
+        },
+        {
+          "type": "paragraph",
+          "content": "If you include a link in social media posts, the page’s featured image will be shown as the preview image. [Learn more](https://help.shopify.com/en/manual/online-store/images/showing-social-media-thumbnail-images)."
+        },
+        {
+          "type": "paragraph",
+          "content": "A store title and description are included with the preview image. [Learn more](https://help.shopify.com/en/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)."
+        }
+      ]
+    },
+    {
+      "type": "blog_grid_image",
+      "name": "Blog grid image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Get from metaobject Blog grid image"
+        }
+      ]
+    },
+    {
+      "type": "blog_swatches",
+      "name": "Blog swatches",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Get from metafield Paint Guide Swatches"
+        },
+        {
+          "type": "textarea",
+          "label": "Filter by tag color",
+          "id": "filter_swatch",
+          "info": "Divided by comma. Ex: Name[color_hex]. Pink[#E3B9B3]"
+        },
+        {
+          "type": "textarea",
+          "label": "Filter by tag material",
+          "id": "filter_material",
+          "info": "Divided by comma"
+        },
+        {
+          "type": "textarea",
+          "label": "Filter by tag print",
+          "id": "filter_print",
+          "info": "Divided by comma"
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "color",
+          "label": "Background color",
+          "id": "background_color",
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button link"
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}

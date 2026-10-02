@@ -1,0 +1,946 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Custom Furniture",
+        "title_type": "type-2",
+        "description": "Your perfect piece awaits. Our furniture is made to order and ships in weeks, not months.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-beds",
+            "image": "shopify://shop_images/collection-furniture-beds.jpg",
+            "collection_title": "Beds",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-headboards",
+            "image": "shopify://shop_images/collection-furniture-headboards.jpg",
+            "collection_title": "Headboards",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-chairs",
+            "image": "shopify://shop_images/collection-furniture-chairs.jpg",
+            "collection_title": "Chairs",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_YqKGpL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CategoryCover-Sofas.jpg",
+            "collection_title": "Sofas",
+            "override_url": "shopify://collections/custom-furniture-sofas",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_ewUHzA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-benches",
+            "image": "shopify://shop_images/collection-furniture-benches.jpg",
+            "collection_title": "Benches",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw",
+        "featured_collection_YqKGpL",
+        "featured_collection_ewUHzA"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "main_list_collection_2_ybqxrk": {
+      "type": "main-list-collection-2",
+      "blocks": {
+        "featured_collection_i48yMx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-beds",
+            "image": "shopify://shop_images/beds.png",
+            "collection_title": "Beds",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_LKBpft": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-headboards",
+            "image": "shopify://shop_images/headboards_d4a207f4-2e4d-4181-a8b9-60ba7ff4f27e.png",
+            "collection_title": "Headboards",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_y7F66H": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-chairs",
+            "image": "shopify://shop_images/chairs_f7833d4d-11a8-4a14-99dc-8cc894e5db65.png",
+            "collection_title": "Chairs",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_VFfK9x": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-sofas",
+            "image": "shopify://shop_images/Sofa-Simone-Illustration.png",
+            "collection_title": "Sofas",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_qgRREa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-benches",
+            "image": "shopify://shop_images/bench.png",
+            "collection_title": "Benches",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_iWrmTk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-sectionals",
+            "image": "shopify://shop_images/Sectional-Pierce-Sand.png",
+            "collection_title": "Sectionals",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_yegbhf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-sleeper-sofas",
+            "image": "shopify://shop_images/Sofa-Simone-Honey.png",
+            "collection_title": "Sleeper Sofas",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_ekY9Rp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-settees-daybeds",
+            "image": "shopify://shop_images/illustration-settee-colette-louisa.png",
+            "collection_title": "Settees",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_qgPp84": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-ottomans",
+            "image": "shopify://shop_images/Ottoman-Marlow-Lucie.png",
+            "collection_title": "Ottomans",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_i48yMx",
+        "featured_collection_LKBpft",
+        "featured_collection_y7F66H",
+        "featured_collection_VFfK9x",
+        "featured_collection_qgRREa",
+        "featured_collection_iWrmTk",
+        "featured_collection_yegbhf",
+        "featured_collection_ekY9Rp",
+        "featured_collection_qgPp84"
+      ],
+      "name": "Collection list small",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "1"
+      }
+    },
+    "section_shop_by_categories_7eYJ6X": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_kgcaGA": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-cecilia.png",
+            "title": "Cecilia",
+            "subtitle": "Customize your fabric, legs, and trim",
+            "collection_url": "shopify://collections/custom-beds-cecilia"
+          }
+        },
+        "collection_KabEpT": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-cleo.png",
+            "title": "Cleo",
+            "subtitle": "Customize your fabric and legs",
+            "collection_url": "shopify://collections/custom-beds-cleo"
+          }
+        },
+        "collection_eqQAne": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-regina.png",
+            "title": "Regina",
+            "subtitle": "Customize your fabric, legs, and trim",
+            "collection_url": "shopify://collections/custom-beds-regina"
+          }
+        },
+        "collection_tXbLRC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-theodora.png",
+            "title": "Theodora",
+            "subtitle": "Customize your fabric, legs, and trim",
+            "collection_url": "shopify://collections/custom-beds-theodora"
+          }
+        },
+        "collection_DeneBN": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-hudson.png",
+            "title": "Hudson",
+            "subtitle": "Customize your fabric, base, and trim",
+            "collection_url": "shopify://collections/custom-beds-hudson"
+          }
+        },
+        "collection_VpRkHg": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-james.png",
+            "title": "James",
+            "subtitle": "Customize your fabric, legs, and trim",
+            "collection_url": "shopify://collections/custom-beds-james"
+          }
+        },
+        "collection_d3d6AG": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bed-delaney.png",
+            "title": "Delaney",
+            "subtitle": "Customize your fabric, legs, details, and trim",
+            "collection_url": "shopify://collections/custom-beds-delaney"
+          }
+        }
+      },
+      "block_order": [
+        "collection_kgcaGA",
+        "collection_KabEpT",
+        "collection_eqQAne",
+        "collection_tXbLRC",
+        "collection_DeneBN",
+        "collection_VpRkHg",
+        "collection_d3d6AG"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "",
+        "heading": "Beds",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-beds",
+        "show_border_bottom": true,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_6B4Wnr": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_UEPnyQ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-theodora.png",
+            "title": "Theodora",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-headboards-theodora"
+          }
+        },
+        "collection_DUH37P": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-delaney.png",
+            "title": "delaney",
+            "subtitle": "Customize your material, detail, and trim",
+            "collection_url": "shopify://collections/custom-headboards-delaney"
+          }
+        },
+        "collection_4LBQM7": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-regina.png",
+            "title": "regina",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-headboards-regina"
+          }
+        },
+        "collection_jxPQWJ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-hudson.png",
+            "title": "hudson",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-headboards-hudson"
+          }
+        },
+        "collection_y4nLDL": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-cecilia.png",
+            "title": "Cecilia",
+            "subtitle": "Customize your material, detail, and trim",
+            "collection_url": "shopify://collections/custom-headboards-cecilia"
+          }
+        },
+        "collection_KpcKny": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-cleo.png",
+            "title": "Cleo",
+            "subtitle": "Customize your material",
+            "collection_url": "shopify://collections/custom-headboards-cleo"
+          }
+        },
+        "collection_YgFgN9": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-headboard-james.png",
+            "title": "james",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-headboards-james"
+          }
+        }
+      },
+      "block_order": [
+        "collection_UEPnyQ",
+        "collection_DUH37P",
+        "collection_4LBQM7",
+        "collection_jxPQWJ",
+        "collection_y4nLDL",
+        "collection_KpcKny",
+        "collection_YgFgN9"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Headboards",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-headboards",
+        "show_border_bottom": true,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_yewdbn": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_RKfXRN": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-adeline-upholstered.png",
+            "title": "adeline upholstered",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-chairs-adeline"
+          }
+        },
+        "collection_cVN6cx": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-adeline-skirt.png",
+            "title": "adeline with skirt",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-chairs-adeline"
+          }
+        },
+        "collection_cgwpTx": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-henry.png",
+            "title": "Henry",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-chairs-henry"
+          }
+        },
+        "collection_KPjfJm": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-marlow-legs.png",
+            "title": "marlow with legs",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-chairs-marlow"
+          }
+        },
+        "collection_kNnPY7": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-marlow-kickpleatskirt.png",
+            "title": "marlow with skirt",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-chairs-marlow"
+          }
+        },
+        "collection_AGfLeM": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-marlow-upholsteredbase.png",
+            "title": "Marlow Glider",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-chairs-marlow"
+          }
+        },
+        "collection_8BMiq9": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-dorothy-legs.png",
+            "title": "dorothy with legs",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-chairs-dorothy"
+          }
+        },
+        "collection_wYpH84": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-dorothy-skirt.png",
+            "title": "dorothy with skirt",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-chairs-dorothy"
+          }
+        },
+        "collection_6BnLKE": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-milo.png",
+            "title": "Milo",
+            "subtitle": "Customize your material and finish",
+            "collection_url": "shopify://collections/custom-chairs-milo"
+          }
+        },
+        "collection_HtzBgQ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-waverly.png",
+            "title": "Waverly",
+            "subtitle": "Customize your material, finish, leg, and trim",
+            "collection_url": "shopify://collections/custom-chairs-waverly"
+          }
+        },
+        "collection_qGAXk8": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-colette.png",
+            "title": "Colette",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-chairs-colette"
+          }
+        },
+        "collection_h7Aprp": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-lila-2.png",
+            "title": "Lila",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-chairs-lila"
+          }
+        },
+        "collection_6LipPC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-cameron.png",
+            "title": "Cameron",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-chairs-cameron"
+          }
+        },
+        "collection_FLkyzT": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-chair-simone-1.png",
+            "title": "Simone",
+            "subtitle": "Customize your material",
+            "collection_url": "shopify://collections/custom-chairs-simone"
+          }
+        }
+      },
+      "block_order": [
+        "collection_RKfXRN",
+        "collection_cVN6cx",
+        "collection_cgwpTx",
+        "collection_KPjfJm",
+        "collection_kNnPY7",
+        "collection_AGfLeM",
+        "collection_8BMiq9",
+        "collection_wYpH84",
+        "collection_6BnLKE",
+        "collection_HtzBgQ",
+        "collection_qGAXk8",
+        "collection_h7Aprp",
+        "collection_6LipPC",
+        "collection_FLkyzT"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Chairs",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-chairs",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_qpEmRC": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_Laza3V": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-simone.png",
+            "title": "Simone",
+            "subtitle": "Customize your material",
+            "collection_url": "shopify://collections/custom-sofas-simone"
+          }
+        },
+        "collection_X63c8V": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-waverly.png",
+            "title": "Waverly",
+            "subtitle": "Customize your material, finish, leg, and trim",
+            "collection_url": "shopify://collections/custom-sofas-waverly"
+          }
+        },
+        "collection_e6HbQC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-marlow-skirt.png",
+            "title": "Marlow with Skirt",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-sofas-marlow"
+          }
+        },
+        "collection_g7wPCF": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-marlow-legs.png",
+            "title": "Marlow with Legs",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-sofas-marlow"
+          }
+        },
+        "collection_QnRefm": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-maron.png",
+            "title": "Maron",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-sofas-maron"
+          }
+        },
+        "collection_AKXxRz": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-colette.png",
+            "title": "Colette",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-sofas-colette"
+          }
+        },
+        "collection_jnhjke": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "Holden",
+            "subtitle": "Customize your materials",
+            "collection_url": "shopify://collections/custom-sofas-holden"
+          }
+        },
+        "collection_L3QxzF": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-pierce.png",
+            "title": "Pierce",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-sofas-pierce"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Laza3V",
+        "collection_X63c8V",
+        "collection_e6HbQC",
+        "collection_g7wPCF",
+        "collection_QnRefm",
+        "collection_AKXxRz",
+        "collection_jnhjke",
+        "collection_L3QxzF"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Sofas",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-sofas",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_xPQKza": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_bqXqyL": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sectional-pierce.png",
+            "title": "Pierce",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-sectionals-pierce"
+          }
+        }
+      },
+      "block_order": [
+        "collection_bqXqyL"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "",
+        "heading": "Sectionals",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-sectionals",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_RWHwAT": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_JAcaXD": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sleeper-maron.png",
+            "title": "Maron",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-sleeper-sofas-maron"
+          }
+        }
+      },
+      "block_order": [
+        "collection_JAcaXD"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Sleeper Sofas",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-sleeper-sofas",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_w4Jykp": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_kb4j4x": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-settee-colette.png",
+            "title": "Colette",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-settees-colette"
+          }
+        }
+      },
+      "block_order": [
+        "collection_kb4j4x"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "",
+        "heading": "Settees",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-settees-daybeds",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_UqJjwM": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_FChRcC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bench-scarlett.png",
+            "title": "scarlett",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-benches-scarlett"
+          }
+        },
+        "collection_hjLTYH": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bench-celeste.png",
+            "title": "celeste",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-benches-celeste"
+          }
+        },
+        "collection_CWUQKT": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-bench-blaire.png",
+            "title": "blaire",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-benches-blaire"
+          }
+        }
+      },
+      "block_order": [
+        "collection_FChRcC",
+        "collection_hjLTYH",
+        "collection_CWUQKT"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#f3f1ed",
+        "heading": "Benches",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-benches",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_ntXC6D": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_TpFP8e": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-ottoman-colette.png",
+            "title": "Colette",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-ottomans-colette"
+          }
+        },
+        "collection_aYTJPc": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-ottoman-marlow-legs.png",
+            "title": "Marlow with legs",
+            "subtitle": "Customize your material, finish, and trim",
+            "collection_url": "shopify://collections/custom-ottomans-marlow"
+          }
+        },
+        "collection_9t4jMz": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-ottoman-marlow-skirt.png",
+            "title": "Marlow with Skirt",
+            "subtitle": "Customize your material and trim",
+            "collection_url": "shopify://collections/custom-ottomans-marlow"
+          }
+        }
+      },
+      "block_order": [
+        "collection_TpFP8e",
+        "collection_aYTJPc",
+        "collection_9t4jMz"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Ottomans",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/custom-furniture-ottomans",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "16331219115bcaaf78-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-furniture-oat.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-furniture-annabellepeacock.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-furniture-hayesseasalt.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-furniture-laurelvelvet.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "16331219115bcaaf78-0",
+        "16331219115bcaaf78-3",
+        "16331219115bcaaf78-1",
+        "16331219115bcaaf78-2"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c.png",
+            "image_width": 140,
+            "title": "Order Samples",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/sample-furniture"
+          }
+        },
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance-1"
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Chair-Adeline-Serena-SeaSalt.png",
+            "image_width": 140,
+            "title": "Browse Our FAQs",
+            "content": "Get all the answers—from customization to delivery.",
+            "link_text": "VISIT",
+            "link_url": "shopify://blogs/the-thread/furniture-faqs"
+          }
+        }
+      },
+      "block_order": [
+        "column_9NGpgg",
+        "column_7L6p3y",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "#ffffff",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "main_list_collection_2_ybqxrk",
+    "section_shop_by_categories_7eYJ6X",
+    "section_shop_by_categories_6B4Wnr",
+    "section_shop_by_categories_yewdbn",
+    "section_shop_by_categories_qpEmRC",
+    "section_shop_by_categories_xPQKza",
+    "section_shop_by_categories_RWHwAT",
+    "section_shop_by_categories_w4Jykp",
+    "section_shop_by_categories_UqJjwM",
+    "section_shop_by_categories_ntXC6D",
+    "16331219115bcaaf78",
+    "section_text_with_icon_column_XBbHQ8"
+  ]
+}

@@ -1,0 +1,138 @@
+<link rel="stylesheet" href="{{ 'section-cushion-firmness.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{% assign firmness = product.metafields.custom.cushion_firmness.value %}
+{% assign cushion_image = product.metafields.custom.cushion_image.value %}
+
+{% if firmness != blank and cushion_image != blank %}
+<style>
+  .section-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+  }
+  @media (min-width: 768px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+</style>
+<section class="cushion-firmness-section section-{{ section.id }}">
+  <div class="cushion-firmness__inner">
+    <div class="cushion-firmness__image-wrap">
+      <div class="cushion-firmness__image">
+        <img
+          src="{{ cushion_image | image_url: width: 800 }}"
+          alt="{{ cushion_image.alt }}"
+          width="800"
+          height="800"
+          loading="lazy"
+        >
+        </div>
+        <div class="firmness-bar" role="group" aria-label="Cushion firmness">
+          {% assign levels = 'Soft,Medium,Firm' | split: ',' %}
+          {% for level in levels %}
+            <div class="firmness-bar__item {% if firmness == level %}is-active{% endif %}">
+              {{ level | upcase }}
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+    <div class="cushion-firmness__content text-{{ section.settings.text_alignment }}">
+      {% if section.settings.heading != blank %}
+        <h2 class="cushion-firmness__title">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <div class="cushion-firmness__desc">{{ section.settings.description }}</div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Cushion firmness",
+    "tag": "section",
+    "enabled_on": {
+      "templates": ["product"]
+    },
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "A Closer Look"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description",
+        "default": "<p>Your piece doesn't exist until you design it. Our furniture is made to order and shipped directly from our workroom.</p>"
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Center" },
+          { "value": "right", "label": "Right" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding top (mobile)",
+        "default": 60
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding bottom (mobile)",
+        "default": 60
+      }
+    ],
+    "presets": [
+      {
+        "name": "Cushion firmness"
+      }
+    ]
+  }
+{% endschema %}

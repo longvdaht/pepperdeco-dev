@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="{{ 'help-center.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'help-center.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div
+    class="section-outer section-help-center section-color-{{ section.settings.color_scheme }} center {% if section.settings.background_image != blank %} section-background-image{% endif %}"
+    {% if section.settings.background_image != blank %}
+      style="background-image: url('{{ section.settings.background_image | image_url: width: 1000  }}')"
+    {% endif %}
+  >
+    <div class="section-heading-outer">
+        {%- if section.settings.first_title != blank -%}
+          <h2 class="section-heading first-heading body">
+                <a href="{{ section.settings.visit_link }}">{{ section.settings.first_title }}</a>
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.first_title != blank and section.settings.second_title != blank -%}
+            <div class="text-or">{{ 'or' }}</div>
+        {%- endif -%}
+        {%- if section.settings.second_title != blank -%}
+            <h2 class="section-heading second-heading body">
+                {{ section.settings.second_title }}
+            </h2>
+        {%- endif -%}
+        {%- if section.settings.live_chat != blank -%}
+            <div class="help-center-item">
+                <span class="help-center-label">{{ 'Live Chat: '}}</span><a class="help-center-value" href="{{ section.settings.live_chat_link }}" onclick="GorgiasChat.open();">{{ section.settings.live_chat }}</a>
+            </div>
+        {%- endif -%}
+        {%- if section.settings.email != blank -%}
+            <div class="help-center-item">
+                <span class="help-center-label">{{ 'Email Us: '}}</span><a class="help-center-value" href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+            </div>
+        {%- endif -%}
+    </div>
+</div>
+{% schema %}
+{
+  "name": "Help Center",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "first_title",
+      "label": "Visit our Help Center",
+      "default": "Visit our Help Center"
+    },
+    {
+      "type": "text",
+      "id": "visit_link",
+      "label": "Visit our help center link",
+    },
+    {
+      "type": "text",
+      "id": "second_title",
+      "label": "Get in touch",
+      "default": "Get in touch"
+    },
+    {
+      "type": "text",
+      "id": "live_chat",
+      "label": "Live Chat"
+    },
+    {
+      "type": "text",
+      "id": "live_chat_link",
+      "label": "Live chat link",
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        },
+        {
+          "value": "background-tertiary-dark",
+          "label": "Tertiary Dark"
+        },
+        {
+          "value": "background-dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Help Center",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

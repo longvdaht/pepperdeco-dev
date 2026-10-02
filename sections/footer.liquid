@@ -1,0 +1,456 @@
+<link rel="stylesheet" href="{{ 'section-footer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-footer.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- assign grid_mobile_column = 'one' -%}
+
+<div class="section-outer section-footer section-color-{{ section.settings.color_scheme }}">
+  <div class="grid mobile-{{ grid_mobile_column }}">
+    {% if section.settings.show_logo == 'middle' %}
+      <div class="grid__item footer-logo--outer center{% if section.settings.show_newsletter %} desktop-tablet-hide{% endif %}">
+        {% if section.settings.footer_logo != blank %}
+          <img src="{{ section.settings.footer_logo | image_url: width: 200 }}" loading="lazy" width="200" height="200" alt="Footer logo">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/2137/1325/files/Crest-Name-Below.png?v=1742842234" loading="lazy" width="502" height="502" alt="Footer logo">
+        {% endif %}
+        {% render 'footer-social' %}
+      </div>
+    {% endif %}
+    <div class="grid__item footer-menu-contact">
+      <div class="grid__item footer-menus">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'link_list' -%}
+              <div class="menu-item menu-item-{{ forloop.index }}" {{ block.shopify_attributes }}>
+                <details-collapse {% if block.settings.menu_toggle_mobile %}data-collapse="mobile"{% else %}class="no-toggle"{% endif %}>
+                  <details{% unless block.settings.menu_toggle_mobile %} open{% endunless %}{% if block.settings.menu_toggle_mobile and block.settings.menu_toggle_mobile_open %} open{% endif %}>
+                    <summary class="arrow-before arrow-vertical">
+                      <span>{{ block.settings.heading }}</span>
+                      <span class="icon hide-on-desktop">
+                        <span class="icon-plus">{% render 'icon-plus' %}</span>
+                        <span class="icon-minus">{% render 'icon-minus' %}</span>
+                      </span>
+                    </summary>
+                    <ul class="details-menu list-unstyled">
+                      {%- for link in block.settings.menu.links -%}
+                        <li>
+                          <a
+                            href="{{ link.url }}"
+                            class="text-link{% if link.active %} list-menu__item--active{% endif %}"
+                          >
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </details>
+                </details-collapse>
+              </div>
+          {%- endcase -%}
+        {% endfor %}
+      </div>
+
+      {% assign block_contact = section.blocks | where: 'type', 'footer_contact' %}
+      {% assign block_text = section.blocks | where: 'type', 'text' %}
+      {% if block_contact.size > 0 or block_text.size > 0 %}
+        <div class="grid__item footer-contact">
+          {% for block in section.blocks %}
+            {% if block.type == 'footer_contact' or block.type == 'text' %}
+              <div class="text-block-contact" {{ block.shopify_attributes }}>
+                <details-collapse {% if block.settings.menu_toggle_mobile %}data-collapse="mobile"{% else %}class="no-toggle"{% endif %}>
+                  <details{% unless block.settings.menu_toggle_mobile %} open{% endunless %}{% if block.settings.menu_toggle_mobile and block.settings.menu_toggle_mobile_open %} open{% endif %}>
+                    <summary class="arrow-before arrow-vertical">
+                      <div class="footer-heading h5">{{ block.settings.heading }}</div>
+                      <span class="icon hide-on-desktop">
+                        <span class="icon-plus">{% render 'icon-plus' %}</span>
+                        <span class="icon-minus">{% render 'icon-minus' %}</span>
+                      </span>
+                    </summary>
+                    <div class="details-menu list-unstyled">
+                      <div class="footer-text">
+                        {{ block.settings.subtext }}
+                      </div>
+                      <div class="text-block sms-block" {{ block.shopify_attributes }}>
+                        <div class="footer-text">
+                          {{ block.settings.sms_text }}
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+                </details-collapse>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% assign footer_menu_social_blocks = section.blocks | where: 'type', 'link_list_social' %}
+      {% if footer_menu_social_blocks.size > 0 %}
+        <div class="grid__item footer-menu-social footer-menus">
+          {% for block in footer_menu_social_blocks %}
+            <div class="menu-item menu-item-{{ forloop.index }} menu-item-with-social" {{ block.shopify_attributes }}>
+              <details-collapse {% if block.settings.menu_toggle_mobile %}data-collapse="mobile"{% else %}class="no-toggle"{% endif %} >
+                <details{% unless block.settings.menu_toggle_mobile %} open{% endunless %}{% if block.settings.menu_toggle_mobile and block.settings.menu_toggle_mobile_open %} open{% endif %}>
+                  <summary class="arrow-before arrow-vertical">
+                    {{ block.settings.heading }}
+                    <span class="icon hide-on-desktop">&rsaquo;</span>
+                  </summary>
+                  <ul class="details-menu list-unstyled">
+                    {%- for link in block.settings.menu.links -%}
+                      <li>
+                        <a
+                          href="{{ link.url }}"
+                          class="text-link{% if link.active %} list-menu__item--active{% endif %}"
+                        >
+                          {{ link.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </details>
+              </details-collapse>
+              {% if block.settings.show_social %}
+                {% render 'footer-social' %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.show_newsletter %}
+      <div class="grid__item footer-newsletter">
+        {% if section.settings.show_logo == 'middle' %}
+          <div class="grid__item footer-logo--outer center mobile-hide">
+            {% if section.settings.footer_logo != blank %}
+              <img src="{{ section.settings.footer_logo | image_url: width: 200 }}" loading="lazy" width="200" height="200" alt="Footer logo">
+            {% else %}
+              <img src="https://cdn.shopify.com/s/files/1/2137/1325/files/Crest-Name-Below.png?v=1742842234" loading="lazy" width="502" height="502" alt="Footer logo">
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="footer-newsletter-wrapper">
+          {% if section.settings.newsletter_heading %}
+            <h4 class="newsletter-heading heading-family">{{ section.settings.newsletter_heading }}</h4>
+          {% endif %}
+          {{ section.settings.newsletter_code }}
+        </div>
+        {% if section.settings.show_newsletter_logo_social %}
+          {% render 'footer-social' %}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="bottom-footer section-color-background-secondary{% if section.settings.show_logo == 'bottom' %} has-logo{% endif %}">
+    {% if section.settings.show_logo == 'bottom' %}
+      <div class="grid__item footer-logo--outer">
+        {% if section.settings.footer_logo != blank %}
+          <img src="{{ section.settings.footer_logo | image_url: width: 200 }}" loading="lazy" width="200" height="200" alt="Footer logo">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/2137/1325/files/Crest-Name-Below.png?v=1742842234" loading="lazy" width="502" height="502" alt="Footer logo">
+        {% endif %}
+      </div>
+      <div class="footer-bottom-wrapper">
+    {% endif %}
+    {% if section.settings.menu_bottom_footer != blank %}
+      <ul class="bottom-footer-link">
+        {%- for link in section.settings.menu_bottom_footer.links -%}
+          <li>
+            <a
+              href="{{ link.url }}"
+              class="text-link{% if link.active %} list-menu__item--active{% endif %}"
+            >
+              {{ link.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {% endif %}
+    {% if section.settings.small_logo_bottom != blank %}
+      <div class="small-logo-bottom hide-on-desktop">
+        <img src="{{ section.settings.small_logo_bottom | image_url: width: 74 }}" loading="lazy" width="44" height="74" alt="{{ section.settings.small_logo_bottom.alt | default: "Bottom footer" }}">
+      </div>
+    {% endif %}
+    <div class="section-copyright">
+      &copy; {{ 'now' | date: '%Y' }}
+      {{ shop.name }}. All Rights Reserved.
+    </div>
+    {% if section.settings.show_logo == 'bottom' %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% javascript %}
+  const expandDetails = function () {
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      const footerDetails = document.querySelector('.footer-menus').querySelectorAll('.menu-item details-collapse:not(.no-toggle) details');
+      footerDetails.forEach(function (detail) {
+        detail.setAttribute('open', '');
+      });
+      const footerContact = document.querySelector('.footer-contact').querySelectorAll('.text-block-contact details-collapse:not(.no-toggle) details');
+      footerContact.forEach(function (detail) {
+        detail.setAttribute('open', '');
+      });
+    } else {
+      const footerDetails = document.querySelector('.footer-menus').querySelectorAll('.menu-item details-collapse:not(.no-toggle) details');
+      footerDetails.forEach(function (detail) {
+        detail.removeAttribute('open');
+      });
+      const footerContact = document.querySelector('.footer-contact').querySelectorAll('.text-block-contact details-collapse:not(.no-toggle) details');
+      footerContact.forEach(function (detail) {
+        detail.removeAttribute('open');
+      });
+    }
+  };
+  window.addEventListener('resize', expandDetails);
+  expandDetails();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "Heading",
+          "info": "Heading required to display the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menu",
+          "info": "Displays only top-level menu items."
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_toggle_mobile",
+          "label": "Menu toggle on mobile",
+          "default": false,
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_toggle_mobile_open",
+          "label": "Menu toggle on mobile open",
+          "default": false,
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>",
+          "label": "Subtext"
+        }
+      ]
+    },
+    {
+      "type": "sms",
+      "name": "SMS",
+      "settings": [
+        {
+          "type": "html",
+          "id": "subtext",
+          "default": "<div>Text <strong>PEPPER</strong> to <a href='sms:+18335327869&body=PEPPER'>(833) 532 7869</a></div>",
+          "label": "SMS link + text"
+        }
+      ]
+    },
+    {
+      "type": "link_list_social",
+      "name": "Menu and social",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "Heading",
+          "info": "Heading required to display the menu."
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menu",
+          "info": "Displays only top-level menu items."
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_toggle_mobile",
+          "label": "Menu toggle on mobile",
+          "default": false,
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_toggle_mobile_open",
+          "label": "Menu toggle on mobile open",
+          "default": true,
+        },
+        {
+          "type": "checkbox",
+          "label": "Show social",
+          "id": "show_social",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "footer_contact",
+      "name": "Contact",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>",
+          "label": "Subtext"
+        }, 
+        {
+          "type": "html",
+          "id": "sms_text",
+          "default": "<div>Text <strong>PEPPER</strong> to <a href='sms:+18335327869&body=PEPPER'>(833) 532 7869</a></div>",
+          "label": "SMS link + text"
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_toggle_mobile",
+          "label": "Menu toggle on mobile",
+          "default": true,
+        },
+        {
+          "type": "checkbox",
+          "id": "menu_toggle_mobile_open",
+          "label": "Menu toggle on mobile open",
+          "default": false,
+        },
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer logo"
+    },
+    {
+      "type": "select",
+      "id": "show_logo",
+      "label": "Show logo",
+      "options": [
+        {
+          "value": "middle",
+          "label": "Middle footer"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom footer"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Subscribe for Exclusive Offers"
+    },
+    {
+      "type": "html",
+      "id": "newsletter_code",
+      "label": "Klaviyo newsletter code",
+      "default": "<div class='klaviyo-form-PR9Smt'></div>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter_logo_social",
+      "label": "Show logo social",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Bottom footer"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_bottom_footer",
+      "label": "Menu bottom footer",
+      "info": "Displays only top-level menu items."
+    },
+    {
+      "type": "image_picker",
+      "label": "Small logo (only show mobile)",
+      "id": "small_logo_bottom"
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "text"
+      },
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "link_list"
+      }
+    ]
+  }
+}
+{% endschema %}

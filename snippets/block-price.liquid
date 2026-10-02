@@ -1,0 +1,60 @@
+{% assign pricing_tier = product.metafields.custom.pricing_tier.value | remove_first: '(' | remove_last: ')' %}
+{% assign pricing_tier_downcase = pricing_tier | downcase %}
+{% assign text_tier = pricing_tier_downcase | split: 'tier' %}
+<div class="price{%- if pricing_tier %} custom-pricing{% if pricing_tier_downcase contains ' tier' %} custom-pricing-hover{% endif %}{% endif -%}">
+  {%- if product.metafields.pepper.price_replacement.value != blank -%}
+    <div class="small price price--large">
+      {{ product.metafields.pepper.price_replacement.value }}
+      {%- if pricing_tier -%}
+        {% if pricing_tier_downcase contains ' tier' %}({% endif %}{{ text_tier | first }}
+        {% if pricing_tier_downcase contains ' tier' %} 
+          <span class="tier-hover">tier</span> )
+        {% endif %}
+      {%- endif -%}
+      {%- if pricing_tier and pricing_tier_downcase contains ' tier' -%}
+        {% render 'tier-popup' %}
+      {% endif %}
+    </div>
+  {%- elsif product.type == 'Pillow Bundles' -%}
+    <div class="no-js-hidden small" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
+      {%- render 'price',
+        product: product,
+        use_variant: true,
+        show_percentage: true,
+        show_badges: false,
+        price_class: 'price--large'
+      -%}
+    </div>
+    <div class="small price price--large">{{ product.metafields.pepper.price_replacement.value }} 
+      {%- if pricing_tier -%}
+        {% if pricing_tier_downcase contains ' tier' %}({% endif %}{{ text_tier | first }}
+        {% if pricing_tier_downcase contains ' tier' %} 
+          <span class="tier-hover">tier</span> ) 
+        {% endif %}
+      {%- endif -%}
+      {%- if pricing_tier and pricing_tier_downcase contains ' tier' -%}
+        {% render 'tier-popup' %}
+      {% endif %}
+    </div>
+  {%- else -%}
+    <div class="no-js-hidden small" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
+      {%- render 'price',
+        product: product,
+        use_variant: false,
+        show_badges: true,
+        price_class: 'price--large'
+      -%}
+    </div>
+    {%- if pricing_tier -%}
+      <span class="custom price price--large pricing-tier-uppercase">
+          {% if pricing_tier_downcase contains ' tier' %}({% endif %}{{ text_tier | first }}
+          {% if pricing_tier_downcase contains ' tier' %}
+            <span class="tier-hover">tier</span> )
+          {% endif %}
+          {%- if pricing_tier and pricing_tier_downcase contains 'tier' -%}
+            {% render 'tier-popup' %}
+          {% endif %}
+      </span>
+    {%- endif -%}
+  {% endif %}
+</div>

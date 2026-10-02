@@ -1,0 +1,45 @@
+<details-modal id="curtain_calculator" class="product__modal" {{ block.shopify_attributes }}>
+  <details>
+    <summary
+      class="modal__toggle{% if block.settings.icon != blank %} has-icon{% endif %}"
+      aria-haspopup="dialog"
+      aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+    >
+      {{ block.settings.content }}
+      <div class="wrapper-content">
+        {%- if block.settings.icon != blank -%}
+          <span class="svg-wrapper">
+            <img src="{{ block.settings.icon | image_url: width: 50 }}" width="30" height="30" alt="{{ block.settings.text_link }}">
+          </span>
+        {%- endif -%}
+        <span class="text-link">{{ 'products.product.calculate_dimension' | t }}</span>
+    </div>
+    </summary>
+    <div
+      class="product-modal modal__content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+    >
+      <div class="modal-overlay"></div>
+      <div class="product-modal__content" tabindex="-1">
+        <link
+          rel="stylesheet"
+          href="{{ 'curtain-calculator.css' | asset_url }}"
+          media="print"
+          onload="this.media='all'"
+        >
+        <noscript>{{ 'curtain-calculator.css' | asset_url | stylesheet_tag }}</noscript>
+        <script src="{{ 'curtain-calculator.js' | asset_url }}" defer="defer"></script>
+        <div id="curtain-calculator"></div>
+        <button
+          type="button"
+          class="modal__close-button link button-unstyled focus-inset"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          <i class="fas fa-xmark icon"></i>
+        </button>
+      </div>
+    </div>
+  </details>
+</details-modal>

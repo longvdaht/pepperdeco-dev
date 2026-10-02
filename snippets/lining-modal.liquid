@@ -1,0 +1,57 @@
+<details-modal id="LiningModal" class="product__modal lining-modal" {{ block.shopify_attributes }}>
+  <details>
+  <summary
+    class="modal__toggle"
+    aria-haspopup="dialog"
+    aria-label="{{ block.settings.content }} {{ 'products.product.mount_modal.title' | t }}"
+  >
+    <span class="option-link">?</span>
+  </summary>
+  <div
+      class="product-modal modal__content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ block.settings.content }} {{ 'products.product.mount_modal.title' | t }}"
+  >
+      <div class="modal-overlay"></div>
+      <div class="product-modal__content" tabindex="-1">
+      <div id="lining-modal-content" class="lining-modal-content">
+        <div class="product-modal__content--heading">{{ 'products.product.mount_modal.title' | t }}:</div>
+        <div class="lining-modal-content-wrapper">
+          <div class="mount-inside mount-item">
+            <div class="mount-item-wrapper">
+              <div class="mount-image">
+                <img src="{{ 'roman-shade-inside-mount-2x-bg.png' | asset_url }}" alt="{{ 'products.product.mount_modal.inside.title' | t }}"/>
+              </div>
+              <div class="mount-content">
+                <span class="mount-title">{{ 'products.product.mount_modal.inside.title' | t }}</span>
+                <span class="mount-description">{{ 'products.product.mount_modal.inside.description' | t }}</span>
+                <span class="mount-require">{{ 'products.product.mount_modal.inside.require' | t }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="mount-inside mount-item">
+            <div class="mount-item-wrapper">
+              <div class="mount-image">
+                <img src="{{ 'roman-shade-outside-mount-2x-bg.png' | asset_url }}" alt="{{ 'products.product.mount_modal.outside.title' | t }}"/>
+              </div>
+              <div class="mount-content">
+                <span class="mount-title">{{ 'products.product.mount_modal.outside.title' | t }}</span>
+                <span class="mount-description">{{ 'products.product.mount_modal.outside.description' | t }}</span>
+                <span class="mount-require">{{ 'products.product.mount_modal.outside.require' | t }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+            type="button"
+            class="modal__close-button link button-unstyled focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+        >
+            {%- render 'icon-close' -%}
+        </button>
+      </div>
+    </div>
+  </div>
+  </details>
+</details-modal>

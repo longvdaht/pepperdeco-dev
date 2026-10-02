@@ -1,0 +1,225 @@
+{% assign bed_products = product.metafields.custom.bed_construction.value %}
+{% if bed_products %}
+  <div class="warranty-widget product-form__input">
+    <option-dropdown data-dropdown-key="bed-construction">
+      <button type="button" data-dropdown-trigger aria-expanded="false">
+        <legend class="form__label">
+          <div class="contruction-wrapper bed">
+            {{ 'products.product.bed_platform_option' | t }}:
+            <span class="option-link bed-modal-trigger" data-modal="bedModal">?</span>
+          </div>
+          <div class="bed-value-wrapper">
+            <span class="base-selected-value">
+              {% comment %} {% for bed_product in bed_products %}
+                {% if forloop.first %}
+                  {{ bed_product.title }}
+                {% endif %}
+              {% endfor %} {% endcomment %}
+              <span class="option-not-selected">{{ 'products.product.select' | t }}</span>
+            </span>
+            <span class="base-selected-price"> </span>
+          </div>
+          {% comment %} {% if block.settings.leg_hover_image != blank %}
+            <div class="option-link option-tooltip--wrapper">
+              ?
+              <div class="option-tooltip">
+                <img src="{{ block.settings.leg_hover_image | image_url: width: 500 }}" alt="Leg Options" width="500" height="500" alt="{{ block.settings.leg_hover_image.alt }}">
+              </div>
+            </div>
+          {% endif %} {% endcomment %}
+        </legend>
+        {% render 'icon-chevron-up' %}
+        {% render 'icon-chevron-down-pdp' %}
+      </button>
+      <div data-dropdown-panel>
+        <div class="warranty-options">
+          <fieldset class="js product-form__input product-form__input-platform">
+            {% for bed_product in bed_products %}
+              <input
+                id="bed-option-{{ forloop.index }}"
+                name="bed-base-option"
+                class="bed-platform-checkbox {% if bed_product.price > 0 %}has-variants{% endif %}"
+                type="radio"
+                value="{{ bed_product.selected_or_first_available_variant.id }}"
+                {% if bed_product.price > 0 %}
+                  data-name="{{ bed_product.variants.first.title }}"
+                {% endif %}
+                data-variant-id="{{ bed_product.variants.first.id }}"
+                data-price="{{ bed_product.variants.first.price }}"
+                {% comment %} {% if forloop.first %}
+                  checked
+                {% endif %} {% endcomment %}
+              >
+              <label for="bed-option-{{ forloop.index }}" class="mount-radio bed-option">
+                {{ bed_product.title }}
+              </label>
+              {% if bed_product.price > 0 %}
+                <script>
+                  window.warrantyVariants = {
+                    {% for variant in bed_product.variants %}
+                      "{{ variant.title | downcase }}": {
+                        id: {{ variant.id }},
+                        price: {{ variant.price }}
+                      }{% unless forloop.last %},{% endunless %}
+                    {% endfor %}
+                  };
+
+                  const sizeInputs = document.querySelectorAll('[name="Size"]');
+                  const warrantyCheckbox = document.querySelector('.bed-platform-checkbox.has-variants');
+
+                  function updateWarrantyVariant() {
+                    const selected = document.querySelector('[name="Size"]:checked');
+                    if (!selected) return;
+
+                    const size = selected.value.toLowerCase();
+                    const variant = window.warrantyVariants[size];
+
+                    if (variant) {
+                      warrantyCheckbox.dataset.variantId = variant.id;
+                      warrantyCheckbox.dataset.price = variant.price;
+                      warrantyCheckbox.dataset.name = selected.value;
+
+                      // Update price display
+                      if (warrantyCheckbox.checked) {
+                        const selectedPrice = document.querySelector('.base-selected-price');
+                        if (selectedPrice) {
+                          selectedPrice.textContent = variant.price > 0
+                            ? '+ $' + (variant.price / 100).toFixed(2).replace(/\.00$/, '')
+                            : '';
+                        }
+                      }
+                    }
+                  }
+
+                  // init
+                  updateWarrantyVariant();
+
+                  // on change
+                  sizeInputs.forEach(input => {
+                    input.addEventListener('change', updateWarrantyVariant);
+                  });
+                </script>
+              {% endif %}
+            {% endfor %}
+          </fieldset>
+          <script>
+            (function () {
+              var radios = document.querySelectorAll('.bed-platform-checkbox');
+              var selectedValue = document.querySelector('.base-selected-value');
+              var selectedPrice = document.querySelector('.base-selected-price');
+
+              if (!radios.length || !selectedValue) return;
+
+              radios.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                  // Update title
+                  var label = document.querySelector('label[for="' + this.id + '"]');
+                  if (label) selectedValue.textContent = label.textContent.trim();
+
+                  // Update price
+                  if (this.classList.contains('has-variants')) {
+                    var sizeChecked = document.querySelector('[name="Size"]:checked');
+                    var price = parseInt(this.dataset.price || 0);
+                    selectedPrice.textContent =
+                      sizeChecked && price > 0 ? '+ $' + (price / 100).toFixed(2).replace(/\.00$/, '') : '';
+                  } else {
+                    selectedPrice.textContent = '';
+                  }
+                });
+              });
+            })();
+          </script>
+        </div>
+      </div>
+    </option-dropdown>
+    <details-modal id="bedModal" class="product__modal mount-modal bed-construction" {{ block.shopify_attributes }}>
+      <details>
+        <summary
+          class="modal__toggle form__label"
+          aria-haspopup="dialog"
+          aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+        >
+          <span class="bed-option-heading">
+            {{ 'products.product.bed_platform_option' | t }}:
+            <span class="base-selected-value">
+              {% for bed_product in bed_products %}
+                {% if forloop.first %}
+                  {{ bed_product.title }}
+                {% endif %}
+              {% endfor %}
+            </span>
+            <span class="base-selected-price"> </span>
+          </span>
+          <span class="option-link">?</span>
+        </summary>
+        <div
+          class="product-modal modal__content"
+          role="dialog"
+          aria-modal="true"
+          aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+        >
+          <div class="modal-overlay"></div>
+          <div class="product-modal__content" tabindex="-1">
+            <div id="mount-modal-content" class="mount-modal-content">
+              <div class="product-modal__content--heading">{{ 'products.product.bed_construction' | t }}:</div>
+              <div class="mount-modal-content-wrapper">
+                {% for bed_product in bed_products %}
+                  <div class="mount-inside mount-item">
+                    <div class="mount-item-wrapper">
+                      <div class="mount-image">
+                        <img
+                          srcset="
+                            {% if bed_product.media[0].width >= 288 %}{{ bed_product.media[0] | image_url: width: 288 }} 288w,{% endif %}
+                            {% if bed_product.media[0].width >= 576 %}{{ bed_product.media[0] | image_url: width: 576 }} 576w,{% endif %}
+                            {% if bed_product.media[0].width >= 750 %}{{ bed_product.media[0] | image_url: width: 750 }} 750w,{% endif %}
+                            {% if bed_product.media[0].width >= 1100 %}{{ bed_product.media[0] | image_url: width: 1100 }} 1100w,{% endif %}
+                            {% if bed_product.media[0].width >= 1500 %}{{ bed_product.media[0] | image_url: width: 1500 }} 1500w{% endif %}
+                          "
+                          src="{{ bed_product.media[0] | image_url: width: 1000 }}"
+                          sizes="100vw"
+                          loading="lazy"
+                          width="{{ bed_product.media[0].width }}"
+                          height="{{ bed_product.media[0].width | divided_by: bed_product.media[0].aspect_ratio }}"
+                          alt="{{ bed_product.media[0].alt | escape }}"
+                          class="image-magnify-hover"
+                        >
+                      </div>
+                      <div class="mount-content">
+                        <span class="mount-title">{{ bed_product.title }}</span>
+                        <span class="mount-description">{{ bed_product.description }}</span>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <button
+                type="button"
+                class="modal__close-button link button-unstyled focus-inset"
+                aria-label="{{ 'accessibility.close' | t }}"
+              >
+                {%- render 'icon-close' -%}
+              </button>
+            </div>
+          </div>
+        </div>
+      </details>
+    </details-modal>
+    <script>
+      document.addEventListener('click', function(e) {
+        const trigger = e.target.closest('.bed-modal-trigger');
+        if (!trigger) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const modal = document.getElementById('bedModal');
+
+        if (!modal) return;
+
+        const summary = modal.querySelector('summary');
+
+        summary?.click();
+      });
+    </script>
+  </div>
+{% endif %}

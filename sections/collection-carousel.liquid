@@ -1,0 +1,277 @@
+<link
+  rel="stylesheet"
+  href="{{ 'section-collection-carousel.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-collection-carousel.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script src="{{ 'details-collapse.js' | asset_url }}" defer="defer"></script>
+
+{% comment %}
+  {%- assign grid_mobile_column = "one" -%}
+  {%- assign grid_desktop_column = "one-third" -%}
+{% endcomment %}
+
+<div class="section-outer section-collection-carousel section-color-{{ section.settings.color_scheme }}">
+  <div class="section-heading-outer">
+    <div class="section-heading">
+      <div class="large-up-hide word-icon">
+        {%- render 'word-shop', word: section.settings.word_graphic -%}
+      </div>
+      <details-collapse data-collapse="tablet">
+        <details id="Collapse-{{ section.id }}">
+          <summary>
+            <span class="small-hide medium-hide word-icon">
+              {%- render 'word-shop', word: section.settings.word_graphic -%}
+            </span>
+            <div class="h5">By category</div>
+            <div class="h5 icon large-up-hide">&rsaquo;</div>
+          </summary>
+          {%- if section.settings.by_category != blank -%}
+            <div class="rte shop-by-category">
+              {{ section.settings.by_category }}
+            </div>
+          {%- endif -%}
+        </details>
+      </details-collapse>
+      <details-collapse data-collapse="tablet">
+        <details id="Collapse-{{ section.id }}">
+          <summary>
+            <span class="small-hide medium-hide word-icon">
+              {%- render 'word-shop', word: section.settings.word_graphic -%}
+            </span>
+            <div class="h5">By collection</div>
+            <div class="h5 icon large-up-hide">&rsaquo;</div>
+          </summary>
+          {%- if section.settings.by_collection != blank -%}
+            <div class="rte shop-by-collection">
+              {{ section.settings.by_collection }}
+            </div>
+          {%- endif -%}
+        </details>
+      </details-collapse>
+    </div>
+  </div>
+
+  <slider-component class="collections-carousel-outer">
+    <ul class="list-unstyled slider grid grid-nowrap">
+      {%- for block in section.blocks -%}
+        <li
+          class="carousel-cell grid__item{% if forloop.last %} grid__item--last{% elsif forloop.first %} grid__item--first{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <a
+            href="{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %}
+                    {{ block.settings.collection.url }}
+                  {% else %}
+                    {{ block.settings.custom_link }}
+                  {% endif %}"
+            class="full-unstyled-link"
+          >
+            {%- if block.settings.image != blank -%}
+              <div
+                class="media media--square"
+              >
+                <picture>
+                  <source
+                    srcset="
+                      {%- if block.settings.image.width >= 480 -%}{{ block.settings.image | image_url: width: 480, format: 'webp' }} 480w,{%- endif -%}
+                      {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750, format: 'webp' }} 750w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100, format: 'webp' }} 1100w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500, format: 'webp' }} 1500w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780, format: 'webp' }} 1780w,{%- endif -%}
+                      {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000, format: 'webp' }} 2000w,{%- endif -%}
+                      {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000, format: 'webp' }} 3000w,{%- endif -%}
+                      {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840, format: 'webp' }} 3840w,{%- endif -%}
+                    "
+                    sizes="(min-width: 60em) 40vw, 20vw"
+                    type="image/webp"
+                  >
+                  <img
+                    srcset="
+                      {%- if block.settings.image.width >= 480 -%}{{ block.settings.image | image_url: width: 480 }} 480w,{%- endif -%}
+                      {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                      {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                      {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                      {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                    "
+                    sizes="(min-width: 60em) 40vw, 20vw"
+                    src="{{ block.settings.image | image_url: width: 530 }}"
+                    loading="lazy"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio }}"
+                  >
+                </picture>
+              </div>
+            {%- elsif block.settings.collection.featured_image != blank -%}
+              <div class="media media--square">
+                <img
+                  srcset="
+                    {%- if block.settings.collection.featured_image.width >= 375 -%}{{ block.settings.collection.featured_image | image_url: width: 375, format: 'webp' }} 375w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 750 -%}{{ block.settings.collection.featured_image | image_url: width: 750, format: 'webp' }} 750w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 1100 -%}{{ block.settings.collection.featured_image | image_url: width: 1100, format: 'webp' }} 1100w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 1500 -%}{{ block.settings.collection.featured_image | image_url: width: 1500, format: 'webp' }} 1500w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 1780 -%}{{ block.settings.collection.featured_image | image_url: width: 1780, format: 'webp' }} 1780w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 2000 -%}{{ block.settings.collection.featured_image | image_url: width: 2000, format: 'webp' }} 2000w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 3000 -%}{{ block.settings.collection.featured_image | image_url: width: 3000, format: 'webp' }} 3000w,{%- endif -%}
+                    {%- if block.settings.collection.featured_image.width >= 3840 -%}{{ block.settings.collection.featured_image | image_url: width: 3840, format: 'webp' }} 3840w,{%- endif -%}
+                  "
+                  sizes="(min-width: 60em) 40vw, 90vw"
+                  src="{{ block.settings.collection.featured_image | image_url: width: 530, format: 'webp' }}"
+                  loading="lazy"
+                  alt="{{ block.settings.collection.featured_image.alt | escape }}"
+                  width="{{ block.settings.collection.featured_image.width }}"
+                  height="{{ block.settings.collection.featured_image.width | divided_by: block.settings.collection.featured_image.aspect_ratio }}"
+                >
+              </div>
+            {%- elsif request.design_mode -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+            <h3 class="h4 heading collection-title">
+              {% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %}
+                {{ block.settings.collection.title }}
+              {% else %}
+                {{ block.settings.custom_title }}
+              {% endif %}
+            </h3>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+    <div class="slider-buttons no-js-hidden">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'accessibility.previous_slide' | t }}"
+      >
+        {% render 'icon-arrow-left' %}
+      </button>
+      <div class="visually-hidden slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+        <span class="slider-counter--total">{{ section.blocks.size }}</span>
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'accessibility.next_slide' | t }}"
+      >
+        {% render 'icon-arrow-right' %}
+      </button>
+    </div>
+  </slider-component>
+</div>
+
+{% schema %}
+{
+  "name": "Collections carousel",
+  "tag": "section",
+  "class": "spaced-section no-x",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "richtext",
+      "id": "by_category",
+      "label": "By category"
+    },
+    {
+      "type": "richtext",
+      "id": "by_collection",
+      "label": "By collection"
+    },
+    {
+      "type": "select",
+      "id": "word_graphic",
+      "label": "Word graphic",
+      "default": "new",
+      "options": [
+        {
+          "value": "new",
+          "label": "Shop 1",
+        },
+        {
+          "value": "old",
+          "label": "Shop 2",
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom title",
+          "info": "Applies when Collection field is blank or has no active products."
+        },
+        {
+          "type": "url",
+          "id": "custom_link",
+          "label": "Custom link",
+          "info": "Applies when Collection field is blank or has no active products."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Aspect ratio 5:6 (Optional, overrides default collection)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections carousel",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,389 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multi_collection_breadcrumb_EBNyEp": {
+      "type": "multi-collection-breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb multi",
+      "settings": {
+        "current_title": "",
+        "previous_link_1": "shopify://pages/custom-furniture",
+        "previous_text_1": "Custom Furniture",
+        "previous_link_2": "",
+        "previous_text_2": "",
+        "previous_link_3": "",
+        "previous_text_3": ""
+      }
+    },
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#43433f",
+        "title": "Custom Chairs",
+        "title_type": "type-2",
+        "description": "Design a chair you’ll love. Made to order and available to ship in weeks, not months.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-chairs-green.jpg",
+            "collection_title": "Green",
+            "override_url": "",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-chairs-blue.jpg",
+            "collection_title": "Blue",
+            "override_url": "",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-chairs-neutral.jpg",
+            "collection_title": "Neutral",
+            "override_url": "",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_ewUHzA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-chairs-pink.jpg",
+            "collection_title": "Pink",
+            "override_url": "",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_WAXLjM": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-beds-red.jpg",
+            "collection_title": "Red",
+            "override_url": "",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw",
+        "featured_collection_ewUHzA",
+        "featured_collection_WAXLjM"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "product-grid": {
+      "type": "main-multi-collections",
+      "blocks": {
+        "collection_tXHjCJ": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-marlow",
+            "collection_title": "MARLOW",
+            "collection_description": "Where clean lines meet soft contours",
+            "button_text": "Shop All"
+          }
+        },
+        "collection_HbCMhE": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-adeline",
+            "collection_title": "ADELINE",
+            "collection_description": "Graceful lines meet timeless appeal",
+            "button_text": "Shop all"
+          }
+        },
+        "collection_pAmkqn": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-waverly",
+            "collection_title": "Waverly",
+            "collection_description": "Soft, sculptural, and Belgian-inspired",
+            "button_text": "Shop all"
+          }
+        },
+        "collection_3R4jgh": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-cameron",
+            "collection_title": "Cameron",
+            "collection_description": "A curved silhouette with charming details",
+            "button_text": "Shop all"
+          }
+        },
+        "collection_xkeRyL": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-simone",
+            "collection_title": "Simone",
+            "collection_description": "A classic lounge chair with refined character",
+            "button_text": "Shop all"
+          }
+        },
+        "collection_rG4rqL": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-lila",
+            "collection_title": "Lila",
+            "collection_description": "A refined take on a classic silhouette",
+            "button_text": "Shop All"
+          }
+        },
+        "collection_QwJyYz": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-colette",
+            "collection_title": "Colette",
+            "collection_description": "Elevated, inviting, and understated",
+            "button_text": "SHOP ALL"
+          }
+        },
+        "collection_9by3DF": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-dorothy",
+            "collection_title": "DOROTHY",
+            "collection_description": "Designed to deliver style and comfort",
+            "button_text": "Shop All"
+          }
+        },
+        "collection_tWHpkk": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-milo",
+            "collection_title": "Milo",
+            "collection_description": "Handcrafted, sculptural, and airy",
+            "button_text": "Shop All"
+          }
+        },
+        "collection_XrfB4h": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-chairs-henry",
+            "collection_title": "Henry",
+            "collection_description": "A relaxed aesthetic and comforting feel",
+            "button_text": "Shop All"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tXHjCJ",
+        "collection_HbCMhE",
+        "collection_pAmkqn",
+        "collection_3R4jgh",
+        "collection_xkeRyL",
+        "collection_rG4rqL",
+        "collection_QwJyYz",
+        "collection_9by3DF",
+        "collection_tWHpkk",
+        "collection_XrfB4h"
+      ],
+      "custom_css": [],
+      "settings": {
+        "collection_layout": "slider",
+        "product_limit": 50,
+        "product_limit_mobile": 5,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": false,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-third",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "16331219115bcaaf78-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_18_5d237cf6-9358-4d18-844c-18e9d25fa310.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_17.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-3": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_153.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "two_image_AyGnyf": {
+          "type": "two_image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_19.png",
+            "heading": "",
+            "link": "",
+            "image_2": "shopify://shop_images/Frame_20.png"
+          }
+        },
+        "16331219115bcaaf78-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_21.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "16331219115bcaaf78-1",
+        "16331219115bcaaf78-0",
+        "16331219115bcaaf78-3",
+        "two_image_AyGnyf",
+        "16331219115bcaaf78-2"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance-1"
+          }
+        },
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Samples-Furniture.png",
+            "image_width": 140,
+            "title": "Order Samples",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/sample-furniture"
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Chair-Adeline-Serena-SeaSalt.png",
+            "image_width": 140,
+            "title": "View Product Guides",
+            "content": "Get all the answers—from customization to delivery.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        }
+      },
+      "block_order": [
+        "column_7L6p3y",
+        "column_9NGpgg",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "#ffffff",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "multi_collection_breadcrumb_EBNyEp",
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "product-grid",
+    "16331219115bcaaf78",
+    "section_text_with_icon_column_XBbHQ8"
+  ]
+}

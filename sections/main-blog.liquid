@@ -1,0 +1,241 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign layout = section.settings.layout
+  assign show_tags = section.settings.show_tags
+  assign show_list_tags = section.settings.show_list_tags
+  assign show_date = section.settings.show_date
+  assign hide_blog_title = section.settings.hide_blog_title
+
+  if layout == 'grid'
+    assign grid_mobile_column = section.settings.mobile_per_row
+    assign grid_desktop_column = section.settings.desktop_per_row
+  else
+    assign grid_mobile_column = 'one'
+    assign grid_desktop_column = 'one-half'
+  endif
+
+  assign tag_size = current_tags | size
+-%}
+
+<div class="page-width">
+  <div class="border-top"></div>
+</div>
+
+<div class="section-outer section-color-{{ section.settings.color_scheme }}">
+  {%- if show_list_tags or hide_blog_title == false -%}
+    <div class="page-width">
+      {%- if blog.title != blank and hide_blog_title == false -%}
+        <div class="section-heading-outer center">
+          {%- if blog.title != blank -%}
+            <h1 class="h2 display section-heading">
+              <a href="{{ blog.url }}" class="full-unstyled-link">
+                {{ blog.title }}
+              </a>
+            </h1>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      {% if show_tags and show_list_tags %}
+        <div class="center{% if blog.tags contains 'Style Guides' %} style-guides{% endif %}">
+          {% for tag in blog.all_tags %}
+            {% assign tag_handle = tag | downcase %}
+            {%  unless tag_handle == 'hidden search' %}
+              <a
+                href="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                class="blog-tag"
+                {% if current_tags contains tag %}
+                  aria-current="page"
+                {% endif %}
+              >
+                <span>{{ tag }}</span>
+              </a>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {%- paginate blog.articles by section.settings.articles_per_page -%}
+    <div class="page-width">
+      {%- if section.blocks.size > 0 and paginate.current_page == 1 -%}
+        <div class="main-article-list grid {% unless section.settings.layout == 'list' %}mobile-{{ grid_mobile_column }} desktop-{{ grid_desktop_column }}{% endunless %} blog-display-{{ layout }}">
+          {%- assign pinned_handles = '' -%}
+          {%- for block in section.blocks -%}
+            {% case layout %}
+              {% when 'grid' %}
+                {%- assign article_tags = block.settings.article.tags | join: '' -%}
+                {% if current_tags == blank or tag_size > 0 and current_tags contains article_tags %}
+                  <div class="grid__item article-card{% if article.image == blank %} article-no-media{% endif %}">
+                    {% render 'article-card', article: block.settings.article, show_tags: show_tags, show_date: show_date %}
+                  </div>
+                {% endif %}
+              {% when 'list' %}
+                <div class="grid__item grid__item--full article-card{% if article.image == blank %} article-no-media{% endif %}">
+                  {% render 'article-list', article: block.settings.article, show_tags: show_tags, show_date: show_date %}
+                </div>
+                <div class="grid__item break"></div>
+            {% endcase %}
+            {%- assign pinned_handles = pinned_handles | append: block.settings.article.handle -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      <div class="main-article-list grid {% unless section.settings.layout == 'list' %}mobile-{{ grid_mobile_column }} desktop-{{ grid_desktop_column }}{% endunless %} blog-display-{{ layout }}">
+        {%- for article in blog.articles -%}
+          {%- unless pinned_handles contains article.handle -%}
+            {% case layout %}
+              {% when 'grid' %}
+                <div class="grid__item article-card{% if article.image == blank %} article-no-media{% endif %}">
+                  {% comment %} {{ forloop.index }} {% endcomment %}
+                  {% render 'article-card', article: article, show_tags: show_tags, show_date: show_date %}
+                </div>
+              {% when 'list' %}
+                <div class="grid__item grid__item--full article-card{% if article.image == blank %} article-no-media{% endif %}">
+                  {% render 'article-list', article: article, show_tags: show_tags, show_date: show_date %}
+                </div>
+                <div class="grid__item break"></div>
+            {% endcase %}
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+<script type="application/json" id="blog-search-data">
+  {
+    "items": [
+      {% paginate blog.articles by 300 %}
+        {%- for article in blog.articles -%}
+        {
+          "id": {{ article.id | json }},
+          "image": {%- if article.image %}{{ article.image | image_url: width: 533 | json }}{% else %}""{% endif %},
+          "title": {{ article.title | escape | json }},
+          "url": {{ article.url | json }},
+          "published_at": {{ article.published_at | date: "%B %Y" | json }},
+          "tags": [ {%- for tag in article.tags -%} {{ tag | escape | json }} {%- unless forloop.last -%}, {%- endunless -%} {%- endfor -%} ]
+        }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      {% endpaginate %}
+    ]
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Main blog",
+  "tag": "section",
+  "class": "spaced-section main-blog",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_blog_title",
+      "label": "Hide blog title",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Blog Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Blog layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "list",
+          "label": "List"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_list_tags",
+      "label": "Show Blog List Tag Bar",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show Blog Tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show Blog Date",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "min": 3,
+      "max": 24,
+      "step": 1,
+      "default": 21,
+      "label": "Articles per page"
+    },
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_per_row",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Desktop per row",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "mobile_per_row",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Mobile per row",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Pinned article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Pinned article"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

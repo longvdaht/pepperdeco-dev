@@ -1,0 +1,826 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Shop All",
+        "title_type": "type-2",
+        "description": "Your perfect piece awaits. Each piece is made to order and ships in weeks, not months.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-beds",
+            "image": "shopify://shop_images/collection-furniture-beds.jpg",
+            "collection_title": "Beds",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-headboards",
+            "image": "shopify://shop_images/collection-furniture-headboards.jpg",
+            "collection_title": "Headboards",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-chairs",
+            "image": "shopify://shop_images/collection-furniture-chairs.jpg",
+            "collection_title": "Chairs",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_YqKGpL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CategoryCover-Sofas.jpg",
+            "collection_title": "Sofas",
+            "override_url": "shopify://collections/custom-furniture-sofas",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_ewUHzA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-furniture-benches",
+            "image": "shopify://shop_images/collection-furniture-benches.jpg",
+            "collection_title": "Benches",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw",
+        "featured_collection_YqKGpL",
+        "featured_collection_ewUHzA"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "main_list_collection_2_ybqxrk": {
+      "type": "main-list-collection-2",
+      "blocks": {
+        "featured_collection_XAW3BG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CurtainCalculator-Curtain-nobackground.png",
+            "collection_title": "Window Treatments",
+            "override_url": "shopify://collections/curtains",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_FVHWjX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/beds.png",
+            "collection_title": "Furniture",
+            "override_url": "shopify://pages/custom-furniture",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_J7T6cT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/wallpaper-florence-harbor_720.png",
+            "collection_title": "Wallpaper",
+            "override_url": "shopify://collections/wallpaper",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_fNnkAh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/pillow-beatrice-midilumbar_720.png",
+            "collection_title": "Decor",
+            "override_url": "shopify://collections/decor",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_Vg8Way": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/fabric_swatches-serena_sea_salt_480.png",
+            "collection_title": "Fabric By The Yard",
+            "override_url": "shopify://collections/fabric",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_bUBXXN": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Cafecurtain-Flour-SkyVelvetBand.png",
+            "collection_title": "Cafe Curtains",
+            "override_url": "shopify://collections/custom-cafe-curtains",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_zYmVLp": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/roman-shades.png",
+            "collection_title": "Roman Shades",
+            "override_url": "shopify://collections/custom-roman-shades",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_i48yMx": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-beds",
+            "image": "shopify://shop_images/beds.png",
+            "collection_title": "Beds",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_LKBpft": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-headboards",
+            "image": "shopify://shop_images/headboards_d4a207f4-2e4d-4181-a8b9-60ba7ff4f27e.png",
+            "collection_title": "Headboards",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_y7F66H": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-chairs",
+            "image": "shopify://shop_images/chairs_f7833d4d-11a8-4a14-99dc-8cc894e5db65.png",
+            "collection_title": "Chairs",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_VFfK9x": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-sofas",
+            "image": "shopify://shop_images/Sofa-Simone-Illustration.png",
+            "collection_title": "Sofas",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_qgRREa": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-benches",
+            "image": "shopify://shop_images/bench.png",
+            "collection_title": "Benches",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_iWrmTk": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-sectionals",
+            "image": "shopify://shop_images/Sectional-Pierce.png",
+            "collection_title": "Sectionals",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_yegbhf": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-sleeper-sofas",
+            "image": "shopify://shop_images/Sofa-Simone-Fern.png",
+            "collection_title": "Sleeper Sofas",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_qgPp84": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "custom-furniture-ottomans",
+            "collection_title": "",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_XAW3BG",
+        "featured_collection_FVHWjX",
+        "featured_collection_J7T6cT",
+        "featured_collection_fNnkAh",
+        "featured_collection_Vg8Way",
+        "featured_collection_bUBXXN",
+        "featured_collection_zYmVLp",
+        "featured_collection_i48yMx",
+        "featured_collection_LKBpft",
+        "featured_collection_y7F66H",
+        "featured_collection_VFfK9x",
+        "featured_collection_qgRREa",
+        "featured_collection_iWrmTk",
+        "featured_collection_yegbhf",
+        "featured_collection_qgPp84"
+      ],
+      "name": "Collection list small",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "1"
+      }
+    },
+    "section_shop_by_categories_7eYJ6X": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_kf9bxg": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/curtain-solid-performancewoven-sand-silo.jpg",
+            "title": "CURTAINS",
+            "subtitle": "Make any view better with these bespoke beauties.",
+            "collection_url": "shopify://collections/custom-curtains"
+          }
+        },
+        "collection_L7Tw6M": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/cafecurtain-printedcotton-quinn-eucalyptus.jpg",
+            "title": "CAFE CURTAINS",
+            "subtitle": "Light, airy, and oh-so-effortless.",
+            "collection_url": "shopify://collections/custom-cafe-curtains"
+          }
+        },
+        "collection_UHNpKB": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/romanshade-embroidered-vivienne-pistachio-silo.jpg",
+            "title": "ROMAN SHADES",
+            "subtitle": "Four silhouettes. Endless possibilities.",
+            "collection_url": "shopify://collections/custom-roman-shades"
+          }
+        },
+        "collection_GqqXYN": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/woodenwoven-semisheer-toffee-silo.jpg",
+            "title": "WOVEN WOOD SHADES",
+            "subtitle": "A touch of organic texture for your windows.",
+            "collection_url": "shopify://collections/custom-woven-wood-shades"
+          }
+        },
+        "collection_YhCfxy": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/valance-scalloped-solid-silk-pearl-none.png",
+            "title": "VALANCES & CORNICES",
+            "subtitle": "Top off your windows with true character.",
+            "collection_url": "shopify://collections/valances-cornices"
+          }
+        }
+      },
+      "block_order": [
+        "collection_kf9bxg",
+        "collection_L7Tw6M",
+        "collection_UHNpKB",
+        "collection_GqqXYN",
+        "collection_YhCfxy"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "",
+        "heading": "Window Treatments",
+        "subheading": "Your perfect look, made to order.",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/curtains",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_6B4Wnr": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_BEweAn": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-bed.png",
+            "title": "BEDS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-beds"
+          }
+        },
+        "collection_9Qj37a": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-headboard.png",
+            "title": "HEADBOARDS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-headboards"
+          }
+        },
+        "collection_AWJ6DB": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-chair.png",
+            "title": "CHAIRS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-chairs"
+          }
+        },
+        "collection_Upek3R": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-sofa.png",
+            "title": "SOFAS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-sofas"
+          }
+        },
+        "collection_mhCfyB": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-sleeper.png",
+            "title": "SLEEPERS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-sleeper-sofas"
+          }
+        },
+        "collection_hyBaqn": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-sectional.png",
+            "title": "SECTIONALS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-sectionals"
+          }
+        },
+        "collection_RtLBHP": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-settee.png",
+            "title": "SETTEES",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-settees-daybeds"
+          }
+        },
+        "collection_zpB3BB": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-bench.png",
+            "title": "BENCHES",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-benches"
+          }
+        },
+        "collection_mKA9cj": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-page-ottoman.png",
+            "title": "OTTOMANS",
+            "subtitle": "Choose from our signature silhouettes",
+            "collection_url": "shopify://collections/custom-furniture-ottomans"
+          }
+        }
+      },
+      "block_order": [
+        "collection_BEweAn",
+        "collection_9Qj37a",
+        "collection_AWJ6DB",
+        "collection_Upek3R",
+        "collection_mhCfyB",
+        "collection_hyBaqn",
+        "collection_RtLBHP",
+        "collection_zpB3BB",
+        "collection_mKA9cj"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "FURNITURE",
+        "subheading": "Your perfect piece awaits.",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://pages/custom-furniture",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_qpEmRC": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_Laza3V": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/wallpaper-claycoated-quinn-chestnut.jpg",
+            "title": "CLAY COATED",
+            "subtitle": "Paper texture with a matte, glare-free finish.",
+            "collection_url": "https://pepper-home.com/collections/wallpaper-claycoated"
+          }
+        },
+        "collection_g7wPCF": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/wallpaper-grasscloth-lucie-clay_jpg_png.jpg",
+            "title": "GRASSCLOTH",
+            "subtitle": "Natural fibers, timeless texture.",
+            "collection_url": "https://pepper-home.com/collections/wallpaper-grasscloth"
+          }
+        },
+        "collection_e6HbQC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/wallpaper-removable-charlie-copper-silo.jpg",
+            "title": "REMOVABLE",
+            "subtitle": "Eco-friendly and easy to remove.",
+            "collection_url": "https://pepper-home.com/collections/wallpaper-removable"
+          }
+        },
+        "collection_QnRefm": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/wallpaper_ginger_sky_silo.jpg",
+            "title": "PERFORMANCE",
+            "subtitle": "Enduring beauty. Stain and water-resistant.",
+            "collection_url": "https://pepper-home.com/collections/wallpaper-performance"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Laza3V",
+        "collection_g7wPCF",
+        "collection_e6HbQC",
+        "collection_QnRefm"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Wallpaper",
+        "subheading": "Choose from our signature patterns and grounds.",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/wallpaper",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_yewdbn": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_kdprzf": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/pillow-printedlinen-annabelle-maroon.jpg",
+            "title": "PILLOWS",
+            "subtitle": "Choose your fabric, size and finish",
+            "collection_url": "shopify://collections/throw-pillows"
+          }
+        },
+        "collection_aH99kR": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/shopall-tablelinen-2.png",
+            "title": "TABLE LINENS",
+            "subtitle": "Set the table with a statement piece",
+            "collection_url": "shopify://collections/table-linens"
+          }
+        },
+        "collection_qBhmbF": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/showercurtain-woven-louisa-sage.jpg",
+            "title": "SHOWER CURTAINS",
+            "subtitle": "Elevate your bathroom",
+            "collection_url": "shopify://collections/custom-shower-curtains"
+          }
+        },
+        "collection_p6CKDn": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Pouches-MillieSage-No-Background.png",
+            "title": "POUCHES",
+            "subtitle": "Custom pouches for every occasion",
+            "collection_url": "shopify://collections/custom-pouches"
+          }
+        }
+      },
+      "block_order": [
+        "collection_kdprzf",
+        "collection_aH99kR",
+        "collection_qBhmbF",
+        "collection_p6CKDn"
+      ],
+      "custom_css": [],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "DECOR",
+        "subheading": "Choose a look that's uniquely yours.",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/decor",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_krG96M": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_U7mYjJ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-solid-linen-oat.jpg",
+            "title": "COTTON & LINEN",
+            "subtitle": "Versatile fabric that's the go-to for timeless elegance.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_iac6AV": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-printedcotton-quinn-eucalyptus.jpg",
+            "title": "PRINTED COTTON",
+            "subtitle": "Our patterns, digitally printed on 100% cotton.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_eAdEXk": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-solid-performancewoven-seasalt.png",
+            "title": "PERFORMANCE WOVEN",
+            "subtitle": "Durable fabrics designed for every moment.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_jPAFkQ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/sheer-eloise-flour.jpg",
+            "title": "SHEER",
+            "subtitle": "Light, airy, and made to add subtle texture.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_9rFH7A": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-solid-velvet-baltic.png",
+            "title": "VELVET",
+            "subtitle": "Plush with a soft hand and lasting durability.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_tBd7jR": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-chenillejacquard-willow-amalfi.jpg",
+            "title": "CHENILLE JACQUARD",
+            "subtitle": "Add dimension with our versatile jacquards.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_JggaHR": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-woven-louisa-harbor.jpg",
+            "title": "WOVEN",
+            "subtitle": "Timeless styles, woven for everyday elegance.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_wrqWV8": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-embroidered-hayes-almond.png",
+            "title": "EMBROIDERED",
+            "subtitle": "Refined embroidery with subtle dimension.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_B8hEDz": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-solid-silk-camelia.jpg",
+            "title": "SILK",
+            "subtitle": "Luxurious, 100% dupioni silks in elegant hues.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_LCxGmr": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/fabricswatch-printedlinen-florence-rosewood.jpg",
+            "title": "PRINTED LINEN",
+            "subtitle": "Our patterns, printed on luxe Italian linen.",
+            "collection_url": "shopify://collections/fabric"
+          }
+        },
+        "collection_wjba4V": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/cream-tassel.jpg",
+            "title": "TRIM",
+            "subtitle": "It’s all about a finishing touch.",
+            "collection_url": "shopify://collections/trim-piping-yardage"
+          }
+        }
+      },
+      "block_order": [
+        "collection_U7mYjJ",
+        "collection_iac6AV",
+        "collection_eAdEXk",
+        "collection_jPAFkQ",
+        "collection_9rFH7A",
+        "collection_tBd7jR",
+        "collection_JggaHR",
+        "collection_wrqWV8",
+        "collection_B8hEDz",
+        "collection_LCxGmr",
+        "collection_wjba4V"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "FABRIC",
+        "subheading": "PIY (Pepper It Yourself) with patterns and colors by the yard.",
+        "button_text": "SHOP ALL",
+        "button_url": "shopify://collections/fabric",
+        "show_border_bottom": false,
+        "layout": "slider",
+        "columns_mobile": "2"
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "16331219115bcaaf78-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-grasscloth-steel.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-madelineflour.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-showercurtains-louisacamel.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-florenceeucalyptus-1.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "16331219115bcaaf78-3",
+        "16331219115bcaaf78-2",
+        "16331219115bcaaf78-0",
+        "16331219115bcaaf78-1"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c.png",
+            "image_width": 140,
+            "title": "Order Samples",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/sample-furniture"
+          }
+        },
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance-1"
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Chair-Adeline-Serena-SeaSalt.png",
+            "image_width": 140,
+            "title": "Browse Our FAQs",
+            "content": "Get all the answers—from customization to delivery.",
+            "link_text": "VISIT",
+            "link_url": "shopify://blogs/the-thread/furniture-faqs"
+          }
+        }
+      },
+      "block_order": [
+        "column_9NGpgg",
+        "column_7L6p3y",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "#ffffff",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "main_list_collection_2_ybqxrk",
+    "section_shop_by_categories_7eYJ6X",
+    "section_shop_by_categories_6B4Wnr",
+    "section_shop_by_categories_qpEmRC",
+    "section_shop_by_categories_yewdbn",
+    "section_shop_by_categories_krG96M",
+    "16331219115bcaaf78",
+    "section_text_with_icon_column_XBbHQ8"
+  ]
+}

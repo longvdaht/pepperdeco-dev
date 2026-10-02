@@ -1,0 +1,103 @@
+{{ 'curtain-calculator.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'curtain-calculator.js' | asset_url }}" defer="defer"></script>
+{% assign image = section.settings.curtain_cafe_no_clip | img_url: "master" %}
+<div id="curtain-calculator"></div>
+
+<script>
+    const cafe_clips_no_option_image = '{{ image }}'
+	document.addEventListener('DOMContentLoaded', function() {
+		const progressBar = document.querySelector('progress');
+		const sectionPageHero = document.querySelector('.section-page-hero');
+		const curtainCalculatorElement = document.querySelector('.template-page');
+		function updateSectionPageHero() {
+			const progressValue = parseInt(progressBar.value, 10);
+            const curtainBanner = document.querySelector('#MainContent  > section') 
+            const isStep1 = document.querySelector('#curtain-calculator .content-wrapper .page-step-1')
+            if (isStep1) {                
+                const step1Choose = document.querySelectorAll('#curtain-calculator .content-wrapper .page-step-1 .radios-wrapper .radio-wrapper')
+                step1Choose.forEach(function(e) {
+                    e.addEventListener('click', function (event) {
+                        if (event.target.id == 'treatment-cafe-length') {
+                            sessionStorage.setItem('step1', true)
+                        } else {
+                            sessionStorage.setItem('step1', false)
+                        }
+                    })
+                })
+                curtainBanner.style = 'display: block';
+            } else {
+                {% comment %} curtainBanner.style = 'display: none'; {% endcomment %}
+            }
+			if (progressValue > 0) {
+                const isStep2 = document.querySelector('#curtain-calculator .content-wrapper .page-step-2')
+                if (isStep2) {
+                    const step2Choose = document.querySelectorAll('#curtain-calculator .content-wrapper .page-step-2 .radios-wrapper .radio-wrapper')
+                    step2Choose.forEach(function(e) {
+                    e.addEventListener('click', function (event) {
+                        if (event.target.id == 'cafe-style-rod-pocket') {
+                            sessionStorage.setItem('step2', true)
+                        } else {
+                            sessionStorage.setItem('step2', false)
+                        }
+                        if (event.target.id == 'cafe-style-rod-pocket-header' || event.target.id == 'cafe-style-double-rod-pocket-header') {
+                            sessionStorage.setItem('step-2-hide-yes', true)
+                        } else {
+                            sessionStorage.setItem('step-2-hide-yes', false)
+                        }
+                    })
+                })
+                }
+                const isStep3 = document.querySelector('#curtain-calculator .content-wrapper .page-step-3')
+                if (isStep3) {
+                    try {
+                        if (sessionStorage.getItem('step1') == 'true' && sessionStorage.getItem('step2') == 'true') {
+                            const image_replace = document.querySelector('#curtain-calculator .question-form .question-fieldset .radios-wrapper .radio-wrapper:last-child > label > img')
+                            image_replace.src = cafe_clips_no_option_image
+                        }
+                        if (sessionStorage.getItem('step-2-hide-yes') == 'true') {
+                            const yesOption = document.querySelector('#curtain-calculator .question-form .question-fieldset .radios-wrapper .radio-wrapper:first-child')
+                            yesOption.style = 'display: none'
+                            const noOption = document.querySelector('#curtain-calculator .question-form .question-fieldset .radios-wrapper .radio-wrapper:last-child')
+                            noOption.style = 'max-width: calc(100% - 2rem)'
+                        }
+                    } catch (error) {
+                        console.log(error)
+                    }
+                    sectionPageHero.classList.add('hidden-section-banner');
+                }
+                if (Math.trunc(progressValue) == 93) {
+                    const resultStep = document.querySelector('#curtain-calculator > .app-wrapper > .content-wrapper > .page-wrapper')
+                    resultStep.style = '--color-bg: #f3f1ec;'
+                    const buttonAction = document.querySelector('#curtain-calculator > .app-wrapper > .content-wrapper > .page-wrapper .button-next');
+                    if (buttonAction) {
+                        if (sessionStorage.getItem('step1')) {
+                            buttonAction.setAttribute('href', '/collections/custom-cafe-curtains')
+                        } else {
+                            buttonAction.setAttribute('href', '/collections/curtains')
+                        }
+                    }
+                }
+			} else {  
+				sectionPageHero.classList.remove('hidden-section-banner');
+			}
+		}
+		const observer = new MutationObserver(updateSectionPageHero);
+		observer.observe(progressBar, { attributes: true, attributeFilter: ['value'] });
+		updateSectionPageHero();
+	});
+</script>
+{% schema %}
+{
+  "name": "Curtain Calculator",
+  "tag": "section",
+  "class": "image-custom-curtain",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "curtain_cafe_no_clip",
+      "label": "Cafe Curtain/Rod Pocket"
+    }
+  ]
+}
+{% endschema %}

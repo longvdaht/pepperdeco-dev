@@ -1,0 +1,299 @@
+<link rel="stylesheet" href="{{ 'section-image-content.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-instructable.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-image-content.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'section-instructable.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- assign grid_mobile_column = "one" -%}
+{%- assign grid_desktop_column = "one-half" -%}
+
+<div class="section-outer section-image-content section-instructable section-color-{{ section.settings.color_scheme }} center{% if section.settings.hub_section != "" %} section-hub-content section-hub-{{ section.settings.hub_section }}{% endif %}">
+  <div class="page-width">
+    <div class="grid mobile-{{ grid_mobile_column }} desktop-{{ grid_desktop_column }}">
+      {%- if section.settings.section_heading != blank -%}
+        <div class="grid__item--full grid__item--first">
+          <h2 class="h2 section-heading">{{ section.settings.section_heading }}</h2>
+        </div>
+      {%- endif -%}
+      <div class="grid__item has-background-image">
+        <div class="section-content {{ section.settings.text_alignment }}">
+          {%- if section.settings.heading != blank -%}
+            <h2 class="h3 section-heading">{% render 'no-widows', content: section.settings.heading %}</h2>
+          {%- endif -%}
+          {%- if section.settings.subheading != blank -%}
+            <div class="pull-quote section-subheading">{% render 'no-widows', content: section.settings.subheading %}</div>
+          {%- endif -%}
+          {%- if section.settings.content != blank -%}
+            <div class="intro rte">
+              {% render 'no-widows', content: section.settings.content %}
+            </div>
+          {%- endif -%}
+          {%- for block in section.blocks -%}
+            <div class="expand-on-hover" {{ block.shopify_attributes }}>
+              <div class="h5 expand-heading">
+                {{ block.settings.heading }}
+              </div>
+            </div>
+          {%- endfor -%}
+          {% if section.settings.link != blank %}
+            <a href="{{ section.settings.link }}" class="button button--secondary">{{ section.settings.label }}</a>
+          {% endif %}
+        </div>
+        {% if section.settings.background != blank %}
+          <img
+            srcset="{%- if section.settings.background.width >= 375 -%}{{ section.settings.background | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if section.settings.background.width >= 750 -%}{{ section.settings.background | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if section.settings.background.width >= 1100 -%}{{ section.settings.background | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if section.settings.background.width >= 1500 -%}{{ section.settings.background | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if section.settings.background.width >= 1780 -%}{{ section.settings.background | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if section.settings.background.width >= 2000 -%}{{ section.settings.background | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if section.settings.background.width >= 3000 -%}{{ section.settings.background | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if section.settings.background.width >= 3840 -%}{{ section.settings.background | image_url: width: 3840 }} 3840w,{%- endif -%}"
+            sizes="(min-width: 40em) 40vw, 80vw"
+            src="{{ section.settings.background | image_url: width: 400 }}"
+            loading="lazy"
+            alt="{{ section.settings.background.alt | escape }}"
+            width="{{ section.settings.background.width }}"
+            height="{{ section.settings.background.width | divided_by: section.settings.background.aspect_ratio }}"
+            class="background-image"
+          >
+        {% endif %}
+      </div>
+      <div class="grid__item mobile-align-{{ section.settings.mobile_alignment }} desktop-align-{{ section.settings.desktop_alignment }}{% if section.settings.video_url != blank %} media--type-video{% elsif section.settings.image != blank %} media--type-image{% endif %}">
+        {%- if section.settings.video_url != blank -%}
+          <div class="media media--9-16">
+            <video class="lazy" height="1080" width="607" id="video-{{ section.id }}" playsinline controls loop preload="metadata">
+              <source data-src="{{ section.settings.video_url }}">
+            </video>
+          </div>
+        {%- endif -%}
+        {% if section.settings.image != blank and section.settings.video_url == blank %}
+          <div class="media" style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;">
+            <img
+              srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}"
+              sizes="(min-width: 40em) 40vw, 90vw"
+              src="{{ section.settings.image | image_url: width: 400 }}"
+              loading="lazy"
+              alt="{{ section.settings.image.alt | escape }}"
+              width="{{ section.settings.image.width }}"
+              height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+            >
+          </div>
+        {% elsif request.design_mode and section.settings.video_url == blank %}
+          {{ 'collection-6' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (video) {
+        if (video.isIntersecting) {
+          for (var source in video.target.children) {
+            var videoSource = video.target.children[source];
+            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+              videoSource.src = videoSource.dataset.src;
+            }
+          }
+
+          video.target.load();
+          video.target.classList.remove("lazy");
+          lazyVideoObserver.unobserve(video.target);
+        }
+      });
+    });
+
+    lazyVideos.forEach(function (lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  }
+});
+
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Instructable",
+  "tag": "section",
+  "class": "spaced-section section-image-content-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video url",
+      "info": "Upload video file [here](/admin/settings/files)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Image behind text",
+      "info": "Optionally shown behind the text"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "desktop_alignment",
+      "label": "Desktop image alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "mobile_alignment",
+      "label": "Mobile image order",
+      "options": [
+        {
+          "value": "first",
+          "label": "First"
+        },
+        {
+          "value": "last",
+          "label": "Last"
+        }
+      ],
+      "default": "first"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "header",
+      "content": "Design hub section"
+    },
+    {
+      "type": "select",
+      "id": "hub_section",
+      "label": "Hub section",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "curtains",
+          "label": "Curtains"
+        },
+        {
+          "value": "pillows",
+          "label": "Pillows"
+        },
+        {
+          "value": "wallpaper",
+          "label": "Wallpaper"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instructable"
+    }
+  ]
+}
+{% endschema %}

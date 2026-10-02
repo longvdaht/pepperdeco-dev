@@ -1,0 +1,223 @@
+{% assign product_list = section.blocks %}
+{% if section.settings.product_list != blank %}
+  {% assign product_list = section.settings.product_list %}
+{% endif %}
+{% if product_list != blank %}
+  <link
+    rel="stylesheet"
+    href="{{ 'section-product-carousel.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+  <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'section-product-carousel.css' | asset_url | stylesheet_tag }}</noscript>
+  <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+
+  <div class="section-outer section-product-carousel section-color-{{ section.settings.color_scheme }}">
+    {% if section.settings.heading != blank %}
+      <div class="section-heading-outer page-width">
+        <div class="h2 display section-heading">
+          {% assign split_the_word = section.settings.heading | split: 'the' %}
+          {% if section.settings.heading contains 'the' %}
+            {{ split_the_word | first }}
+            <span class="word-icon">
+              {% if section.settings.word_image != blank %}
+                <img src="{{ section.settings.word_image | image_url: height: 60 }}" width="auto" height="60" alt="{{ section.settings.heading }}">
+              {% else %}
+                {%- render 'word-the', word: section.settings.word_graphic -%}
+              {% endif %}
+            </span>
+            {{ split_the_word | last }}
+          {% else %}
+            {{ section.settings.heading }}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="page-width">
+      <slider-component class="products-carousel-outer">
+        <ul class="list-unstyled slider grid grid-nowrap">
+          
+          {%- for block in product_list -%}
+            {% assign product = block %}
+            {% if block.settings.product != blank %}
+              {% assign product = block.settings.product %}
+            {% endif %}
+            <li
+              class="carousel-cell grid__item{% if forloop.last %} grid__item--last{% elsif forloop.first %} grid__item--first{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              <a
+                {% if product != blank %}
+                  href="{{ product.url }}"
+                {% endif %}
+                class="full-unstyled-link"
+              >
+                {%- if block.settings.image != blank -%}
+                  <div
+                    class="media media--square"
+                  >
+                    <img
+                      srcset="
+                        {%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                        {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                        {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                        {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                        {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                        {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                      "
+                      sizes="(min-width: 60em) 40vw, 90vw"
+                      src="{{ block.settings.image | image_url: width: 530 }}"
+                      loading="lazy"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio }}"
+                    >
+                  </div>
+                {%- elsif product.featured_image != blank -%}
+                  <div class="media media--square">
+                    <img
+                      srcset="
+                        {%- if product.featured_image.width >= 375 -%}{{ product.featured_image | image_url: width: 375 }} 375w,{%- endif -%}
+                        {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+                        {%- if product.featured_image.width >= 1100 -%}{{ product.featured_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                        {%- if product.featured_image.width >= 1500 -%}{{ product.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                        {%- if product.featured_image.width >= 1780 -%}{{ product.featured_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                        {%- if product.featured_image.width >= 2000 -%}{{ product.featured_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                        {%- if product.featured_image.width >= 3000 -%}{{ product.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                        {%- if product.featured_image.width >= 3840 -%}{{ product.featured_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                      "
+                      sizes="(min-width: 60em) 40vw, 90vw"
+                      src="{{ product.featured_image | image_url: width: 530 }}"
+                      loading="lazy"
+                      alt="{{ product.featured_image.alt | escape }}"
+                      width="{{ product.featured_image.width }}"
+                      height="{{ product.featured_image.width | divided_by: product.featured_image.aspect_ratio }}"
+                    >
+                  </div>
+                {%- elsif request.design_mode -%}
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+                <h4 class="heading product-title">
+                  {{ product.title }}
+                </h4>
+                <div class="type">
+                  {{ product.metafields.pepper.type.value }}
+                </div>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <div class="slider-buttons no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="visually-hidden slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product carousel",
+  "tag": "section",
+  "class": "spaced-section no-x",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "Shop the Post",
+      "info": "Replace 'the' to a graphic"
+    },
+    {
+      "type": "image_picker",
+      "label": "Word image",
+      "id": "word_image"
+    },
+    {
+      "type": "product_list",
+      "label": "Product list",
+      "id": "product_list"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Aspect ratio 5:6 (Optional, overrides default product)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product carousel",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

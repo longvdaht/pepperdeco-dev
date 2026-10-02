@@ -1,0 +1,90 @@
+{{ 'template-collection-breadcrumb.css' | asset_url | stylesheet_tag }}
+
+<section class="breadcrumb-section">
+  <div class="page-width">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ul class="breadcrumb-list">
+        {% if section.settings.previous_link_1 != blank and section.settings.previous_text_1 != blank %}
+          <li class="breadcrumb-item">
+            <a href="{{ section.settings.previous_link_1 }}">{{ section.settings.previous_text_1 }}</a> /
+          </li>
+        {% endif %}
+        {% if section.settings.previous_link_2 != blank and section.settings.previous_text_2 != blank %}
+          <li class="breadcrumb-item">
+            <a href="{{ section.settings.previous_link_2 }}">{{ section.settings.previous_text_2 }}</a> /
+          </li>
+        {% endif %}
+        {% if section.settings.previous_link_3 != blank and section.settings.previous_text_3 != blank %}
+          <li class="breadcrumb-item">
+            <a href="{{ section.settings.previous_link_3 }}">{{ section.settings.previous_text_3 }}</a> /
+          </li>
+        {% endif %}
+        <li class="breadcrumb-item">
+          <span class="current">
+            {% if section.settings.current_title != blank %}
+              {{- section.settings.current_title -}}
+            {% else %}
+              {% if template.name == 'collection' %}
+                {{- collection.title -}}
+              {% elsif template.name == 'page' %}
+                {{- page.title -}}
+              {% elsif template.name == 'product' %}
+                {{- product.title -}}
+              {% endif %}
+            {% endif %}
+          </span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Breadcrumb multi",
+  "class": "multi-collection-breadcrumbs",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Current title",
+      "id": "current_title"
+    },
+    {
+      "type": "url",
+      "id": "previous_link_1",
+      "label": "Previous link level 1",
+    },
+    {
+      "type": "text",
+      "id": "previous_text_1",
+      "label": "Previous text level 1",
+      "default": "Custom Furniture"
+    },
+    {
+      "type": "url",
+      "id": "previous_link_2",
+      "label": "Previous link level 2",
+    },
+    {
+      "type": "text",
+      "id": "previous_text_2",
+      "label": "Previous text level 2"
+    },
+    {
+      "type": "url",
+      "id": "previous_link_3",
+      "label": "Previous link level 3",
+    },
+    {
+      "type": "text",
+      "id": "previous_text_3",
+      "label": "Previous text level 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Breadcrumb multi"
+    }
+  ]
+}
+{% endschema %}

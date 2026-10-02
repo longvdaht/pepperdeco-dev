@@ -1,0 +1,353 @@
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-collection-list.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- if section.settings.layout_item == 'text-inside' -%}
+  <link rel="preload" href="{{ 'mint-magnolia.otf' | asset_url }}" as="font" type="font/woff2" crossorigin>
+{%- endif -%}
+
+<noscript>{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+
+<style>
+  .section-collection-list .grid__item {
+    padding: 1.7rem;
+  }
+  [data-section-id="{{ section.id }}"] {
+    background-color: {{ section.settings.background_color }};
+  }
+  {%- if section.settings.layout_item == 'text-inside' -%}
+    @font-face {
+      font-family: 'Mint Magnolia';
+      src: url({{ 'mint-magnolia.otf' | asset_url }}) format('opentype');
+      font-weight: 100;
+      font-style: normal;
+      font-display: swap;
+    }
+  {%- endif -%}
+</style>
+
+<div class="section-outer section-collection-list" data-section-id="{{ section.id }}">
+  {% if section.settings.layout == 'grid' %}
+    <div class="page-width">
+      <div class="grid mobile-one desktop-one-third list-unstyled">
+  {% else %}
+    <slider-component class="collections-carousel-outer{% if section.blocks.size > 4 %} slider-desktop-over{% endif %}">
+      <ul class="slider grid grid-nowrap">
+  {% endif %}
+
+  {%- for block in section.blocks -%}
+    <li
+      class="grid__item carousel-cell collection-{{ section.settings.layout_item }}{% if section.settings.layout_item == 'text-inside' %} has-overlay{% endif %} {% if forloop.last %} grid__item--last{% elsif forloop.first %} grid__item--first{% endif %}"
+      {{ block.shopify_attributes }}
+    >
+      <a
+        {% if block.settings.override_url != blank %}
+          href="{{ block.settings.override_url }}"
+        {% elsif block.settings.collection != blank and block.settings.collection.all_products_count > 0 %}
+          href="{{ block.settings.collection.url }}"
+        {% endif %}
+        class="full-unstyled-link{% if block.settings.trigger_filter_click != blank %} trigger-filter-js{% endif %}"
+        style="aspect-ratio: {{ section.settings.image_ratio }}"
+        {% if block.settings.trigger_filter_click != blank %}
+          data-filter-trigger="{{ block.settings.trigger_filter_click | handle }}"
+        {% endif %}
+      >
+        {%- if block.settings.image != blank -%}
+          <img
+            srcset="
+              {%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+            "
+            sizes="(min-width: 60em) 40vw, 90vw"
+            src="{{ block.settings.image | image_url: width: 530 }}"
+            loading="lazy"
+            alt="{{ block.settings.image.alt | escape }}"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio }}"
+            style="aspect-ratio: {{ section.settings.image_ratio }}"
+          >
+        {%- elsif block.settings.collection.featured_image != blank -%}
+          <img
+            srcset="
+              {%- if block.settings.collection.featured_image.width >= 375 -%}{{ block.settings.collection.featured_image | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 750 -%}{{ block.settings.collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 1100 -%}{{ block.settings.collection.featured_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 1500 -%}{{ block.settings.collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 1780 -%}{{ block.settings.collection.featured_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 2000 -%}{{ block.settings.collection.featured_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 3000 -%}{{ block.settings.collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if block.settings.collection.featured_image.width >= 3840 -%}{{ block.settings.collection.featured_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+            "
+            sizes="(min-width: 60em) 40vw, 90vw"
+            src="{{ block.settings.collection.featured_image | image_url: width: 530 }}"
+            loading="lazy"
+            alt="{{ block.settings.collection.featured_image.alt | escape }}"
+            width="{{ block.settings.collection.featured_image.width }}"
+            height="{{ block.settings.collection.featured_image.width | divided_by: block.settings.collection.featured_image.aspect_ratio }}"
+            style="aspect-ratio: {{ section.settings.image_ratio }}"
+          >
+        {%- else -%}
+          {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+        {% if section.settings.layout_item == 'text-inside' %}
+          <h3 class="h3 collection-title arrow-hover">
+            {% if block.settings.collection_title != blank %}
+              {{ block.settings.collection_title }}
+            {% else %}
+              {{ block.settings.collection.title }}
+            {% endif %}
+          </h3>
+        {% endif %}
+      </a>
+      {% if section.settings.layout_item == 'text-below' %}
+        <h3 class="h3 collection-title arrow-hover">
+          {% if block.settings.collection_title != blank %}
+            {{ block.settings.collection_title }}
+          {% else %}
+            {{ block.settings.collection.title }}
+          {% endif %}
+        </h3>
+      {% endif %}
+    </li>
+  {%- endfor -%}
+
+  {% if section.settings.layout == 'grid' %}
+    </div>
+    </div>
+  {% else %}
+    </ul>
+    <div class="slider-buttons no-js-hidden">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'accessibility.previous_slide' | t }}"
+      >
+        <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.85543 11C9.85543 10.6224 9.85543 10.2812 9.85543 10.2005C9.85543 10.1354 9.85543 10.0729 9.85543 10.0078L1.77124 5.44271L9.8879 0.989583C9.89151 0.638021 9.89872 0.302083 9.90233 0L0 5.43229L9.85543 11Z" fill="#231F20"/>
+        </svg>
+      </button>
+      <div class="visually-hidden slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+        <span class="slider-counter--total">{{ section.blocks.size }}</span>
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'accessibility.next_slide' | t }}"
+      >
+        <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.14462 0C0.14462 0.377604 0.14462 0.71875 0.14462 0.799479C0.14462 0.864583 0.14462 0.927083 0.14462 0.992187L8.22521 5.55729L0.108546 10.0104C0.104939 10.362 0.0977236 10.6979 0.0941162 11L9.99644 5.56771L0.14462 0Z" fill="#231F20"/>
+        </svg>
+      </button>
+    </div>
+    </slider-component>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    {% comment %} const banners = document.querySelectorAll('.trigger-filter-js');
+    const filterCollection = document.querySelector('facet-filters-form #FacetFiltersForm');
+
+    if (!banners && !filterCollection) return;
+    banners.forEach((banner) => {
+      banner.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tagValue = e.target.getAttribute('data-filter-trigger');
+        const inputTrigger = filterCollection.querySelector(`input[data-tag="${tagValue}"]`);
+        if (inputTrigger) {
+          inputTrigger.click();
+        }
+      });
+    }); {% endcomment %}
+
+    const banners = document.querySelectorAll('.trigger-filter-js');
+    const filterCollection = document.querySelector('facet-filters-form #FacetFiltersForm');
+
+    if (!banners.length || !filterCollection) {
+      console.warn('No banners or filter collection found');
+      return;
+    }
+
+    banners.forEach((banner) => {
+      banner.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tagValue = banner.getAttribute('data-filter-trigger');
+        console.log('Banner clicked with filter:', tagValue);
+        
+        const inputTrigger = filterCollection.querySelector(`input[data-tag="${tagValue}"]`);
+        if (inputTrigger) {
+          inputTrigger.click();
+        }
+      });
+    });
+
+    let debouncedOnSubmit = debounce((event) => {
+      banners.forEach((banner) => banner.classList.remove('active'));
+
+      let filterActives = filterCollection.querySelectorAll('input:checked');
+
+      filterActives.forEach((input) => {
+        let tagActive = input.getAttribute('data-tag');
+        banners.forEach((banner) => {
+          const tagValue = banner.getAttribute('data-filter-trigger');
+          if (tagActive == tagValue) {
+            banner.classList.add('active');
+          }
+        });
+      });
+    }, 800);
+
+    filterCollection.addEventListener('input', debouncedOnSubmit());
+
+    const observer = new MutationObserver(() => {
+      const newFilterCollection = document.querySelector('facet-filters-form #FacetFiltersForm');
+      if (newFilterCollection && !newFilterCollection.hasEventListener) {
+        newFilterCollection.addEventListener('change', debouncedOnSubmit);
+        newFilterCollection.hasEventListener = true;
+      }
+      const filterRemoves = newFilterCollection.querySelectorAll('facet-remove');
+      filterRemoves.forEach((removeBtn) => {
+        removeBtn.addEventListener('click', debouncedOnSubmit());
+      })
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Collection List",
+  "tag": "section",
+  "class": "spaced-section collection-list-section",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color",
+      "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "1:1"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3"
+        },
+        {
+          "value": "9/16",
+          "label": "9:16"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "label": "Layout collection item",
+      "id": "layout_item",
+      "options": [
+        {
+          "label": "Text inside",
+          "value": "text-inside"
+        },
+        {
+          "label": "No text",
+          "value": "no-text"
+        },
+        {
+          "label": "Text below",
+          "value": "text-below"
+        }
+      ],
+      "default": "text-inside"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "Featured Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Featured collections"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "label": "Collection title",
+          "id": "collection_title"
+        },
+        {
+          "type": "url",
+          "id": "override_url",
+          "label": "Override link URL (optional)",
+          "info": "If set, clicking this item will use this URL instead of the collection link."
+        },
+        {
+          "type": "text",
+          "id": "trigger_filter_click",
+          "label": "Trigger filter click",
+          "info": "Filter type: tag. Ex: 'color: pink'"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List",
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

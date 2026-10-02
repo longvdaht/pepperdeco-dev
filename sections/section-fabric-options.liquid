@@ -1,0 +1,162 @@
+{{ 'section-wallpaper-options.css' | asset_url | stylesheet_tag }}
+<noscript>{{ 'section-wallpaper-options.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% assign fabric_options = product.metafields.custom.compare_fabric_furniture_options %}
+{% if template.name == 'article' %}
+  {% assign fabric_options = article.metafields.custom.compare_fabric_furniture_options %}
+{% endif %}
+{% if fabric_options.value %}
+  <div
+    class="section-outer section-product-wallpaper-option section-compare-fabric-furniture section-color-{{ section.settings.color_scheme }} center"
+    id="fabric-furniture-{{ section-id }}"
+    data-section-type="fabric-furniture"
+    style="--background-color: {{ section.settings.background_color }}"
+  >
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-heading-outer page-width">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="section-heading" id="additional-{{ section.settings.heading | handleize }}">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="section-subheading intro" {% if section.settings.subheading_width != blank %}style="max-width: {{ section.settings.subheading_width | times: 1 }}px;"{% endif %}>{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <fabric-options class="section-product-wallpaper-option-content">
+      <slider-component>
+        <ul class="slider slider--everywhere product-slider-mobile" role="list" id="Slider-wallpaper-{{ section.id }}">
+          {% for item in fabric_options.value %}
+            <li id="Slide-{{ item.title | handle }}" class="slide__mobile section-product-option-wrapper">
+              <div class="wallpaper-option-block-wrapper">
+                <div class="wallpaper-option-block">
+                  <div class="wallpaper-option-top">
+                    <div class="wallpaper-option-top-top">
+                      <img src="{{ item.image | image_url: width: 250 }}" width="300" height="300" alt="{{ item.title }}"/>
+                      <h2 class="wallpaper-title">{{ item.title }}</h2>
+                      <span class="wallpaper-subtitle h4">{{ item.sub_title }}</span>
+                      <div class="rte content-wrapper content-ground">
+                        <strong class="content-title">Ground: </strong>
+                        {{ item.ground | metafield_tag }}
+                      </div>
+                      <div class="rte content-wrapper content-weight">
+                        <strong class="content-title">Weight:</strong>
+                        {{ item.weight | metafield_tag }}
+                      </div>
+                      <details class="content-toggle">
+                        <summary>
+                          <span class="content-toggle-close">Show more</span>
+                          <span class="content-toggle-open">Show less</span>
+                          {% render 'icon-chevron-down' %}
+                        </summary>
+                        <div class="rte content-wrapper content-rub">
+                            {{ item.rub_count | metafield_tag }}
+                          </div>
+                          <div class="rte content-wrapper content-care-instruction">
+                            <strong class="content-title">Care instructions:</strong>
+                            {{ item.care_instructions | metafield_tag }}
+                          </div>
+                        </details>
+                    </div>
+                  </div>
+                  
+                  {%  if item.button_text != blank %}
+                    <a href="{{ item.button_link | default: '#' }}" class="button" title="{{ item.button_text }}">
+                      {{ item.button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="slider-buttons no-js-hidden {% if fabric_options.value.size <= 1 %} visually-hidden{% endif %}">
+          <button
+            type="button"
+            class="slider-button slider-button--prev slider-mobile-box"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">3</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next slider-mobile-box"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+    </fabric-options>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Compare fabric options",
+  "tag": "section",
+  "enabled_on": {
+    "templates": ["product", "article"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color"
+    },
+    {
+      "type": "paragraph",
+      "content": "Using metafield Compare fabric furniture options."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find the Right Fabric for Your Piece"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A tailored guide to your perfect match. See the differences at a glance."
+    },
+    {
+      "type": "text",
+      "id": "subheading_width",
+      "label": "Subheading width",
+      "default": "400",
+      "info": "Unit: px. Leave it blank to config full width"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-secondary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare fabric options"
+    }
+  ]
+}
+{% endschema %}

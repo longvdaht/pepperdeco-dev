@@ -1,0 +1,520 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-shower-curtain",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "1dabe311-a4e9-4179-82c2-09f28e8e9737": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_NYHeT7": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_UVbnH3": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": "<p>LOOKING FOR MORE OPTIONS? EMAIL <a href=\"mailto:HELLO@PEPPER-HOME.COM\" target=\"_blank\" title=\"mailto:HELLO@PEPPER-HOME.COM\">HELLO@PEPPER-HOME.COM</a> TO PLACE YOUR ORDER.</p>"
+          }
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_calculator": false,
+            "text": "<p><a href=\"https://pepper-home.com/blogs/the-thread/shower-curtain-size-guide?_pos=24&_sid=5faba321c&_ss=r\" target=\"_blank\" title=\"https://pepper-home.com/blogs/the-thread/shower-curtain-size-guide?_pos=24&_sid=5faba321c&_ss=r\">Shower curtain size guide</a></p>"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "6a0eb341-4c77-4fe4-b650-6222e3debbff": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "1dabe311-a4e9-4179-82c2-09f28e8e9737",
+        "description_NYHeT7",
+        "switch_option_color_UVbnH3",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "6a0eb341-4c77-4fe4-b650-6222e3debbff",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "Pre-order, ETA 9/30",
+        "pompom_trims": "Cream Rick Rack,Camel Velvet Band,Sky Velvet Band"
+      }
+    },
+    "1634590701256a67be": {
+      "type": "product-additional",
+      "blocks": {
+        "e99a9d68-f14c-411b-9dd7-2907fc0ed6b4": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod Pocket",
+            "image_content_width": 150,
+            "content": "<p>This classic curtain style offers a clean look with a sewn-in pocket to accommodate hardware. Rod pocket curtains are primarily decorative—not for everyday use. If you plan on opening and closing your drapes every day, we suggest ring top, grommet, or pleat construction. <br/><br/>DETAILS: We suggest a 1.25\" or smaller rod to accommodate sewn pocket; rod not included</p>"
+          }
+        },
+        "8d5948b5-26ab-479f-8064-5586a78a2be1": {
+          "type": "tab",
+          "settings": {
+            "heading": "Ring Top",
+            "image_content_width": 150,
+            "content": "<p>These panels are hung by attaching their built-in hooks to your curtain rings. (see our <a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">Curtain Hardware Edit</a>) Easy to use, these are great for spaces where you plan on opening and closing your drapes every day.<br/><br/>DETAILS: Curtain hooks are sewn in (25\" - 6 hooks, 50\" - 12 hooks, 100\" - 21 hooks); rod/rings not included</p>",
+            "image_1": "shopify://shop_images/curtain-rings-frida-Blue-WEB_32ca5608-a186-4f1e-8838-3aaeb30576f1.jpg",
+            "image_2": "shopify://shop_images/curtain-rings-top-detail-WEB.jpg"
+          }
+        },
+        "bc27e6ca-5972-4823-94e7-cd53585c95d9": {
+          "type": "tab",
+          "settings": {
+            "heading": "Grommet",
+            "image_content_width": 150,
+            "content": "<p>Our newest option offers a streamlined take on ringed styles, with embedded black metal grommets that are sturdy enough for daily use. </p><p>DETAILS: Curtain grommets have an inside diameter of 1.56\" and are sewn in (25\" - 4 grommets, 50\" - 6 grommets, 100\" - 14 grommets). We suggest using a black rod to match the grommets; rod not included.</p>",
+            "image_1": "shopify://shop_images/curtain-velvet-seasalt-silo.jpg"
+          }
+        },
+        "f480a4ef-afc1-46a9-9397-a3857d2c1d9f": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pinch Pleat",
+            "image_content_width": 150,
+            "content": "<p>Made with twice the amount of fabric, these panels offer a voluminous look. Triple pleats add an elegant, formal flare while their hooks make it easy to attach to curtain rings.<br/><br/>DETAILS: Curtain hooks are sewn in (<strong>Cottons:</strong> 25\" - 6 hooks, 50\" - 12 hooks, 100\" - 22 hooks; <strong>Velvets:</strong> 50\" - 10 hooks, 100\" - 18 hooks); rod/rings not included. Pleated curtain width refers to the finished top width.</p>",
+            "image_1": "shopify://shop_images/Curtain-Loomi-Moss-WEB.jpg",
+            "image_2": "shopify://shop_images/curtain-pleated-top-detail-WEB.jpg"
+          }
+        },
+        "f75c8960-782d-4e68-81f4-03c15ebe3e44": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tailored Pleat",
+            "image_content_width": 150,
+            "content": "<p>A sleeker silhouette than our pinch pleat, which brings a subtle sophistication to any room. Attached hooks make it easy to attach to curtain rings. </p><p>DETAILS: Curtain hooks are sewn in (25\" - 7 hooks, 50\" - 12 hooks, 100\" - 22 hooks); rod/rings not included. Pleated curtain width refers to the finished top width.</p>",
+            "image_1": "shopify://shop_images/curtain-suzy-rose.png"
+          }
+        }
+      },
+      "block_order": [
+        "e99a9d68-f14c-411b-9dd7-2907fc0ed6b4",
+        "8d5948b5-26ab-479f-8064-5586a78a2be1",
+        "bc27e6ca-5972-4823-94e7-cd53585c95d9",
+        "f480a4ef-afc1-46a9-9397-a3857d2c1d9f",
+        "f75c8960-782d-4e68-81f4-03c15ebe3e44"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Construction Options",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "section_trim_options_qgwBX9": {
+      "type": "section-trim-options",
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Trim Options",
+        "heading_size": "h3",
+        "subheading": "<p>It’s all about the finishing touch. Curtain trim options include:</p>",
+        "content": "<p><strong>BAND</strong><br/>Add subtle style with ease. Our 2” textured band brings a modern minimalist touch to any space.</p><p><strong>TASSEL</strong><br/>A versatile trim that fits any style—from a classic reading room to a breezy boho nook.</p><p><strong>RICK RACK</strong><br/>Irresistible charm meets sophisticated color for a finish that’s delightfully unexpected.</p><p><strong>POM POM</strong><br/>Soft, sweet, and playful. Pom trim adds a whimsical finish to pillows, upholstery, and drapery.</p>",
+        "image": "shopify://shop_images/GreenTrim-Moodboard-Full_2_1.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "shopify://collections/curtain-trim-samples",
+        "label": "ORDER TRIM SAMPLES"
+      }
+    },
+    "166179571189849d13": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {
+        "color": "dark-green",
+        "simple": false,
+        "color_scheme": "background-secondary",
+        "padded": false
+      }
+    },
+    "two_column_features_ajaqHF": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_zXxgrD": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn’t exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_a4nG9f": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-1.jpg",
+            "title": "Sustainable by Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_zXxgrD",
+        "feature_column_a4nG9f"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "16605746187190fc43": {
+      "type": "product-additional",
+      "blocks": {
+        "86834515-6d67-4de2-8aa5-361ae0025e7c": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Overview",
+            "image_content_width": 150,
+            "content": "<p>If you thought our custom curtains couldn’t get any better, they just did. Introducing four new trim options, from timeless tassels to playful pom poms. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/TrimArrangement-WEB-UPDATE_aa6f6df6-9d66-44a3-82e7-b603c6b75860.jpg",
+            "image_2": "shopify://shop_images/CurtainTrim-Moodboard-Clean.jpg",
+            "image_3": "shopify://shop_images/CurtainTrim-Moodboard-Messy.jpg"
+          }
+        },
+        "ba93773c-db9c-4919-8f51-0ea5de862d02": {
+          "type": "tab",
+          "settings": {
+            "heading": "Band",
+            "image_content_width": 150,
+            "content": "<p>It doesn’t get more timeless than this. Our textured band trim brings a modern minimalist touch. </p><p>Try before you buy with our <a href=\"https://pepper-home.com/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Band.png"
+          }
+        },
+        "02028c99-e0cd-48a0-ba0d-ee85b9e13f89": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tassel",
+            "image_content_width": 150,
+            "content": "<p>A versatile trim that suits any style—from a traditional reading room to a breezy boho breakfast nook. </p><p>Try before you buy with our <a href=\"https://pepper-home.com/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Tassel.png"
+          }
+        },
+        "edbd427b-181e-43dd-8ae5-9466975a8cba": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rick Rack",
+            "image_content_width": 150,
+            "content": "<p>Elevated craft meets sophisticated color with rick rack trim that’s delightfully unexpected.</p><p>Try before you buy with our <a href=\"https://pepper-home.com/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-RickRack.png",
+            "image_2": "shopify://shop_images/FridaPink-ShowerCurtain-_katefiglerinteriors.png",
+            "image_3": "shopify://shop_images/Snow-ShowerCurtain-_MeganStokes.png"
+          }
+        },
+        "506962c5-6bb6-4391-ab06-d56ae73480b8": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pom Pom",
+            "image_content_width": 150,
+            "content": "<p>It’s soft, it’s sweet, it’s irresistible. We love pom pom trim for cozy spaces, especially a bedroom or nursery. </p><p>Try before you buy with our <a href=\"https://pepper-home.com/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-PomPom.png"
+          }
+        }
+      },
+      "block_order": [
+        "86834515-6d67-4de2-8aa5-361ae0025e7c",
+        "ba93773c-db9c-4919-8f51-0ea5de862d02",
+        "02028c99-e0cd-48a0-ba0d-ee85b9e13f89",
+        "edbd427b-181e-43dd-8ae5-9466975a8cba",
+        "506962c5-6bb6-4391-ab06-d56ae73480b8"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Trim Selections",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "curated_spaces_pygURB": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_FARPzD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-showercurtains-louisacamel.jpg",
+            "product": "showercurtain-woven-louisa-camel"
+          }
+        },
+        "slide_jRXjfL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-showercurtains-julia.jpg",
+            "product": "showercurtain-printedcotton-julia-blue"
+          }
+        },
+        "slide_L3KmMd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-showercurtains-thatcherapricot.jpg",
+            "product": "showercurtain-printedcotton-thatcher-midnight"
+          }
+        },
+        "slide_Qj7MiU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-showercurtains-suzysand.jpg",
+            "product": "showercurtain-printedcotton-suzy-sand"
+          }
+        },
+        "slide_9dR8Wn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-showercurtains-blakerose.jpg",
+            "product": "showercurtain-printedcotton-blake-rose"
+          }
+        },
+        "slide_LbiK63": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_FARPzD",
+        "slide_jRXjfL",
+        "slide_L3KmMd",
+        "slide_Qj7MiU",
+        "slide_9dR8Wn",
+        "slide_LbiK63"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at Your Place",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "8d90abfe-bceb-46b7-b09f-42a0c6a8a2a7": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "8d90abfe-bceb-46b7-b09f-42a0c6a8a2a7"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "4993ab6e-e4bf-4b4c-b560-e1359635c893": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "4993ab6e-e4bf-4b4c-b560-e1359635c893"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_aPcgRx": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_XqJgRT": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_XqJgRT"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_8CExtG": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_Q3NDzt": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_xWV4GE": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa3.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_DcLT7r": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance"
+          }
+        }
+      },
+      "block_order": [
+        "column_xWV4GE",
+        "column_DcLT7r"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1634590701256a67be",
+    "section_trim_options_qgwBX9",
+    "166179571189849d13",
+    "two_column_features_ajaqHF",
+    "16605746187190fc43",
+    "product-recommendations",
+    "curated_spaces_pygURB",
+    "1633988363790b2161",
+    "163398841244446eb7",
+    "app_review_aPcgRx",
+    "recently_viewed_products_8CExtG",
+    "section_text_with_icon_column_Q3NDzt"
+  ]
+}

@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-trade",
+      "disabled": true,
+      "settings": {
+        "lead": "",
+        "heading": "Curtain Calculator",
+        "title": "",
+        "subheading": "Note: calculations will differ between styles",
+        "hide_content": true,
+        "link": "",
+        "label": "",
+        "image": "shopify://shop_images/TRADE_26ef8298-ce73-4869-a4f4-cad90d555e33.jpg",
+        "color_scheme": "background-primary"
+      }
+    },
+    "page_hero_ep6HTJ": {
+      "type": "page-hero",
+      "disabled": true,
+      "settings": {
+        "word_graphic": "shopify://shop_images/The.png",
+        "word_graphic_width": 50,
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "image": "shopify://shop_images/TRADE_26ef8298-ce73-4869-a4f4-cad90d555e33.jpg",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "calculator": {
+      "type": "curtain-calculator",
+      "settings": {
+        "curtain_cafe_no_clip": "shopify://shop_images/cafe_clips_no_option_image_1.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_hero_ep6HTJ",
+    "calculator"
+  ]
+}

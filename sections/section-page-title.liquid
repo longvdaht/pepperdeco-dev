@@ -1,0 +1,194 @@
+{% if section.settings.title != blank or section.settings.description != blank or template.name == "collection" %}
+  <link rel="stylesheet" href="{{ 'section-page-title.css' | asset_url }}" media="print" onload="this.media='all'">
+
+  {% style %}
+    [data-section-id="{{ section.id }}"] {
+      background-color: {{ section.settings.background_color }};
+    }
+    [data-section-id="{{ section.id }}"] .section-page-title-wrapper {
+      padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+    }
+    [data-section-id="{{ section.id }}"] .page-title, 
+    [data-section-id="{{ section.id }}"] .rte > * {
+      color: {{ section.settings.color_text }};
+    }
+    @media (min-width: 768px) {
+      [data-section-id="{{ section.id }}"] .section-page-title-wrapper {
+        padding-top: {{ section.settings.padding_top | append: 'px' }};
+        padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+      }
+    }
+  {% endstyle %}
+
+  <div class="section-page-title" data-section-id="{{ section.id }}">
+    <div class="section-outer section-page-title-wrapper page-width text-center">
+      <h1 class="page-title title-{{ section.settings.title_type }}">
+        {%- if section.settings.title != blank -%}
+        {{ section.settings.title }}
+        {%- else -%}
+          {%- if template.name == 'collection' -%}
+            {{ collection.title }}
+          {%- endif -%}
+        {%- endif -%}
+      </h1>
+      <div class="rte">
+        {% if section.settings.description != blank %}
+          {{ section.settings.description }}
+        {% else %}
+          {{ collection.description }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+<script>
+  (function () {
+    function tryInject(el) {
+      if (!el || !el.shadowRoot) return false;
+      if (el.shadowRoot.querySelector('#custom-style-override')) return true;
+
+      const style = document.createElement('style');
+      style.id = 'custom-style-override';
+      style.textContent = `
+        #app-embed {
+          --forms-body-font: normal 400 12px 'sweet-sans-pro', sans-serif !important;
+          --buttons-radius: 0 !important;
+          --form-field-border-radius: 0 !important;
+          --form-field-border: 0 0 0 1px #7D7364;
+          --form-field-border-focused: 0 0 0 1px #7D7364;
+          --form-text-color: #242524;
+          --form-placeholder-color: #7D7364;
+          --button-border-radius: 0 !important;
+        }
+        #app-embed input, #app-embed legend, #app-embed fieldset label span, {
+          text-transform: uppercase!important;
+          line-height: 1.2;
+          letter-spacing: 0.05rem;
+        }
+        #app-embed label {
+          text-transform: uppercase;
+        }
+      `;
+      el.shadowRoot.appendChild(style);
+      console.log('✅ Style injected into shopify-forms-embed');
+      return true;
+    }
+
+    function init() {
+      const existing = document.querySelector('shopify-forms-embed');
+      if (tryInject(existing)) return;
+      const observer = new MutationObserver(() => {
+        const el = document.querySelector('shopify-forms-embed');
+        if (tryInject(el)) {
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true
+      });
+      setTimeout(() => observer.disconnect(), 20000);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+{% schema %}
+  {
+    "name": "Page Title",
+    "class": "shopify-page-title-section",
+    "settings": [
+      {
+        "type": "color",
+        "label": "Background color",
+        "id": "background_color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Color text",
+        "default": "#242524"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "CUSTOM WINDOW TREATMENTS"
+      },
+      {
+        "type": "select",
+        "id": "title_type",
+        "label": "Title type",
+        "options": [
+          {
+            "label": "Type 1",
+            "value": "type-1"
+          },
+          {
+            "label": "Type 2",
+            "value": "type-2"
+          }
+        ],
+        "default": "type-1"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Design your perfect piece—select your fabric, style, lining, and  trim<br>Handcrafted in the US. Shipped in 10 days"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 80
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 80
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding top (mobile)",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding bottom (mobile)",
+        "default": 40
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Title"
+      }
+    ]
+  }
+{% endschema %}

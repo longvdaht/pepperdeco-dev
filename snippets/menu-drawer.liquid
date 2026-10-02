@@ -1,0 +1,260 @@
+<details>
+  <summary class="header__icon--menu" aria-label="{{ 'sections.header.menu' | t }}">
+    <span>
+      {%- render 'icon-bars' -%}
+      {%- render 'icon-close' -%}
+    </span>
+  </summary>
+  <div id="menu-drawer" class="menu-drawer motion-reduce" tabindex="-1">
+    <nav class="menu-drawer__navigation">
+      <ul class="menu-drawer__menu list-menu" role="list">
+        {%- assign mobile_menu = section.settings.mobile_menu -%}
+        {%- if mobile_menu != blank -%}
+          {%- for link in mobile_menu.links limit: 1 -%}
+            {%- if link.title == 'divider' -%}
+              <li><hr></li>
+            {%- else -%}
+              {%- if link.links != blank -%}
+                {% assign link_title_handle = link.title | handle %}
+                <li class="menu-drawer__menu-feature-banner">
+                  {%- for childlink in link.links -%}
+                    {% assign childlink_title_handle = childlink.title | handle %}
+                    {% assign has_child_banner = false %}
+                    {% assign block_image = '' %}
+                    {% for block in section.blocks %}
+                      {% if block.settings.parent_title != blank %}
+                        {% assign parent_title_handle = block.settings.parent_title | handle %}
+                        {% if parent_title_handle == link_title_handle %}
+                          {% if block.settings.child_title != blank %}
+                            {% assign child_title_handle = block.settings.child_title | handle %}
+                            {% if child_title_handle == childlink_title_handle %}
+                              {% assign has_child_banner = true %}
+                              {% assign block_image = block.settings.image %}
+                              {% break %}
+                            {% endif %}
+                          {% endif %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                    <div class="menu-drawer__menu-banner-item">
+                      <a href="{{ childlink.url }}" title="{{ childlink.title }}">
+                        {% if has_child_banner and block_image != '' %}
+                          {{ block_image | image_url: width: 300, height: 300, crop: 'center' | image_tag: loading: 'lazy' }}
+                        {% endif %}
+                        <span class="text">{{ childlink.title }}</span>
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                </li>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor  -%}
+          {%- for link in mobile_menu.links offset: 1 -%}
+            {%- unless link.title == 'Support' -%}
+                {%- if link.title == 'divider' -%}
+                  <li><hr></li>
+                {%- else -%}
+                  <li>
+                    {% assign link_title_handle = link.title | handle %}
+                    {% assign childlink_title_handle = childlink.title | handle %}
+                    {% assign has_parent_banner = false %}
+                    {% assign block_parent_image = '' %}
+                    {% for block in section.blocks %}
+                      {% if block.settings.parent_title != blank and block.settings.child_title == blank %}
+                        {% assign parent_title_handle = block.settings.parent_title | handle %}
+                        {% if parent_title_handle == link_title_handle %}
+                          {% assign has_parent_banner = true %}
+                          {% assign block_parent_image = block.settings.image %}
+                          {% break %}
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {%- if link.links != blank -%}
+                      <details>
+                        <summary class="menu-drawer__menu-item list-menu__item link text-link focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}{% if has_parent_banner and block_parent_image != '' %} menu-has-banner{% endif %}">
+                          <span>{{ link.title | escape }}</span>
+                          {% if has_parent_banner and block_parent_image != '' %}
+                            {{ block_parent_image | image_url: width: 300, height: 300, crop: 'center' | image_tag: loading: 'lazy' }}
+                          {% endif %}
+                        </summary>
+                        <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu motion-reduce" tabindex="-1">
+                          <div class="menu-drawer__inner-submenu">
+                            <button class="menu-drawer__close-button button-unstyled focus-inset" aria-expanded="true">
+                              <div class="icon">{% render 'icon-arrow-left' %}</div>
+                              {{ link.title | escape }}
+                            </button>
+                            <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                              {%- for childlink in link.links -%}
+                                {% assign childlink_title_handle = childlink.title | handle %}
+                                {% assign has_child_banner = false %}
+                                {% assign block_image = '' %}
+                                {% for block in section.blocks %}
+                                  {% if block.settings.parent_title != blank %}
+                                    {% assign parent_title_handle = block.settings.parent_title | handle %}
+                                    {% if parent_title_handle == link_title_handle %}
+                                      {% if block.settings.child_title != blank %}
+                                        {% assign child_title_handle = block.settings.child_title | handle %}
+                                        {% if child_title_handle == childlink_title_handle %}
+                                          {% assign has_child_banner = true %}
+                                          {% assign block_image = block.settings.image %}
+                                          {% break %}
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endif %}
+                                  {% endif %}
+                                {% endfor %}
+                                <li>
+                                  {%- if childlink.links == blank -%}
+                                    <a href="{{ childlink.url }}" class="menu-drawer__menu-item link text-link list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}{% if has_child_banner and block_image != '' %} menu-has-banner{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                      {{ childlink.title | escape }}
+                                      {% if has_child_banner and block_image != '' %}
+                                        {{ block_image | image_url: width: 300, height: 300, crop: 'center' | image_tag: loading: 'lazy' }}
+                                      {% endif %}
+                                    </a>
+                                  {%- else -%}
+                                  <div class="menu-drawer__menu-item link text-link list-menu__item focus-inset menu-drawer__menu-item-heading">
+                                    {{ childlink.title | escape }}
+                                    {% if has_child_banner and block_image != '' %}
+                                      {{ block_image | image_url: width: 300, height: 300, crop: 'center' | image_tag: loading: 'lazy' }}
+                                    {% endif %}
+                                  </div>
+                                    <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                      {%- for grandchildlink in childlink.links -%}
+                                        <li>
+                                          <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link text-link list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                            {{ grandchildlink.title | escape }}
+                                          </a>
+                                        </li>
+                                      {%- endfor -%}
+                                    </ul>
+                                  {%- endif -%}
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          </div>
+                        </div>
+                      </details>
+                    {%- else -%}
+                      <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link text-link focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}{% if has_parent_banner and block_parent_image != '' %} menu-has-banner{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                        {{ link.title | escape }}
+                        {% if has_parent_banner and block_parent_image != '' %}
+                          {{ block_parent_image | image_url: width: 80, height: 80, crop: 'center' | image_tag: loading: 'lazy' }}
+                        {% endif %}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {%- endif -%}
+              {%- else -%}
+              <li>
+                <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link text-link focus-inset menu-drawer__menu-item-heading{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                  {{ link.title | escape }}
+                </a>
+              </li>
+              <li>
+                {%- for childlink in link.links -%}
+                  <a href="{{ childlink.url }}" class="menu-drawer__menu-item list-menu__item link text-link focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}{% if childlink.title contains 'Live Chat' %} onclick="event.preventDefault(); window.remark('open');"{% endif %}>
+                    {{ childlink.title | escape }}
+                  </a>
+                {%- endfor -%}
+              </li>
+              {%- endunless -%}
+            {%- endfor -%}
+          {%- else -%}
+            {%- for link in section.settings.menu.links -%}
+              {%- if link.title == 'divider' -%}
+                <li><hr></li>
+              {%- else -%}
+                <li>
+                  {%- if link.links != blank -%}
+                    <details>
+                      <summary class="menu-drawer__menu-item list-menu__item link text-link focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
+                        {{ link.title | escape }}
+                        <div class="icon">{% render 'icon-arrow-right' %}</div>
+                      </summary>
+                      <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu motion-reduce" tabindex="-1">
+                        <div class="menu-drawer__inner-submenu">
+                          <button class="menu-drawer__close-button button-unstyled focus-inset" aria-expanded="true">
+                            <div class="icon">{% render 'icon-arrow-left' %}</div>
+                            {{ link.title | escape }}
+                          </button>
+                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                            {%- for childlink in link.links -%}
+                              {%- if childlink.title == 'divider' -%}
+                                <li><hr></li>
+                              {%- else -%}
+
+                                <li>
+                                  {%- if childlink.links == blank -%}
+                                    <a href="{{ childlink.url }}" class="menu-drawer__menu-item link text-link list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                      {{ childlink.title | escape }}
+                                    </a>
+                                  {%- else -%}
+                                    <details>
+                                      <summary class="menu-drawer__menu-item link text-link list-menu__item focus-inset">
+                                        {{ childlink.title | escape }}
+                                        <div class="icon">{% render 'icon-arrow-right' %}</div>
+                                      </summary>
+                                      <div id="childlink-{{ childlink.title | escape }}" class="menu-drawer__submenu motion-reduce">
+                                        <button class="menu-drawer__close-button button-unstyled focus-inset" aria-expanded="true">
+                                          <div class="icon">{% render 'icon-arrow-left' %}</div>
+                                          {{ childlink.title | escape }}
+                                        </button>
+                                        <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                          {%- for grandchildlink in childlink.links -%}
+                                            {%- if grandchildlink.title == 'divider' -%}
+                                              <li><hr></li>
+                                            {%- else -%}
+                                            <li>
+                                              <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link text-link list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                {{ grandchildlink.title | escape }}
+                                              </a>
+                                            </li>
+                                            {%- endif -%}
+                                          {%- endfor -%}
+                                        </ul>
+                                      </div>
+                                    </details>
+                                  {%- endif -%}
+                                </li>
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      </div>
+                    </details>
+                  {%- else -%}
+                    <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link text-link focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                      {{ link.title | escape }}
+                    </a>
+                  {%- endif -%}
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+      </ul>
+      <div class="footer-menu-drawer">
+        <ul>
+          <li class="footer-menu-drawer-item">
+            <a href="mailto:hello@pepper-home.com">
+              <img src="{{ 'image-email.png' | asset_img_url: '50x' }}" alt="Email" title="Email"/>
+              <span class="text">Email</span>
+            </a>
+          </li>
+          <li class="footer-menu-drawer-item">
+            <a href="https://pepper-home.com/?remark_open=true">
+              <img src="{{ 'image-text.png' | asset_img_url: '50x' }}" alt="Email" title="Email"/>
+              <span class="text">Text</span>
+            </a>
+          </li>
+          <li class="footer-menu-drawer-item">
+            <a href="tel:18668647143">
+              <img src="{{ 'image-call.png' | asset_img_url: '50x' }}" alt="Email" title="Email"/>
+              <span class="text">Call</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</details>

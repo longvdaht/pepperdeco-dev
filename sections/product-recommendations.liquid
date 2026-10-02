@@ -1,0 +1,202 @@
+<style>
+  .overflow-hidden .product-recommendations {
+    position: relative;
+    z-index: -1;
+  }
+  .product-recommendations {
+    display: block;
+    padding: 5rem 0 4rem;
+  }
+  .product-recommendations .h2 {
+    margin: 0 auto;
+  }
+  .product-recommendations .image-slider > .grid > .grid__item:first-child {
+    margin-left: 0;
+  }
+  .product-recommendations .image-slider > .grid > .grid__item {
+    margin-left: -2rem;
+  }
+  .product-recommendations .slider-counter {
+    display: none;
+  }
+  .product-recommendations .card-information {
+    padding-bottom: 0;
+  }
+  @media (min-width: 40em) {
+    .product-recommendations {
+      padding-bottom: 3rem;
+    }
+    .product-recommendations .image-slider > .grid > .grid__item {
+      margin-left: 0;
+    }
+    .product-recommendations .card-information {
+      padding-bottom: 3.5rem;
+    }
+    .product-recommendations slider-component:not(.slider-hide-buttons) .slider-buttons {
+      display: none;
+    }
+  }
+</style>
+
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+{%- unless product.metafields.pepper.related_products.value != blank -%}
+  {% assign related_products = product.metafields.global['Related-Products'] | split: ',' %}
+{%- else -%}
+  {%- assign curated_related = product.metafields.pepper.related_products.value -%}
+{%- endunless -%}
+
+<product-recommendations
+  class="product-recommendations{% if related_products.size > 0 %} curated-related-products{% endif %}"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+>
+  <div class="product__recommendations--inner">
+    <div class="page-width center">
+      {% if section.settings.heading != blank %}
+        <h2 class="h2">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <div class="intro">
+          {{ section.settings.subheading | escape }}
+        </div>
+      {% endif %}
+      <slider-component class="{% unless section.settings.show_dots %} slider-hide-dots{% endunless %} image-slider">
+        <ul
+          class="grid slider list-unstyled mobile-one-half desktop-one-quarter product-grid"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {% if recommendations.performed and recommendations.products_count > 0 and related_products.size == 0 %}
+            {% for recommendation in recommendations.products %}
+              <li class="carousel-cell grid__item center">
+                {% render 'product-card',
+                  product: recommendation,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_rating: section.settings.show_rating
+                %}
+              </li>
+            {% endfor %}
+          {% elsif product.metafields.pepper.related_products.value != blank %}
+            {% for recommendation in product.metafields.pepper.related_products.value %}
+              <li class="carousel-cell grid__item center">
+                {% render 'product-card',
+                  product: recommendation,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_rating: section.settings.show_rating
+                %}
+              </li>
+            {% endfor %}
+          {% else %}
+            {% for product_handle in related_products %}
+              {%- assign recommendation = all_products[product_handle] -%}
+              <li class="carousel-cell grid__item center">
+                {% render 'product-card',
+                  product: recommendation,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_rating: section.settings.show_rating
+                %}
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+        <div class="slider-dots no-js-hidden {% if curated_related.count <= 1 %} visually-hidden{% endif %}">
+          {% for dot in (1..curated_related.count) %}
+            <button
+              type="button"
+              data-index="{{ forloop.index }}"
+              class="slider-dot{% if forloop.index0 == 0 %} is-active{% endif %}"
+              name="index"
+              aria-label="{{ 'accessibility.slide_index' | t: index: forloop.index }}"
+            ></button>
+          {% endfor %}
+        </div>
+        <div class="slider-buttons no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">{{ curated_related.count }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+    </div>
+  </div>
+</product-recommendations>
+
+{% javascript %}
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+
+      if (!this.classList.contains('curated-related-products')) {
+        const handleIntersection = (entries, observer) => {
+          if (!entries[0].isIntersecting) return;
+          observer.unobserve(this);
+
+          fetch(this.dataset.url)
+            .then((response) => response.text())
+            .then((text) => {
+              const html = document.createElement('div');
+              html.innerHTML = text;
+              const recommendations = html.querySelector('product-recommendations');
+              if (recommendations && recommendations.innerHTML.trim().length) {
+                this.innerHTML = recommendations.innerHTML;
+              }
+            })
+            .catch((e) => {
+              console.error(e);
+            });
+        };
+
+        new IntersectionObserver(handleIntersection.bind(this), { rootMargin: '0px 0px 200px 0px' }).observe(this);
+      }
+    }
+  }
+
+  customElements.define('product-recommendations', ProductRecommendations);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Perfect Pairs",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Mix. Match. Never Look Back."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show second image on hover"
+    }
+  ]
+}
+{% endschema %}

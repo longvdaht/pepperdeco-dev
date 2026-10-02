@@ -1,0 +1,210 @@
+<link rel="stylesheet" href="{{ 'section-wallpaper-options.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{% assign construction_options = section.blocks %}
+{% if construction_options.size > 0 %}
+  <div
+    class="section-outer section-product-wallpaper-option section-compare-fabric-furniture section-contruction-options section-color-{{ section.settings.color_scheme }} center"
+    id="fabric-furniture-{{ section.id }}"
+    data-section-type="fabric-furniture"
+    style="--background-color: {{ section.settings.background_color }}"
+  >
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-heading-outer page-width">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="section-heading" id="additional-{{ section.settings.heading | handleize }}">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="section-subheading intro" {% if section.settings.subheading_width != blank %}style="max-width: {{ section.settings.subheading_width | times: 1 }}px;"{% endif %}>{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="section-product-wallpaper-option-content">
+      <slider-component>
+        <ul class="slider slider--everywhere product-slider-mobile" role="list" id="Slider-wallpaper-{{ section.id }}">
+          {% for item in construction_options %}
+            <li id="Slide-{{ item.settings.heading | handle }}" class="slide__mobile section-product-option-wrapper">
+              <div class="wallpaper-option-block-wrapper">
+                <div class="wallpaper-option-block">
+                  <div class="wallpaper-option-top">
+                    <div class="wallpaper-option-top-top">
+                      <img src="{{ item.settings.image | image_url: width: 250 }}" width="300" height="300" alt="{{ item.settings.heading }}"/>
+                      <h2 class="wallpaper-title">{{ item.settings.heading }}</h2>
+                      {% if item.settings.content %}
+                        <div class="rte content-wrapper">
+                          {{ item.settings.content }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  
+                  {%  if item.settings.button_text != blank %}
+                    <a href="{{ item.settings.button_link | default: '#' }}" class="button" title="{{ item.settings.button_text }}">
+                      {{ item.settings.button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="slider-buttons no-js-hidden {% if construction_options.value.size <= 1 %} visually-hidden{% endif %}">
+          <button
+            type="button"
+            class="slider-button slider-button--prev slider-mobile-box"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">3</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next slider-mobile-box"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+  (function () {
+    const CARD_SELECTOR = '.section-contruction-options .wallpaper-option-top';
+    const P_SELECTOR = '.rte.content-wrapper > p';
+
+    function equalizeParagraphs() {
+      const cards = Array.from(document.querySelectorAll(CARD_SELECTOR));
+      if (!cards.length) return;
+
+      const maxCount = Math.max(...cards.map(c => c.querySelectorAll(P_SELECTOR).length));
+
+      for (let i = 0; i < maxCount; i++) {
+        const ps = cards
+          .map(c => c.querySelectorAll(P_SELECTOR)[i])
+          .filter(Boolean);
+
+        if (!ps.length) continue;
+
+        ps.forEach(p => (p.style.minHeight = ''));
+        void document.body.offsetHeight; // reflow
+
+        const max = Math.max(...ps.map(p => p.getBoundingClientRect().height));
+        ps.forEach(p => (p.style.minHeight = max + 'px'));
+      }
+    }
+
+    function debounce(fn, wait) {
+      let t;
+      return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); };
+    }
+    const debounced = debounce(equalizeParagraphs, 150);
+
+    window.addEventListener('load', equalizeParagraphs);
+    window.addEventListener('resize', debounced);
+    
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Construction options",
+  "tag": "section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color"
+    },
+    {
+      "type": "paragraph",
+      "content": "Using metafield Compare fabric furniture options."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Construction Options"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "subheading_width",
+      "label": "Subheading width",
+      "default": "400",
+      "info": "Unit: px. Leave it blank to config full width"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-secondary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "option",
+      "name": "Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        },
+        {
+          "type": "richtext",
+          "label": "Content",
+          "id": "content"
+        },
+        {
+          "type": "text",
+          "label": "Button text",
+          "id": "button_text"
+        },
+        {
+          "type": "url",
+          "label": "Button link",
+          "id": "button_link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Construction options"
+    }
+  ]
+}
+{% endschema %}

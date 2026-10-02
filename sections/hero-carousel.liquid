@@ -1,0 +1,408 @@
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-hero-carousel.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'section-hero-carousel.css' | asset_url | stylesheet_tag }}</noscript>
+
+<slider-component
+  class="{% unless section.settings.show_buttons %} slider-hide-buttons {% endunless %}{% unless section.settings.show_dots %} slider-hide-dots {% endunless %}section-hero-carousel section-color-{{ section.settings.color_scheme }} center"
+  {% if section.settings.autoplay %}
+    data-autoplay="{{ section.settings.autoplay_timing | times: 1000 }}"
+  {% endif %}
+>
+  <ul
+    class="list-unstyled slider grid grid-nowrap mobile-one desktop-one"
+    id="Slider-{{ section.id }}"
+    role="list"
+  >
+    {%- for block in section.blocks -%}
+      <li class="carousel-cell grid__item" {{ block.shopify_attributes }}>
+        {% if block.settings.mobile_image != blank or block.settings.desktop_image != blank %}
+          <div class="media media--transparent hero">
+            <picture>
+              {%- if block.settings.mobile_image != blank -%}
+                <source
+                  srcset="
+                    {%- if block.settings.mobile_image.width >= 480 -%}{{ block.settings.mobile_image | image_url: width: 480 }} 480w,{%- endif -%}
+                    {%- if block.settings.mobile_image.width >= 750 -%}{{ block.settings.mobile_image | image_url: width: 750 }} 750w,{%- endif -%}
+                    {%- if block.settings.mobile_image.width >= 1100 -%}{{ block.settings.mobile_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                    {%- if block.settings.mobile_image.width >= 1500 -%}{{ block.settings.mobile_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {%- if block.settings.mobile_image.width >= 1780 -%}{{ block.settings.mobile_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                    {%- if block.settings.mobile_image.width >= 2000 -%}{{ block.settings.mobile_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                  "
+                  sizes="50vw"
+                  media="(max-width: 767px)"
+                >
+              {%- endif -%}
+        
+              {%- if block.settings.desktop_image != blank -%}
+                <source
+                  srcset="
+                    {%- if block.settings.desktop_image.width >= 375 -%}{{ block.settings.desktop_image | image_url: width: 375 }} 375w,{%- endif -%}
+                    {%- if block.settings.desktop_image.width >= 750 -%}{{ block.settings.desktop_image | image_url: width: 750 }} 750w,{%- endif -%}
+                    {%- if block.settings.desktop_image.width >= 1100 -%}{{ block.settings.desktop_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                    {%- if block.settings.desktop_image.width >= 1500 -%}{{ block.settings.desktop_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {%- if block.settings.desktop_image.width >= 1780 -%}{{ block.settings.desktop_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                    {%- if block.settings.desktop_image.width >= 2000 -%}{{ block.settings.desktop_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                  "
+                  sizes="100vw"
+                  media="(min-width: 768px)"
+                >
+              {%- endif -%}
+        
+              <img
+                src="{{ block.settings.desktop_image | default: block.settings.mobile_image | image_url: width: 1780 }}"
+                alt="{{ block.settings.desktop_image.alt | default: block.settings.mobile_image.alt | escape }}"
+                width="{{ block.settings.desktop_image.width | default: block.settings.mobile_image.width }}"
+                height="{{ block.settings.desktop_image.width | default: block.settings.mobile_image.width | divided_by: block.settings.desktop_image.aspect_ratio | default: block.settings.mobile_image.aspect_ratio }}"
+                loading="{% if forloop.index == 1 %}eager{% else %}lazy{% endif %}"
+                {% if forloop.index == 1 %}fetchpriority="high"{% endif %}
+              >
+            </picture>
+          </div>
+        {% elsif request.design_mode %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}        
+
+        <div class="cell-bottom">
+          <div class="page-width">
+            {%- if block.settings.heading != blank -%}
+              <h1 class="h1{% if block.settings.graphic_heading != blank %} visually-hidden{% endif %}">
+                {% render 'no-widows', content: block.settings.heading %}
+              </h1>
+            {%- endif -%}
+            {%- if block.settings.graphic_heading -%}
+              <div class="svg-wrapper" aria-hidden="true">
+                {%- liquid
+                  case block.settings.graphic_heading
+                    when 'wellandwonder'
+                      render 'hero-wellandwonder-mobile'
+                      render 'hero-wellandwonder-desktop'
+                    when 'mixandmatch'
+                      render 'hero-mixandmatch-mobile'
+                      render 'hero-mixandmatch-desktop'
+                    when 'customdesigns'
+                      render 'hero-customdesigns-mobile'
+                      render 'hero-customdesigns-desktop'
+                    when 'transformyourspace'
+                      render 'hero-transformyourspace-mobile'
+                      render 'hero-transformyourspace-desktop'
+                    when 'loomco'
+                      render 'hero-loomco-mobile'
+                      render 'hero-loomco-desktop'
+                    when 'sustainabledecor'
+                      render 'hero-sustainabledecor-mobile'
+                      render 'hero-sustainabledecor-desktop'
+                    when 'dashofdesign'
+                      render 'hero-dashofdesign-mobile'
+                      render 'hero-dashofdesign-desktop'
+                    when 'showercurtains'
+                      render 'hero-showercurtains-mobile'
+                      render 'hero-showercurtains-desktop'
+                    when 'grasscloths-linens'
+                      render 'hero-grasscloths-linens-mobile'
+                      render 'hero-grasscloths-linens-desktop'
+                    when 'by-the-yard'
+                      render 'hero-by-the-yard-mobile'
+                      render 'hero-by-the-yard-desktop'
+                    when 'sizes-and-trims'
+                      render 'hero-sizes-and-trims-mobile'
+                      render 'hero-sizes-and-trims-desktop'
+                    when 'bundles'
+                      render 'hero-bundles-mobile'
+                      render 'hero-bundles-desktop'
+                    when 'customized'
+                      render 'hero-customize-pillows-mobile'
+                      render 'hero-customize-pillows-desktop'
+                    when 'chappywrap'
+                      render 'hero-chappywrap-mobile'
+                      render 'hero-chappywrap-desktop'
+                    when 'naturalfibers'
+                      render 'hero-naturalfibers-mobile'
+                      render 'hero-naturalfibers-desktop'
+                    when 'coastal-splendor'
+                      render 'hero-coastal-splendor-mobile'
+                      render 'hero-coastal-splendor-desktop'
+                    when 'timeless-keepsakes'
+                      render 'hero-timeless-keepsakes-mobile'
+                      render 'hero-timeless-keepsakes-desktop'
+                    when 'rooms-in-bloom'
+                      render 'hero-rooms-in-bloom-mobile'
+                      render 'hero-rooms-in-bloom-desktop'
+                    when 'natural-light'
+                      render 'hero-natural-light-mobile'
+                      render 'hero-natural-light-desktop'
+                    when 'artful-embroidery-bath'
+                      render 'hero-artful-embroidery-bath-mobile'
+                      render 'hero-artful-embroidery-bath-desktop'
+                    when 'tis-the-season'
+                      render 'hero-tis-the-season-mobile'
+                      render 'hero-tis-the-season-desktop'
+                    when 'delicate-designs'
+                      render 'hero-delicate-designs-mobile'
+                      render 'hero-delicate-designs-desktop'
+                    
+                    else
+
+                  endcase
+                -%}
+              </div>
+            {%- endif -%}
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="button">{{ block.settings.label }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+  {% if section.blocks.size > 1 %}
+    <div class="slider-dots no-js-hidden">
+      {% for dot in (1..section.blocks.size) %}
+        <button
+          type="button"
+          data-index="{{ forloop.index }}"
+          class="slider-dot{% if forloop.index0 == 0 %} is-active{% endif %}"
+          name="index"
+          aria-label="{{ 'accessibility.slide_index' | t: index: forloop.index }}"
+        ></button>
+      {% endfor %}
+    </div>
+    <div class="slider-buttons no-js-hidden">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'accessibility.previous_slide' | t }}"
+      >
+        {% render 'icon-arrow-left' %}
+      </button>
+      <div class="slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+        <span class="slider-counter--total">{{ section.blocks.size }}</span>
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'accessibility.next_slide' | t }}"
+      >
+        {% render 'icon-arrow-right' %}
+      </button>
+    </div>
+  {% endif %}
+</slider-component>
+
+{% schema %}
+{
+  "name": "Hero carousel",
+  "tag": "section",
+  "class": "spaced-section section-hero-carousel-outer",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-secondary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_buttons",
+      "label": "Show buttons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_timing",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Autoplay timing",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop image",
+          "info": "Aspect ratio 144:55 (1800x700)"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image",
+          "info": "Aspect ratio (860x1360)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "graphic_heading",
+          "label": "Graphic heading",
+          "options": [
+            {
+              "value": "",
+              "label": "None"
+            },
+            {
+              "value": "dashofdesign",
+              "label": "A Dash of Design, Direct to You"
+            },
+            {
+              "value": "wellandwonder",
+              "label": "The Well + Wonder Collection"
+            },
+            {
+              "value": "mixandmatch",
+              "label": "Mix, Match, and Make Them Your Own"
+            },
+            {
+              "value": "customdesigns",
+              "label": "Custom Designs for Picture Perfect Windows"
+            },
+            {
+              "value": "transformyourspace",
+              "label": "Transform Your Space With Timeless Prints"
+            },
+            {
+              "value": "loomco",
+              "label": "Loom & Co x Pepper Rugs"
+            },
+            {
+              "value": "sustainabledecor",
+              "label": "Sustainable Decor Your Little One Won't Outgrow"
+            },
+            {
+              "value": "showercurtains",
+              "label": "Give your bathroom an instant upgrade"
+            },
+            {
+              "value": "by-the-yard",
+              "label": "Prints and Colors by the Yard"
+            },
+            {
+              "value": "grasscloths-linens",
+              "label": "Grosscloths & Heavyweight Linens"
+            },
+            {
+              "value": "sizes-and-trims",
+              "label": "Say Hello to New Sizes and Trims"
+            },
+            {
+              "value": "bundles",
+              "label": "Handpicked by the Experts for Exceptional Style"
+            },
+            {
+              "value": "customized",
+              "label": "Soft, Stylish, and Completely Customized"
+            },
+            {
+              "value": "chappywrap",
+              "label": "Wrapped up in style"
+            },
+            {
+              "value": "naturalfibers",
+              "label": "Natural Fibers Meet Handmade Refinement"
+            },
+            {
+              "value": "coastal-splendor",
+              "label": "Dive Into Coastal Splendor"
+            },
+            {
+              "value": "timeless-keepsakes",
+              "label": "Our take on a timeless keepsakes"
+            },
+            {
+              "value": "rooms-in-bloom",
+              "label": "Rooms in Bloom"
+            },
+            {
+              "value": "natural-light",
+              "label": "Natural Light, Effortless Style"
+            },
+            {
+              "value": "artful-embroidery-bath",
+              "label": "Artful Embroidery for Your Bath"
+            },
+            {
+              "value": "tis-the-season",
+              "label": "'Tis the Season to Gift Great"
+            },
+            {
+              "value": "delicate-designs",
+              "label": "Delicate Designs for Serious Style"
+            }
+          ],
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero carousel",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "heading": "Mix, match and make them your <em>own</em>",
+            "link": "shopify://collections/throw-pillows",
+            "label": "Shop Pillows"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "heading": "Mix, match and make them your <em>own</em>",
+            "link": "shopify://collections/curtains",
+            "label": "Shop Curtains"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

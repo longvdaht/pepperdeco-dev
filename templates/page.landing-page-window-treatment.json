@@ -1,0 +1,417 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Custom Furniture",
+        "title_type": "type-1",
+        "description": "Design your perfect piece—select your fabric, style, lining, and trim.<br>Handcrafted in the US. Shipped in 6 weeks"
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "curtains-blues-and-greens"
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sample-cafecurtains"
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fabric-chenillejacquard"
+          }
+        },
+        "featured_collection_ewUHzA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "best-sellers"
+          }
+        },
+        "featured_collection_tJEFnP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bath"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw",
+        "featured_collection_ewUHzA",
+        "featured_collection_tJEFnP"
+      ],
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-below"
+      }
+    },
+    "section_shop_by_categories_7eYJ6X": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_tXbLRC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/10_6a368734-d093-47d1-a9f5-8ff742c61668.png",
+            "title": "Theodora",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_DeneBN": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/11_a694c83b-3865-4a26-9710-11226d3e8977.png",
+            "title": "Hudson",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_eqQAne": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/4_f4268f0f-e7a2-44d7-bca5-6a437a35d660.png",
+            "title": "Regina",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_d3d6AG": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/2_6a9a58ed-caf5-4942-aa98-4d3ea14a44e9.png",
+            "title": "Delaney",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_VpRkHg": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/6_23d1399b-6b75-4b04-bcb2-459e857ce7a8.png",
+            "title": "James",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_tXbLRC",
+        "collection_DeneBN",
+        "collection_eqQAne",
+        "collection_d3d6AG",
+        "collection_VpRkHg"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "heading": "Beds",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL BEDS",
+        "button_url": "shopify://collections/custom-furniture-beds",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_6B4Wnr": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_UEPnyQ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_14.png",
+            "title": "Theodora",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_jxPQWJ": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_11.png",
+            "title": "hudson",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_4LBQM7": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_13.png",
+            "title": "regina",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_DUH37P": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_17.png",
+            "title": "delaney",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_YgFgN9": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_18.png",
+            "title": "james",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_UEPnyQ",
+        "collection_jxPQWJ",
+        "collection_4LBQM7",
+        "collection_DUH37P",
+        "collection_YgFgN9"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "heading": "Headboards",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL HEADBOARDS",
+        "button_url": "",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_yewdbn": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_wYpH84": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_20.png",
+            "title": "dorothy with skirt",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_8BMiq9": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_19.png",
+            "title": "dorothy with legs",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_cVN6cx": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_22.png",
+            "title": "adeline with skirt",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_RKfXRN": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_21.png",
+            "title": "adeline upholstered",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wYpH84",
+        "collection_8BMiq9",
+        "collection_cVN6cx",
+        "collection_RKfXRN"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "heading": "Chairs",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL CHAIRS",
+        "button_url": "",
+        "columns_mobile": "2"
+      }
+    },
+    "section_shop_by_categories_UqJjwM": {
+      "type": "section-shop-by-categories",
+      "blocks": {
+        "collection_hjLTYH": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_24.png",
+            "title": "celeste",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_FChRcC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_25.png",
+            "title": "scarlett",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        },
+        "collection_CWUQKT": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/Screenshot_2025-09-12_at_4.20.17_PM_23.png",
+            "title": "blaire",
+            "subtitle": "Available in multiple materials, finishes, and sizes",
+            "collection_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_hjLTYH",
+        "collection_FChRcC",
+        "collection_CWUQKT"
+      ],
+      "name": "Shop by categories",
+      "settings": {
+        "heading": "Benches",
+        "subheading": "Choose from our signature silhouettes",
+        "button_text": "SHOP ALL BENCHES",
+        "button_url": "",
+        "columns_mobile": "2"
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/16_77fc8ff0-524b-4823-ba34-fb60a92dc1f3.png",
+            "image_width": 70,
+            "title": "Trade program",
+            "content": "Are you an interior designer or architect? Join today.",
+            "link_text": "JOIN NOW",
+            "link_url": ""
+          }
+        },
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/14_e02323a6-3b62-436c-b90d-18e1339b59c4.png",
+            "image_width": 70,
+            "title": "DESIGN SERVICES",
+            "content": "Complimentary design services for your entire home.",
+            "link_text": "REQUEST APPOINTMENT",
+            "link_url": ""
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/10_6af246ad-07ea-463e-8dae-a4d18af886f6.png",
+            "image_width": 70,
+            "title": "REGISTRY",
+            "content": "The gift of a beautiful home.<br>\nRegister for your L+G favorites.",
+            "link_text": "CREATE NOW",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_7L6p3y",
+        "column_9NGpgg",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "#d5d0b5"
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "16331219115bcaaf78-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_-_2022-05-04T174944.483.webp",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/thatcherrose_b746587b-67e5-49e2-9658-68c74f911c1c_1024x1024_copy.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/OGara-Pepper-Home-2.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lee-KristinChambless_7a558585-46ac-46b9-ad2e-68e0c42dc9b5.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "16331219115bcaaf78-1",
+        "16331219115bcaaf78-0",
+        "16331219115bcaaf78-3",
+        "16331219115bcaaf78-2"
+      ],
+      "settings": {
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "section_shop_by_categories_7eYJ6X",
+    "section_shop_by_categories_6B4Wnr",
+    "section_shop_by_categories_yewdbn",
+    "section_shop_by_categories_UqJjwM",
+    "section_text_with_icon_column_XBbHQ8",
+    "16331219115bcaaf78"
+  ]
+}

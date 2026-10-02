@@ -1,0 +1,84 @@
+
+  {%- assign paired_products = product.metafields.custom.pair_with_it.value -%}
+
+  {% if paired_products != blank %}
+  <div class="pair-with-it" {{ block.shopify_attributes }}>
+
+    {% if block.settings.heading != blank %}
+      <h3 class="pair-with-it__heading">{{ block.settings.heading }}</h3>
+    {% endif %}
+
+    {%- assign slider_id = 'pair-with-it-slider-' | append: section.id -%}
+
+    <slider-component class="pair-with-it__slider-wrap">
+      <ul
+        id="{{ slider_id }}"
+        class="pair-with-it__track slider__grid list-unstyled slider grid grid-nowrap"
+        role="list"
+      >
+        {% for paired in paired_products %}
+          <li class="pair-with-it__card slider__slide carousel-cell grid__item{% if forloop.last %} grid__item--last{% elsif forloop.first %} grid__item--first{% endif %}">
+            <a href="{{ paired.url }}" class="pair-with-it__card-link">
+              <div class="card__inner ratio" style="--ratio-percent: 100.0%;">
+                <div class="media media--transparent pair-with-it__image-wrap">
+                  {% if paired.featured_image %}
+                    <img
+                      srcset="
+                        {%- if paired.featured_image.width >= 165 -%}{{ paired.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if paired.featured_image.width >= 360 -%}{{ paired.featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if paired.featured_image.width >= 533 -%}{{ paired.featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if paired.featured_image.width >= 720 -%}{{ paired.featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+                        {%- if paired.featured_image.width >= 940 -%}{{ paired.featured_image | image_url: width: 940 }} 940w,{%- endif -%}
+                        {%- if paired.featured_image.width >= 1066 -%}{{ paired.featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                        {{ paired.featured_image | image_url }} {{ paired.featured_image.width }}w
+                      "
+                      src="{{ paired.featured_image | image_url: width: 533 }}"
+                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                      alt="{{ paired.featured_image.alt | escape }}"
+                      class="motion-reduce"
+                      loading="lazy"
+                      width="{{ paired.featured_image.width }}"
+                      height="{{ paired.featured_image.height }}"
+                    >
+                  {% else %}
+                    {{ 'product-1' | placeholder_svg_tag: 'pair-with-it__placeholder' }}
+                  {% endif %}
+                </div>
+                {% if paired.metafields.custom.product_custom_tags %}
+                  <div class="card__media-custom-tags">
+                    {% for custom_tag in paired.metafields.custom.product_custom_tags.value %}
+                      <span class="card__badge">{{ custom_tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="pair-with-it__info">
+                <p class="pair-with-it__title">{{ paired.title }}</p>
+                {% render 'price', product: paired, price_class: '', show_compare_at_price: true %}
+                <div class="pair-with-it__atc">
+                  <span class="button--link button--link-secondary small btn-add-to-cart">Add to card</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if block.settings.show_nav %}
+        <div class="slider-buttons no-js-hidden">
+          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{% render 'icon-arrow-left' %}</button>
+          <div class="visually-hidden slider-counter caption">
+            <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{% render 'icon-arrow-right' %}</button>
+        </div>
+      {% endif %}
+    </slider-component>
+
+  </div>
+{% endif %}
+

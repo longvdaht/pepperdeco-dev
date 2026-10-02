@@ -1,0 +1,143 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: true (optional)
+  Usage:
+  {% render 'product-card', product: product, show_secondary_image: section.settings.show_secondary_image %}
+{% endcomment %}
+
+<div class="card-wrapper">
+  <a href="{{ product.url | split: '?' | first | default: '#' }}" class="full-unstyled-link show-on-tablet">
+    <span class="visually-hidden">{{ product.title | escape }}</span>
+    <div class="card card-product" tabindex="-1">
+      <div class="card-inner">
+        {%- if product.featured_media -%}
+          <div class="media media--square media--hover-effect">
+            <img
+              srcset="
+                {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | image_url: width: 1066 }} 1066w{%- endif -%}
+              "
+              src="{{ product.featured_media | image_url: width: 533 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | divided_by: 3 }}px, (min-width: 990px) calc(100vw / 3), (min-width: 750px) calc(100vw / 3), 95vw"
+              alt="{{ product.featured_media.alt | escape }}"
+              loading="lazy"
+              class="motion-reduce"
+              width="{{ product.featured_media.width }}"
+              height="{{ product.featured_media.height }}"
+            >
+            {%- if product.media[1] != null and show_secondary_image -%}
+              <img
+                srcset="
+                  {%- if product.media[1].width >= 165 -%}{{ product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if product.media[1].width >= 360 -%}{{ product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+                  {%- if product.media[1].width >= 533 -%}{{ product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+                  {%- if product.media[1].width >= 720 -%}{{ product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+                  {%- if product.media[1].width >= 940 -%}{{ product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
+                  {%- if product.media[1].width >= 1066 -%}{{ product.media[1] | image_url: width: 1066 }} 1066w{%- endif -%}
+                "
+                src="{{ product.media[1] | image_url: width: 533 }}"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | divided_by: 3 }}px, (min-width: 990px) calc(100vw / 3), (min-width: 750px) calc(100vw / 3), 95vw"
+                alt="{{ product.media[1].alt | escape }}"
+                loading="lazy"
+                class="motion-reduce"
+                width="{{ product.media[1].width }}"
+                height="{{ product.media[1].height }}"
+              >
+            {%- endif -%}
+          </div>
+        {%- else -%}
+          <div class="card__content">
+            <h2 class="card__text h5">{{ product.title }}</h2>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="card-information">
+      {%- if product.featured_media -%}
+        <div class="h3 card-information__text">
+          {{ product.title | escape }}
+        </div>
+      {%- endif -%}
+      {%- liquid
+        if product.metafields.pepper.type.value != blank
+          render 'type', product: product
+        endif
+      -%}
+      {%- liquid
+        if product.metafields.pepper.product_card_badge.value != blank
+          render 'product-card-badge', product: product
+        endif
+      -%}
+      {% comment %}
+        elsif product.metafields.pepper.child_products.value != blank
+          assign first_product = product.metafields.pepper.child_products.value | first
+          render 'price', product: first_product
+        else
+          render 'price', product: product
+      {% endcomment %}
+    </div>
+  </a>
+  <slider-component class="hide-on-tablet hide-on-desktop card card-product">
+    <ul
+      class="list-unstyled slider grid grid-nowrap mobile-one desktop-one"
+      id="Slider-{{ section.id }}"
+      role="list"
+    >
+      {%- for image in product.images -%}
+        <li class="carousel-cell grid__item" {{ block.shopify_attributes }}>
+          <a href="{{ product.url | split: '?' | first | default: '#' }}" class="full-unstyled-link">
+            {{
+              image
+              | image_url: width: image.width
+              | image_tag:
+                widths: '800,1000,1500,2000',
+                loading: 'lazy',
+                height: image.height,
+                width: image.width,
+                alt: image.alt
+              | default: product.title
+            }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+    <div class="card-information">
+      {%- if product.featured_media -%}
+        <div class="h3 card-information__text">
+          {{ product.title | escape }}
+          {%- if product.type contains 'Swatch' or product.type contains 'Sample' -%}
+            {%- if product.type contains 'Trim' or product.type contains 'Piping' or product.type contains 'Rug' -%}
+              Sample
+            {%- elsif product.type contains 'Wallpaper' or product.type contains 'Fabric' -%}
+              Swatch
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      {%- liquid
+        if product.metafields.pepper.type.value != blank
+          render 'type', product: product
+        endif
+      -%}
+      {%- liquid
+        if product.metafields.pepper.product_card_badge.value != blank
+          render 'product-card-badge', product: product
+        endif
+      -%}
+      {% comment %}
+        elsif product.metafields.pepper.child_products.value != blank
+          assign first_product = product.metafields.pepper.child_products.value | first
+          render 'price', product: first_product
+        else
+          render 'price', product: product
+      {% endcomment %}
+    </div>
+  </slider-component>
+</div>

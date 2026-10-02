@@ -1,0 +1,243 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16337335918520036b": {
+      "type": "page-hero",
+      "settings": {
+        "word_graphic_width": 104,
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/privacy-vs-blackout-curtains",
+            "content": "<p>Looking to keep the little ones asleep? Learn how our blackout curtains work to keep the light out. </p><p><strong>Privacy vs Blackout</strong></p>"
+          }
+        },
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/curtain-trim-what-its-all-about",
+            "content": "<p>Looking to add some extra spice to your curtains? Check out our trim guide to see what it’s all about.</p><p><strong>Curtain trim</strong></p>"
+          }
+        },
+        "5bb79ddb-9909-4f7f-8f5d-34558d6ec9e4": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/paint-guide-wallpaper",
+            "content": "<p>Not sure which paint color to pair with your wallpaper? We got you covered.</p><p><strong>Paint Guide</strong></p>"
+          }
+        },
+        "e0c3a164-1fff-4813-98c4-b466ebb8839c": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/justaddpepper",
+            "content": "<p>We love to see how our customers style our pieces—and we bet you would, too.</p><p><strong>customer photos</strong></p>"
+          }
+        },
+        "07afe36e-6c0f-4246-81ec-319bd87e00bc": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://products/fabric-swatch",
+            "content": "<p>Can’t decide which print is best for your space? Try Pepper IRL before you buy.</p><p><strong>Fabric Swatches</strong></p>"
+          }
+        },
+        "c9961f6a-c405-445d-878d-f346fa06b76d": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/curtain-calculator",
+            "content": "<p>Choose your style and tailoring, give us two measurements, and we’ll give you a perfect ‘tain. (Get it?)</p><p><strong>Curtain Calculator</strong></p>"
+          }
+        },
+        "af373add-42fe-4fbe-8864-c1e3726769bb": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/custom-curtain-styles",
+            "content": "<p>Questions on curtain constructions? Head to our blog for the basics.</p><p><strong>Curtain Construction 101</strong></p>"
+          }
+        },
+        "c65848cc-cb9b-4c8b-9a2b-58abe0dade09": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/pillow-size-guide",
+            "content": "<p>Want to make sure your pillows fit just right? Check out our helpful guide.</p><p><strong>Pillow Size Guide</strong></p>"
+          }
+        },
+        "19b5d74b-29c3-46a9-9bfd-bb26fc69328a": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/design-assistance",
+            "content": "<p>Need a hand? Our in-house experts will give you the design help as you need, free of charge.</p><p><strong>design assistance</strong></p>"
+          }
+        },
+        "5e7c08c9-ce0b-4fd8-b8b6-0ca8576f01fe": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/reviews",
+            "content": "<p>Want to hear what our customers are saying? Check out our reviews!</p><p><strong>Customer Reviews</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2",
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5",
+        "5bb79ddb-9909-4f7f-8f5d-34558d6ec9e4",
+        "e0c3a164-1fff-4813-98c4-b466ebb8839c",
+        "07afe36e-6c0f-4246-81ec-319bd87e00bc",
+        "c9961f6a-c405-445d-878d-f346fa06b76d",
+        "af373add-42fe-4fbe-8864-c1e3726769bb",
+        "c65848cc-cb9b-4c8b-9a2b-58abe0dade09",
+        "19b5d74b-29c3-46a9-9bfd-bb26fc69328a",
+        "5e7c08c9-ce0b-4fd8-b8b6-0ca8576f01fe"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "columns_desktop": 3,
+        "infinite_scroll": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": true,
+        "hide_type_filter": false,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Nursey_Kids-3.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-ThatcherWallpaperBathroom.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=wallpaper"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Pink-4.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=nursery-kids"
+          }
+        },
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-GingerSkyCurtainNursery.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=curtains"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-2",
+        "163284582776ee348a-0",
+        "163284582776ee348a-3",
+        "163284582776ee348a-1"
+      ],
+      "settings": {
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "16337335918520036b",
+    "product-grid",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

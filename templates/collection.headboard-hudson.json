@@ -1,0 +1,275 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_page_title_FeFyHJ": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Hudson Headboards",
+        "title_type": "type-2",
+        "description": "Create your perfect piece: select your silhouette, fabric, and trim. Made to order and ships in 6 weeks."
+      }
+    },
+    "main_list_collections_RVdJxb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_tVMz4k": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-green.jpg",
+            "collection_title": "Green",
+            "override_url": "https://pepper-home.com/collections/throw-pillows?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85922349116&sort_by=manual",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_9CVyPk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-blue.jpg",
+            "collection_title": "Blue",
+            "override_url": "https://pepper-home.com/collections/throw-pillows?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923299388&sort_by=manual",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_kkWtFg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-neutral.jpg",
+            "collection_title": "Neutral",
+            "override_url": "https://pepper-home.com/collections/throw-pillows?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300207164&sort_by=manual",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_FAkPci": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-pink.jpg",
+            "collection_title": "Pink",
+            "override_url": "https://pepper-home.com/collections/throw-pillows?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300272700&sort_by=manual",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_QiEmj8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-purple.jpg",
+            "collection_title": "Purple",
+            "override_url": "https://pepper-home.com/collections/throw-pillows?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923397692&sort_by=manual",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_9U6tGL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-yellow.jpg",
+            "collection_title": "Yellow",
+            "override_url": "https://pepper-home.com/collections/custom-throw-pillows-landing?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923463228&sort_by=manual",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_zJbYXK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-orange.jpg",
+            "collection_title": "Orange",
+            "override_url": "https://pepper-home.com/collections/custom-throw-pillows-landing?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923364924&sort_by=manual",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_CBXepb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-pillows-red.jpg",
+            "collection_title": "Red",
+            "override_url": "https://pepper-home.com/collections/throw-pillows?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923430460&sort_by=manual",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_tVMz4k",
+        "featured_collection_9CVyPk",
+        "featured_collection_kkWtFg",
+        "featured_collection_FAkPci",
+        "featured_collection_QiEmj8",
+        "featured_collection_9U6tGL",
+        "featured_collection_zJbYXK",
+        "featured_collection_CBXepb"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "multi_collection_breadcrumb_jGMkEQ": {
+      "type": "multi-collection-breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb multi",
+      "settings": {
+        "previous_link_1": "shopify://pages/custom-furniture",
+        "previous_text_1": "Custom Furniture",
+        "previous_link_2": "shopify://collections/custom-furniture-headboards",
+        "previous_text_2": "Headboards",
+        "previous_link_3": "",
+        "previous_text_3": ""
+      }
+    },
+    "main_multi_collections_ezKaKD": {
+      "type": "main-multi-collections",
+      "settings": {
+        "collection_layout": "grid",
+        "product_limit": 50,
+        "product_limit_mobile": 50,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_product_type": false,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-third",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly-Basile-5_eaff7e7a-5c28-4c07-bf77-2f207cb220a3.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=pillows"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/KristenChambless4_90c15d0c-ee48-4dec-85ae-24e98d6d948b.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Oyster-Creek-1_d545db3f-7677-4d25-a6b8-24767f9ae67a.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=living"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kevin-OGara-6.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=bedroom"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-1",
+        "163284582776ee348a-3",
+        "163284582776ee348a-0",
+        "163284582776ee348a-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "section_page_title_FeFyHJ",
+    "main_list_collections_RVdJxb",
+    "multi_collection_breadcrumb_jGMkEQ",
+    "main_multi_collections_ezKaKD",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

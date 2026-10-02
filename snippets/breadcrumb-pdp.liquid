@@ -1,0 +1,145 @@
+{% assign current_collection = collection %}
+
+{% if current_collection == nil or current_collection == blank %}
+  {% assign product_type = product.type %}
+  {% assign current_collection = nil %}
+
+  {% if template.suffix == 'furniture' %}
+    {% for col in product.collections %}
+      {% unless col.handle == 'all' or col.handle == 'frontpage' %}
+        {% assign product_type_downcase = product_type | downcase %}
+        {% assign col_title_downcase = col.title | downcase %}
+        {% if col_title_downcase contains product_type_downcase and col.title contains 'Custom' %}
+          {% unless col.title contains ' - ' %}
+            {% assign current_collection = col %}
+            {% break %}
+          {% endunless %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+
+  {% if current_collection == nil %}
+    {% for col in product.collections %}
+      {% unless col.handle == 'all' or col.handle == 'frontpage' %}
+        {% assign product_type_downcase = product_type | downcase %}
+        {% assign col_title_downcase = col.title | downcase %}
+        {% if col_title_downcase contains product_type_downcase %}
+          {% unless col.title contains ' - ' %}
+            {% assign current_collection = col %}
+            {% break %}
+          {% endunless %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+
+  {% if current_collection == nil %}
+    {% for col in product.collections %}
+      {% unless col.handle == 'all' or col.handle == 'frontpage' %}
+        {% assign current_collection = col %}
+        {% break %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endif %}
+
+{%- comment -%} Category label (level 3): strip "Custom" for display; link stays the same {%- endcomment -%}
+{% assign category_label = current_collection.title
+  | replace: 'Custom ', '' | replace: 'custom ', '' | replace: 'CUSTOM ', ''
+  | replace: 'Custom', ''  | replace: 'custom', ''  | replace: 'CUSTOM', ''
+  | strip %}
+
+{%- comment -%}
+  Parent category (level 2) from a global metaobject list:
+  shop.metafields.custom.breadcrumb_parents -> list of "breadcrumb_parent" entries,
+  each { product_type (text), parent_collection (collection reference) }.
+  Match by product.type. If no entry, fall back to the collection's own
+  custom.parent_page metafield (current behaviour).
+{%- endcomment -%}
+{% assign parent_map = shop.metafields.custom.breadcrumb_parents.value %}
+{% assign type_key = product.type | downcase | strip %}
+{% assign parent_collection = nil %}
+{% if parent_map != blank and type_key != blank %}
+  {% for entry in parent_map %}
+    {% assign entry_type = entry.product_type.value | downcase | strip %}
+    {% if entry_type == type_key %}
+      {% assign parent_collection = entry.parent_collection.value %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign parent_page = current_collection.metafields.custom.parent_page.value %}
+
+{%- comment -%} Silhouette (style) name from product tag "silhouette:<name>" {%- endcomment -%}
+{% assign silhouette_name = '' %}
+{% for tag in product.tags %}
+  {% assign tag_parts = tag | split: ':' %}
+  {% assign tag_key = tag_parts.first | downcase | strip %}
+  {% if tag_key == 'silhouette' and tag_parts.size > 1 %}
+    {% assign silhouette_name = tag_parts | last | strip %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{%- comment -%} Silhouette collection by first word of the title {%- endcomment -%}
+{% assign silhouette_collection = nil %}
+{% if silhouette_name != blank %}
+  {% assign silhouette_name_dc = silhouette_name | downcase %}
+  {% for col in product.collections %}
+    {% unless col.handle == 'all' or col.handle == 'frontpage' %}
+      {% assign col_first_word = col.title | downcase | strip | split: ' ' | first %}
+      {% if col_first_word == silhouette_name_dc %}
+        {% assign silhouette_collection = col %}
+        {% break %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+
+<nav class="breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb__list">
+
+    <li class="breadcrumb__item">
+      <a href="/" class="breadcrumb__link">Home</a>
+    </li>
+
+    {%- comment -%} Level 2: mapped parent (entry) first, else parent_page metafield {%- endcomment -%}
+    {% if parent_collection != blank %}
+      <li class="breadcrumb__item">
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        <a href="{{ parent_collection.url }}" class="breadcrumb__link">{{ parent_collection.title }}</a>
+      </li>
+    {% elsif parent_page %}
+      <li class="breadcrumb__item">
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        <a href="{{ parent_page.url }}" class="breadcrumb__link">{{ parent_page.title }}</a>
+      </li>
+    {% endif %}
+
+    {%- comment -%} Level 3: category (collection), "Custom" stripped {%- endcomment -%}
+    {% if current_collection %}
+      <li class="breadcrumb__item">
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        <a href="{{ current_collection.url }}" class="breadcrumb__link">{{ category_label }}</a>
+      </li>
+    {% endif %}
+
+    {%- comment -%} Level 4: silhouette (only for silhouette products) {%- endcomment -%}
+    {% if silhouette_name != blank %}
+      <li class="breadcrumb__item">
+        <span class="breadcrumb__separator" aria-hidden="true">/</span>
+        {% if silhouette_collection %}
+          <a href="{{ silhouette_collection.url }}" class="breadcrumb__link">{{ silhouette_name | capitalize }}</a>
+        {% else %}
+          <span class="breadcrumb__link">{{ silhouette_name | capitalize }}</span>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    <li class="breadcrumb__item breadcrumb__item--current">
+      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{ product.title }}</span>
+    </li>
+  </ol>
+</nav>

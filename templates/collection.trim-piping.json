@@ -1,0 +1,279 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16337335918520036b": {
+      "type": "page-hero",
+      "settings": {
+        "word_graphic_width": 104,
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-swatch-grid",
+      "blocks": {
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/design-assistance",
+            "content": "<p>Need a hand? Our in-house experts will give you the design help as you need, free of charge.</p><p><strong>design assistance</strong></p>"
+          }
+        },
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://products/fabric-swatch",
+            "content": "<p>Can’t decide which print is best for your space? Try Pepper IRL before you buy.</p><p><strong>Fabric Swatches</strong></p>"
+          }
+        },
+        "e0c3a164-1fff-4813-98c4-b466ebb8839c": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/justaddpepper",
+            "content": "<p>We love to see how our customers style our pieces—and we bet you would, too.</p><p><strong>customer photos</strong></p>"
+          }
+        },
+        "07afe36e-6c0f-4246-81ec-319bd87e00bc": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/upholsterer-recommendations-and-wallpaper-installers",
+            "content": "<p>Looking to cover a headboard or make roman shades? We’ve got you covered.</p><p><strong>UPHOLSTERERS & WALLPAPER INSTALLERS</strong></p>"
+          }
+        },
+        "c9961f6a-c405-445d-878d-f346fa06b76d": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/paint-guide-fabric",
+            "content": "<p>Not sure which paint color to pair with your fabric? </p><p><strong>Fabric Paint Guide</strong></p>"
+          }
+        },
+        "5bb79ddb-9909-4f7f-8f5d-34558d6ec9e4": {
+          "type": "design_block",
+          "settings": {
+            "link": "https://pepper-home.com/blogs/pep-talk/tagged/friends",
+            "content": "<p>See how our friends have styled their Pepper products.</p><p><strong>The Pepper Blog</strong></p>"
+          }
+        },
+        "af373add-42fe-4fbe-8864-c1e3726769bb": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/reviews",
+            "content": "<p>Want to hear what our customers are saying? Check out our reviews!</p><p><strong>Customer Reviews</strong></p>"
+          }
+        },
+        "c65848cc-cb9b-4c8b-9a2b-58abe0dade09": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/design-hub",
+            "content": "<p>Don't know where to start? From FAQs to inspiration, everything you need is in one place.</p><p><strong>The Design Hub</strong></p>"
+          }
+        },
+        "19b5d74b-29c3-46a9-9bfd-bb26fc69328a": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://collections/best-sellers-3",
+            "content": "<p>We don’t play favorites, but our customers do.</p><p><strong>shop Best sellers</strong></p>"
+          }
+        },
+        "5e7c08c9-ce0b-4fd8-b8b6-0ca8576f01fe": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/trade",
+            "content": "<p>Are you an interior designer or architect? Become a part of our trade program.</p><p><strong>trade program</strong></p>"
+          }
+        },
+        "collection_jmnTDc": {
+          "type": "collection",
+          "settings": {
+            "collection": "trim-band"
+          }
+        },
+        "collection_dca6NV": {
+          "type": "collection",
+          "settings": {
+            "collection": "trim-tassel"
+          }
+        },
+        "collection_mzwXzP": {
+          "type": "collection",
+          "settings": {
+            "collection": "trim-rickrack"
+          }
+        },
+        "8df7f38f-22d5-4884-a01a-b2947052b71d": {
+          "type": "collection",
+          "settings": {
+            "collection": "trim-pompom"
+          }
+        },
+        "2a28ffcc-45a1-4629-b905-3ec1d9f53813": {
+          "type": "collection",
+          "settings": {
+            "collection": "trim-fringe"
+          }
+        },
+        "deb717e6-c21a-4556-a443-b23ff0cb9ef2": {
+          "type": "collection",
+          "settings": {
+            "collection": "trim-piping"
+          }
+        }
+      },
+      "block_order": [
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2",
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5",
+        "e0c3a164-1fff-4813-98c4-b466ebb8839c",
+        "07afe36e-6c0f-4246-81ec-319bd87e00bc",
+        "c9961f6a-c405-445d-878d-f346fa06b76d",
+        "5bb79ddb-9909-4f7f-8f5d-34558d6ec9e4",
+        "af373add-42fe-4fbe-8864-c1e3726769bb",
+        "c65848cc-cb9b-4c8b-9a2b-58abe0dade09",
+        "19b5d74b-29c3-46a9-9bfd-bb26fc69328a",
+        "5e7c08c9-ce0b-4fd8-b8b6-0ca8576f01fe",
+        "collection_jmnTDc",
+        "collection_dca6NV",
+        "collection_mzwXzP",
+        "8df7f38f-22d5-4884-a01a-b2947052b71d",
+        "2a28ffcc-45a1-4629-b905-3ec1d9f53813",
+        "deb717e6-c21a-4556-a443-b23ff0cb9ef2"
+      ],
+      "settings": {
+        "show_secondary_image": true,
+        "show_price": false,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": true,
+        "hide_type_filter": true,
+        "hide_fabric_filter": true,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "enable_sorting": true,
+        "enable_grid_view_mobile": false,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-quarter",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/76a2d2bb88f6ef748a4cebc7efa33a89.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=trim-piping"
+          }
+        },
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Pillows-EdenPink.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=trim-piping"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Sage-_SarahTucker_6.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=trim-piping"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Category-Shower-FridaPink.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=trim-piping"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-0",
+        "163284582776ee348a-1",
+        "163284582776ee348a-3",
+        "163284582776ee348a-2"
+      ],
+      "settings": {
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_PkUniE": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "16337335918520036b",
+    "product-grid",
+    "163284582776ee348a",
+    "section_text_with_icon_column_PkUniE"
+  ]
+}

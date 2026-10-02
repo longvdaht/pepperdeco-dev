@@ -1,0 +1,162 @@
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+{{ 'section-accordion.css' | asset_url | stylesheet_tag }}
+
+<style>
+  [data-section-id="{{ section.id }}"] {
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+  }
+  @media (min-width: 768px) {
+    [data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+</style>
+
+<section class="section__outer section-accordion color-background-1" data-section-id="{{ section.id }}">
+  <div class="page-width page-width-narrow padded-extra{% if section.settings.hub_section != "" %} section-hub-content section-hub-{{ section.settings.hub_section }}{% endif %}">
+    {% if section.settings.heading != blank %}
+      <h2 class="h3 section-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% for block in section.blocks %}
+      <details-disclosure>
+        <details class="rte" {{ block.shopify_attributes }} id="{{ block.settings.title | handleize }}">
+          <summary class="h5">
+            {{ block.settings.title }}
+            <span class="svg-wrapper">
+              <div class="minus-icon">
+                {% render 'icon-chevron-up' %}
+              </div>
+              <div class="plus-icon">
+                {% render 'icon-chevron-down' %}
+              </div>
+            </span>
+          </summary>
+          {{ block.settings.content }}
+        </details>
+      </details-disclosure>
+    {% endfor %}
+  </div>
+</section>
+
+{% javascript %}
+if (window.location.hash && document.querySelector(window.location.hash)) {
+  const selectedEl = document.querySelector(window.location.hash);
+  selectedEl.setAttribute('open', true);
+  window.scrollTo({
+    top: selectedEl.getBoundingClientRect().top,
+    behavior: 'smooth'
+  });
+}
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Design hub section"
+    },
+    {
+      "type": "select",
+      "id": "hub_section",
+      "label": "Hub section",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "curtains",
+          "label": "Curtains"
+        },
+        {
+          "value": "pillows",
+          "label": "Pillows"
+        },
+        {
+          "value": "wallpaper",
+          "label": "Wallpaper"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion Section"
+    }
+  ]
+}
+{% endschema %}

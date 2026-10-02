@@ -1,0 +1,120 @@
+{% assign filter_name = filter_label | handle %}
+{% assign filter_values = filter_values | replace: ' ,', ',' | replace: ', ', ',' | replace: ' , ', ',' | split: ',' %}
+<details
+  id="Details-{{ filter_name | escape }}-{{ section.id }}"
+  class="disclosure-has-popup facets__disclosure js-filter {% if filter_name == 'color' %}facets__disclosure--color{% endif %}"
+  data-index="{{ index }}"
+  open
+>
+  <summary
+    class="facets__summary caption-large focus-offset"
+    aria-label="{{ filter_label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
+  >
+    <div>
+      <span class="facets__summary-label flex-item">
+        {{ filter_label | escape }}
+        <div class="dropdown-toggle plus" id="dropdownToggleIcon">
+            <div class="minus-icon">
+              {% render 'minus-icon' %}
+            </div>
+            <div class="plus-icon">
+              {% render 'plus-icon' %}
+            </div>
+          </div>
+      </span>
+    </div>
+  </summary>
+  <div
+    id="Facet-{{ index }}-{{ section.id }}"
+    class="{{- filter_label | escape | downcase}} parent-display facets__display"
+  >
+    <fieldset class="facets-wrap parent-wrap">
+      <button class="close-button" type="button"
+        onclick="document.querySelector(`#FacetsWrapperDesktop details[data-index='{{ index }}'] summary`).click()"
+      >
+          {% render 'icon-close' %}
+      </button>
+      <legend class="visually-hidden">{{ filter_label | escape }}</legend>
+      {%- liquid
+        assign sorted_values = filter_values
+      -%}
+      <ul
+        class="facets-layout facets-layout-list{% if filter_name == 'color' %} facets-layout-list--swatch{% endif %} facets__list list-unstyled{% if filter_name != 'color' %} dropdown-item{% endif %}"
+        role="list"
+      >
+        {%- for value in sorted_values -%}
+          {% liquid
+            assign value_handle = value | handle
+            if filter_name == 'color'
+              assign swatch_value = value | split: "[" | last | remove: ']'
+              assign value_title = value | split: "[" | first
+            else
+              assign value_title = value
+            endif
+            assign input_id = 'Filter-' | append: filter_name | escape | append: '-' | append: index | append: '-' | append: value_handle
+          %}
+          {%- capture label_class -%}
+            facets__label facet-checkbox{% if is_disabled %} disabled{% endif %}{% if value.active %} active{% endif %}
+          {%- endcapture -%}
+
+          {%- capture text_value -%}
+            <span class="facet-checkbox__text" aria-hidden="true">
+              <span class="facet-checkbox__text-label">{{- value_title | escape }}</span>
+            </span>
+            <span class="visually-hidden">
+              {{- value_title | escape }}
+            </span>
+          {%- endcapture -%}
+
+          <li class="list-menu__item facets__item{% if index > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
+            {%- if filter_name == 'color' -%}
+              <div class="{{ label_class }}">
+                <div class="swatch-input-wrapper">
+                  <input
+                    type="checkbox"
+                    id="{{ input_id }}"
+                    name="{{ filter_name }}"
+                    value="{{ value_title }}"
+                    form="{{ product_form_id }}"
+                    class="swatch-input__input"
+                    {% if checked %}
+                      checked
+                    {% endif %}
+                    data-tag="{{ filter_name }}-{{ value_title | handle }}"
+                  >
+                  <label
+                    for="{{ input_id }}"
+                    title="{{ value_title }}"
+                    class="swatch-input__label{% if shape == 'square' %} swatch-input__label--square{% endif %}{% if swatch.image %} swatch-input__image{% endif %}"
+                  >
+                    <span class="swatch"
+                        style="--swatch--background: {{ swatch_value }}; --swatch--size: 2.4rem;"
+                    ></span>
+                  </label>
+                </div>
+                {{ text_value }}
+              </div>
+            {%- else -%}
+              <label for="{{ input_id }}" class="{{ label_class }}">
+                <input
+                  type="checkbox"
+                  name="{{ filter_name }}"
+                  value="{{ value_title }}"
+                  id="{{ input_id }}"
+                 
+                  data-tag="{{ filter_name }}-{{ value_title | handle }}"
+                >
+                {{- 'square.svg' | inline_asset_content -}}
+                <div class="svg-wrapper">
+                  {{- 'icon-checkmark.svg' | inline_asset_content -}}
+                </div>
+                {{ text_value }}
+              </label>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </fieldset>
+    
+  </div>
+</details>

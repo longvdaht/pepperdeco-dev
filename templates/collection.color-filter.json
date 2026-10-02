@@ -1,0 +1,289 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_columns_with_hover_VPGYN3": {
+      "type": "image-columns-with-hover",
+      "blocks": {
+        "image_dKPHxW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-Emma-Sand-_halliehl-20230608-1-cropped.jpg",
+            "text_in_image": "",
+            "heading": "Neutral",
+            "subheading": "",
+            "link": "https://pepper-home.com/collections/test-collection?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300207164"
+          }
+        },
+        "image_WcjJpR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-Emma-Sky-_JTWDesign-20230327-1-AdApproved-Cropped.jpg",
+            "text_in_image": "",
+            "heading": "Pink",
+            "subheading": "",
+            "link": "https://pepper-home.com/collections/test-collection?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300272700"
+          }
+        },
+        "image_3fLyhF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-Blake-Moss-_marianadoreyveiga-_jacobsnavely-20230619-AdApproved.jpg",
+            "text_in_image": "",
+            "heading": "Orange",
+            "subheading": "",
+            "link": "https://pepper-home.com/collections/test-collection?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923364924"
+          }
+        }
+      },
+      "block_order": [
+        "image_dKPHxW",
+        "image_WcjJpR",
+        "image_3fLyhF"
+      ],
+      "name": "Image columns with hover",
+      "settings": {
+        "section_full_width": "no",
+        "heading": "",
+        "heading_size": "h1",
+        "subheading": "",
+        "link": "",
+        "label": "",
+        "image_ratio": "square",
+        "image_order": "image-first",
+        "enable_slider": false,
+        "mobile_columns": "one",
+        "desktop_columns": "one-third",
+        "card_color_scheme": "background-primary",
+        "show_numerals": false,
+        "color_scheme": "background-primary",
+        "hub_section": ""
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "711b8acb-6cec-4169-ac8c-daa9671155e4": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://products/fabric-swatch",
+            "content": "<p>Can’t decide which print is best for your space? Try Pepper IRL before you buy.</p><p><strong>Fabric Swatches</strong></p>"
+          }
+        },
+        "4fa4597c-1636-4b38-8d6b-28fb8b0b1d0d": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/reviews",
+            "content": "<p>Want to hear what our customers are saying? Check out our reviews!</p><p><strong>Customer Reviews</strong></p>"
+          }
+        },
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/curtain-calculator",
+            "content": "<p>Choose your style and tailoring, give us two measurements, and we’ll give you a perfect ‘tain. (Get it?)</p><p><strong>Curtain Calculator</strong></p>"
+          }
+        },
+        "3494fb7d-cad7-45fb-88e9-2c6e8e3abe81": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/curtain-trim-what-its-all-about",
+            "content": "<p>Looking to add some extra spice to your curtains? Check out our trim guide to see what it’s all about.</p><p><strong>Curtain trim</strong></p>"
+          }
+        },
+        "9c488227-5110-4855-9594-c473625ed8e4": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/design-assistance",
+            "content": "<p>Our in-house experts will give you the assistance as you need, free of charge. </p><p><strong>Free Design Assistance</strong></p>"
+          }
+        },
+        "bd0cafd7-5fb7-48d7-a556-c120c3ad5629": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/custom-curtain-styles",
+            "content": "<p>Questions on curtain constructions? Head to our blog for the basics.</p><p><strong>Curtain construction 101</strong></p>"
+          }
+        },
+        "155d4ae6-e542-47a4-8ebe-567a8099a09f": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/curtain-faqs",
+            "content": "<p>Are curtain panels sold individually? Yes! See all of our frequently asked questions here.</p><p><strong>Curtain FAQs</strong></p>"
+          }
+        },
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/picking-a-curtain-style-that-fits-your-space",
+            "content": "<p>Debating on curtain styles? Head to our post to find what's right for your space. </p><p><strong>Find Your Curtain Style</strong></p>"
+          }
+        },
+        "c94a5895-cfaa-47bd-914f-a0704e719be6": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/spice-market",
+            "content": "<p>See what furniture, rugs, and lighting we’re lusting over.</p><p><strong>the Spice Market</strong>.</p>"
+          }
+        },
+        "cc9a4b03-6663-4287-a7bb-20d1395ff4d3": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/paint-guide-fabric",
+            "content": "<p>Not sure which paint color to pair with your curtains? </p><p><strong>Fabric Paint Guide</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "711b8acb-6cec-4169-ac8c-daa9671155e4",
+        "4fa4597c-1636-4b38-8d6b-28fb8b0b1d0d",
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2",
+        "3494fb7d-cad7-45fb-88e9-2c6e8e3abe81",
+        "9c488227-5110-4855-9594-c473625ed8e4",
+        "bd0cafd7-5fb7-48d7-a556-c120c3ad5629",
+        "155d4ae6-e542-47a4-8ebe-567a8099a09f",
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5",
+        "c94a5895-cfaa-47bd-914f-a0704e719be6",
+        "cc9a4b03-6663-4287-a7bb-20d1395ff4d3"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "columns_desktop": 3,
+        "infinite_scroll": true,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": false,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": true,
+        "hide_filter_silhouette": true,
+        "enable_sorting": false,
+        "enable_grid_view_mobile": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/FridaPink-_katefiglerinteriors_1-cropped_2.jpg",
+            "heading": "",
+            "link": ""
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/penelope.jpg",
+            "heading": "",
+            "link": ""
+          }
+        },
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/julia_464417bb-6323-4068-a78b-1a0011e7c8dd.jpg",
+            "heading": "",
+            "link": ""
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/fridagreen_d919893a-fda6-47ce-9e87-449f8a381a2e.jpg",
+            "heading": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-0",
+        "163284582776ee348a-2",
+        "163284582776ee348a-1",
+        "163284582776ee348a-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "image_columns_with_hover_VPGYN3",
+    "product-grid",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

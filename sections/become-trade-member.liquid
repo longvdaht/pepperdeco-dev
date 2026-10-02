@@ -1,0 +1,222 @@
+{{ 'section-main-design-hub.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+<style>
+  [data-section-id="{{ section.id }}"] {
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+    background-color: {{ section.settings.background_color }};
+  }
+  @media (min-width: 768px) {
+    [data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+</style>
+
+<div class="section-outer section-design-hub-content become-trade section-color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+  <div class="page-width center">
+    <div class="grid">
+      <div class="grid__item mobile-one desktop-two-thirds padded">
+        {%- if section.settings.title != blank -%}
+          <h2 class="h1 section-heading">{{ section.settings.title }}</h2>
+        {%- else -%}
+          <h2 class="h1 section-heading">{{ page.title }}</h2>
+        {%- endif -%}
+        <div class="section-content rte">
+          {% if section.settings.content != blank %}
+            {{ section.settings.content }}
+          {% else %}
+            <p>
+              {{ page.content }}
+            </p>
+          {% endif %}
+        </div>
+
+        {% if section.settings.label != blank %}
+          <a href="{{ section.settings.link | default: '#' }}" class="button button--secondary">{{ section.settings.label }}</a>
+        {% endif %}
+         {% if section.settings.label_2 != blank %}
+          <a href="{{ section.settings.link_2 | default: '#' }}" class="button button--secondary">{{ section.settings.label_2 }}</a>
+        {% endif %}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="trade-program__grid">
+          {%- for block in section.blocks -%}
+            <div class="trade-program__card" {{ block.shopify_attributes }}>
+              <div class="trade-program__card-media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.title, class: 'trade-program__card-image' }}
+                {%- else -%}
+                  <div class="trade-program__card-placeholder"></div>
+                {%- endif -%}
+
+                {%- if block.settings.badge_image != blank -%}
+                  <span class="trade-program__card-badge">
+                    {{ block.settings.badge_image | image_url: width: 80 | image_tag: loading: 'lazy', alt: '' }}
+                  </span>
+                {%- endif -%}
+              </div>
+
+              <div class="trade-program__card-body">
+                {%- if block.settings.title != blank -%}
+                  <h4 class="trade-program__card-title">{{ block.settings.title }}</h4>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <p class="trade-program__card-text">{{ block.settings.text }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Become trade member",
+  "class": "become-trade",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Join the Trade Program"
+    },
+    {
+      "type": "richtext",
+      "label": "Content",
+      "id": "content",
+      "default": "<p>Our Trade Program is designed to support interior designers, architects, and design professionals at every stage of a project. Enjoy tiered discounts, complimentary swatches, customization opportunities, tax-exempt purchasing, early access to launches, dedicated account support, and more. Apply below to get started, or reach out to trade@pepper-home.com with any questions.</p>",
+      "info": "Override page content"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link 1"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Button text 1"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Button link 2"
+    },
+    {
+      "type": "text",
+      "id": "label_2",
+      "label": "Button text 2"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-secondary"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Free Samples"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Design a whole room or start with a single piece. Pillows, curtains, and more."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Become trade member",
+      "blocks": [
+        { "type": "card", "settings": { "title": "Free Samples", "text": "Design a whole room or start with a single piece. Pillows, curtains, and more." } },
+        { "type": "card", "settings": { "title": "Preferred Pricing", "text": "Explore our extensive fabric library. Expertly curated and exclusive to us." } },
+        { "type": "card", "settings": { "title": "Concierge Support", "text": "Design to your specifications—pick your measurements, finish, and more." } },
+        { "type": "card", "settings": { "title": "Seamless Online Ordering", "text": "Design a whole room or start with a single piece—pillows, curtains, and more." } },
+        { "type": "card", "settings": { "title": "Early Access", "text": "Explore our extensive fabric library—expertly curated and exclusive to us." } },
+        { "type": "card", "settings": { "title": "Get Featured", "text": "Design to your specifications—pick your measurements, finish, and more." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

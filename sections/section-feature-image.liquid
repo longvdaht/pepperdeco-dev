@@ -1,0 +1,205 @@
+{{ 'section-featured-image.css' | asset_url | stylesheet_tag }}
+
+<div class="section-feature-image section-color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+  <div class="section-inner">
+    <div class="media height-{{ section.settings.height }} height-mobile-{{ section.settings.height_mobile }}" style="--aspect-ratio: {{ section.settings.image.aspect_ratio }}; --aspect-ratio-mobile: {{ section.settings.image_mobile.aspect_ratio }}">
+      <img
+        srcset="
+          {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+          {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+          {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+          {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+          {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+          {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+        "
+        sizes="(min-width: 60em) 60vw, calc(100vw - 4rem)"
+        src="{{ section.settings.image | image_url: width: 530 }}"
+        loading="lazy"
+        alt="{{ section.settings.image.alt | escape }}"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+        class="image-desktop"
+      >
+        {% if section.settings.image_mobile != blank %}
+          <img
+            srcset="
+              {%- if section.settings.image_mobile.width >= 375 -%}{{ section.settings.image_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 750 -%}{{ section.settings.image_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 1100 -%}{{ section.settings.image_mobile | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 1500 -%}{{ section.settings.image_mobile | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 1780 -%}{{ section.settings.image_mobile | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 2000 -%}{{ section.settings.image_mobile | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 3000 -%}{{ section.settings.image_mobile | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if section.settings.image_mobile.width >= 3840 -%}{{ section.settings.image_mobile | image_url: width: 3840 }} 3840w,{%- endif -%}
+            "
+            sizes="(min-width: 60em) 60vw, calc(100vw - 4rem)"
+            src="{{ section.settings.image_mobile | image_url: width: 530 }}"
+            loading="lazy"
+            alt="{{ section.settings.image_mobile.alt | escape }}"
+            width="{{ section.settings.image_mobile.width }}"
+            height="{{ section.settings.image_mobile.width | divided_by: section.settings.image_mobile.aspect_ratio }}"
+            class="image-mobile"
+          >
+        {% endif %}
+        {% if section.settings.logo_desktop != blank or section.settings.logo_mobile != blank %}
+          <div class="logo-content">
+            {% if section.settings.logo_desktop != blank %}
+              <img
+                srcset="
+                  {%- if section.settings.logo_desktop.width >= 375 -%}{{ section.settings.logo_desktop | image_url: width: 375 }} 375w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 750 -%}{{ section.settings.logo_desktop | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 1100 -%}{{ section.settings.logo_desktop | image_url: width: 1100 }} 1100w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 1500 -%}{{ section.settings.logo_desktop | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 1780 -%}{{ section.settings.logo_desktop | image_url: width: 1780 }} 1780w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 2000 -%}{{ section.settings.logo_desktop | image_url: width: 2000 }} 2000w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 3000 -%}{{ section.settings.logo_desktop | image_url: width: 3000 }} 3000w,{%- endif -%}
+                  {%- if section.settings.logo_desktop.width >= 3840 -%}{{ section.settings.logo_desktop | image_url: width: 3840 }} 3840w,{%- endif -%}
+                "
+                sizes="(min-width: 60em) 60vw, calc(100vw - 4rem)"
+                src="{{ section.settings.logo_desktop | image_url: width: 530 }}"
+                loading="lazy"
+                alt="{{ section.settings.logo_desktop.alt | escape }}"
+                width="{{ section.settings.logo_desktop.width }}"
+                height="{{ section.settings.logo_desktop.width | divided_by: section.settings.logo_desktop.aspect_ratio }}"
+                class="{% if section.settings.logo_mobile != blank %}image-desktop{% endif %}"
+                style="--max-width-desktop: {{ section.settings.logo_width }};--max-width-mobile: {% if section.settings.logo_width_mobile %}{{ section.settings.logo_width_mobile }}{% else %}{{ section.settings.logo_width }}{% endif %}"
+              >
+            {% endif %}
+            {% if section.settings.logo_mobile != blank %}
+              <img
+                srcset="
+                  {%- if section.settings.logo_mobile.width >= 375 -%}{{ section.settings.logo_mobile | image_url: width: 375 }} 375w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 750 -%}{{ section.settings.logo_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 1100 -%}{{ section.settings.logo_mobile | image_url: width: 1100 }} 1100w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 1500 -%}{{ section.settings.logo_mobile | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 1780 -%}{{ section.settings.logo_mobile | image_url: width: 1780 }} 1780w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 2000 -%}{{ section.settings.logo_mobile | image_url: width: 2000 }} 2000w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 3000 -%}{{ section.settings.logo_mobile | image_url: width: 3000 }} 3000w,{%- endif -%}
+                  {%- if section.settings.logo_mobile.width >= 3840 -%}{{ section.settings.logo_mobile | image_url: width: 3840 }} 3840w,{%- endif -%}
+                "
+                sizes="(min-width: 60em) 60vw, calc(100vw - 4rem)"
+                src="{{ section.settings.logo_mobile | image_url: width: 530 }}"
+                loading="lazy"
+                alt="{{ section.settings.logo_mobile.alt | escape }}"
+                width="{{ section.settings.logo_mobile.width }}"
+                height="{{ section.settings.logo_mobile.width | divided_by: section.settings.logo_mobile.aspect_ratio }}"
+                class="image-mobile"
+                style="--max-width-desktop: {{ section.settings.logo_width }}; --max-width-mobile: {{ section.settings.logo_width_mobile }}"
+              >
+            {% endif %}
+          </div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero image",
+    "tag": "section",
+    "class": "spaced-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image(desktop)"
+      },
+      {
+        "type": "select",
+        "id": "height",
+        "label": "Height",
+        "default": "medium",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "nature",
+            "label": "Nature"
+          },
+          {
+            "value": "fullscreen",
+            "label": "Full screen"
+          },
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_desktop",
+        "label": "Logo desktop"
+      },
+      {
+        "type": "text",
+        "id": "logo_width",
+        "label": "Logo width",
+        "default": "50%",
+        "info": "Unit: px, %"
+      },
+      {
+        "type": "header",
+        "content": "Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image(mobile)"
+      },
+      {
+        "type": "select",
+        "id": "height_mobile",
+        "label": "Height(mobile)",
+        "default": "nature",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          },
+          {
+            "value": "nature",
+            "label": "Nature"
+          },
+          {
+            "value": "fullscreen",
+            "label": "Full screen"
+          },
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_mobile",
+        "label": "Logo mobile"
+      },
+      {
+        "type": "text",
+        "id": "logo_width_mobile",
+        "label": "Logo width(mobile)",
+        "default": "221px",
+        "info": "Unit: px, %"
+      },
+    ],
+    "presets": [
+      {
+        "name": "Hero image"
+      }
+    ]
+  }
+{% endschema %}

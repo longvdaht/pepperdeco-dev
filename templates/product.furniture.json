@@ -1,0 +1,668 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multi_collection_breadcrumb_Labe4n": {
+      "type": "multi-collection-breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb multi",
+      "settings": {
+        "current_title": "Camel Velvet Hudson",
+        "previous_link_1": "shopify://pages/custom-furniture",
+        "previous_text_1": "Custom Furniture",
+        "previous_link_2": "",
+        "previous_text_2": "",
+        "previous_link_3": "",
+        "previous_text_3": ""
+      }
+    },
+    "main": {
+      "type": "main-product-bed",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "2fc2a15f-b682-4717-a1b1-5769d5d02989": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_xFVH9B": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_bMKfWM": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": "<p>LOOKING FOR MORE OPTIONS? EMAIL <a href=\"mailto:HELLO@PEPPER-HOME.COM\" target=\"_blank\" title=\"mailto:HELLO@PEPPER-HOME.COM\">HELLO@PEPPER-HOME.COM</a> TO PLACE YOUR ORDER.</p>"
+          }
+        },
+        "switch_option_type_qaTzij": {
+          "type": "switch_option_type",
+          "settings": {}
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "leg_hover_image": "shopify://shop_images/furniture-wood-selection-with-words-cropped.jpg"
+          }
+        },
+        "bed_platform_Y3jKDx": {
+          "type": "bed_platform",
+          "settings": {}
+        },
+        "furniture_calculator_CJxXem": {
+          "type": "furniture_calculator",
+          "settings": {
+            "content": "",
+            "text_link": "HOW TO MEASURE FOR DELIVERY",
+            "popup_content_image": "shopify://shop_images/Furniture-Measurement-Delivery-Guide.webp"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "027ec71d-dd6c-4949-8eb7-6006962f8893": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "2fc2a15f-b682-4717-a1b1-5769d5d02989",
+        "description_xFVH9B",
+        "switch_option_color_bMKfWM",
+        "switch_option_type_qaTzij",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "bed_platform_Y3jKDx",
+        "furniture_calculator_CJxXem",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "027ec71d-dd6c-4949-8eb7-6006962f8893",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "",
+        "pompom_trims": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "section_image_with_frame_r6mHAJ": {
+      "type": "section-image-with-frame",
+      "disabled": true,
+      "name": "Image with a frame",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Our Craft, Up Close",
+        "heading_size": "h1",
+        "subheading": "",
+        "content": "<p><strong>COMPLETELY CUSTOM<br/></strong>Your piece doesn’t exist until you design it. Our furniture is made to order and shipped directly from our workroom.</p><p><strong>ROOTED IN CRAFTSMANSHIP<br/></strong>We’re proud to continue North Carolina’s rich tradition of fine furniture making—where skilled craftspeople marry time-honored techniques with modern technology.<br/><br/><strong>SUSTAINABLY MADE</strong><br/>From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.</p>",
+        "image": "shopify://shop_images/Screenshot_2025-05-01_at_10.32.18_AM_1.png",
+        "video": "shopify://files/videos/Manufacturing-furniture.mp4",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "",
+        "label": ""
+      }
+    },
+    "section_fabric_options_Q3iGMy": {
+      "type": "section-fabric-options",
+      "name": "Compare fabric options",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Find the Right Fabric for Your Piece",
+        "subheading": "A tailored guide to your perfect match. See the differences at a glance.",
+        "subheading_width": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "cushion_firmness_PUATmR": {
+      "type": "cushion-firmness",
+      "name": "Cushion firmness",
+      "settings": {
+        "background_color": "",
+        "heading": "{{ product.metafields.custom.cushion_firmness_heading.value }}",
+        "description": "<p>{{ product.metafields.custom.cushion_firmness_description | metafield_tag }}</p>",
+        "text_alignment": "center",
+        "padding_top": 100,
+        "padding_bottom": 80,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "two_column_features_NrktBe": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_7B6We6": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn't exist until you design it. Our furniture is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_zBAyej": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-2.png",
+            "title": "Sustainable By Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_7B6We6",
+        "feature_column_zBAyej"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_bftBnk": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_zKjw73": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-bed-solid-velvet-camel-3x4.jpg",
+            "product": "bed-hudson-solid-velvet-camel"
+          }
+        },
+        "slide_aXEzxr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Lila-Chair-FlorenceEucalyptus-MonicaLavin-10-Cropped.jpg",
+            "product": "chair-lila-printedlinen-florence-eucalyptus"
+          }
+        },
+        "slide_e934WG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-furniture-bed-theodora-quinn-sage-_hannahsmckenna-Cropped.jpg",
+            "product": "headboard-theodora-chenillejacquard-quinn-sage"
+          }
+        },
+        "slide_EAkCJ8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Furniture-Blaire-MargotFlour-_lavinlabel_and_margaret.wright-20260326-28-AdApproved.jpg",
+            "product": "margot-flour"
+          }
+        },
+        "slide_6y7wxJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Furniture-Bed-Regina-Emma-Sky-EmmaR-Fall2025.jpg",
+            "product": "bed-regina-printedlinen-emma-sky"
+          }
+        },
+        "slide_feRWzR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Furniture-Chair-Dorothy-Louisa-Sage-_figdesigncompany-20251112-1-AdApproved.jpg",
+            "product": "chair-dorothy-woven-louisa-sage"
+          }
+        },
+        "slide_NNeThe": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Furniture-Bed-Regina-Embroidered-Hayes-SeaSalt-EllieH-20250609-2.jpg",
+            "product": "bed-regina-embroidered-hayes-seasalt"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zKjw73",
+        "slide_aXEzxr",
+        "slide_e934WG",
+        "slide_EAkCJ8",
+        "slide_6y7wxJ",
+        "slide_feRWzR",
+        "slide_NNeThe"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at Your Place",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_color_swatch_VKkQKw": {
+      "type": "section-color-swatch",
+      "blocks": {
+        "color_pzYMFp": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/snow-cotton.webp",
+            "color": "#ffffff",
+            "name": "Snow",
+            "type": "Cotton"
+          }
+        },
+        "color_9kXDXJ": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/camel-velvet.webp",
+            "color": "#a49f73",
+            "name": "Camel",
+            "type": "Velvet"
+          }
+        },
+        "color_HHUfrJ": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/citron-velvet.png",
+            "color": "",
+            "name": "Citron",
+            "type": "Velvet"
+          }
+        },
+        "color_kzUEKy": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/walnut-velvet.webp",
+            "color": "",
+            "name": "Walnut",
+            "type": "Velvet"
+          }
+        },
+        "color_DUPNbW": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/moss-cotton.webp",
+            "color": "",
+            "name": "Moss",
+            "type": "Linen"
+          }
+        },
+        "color_CYbwcX": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/fern-velvet.webp",
+            "color": "",
+            "name": "Fern",
+            "type": "Velvet"
+          }
+        },
+        "color_NxbQ7y": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/sage-cotton.webp",
+            "color": "",
+            "name": "Sage",
+            "type": "Cotton"
+          }
+        },
+        "color_VpA9Y4": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/peacock-velvet.webp",
+            "color": "",
+            "name": "Peacock",
+            "type": "Velvet"
+          }
+        },
+        "color_L6NQQx": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/powder-cotton.webp",
+            "color": "",
+            "name": "Cadet",
+            "type": "Velvet"
+          }
+        },
+        "color_xEnQRD": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/cadet-velvet.webp",
+            "color": "",
+            "name": "Midnight",
+            "type": "Cotton"
+          }
+        },
+        "color_G4F9GD": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/harbor-cotton.webp",
+            "color": "",
+            "name": "Harbor",
+            "type": "Linen"
+          }
+        },
+        "color_7mP88F": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/midnight-cotton.webp",
+            "color": "",
+            "name": "Powder",
+            "type": "Cotton"
+          }
+        },
+        "color_iHnk8f": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/sky-velvet.webp",
+            "color": "",
+            "name": "Sky",
+            "type": "Velvet"
+          }
+        },
+        "color_C3XXhX": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/lilac-velvet.webp",
+            "color": "",
+            "name": "Lilac",
+            "type": "Velvet"
+          }
+        },
+        "color_7HY8xF": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/nutmeg-cotton.webp",
+            "color": "",
+            "name": "Orchid",
+            "type": "Cotton"
+          }
+        },
+        "color_JBteLM": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/rose-velvet.webp",
+            "color": "",
+            "name": "Rose",
+            "type": "Velvet"
+          }
+        },
+        "color_4HVeEd": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/cosmo-velvet.webp",
+            "color": "",
+            "name": "Cosmo",
+            "type": "Velvet"
+          }
+        },
+        "color_j6dtU8": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/rasberry-cotton.webp",
+            "color": "",
+            "name": "Rasberry",
+            "type": "Cotton"
+          }
+        },
+        "color_fQCciQ": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/cherry-cotton.webp",
+            "color": "",
+            "name": "Cherry",
+            "type": "Cotton"
+          }
+        },
+        "color_JErdHT": {
+          "type": "color",
+          "settings": {
+            "image": "shopify://shop_images/orchid-cotton.webp",
+            "color": "",
+            "name": "Nutmeg",
+            "type": "Cotton"
+          }
+        }
+      },
+      "block_order": [
+        "color_pzYMFp",
+        "color_9kXDXJ",
+        "color_HHUfrJ",
+        "color_kzUEKy",
+        "color_DUPNbW",
+        "color_CYbwcX",
+        "color_NxbQ7y",
+        "color_VpA9Y4",
+        "color_L6NQQx",
+        "color_xEnQRD",
+        "color_G4F9GD",
+        "color_7mP88F",
+        "color_iHnk8f",
+        "color_C3XXhX",
+        "color_7HY8xF",
+        "color_JBteLM",
+        "color_4HVeEd",
+        "color_j6dtU8",
+        "color_fQCciQ",
+        "color_JErdHT"
+      ],
+      "disabled": true,
+      "name": "Section color swatch",
+      "settings": {
+        "background_color": "",
+        "heading": "Welt Options",
+        "subheading": "Mix and match fabrics and welts in the Trim section of any product page to discover your perfect pairing.",
+        "subheading_width": "400",
+        "button_text": "Shop samples",
+        "button_link": "shopify://collections/sample-furniture",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "c166d93d-961e-4693-ac9e-2391913f984b": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "c166d93d-961e-4693-ac9e-2391913f984b"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_ECFinm": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_iHqNk9": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_iHqNk9"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_g9RYBd": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_BPDWgD": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_hAiJca": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_4twKbB": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance"
+          }
+        },
+        "column_htBY3A": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/headboards.png",
+            "image_width": 140,
+            "title": "View Product Guides",
+            "content": "Get all the answers—from customization to measuring.",
+            "link_text": "EXPLORE",
+            "link_url": "shopify://pages/design-hub"
+          }
+        }
+      },
+      "block_order": [
+        "column_hAiJca",
+        "column_4twKbB",
+        "column_htBY3A"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "multi_collection_breadcrumb_Labe4n",
+    "main",
+    "product-recommendations",
+    "section_image_with_frame_r6mHAJ",
+    "section_fabric_options_Q3iGMy",
+    "cushion_firmness_PUATmR",
+    "two_column_features_NrktBe",
+    "curated_spaces_bftBnk",
+    "section_color_swatch_VKkQKw",
+    "1633988363790b2161",
+    "163398841244446eb7",
+    "app_review_ECFinm",
+    "recently_viewed_products_g9RYBd",
+    "section_text_with_icon_column_BPDWgD"
+  ]
+}

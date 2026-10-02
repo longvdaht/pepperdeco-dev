@@ -1,0 +1,771 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-curtain",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "1dabe311-a4e9-4179-82c2-09f28e8e9737": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_GFQ4CB": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_fNGyAy": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": "<p>LOOKING FOR MORE OPTIONS? EMAIL <a href=\"mailto:HELLO@PEPPER-HOME.COM\" target=\"_blank\" title=\"mailto:HELLO@PEPPER-HOME.COM\">HELLO@PEPPER-HOME.COM</a> TO PLACE YOUR ORDER.</p>"
+          }
+        },
+        "switch_option_type_fWrXBR": {
+          "type": "switch_option_type",
+          "settings": {}
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_calculator": true,
+            "content": ""
+          }
+        },
+        "543fad13-9742-47f7-80ed-833fb9311e5e": {
+          "type": "curtain_calculator",
+          "disabled": true,
+          "settings": {
+            "content": "Not sure what size you need?"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "16e8b19f-0fe9-4898-8a88-fa75f4cf4b89": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "1dabe311-a4e9-4179-82c2-09f28e8e9737",
+        "description_GFQ4CB",
+        "switch_option_color_fNGyAy",
+        "switch_option_type_fWrXBR",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "543fad13-9742-47f7-80ed-833fb9311e5e",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "16e8b19f-0fe9-4898-8a88-fa75f4cf4b89",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 430px) {.construction-radio {background-size: auto 70%; }}"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "Pre-order, ETA 10/16",
+        "pompom_trims": "Camel Velvet Band,Sky Velvet Band"
+      }
+    },
+    "section_compare_options_MVtkBP": {
+      "type": "section-compare-options",
+      "settings": {
+        "heading": "Fabric Options",
+        "subheading": "The Art of Fabric: Cotton or Linen—See Which OneSuits Your Space Best",
+        "subheading_width": "400",
+        "background_color": "#f3f1ec",
+        "button_text": "ORDER FABRIC SAMPLES",
+        "button_url": ""
+      }
+    },
+    "section_construction_options_RX4CdA": {
+      "type": "section-construction-options",
+      "blocks": {
+        "option_NbaMEN": {
+          "type": "option",
+          "settings": {
+            "heading": "Rod Pocket",
+            "image": "shopify://shop_images/Curtain-Construction-Rod-Pocket.png",
+            "content": "<p>This classic curtain style offers a clean look with a 1.5” sewn-in pocket to accommodate hardware, perfect for adding a decorative touch to your space. This style can also be used with <a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">CLIPS</a> for a more casual look.</p><p><strong>DETAILS</strong><br/>Our Cafe Curtain pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate sewn pocket; rod not included.</p>",
+            "button_text": "SEE OUR HARDWARE EDIT",
+            "button_link": "https://pepperdeco.myshopify.com/blogs/pep-talk/cafe-curtain-hardware"
+          }
+        },
+        "option_jfrMth": {
+          "type": "option",
+          "settings": {
+            "heading": "Rod w. Header",
+            "image": "shopify://shop_images/Cafe-Curtain-Construction-Rod-w-Header.png",
+            "content": "<p>Primarily for decorative use, this style features a sewn-in pocket to accommodate hardware and a 1.5” fabric header that adds a touch of flair to a classic style.</p><p><strong>DETAILS</strong><br/>Our Cafe Curtain rod pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate the sewn pocket; rod not included.</p>",
+            "button_text": "SEE OUR HARDWARE EDIT",
+            "button_link": "https://pepperdeco.myshopify.com/blogs/pep-talk/cafe-curtain-hardware"
+          }
+        },
+        "option_a9m3yM": {
+          "type": "option",
+          "settings": {
+            "heading": "Double Rod",
+            "image": "shopify://shop_images/Cafe-Curtain-Construction-Double-Rod.png",
+            "content": "<p>Ideal for French doors and cabinets, these panels require two rods for installation. The sewn-in pockets and 1.5” header on both the top and bottom make this style practical and elevated.</p><p><strong>DETAILS</strong><br/>Our Cafe Curtain rod pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate the sewn pocket; rod not included.</p>",
+            "button_text": "SEE OUR HARDWARE EDIT",
+            "button_link": "https://pepperdeco.myshopify.com/blogs/pep-talk/cafe-curtain-hardware"
+          }
+        },
+        "option_7W4BJg": {
+          "type": "option",
+          "settings": {
+            "heading": "Ring Top",
+            "image": "shopify://shop_images/Curtain-Construction-Ring-Top.png",
+            "content": "<p>These panels are hung by attaching their built-in hooks to your curtain rings. Easy to use, these are great for spaces where you plan on opening and closing your drapes every day.</p><p><strong>DETAILS</strong><br/>Curtain hooks are sewn in. Rod and rings are not included. </p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p><ul><li>25” - 6 Hooks</li><li>50” - 12 Hooks</li><li>75” - 17 Hooks</li><li>100” - 21 Hooks</li></ul>",
+            "button_text": "SEE OUR HARDWARE EDIT",
+            "button_link": "https://pepperdeco.myshopify.com/blogs/pep-talk/cafe-curtain-hardware"
+          }
+        },
+        "option_NxpjQK": {
+          "type": "option",
+          "settings": {
+            "heading": "Pinch Pleat",
+            "image": "shopify://shop_images/Curtain-Construction-Pinch-Pleat.png",
+            "content": "<p>Made with twice as much fabric, these panels offer a voluminous look. Triple pleats add an elegant, formal flare while their hooks make it easy to attach to curtain rings.</p><p><strong>DETAILS</strong> <br/>Curtain hooks are sewn in. Rod and rings are not included. Pleated curtain width refers to the finished top width.</p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p><ul><li>25\" - 6 Hooks</li><li>50\" - 12 Hooks</li><li>75\" - 18 Hooks</li><li>100\" - 22 Hooks</li></ul>",
+            "button_text": "SEE OUR HARDWARE EDIT",
+            "button_link": "https://pepperdeco.myshopify.com/blogs/pep-talk/cafe-curtain-hardware"
+          }
+        },
+        "option_Di4PUU": {
+          "type": "option",
+          "settings": {
+            "heading": "Tailored Pleat",
+            "image": "shopify://shop_images/Curtain-Construction-Tailored-Pleat.png",
+            "content": "<p>A more modern silhouette than pinch pleat, tailored pleats bring a subtle sophistication to any room. Made with twice the amount of fabric, these panels offer a voluminous look.</p><p><strong>DETAILS</strong><br/>Curtain hooks are sewn in. Rod and rings are not included. Pleated curtain width refers to the finished top width.</p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p><ul><li>25\" - 7 Hooks</li><li>50\" - 12 Hooks</li><li>75\" - 18 Hooks</li><li>100\" - 22 Hooks</li></ul>",
+            "button_text": "SEE OUR HARDWARE EDIT",
+            "button_link": "https://pepperdeco.myshopify.com/blogs/pep-talk/cafe-curtain-hardware"
+          }
+        }
+      },
+      "block_order": [
+        "option_NbaMEN",
+        "option_jfrMth",
+        "option_a9m3yM",
+        "option_7W4BJg",
+        "option_NxpjQK",
+        "option_Di4PUU"
+      ],
+      "name": "Construction options",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Construction Options",
+        "subheading": "",
+        "subheading_width": "400",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product_additional_n6Gei4": {
+      "type": "product-additional",
+      "blocks": {
+        "tab_VrVVpR": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod Pocket",
+            "tab_image": "shopify://shop_images/curtain-icon-rod-pocket-crop.png",
+            "image_content_heading": "shopify://shop_images/script-RodPocket.png",
+            "image_content_width": 152,
+            "content": "<p>This classic curtain style offers a clean look with a 1.5” sewn-in pocket to accommodate hardware, perfect for adding a decorative touch to your space. This style can also be used with <a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">CLIPS</a> for a more casual look.<br/><br/><strong>DETAILS</strong><br/>Our Cafe Curtain pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate sewn pocket; rod not included.</p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-RodPocket-Front-with-Copy.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-RodPocketwithClips-Front-with-Copy.jpg"
+          }
+        },
+        "tab_bLBQHa": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod w. Header",
+            "tab_image": "shopify://shop_images/curtain-icon-rod-header-crop.png",
+            "image_content_heading": "shopify://shop_images/script-RodwithHeader.png",
+            "image_content_width": 180,
+            "content": "<p>Primarily for decorative use, this style features a sewn-in pocket to accommodate hardware and a 1.5” fabric header that adds a touch of flair to a classic style. Only available as a Cafe Curtain. </p><p><strong>DETAILS</strong><br/>Our Cafe Curtain rod pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate the sewn pocket; rod not included.</p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-RodPocketwithHeader-Front-with-Copy.jpg"
+          }
+        },
+        "tab_C98Yqx": {
+          "type": "tab",
+          "settings": {
+            "heading": "Double Rod",
+            "tab_image": "shopify://shop_images/curtain-icon-double-rod-crop.png",
+            "image_content_heading": "shopify://shop_images/script-DoubleRod.png",
+            "image_content_width": 180,
+            "content": "<p>Ideal for French doors and cabinets, these panels require two rods for installation. The sewn-in pockets and 1.5” header on both the top and bottom make this style practical and elevated. Only available as a Cafe Curtain.</p><p><strong>DETAILS</strong><br/>Our Cafe Curtain rod pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate the sewn pocket; rod not included.</p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-DoubleRodPocketwithHeader-Front-with-Copy.jpg"
+          }
+        },
+        "tab_eeGwzh": {
+          "type": "tab",
+          "settings": {
+            "heading": "Ring Top",
+            "tab_image": "shopify://shop_images/curtain-icon-ring-top-crop.png",
+            "image_content_heading": "shopify://shop_images/script-RingTop.png",
+            "image_content_width": 120,
+            "content": "<p>These panels are hung by attaching their built-in hooks to your curtain rings. Easy to use, these are great for spaces where you plan on opening and closing your drapes every day.<br/><br/><strong>DETAILS</strong><br/>Curtain hooks are sewn in. Rod and rings are not included. </p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p><ul><li>25” - 6 Hooks</li><li>50” - 12 Hooks</li><li>75” - 17 Hooks</li><li>100” - 21 Hooks</li></ul>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-RingTop-Front-with-Copy.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-RingTop-Back-with-Copy.jpg"
+          }
+        },
+        "tab_LyJtqP": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pinch Pleat",
+            "tab_image": "shopify://shop_images/curtain-icon-pinch-pleat-crop.png",
+            "image_content_heading": "shopify://shop_images/script-PinchPleat.png",
+            "image_content_width": 180,
+            "content": "<p>Made with twice the amount of fabric, these panels offer a voluminous look. Triple pleats add an elegant, formal flare while their hooks make it easy to attach to curtain rings.<br/><br/><strong>DETAILS</strong> <br/>Curtain hooks are sewn in. Rod and rings are not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.9x the top. </p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p><ul><li>25\" - 6 Hooks</li><li>50\" - 12 Hooks</li><li>75\" - 18 Hooks</li><li>100\" - 22 Hooks</li></ul>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-PinchPleat-Front-with-Copy.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-PinchPleat-Back-with-Copy.jpg"
+          }
+        },
+        "tab_HcwCHW": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tailored Pleat",
+            "tab_image": "shopify://shop_images/curtain-icon-tailored-pleat-crop.png",
+            "image_content_heading": "shopify://shop_images/script-TailoredPleat.png",
+            "image_content_width": 200,
+            "content": "<p>A more modern silhouette than pinch pleat, tailored pleats bring a subtle sophistication to any room. Made with twice the amount of fabric, these panels offer a voluminous look.</p><p><strong>DETAILS</strong><br/>Curtain hooks are sewn in. Rod and rings are not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.8x the top.</p><p><a href=\"/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"Cafe Curtain Hardware\">SEE OUR HARDWARE EDIT</a></p><ul><li>25\" - 7 Hooks</li><li>50\" - 12 Hooks</li><li>75\" - 18 Hooks</li><li>100\" - 22 Hooks</li></ul>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-TailoredPleat-Front-with-Copy.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-TailoredPleat-Back-with-Copy.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_VrVVpR",
+        "tab_bLBQHa",
+        "tab_C98Yqx",
+        "tab_eeGwzh",
+        "tab_LyJtqP",
+        "tab_HcwCHW"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Construction Options",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "#e7e2d8",
+        "tab_style": "image-text",
+        "show_dots": false,
+        "show_buttons": true
+      }
+    },
+    "1634590701256a67be": {
+      "type": "product-additional",
+      "blocks": {
+        "e99a9d68-f14c-411b-9dd7-2907fc0ed6b4": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod Pocket",
+            "image_content_heading": "shopify://shop_images/script-RodPocket.png",
+            "image_content_width": 152,
+            "content": "<p>This classic curtain style offers a clean look with a 1.5” sewn-in pocket to accommodate hardware, perfect for adding a decorative touch to your space. This style can also be used with <a href=\"https://pepper-home.com/blogs/pep-talk/cafe-curtain-hardware\" target=\"_blank\" title=\"https://pepper-home.com/blogs/pep-talk/cafe-curtain-hardware\">clips</a> for a more casual look.<br/><br/><strong>DETAILS</strong><br/>Our Cafe Curtain pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate sewn pocket; rod not included</p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-RodPocket-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-RodPocketwithClips-Front.jpg"
+          }
+        },
+        "tab_dnxxJR": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod w. Header",
+            "image_content_heading": "shopify://shop_images/script-RodwithHeader.png",
+            "image_content_width": 180,
+            "content": "<p>Primarily for decorative use, this style features a sewn-in pocket to accommodate hardware and a 1.5” fabric header that adds a touch of flare to a classic style. Only available as a Cafe Curtain. </p><p><strong>DETAILS</strong><br/>Our Cafe Curtain rod pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate the sewn pocket; rod not included.</p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-RodPocketwithHeader-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-RodPocketwithHeader-Back.jpg"
+          }
+        },
+        "bc27e6ca-5972-4823-94e7-cd53585c95d9": {
+          "type": "tab",
+          "settings": {
+            "heading": "Double Rod",
+            "image_content_heading": "shopify://shop_images/script-DoubleRod.png",
+            "image_content_width": 180,
+            "content": "<p>Ideal for French doors and cabinets, these panels require two rods for installation. The sewn-in pockets and 1.5” header on both the top and bottom make this style practical and elevated. Only available as a Cafe Curtain.</p><p><strong>DETAILS</strong><br/>Our Cafe Curtain rod pocket is smaller than our standard Curtain rod pocket. We suggest a 3/8\" or smaller rod to accommodate the sewn pocket; rod not included.</p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-DoubleRodPocketwithHeader-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-DoubleRodPocketwithHeader-Back.jpg"
+          }
+        },
+        "8d5948b5-26ab-479f-8064-5586a78a2be1": {
+          "type": "tab",
+          "settings": {
+            "heading": "Ring Top",
+            "image_content_heading": "shopify://shop_images/script-RingTop.png",
+            "image_content_width": 150,
+            "content": "<p>These panels are hung by attaching their built-in hooks to your curtain rings. (see our <a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">Cafe Curtain Hardware Edit</a>) Easy to use, these are great for spaces where you plan on opening and closing your drapes every day.<br/><br/><strong>DETAILS</strong><br/>Curtain hooks are sewn in (25\" - 6 hooks, 50\" - 12 hooks, 75\" - 17, 100\" - 21 hooks); rod/rings not included</p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-RingTop-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-RingTop-Back.jpg"
+          }
+        },
+        "f480a4ef-afc1-46a9-9397-a3857d2c1d9f": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pinch Pleat",
+            "image_content_heading": "shopify://shop_images/script-PinchPleat.png",
+            "image_content_width": 180,
+            "content": "<p>Made with twice the amount of fabric, these panels offer a voluminous look. Triple pleats add an elegant, formal flare while their hooks make it easy to attach to curtain rings. (see our <a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">Cafe Curtain Hardware Edit</a>).<br/><br/><strong>DETAILS</strong> <br/>Curtain hooks are sewn in (25\" - 6 hooks, 50\" - 12 hooks, 75\" - 18 hooks, 100\" - 22 hooks); rod/rings not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.9x the top.</p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-PinchPleat-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-PinchPleat-Back.jpg"
+          }
+        },
+        "f75c8960-782d-4e68-81f4-03c15ebe3e44": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tailored Pleat",
+            "image_content_heading": "shopify://shop_images/script-TailoredPleat.png",
+            "image_content_width": 230,
+            "content": "<p>A more modern silhouette than our pinch pleat, tailored pleats bring a subtle sophistication to any room. Made with twice the amount of fabric, these panels offer a voluminous look and attached hooks make it easy to attach to curtain rings. (see our <a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">Cafe Curtain Hardware Edit</a>)</p><p><strong>DETAILS</strong><br/>Curtain hooks are sewn in (25\" - 7 hooks, 50\" - 12 hooks, 75\" - 18 hooks, 100\" - 22 hooks); rod/rings not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.8x the top.</p>",
+            "image_1": "shopify://shop_images/Construction-CafeCurtain-TailoredPleat-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-CafeCurtain-TailoredPleat-Back.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e99a9d68-f14c-411b-9dd7-2907fc0ed6b4",
+        "tab_dnxxJR",
+        "bc27e6ca-5972-4823-94e7-cd53585c95d9",
+        "8d5948b5-26ab-479f-8064-5586a78a2be1",
+        "f480a4ef-afc1-46a9-9397-a3857d2c1d9f",
+        "f75c8960-782d-4e68-81f4-03c15ebe3e44"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Construction Options",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "#e7e2d8",
+        "tab_style": "image-text",
+        "show_dots": false,
+        "show_buttons": true
+      }
+    },
+    "section_image_with_text_column_JgMzwk": {
+      "type": "section-image-with-text-column",
+      "disabled": true,
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Trim Options",
+        "heading_size": "h3",
+        "subheading": "<p>It’s all about the finishing touch. Curtain trim options include:</p>",
+        "content": "<p><strong>BAND</strong><br/>Add subtle style with ease. Our 2” textured band brings a modern minimalist touch to any space.</p><p><strong>TASSEL</strong><br/>A versatile trim that fits any style—from a classic reading room to a breezy boho nook.</p><p><strong>RICK RACK</strong><br/>Irresistible charm meets sophisticated color for a finish that’s delightfully unexpected.</p><p><strong>POM POM</strong><br/>Soft, sweet, and playful. Pom trim adds a whimsical finish to pillows, upholstery, and drapery.</p>",
+        "image": "shopify://shop_images/GreenTrim-Moodboard-Full_2_1.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "shopify://collections/curtain-trim-samples",
+        "label": "ORDER TRIM SAMPLES",
+        "button_type": "button"
+      }
+    },
+    "two_column_features_6eVV8r": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_pk8mim": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn't exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_QAUa99": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-1.jpg",
+            "title": "Sustainable By Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_pk8mim",
+        "feature_column_QAUa99"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_yXFac8": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_6VHyR8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-windowtreatments-madelineflour.jpg",
+            "product": "cafecurtain-sheer-madeline-flour-custom"
+          }
+        },
+        "slide_VqL3We": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-cafecurtains-viviennepistachio.jpg",
+            "product": "cafecurtain-embroidered-vivienne-pistachio-custom"
+          }
+        },
+        "slide_D3K9Mh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-cafecurtains-eloiseflour.jpg",
+            "product": "cafecurtain-sheer-eloise-flour-custom"
+          }
+        },
+        "slide_awRXmz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-cafecurtains-flour.jpg",
+            "product": "cafecurtain-solid-linen-flour-custom"
+          }
+        },
+        "slide_JFDaRf": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CafeCurtain-Sheer-Madeline-Cornflower-_sarahgtucker-20250107-1-AdApproved-Cropped.jpg",
+            "product": "cafecurtain-sheer-madeline-cornflower-custom"
+          }
+        },
+        "slide_ibgRQA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-cafecurtain-juliablue.jpg",
+            "product": "cafecurtain-printedcotton-julia-blue-custom"
+          }
+        },
+        "slide_AwGWie": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CafeCurtain-Sheer-Madeline-Flour-_suzannahstanley-202508122025-2-AdApproved-Cropped.jpg",
+            "product": "cafecurtain-sheer-madeline-flour-custom"
+          }
+        },
+        "slide_7JKhCk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-CafeCurtain-2.jpg",
+            "product": "cafecurtain-printedcotton-serena-pink-custom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6VHyR8",
+        "slide_VqL3We",
+        "slide_D3K9Mh",
+        "slide_awRXmz",
+        "slide_JFDaRf",
+        "slide_ibgRQA",
+        "slide_AwGWie",
+        "slide_7JKhCk"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at <i>Your</i> Place",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "166179571189849d13": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {
+        "color": "dark-green",
+        "simple": true,
+        "color_scheme": "background-secondary",
+        "padded": false
+      }
+    },
+    "16605746187190fc43": {
+      "type": "product-additional",
+      "blocks": {
+        "ba93773c-db9c-4919-8f51-0ea5de862d02": {
+          "type": "tab",
+          "settings": {
+            "heading": "Band",
+            "image_content_width": 150,
+            "content": "<p>It doesn’t get more timeless than this. Our textured band trim brings a modern minimalist touch. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Band.png"
+          }
+        },
+        "02028c99-e0cd-48a0-ba0d-ee85b9e13f89": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tassel",
+            "image_content_width": 150,
+            "content": "<p>A versatile trim that suits any style—from a traditional reading room to a breezy boho breakfast nook. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Tassel.png"
+          }
+        },
+        "edbd427b-181e-43dd-8ae5-9466975a8cba": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rick Rack",
+            "image_content_width": 150,
+            "content": "<p>Elevated craft meets sophisticated color with rick rack trim that’s delightfully unexpected.</p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-RickRack.png"
+          }
+        },
+        "506962c5-6bb6-4391-ab06-d56ae73480b8": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pom Pom",
+            "image_content_width": 150,
+            "content": "<p>It’s soft, it’s sweet, it’s irresistible. We love pom pom trim for cozy spaces, especially a bedroom or nursery. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-PomPom.png"
+          }
+        }
+      },
+      "block_order": [
+        "ba93773c-db9c-4919-8f51-0ea5de862d02",
+        "02028c99-e0cd-48a0-ba0d-ee85b9e13f89",
+        "edbd427b-181e-43dd-8ae5-9466975a8cba",
+        "506962c5-6bb6-4391-ab06-d56ae73480b8"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Trim Selections",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "artist_section_jp6h8j": {
+      "type": "artist-section",
+      "disabled": true,
+      "settings": {
+        "section_full_width": "no",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "background_color": "#f3f1ec"
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "8d90abfe-bceb-46b7-b09f-42a0c6a8a2a7": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "8d90abfe-bceb-46b7-b09f-42a0c6a8a2a7"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "4993ab6e-e4bf-4b4c-b560-e1359635c893": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "4993ab6e-e4bf-4b4c-b560-e1359635c893"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_giPriQ": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_YNqMPG": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_YNqMPG"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_eF7TrD": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_cnYDyc": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_xG8faC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/PaintFanBook.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance"
+          }
+        },
+        "column_xMVpWG": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Fabric Swatches",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_hjpLJD": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Cafecurtain-Flour-SkyVelvetBand.png",
+            "image_width": 140,
+            "title": "View Product Guides",
+            "content": "Get all the answers—from customization to measuring.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        }
+      },
+      "block_order": [
+        "column_xG8faC",
+        "column_xMVpWG",
+        "column_hjpLJD"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_compare_options_MVtkBP",
+    "section_construction_options_RX4CdA",
+    "product_additional_n6Gei4",
+    "1634590701256a67be",
+    "section_image_with_text_column_JgMzwk",
+    "two_column_features_6eVV8r",
+    "curated_spaces_yXFac8",
+    "166179571189849d13",
+    "16605746187190fc43",
+    "product-recommendations",
+    "artist_section_jp6h8j",
+    "1633988363790b2161",
+    "163398841244446eb7",
+    "app_review_giPriQ",
+    "recently_viewed_products_eF7TrD",
+    "section_text_with_icon_column_cnYDyc"
+  ]
+}

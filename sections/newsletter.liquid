@@ -1,0 +1,54 @@
+{{ 'section-newsletter.css' | asset_url | stylesheet_tag }}
+
+{% unless template.name == 'page' and template.suffix contains "calculator" %}
+<div class="section-outer section-color-background-quaternary" role="complementary" aria-label="Newsletter signup">
+  <div class="page-width">
+    <div class="grid mobile-1 desktop-2">
+      <div class="grid__item">
+        <div class="section-content">
+          <h5 class="section-heading">
+            {{- section.settings.heading -}}
+          </h5>
+          <div class="section-subheading">
+            {{- section.settings.subheading -}}
+          </div>
+        </div>
+      </div>
+      <div class="grid__item">
+        {{ section.settings.newsletter_code }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "section-newsletter spaced-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "html",
+      "id": "newsletter_code",
+      "label": "Klaviyo newsletter code",
+      "default": "<div class='klaviyo-form-PR9Smt'></div>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

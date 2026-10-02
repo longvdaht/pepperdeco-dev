@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "settings": {
+        "media_thumbnail": "horizontal",
+        "hide_variants": true,
+        "show_dots": true,
+        "show_buttons": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "enable_pillow_ruffle": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d"
+      ],
+      "settings": {
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "c166d93d-961e-4693-ac9e-2391913f984b": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "c166d93d-961e-4693-ac9e-2391913f984b"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-secondary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "1633988363790b2161",
+    "163398841244446eb7"
+  ]
+}

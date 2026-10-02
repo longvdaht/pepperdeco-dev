@@ -1,0 +1,46 @@
+<script>
+  (function ($) {
+    $(document).on('page:load page:change', function () {
+      $('#buyer_signature_optout').addClass('visually-hidden');
+      if (Shopify.Checkout.step === 'shipping_method') {
+        if (parseInt($('#buyer_signature_optout').data('subtotal')) > 55000) {
+          $('#buyer_signature_optout').removeClass('visually-hidden').appendTo($('.section--shipping-method'));
+        }
+      }
+      if (Shopify.Checkout.step === 'payment_method') {
+        const $policy_checkbox = $("input[type='checkbox'][name='checkout[attributes][buyer_accepts_policy]']");
+
+        $('#buyer_accepts_policy').removeClass('visually-hidden').appendTo($('[data-billing-address]'));
+
+        $policy_checkbox.on('change', function (e) {
+          $('#checkout_buyer_accepts_policy_error').text('');
+          $('#buyer_accepts_policy').removeClass('input--error');
+        });
+
+        $("button[type='submit']").on('click', function (e) {
+          e.preventDefault();
+          if ($policy_checkbox.is(':checked')) {
+            $('form[data-payment-form]').trigger('submit');
+          } else {
+            $policy_checkbox.focus();
+            $('#buyer_accepts_policy').addClass('input--error');
+            $('#checkout_buyer_accepts_policy_error').text('Please accept our terms to complete your purchase.');
+          }
+        });
+
+        $('form[data-payment-form]').on('keyup', function (e) {
+          if (e.keycode === 13) {
+            e.preventDefault();
+            if ($policy_checkbox.is(':checked')) {
+              $('form[data-payment-form]').submit();
+            } else {
+              $policy_checkbox.focus();
+              $('#buyer_accepts_policy').addClass('input--error');
+              $('#checkout_buyer_accepts_policy_error').text('Please accept our terms to complete your purchase.');
+            }
+          }
+        });
+      }
+    });
+  })(Checkout.$);
+</script>

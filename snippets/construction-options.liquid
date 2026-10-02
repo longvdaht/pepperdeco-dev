@@ -1,0 +1,125 @@
+{%- unless product.type contains 'Cafe' -%}
+  {% if product.type contains 'Roman' %}
+    {% if product.tags contains 'material:sheer' %}
+      {%- assign construction_types = 'Flat,Relaxed' | split: ',' -%}
+    {% else %}
+      {%- assign construction_types = 'Flat,Ribbed,Relaxed,Scalloped' | split: ',' -%}
+    {% endif %}
+  {% elsif product.type contains 'Valance' %}
+    {%- assign construction_types = 'Classic,Scalloped' | split: ',' -%}
+  {% elsif product.type contains 'Cornice' %}
+    {%- assign construction_types = 'Classic' | split: ',' -%}
+  {% else %}
+    {%- assign construction_types = 'Rod Pocket,Ring Top,Grommet,Pinch Pleat,Tailored Pleat' | split: ',' -%}
+  {% endif %}
+{%- else -%}
+  {%- assign construction_types = 'Rod Pocket,Rod w/ Header,Double Rod,Ring Top,Pinch Pleat,Tailored Pleat'
+    | split: ','
+  -%}
+{%- endunless -%}
+
+{% if product.metafields.pepper.child_products.value %}
+  {% assign child_products_types = '' %}
+  {% for child_product in product.metafields.pepper.child_products.value %}
+    {% assign child_type = child_product.title | remove: product.title | strip %}
+    {% if child_type == 'Rod Pocket with Header' %}
+      {% assign child_type = 'Rod w/ Header' %}
+    {% elsif child_type == 'Double Rod Pocket with Header' %}
+      {% assign child_type = 'Double Rod' %}
+    {% endif %}
+    {% assign child_products_types = child_products_types | append: child_type | append: ',' %}
+  {% endfor %}
+  {% assign construction_types = child_products_types | remove_last: ',' | split: ',' %}
+{% endif %}
+
+{%- unless product.type contains 'Cafe' -%}
+  <construction-radios class="no-js-hidden{% if product.type contains 'Cornice' %} hidden{% endif %}" data-section="{{ section.id }}" data-url="{{ first_child_product.url }}">
+{%- else -%}
+  <cafe-construction-radios
+    class="no-js-hidden"
+    data-section="{{ section.id }}"
+    data-url="{{ first_child_product.url }}"
+  >
+{%- endunless -%}
+<fieldset class="js product-form__input product-form__input-construction">
+  <option-dropdown data-dropdown-key="construction">
+    <button type="button" data-dropdown-trigger aria-expanded="false">
+      <legend class="form__label">
+        <span class="contruction-wrapper">
+          {{ 'products.product.construction_text' | t }}:
+          <a href="#additional-construction-options" class="option-link">?</a>
+        </span>
+        <span id="{{ section.id }}-option-construction">
+          {% assign construction_required = false %}
+          <span class="option-not-selected">{{ 'products.product.select_construction' | t }}</span>
+        </span>
+      </legend>
+      {% render 'icon-chevron-up' %}
+      {% render 'icon-chevron-down-pdp' %}
+    </button>
+    <div data-dropdown-panel>
+      {%- for type in construction_types -%}
+        {%- assign type_handle = type | replace: 'Double Rod', 'double-rod' | replace: 'w/ ', '' | handleize -%}
+        <input
+          type="radio"
+          id="{{ section.id }}-construction-{{ forloop.index0 }}"
+          name="construction"
+          value="{{ type | escape }}"
+          form="product-form-{{ section.id }}"
+          class="input-construction"
+          {% if construction_required %}
+            required="required"
+          {% endif %}
+          {% if product.url contains 'cornice' %}
+            data-url="{{ product.url }}"
+          {% elsif product.url contains 'custom' %}
+            data-url="{{ product.url | replace: 'custom', type_handle | replace: 'rod-pocket', type_handle | replace: 'ring-top', type_handle | replace: 'pinch-pleat', type_handle | replace: 'tailored-pleat', type_handle | replace: 'grommet', type_handle }}"
+          {% else %}
+            data-url="{{ product.url | append: '-' | append: type_handle }}"
+          {% endif %}
+          {% if product.title contains type or forloop.first %}
+            {% if product.template_suffix != 'cafe-curtains'
+              and product.template_suffix != 'curtains'
+              and product.template_suffix != 'roman-shade'
+              and product.template_suffix != 'roman-sheer'
+              and product.template_suffix != 'woven-wood'
+              and product.template_suffix != 'valance'
+              and product.template_suffix != 'sheer-curtain'
+              and product.template_suffix != 'cafe-curtains-sheers'
+            %}
+              checked
+            {% endif %}
+          {% endif %}
+        >
+        <label
+          for="{{ section.id }}-construction-{{ forloop.index0 }}"
+          class="construction-radio construction-{{ value | handleize }} construction-{{ type | handleize }}"
+        >
+          {{ type }}
+        </label>
+        <script>
+          var productType = '{{ product.type }}';
+        </script>
+        {%- if product.type contains 'Cafe' and type_handle == 'double-rod' -%}
+          <div class="break"></div>
+        {%- endif -%}
+      {%- endfor -%}
+      <div class="construction-helper__wrapper">
+        {%- assign index = 0 -%}
+        {%- for type in construction_types -%}
+          {%- assign type_handle = type | handleize -%}
+          <div class="construction-helper construction-helper-{{ type | handleize }}{% if index > 0 %} visually-hidden{% endif %}">
+            {%- assign type_helper = 'products.product.construction' | append: '.' | append: type_handle -%}
+            <span>{{ type_helper | t }}</span>
+          </div>
+          {%- assign index = index | plus: 1 -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </option-dropdown>
+</fieldset>
+{%- unless product.type contains 'Cafe' -%}
+  </construction-radios>
+{%- else -%}
+  </cafe-construction-radios>
+{%- endunless -%}

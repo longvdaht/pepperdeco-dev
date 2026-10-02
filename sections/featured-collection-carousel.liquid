@@ -1,0 +1,201 @@
+{{ 'featured-collection-carousel.css' | asset_url | stylesheet_tag }}
+
+<style>
+  [data-section-id="{{ section.id }}"] {
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+    background-color: {{ section.settings.background_color }};
+  }
+  @media (min-width: 768px) {
+    [data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+</style>
+<div
+  class="featured-collection-carousel section-{{ section.id }}-padding"
+  data-limit="4"
+  data-section-id="{{ section.id }}"
+  {% if product %}
+    data-current-id="{{ product.id }}"
+  {% endif %}
+>
+  <div class="featured-collection-carousel__inner page-width">
+    <div class="section-heading">
+      {% if section.settings.cta_text %}
+        <div class="empty-spacing"></div>
+      {% endif %}
+      <h2 class="featured-collection-carousel__title">{{ section.settings.title }}</h2>
+      {% if section.settings.cta_text %}
+        <a href="{{ section.settings.cta_link | default: section.settings.featured_collection.url }}"
+          title="{{ section.settings.cta_text }}"
+          class="button--link">
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div> 
+
+    <div class="product-grid-container">
+      <div class="collection">
+        <slider-component class="collections-carousel-outer featured-collection-carousel__slider-wrapper">
+          <ul
+            class="featured-collection-carousel__list list-unstyled slider grid grid-nowrap"
+            id="rvp-list-{{ section.id }}"
+            role="list"
+          >
+            {% assign featured_collection = section.settings.featured_collection.products %}
+            {% if section.settings.featured_product_list != blank %}
+              {% assign featured_collection = section.settings.featured_product_list %}
+            {% endif %}
+            {% if featured_collection.size > 0
+            %}
+              {% for product_item in featured_collection limit: section.settings.max_products %}
+                <li class="carousel-cell grid__item">
+                  {% render 'card-product',
+                    card_product: product_item,
+                    show_secondary_image: true,
+                    show_price: true,
+                    lazy_load: lazy_load,
+                    skip_styles: skip_card_product_styles,
+                    quick_add: section.settings.quick_add,
+                    section_id: section.id,
+                    show_color_switch_option: true
+                  %}
+                </li>
+              {% endfor %}
+            {% else %}
+              {% for i in (1..6) %}
+                <li class="carousel-cell grid__item">
+                  {% render 'card-product', card_product: product_item, show_price: true %}
+                </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+          <div class="slider-buttons no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'accessibility.previous_slide' | t }}"
+            >
+              {% render 'icon-arrow-left' %}
+            </button>
+            <div class="visually-hidden slider-counter caption">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+              <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            </div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'accessibility.next_slide' | t }}"
+            >
+              {% render 'icon-arrow-right' %}
+            </button>
+          </div>
+        </slider-component>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best seller collection",
+  "tag": "section",
+  "class": "section-recently-viewed",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F3F1EC"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Best seller"
+    },
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Featured collection"
+    },
+    {
+      "type": "product_list",
+      "id": "featured_product_list",
+      "label": "Featured product list"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Max products",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "presets": [{ "name": "Best seller collection" }]
+}
+{% endschema %}

@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="{{ 'section-faq.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-faq.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div
+    class="section-outer section-faq section-color-{{ section.settings.color_scheme }} center {% if section.settings.background_image != blank %} section-background-image{% endif %}"
+    {% if section.settings.background_image != blank %}
+      style="background-image: url('{{ section.settings.background_image | image_url: width: 1000  }}')"
+    {% endif %}
+  >
+  <div class="">
+    <div class="section-heading-outer">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="section-heading first-heading">
+                {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+    </div>
+    <div class="section-faq-content">
+        {%- for block in section.blocks -%}
+            <div class="faq-item">
+                {%- if block.settings.heading -%}
+                    <h3 class="faq-item-heading body">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+                {%- if block.settings.content -%}
+                    <div class="faq-item-content">
+                        {{ block.settings.content }}
+                    </div>
+                {%- endif -%}
+                {%- if block.settings.action_text -%}
+                    <a href="{{ block.settings.action_link }}" class="faq-item-action">{{ block.settings.action_text }}</a>
+                {%- endif -%}
+            </div>
+        {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section FAQ",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FAQ"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        },
+        {
+          "value": "background-tertiary-dark",
+          "label": "Tertiary Dark"
+        },
+        {
+          "value": "background-dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Faq item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+        {
+          "type": "text",
+          "id": "action_text",
+          "label": "Action text"
+        },
+        {
+          "type": "url",
+          "id": "action_link",
+          "label": "Text link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section FAQ",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

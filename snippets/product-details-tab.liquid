@@ -1,0 +1,76 @@
+<div class="tabset" {{ block.shopify_attributes }}>
+  <input type="radio" name="tabset" id="details-description" aria-controls="details-description" checked>
+  <label for="details-description">Details</label>
+  {% if product.metafields.global.Shipping != blank %}
+    <input type="radio" name="tabset" id="shipping-returns" aria-controls="shipping-returns">
+    <label for="shipping-returns" class="center">Shipping &amp; Returns</label>
+  {% endif %}
+  {% if product.metafields.global.Guides != blank %}
+    <input type="radio" name="tabset" id="helpful-guides" aria-controls="helpful-guides">
+    <label for="helpful-guides" class="right">Helpful Guides</label>
+  {% endif %}
+
+  <div class="tab-panels">
+    <section id="details-description" class="tab-panel details-section">
+      <div class="description rte">
+        {{ product.description }}
+      </div>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Details }} {% endcomment %}
+        {% assign product_details_metaobject = product.metafields.custom.product_details_metaobject %}
+        {% if product_details_metaobject %}
+          {% for detail in product_details_metaobject.value %}
+            {% if detail.product_details != blank %}
+              {{ detail.product_details | metafield_tag }}
+            {% endif %}
+            {% if detail.image != blank %}
+              <p>
+                <img src="{{ detail.image | image_url: width: 500, height: 500 }}" alt="{{ detail.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </section>
+    {% if product.metafields.global.Shipping != blank %}
+      <section id="shipping-returns" class="tab-panel details-section">
+        <div class="details-content rte">
+          {% comment %} {{ product.metafields.global.Shipping }} {% endcomment %}
+          {% assign shipping_returns_metaobject = product.metafields.custom.shipping_returns_metaobject %}
+          {% if shipping_returns_metaobject %}
+            {% for shipping in shipping_returns_metaobject.value %}
+              {% if shipping.shipping_details != blank %}
+                {{ shipping.shipping_details | metafield_tag }}
+              {% endif %}
+              {% if shipping.image != blank %}
+                <p>
+                  <img src="{{ shipping.image | image_url: width: 500, height: 500 }}" alt="{{ shipping.image.alt | default: product.title }}" width="500" height="500"/> 
+                </p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+    {% if product.metafields.global.Guides != blank %}
+      <section id="helpful-guides" class="tab-panel details-section">
+        <div class="details-content rte">
+          {% comment %} {{ product.metafields.global.Guides }} {% endcomment %}
+          {% assign helpful_guides_metaobject = product.metafields.custom.helpful_guides_metaobject %}
+          {% if helpful_guides_metaobject %}
+            {% for guide in helpful_guides_metaobject.value %}
+              {% if guide.guide_details != blank %}
+                {{ guide.guide_details | metafield_tag }}
+              {% endif %}
+              {% if guide.image != blank %}
+                <p>
+                  <img src="{{ guide.image | image_url: width: 500, height: 500 }}" alt="{{ guide.image.alt | default: product.title }}" width="500" height="500"/> 
+                </p>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </section>
+    {% endif %}
+  </div>
+</div>

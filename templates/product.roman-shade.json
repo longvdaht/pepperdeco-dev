@@ -1,0 +1,810 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-roman-shade",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "1dabe311-a4e9-4179-82c2-09f28e8e9737": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_e6KUer": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_PMT3q9": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": ""
+          }
+        },
+        "switch_option_type_tnzYLr": {
+          "type": "switch_option_type",
+          "settings": {}
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_calculator": true,
+            "content": ""
+          }
+        },
+        "543fad13-9742-47f7-80ed-833fb9311e5e": {
+          "type": "curtain_calculator",
+          "disabled": true,
+          "settings": {
+            "content": "Not sure what size you need?"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "16e8b19f-0fe9-4898-8a88-fa75f4cf4b89": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "1dabe311-a4e9-4179-82c2-09f28e8e9737",
+        "description_e6KUer",
+        "switch_option_color_PMT3q9",
+        "switch_option_type_tnzYLr",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "543fad13-9742-47f7-80ed-833fb9311e5e",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "16e8b19f-0fe9-4898-8a88-fa75f4cf4b89",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "custom_css": [],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "show_buttons_mobile": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "Pre-order, ETA 9/30",
+        "pompom_trims": "Rose Velvet Band,Harbor Band,Sky Velvet Band"
+      }
+    },
+    "section_compare_options_MVtkBP": {
+      "type": "section-compare-options",
+      "settings": {
+        "heading": "Fabric Options",
+        "subheading": "The Art of Fabric: Cotton or Linen—See Which One Suits Your Space Best",
+        "subheading_width": "400",
+        "background_color": "#f3f1ec",
+        "button_text": "ORDER FABRIC SAMPLES",
+        "button_url": "shopify://collections/swatch-fabric"
+      }
+    },
+    "artist_section_QtgjLD": {
+      "type": "artist-section",
+      "settings": {
+        "section_full_width": "no",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "background_color": "#f3f1ec"
+      }
+    },
+    "section_construction_options_DCRzGU": {
+      "type": "section-construction-options",
+      "blocks": {
+        "option_QLq6KQ": {
+          "type": "option",
+          "settings": {
+            "heading": "Flat",
+            "image": "shopify://shop_images/Roman_Shade_icon_-_Flat.png",
+            "content": "<p>With its timeless design and streamlined silhouette, this Roman Shade is a versatile choice for any room.</p><p><strong>DETAILS</strong><br/>Flat Shades are available with all trim styles. For 2\" banded options, a 2.5\" inset from the edge is standard on all sides and the bottom. Pom poms, tassels, and rick rack are finished along the bottom.</p><p>For orders with multiple shades, patterns are top-aligned for a cohesive look.</p>",
+            "button_text": "SEE OUR GUIDE",
+            "button_link": "shopify://blogs/the-thread/roman-shade-construction-guide"
+          }
+        },
+        "option_atzdLU": {
+          "type": "option",
+          "settings": {
+            "heading": "Knife Pleat",
+            "image": "shopify://shop_images/Roman_Shade_icon_-_Knife_Pleat.png",
+            "content": "<p>With their structured pleats and clean lines, these shades bring a tailored, modern feel to any room.</p><p><strong>DETAILS</strong><br/>Knife Pleat Shades are available exclusively in our solid fabrics. Pom poms and tassels are applied along the bottom edge.</p><p>For orders with multiple shades, pleats are top-aligned for a cohesive look.</p>",
+            "button_text": "SEE OUR GUIDE",
+            "button_link": "shopify://blogs/the-thread/roman-shade-construction-guide"
+          }
+        },
+        "option_yr3fJe": {
+          "type": "option",
+          "settings": {
+            "heading": "Relaxed",
+            "image": "shopify://shop_images/Roman_Shade_icon_-_Relaxed.png",
+            "content": "<p>With its gently curved silhouette, this classic Roman Shade offers an easy, polished aesthetic. Best suited as a decorative statement rather than a daily-use shade.</p><p><strong>DETAILS</strong><br/>The Relaxed shade length is measured at the sides (the shortest point). The center of the shade will hang 2–4\" longer than the side length, depending on size and material. Shades with 2\" bands include a standard 2.5\" inset from the edge on two sides. Pom poms and tassels are applied along the bottom edge.</p><p>For orders with multiple shades, patterns are top-aligned for a cohesive look.</p>",
+            "button_text": "SEE OUR GUIDE",
+            "button_link": "shopify://blogs/the-thread/roman-shade-construction-guide"
+          }
+        },
+        "option_GPnXdD": {
+          "type": "option",
+          "settings": {
+            "heading": "Scalloped",
+            "image": "shopify://shop_images/Roman_Shade_icon_-_Scalloped.png",
+            "content": "<p>Our scalloped shade features a softly curved edge that adds refined detail with a subtle touch of whimsy.</p><p><strong>DETAILS</strong><br/>Shade length is measured to the bottom of the scallop (the longest point). Scallop width ranges from 6\"–8.33\" (averaging 7\"), depending on the overall width of the shade. Scallop height is 1\". Pom poms and tassels are applied along the bottom edge.</p><p>For orders with multiple shades, patterns are top-aligned for a cohesive look.</p>",
+            "button_text": "SEE OUR GUIDE",
+            "button_link": "shopify://blogs/the-thread/roman-shade-construction-guide"
+          }
+        }
+      },
+      "block_order": [
+        "option_QLq6KQ",
+        "option_atzdLU",
+        "option_yr3fJe",
+        "option_GPnXdD"
+      ],
+      "name": "Construction options",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Construction Options",
+        "subheading": "",
+        "subheading_width": "400",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "two_column_features_zhmRYU": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_Ti7jg3": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn’t exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_EQ36tk": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-1.jpg",
+            "title": "Sustainable By Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_Ti7jg3",
+        "feature_column_EQ36tk"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_i7ErAH": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_BCCQRN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-romanshade-printedcotton-lucie-clay-3x4.jpg",
+            "product": "romanshade-printedcotton-lucie-clay-custom"
+          }
+        },
+        "slide_6KXQFd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-florenceeucalyptus-2.jpg",
+            "product": "romanshade-printedlinen-florence-eucalyptus-custom"
+          }
+        },
+        "slide_4kFxtm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-harborlinen.jpg",
+            "product": "romanshade-solid-linen-harbor-custom"
+          }
+        },
+        "slide_zmU3yN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-madelineflour.jpg",
+            "product": "romanshade-sheer-madeline-flour-custom"
+          }
+        },
+        "slide_Pjc9dc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-milliemoss.jpg",
+            "product": "romanshade-woven-millie-moss-custom"
+          }
+        },
+        "slide_KTbgJc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-flourlinen.jpg",
+            "product": "romanshade-solid-linen-flour-custom"
+          }
+        },
+        "slide_qQGc3A": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-oatlinen.jpg",
+            "product": "romanshade-solid-linen-oat-custom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BCCQRN",
+        "slide_6KXQFd",
+        "slide_4kFxtm",
+        "slide_zmU3yN",
+        "slide_Pjc9dc",
+        "slide_KTbgJc",
+        "slide_qQGc3A"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at <i>Your Place<i></i></i>",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "product_additional_8PRGYJ": {
+      "type": "product-additional",
+      "blocks": {
+        "tab_3gJePk": {
+          "type": "tab",
+          "settings": {
+            "heading": "Flat",
+            "tab_image": "shopify://shop_images/Roman-Shade-Flat-Flour-Inside.png",
+            "image_content_heading": "shopify://shop_images/Script-Flat.png",
+            "image_content_width": 126,
+            "content": "<p>With its timeless design and streamlined silhouette, this Roman Shade is a versatile choice for any room.<br/></p><p><strong>DETAILS</strong><br/>Flat Shades are available with all trim styles. For 2\" banded options, a 2.5\" inset from the edge is standard on all sides and the bottom. Pom poms, tassels, and rick rack are finished along the bottom.</p><p>For orders with multiple shades, patterns are top-aligned for a cohesive look.</p>",
+            "image_1": "shopify://shop_images/Roman-Shade-Flat-Flour-FernBand-Inside-whitebackground.png"
+          }
+        },
+        "tab_bmaQJC": {
+          "type": "tab",
+          "settings": {
+            "heading": "Knife Pleat",
+            "tab_image": "shopify://shop_images/Roman-Shade-KnifePleat-Flour-Inside.png",
+            "image_content_heading": "shopify://shop_images/Script-KnifePleat.png",
+            "image_content_width": 224,
+            "content": "<p>With their structured pleats and clean lines, these shades bring a tailored, modern feel to any room.<br/></p><p><strong>DETAILS</strong><br/>Knife Pleat Shades are available exclusively in our solid fabrics. Pom poms and tassels are applied along the bottom edge.</p><p>For orders with multiple shades, pleats are top-aligned for a cohesive look.</p>",
+            "image_1": "shopify://shop_images/Roman-Shade-KnifePleat-Harbor-Inside-whitebackground.png"
+          }
+        },
+        "tab_HkaRG9": {
+          "type": "tab",
+          "settings": {
+            "heading": "Relaxed",
+            "tab_image": "shopify://shop_images/Roman-Shade-Relaxed-Flour-Inside.png",
+            "image_content_heading": "shopify://shop_images/Script-Relaxed.png",
+            "image_content_width": 192,
+            "content": "<p>With its gently curved silhouette, this classic Roman Shade offers an easy, polished aesthetic. Best suited as a decorative statement rather than a daily-use shade.<br/></p><p><strong>DETAILS</strong><br/>The Relaxed shade length is measured at the sides (the shortest point). The center of the shade will hang 2–4\" longer than the side length, depending on size and material. Shades with 2\" bands include a standard 2.5\" inset from the edge on two sides. Pom poms and tassels are applied along the bottom edge.</p><p>For orders with multiple shades, patterns are top-aligned for a cohesive look.</p>",
+            "image_1": "shopify://shop_images/Roman-Shade-Relaxed-Sheer-Madeline-Sky-Inside-whitebackground.png"
+          }
+        },
+        "tab_tXW9X9": {
+          "type": "tab",
+          "settings": {
+            "heading": "Scalloped",
+            "tab_image": "shopify://shop_images/Roman-Shade-Scalloped-Flour-Inside.png",
+            "image_content_heading": "shopify://shop_images/Script-Scalloped.png",
+            "image_content_width": 216,
+            "content": "<p>Our scalloped shade features a softly curved edge that adds refined detail with a subtle touch of whimsy.<br/></p><p><strong>DETAILS</strong><br/>Shade length is measured to the bottom of the scallop (the longest point). Scallop width ranges from 6\"–8.33\" (averaging 7\"), depending on the overall width of the shade. Scallop height is 1\". Pom poms and tassels are applied along the bottom edge.</p><p>For orders with multiple shades, patterns are top-aligned for a cohesive look.</p>",
+            "image_1": "shopify://shop_images/Roman-Shade-Scalloped-Vivienne-Inside-whitebackground.png"
+          }
+        }
+      },
+      "block_order": [
+        "tab_3gJePk",
+        "tab_bmaQJC",
+        "tab_HkaRG9",
+        "tab_tXW9X9"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Construction Options",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "#e7e2d8",
+        "tab_style": "image-text",
+        "show_dots": false,
+        "show_buttons": true
+      }
+    },
+    "1634590701256a67be": {
+      "type": "product-additional",
+      "blocks": {
+        "e99a9d68-f14c-411b-9dd7-2907fc0ed6b4": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod Pocket",
+            "image_content_heading": "shopify://shop_images/script-RodPocket.png",
+            "image_content_width": 180,
+            "content": "<p>This classic curtain style offers a clean look with a sewn-in pocket to accommodate hardware. Rod pocket curtains are primarily decorative—not for everyday use. If you plan on opening and closing your drapes every day, we suggest ring top, grommet, or pleat construction.<br/></p><p><strong>DETAILS</strong><br/>We suggest a 1.25\" or smaller rod to accommodate sewn pocket. Rod is not included. <br/><a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">See our Curtain Hardware Edit.</a></p>",
+            "image_1": "shopify://shop_images/Construction-Curtain-RodPocket-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-Curtain-RodPocket-Back.jpg"
+          }
+        },
+        "8d5948b5-26ab-479f-8064-5586a78a2be1": {
+          "type": "tab",
+          "settings": {
+            "heading": "Ring Top",
+            "image_content_heading": "shopify://shop_images/script-RingTop.png",
+            "image_content_width": 150,
+            "content": "<p>These panels are hung by attaching their built-in hooks to your curtain rings. Easy to use, these are great for spaces where you plan on opening and closing your drapes every day.<br/><br/><strong>DETAILS</strong><br/>Curtain hooks are sewn in. Rod and rings are not included. <br/><a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">See our Curtain Hardware Edit.</a></p><ul><li>25” - 6 Hooks</li><li>50” - 12 Hooks</li><li>75” - 17 Hooks</li><li>100” - 21 Hooks</li></ul>",
+            "image_1": "shopify://shop_images/Construction-Curtain-RingTop-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-Curtain-RingTop-Back.jpg"
+          }
+        },
+        "bc27e6ca-5972-4823-94e7-cd53585c95d9": {
+          "type": "tab",
+          "settings": {
+            "heading": "Grommet",
+            "image_content_heading": "shopify://shop_images/script-Grommet.png",
+            "image_content_width": 150,
+            "content": "<p>This modern option offers a streamlined take on ringed styles, with embedded black metal grommets that are sturdy enough for daily use. </p><p><strong>DETAILS<br/></strong>Curtain grommets have an inside diameter of 1.56\" and are sewn in. We suggest using a black rod to match the grommets. Rod is not included. <br/><a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">See our Curtain Hardware Edit.</a><br/></p><ul><li>25” - 4 Grommets</li><li>50” - 6 Grommets</li><li>75” - 10 Grommets</li><li>100” - 14 Grommets </li></ul>",
+            "image_1": "shopify://shop_images/Construction-Curtain-Grommet-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-Curtain-Grommet-Back.jpg"
+          }
+        },
+        "f480a4ef-afc1-46a9-9397-a3857d2c1d9f": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pinch Pleat",
+            "image_content_heading": "shopify://shop_images/script-PinchPleat.png",
+            "image_content_width": 180,
+            "content": "<p>Made with twice the amount of fabric, these panels offer a voluminous look. Triple pleats add an elegant, formal flare while their hooks make it easy to attach to curtain rings.<br/><br/><strong>DETAILS</strong> <br/>Curtain hooks are sewn in. Rod and rings are not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.9x the top. <br/><a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">See on Curtain Hardware Edit.</a></p><ul><li>25\" - 6 Hooks</li><li>50\" - 12 Hooks (Velvets, 10)</li><li>75\" - 18 Hooks (Velvets, 14)</li><li>100\" - 22 Hooks (Velvets, 18)</li></ul>",
+            "image_1": "shopify://shop_images/Construction-Curtain-PinchPleat-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-Curtain-PinchPleat-Back.jpg"
+          }
+        },
+        "f75c8960-782d-4e68-81f4-03c15ebe3e44": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tailored Pleat",
+            "image_content_heading": "shopify://shop_images/script-TailoredPleat.png",
+            "image_content_width": 230,
+            "content": "<p>A more modern silhouette than our pinch pleat, tailored pleats bring a subtle sophistication to any room. Made with twice the amount of fabric, these panels offer a voluminous look and attached hooks<br/>make it easy to attach to curtain rings.</p><p><strong>DETAILS</strong><br/>Curtain hooks are sewn in. Rod and rings are not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.8x the top. <br/><a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">See our Curtain Hardware Edit.</a></p><ul><li>25\" - 7 Hooks</li><li>50\" - 12 Hooks</li><li>75\" - 18 Hooks</li><li>100\" - 22 Hooks</li></ul>",
+            "image_1": "shopify://shop_images/Construction-Curtain-TailoredPleat-Front.jpg",
+            "image_2": "shopify://shop_images/Construction-Curtain-TailoredPleat-Back.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "e99a9d68-f14c-411b-9dd7-2907fc0ed6b4",
+        "8d5948b5-26ab-479f-8064-5586a78a2be1",
+        "bc27e6ca-5972-4823-94e7-cd53585c95d9",
+        "f480a4ef-afc1-46a9-9397-a3857d2c1d9f",
+        "f75c8960-782d-4e68-81f4-03c15ebe3e44"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Construction Options",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "#e7e2d8",
+        "tab_style": "image-text",
+        "show_dots": false,
+        "show_buttons": true
+      }
+    },
+    "section_image_with_text_column_JgMzwk": {
+      "type": "section-image-with-text-column",
+      "disabled": true,
+      "settings": {
+        "background_color": "#e7e2d8",
+        "heading": "Trim Options",
+        "heading_size": "h3",
+        "subheading": "<p>It’s all about the finishing touch. Curtain trim options include:</p>",
+        "content": "<p><strong>BAND</strong><br/>Our 2\" band brings a modern minimalist touch to any space. Choose from textured velvets and versatile patterns.</p><p><strong>TASSLE</strong><br/>A versatile trim that suits any style—from a traditional reading room to a breezy boho breakfast nook.</p><p><strong>RICK-RACK</strong><br/>Elevated craft meets sophisticated color with this whimsical trim that’s delightfully unexpected.</p><p><strong>POM-POM</strong><br/>It’s soft, it’s sweet, it’s irresistible. Pom pom trim adds a playful element to pillows, upholstery and window treatments.</p>",
+        "image": "shopify://shop_images/GreenTrim-Moodboard-Full_2_1.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "shopify://collections/curtain-trim-samples",
+        "label": "ORDER TRIM SAMPLES",
+        "button_type": "button"
+      }
+    },
+    "section_trim_options_qgwBX9": {
+      "type": "section-trim-options",
+      "disabled": true,
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Trim Options",
+        "heading_size": "h3",
+        "subheading": "<p>It’s all about the finishing touch. Curtain trim options include:</p>",
+        "content": "<p><strong>BAND</strong><br/>Add subtle style with ease. Our 2” textured band brings a modern minimalist touch to any space.</p><p><strong>TASSEL</strong><br/>A versatile trim that fits any style—from a classic reading room to a breezy boho nook.</p><p><strong>RICK RACK</strong><br/>Irresistible charm meets sophisticated color for a finish that’s delightfully unexpected.</p><p><strong>POM POM</strong><br/>Soft, sweet, and playful. Pom trim adds a whimsical finish to pillows, upholstery, and drapery.</p>",
+        "image": "shopify://shop_images/GreenTrim-Moodboard-Full_2_1.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "shopify://collections/curtain-trim-samples",
+        "label": "ORDER TRIM SAMPLES"
+      }
+    },
+    "product_additional_TTPy4U": {
+      "type": "product-additional",
+      "blocks": {
+        "tab_refndA": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod Pocket",
+            "image_content_width": 150,
+            "content": "<p>This classic curtain style offers a clean look with a sewn-in pocket to accommodate hardware. Rod pocket curtains are primarily decorative—not for everyday use. If you plan on opening and closing your drapes every day, we suggest ring top, grommet, or pleat construction. <br/><br/>DETAILS: Our cafe curtain has a 1.5\" pocket. We suggest a 3/8\" or smaller rod to accommodate sewn pocket; rod not included</p>"
+          }
+        },
+        "tab_xNAANm": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rod Pocket with Header",
+            "image_content_width": 150,
+            "content": "<p>This classic curtain style offers a clean look with a sewn-in pocket to accommodate hardware. Rod pocket curtains are primarily decorative—not for everyday use. If you plan on opening and closing your drapes every day, we suggest ring top, grommet, or pleat construction. <br/><br/>DETAILS: Our cafe curtain has a 1.5\" pocket. We suggest a 3/8\" or smaller rod to accommodate sewn pocket; rod not included</p>"
+          }
+        },
+        "tab_VerTMf": {
+          "type": "tab",
+          "settings": {
+            "heading": "Ring Top",
+            "image_content_width": 150,
+            "content": "<p>These panels are hung by attaching their built-in hooks to your curtain rings. (see our <a href=\"/blogs/spice-market/curtain-hardware\" target=\"_blank\" title=\"Curtain Hardware\">Curtain Hardware Edit</a>) Easy to use, these are great for spaces where you plan on opening and closing your drapes every day.<br/><br/>DETAILS: Curtain hooks are sewn in (25\" - 6 hooks, 50\" - 12 hooks, 75\" - 17, 100\" - 21 hooks); rod/rings not included</p>",
+            "image_2": "shopify://shop_images/RingTop-Front.jpg",
+            "image_3": "shopify://shop_images/RingTop-Back.jpg"
+          }
+        },
+        "tab_pYwaRK": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pinch Pleat",
+            "image_content_width": 150,
+            "content": "<p>Made with twice the amount of fabric, these panels offer a voluminous look. Triple pleats add an elegant, formal flare while their hooks make it easy to attach to curtain rings.<br/><br/>DETAILS: Curtain hooks are sewn in (<strong>Cottons:</strong> 25\" - 6 hooks, 50\" - 12 hooks, 75\" - 18 hooks, 100\" - 22 hooks; <strong>Velvets:</strong> 50\" - 10 hooks, 75\" - 14 hooks, 100\" - 18 hooks); rod/rings not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.9x the top.</p>",
+            "image_1": "shopify://shop_images/Curtain-Loomi-Moss-WEB.jpg",
+            "image_2": "shopify://shop_images/PinchPleat-Front.jpg",
+            "image_3": "shopify://shop_images/PinchPleat-Back.jpg"
+          }
+        },
+        "tab_rzizgC": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tailored Pleat",
+            "image_content_width": 150,
+            "content": "<p>A more modern silhouette than our pinch pleat, tailored pleats bring a subtle sophistication to any room. Made with twice the amount of fabric, these panels offer a voluminous look and attached hooks make it easy to attach to curtain rings.</p><p>DETAILS: Curtain hooks are sewn in (25\" - 7 hooks, 50\" - 12 hooks, 75\" - 18 hooks, 100\" - 22 hooks); rod/rings not included. Pleated curtain width refers to the finished top width. The bottom width is ~ 1.8x the top.</p>",
+            "image_1": "shopify://shop_images/curtain-cotton-snow-silo_e4388157-2e02-4ce3-990d-07ce6bc3c9c4.jpg",
+            "image_2": "shopify://shop_images/TailoredPleat-Front.jpg",
+            "image_3": "shopify://shop_images/TailoredPleat-Back.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_refndA",
+        "tab_xNAANm",
+        "tab_VerTMf",
+        "tab_pYwaRK",
+        "tab_rzizgC"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Construction Options",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "166179571189849d13": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {
+        "color": "black",
+        "simple": true,
+        "color_scheme": "background-secondary",
+        "padded": false
+      }
+    },
+    "16605746187190fc43": {
+      "type": "product-additional",
+      "blocks": {
+        "86834515-6d67-4de2-8aa5-361ae0025e7c": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Overview",
+            "image_content_width": 150,
+            "content": "<p>If you thought our custom curtains couldn’t get any better, they just did. Introducing four new trim options, from timeless tassels to playful pom poms. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/TrimArrangement-WEB-UPDATE_aa6f6df6-9d66-44a3-82e7-b603c6b75860.jpg",
+            "image_2": "shopify://shop_images/CurtainTrim-Moodboard-Clean.jpg",
+            "image_3": "shopify://shop_images/CurtainTrim-Moodboard-Messy.jpg"
+          }
+        },
+        "ba93773c-db9c-4919-8f51-0ea5de862d02": {
+          "type": "tab",
+          "settings": {
+            "heading": "Band",
+            "image_content_width": 150,
+            "content": "<p>It doesn’t get more timeless than this. Our textured band trim brings a modern minimalist touch. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Band.png",
+            "image_2": "shopify://shop_images/Julia-Curtain_acdcb05b-0a59-414d-859d-654b7e89118d.jpg",
+            "image_3": "shopify://shop_images/FlourCurtain_09556ef5-49db-4e5a-9ec8-facab879bef1.jpg"
+          }
+        },
+        "02028c99-e0cd-48a0-ba0d-ee85b9e13f89": {
+          "type": "tab",
+          "settings": {
+            "heading": "Tassel",
+            "image_content_width": 150,
+            "content": "<p>A versatile trim that suits any style—from a traditional reading room to a breezy boho breakfast nook. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-Tassel.png",
+            "image_2": "shopify://shop_images/Walnut-Curtain_7edea3a2-7ce9-405f-8429-13c656a0bac8.jpg",
+            "image_3": "shopify://shop_images/curtains-sagetassel.jpg"
+          }
+        },
+        "edbd427b-181e-43dd-8ae5-9466975a8cba": {
+          "type": "tab",
+          "settings": {
+            "heading": "Rick Rack",
+            "image_content_width": 150,
+            "content": "<p>Elevated craft meets sophisticated color with rick rack trim that’s delightfully unexpected.</p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-RickRack.png",
+            "image_2": "shopify://shop_images/CherryPiping-_sarahgtucker_9_AdApproved_copy.jpg",
+            "image_3": "shopify://shop_images/FridaPink-_katefiglerinteriors_1-cropped_2.jpg"
+          }
+        },
+        "506962c5-6bb6-4391-ab06-d56ae73480b8": {
+          "type": "tab",
+          "settings": {
+            "heading": "Pom Pom",
+            "image_content_width": 150,
+            "content": "<p>It’s soft, it’s sweet, it’s irresistible. We love pom pom trim for cozy spaces, especially a bedroom or nursery. </p><p>Try before you buy with our <a href=\"/products/sample-curtain-trim\" target=\"_blank\" title=\"Curtain Trim Sample\">Trim Samples</a></p>",
+            "image_1": "shopify://shop_images/Grid-PomPom.png",
+            "image_2": "shopify://shop_images/Lee-Curtain.jpg",
+            "image_3": "shopify://shop_images/rosecurtain-nelliepillow_81fe31f1-8359-4ce0-a9b9-ab3823d729dd.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "86834515-6d67-4de2-8aa5-361ae0025e7c",
+        "ba93773c-db9c-4919-8f51-0ea5de862d02",
+        "02028c99-e0cd-48a0-ba0d-ee85b9e13f89",
+        "edbd427b-181e-43dd-8ae5-9466975a8cba",
+        "506962c5-6bb6-4391-ab06-d56ae73480b8"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Trim Selections",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "8d90abfe-bceb-46b7-b09f-42a0c6a8a2a7": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "8d90abfe-bceb-46b7-b09f-42a0c6a8a2a7"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "4993ab6e-e4bf-4b4c-b560-e1359635c893": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "4993ab6e-e4bf-4b4c-b560-e1359635c893"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_zX77XH": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_ENFM4m": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_ENFM4m"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_yP9DMi": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_96pRXE": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_qUN89r": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": ""
+          }
+        },
+        "column_NPFpnR": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": ""
+          }
+        },
+        "column_NJV7DU": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_qUN89r",
+        "column_NPFpnR",
+        "column_NJV7DU"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_compare_options_MVtkBP",
+    "artist_section_QtgjLD",
+    "section_construction_options_DCRzGU",
+    "two_column_features_zhmRYU",
+    "curated_spaces_i7ErAH",
+    "product_additional_8PRGYJ",
+    "1634590701256a67be",
+    "section_image_with_text_column_JgMzwk",
+    "section_trim_options_qgwBX9",
+    "product_additional_TTPy4U",
+    "166179571189849d13",
+    "16605746187190fc43",
+    "product-recommendations",
+    "1633988363790b2161",
+    "163398841244446eb7",
+    "app_review_zX77XH",
+    "recently_viewed_products_yP9DMi",
+    "section_text_with_icon_column_96pRXE"
+  ]
+}

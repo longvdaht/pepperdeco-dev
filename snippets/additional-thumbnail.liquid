@@ -1,0 +1,97 @@
+{% comment %}
+  Renders an additional thumbnail entry for trim, fringe, pom pom images
+  Accepts:
+  - media: {Object} Article Liquid object
+  - image_ratio: {String} Default: square (optional)
+  - type: {String} Options: Piping, Fringe, Pom Pom (optional) Default: Piping
+  - image_count:
+  Usage:
+  {% render 'additional-thumbnail',
+    media: media,
+    image_count: image_count
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign size_position = 1
+  assign media_title_array = media_title_array | handleize | split: '-'
+  if media_title_array[size_position] contains 'bolster'
+    assign size = 'bolster'
+  elsif media_title_array[size_position] contains 'lumbar'
+    assign size = 'lumbar'
+  else
+    assign size = media_title_array | slice: 1, 2 | join: '-'
+  endif
+
+  assign trim_position = 3
+  if media_title_array[size_position] contains 'bolster' or media_title_array[size_position] contains 'lumbar'
+    assign trim_position = 2
+  endif
+  assign trim_position_next = trim_position | plus: 1
+
+  if media_title_array[trim_position] contains 'walnut' or media_title_array[trim_position] contains 'cosmo' or media_title_array[trim_position] contains 'lilac' or media_title_array[trim_position] contains 'eden' or media_title_array[trim_position] contains 'loomi' or media_title_array[trim_position] contains 'fern' or media_title_array[trim_position] contains 'dusty' or media_title_array[trim_position] contains 'citron' or media_title_array[trim_position] contains 'cadet' or media_title_array[trim_position] contains 'peacock'
+    assign trim = media_title_array | slice: trim_position, 2 | join: '-'
+    if trim contains 'pom'
+      assign trim = trim | append: '-pom'
+    endif
+  elsif media_title_array contains 'ruffle'
+    assign trim = media_title_array | slice: trim_position, 3 | join: '-'
+    unless trim contains 'ruffle'
+      assign trim = trim | append: '-ruffle'
+    endunless
+  elsif media_title_array contains 'velvet'
+    assign trim = media_title_array | slice: trim_position, 2 | join: '-'
+  elsif  media_title_array[trim_position] contains 'sea' and media_title_array[trim_position_next] contains 'salt'
+    assign trim = media_title_array | slice: trim_position, 2 | join: '-'
+  else
+    assign trim = media_title_array | slice: trim_position
+  endif
+
+  if trim contains 'none'
+    assign trim = 'none'
+  endif
+-%}
+
+{%- if media.alt -%}
+  {%- assign alt = media.alt -%}
+{%- else -%}
+  {%- capture alt_trim = value -%}{{ trim | first | replace: '-', ' ' -}}
+  {%- unless trim contains 'none' or trim contains 'pom-pom' or trim contains 'ruffle' %} {{ type | default: 'piping' }}{% endunless %}{%- endcapture -%}
+  {%- assign alt = size
+    | append: ' '
+    | append: product.title
+    | append: ' Custom '
+    | append: product.metafields.pepper.seo_product_title
+    | append: 'Pillow with '
+    | append: alt_trim
+    | append: ' on White Background'
+    | capitalize
+  -%}
+{%- endif -%}
+<li
+  class="grid__item carousel-cell product__media-item--additional-image"
+  data-index="{{ image_count }}"
+  data-media-id="{{ section.id }}-{{ media | handleize }}"
+  data-additional-image
+  data-size="{{ size }}"
+  data-type="{{ type | default: 'Piping' }}"
+  data-variant="{{ size }}-{{ trim }}{% unless trim contains 'none' or trim contains 'pom-pom' or trim contains 'ruffle' %}-{{ type | default: 'piping' | handleize }}{% endunless %}"
+>
+  <div class="media media--{{ image_ratio | default: 'square' }} media--transparent">
+    <img
+      srcset="
+        {% if media.width >= 288 %}{{ media | image_url: width: 288 }} 288w,{% endif %}
+        {% if media.width >= 576 %}{{ media | image_url: width: 576 }} 576w,{% endif %}
+        {% if media.width >= 750 %}{{ media | image_url: width: 750 }} 750w,{% endif %}
+        {% if media.width >= 1100 %}{{ media | image_url: width: 1100 }} 1100w,{% endif %}
+      "
+      src="{{ media | image_url: width: 1000 }}"
+      sizes="(min-width: 40em) 60vw, 100vw"
+      loading="lazy"
+      width="{{ media.width }}"
+      height="{{ media.width | divided_by: media.aspect_ratio }}"
+      alt="{{ alt | escape }}"
+      class="image-magnify-hover"
+    >
+  </div>
+</li>

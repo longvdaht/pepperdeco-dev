@@ -1,0 +1,144 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign layout = section.settings.layout
+  assign show_tags = section.settings.show_tags
+  assign show_date = section.settings.show_date
+  assign grid_mobile_column = section.settings.mobile_per_row
+  assign grid_desktop_column = section.settings.desktop_per_row
+-%}
+{%- unless section.settings.use_metafields -%}
+  {% assign article_links = section.blocks %}
+{% else %}
+  {% if article.metafields.custom.article_link %}
+    {% assign article_links = article.metafields.custom.article_link %}
+  {% else %}
+    {% assign article_links = blog.metafields.custom.article_link %}
+  {% endif %}
+{%- endunless -%}
+{%  if article_links %}
+  <div class="page-width">
+    <div class="border-top"></div>
+  </div>
+
+  <div class="section-outer section-color-{{ section.settings.color_scheme }}">
+    <div class="page-width">
+      {%- if section.settings.heading != blank -%}
+        <div class="section-heading-outer center">
+          <h2 class="h2 display section-heading">
+            {{ section.settings.heading }}
+          </h2>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="page-width">
+      <div class="grid mobile-{{ grid_mobile_column }} desktop-{{ grid_desktop_column }} blog-display-grid">
+        {%- unless section.settings.use_metafields -%}
+          {%- for block in section.blocks -%}
+            {% assign article = block.settings.article %}
+            <div class="grid__item{%  if forloop.index > grid_mobile_column %} mobile-hide{% endif %}">
+              {% render 'article-card', article: article, show_tags: show_tags, show_date: show_date %}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          {%- for items in article_links.value -%}
+            {% assign article_handle = items | split: '/blogs/' | last %}
+            {% assign article = articles[article_handle] %}
+            <div class="grid__item{%  if forloop.index > grid_mobile_column %} mobile-hide{% endif %}">
+              {% render 'article-card', article: article, show_tags: show_tags, show_date: show_date %}
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured blog",
+  "tag": "section",
+  "class": "spaced-section featured-blog",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Stories"
+    },
+    {
+      "type": "range",
+      "id": "desktop_per_row",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Desktop per row",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "mobile_per_row",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Mobile per row",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show Blog Tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show Blog Date",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use_metafields",
+      "label": "Use metafields Article link",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [{
+    "type": "article",
+    "name": "Article",
+    "settings": [
+      {
+        "type": "article",
+        "id": "article",
+        "label": "Article"
+      }
+    ]
+  }],
+  "presets": [
+    {
+      "name": "Featured blog"
+    }
+  ]
+}
+{% endschema %}

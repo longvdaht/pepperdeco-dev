@@ -1,0 +1,211 @@
+<script src="{{ 'piping-radios-embroidery.js' | asset_url }}" defer></script>
+{%- assign piping_label = true -%}
+{%- assign fringe_label = true -%}
+{%- assign pom_pom_label = true -%}
+{%- assign ruffle_label = true -%}
+<piping-radios-embroidery
+  class="line-item-property__field line-item-property__field-trim"
+  data-section="{{ section.id }}"
+>
+  {%- assign trim_sides = 'None,Trim' | split: ',' -%}
+  <div class="trim-sides product-form__input">
+    {%- for side in trim_sides -%}
+      <input
+        class="input-trim-side"
+        id="{{ section.id }}-trim-side-proxy-{{ side | handleize }}"
+        name="trim-side-proxy"
+        value="{{ side | escape }}"
+        form="product-form-{{ section.id }}"
+        type="radio"
+        {%- if product.template_suffix == 'cafe-curtains-sheers' or product.template_suffix == 'sheer-curtain' -%}
+          {%- if forloop.first -%}
+            checked
+          {%- endif -%} 
+        {%- endif -%}
+      >
+      <label
+        for="{{ section.id }}-trim-side-proxy-{{ side | handleize }}"
+        class="trim-side-radio trim-{{ side | handleize }}"
+      >
+        {% if side == 'Trim' %}
+          Add Trim
+        {% else %}
+          {{ side }}
+        {% endif %}
+      </label>
+    {%- endfor -%}
+  </div>
+
+  {%- liquid
+    assign piping_options = product.metafields.pepper.piping_options.value
+  -%}
+
+  <div class="trim-options product-form__input trim-options-hide">
+    <span class="trim-options-message">{{ 'products.product.trim_options_message' | t }}</span>
+    <input
+      class="input-trim-option"
+      id="{{ section.id }}-trim-option-none-proxy"
+      type="radio"
+      name="trim-proxy"
+      value="None"
+      form="product-form-{{ section.id }}"
+      data-type="None"
+    >
+    <label
+      for="{{ section.id }}-trim-option-none-proxy"
+      class="trim-option-radio trim-none trim-options-hide"
+    >
+      None
+    </label>
+    {%- for piping_option in piping_options -%}
+      {%- unless piping_option contains 'Fringe' or piping_option contains 'Pom Pom' or piping_option contains 'Ruffle' -%}
+        {%- if piping_label == true -%}
+          <div class="js product-form__input product-form__input-piping">
+            <aside class="form__label">
+              Piping:
+              <span id="{{ section.id }}-option-piping"></span>
+            </aside>
+          </div>
+          {%- assign piping_label = false -%}
+        {%- endif -%}
+        <input
+          class="input-trim-option"
+          id="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          type="radio"
+          name="trim-proxy"
+          value="{{ piping_option | escape }}"
+          form="product-form-{{ section.id }}"
+          data-type="{% if piping_option contains 'Fringe' %}Fringe{% elsif piping_option contains 'Ruffle' %}Ruffle{% elsif piping_option contains 'Pom Pom' %}Pom Pom{% else %}Piping{% endif %}"
+          data-trim-handle="{{ section.id }}-{{ piping_option | handleize }}"
+        >
+        <label
+          for="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          class="trim-option-radio trim-{{ piping_option | handleize }}"
+        >
+          {{ piping_option | escape }}
+        </label>
+      {%- endunless -%}
+    {%- endfor -%}
+    {% comment %} FRINGE {% endcomment %}
+    {%- for piping_option in piping_options -%}
+      {%- if piping_option contains 'Fringe' -%}
+        {%- if fringe_label == true -%}
+          <div class="js product-form__input product-form__input-fringe">
+            <aside class="form__label">
+              Fringe:
+              <span id="{{ section.id }}-option-fringe"></span>
+            </aside>
+          </div>
+          {%- assign fringe_label = false -%}
+        {%- endif -%}
+        <input
+          class="input-trim-option"
+          id="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          type="radio"
+          name="trim-proxy"
+          value="{{ piping_option | escape }}"
+          form="product-form-{{ section.id }}"
+          data-type="{% if piping_option contains 'Fringe' %}Fringe{% elsif piping_option contains 'Ruffle' %}Ruffle{% elsif piping_option contains 'Pom Pom' %}Pom Pom{% else %}Piping{% endif %}"
+          data-trim-handle="{{ section.id }}-{{ piping_option | handleize }}"
+        >
+        <label
+          for="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          class="trim-option-radio trim-{{ piping_option | handleize }}"
+        >
+          {{ piping_option | escape }}
+        </label>
+      {%- endif -%}
+    {%- endfor -%}
+        {% comment %} RUFFLE {% endcomment %}
+    {%- for piping_option in piping_options -%}
+      {%- if piping_option contains 'Ruffle' -%}
+        {%- if ruffle_label == true -%}
+          <div class="js product-form__input product-form__input-ruffle">
+            <aside class="form__label">
+              Ruffle:
+              <span id="{{ section.id }}-option-ruffle"></span>
+            </aside>
+          </div>
+          {%- assign ruffle_label = false -%}
+        {%- endif -%}
+        <input
+          class="input-trim-option"
+          id="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          type="radio"
+          name="trim-proxy"
+          value="{{ piping_option | escape }}"
+          form="product-form-{{ section.id }}"
+          data-type="{% if piping_option contains 'Fringe' %}Fringe{% elsif piping_option contains 'Ruffle' %}Ruffle{% elsif piping_option contains 'Pom Pom' %}Pom Pom{% else %}Piping{% endif %}"
+          data-trim-handle="{{ section.id }}-{{ piping_option | handleize }}"
+        >
+        <label
+          for="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          class="trim-option-radio trim-{{ piping_option | handleize }}"
+        >
+          {{ piping_option | escape }}
+        </label>
+      {%- endif -%}
+    {%- endfor -%}
+    {% comment %} Pom Pom {% endcomment %}
+    {%- for piping_option in piping_options -%}
+      {%- if piping_option contains 'Pom Pom' -%}
+        {%- if pom_pom_label == true -%}
+          <div class="js product-form__input product-form__input-pom-pom">
+            <aside class="form__label">
+              Pom Pom:
+              <span id="{{ section.id }}-option-pom-pom"></span>
+            </aside>
+          </div>
+          {%- assign pom_pom_label = false -%}
+        {%- endif -%}
+        <input
+          class="input-trim-option"
+          id="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          type="radio"
+          name="trim-proxy"
+          value="{{ piping_option | escape }}"
+          form="product-form-{{ section.id }}"
+          data-type="{% if piping_option contains 'Fringe' %}Fringe{% elsif piping_option contains 'Ruffle' %}Ruffle{% elsif piping_option contains 'Pom Pom' %}Pom Pom{% else %}Piping{% endif %}"
+          data-trim-handle="{{ section.id }}-{{ piping_option | handleize }}"
+        >
+        <label
+          for="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          class="trim-option-radio trim-{{ piping_option | handleize }}"
+        >
+          {{ piping_option | escape }}
+        </label>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {% comment %}
+    <div class="trim-options product-form__input">
+      <div class="js product-form__input product-form__input-piping">
+        <aside class="form__label">
+          Piping:
+          <span id="{{ section.id }}-option-piping"></span>
+        </aside>
+      </div>
+      {%- for piping_option in piping_options -%}
+        {%- if forloop.first -%}
+          {%- assign piping_label = false -%}
+        {%- endif -%}
+        <input
+          class="input-trim-option"
+          id="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          type="radio"
+          name="trim-proxy"
+          value="{{ piping_option | escape }}"
+          form="product-form-{{ section.id }}"
+          data-type="{% if piping_option contains 'Fringe' %}Fringe{% elsif piping_option contains 'Pom Pom' %}Pom Pom{% else %}Piping{% endif %}"
+          data-trim-handle="{{ section.id }}-{{ piping_option | handleize }}"
+        >
+        <label
+          for="{{ section.id }}-trim-option-{{ piping_option | handleize }}-proxy"
+          class="trim-option-radio trim-{{ piping_option | handleize }}"
+        >
+          {{ piping_option | escape }}
+        </label>
+      {%- endfor -%}
+    </div>
+  {% endcomment %}
+</piping-radios-embroidery>

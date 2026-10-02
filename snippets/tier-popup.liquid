@@ -1,0 +1,19 @@
+
+<div class="tier-popup">
+  <h2 class="tier-popup__title display">Tiers:</h2>
+  <div class="tier-content">
+    {%  assign tier_group = metaobjects['tier_group'].values | sort_natural: 'order' %}
+    {% for group in tier_group %}
+      {% if group.tier_item.value.size > 0 %}
+      <div class="tier-content-item">
+        <span class="tier-content-item__title">{{ group.tier_title }}:</span>
+        <ul class="tier-content-item__items">
+          {% for item in group.tier_item.value %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}  
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,106 @@
+<details-modal id="headrailModal" class="product__modal headrail-depth-modal" {{ block.shopify_attributes }}>
+  <details>
+  <summary
+    class="modal__toggle"
+    aria-haspopup="dialog"
+    aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+  >
+    <span class="option-link">?</span>
+  </summary>
+  <div
+      class="product-modal modal__content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+  >
+      <div class="modal-overlay"></div>
+      <div class="product-modal__content" tabindex="-1">
+      <div id="headrail-depth-modal-content" class="headrail-depth-modal-content">
+        <div class="product-modal__content--heading">{{ 'products.product.shade_headrail.label' | t }}:</div>
+        <div class="headrail-depth-modal-content-wrapper">
+          <div class="headrail-content-wrapper">
+            <table class="headrail-table headrail-table--desktop">
+              <thead>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.header_shade_width' | t }}</td>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.header_recommended_depth' | t }}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.under_60' | t }}</td>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.under_60_value' | t }}</td>
+                </tr>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.over_60' | t }}</td>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.over_60_value' | t }}</td>
+                </tr>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.mixed_sizes' | t }}</td>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.mixed_sizes_value' | t }}</td>
+                </tr>
+              </tbody>
+            </table>
+            {%- comment -%} ---------- MOBILE TABLES ---------- {%- endcomment -%}
+            <table class="headrail-table headrail-table--mobile">
+              <thead>
+                <tr>
+                  <th scope="col">{{ 'products.product.shade_headrail.tooltip_table.header_shade_width' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.under_60' | t }}</td>
+                </tr>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.over_60' | t  }}</td>
+                </tr>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.mixed_sizes' | t }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="headrail-table headrail-table--mobile">
+              <thead>
+                <tr>
+                  <th scope="col">{{ 'products.product.shade_headrail.tooltip_table.header_recommended_depth' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.under_60_value' | t }}</td>
+                </tr>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.over_60_value' | t }}</td>
+                </tr>
+                <tr>
+                  <td>{{ 'products.product.shade_headrail.tooltip_table.mixed_sizes_value' | t }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="content-below">
+              <div class="content-note">
+                <span class="note">
+                  {{ 'products.product.shade_headrail.note_html.note' | t }}
+                </span>
+                <p>{{ 'products.product.shade_headrail.note_html.inside' | t }}</p>
+                <p>{{ 'products.product.shade_headrail.note_html.outside' | t }}</p>
+              </div>
+              <img src="{{ 'headrail-depth-placeholder.png' | asset_img_url: 'large' }}" width="400" height="400">
+            </div>
+          </div>
+        </div>
+        <button
+            type="button"
+            class="modal__close-button link button-unstyled focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+        >
+            {%- render 'icon-close' -%}
+        </button>
+      </div>
+    </div>
+  </div>
+  </details>
+</details-modal>

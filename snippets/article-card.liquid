@@ -1,0 +1,103 @@
+{% comment %}
+  Renders an article card
+  Accepts:
+  - article: {Object} Article Liquid object
+  - mobile_per_row:
+  - desktop_per_row:
+  - squiggle: {Boolean} on whether or not to show squiggle after title
+  Usage:
+  {% render 'article-card',
+          article: block.settings.article,
+          mobile_per_row: grid_mobile_column,
+          desktop_per_row: grid_desktop_column,
+          squiggle: true %}
+{% endcomment %}
+{%- liquid
+  if article.metafields.custom.mobile_feature_image != blank
+    assign mobile_image = article.metafields.custom.mobile_feature_image
+  endif
+-%}
+
+<article
+  class="article-card{% if article.image == blank %} article-card__no-media{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  
+    {% if article.image != blank %}
+      <div class="article-card__image-wrapper">
+        <a href="{{ article.url }}" class="full-unstyled-link">
+          <div class="media media--transparent media--square">
+            <img
+              srcset="
+                {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+              "
+              src="{{ article.image.src | image_url: width: 533 }}"
+              sizes="(min-width: 40em) calc((100vw - 2.8rem) / {{ desktop_per_row }}), calc((100vw - 2rem) / {{ mobile_per_row }})"
+              alt="{{ article.image.src.alt | escape }}"
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
+              loading="lazy"
+              class="motion-reduce{% if mobile_image != blank %} image-desktop{% endif %}"
+            >
+              {% if mobile_image != blank %}
+                <img
+                  srcset="
+                    {%- if mobile_image.width >= 375 -%}{{ mobile_image | image_url: width: 375 }} 375w,{%- endif -%}
+                    {%- if mobile_image.width >= 750 -%}{{ mobile_image | image_url: width: 750 }} 750w,{%- endif -%}
+                    {%- if mobile_image.width >= 1100 -%}{{ mobile_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                    {%- if mobile_image.width >= 1500 -%}{{ mobile_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {%- if mobile_image.width >= 1780 -%}{{ mobile_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                    {%- if mobile_image.width >= 2000 -%}{{ mobile_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                    {%- if mobile_image.width >= 3000 -%}{{ mobile_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                    {%- if mobile_image.width >= 3840 -%}{{ mobile_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                  "
+                  src="{{ mobile_image | image_url: width: 533 }}"
+                  sizes="(min-width: 40em) calc((100vw - 2rem) / {{ mobile_per_row }})"
+                  loading="lazy"
+                  alt="{{ mobile_image.alt | escape }}"
+                  width="{{ mobile_image.width }}"
+                  height="{{ mobile_image.height }}"
+                  class="motion-reduce image-mobile"
+                >
+              {% endif %}
+          </div>
+        </a>
+      </div>
+    {% endif %}
+    {%- unless blog.title contains 'Spice' -%}
+      <div class="article-card__info">
+        {% if squiggle %}
+          <div class="squiggle">
+            {% render 'squiggle' %}
+          </div>
+        {% endif %}
+        {% if show_tags or show_date %}
+          <div class="tags-date">
+            {% if show_tags %}
+              <p class="article-card__tags">
+                {%- for tag in article.tags -%}
+                  {% if forloop.index0 > 0 %}, {% endif %}
+                  <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="full-unstyled-link">{{- tag -}}</a>
+                {%- endfor -%}
+              </p>
+            {% endif %}
+            {% if show_date %}
+              <p class="article-card__date">{{ article.published_at | date: "%B %Y"}}</p>
+            {% endif %}
+          </div>
+        {% endif %}
+        <a href="{{ article.url }}" class="full-unstyled-link">
+          <h2 class="article-card__title h3" id="Article-{{ article.id }}">
+            {{ article.title | escape }}
+          </h2>
+        </a>
+        
+      </div>
+    {%- endunless -%}
+  
+</article>

@@ -1,0 +1,231 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_page_title_ApUtke": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "",
+        "title_type": "type-2",
+        "description": ""
+      }
+    },
+    "16337335918520036b": {
+      "type": "page-hero",
+      "disabled": true,
+      "settings": {
+        "word_graphic_width": 104,
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-swatch-new",
+      "blocks": {
+        "collection_UzENh4": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-solidcottonlinen"
+          }
+        },
+        "ef9e47b3-67e7-411f-b7d0-c4572f1781f6": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-printedcotton"
+          }
+        },
+        "bd001433-77ee-49e4-b2fb-f9136a9c3caf": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-solidvelvet"
+          }
+        },
+        "collection_PmYBRW": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-woven"
+          }
+        },
+        "83699a25-9063-4752-ac13-4c5365190621": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-chenillejacquard"
+          }
+        },
+        "collection_UMNVYn": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-sheer"
+          }
+        },
+        "collection_KRYwYz": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-embroidered"
+          }
+        },
+        "ac12a8c2-20f2-41ce-84d6-5e84da13292d": {
+          "type": "collection",
+          "settings": {
+            "collection": "swatch-fabric-printedlinen"
+          }
+        }
+      },
+      "block_order": [
+        "collection_UzENh4",
+        "ef9e47b3-67e7-411f-b7d0-c4572f1781f6",
+        "bd001433-77ee-49e4-b2fb-f9136a9c3caf",
+        "collection_PmYBRW",
+        "83699a25-9063-4752-ac13-4c5365190621",
+        "collection_UMNVYn",
+        "collection_KRYwYz",
+        "ac12a8c2-20f2-41ce-84d6-5e84da13292d"
+      ],
+      "settings": {
+        "show_secondary_image": true,
+        "show_price": false,
+        "show_type": false,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-fifth",
+        "padding_top": 12,
+        "padding_bottom": 36,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "section_text_with_icon_column_PkUniE": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/76a2d2bb88f6ef748a4cebc7efa33a89.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=trim-piping"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/EmmaSky-_JTWDesign_1-cropped.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/LilacVelvet-_oystercreekstudios_3_8af10126-8963-420e-bd5d-526d58c304a7.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SerenaSeaSalt-_mbm_styles_2.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-3",
+        "163284582776ee348a-0",
+        "163284582776ee348a-2",
+        "163284582776ee348a-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "",
+        "label_view_all": "",
+        "link_view_all": "shopify://pages/justaddpepper",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "section_page_title_ApUtke",
+    "16337335918520036b",
+    "product-grid",
+    "163284582776ee348a",
+    "section_text_with_icon_column_PkUniE"
+  ]
+}

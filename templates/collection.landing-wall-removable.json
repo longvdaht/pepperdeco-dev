@@ -1,0 +1,428 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "multi_collection_breadcrumb_eBmX9h": {
+      "type": "multi-collection-breadcrumb",
+      "disabled": true,
+      "name": "Breadcrumb multi",
+      "settings": {
+        "current_title": "",
+        "previous_link_1": "shopify://collections/wallpaper",
+        "previous_text_1": "Wallpaper",
+        "previous_link_2": "",
+        "previous_text_2": "",
+        "previous_link_3": "",
+        "previous_text_3": ""
+      }
+    },
+    "section_page_title_FeFyHJ": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Removable Wallpaper",
+        "title_type": "type-2",
+        "description": "Easy on, easy off. Thoughtfully designed for evolving spaces.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_RVdJxb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_tVMz4k": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-green.jpg",
+            "collection_title": "Green",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85922349116",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_9CVyPk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-blue-2.png",
+            "collection_title": "Blue",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923299388",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_kkWtFg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-neutral.jpg",
+            "collection_title": "Neutral",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300207164",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_FAkPci": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-pink.jpg",
+            "collection_title": "Pink",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300272700",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_QiEmj8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-purple.jpg",
+            "collection_title": "Purple",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923397692",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_GwXRi4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-yellow.jpg",
+            "collection_title": "Yellow",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923463228",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_zJbYXK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-orange.jpg",
+            "collection_title": "Orange",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923364924",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_CBXepb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-wallpaper-red.jpg",
+            "collection_title": "Red",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923430460",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_tVMz4k",
+        "featured_collection_9CVyPk",
+        "featured_collection_kkWtFg",
+        "featured_collection_FAkPci",
+        "featured_collection_QiEmj8",
+        "featured_collection_GwXRi4",
+        "featured_collection_zJbYXK",
+        "featured_collection_CBXepb"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "main_list_collection_2_xdfWdX": {
+      "type": "main-list-collection-2",
+      "blocks": {
+        "featured_collection_KT4fPN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Green",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85922349116",
+            "trigger_filter_click": "color: green"
+          }
+        },
+        "featured_collection_cENkPz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Blue",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923299388",
+            "trigger_filter_click": "color: blue"
+          }
+        },
+        "featured_collection_PmwkFV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Neutral",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300207164",
+            "trigger_filter_click": "color: neutral"
+          }
+        },
+        "featured_collection_YfqiLU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Pink",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F82300272700",
+            "trigger_filter_click": "color: pink"
+          }
+        },
+        "featured_collection_3GFzbB": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Purple",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923397692",
+            "trigger_filter_click": "color: purple"
+          }
+        },
+        "featured_collection_bECjVk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Yellow",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923463228",
+            "trigger_filter_click": "color: yellow"
+          }
+        },
+        "featured_collection_XJKFdV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Orange",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923364924",
+            "trigger_filter_click": "color: orange"
+          }
+        },
+        "featured_collection_nPbLcD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "collection_title": "Red",
+            "override_url": "https://pepper-home.com/collections/wallpaper-removable?filter.p.m.custom.color_type_filter=gid%3A%2F%2Fshopify%2FMetaobject%2F85923430460",
+            "trigger_filter_click": "color: red"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_KT4fPN",
+        "featured_collection_cENkPz",
+        "featured_collection_PmwkFV",
+        "featured_collection_YfqiLU",
+        "featured_collection_3GFzbB",
+        "featured_collection_bECjVk",
+        "featured_collection_XJKFdV",
+        "featured_collection_nPbLcD"
+      ],
+      "disabled": true,
+      "name": "Collection list small",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "design_block_wDbwUw": {
+          "type": "design_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://collections/swatch-fabric",
+            "content": "<p>Can’t decide which print is best for your space? Order some swatches to make sure your choice is solid.</p><p><strong>fabric swatches</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "design_block_wDbwUw"
+      ],
+      "settings": {
+        "products_per_page": 52,
+        "columns_desktop": 4,
+        "infinite_scroll": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": true,
+        "hide_type_filter": true,
+        "hide_fabric_filter": true,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_sorting": true,
+        "enable_grid_view_mobile": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "main_multi_collections_YYRQkC": {
+      "type": "main-multi-collections",
+      "disabled": true,
+      "settings": {
+        "collection_layout": "grid",
+        "product_limit": 50,
+        "product_limit_mobile": 50,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": true,
+        "hide_type_filter": true,
+        "hide_fabric_filter": true,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-quarter",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly-Basile-5_eaff7e7a-5c28-4c07-bf77-2f207cb220a3.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=pillows"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/KristenChambless4_90c15d0c-ee48-4dec-85ae-24e98d6d948b.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Oyster-Creek-1_d545db3f-7677-4d25-a6b8-24767f9ae67a.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=living"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kevin-OGara-6.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=bedroom"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-1",
+        "163284582776ee348a-3",
+        "163284582776ee348a-0",
+        "163284582776ee348a-2"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "multi_collection_breadcrumb_eBmX9h",
+    "section_page_title_FeFyHJ",
+    "main_list_collections_RVdJxb",
+    "main_list_collection_2_xdfWdX",
+    "product-grid",
+    "main_multi_collections_YYRQkC",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

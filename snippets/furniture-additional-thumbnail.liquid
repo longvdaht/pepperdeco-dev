@@ -1,0 +1,176 @@
+{% comment %}
+  Renders an additional thumbnail entry for trim, fringe, pom pom images
+  Accepts:
+  - media: {Object} Article Liquid object
+  - image_ratio: {String} Default: square (optional)
+  - type: {String} Options: Piping, Fringe, Pom Pom (optional) Default: Piping
+  - image_count:
+  Usage:
+  {% render 'additional-thumbnail',
+    media: media,
+    image_count: image_count
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign media_title_array = media_title_array | handleize | remove_first: 'files-' | remove: '-png' | remove: '-jpg' | remove: type
+  assign detail = ' '
+  assign size = ' '
+
+  if type == 'chair'
+    unless base
+      if media_title_array contains 'upholstered-base'
+        assign base = 'upholstered-base'
+      elsif media_title_array contains 'waterfall-skirt'
+        assign base = 'waterfall-skirt'
+      elsif media_title_array contains 'legs'
+        assign base = 'legs'
+      else
+        assign base = 'kick-pleat-skirt'
+      endif
+    endunless
+
+    assign inferred_leg_color = leg_color | default: ' '
+    if furniture_options_leg contains '-tobacco'
+      assign inferred_leg_color = 'tobacco'
+    elsif furniture_options_leg contains '-smoke'
+      assign inferred_leg_color = 'smoke'
+    elsif furniture_options_leg contains '-flour'
+      assign inferred_leg_color = 'flour'
+    endif
+    assign leg_color_split_text = inferred_leg_color | append: '-'
+
+    assign welt = welt | default: ''
+    if media_title_array contains 'selfwelt'
+      assign welt = 'selfwelt'
+    endif
+
+  elsif type == 'bench'
+    assign inferred_leg_color = leg_color | default: ' '
+    assign furniture_options = media_title_array
+
+    if media_title_array contains '-queen'
+      assign size = 'queen'
+    elsif media_title_array contains '-king'
+      assign size = 'king'
+    elsif media_title_array contains '-twin'
+      assign size = 'twin'
+    else
+      assign size = 'standard'
+    endif
+
+    unless welt 
+      assign base = 'legs'
+    endunless
+
+    assign inferred_leg_color = leg_color | default: ' '
+    if furniture_options_leg contains '-tobacco'
+      assign inferred_leg_color = 'tobacco'
+    elsif furniture_options_leg contains '-smoke'
+      assign inferred_leg_color = 'smoke'
+    elsif furniture_options_leg contains '-flour'
+      assign inferred_leg_color = 'flour'
+    endif
+    assign leg_color_split_text = inferred_leg_color | append: '-'
+
+    assign welt = welt | default: ''
+    if media_title_array contains 'selfwelt'
+      assign welt = 'selfwelt'
+    endif
+
+  else
+    if media_title_array contains '-flat'
+      assign detail = 'flat'
+    elsif media_title_array contains '-channel'
+      assign detail = 'channel'
+    endif
+
+    if media_title_array contains '-queen'
+      assign size = 'queen'
+    elsif media_title_array contains '-king'
+      assign size = 'king'
+    elsif media_title_array contains '-twin'
+      assign size = 'twin'
+    endif
+
+    assign furniture_options = media_title_array
+    if size != ' '
+      assign furniture_options = media_title_array | split: size | last
+    endif
+    if type == 'bed'
+      if furniture_options contains '-rails'
+        unless base
+          assign base = furniture_options | split: '-rails' | first | remove_first: '-' | append: '-rails'
+        endunless
+        assign furniture_options_leg = furniture_options | split: '-rails' | last
+        assign inferred_leg_color = leg_color | default: ' '
+        if furniture_options_leg contains '-tobacco'
+          assign inferred_leg_color = 'tobacco'
+        elsif furniture_options_leg contains '-smoke'
+          assign inferred_leg_color = 'smoke'
+        elsif furniture_options_leg contains '-flour'
+          assign inferred_leg_color = 'flour'
+        endif
+        assign leg_color_split_text = inferred_leg_color | append: '-'
+        assign welt = ''
+        if furniture_options contains leg_color_split_text
+          assign welt = furniture_options | split: leg_color_split_text | last | remove_first: '-'
+        endif
+      else
+        assign welt = furniture_options | remove_first: '-'
+      endif
+
+    else
+      assign welt = furniture_options | remove_first: '-'
+    endif
+  endif
+-%}
+
+{%- if media.alt -%}
+  {%- assign alt = media.alt -%}
+{%- else -%}
+  {%- capture alt_trim = value -%}{{ trim | first | replace: '-', ' ' -}}{%- endcapture -%}
+  {%- assign alt = size
+    | append: ' '
+    | append: product.title
+    | append: ' Custom '
+    | append: product.metafields.pepper.seo_product_title
+    | append: alt_trim
+    | append: 'on white background'
+    | capitalize
+  -%}
+{%- endif -%}
+{%- capture data_variant -%}
+
+  {%- if detail != ' ' -%}{{ detail }}-{%- endif -%}
+  {%- if size != ' ' -%}{{ size }}{%- endif -%}
+  {%- if base -%}{%- if size != ' ' -%}-{%- endif -%}{{ base }}{%- endif -%}
+  {%- if leg_color -%}{%- if size != ' ' or base -%}-{%- endif -%}{{ leg_color }}{%- endif -%}
+  {%- if welt != '' -%}-{{ welt }}{%- endif -%}
+{%- endcapture -%}
+<li
+  class="grid__item carousel-cell product__media-item--additional-image"
+  data-media-id="{{ section.id }}-{{ media | handleize }}"
+  data-additional-image
+  data-base="{{ base }}"
+  data-type="{{ type | default: 'bed-regina' }}"
+  data-variant="{{ data_variant }}"
+>
+  <div class="media media--{{ image_ratio | default: 'square' }} media--transparent">
+    <img
+      srcset="
+        {% if media.width >= 288 %}{{ media | image_url: width: 288 }} 288w,{% endif %}
+        {% if media.width >= 576 %}{{ media | image_url: width: 576 }} 576w,{% endif %}
+        {% if media.width >= 750 %}{{ media | image_url: width: 750 }} 750w,{% endif %}
+        {% if media.width >= 1100 %}{{ media | image_url: width: 1100 }} 1100w,{% endif %}
+      "
+      src="{{ media | image_url: width: 1000 }}"
+      sizes="(min-width: 40em) 60vw, 100vw"
+      loading="lazy"
+      width="{{ media.width }}"
+      height="{{ media.width | divided_by: media.aspect_ratio }}"
+      alt="{{ alt | escape }}"
+      class="image-magnify-hover"
+    >
+  </div>
+</li>

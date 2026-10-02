@@ -1,0 +1,278 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16337335918520036b": {
+      "type": "page-hero",
+      "settings": {
+        "word_graphic_width": 104,
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "design_block_nHDqNP": {
+          "type": "design_block",
+          "settings": {
+            "link": "",
+            "content": ""
+          }
+        },
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/embroidery-guide",
+            "content": "<p>Personalize your pouch with a suite of options, from a classic monogram to a cutesy message.</p><p><strong>embroidery guide</strong></p>"
+          }
+        },
+        "3494fb7d-cad7-45fb-88e9-2c6e8e3abe81": {
+          "type": "design_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://blogs/pep-talk/get-to-know-names-for-good",
+            "content": "<p>Names For Good was founded in 2020 out of the purest desire to give back, which continues to be the motivation behind every bracelet they create. </p><p><strong>names for good</strong></p>"
+          }
+        },
+        "c9432423-c898-466a-be49-3e2c887f47d7": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/holiday-lead-times",
+            "content": "<p>Looking for guaranteed delivery by Christmas? There's still time!</p><p><strong>ORDER DEADLINES</strong> </p>"
+          }
+        },
+        "bd0cafd7-5fb7-48d7-a556-c120c3ad5629": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/get-to-know-bauble-stockings",
+            "content": "<p>A Bauble Stocking contains, or has a clue to, the final present of Christmas, a grand finale to the holiday.</p><p><strong>Bauble Stockings</strong></p>"
+          }
+        },
+        "cc9a4b03-6663-4287-a7bb-20d1395ff4d3": {
+          "type": "design_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://blogs/pep-talk/get-to-know-swells-of-splendor",
+            "content": "<p>Reinvent a classic accessory from yesterday, with trends from today.</p><p><strong>Swells of Splendor</strong></p>"
+          }
+        },
+        "b31b1184-710e-4628-a832-8147ff547e59": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://collections/table-linens",
+            "content": "<p>Looking for more? Check out our table linens collection.</p><p><strong>TABLE LINENS</strong></p>"
+          }
+        },
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5": {
+          "type": "design_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://blogs/pep-talk/get-to-know-well-wonder",
+            "content": "<p>Want to learn more about our collaboration with Well + Wonder? Read our conversation with the founder.</p><p><strong>Meet Mollie</strong></p>"
+          }
+        },
+        "4fa4597c-1636-4b38-8d6b-28fb8b0b1d0d": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/meet-the-maker-susie-bettenhausen",
+            "content": "<p>Check out our Q+A with the artist behind Harper, Serena, and Julia.</p><p><strong>Meet Susie Bettenhausen</strong></p>"
+          }
+        },
+        "9c488227-5110-4855-9594-c473625ed8e4": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/meet-the-maker-kellie-lawler",
+            "content": "<p>Check out our Q+A with the artist behind Mirabella and Georgia.</p><p><strong>Meet Kellie Lawler</strong></p>"
+          }
+        },
+        "3eeb2e86-4ca1-40b9-8f21-e55e53369c47": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/get-to-know-well-wonder",
+            "content": "<p>Want to learn more about our collaboration with Well + Wonder? Read our conversation with the founder.</p><p><strong>Meet Mollie</strong></p>"
+          }
+        },
+        "4b86f50a-67bc-4fcb-a1b7-8c84792b2044": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/meet-the-maker-melvin-g",
+            "content": "<p>Check out our Q+A with the artist behind Lee and Nellie.</p><p><strong>Meet Melvin G.</strong></p>"
+          }
+        },
+        "fe05e57a-c4c0-4181-80dc-c5a20dabafd6": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/design-assistance",
+            "content": "<p>Need a hand? Our in-house experts will give you the design help as you need, free of charge.</p><p><strong>design assistance</strong></p>"
+          }
+        },
+        "2e75115a-91a3-4baa-b18f-ffe3b63271d4": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://collections/best-sellers-3",
+            "content": "<p>We don’t play favorites, but our customers do.</p><p><strong>Best sellers</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "design_block_nHDqNP",
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2",
+        "3494fb7d-cad7-45fb-88e9-2c6e8e3abe81",
+        "c9432423-c898-466a-be49-3e2c887f47d7",
+        "bd0cafd7-5fb7-48d7-a556-c120c3ad5629",
+        "cc9a4b03-6663-4287-a7bb-20d1395ff4d3",
+        "b31b1184-710e-4628-a832-8147ff547e59",
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5",
+        "4fa4597c-1636-4b38-8d6b-28fb8b0b1d0d",
+        "9c488227-5110-4855-9594-c473625ed8e4",
+        "3eeb2e86-4ca1-40b9-8f21-e55e53369c47",
+        "4b86f50a-67bc-4fcb-a1b7-8c84792b2044",
+        "fe05e57a-c4c0-4181-80dc-c5a20dabafd6",
+        "2e75115a-91a3-4baa-b18f-ffe3b63271d4"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "columns_desktop": 3,
+        "infinite_scroll": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": false,
+        "hide_fabric_filter": true,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/serena2.png",
+            "heading": "",
+            "link": ""
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/22FC005E-07D7-4842-931C-4388297D51ED_1_201_a.jpg",
+            "heading": "",
+            "link": ""
+          }
+        },
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Tote-Detail.jpg",
+            "heading": "",
+            "link": ""
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/serena.png",
+            "heading": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-2",
+        "163284582776ee348a-3",
+        "163284582776ee348a-1",
+        "163284582776ee348a-0"
+      ],
+      "settings": {
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "16337335918520036b",
+    "product-grid",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

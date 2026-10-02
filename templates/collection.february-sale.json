@@ -1,0 +1,326 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_page_title_FeFyHJ": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "",
+        "title_type": "type-2",
+        "description": ""
+      }
+    },
+    "main_list_collections_RBkNyi": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_yciX7p": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-beds-blue.jpg",
+            "collection_title": "Furniture",
+            "override_url": "",
+            "trigger_filter_click": "type:furniture"
+          }
+        },
+        "featured_collection_wrMprV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/Category-Curtain-Orchid.png",
+            "collection_title": "Curtains",
+            "override_url": "",
+            "trigger_filter_click": "type:curtain"
+          }
+        },
+        "featured_collection_RBPb3Q": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-cafecurtains-pink.jpg",
+            "collection_title": "Cafe Curtains",
+            "override_url": "",
+            "trigger_filter_click": "type:cafe curtain"
+          }
+        },
+        "featured_collection_HNzLF8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/CollectionUGC-3x4-pillows-sea.jpg",
+            "collection_title": "Pillows",
+            "override_url": "",
+            "trigger_filter_click": "type:pillow"
+          }
+        },
+        "featured_collection_wpm3y9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/UGC-Shower-Curtains-Penelope-Moss-_meganstokes_1.jpg",
+            "collection_title": "Shower Curtains",
+            "override_url": "",
+            "trigger_filter_click": "type:shower curtain"
+          }
+        },
+        "featured_collection_JikYWk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/UGC-Fabric-PrintedCotton-Frida-Green-simply.stephy.jean-20240312-3-AdApproved-Cropped.jpg",
+            "collection_title": "Fabric",
+            "override_url": "",
+            "trigger_filter_click": "type:fabric"
+          }
+        },
+        "featured_collection_yfWw6z": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "image": "shopify://shop_images/collection-tablelinens-pink.jpg",
+            "collection_title": "Table Linens",
+            "override_url": "",
+            "trigger_filter_click": "type:table linens"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_yciX7p",
+        "featured_collection_wrMprV",
+        "featured_collection_RBPb3Q",
+        "featured_collection_HNzLF8",
+        "featured_collection_wpm3y9",
+        "featured_collection_JikYWk",
+        "featured_collection_yfWw6z"
+      ],
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "design_block_wDbwUw": {
+          "type": "design_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://collections/swatch-fabric",
+            "content": "<p>Can’t decide which print is best for your space? Order some swatches to make sure your choice is solid.</p><p><strong>fabric swatches</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "design_block_wDbwUw"
+      ],
+      "custom_css": [],
+      "settings": {
+        "products_per_page": 48,
+        "columns_desktop": 3,
+        "infinite_scroll": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": false,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_sorting": true,
+        "enable_grid_view_mobile": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "main_multi_collections_aVV8Ph": {
+      "type": "main-multi-collections",
+      "blocks": {
+        "collection_rB6Rzr": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "throw-pillows",
+            "collection_title": "",
+            "collection_description": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_rB6Rzr"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (min-width: 1440px) {.facets__wrapper, .facets-wrap {padding-left: 115px; padding-right: 115px; max-width: 100%; }}",
+        ".facets__wrapper .facets__summary {padding-left: 0px;}"
+      ],
+      "settings": {
+        "collection_layout": "grid",
+        "product_limit": 50,
+        "product_limit_mobile": 50,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-third",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly-Basile-5_eaff7e7a-5c28-4c07-bf77-2f207cb220a3.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=pillows"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/KristenChambless4_90c15d0c-ee48-4dec-85ae-24e98d6d948b.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Oyster-Creek-1_d545db3f-7677-4d25-a6b8-24767f9ae67a.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=living"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Kevin-OGara-6.png",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=room&gallery=bedroom"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-1",
+        "163284582776ee348a-3",
+        "163284582776ee348a-0",
+        "163284582776ee348a-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "section_page_title_FeFyHJ",
+    "main_list_collections_RBkNyi",
+    "product-grid",
+    "main_multi_collections_aVV8Ph",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

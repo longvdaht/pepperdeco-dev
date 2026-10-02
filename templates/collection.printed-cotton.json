@@ -1,0 +1,219 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "16337335918520036b": {
+      "type": "page-hero",
+      "settings": {
+        "word_graphic_width": 104,
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "c65848cc-cb9b-4c8b-9a2b-58abe0dade09": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://collections/swatch-fabric",
+            "content": "<p>Can’t decide which fabric is best for your space? Order some swatches to make sure your choice is solid.</p><p><strong>fabric swatches</strong></p>"
+          }
+        },
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://blogs/pep-talk/upholsterer-recommendations-and-wallpaper-installers",
+            "content": "<p>Looking to cover a headboard or make roman shades? We’ve got you covered.</p><p><strong>UPHOLSTERERS & WALLPAPER INSTALLERS</strong></p>"
+          }
+        },
+        "5e7c08c9-ce0b-4fd8-b8b6-0ca8576f01fe": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/trade",
+            "content": "<p>Are you an interior designer or architect? Become a part of our trade program.</p><p><strong>trade program</strong></p>"
+          }
+        },
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5": {
+          "type": "design_block",
+          "settings": {
+            "link": "https://pepper-home.com/blogs/pep-talk/tagged/resources",
+            "content": "<p>Need a hand? Check our our measurement guides and product FAQs.</p><p><strong>Pepper Resources</strong></p>"
+          }
+        },
+        "e0c3a164-1fff-4813-98c4-b466ebb8839c": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/justaddpepper",
+            "content": "<p>We love to see how our customers style our pieces—and we bet you would, too.</p><p><strong>customer photos</strong></p>"
+          }
+        },
+        "07afe36e-6c0f-4246-81ec-319bd87e00bc": {
+          "type": "design_block",
+          "settings": {
+            "link": "shopify://pages/reviews",
+            "content": "<p>Want to hear what our customers are saying? Check out our reviews!</p><p><strong>Customer Reviews</strong></p>"
+          }
+        },
+        "5bb79ddb-9909-4f7f-8f5d-34558d6ec9e4": {
+          "type": "design_block",
+          "settings": {
+            "link": "https://pepper-home.com/blogs/pep-talk/tagged/friends",
+            "content": "<p>See how our friends have styled their Pepper products.</p><p><strong>The Pepper Blog</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "c65848cc-cb9b-4c8b-9a2b-58abe0dade09",
+        "e1e38aed-a922-45db-9c60-3eb1eb205de2",
+        "5e7c08c9-ce0b-4fd8-b8b6-0ca8576f01fe",
+        "442d43fe-fe35-4d2e-b9c6-82072476a9e5",
+        "e0c3a164-1fff-4813-98c4-b466ebb8839c",
+        "07afe36e-6c0f-4246-81ec-319bd87e00bc",
+        "5bb79ddb-9909-4f7f-8f5d-34558d6ec9e4"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "columns_desktop": 3,
+        "infinite_scroll": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": true,
+        "hide_type_filter": true,
+        "hide_fabric_filter": true,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "163284582776ee348a": {
+      "type": "ugc-images",
+      "blocks": {
+        "163284582776ee348a-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/EmmaSky_LizCarrollInteriors_1.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=fabric"
+          }
+        },
+        "163284582776ee348a-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PoppyBlue-_clairekpoindexter_4-cropped.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=fabric"
+          }
+        },
+        "163284582776ee348a-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ThatcherApricot-OliviaCharlesInteriors_1_49f61f9d-07c0-499c-8625-701c02a7ebdb.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=fabric"
+          }
+        },
+        "163284582776ee348a-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/FridaPink-SusannaHarbinInteriors_11.jpg",
+            "heading": "",
+            "link": "https://pepper-home.com/pages/justaddpepper?collection=product&gallery=fabric"
+          }
+        }
+      },
+      "block_order": [
+        "163284582776ee348a-1",
+        "163284582776ee348a-3",
+        "163284582776ee348a-0",
+        "163284582776ee348a-2"
+      ],
+      "settings": {
+        "section_full_width": "no",
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "",
+        "label_view_all": "",
+        "link_view_all": "",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_mgXRry": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_LUkQwC": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_RAMVfd": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_tU87B3": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_LUkQwC",
+        "column_RAMVfd",
+        "column_tU87B3"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "16337335918520036b",
+    "product-grid",
+    "163284582776ee348a",
+    "section_text_with_icon_column_mgXRry"
+  ]
+}

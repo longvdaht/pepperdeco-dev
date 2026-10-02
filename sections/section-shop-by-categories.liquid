@@ -1,0 +1,270 @@
+{% if section.blocks.size > 0 %}
+  <link
+    rel="stylesheet"
+    href="{{ 'section-shop-by-categories.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+  <noscript>{{ 'section-shop-by-categories.css' | asset_url | stylesheet_tag }}</noscript>
+
+  {% style %}
+    [data-section-id="{{ section.id }}"] {
+      background-color: {{ section.settings.background_color }};
+    }
+  {% endstyle %}
+
+  {% assign has_desc = false %}
+  {% if section.settings.subheading != blank %}
+    {% assign has_desc = true %}
+  {% endif %}
+
+  <div
+    data-section-id="{{ section.id }}"
+    class="section-outer section-shop-by-categories section-shop-{{ section.settings.layout }}{% if section.settings.show_border_bottom %} show-border-bottom{% endif %}{% unless has_desc %} no-desc{% endunless %}"
+  >
+    <div class="page-width section-shop-by-categories-heading">      
+      {% if section.settings.heading != blank %}
+        <div class="h5 section-heading">
+          <a href="{{ section.settings.button_url }}" title="{{ section.settings.heading }}">{{ section.settings.heading }}</a>
+        </div>
+      {% endif %}
+      <div class="section-heading-outer">
+        {% if has_desc %}
+          <div class="rte">
+            {{ section.settings.subheading }}
+          </div>
+        {% endif %}
+        {% if section.settings.button_text != blank %}
+          <div class="button-wrapper">
+            <a
+              href="{{ section.settings.button_url }}"
+              class="btn--link"
+            >
+              {{- section.settings.button_text | default: 'Shop all products' -}}
+              {% render 'icon-chevron-right' %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="{% if section.settings.layout == 'grid' %}page-width {% endif %}section-shop-by-categories-wrapper">
+      <div class="shop-by-categories-wrapper">
+        {% if section.settings.layout == 'slider' %}
+          <slider-component class="collections-carousel-outer">
+            <ul class="slider grid grid-nowrap">
+        {% else %}
+          <ul
+            id="product-grid"
+            data-id="{{ section.id }}"
+            class="
+              list-unstyled product-grid
+              grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+              grid--3-col-desktop
+            "
+          >
+        {% endif %}
+
+        {%- for block in section.blocks limit: section.settings.product_limit -%}
+          <li
+            class="grid__item collection-item{% if section.settings.layout == 'slider' %} carousel-cell{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <a
+              href="{{ block.settings.collection_url }}"
+              class="full-unstyled-link"
+            >
+              {%- if block.settings.feature_image != blank -%}
+                <div
+                  class="media media--square"
+                >
+                  <img
+                    srcset="
+                      {%- if block.settings.feature_image.width >= 375 -%}{{ block.settings.feature_image | image_url: width: 375 }} 375w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 750 -%}{{ block.settings.feature_image | image_url: width: 750 }} 750w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 1100 -%}{{ block.settings.feature_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 1500 -%}{{ block.settings.feature_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 1780 -%}{{ block.settings.feature_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 2000 -%}{{ block.settings.feature_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 3000 -%}{{ block.settings.feature_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                      {%- if block.settings.feature_image.width >= 3840 -%}{{ block.settings.feature_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                    "
+                    sizes="(min-width: 60em) 40vw, 90vw"
+                    src="{{ block.settings.feature_image | image_url: width: 530 }}"
+                    loading="lazy"
+                    alt="{{ block.settings.feature_image.alt | escape }}"
+                    width="{{ block.settings.feature_image.width }}"
+                    height="{{ block.settings.feature_image.width | divided_by: block.settings.feature_image.aspect_ratio }}"
+                  >
+                </div>
+              {%- elsif request.design_mode -%}
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+              <div class="collection-content">
+                <h4 class="heading product-title{% unless block.settings.subtitle != blank %} no-desc{% endunless %}">
+                  {{ block.settings.title }}
+                </h4>
+                {% if block.settings.subtitle != blank %}
+                  <span class="subheading">{{ block.settings.subtitle }}</span>
+                {% endif %}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+
+        {% if section.settings.layout == 'slider' %}
+          </ul>
+          <div class="slider-buttons no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'accessibility.previous_slide' | t }}"
+            >
+              {% render 'icon-arrow-left' %}
+            </button>
+            <div class="visually-hidden slider-counter caption">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+              <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            </div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'accessibility.next_slide' | t }}"
+            >
+              {% render 'icon-arrow-right' %}   
+            </button>
+          </div>
+          </slider-component>
+        {% else %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Shop by categories",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "Beds"
+    },
+    {
+      "type": "textarea",
+      "label": "Sub heading",
+      "id": "subheading",
+      "default": "Choose from our signature silhouettes"
+    },
+    {
+      "type": "text",
+      "label": "Button text",
+      "id": "button_text",
+      "default": "SHOP ALL BEDS"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show border bottom",
+      "id": "show_border_bottom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "label": "Layout",
+      "id": "layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "limit": 15,
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Feature image",
+          "id": "feature_image"
+        },
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "Sub title",
+          "id": "subtitle"
+        },
+        {
+          "type": "url",
+          "id": "collection_url",
+          "label": "Collection url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by categories",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

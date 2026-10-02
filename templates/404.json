@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {}
+    },
+    "simple_peJrVr": {
+      "type": "simple",
+      "settings": {
+        "heading": "Custom Decor, Tailored To Your Taste",
+        "subheading": "",
+        "content": "<p>At Pepper, we make it easier than ever to customize your perfect piece. Choose from exclusive prints, bold colors, and polished finishes, then bring them to life with complimentary design tools that make every project a breeze.<\/p>",
+        "link": "",
+        "label": "",
+        "invert_text": false,
+        "color_scheme": "background-secondary",
+        "hub_section": ""
+      }
+    },
+    "collection_carousel_tyJn39": {
+      "type": "collection-carousel",
+      "blocks": {
+        "collection_DeqXMd": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-curtains"
+          }
+        },
+        "collection_c9fX9j": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-cafe-curtains"
+          }
+        },
+        "collection_JEMaWp": {
+          "type": "collection",
+          "settings": {
+            "collection": "throw-pillows"
+          }
+        },
+        "collection_HATiRK": {
+          "type": "collection",
+          "settings": {
+            "collection": "wallpaper"
+          }
+        },
+        "collection_WCEF9p": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-shower-curtains"
+          }
+        },
+        "collection_ijQANR": {
+          "type": "collection",
+          "settings": {
+            "collection": "fabric"
+          }
+        }
+      },
+      "block_order": [
+        "collection_DeqXMd",
+        "collection_c9fX9j",
+        "collection_JEMaWp",
+        "collection_HATiRK",
+        "collection_WCEF9p",
+        "collection_ijQANR"
+      ],
+      "settings": {
+        "color_scheme": "background-primary",
+        "by_category": "<ul><li><a href=\"\/collections\/curtains\" title=\"Custom Curtains\">CURTAINS<\/a><\/li><li><a href=\"\/collections\/custom-cafe-curtains\" title=\"Custom Cafe Curtains\">CAFE CURTAINS<\/a><\/li><li><a href=\"\/collections\/throw-pillows\" title=\"Custom Throw Pillows\">PILLOWS<\/a><\/li><li><a href=\"\/collections\/wallpaper\" title=\"Wallpaper\">WALLPAPER<\/a><\/li><li><a href=\"\/collections\/custom-shower-curtains\" title=\"Custom Shower Curtains\">SHOWER CURTAINS<\/a><\/li><li><a href=\"\/collections\/fabric\" title=\"Fabric By The Yard\">FABRIC<\/a><\/li><\/ul>",
+        "by_collection": "<ul><li><a href=\"\/collections\/best-sellers\" title=\"Best Sellers\">BEST SELLERS<\/a><\/li><li><a href=\"\/collections\/the-nursery-collection\" title=\"The Nursery & Kids Collection\">NURSERY & KIDS<\/a><\/li><li><a href=\"\/collections\/pillow-bundles\" title=\"Designer Pillow Bundles\">DESIGNER PILLOW BUNDLES<\/a><\/li><li><a href=\"\/collections\/giftables\" title=\"Giftables\">GIFTABLES<\/a><\/li><\/ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "simple_peJrVr",
+    "collection_carousel_tyJn39"
+  ]
+}

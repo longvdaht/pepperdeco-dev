@@ -1,0 +1,476 @@
+<link rel="stylesheet" href="{{ 'section-image-content.css' | asset_url }}" media="print" onload="this.media='all'">
+{% if product.template_suffix == 'pillows' or product.template_suffix == 'piping-builder' %}
+  <link rel="stylesheet" href="{{ 'section-image-content-pillow.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'section-image-content-pillow.css' | asset_url | stylesheet_tag }}</noscript>
+{% endif %}
+
+<noscript>{{ 'section-image-content.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- assign grid_mobile_column = 'one' -%}
+{%- assign grid_desktop_column = 'one-half' -%}
+
+<div class="section-outer{% if section.settings.section_full_width == "no" %} section-image-content{% else %} section-image-content-full-w{% endif %}{% if product.template_suffix == 'pillows' or product.template_suffix == 'piping-builder' %} image-content-pillows{% endif %} section-color-{{ section.settings.color_scheme }} center{% if section.settings.hub_section != "" %} section-hub-content section-hub-{{ section.settings.hub_section }}{% endif %}"
+  {% if section.settings.color_scheme == 'custom' %} style="--background-color: {{ section.settings.background_color }}"{% endif %}>
+  <div class="{% if section.settings.section_full_width == "no" %} page-width {% else %} full-width {% endif %}">
+    <div class="grid mobile-{{ grid_mobile_column }} desktop-{{ grid_desktop_column }}">
+      {%- if section.settings.section_heading != blank -%}
+        <div class="grid__item--full grid__item--first">
+          <h2 class="{{ section.settings.section_heading_size }} section-heading">
+            {{ section.settings.section_heading | escape }}
+          </h2>
+        </div>
+      {%- endif -%}
+      <div class="grid__item has-background-image">
+        <div class="section-content {{ section.settings.text_alignment }}">
+          {%- if section.settings.heading != blank -%}
+            {%- if section.settings.heading == 'Meet Erin & Kelsey' -%}
+              <div class="section-heading meet-erin-kelsey">
+                {% if section.settings.word_graphic_erin_kelsey %}
+                  <div class="word-graphic">
+                    {% assign graphic_erin_kelsey_width = section.settings.word_graphic_width_erin_kelsey %}
+                    <img src="{{ section.settings.word_graphic_erin_kelsey | image_url: width: graphic_erin_kelsey_width }}" role="presentation" loading="lazy" width="{{ graphic_erin_kelsey_width }}" height="{{ graphic_erin_kelsey_width }}">
+                  </div>
+                {% else %}
+                  {% render 'meet-erin-kelsey' %}
+                {% endif %}
+              </div>
+            {%- endif -%}
+            <h2 class="{{ section.settings.heading_size }} section-heading{% if section.settings.heading == 'Meet Erin & Kelsey' %} visually-hidden{% endif %}">
+              {% render 'no-widows', content: section.settings.heading %}
+            </h2>
+          {%- endif -%}
+          {%- if section.settings.subheading != blank -%}
+            <div class="pull-quote section-subheading">
+              {% render 'no-widows', content: section.settings.subheading %}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.content != blank -%}
+            <div class="rte{% if section.settings.heading == 'Meet Erin & Kelsey' %} meet-erin-kelsey{% endif %}">
+              {%- assign content = section.settings.content
+                | split: 'xoxo'
+                | first
+                | default: section.settings.content
+              -%}
+              {% render 'no-widows', content: content -%}
+              {%- if section.settings.content contains 'xoxo' -%}
+                <br>
+                <br>
+                {% if section.settings.word_graphic_xoxo %}
+                  <div class="word-graphic">
+                    {% assign graphic_xoxo_width = section.settings.word_graphic_width_xoxo %}
+                    <img src="{{ section.settings.word_graphic_xoxo | image_url: width: graphic_xoxo_width }}" role="presentation" loading="lazy" width="{{ graphic_xoxo_width }}" height="{{ graphic_xoxo_width }}">
+                  </div>
+                {% else %}
+                  {% render 'xoxo' %}
+                {% endif %}
+              {%- endif -%}
+              {% if section.settings.signature != blank or section.settings.signature_image != blank %}
+                <div class="signature">
+                  {% if section.settings.signature_image != blank %}
+                    {% assign signature_image_width = section.settings.signature_image_width %}
+                    <img src="{{ section.settings.signature_image | image_url: width: signature_image_width }}" width="{{ signature_image_width }}" height="{{ section.settings.signature_image.height }}">
+                  {% else %}
+                    {{ section.settings.signature }}
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          {%- endif -%}
+          {% if section.settings.link != blank %}
+            <a href="{{ section.settings.link }}" class="button button--secondary">{% if section.settings.icon_show == 'yes' %}<span>{% render 'icon-email' %}</span>{% endif %} {{ section.settings.label }}</a>
+          {% endif %}
+        </div>
+        {% if section.settings.background != blank %}
+          <img
+            srcset="
+              {%- if section.settings.background.width >= 375 -%}{{ section.settings.background | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if section.settings.background.width >= 750 -%}{{ section.settings.background | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if section.settings.background.width >= 1100 -%}{{ section.settings.background | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if section.settings.background.width >= 1500 -%}{{ section.settings.background | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if section.settings.background.width >= 1780 -%}{{ section.settings.background | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if section.settings.background.width >= 2000 -%}{{ section.settings.background | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if section.settings.background.width >= 3000 -%}{{ section.settings.background | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if section.settings.background.width >= 3840 -%}{{ section.settings.background | image_url: width: 3840 }} 3840w,{%- endif -%}
+            "
+            sizes="(min-width: 40em) 40vw, 80vw"
+            src="{{ section.settings.background | image_url: width: 400 }}"
+            loading="lazy"
+            alt="{{ section.settings.background.alt | escape }}"
+            width="{{ section.settings.background.width }}"
+            height="{{ section.settings.background.width | divided_by: section.settings.background.aspect_ratio }}"
+            class="background-image"
+          >
+        {% endif %}
+      </div>
+      <div class="grid__item mobile-align-{{ section.settings.mobile_alignment }} desktop-align-{{ section.settings.desktop_alignment }} media--type-image">
+        {% if section.settings.image != blank %}
+          <div
+            class="media"
+            style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
+          >
+            <img
+              srcset="
+                {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+              "
+              sizes="(min-width: 40em) 40vw, 90vw"
+              src="{{ section.settings.image | image_url: width: 400 }}"
+              loading="lazy"
+              alt="{{ section.settings.image.alt | escape }}"
+              width="{{ section.settings.image.width }}"
+              height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+            >
+          </div>
+        {% elsif request.design_mode %}
+          {{ 'collection-6' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if template.suffix == 'design-hub' or template.suffix == 'care-guide' %}
+  <script>
+    function getTextWidth(text, font) {
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      context.font = font;
+      return context.measureText(text).width;
+    }
+
+    function calculateTextWidth(section) {
+      if (window.innerWidth < 1290) return;
+
+      const heading = section.querySelector("h2.section-heading");
+      const content = section.querySelector(".rte");
+
+      if (!heading || !content) return;
+
+      const computedStyle = window.getComputedStyle(heading);
+      const font = `${computedStyle.fontSize} ${computedStyle.fontFamily}`;
+      const text = heading.textContent.trim();
+      const textWidth = getTextWidth(text, font);
+
+      if (textWidth > 500) {
+        content.style.maxWidth = `${textWidth - 5}px`;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[class^='section-']").forEach((section) => {
+        calculateTextWidth(section);
+
+        let resizeTimeout;
+        const observer = new ResizeObserver(() => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            if (window.innerWidth >= 1290) {
+              calculateTextWidth(section);
+            }
+          }, 100);
+        });
+
+        observer.observe(section);
+      });
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Image content",
+  "tag": "section",
+  "class": "spaced-section section-image-content-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_full_width",
+      "label": "Is the section full width?",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ],
+      "default": "no"
+    },
+    {
+      "type": "image_picker",
+      "id": "word_graphic_erin_kelsey",
+      "label": "Word graphic Erin & Kelsey (image)"
+    },
+    {
+      "type": "range",
+      "id": "word_graphic_width_erin_kelsey",
+      "label": "Word graphic image width (Erin & Kelsey)",
+      "default": 104,
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "image_picker",
+      "id": "word_graphic_xoxo",
+      "label": "Word graphic xoxo (image)"
+    },
+    {
+      "type": "range",
+      "id": "word_graphic_width_xoxo",
+      "label": "Word graphic image width (xoxo)",
+      "default": 104,
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "select",
+      "id": "section_heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h3",
+          "label": "Heading 3"
+        },
+        {
+          "value": "h4",
+          "label": "Heading 4"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h3",
+          "label": "Heading 3"
+        },
+        {
+          "value": "h4",
+          "label": "Heading 4"
+        }
+      ],
+      "default": "h3"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "signature",
+      "label": "Signature"
+    },
+    {
+      "type": "image_picker",
+      "id": "signature_image",
+      "label": "Signature (image)"
+    },
+    {
+      "type": "range",
+      "id": "signature_image_width",
+      "label": "Signature width",
+      "min": 50,
+      "max": 250,
+      "step": 2,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Image behind text",
+      "info": "Optionally shown behind the text"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "desktop_alignment",
+      "label": "Desktop image alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "mobile_alignment",
+      "label": "Mobile image order",
+      "options": [
+        {
+          "value": "first",
+          "label": "First"
+        },
+        {
+          "value": "last",
+          "label": "Last"
+        }
+      ],
+      "default": "first"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "custom",
+          "label": "Choose custom background"
+        },
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "select",
+      "id": "icon_show",
+      "label": "Show icon in button",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ],
+      "default": "no"
+    },
+    {
+      "type": "header",
+      "content": "Design hub section"
+    },
+    {
+      "type": "select",
+      "id": "hub_section",
+      "label": "Hub section",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "curtains",
+          "label": "Curtains"
+        },
+        {
+          "value": "pillows",
+          "label": "Pillows"
+        },
+        {
+          "value": "wallpaper",
+          "label": "Wallpaper"
+        }
+      ],
+      "default": ""
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image content"
+    }
+  ]
+}
+{% endschema %}

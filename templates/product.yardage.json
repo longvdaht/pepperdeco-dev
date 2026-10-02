@@ -1,0 +1,321 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-wallpaper",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "e781ef56-de3e-4863-8c9e-773695145698": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_tKbLGe": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_FpP8Hp": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Color:",
+            "text_under": ""
+          }
+        },
+        "switch_option_type_Q373XQ": {
+          "type": "switch_option_type",
+          "settings": {
+            "tooltip_link": ""
+          }
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "show_wallpaper_calculator": true,
+            "content": "Not sure what size you need?"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "3fef460c-2d6a-4fa2-977c-4c9517a6962e": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "e781ef56-de3e-4863-8c9e-773695145698",
+        "description_tKbLGe",
+        "switch_option_color_FpP8Hp",
+        "switch_option_type_Q373XQ",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "3fef460c-2d6a-4fa2-977c-4c9517a6962e",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "minimum": 1,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "section_compare_options_MVtkBP": {
+      "type": "section-compare-options",
+      "settings": {
+        "heading": "Fabric Options",
+        "subheading": "The Art of Fabric: Cotton or Linen—See Which One Suits Your Space Best",
+        "subheading_width": "400",
+        "background_color": "#f3f1ec",
+        "button_text": "ORDER FABRIC SAMPLES",
+        "button_url": "shopify://collections/swatch-fabric"
+      }
+    },
+    "section_wallpaper_options_JdY6At": {
+      "type": "section-wallpaper-options",
+      "settings": {
+        "heading": "Wallpaper Options",
+        "subheading": "Explore the options below to find the perfect wallpaper for your space.",
+        "subheading_width": "400",
+        "background_color": "#f3f1ec"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Complete The Look",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "artist_section_EeARzK": {
+      "type": "artist-section",
+      "settings": {
+        "section_full_width": "no",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "background_color": "#f3f1ec"
+      }
+    },
+    "1636645628890b688a": {
+      "type": "ugc-images",
+      "blocks": {
+        "d072249c-88af-4f3e-84e1-25a4b9ca24a7": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "d072249c-88af-4f3e-84e1-25a4b9ca24a7"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "05f3cb0d-8c70-48e4-8cfa-1a75a2256140": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "05f3cb0d-8c70-48e4-8cfa-1a75a2256140"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_L7zPTy": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_qXcBiQ": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_qXcBiQ"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_49nDmg": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_6xfDnA": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_7PVfdc": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_NFpdEi": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        }
+      },
+      "block_order": [
+        "column_7PVfdc",
+        "column_NFpdEi"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    },
+    "two_column_features_fWnHwN": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_PQegA4": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn't exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_q8Tf7N": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-2.png",
+            "title": "Sustainable By Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_PQegA4",
+        "feature_column_q8Tf7N"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_compare_options_MVtkBP",
+    "section_wallpaper_options_JdY6At",
+    "product-recommendations",
+    "artist_section_EeARzK",
+    "1636645628890b688a",
+    "two_column_features_fWnHwN",
+    "163398841244446eb7",
+    "app_review_L7zPTy",
+    "recently_viewed_products_49nDmg",
+    "section_text_with_icon_column_6xfDnA"
+  ]
+}

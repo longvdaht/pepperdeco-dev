@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1634051719d328812a": {
+      "type": "page-hero",
+      "settings": {
+        "title": "Shop by Collection",
+        "subheading": "",
+        "link": "",
+        "label": "",
+        "image": "shopify:\/\/shop_images\/about-hero_8b333e41-21de-481c-bbdb-bad24eb8ad81.png",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "blocks": {
+        "6d4d7a8a-3bfe-4e68-8cc9-e0bca1c44fb7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-curtains",
+            "image": "shopify:\/\/shop_images\/curtain-collection.png"
+          }
+        },
+        "74a8aa2a-4364-4735-be2a-a07f7667b82e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "throw-pillows",
+            "image": "shopify:\/\/shop_images\/pillows-collection.png"
+          }
+        },
+        "8e3f82c2-1707-4b63-90f8-2b96d90f9edf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "wallpaper",
+            "image": "shopify:\/\/shop_images\/wallpaper-collection.png"
+          }
+        },
+        "314ec5a9-a914-46d8-95fb-129e599e648f": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fabric-by-the-yard",
+            "image": "shopify:\/\/shop_images\/ShopCategory-Fabric.jpg"
+          }
+        },
+        "da8b079a-c402-42bb-9492-dd2707d8b828": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "table-linens",
+            "image": "shopify:\/\/shop_images\/ShopCategory-TableLinens.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "6d4d7a8a-3bfe-4e68-8cc9-e0bca1c44fb7",
+        "74a8aa2a-4364-4735-be2a-a07f7667b82e",
+        "8e3f82c2-1707-4b63-90f8-2b96d90f9edf",
+        "314ec5a9-a914-46d8-95fb-129e599e648f",
+        "da8b079a-c402-42bb-9492-dd2707d8b828"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "1634051719d328812a",
+    "main"
+  ]
+}

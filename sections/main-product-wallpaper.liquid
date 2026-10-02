@@ -1,0 +1,1727 @@
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% if section.settings.enable_zoom or section.settings.enable_zoom_mobile %}
+  <script src="{{ 'pinch-zoom.umd.js' | asset_url }}" defer="defer"></script>
+  <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<script>
+  var preorder_eta_pom_pom = {{ product.metafields.custom.pre_order_eta.value | json }};
+</script>
+{%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+{% render 'breadcrumb-pdp' %}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 992px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="section-{{ section.id }}-padding section-outer page-width template-yardage-wallpaper-minimum">
+  <div class="grid product-template-grid">
+    <div class="mobile-top__content grid__item mobile-one product-info-wrapper">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+          {%- when 'title' -%}
+            <h1 class="display product__title" {{ block.shopify_attributes }}>
+              {{ product.title | escape }}
+              {{ product.metafields.pepper.type.value }}
+            </h1>
+          {%- when 'price' -%}
+            {% render 'block-price', block: block, section: section %}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    <div class="grid__item mobile-one desktop-two-thirds product-media-wrapper product-media-{{ section.settings.media_thumbnail }}">
+      <a class="skip-to-content-link visually-hidden" href="#ProductInfo-{{ section.id }}">
+        {{ 'accessibility.skip_to_product_info' | t }}
+      </a>
+      <slider-component class="{% unless section.settings.show_buttons %} slider-hide-buttons{% endunless %}{% unless section.settings.show_dots %} slider-hide-dots{% endunless %} thumbnail-slider">
+        <ul tabindex="0"
+          class="list-unstyled slider grid grid-nowrap mobile-one desktop-one"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {%- assign image_count = 0 -%}
+          {%- for media in product.media -%}
+            {% if media.media_type == 'image' %}
+              {%- unless variant_images contains media.src -%}
+                {%- assign image_count = image_count | plus: 1 -%}
+              {%- endunless -%}
+              <li
+                class="grid__item carousel-cell{% if forloop.first %} is-active{% endif %}{% if variant_images contains media.src %} product__media-item--variant{% endif %}"
+                data-media-id="{{ section.id }}-{{ media.id }}"
+              >
+                <div class="media media--square">
+                  <img
+                    srcset="
+                      {% if media.width >= 288 %}{{ media | image_url: width: 288 }} 288w,{% endif %}
+                      {% if media.width >= 576 %}{{ media | image_url: width: 576 }} 576w,{% endif %}
+                      {% if media.width >= 750 %}{{ media | image_url: width: 750 }} 750w,{% endif %}
+                      {% if media.width >= 1100 %}{{ media | image_url: width: 1100 }} 1100w,{% endif %}
+                      {% if media.width >= 1500 %}{{ media | image_url: width: 1500 }} 1500w{% endif %}
+                    "
+                    src="{{ media | image_url: width: 1500 }}"
+                    sizes="(min-width: 40em) 80px, 100vw"
+                    loading="lazy"
+                    width="{{ media.width }}"
+                    height="{{ media.width | divided_by: media.aspect_ratio }}"
+                    alt="{{ media.alt | escape }}"
+                    class="image-magnify-hover"
+                  >
+                </div>
+                
+              </li>
+            {% elsif media.media_type == 'video' %}
+              <li
+                class="grid__item carousel-cell{% if variant_images contains media.src %} product__media-item--variant{% endif %} product__media-item-video"
+                data-media-id="{{ section.id }}-{{ media.id }}"
+              >
+                <div class="media--type-video">
+                  <div class="media media--square mobile-only">
+                    {% if media.sources[1] %}
+                      {% assign video_source = media.sources[1] %}
+                    {% else %}
+                      {% assign video_source = media.sources[0] %}
+                    {% endif %}
+                    <video class="lazy" 
+                      height="{{ video_source.height }}" 
+                      width="{{ video_source.width }}" 
+                      id="video-{{ section.id }}" playsinline controls loop autoplay muted preload="metadata">
+                        <source data-src="{{ video_source.url }}">
+                    </video>
+                  </div>
+                  <div class="desktop-only video-preview-image">
+                    <img
+                      srcset="
+                        {% if media.width >= 288 %}{{ media.preview_image | image_url: width: 288 }} 288w,{% endif %}
+                        {% if media.width >= 576 %}{{ media.preview_image | image_url: width: 576 }} 576w,{% endif %}
+                        {% if media.width >= 750 %}{{ media.preview_image | image_url: width: 750 }} 750w,{% endif %}
+                        {% if media.width >= 1100 %}{{ media.preview_image | image_url: width: 1100 }} 1100w,{% endif %}
+                        {% if media.width >= 1500 %}{{ media.preview_image | image_url: width: 1500 }} 1500w{% endif %}
+                      "
+                      src="{{ media.preview_image | image_url: width: 1500 }}"
+                      sizes="(min-width: 40em) 80px, 100vw"
+                      loading="lazy"
+                      width="{{ media.width }}"
+                      height="{{ media.width | divided_by: media.aspect_ratio }}"
+                      alt="{{ media.alt | escape }}"
+                      class="image-magnify-hover"
+                    >
+                    <div class="play-icon"> 
+                      {% render 'icon-play' %}
+                    </div>
+                  </div>
+                  
+                </div>
+                
+              </li>
+            {% endif %}
+          {%- endfor -%}
+          {%- liquid
+            if product.metafields.pepper.trim_images.value
+              paginate product.metafields.pepper.trim_images.value by 150
+                for media in product.metafields.pepper.trim_images.value
+                  assign image_count = image_count | plus: 1
+                  render 'additional-thumbnail', media: media, image_count: image_count
+                endfor
+              endpaginate
+            endif
+          -%}
+        </ul>
+        
+        <div class="slider-dots no-js-hidden">
+          {% for media in product.media %}
+            <button
+              type="button"
+              data-index="{{ forloop.index }}"
+              class="slider-dot{% if forloop.index0 == 0 %} is-active{% endif %}{% if variant_images contains media.src %} product__media-item--variant{% endif %}"
+              name="index"
+              aria-label="{{ 'accessibility.slide_index' | t: index: forloop.index }}"
+            ></button>
+          {% endfor %}
+          {%- for media in product.metafields.pepper.trim_images.value -%}
+            {%- assign image_count = image_count | plus: 1 -%}
+            <button
+              type="button"
+              data-index="{{ image_count }}"
+              class="slider-dot product__media-item--additional-image"
+              name="index"
+              aria-label="{{ 'accessibility.slide_index' | t: index: image_count }}"
+            ></button>
+          {%- endfor -%}
+        </div>
+        
+        <div class="slider-buttons no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">{{ product.images.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+
+      {% comment %}
+        selected_or_first_available_variant.featured_image
+      {% endcomment %}
+      <slider-component class="main-images-slider slider-hide-buttons slider-hide-dots {% if section.settings.enable_zoom %} enable-zoom{% endif %}">
+        <ul tabindex="0"
+          class="list-unstyled slider grid grid-nowrap mobile-one desktop-one main-images-slider-list"
+          id="Slider-{{ section.id }}"
+          role="list"
+        >
+          {%- for media in product.media -%}
+            {% if media.media_type == 'image' %}
+              <li
+                class="grid__item carousel-cell{% if variant_images contains media.src %} product__media-item--variant{% endif %}"
+                data-media-id="{{ section.id }}-{{ media.id }}"
+              >
+                <div class="media media--square">
+                  <img
+                    srcset="
+                      {% if media.width >= 288 %}{{ media | image_url: width: 288 }} 288w,{% endif %}
+                      {% if media.width >= 576 %}{{ media | image_url: width: 576 }} 576w,{% endif %}
+                      {% if media.width >= 750 %}{{ media | image_url: width: 750 }} 750w,{% endif %}
+                      {% if media.width >= 1100 %}{{ media | image_url: width: 1100 }} 1100w,{% endif %}
+                      {% if media.width >= 1500 %}{{ media | image_url: width: 1500 }} 1500w{% endif %}
+                    "
+                    src="{{ media | image_url: width: 1500 }}"
+                    sizes="100vw"
+                    loading="lazy"
+                    width="{{ media.width }}"
+                    height="{{ media.width | divided_by: media.aspect_ratio }}"
+                    alt="{{ media.alt | escape }}"
+                    class="image-magnify-hover"
+                  >
+                </div>
+                {% assign media_alt_text = media.alt | downcase %}
+                {% if media_alt_text contains "featured" %}
+                  <p class="image-alt-text">{{ media.alt |  remove: 'Featured: ' |  remove: 'FEATURED: ' }}</p>
+                {% endif %}
+              </li>
+            {% elsif media.media_type == 'video' %}
+              <li
+                class="grid__item carousel-cell{% if variant_images contains media.src %} product__media-item--variant{% endif %} product__media-item-video"
+                data-media-id="{{ section.id }}-{{ media.id }}"
+              >
+                <div class="media--type-video">
+                  <div class="media media--square">
+                    {% if media.sources[1] %}
+                      {% assign video_source = media.sources[1] %}
+                    {% else %}
+                      {% assign video_source = media.sources[0] %}
+                    {% endif %}
+                    <video class="lazy" 
+                      height="{{ video_source.height }}" 
+                      width="{{ video_source.width }}" 
+                      id="video-{{ section.id }}" playsinline controls loop autoplay muted preload="metadata">
+                        <source data-src="{{ video_source.url }}">
+                    </video>
+                  </div>
+                </div>
+                {% assign media_alt_text = media.alt | downcase %}
+                {% if media_alt_text contains "featured" %}
+                  <p class="image-alt-text">{{ media.alt |  remove: 'Featured: ' |  remove: 'FEATURED: ' }}</p>
+                {% endif %}
+              </li>
+            {% endif %}
+          {%- endfor -%}
+          {%- liquid
+            if product.metafields.pepper.trim_images.value
+              paginate product.metafields.pepper.trim_images.value by 150
+                for media in product.metafields.pepper.trim_images.value
+                  assign image_count = image_count | plus: 1
+                  render 'additional-thumbnail', media: media, image_count: image_count
+                endfor
+              endpaginate
+            endif
+          -%}
+        </ul>
+        {% if section.settings.enable_zoom_mobile %}
+          <div class="zoom-wrapper">
+            <button class="zoom-in zoom-btn" aria-label="Zoom in">{% render 'icon-zoom-in-new' %}</button>
+            <button class="zoom-out zoom-btn hidden" aria-label="Zoom out">{% render 'icon-zoom-out-new' %}</button>            <button class="zoom-out zoom-btn hidden" aria-label="Zoom out">{% render 'icon-zoom-out' %}</button>
+          </div>
+        {% endif %}
+        <div class="slider-dots no-js-hidden">
+          {% for media in product.media %}
+            <button
+              type="button"
+              data-index="{{ forloop.index }}"
+              class="slider-dot{% if forloop.index0 == 0 %} is-active{% endif %}{% if variant_images contains media.src %} product__media-item--variant{% endif %}"
+              name="index"
+              aria-label="{{ 'accessibility.slide_index' | t: index: forloop.index }}"
+            ></button>
+          {% endfor %}
+        </div>
+        <div class="slider-buttons no-js-hidden">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">{{ product.images.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+    </div>
+    <div class="grid__item mobile-one desktop-one-third product-info-wrapper">
+      <div id="ProductInfo-{{ section.id }}">
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'title' -%}
+              <h1 class="display product__title" {{ block.shopify_attributes }}>
+                {{ product.title | escape }}
+                {{ product.metafields.pepper.type.value }}
+              </h1>
+            {%- when 'price' -%}
+              {% render 'block-price', block: block, section: section %}
+            {%- when 'description' -%}
+              <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
+              {%- if product.description != blank -%}
+                <div class="product-description-wrapper parent-display" id="Show-More-Description">
+                  <div class="product__description rte parent-wrap">
+                    {{ product.description }}
+                  </div>
+                  <show-more-button class="rte">
+                    <button
+                      class="button-show-more link underlined-link"
+                      id="Show-More-{{ forloop.index }}-{{ section.id }}"
+                      type="button"
+                    >
+                      <span class="label-show-more label-text"
+                        ><span aria-hidden="true">+ </span>{{ 'products.facets.show_more' | t -}}
+                      </span>
+                      <span class="label-show-less label-text hidden"
+                        ><span aria-hidden="true">- </span>{{ 'products.facets.show_less' | t -}}
+                      </span>
+                    </button>
+                  </show-more-button>
+                </div>
+              {%- endif -%}
+            {%- when 'spacer_block' -%}
+              <div
+                {{ block.shopify_attributes }}
+                style="margin-top: {{ block.settings.spacing | divided_by: 10 }}rem"
+              ></div>
+            {%- when 'variant_picker' -%}
+              {%- unless product.has_only_default_variant -%}
+                {%- if block.settings.picker_type == 'button' -%}
+                  <variant-radios
+                    class="no-js-hidden"
+                    data-section="{{ section.id }}"
+                    data-url="{{ product.url }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- for option in product.options_with_values -%}
+                      <fieldset class="js product-form__input product-form__input-{{ option.name | handleize }}">
+                        <legend class="form__label">
+                          {{ option.name }}: 
+                          <span id="{{ section.id }}-option-{{ forloop.index0 }}">
+                            {%- unless option.name == 'Length' %}{{ option.selected_value }}{% endunless -%}
+                          </span>
+                          {%- if option.name == 'Construction' -%}
+                            <a href="#additional-construction-options" class="option-link">?</a>
+                          {%- endif %}
+                        </legend>
+                        {%- for value in option.values -%}
+                          <input
+                            type="radio"
+                            id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                            name="{{ option.name }}"
+                            value="{{ value | escape }}"
+                            form="product-form-{{ section.id }}"
+                            class="input-{{ option.name | handleize }}"
+                            {% if option.selected_value == value %}
+                              checked
+                            {% endif %}
+                          >
+                          <label
+                            for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                            class="{{ option.name | handleize }}-radio {{ option.name | handleize }}-{{ value | handleize }}{% if option.name == 'Length' or option.name == 'Trim' %} visually-hidden{% endif %} {{ option.name | handleize }}-radio-{{ product.type | handleize }}"
+                          >
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                        {% if option.name == 'Length' %}
+                          <div class="line-item-property__field">
+                            <input
+                              required
+                              class="required length-input"
+                              type="text"
+                              id="length"
+                              placeholder="Enter length"
+                              id="length"
+                              name="properties[Length]"
+                              inputmode="numeric"
+                              form="product-form-{{ section.id }}"
+                            >
+                          </div>
+                        {% endif %}
+                        {% if option.name == 'Trim' %}
+                          {% render 'piping-radios' %}
+                        {% endif %}
+                      </fieldset>
+                      {% if option.name == 'Length' %}
+                        <div class="product-form__input">
+                          <div class="form__label">Lining: <span id="option-lining-legend">Privacy</span></div>
+
+                          <input
+                            type="radio"
+                            id="{{ section.id }}-Lining-privacy"
+                            required
+                            name="properties[Lining]"
+                            value="Privacy"
+                            form="product-form-{{ section.id }}"
+                            class="required input-lining"
+                            checked
+                          >
+                          <label for="{{ section.id }}-Lining-privacy" class="lining-radio lining-privacy">
+                            Privacy
+                          </label>
+                          <input
+                            type="radio"
+                            id="{{ section.id }}-Lining-blackout"
+                            required
+                            name="properties[Lining]"
+                            value="Blackout"
+                            form="product-form-{{ section.id }}"
+                            class="required input-lining"
+                          >
+                          <label for="{{ section.id }}-Lining-blackout" class="lining-radio lining-blackout">
+                            Blackout
+                          </label>
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                    <script type="application/json" data-variants>
+                      {{ product.variants | json }}
+                    </script>
+                  </variant-radios>
+                {%- else -%}
+                  <yard-quantity
+                    class="no-js-hidden"
+                    data-section="{{ section.id }}"
+                    data-url="{{ product.url }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    {%- for option in product.options_with_values -%}
+                      {% assign option_name_handle = option.name | handle %}
+                      {% assign unit = 'yard' %}
+                      
+                      {% if product.tags contains 'solid grasscloth' %}
+                        {% assign unit = 'roll' %}
+                      {% elsif product.template_suffix == 'wallpaper-panels' %}
+                        {% assign unit = 'panel' %}
+                      {% endif %}
+                      {% assign unit = unit | capitalize %}
+
+                      {% if option_name_handle == 'panel' or option_name_handle == 'panels' %}
+                        {% if block.settings.show_wallpaper_calculator %}
+                          <details-modal class="product__modal wallpaper-calc-modal" {{ block.shopify_attributes }}>
+                            <details>
+                              <summary
+                                class="modal__toggle{% if block.settings.icon != blank %} has-icon{% endif %}"
+                                aria-haspopup="dialog"
+                                aria-label="{{ block.settings.content }} Calculate yardage"
+                              >
+                                {{ block.settings.content }}
+                                <div class="wrapper-content">
+                                  {%- if block.settings.icon != blank -%}
+                                    <span class="svg-wrapper">
+                                      <img src="{{ block.settings.icon | image_url: width: 50 }}" width="30" height="30" alt="{{ block.settings.text_link }}">
+                                    </span>
+                                  {%- endif -%}
+                                  <span class="text-link"
+                                    >Calculate {% if product.tags contains 'solid grasscloth' %}rolls{% elsif product.template_suffix == 'wallpaper-panels' %}panels{% else %}yardage{% endif %}
+                                  </span>
+                                </div>
+                              </summary>
+                              <div
+                                class="product-modal modal__content"
+                                role="dialog"
+                                aria-modal="true"
+                                aria-label="{{ block.settings.content }} Calculate {% if product.tags contains 'solid grasscloth' %}rolls{% elsif product.template_suffix == 'wallpaper-panels' %}panels{% else %}yardage{% endif -%}"
+                              >
+                                <div class="modal-overlay"></div>
+                                <div class="product-modal__content" tabindex="-1">
+                                  <link
+                                    rel="stylesheet"
+                                    href="{{ 'wallpaper-calculator.css' | asset_url }}"
+                                    media="print"
+                                    onload="this.media='all'"
+                                  >
+                                  <noscript>{{ 'wallpaper-calculator.css' | asset_url | stylesheet_tag }}</noscript>
+                                  <script src="{{ 'wallpaper-calculator.js' | asset_url }}" defer="defer"></script>
+                                  <div id="wallpaper-calculator"></div>
+                                  <button
+                                    type="button"
+                                    class="modal__close-button link button-unstyled focus-inset"
+                                    aria-label="{{ 'accessibility.close' | t }}"
+                                  >
+                                    <i class="fas fa-xmark icon"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </details>
+                          </details-modal>
+                        {% endif %}
+                      {% endif %}
+                      {% if option_name_handle == 'panel-height' %}
+                        <fieldset class="js product-form__input product-form__input-{{ option.name | handleize }}">
+                          <legend class="form__label">
+                            {{ option.name }}: 
+                            <span id="{{ section.id }}-option-{{ forloop.index0 }}">
+                              {%- unless option.name == 'Length' %}{{ option.selected_value }}{% endunless -%}
+                            </span>
+                            {%- if option.name == 'Construction' -%}
+                              <a href="#additional-construction-options" class="option-link">?</a>
+                            {%- endif %}
+                          </legend>
+                          {%- for value in option.values -%}
+                            <input
+                              type="radio"
+                              id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                              name="{{ option.name }}"
+                              value="{{ value | escape }}"
+                              form="product-form-{{ section.id }}"
+                              class="input-{{ option.name | handleize }}"
+                              {% if option.selected_value == value %}
+                                checked
+                              {% endif %}
+                            >
+                            <label
+                              for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                              class="{{ option.name | handleize }}-radio {{ option.name | handleize }}-{{ value | handleize }}{% if option.name == 'Length' or option.name == 'Trim' %} visually-hidden{% endif %} {{ option.name | handleize }}-radio-{{ product.type | handleize }}"
+                            >
+                              {{ value }}
+                            </label>
+                          {%- endfor -%}
+                          {% if option.name == 'Length' %}
+                            <div class="line-item-property__field">
+                              <input
+                                required
+                                class="required length-input"
+                                type="text"
+                                id="length"
+                                placeholder="Enter length"
+                                id="length"
+                                name="properties[Length]"
+                                inputmode="numeric"
+                                form="product-form-{{ section.id }}"
+                              >
+                            </div>
+                          {% endif %}
+                          {% if option.name == 'Trim' %}
+                            {% render 'piping-radios' %}
+                          {% endif %}
+                        </fieldset>
+                      {% else %}
+                        <fieldset class="product-form__input product-form__input--dropdown">
+                          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                            {{ option.name }}:
+                            <span id="{{ section.id }}-option-{{ forloop.index0 }}" data-unit="{{ unit }}">
+                              {{ section.settings.minimum }} {% if section.settings.minimum == 0 or section.settings.minimum > 1 %} {{ unit | append: 's' }}{% else %} {{ unit }}{% endif %}
+                            </span>
+                            {% if option_name_handle == 'yards' or option_name_handle == 'panels' %}
+                              {% if section.settings.minimum > 1 %} 
+                                <small>({{ section.settings.minimum }} minimum)</small>
+                              {% endif %} 
+                            {% endif %} 
+                          </label>
+                          <div class="select{% if option_name_handle == 'yards' or option_name_handle == 'panels' %} hidden{% endif %}">
+                            <select
+                              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                              class="select__select"
+                              name="options[{{ option.name | escape }}]"
+                              form="product-form-{{ section.id }}"
+                            >
+                              {%- if option_name_handle == 'yards' or option_name_handle == 'panels' -%}
+                                <option value="{{ option.values | first | escape }}" selected="selected">
+                                  {{ 'products.product.yard_dropdown_label' | t }}
+                                </option>
+                              {%- endif -%}
+                              {%- for value in option.values -%}
+                                <option
+                                  value="{{ value | escape }}"
+                                  {% if option.selected_value == value and option.name != 'Yards' %}
+                                    selected="selected"
+                                  {% endif %}
+                                >
+                                  {{ value }}
+                                </option>
+                              {%- endfor -%}
+                            </select>
+                          </div>
+                          {% if option_name_handle == 'yards' or option_name_handle == 'panels' %}
+                            <div class="yard-quantity quantity">
+                              <button
+                                class="quantity__button no-js-hidden"
+                                name="minus"
+                                type="button"
+                              >
+                                <span class="minus"></span>
+                              </button>
+                              <label for="yard-quantity-input" class="visually-hidden">
+                                {% if product.type == 'Curtain' %}
+                                  {{ 'products.product.quantity.curtain_label' | t }}
+                                {% elsif product.type == 'Wallpaper' and product.tags contains 'solid grasscloth' %}
+                                  {{ 'products.product.quantity.rolls_label' | t }}
+                                {% else %}
+                                  {{ 'products.product.quantity.label' | t }}
+                                {% endif %}
+                              </label>
+                              <input 
+                                type="number" 
+                                min="{{ section.settings.minimum }}" 
+                                value="{{ section.settings.minimum }}" 
+                                id="yard-quantity-input"
+                                class="yard-quantity-input"
+                              >
+                              <button
+                                class="quantity__button no-js-hidden"
+                                name="plus"
+                                type="button"
+                              >
+                                <span class="visually-hidden">
+                                  {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                                </span>
+                                <span class="plus"></span>
+                              </button>
+                            </div>
+                          {% endif %}
+                        </fieldset>
+                      {% endif %}
+                    {%- endfor -%}
+
+                    <script type="application/json" data-variants>
+                      {{ product.variants | json }}
+                    </script>
+                  </yard-quantity>
+                {%- endif -%}
+              {%- endunless -%}
+
+              {%- if product.vendor == 'Kassatex' and product.type == 'Bath Towel' -%}
+                {{ 'component-kassatex-personalization.css' | asset_url | stylesheet_tag }}
+                <script src="{{ 'component-kassatex-personalization.js' | asset_url }}" defer="defer"></script>
+                <kassatex-personalization class="no-js-hidden">
+                  <div class="product-form__input product-form__input-embroidery">
+                    <input type="hidden" name="properties[_Embroidery]" value="None" form="{{ product_form_id }}">
+                    <label class="form__label" for="embroidery-true">
+                      <input
+                        type="checkbox"
+                        name="properties[_Embroidery]"
+                        value="true"
+                        id="embroidery-true"
+                        form="{{ product_form_id }}"
+                        data-embroidery-Id="{{ all_products['monogramming-fee'].selected_or_first_available_variant.id }}"
+                      >
+                      Add Embroidery (+
+                      {{-
+                        all_products['monogramming-fee'].selected_or_first_available_variant.price
+                        | money_without_trailing_zeros
+                      -}}
+                      )
+                    </label>
+                  </div>
+                  <div class="product-form__input product-form__input-ks-type">
+                    <input
+                      type="radio"
+                      name="properties[_Embroidery Type]"
+                      id="monogram"
+                      value="Monogram"
+                      form="{{ product_form_id }}"
+                    >
+                    <label for="monogram">Monogram</label>
+                    <input
+                      type="radio"
+                      name="properties[_Embroidery Type]"
+                      id="text"
+                      value="Text"
+                      form="{{ product_form_id }}"
+                    >
+                    <label for="text">Text</label>
+                  </div>
+                  <div class="product-form__input product-form__input-thread-color">
+                    {%- assign thread_colors = 'Sand,Sage,Navy,Light Blue,Coral' | split: ',' -%}
+                    <div class="form__label">{{ 'products.product.embroidery_color_name' | t }}: <span id="embroidery-color-legend"></span></div>
+                    {%- for color in thread_colors -%}
+                      <input
+                        type="radio"
+                        name="properties[Thread Color]"
+                        id="{{ color | downcase }}"
+                        value="{{ color }}"
+                        form="{{ product_form_id }}"
+                        class="embroidery-thread-color-input input-trim-option"
+                      >
+                      <label
+                        for="{{ color | downcase }}"
+                        class="embroidery-color trim-option-radio color-ks-{{ color | handle }}"
+                      >
+                        {{- color -}}
+                      </label>
+                    {%- endfor -%}
+                  </div>
+                  <div class="product-form__input ks-type-options">
+                    {%- assign typefaces = 'English Script, Felix Tilting, Point Monogram' | split: ', ' -%}
+                    <div class="form__label">Typeface: <span id="type-option-legend"></span></div>
+                    <div class="ks-type-options-wrapper">
+                      {%- for typeface in typefaces -%}
+                        <div
+                          class="typeface-wrapper{% if typeface contains 'Monogram' %} hidden{% endif %}"
+                          {% if typeface contains 'Monogram' %}
+                            data-monogram
+                          {% else %}
+                            data-text
+                          {% endif %}
+                        >
+                          <input
+                            type="radio"
+                            name="properties[Typeface]"
+                            id="{{ typeface | downcase }}"
+                            value="{{ typeface }}"
+                            form="{{ product_form_id }}"
+                            class="embroidery-type-radio field__input"
+                          >
+                          <label
+                            for="{{ typeface | downcase }}"
+                            class="embroidery-type-radio embroidery-text type-option-{{ typeface | handle }}"
+                          >
+                            {{- typeface -}}
+                          </label>
+                        </div>
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                  <div class="product-form__input">
+                    <label for="personalization" class="form__label">Personalization</label>
+                    <input
+                      type="text"
+                      name="properties[Personalization]"
+                      id="personalization"
+                      class="additional-input kassatex"
+                      form="{{ product_form_id }}"
+                    >
+                    <div id="Helper-Monogram" class="hidden form__label personalization-helper">
+                      3 Letters—First Initial, Last Initial, Middle Initial
+                    </div>
+                    <div id="Helper-Text" class="hidden form__label personalization-helper">
+                      1-16 Characters—letters, numbers, or keyboard symbols
+                    </div>
+                  </div>
+                </kassatex-personalization>
+              {%- endif -%}
+
+              <noscript>
+                <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+                  <label class="form__label" for="Variants-{{ section.id }}">
+                    {{- 'products.product.product_variants' | t -}}
+                  </label>
+                  <div class="select">
+                    <select name="id" id="Variants-{{ section.id }}" class="select__select" form="product-form">
+                      {%- for variant in product.variants -%}
+                        <option
+                          {% if variant == product.selected_or_first_available_variant %}
+                            selected="selected"
+                          {% endif %}
+                          {% if variant.available == false %}
+                            disabled
+                          {% endif %}
+                          value="{{ variant.id }}"
+                        >
+                          {{ variant.title }}
+                          {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                          - {{ variant.price | money | strip_html }}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                  </div>
+                </div>
+              </noscript>
+            {%- when 'wallpaper_calculator' -%}
+              <details-modal class="product__modal wallpaper-calc-modal" {{ block.shopify_attributes }}>
+                <details>
+                  <summary
+                    class="modal__toggle{% if block.settings.icon != blank %} has-icon{% endif %}"
+                    aria-haspopup="dialog"
+                    aria-label="{{ block.settings.content }} Calculate yardage"
+                  >
+                    {{ block.settings.content }}
+                    <div class="wrapper-content">
+                      {%- if block.settings.icon != blank -%}
+                        <span class="svg-wrapper">
+                          <img src="{{ block.settings.icon | image_url: width: 50 }}" width="30" height="30" alt="{{ block.settings.text_link }}">
+                        </span>
+                      {%- endif -%}
+                      <span class="text-link"
+                        >Calculate {% if product.tags contains 'solid grasscloth' %}rolls{% elsif product.template_suffix == 'wallpaper-panels' %}panels{% else %}yardage{% endif %}
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    class="product-modal modal__content"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="{{ block.settings.content }} Calculate {% if product.tags contains 'solid grasscloth' %}rolls{% elsif product.template_suffix == 'wallpaper-panels' %}panels{% else %}yardage{% endif -%}"
+                  >
+                    <div class="modal-overlay"></div>
+                    <div class="product-modal__content" tabindex="-1">
+                      <link
+                        rel="stylesheet"
+                        href="{{ 'wallpaper-calculator.css' | asset_url }}"
+                        media="print"
+                        onload="this.media='all'"
+                      >
+                      <noscript>{{ 'wallpaper-calculator.css' | asset_url | stylesheet_tag }}</noscript>
+                      <script src="{{ 'wallpaper-calculator.js' | asset_url }}" defer="defer"></script>
+                      <div id="wallpaper-calculator"></div>
+                      <button
+                        type="button"
+                        class="modal__close-button link button-unstyled focus-inset"
+                        aria-label="{{ 'accessibility.close' | t }}"
+                      >
+                        <i class="fas fa-xmark icon"></i>
+                      </button>
+                    </div>
+                  </div>
+                </details>
+              </details-modal>
+            {%- when 'curtain_calculator' -%}
+              <details-modal class="product__modal" {{ block.shopify_attributes }}>
+                <details>
+                  <summary
+                    class="modal__toggle{% if block.settings.icon != blank %} has-icon{% endif %}"
+                    aria-haspopup="dialog"
+                    aria-label="{{ block.settings.content }} Calculate dimensions"
+                  >
+                    {{ block.settings.content }}
+                    {%- if block.settings.icon != blank -%}
+                      <span class="svg-wrapper">
+                        <img src="{{ block.settings.icon | image_url: width: 50 }}" width="30" height="30" alt="{{ block.settings.text_link }}">
+                      </span>
+                    {%- endif -%}
+                    <span class="text-link">Calculate dimensions</span>
+                  </summary>
+                  <div
+                    class="product-modal modal__content"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="{{ block.settings.content }} Calculate dimensions"
+                  >
+                    <div class="modal-overlay"></div>
+                    <div class="product-modal__content" tabindex="-1">
+                      <link
+                        rel="stylesheet"
+                        href="{{ 'curtain-calculator.css' | asset_url }}"
+                        media="print"
+                        onload="this.media='all'"
+                      >
+                      <noscript>{{ 'curtain-calculator.css' | asset_url | stylesheet_tag }}</noscript>
+                      <script src="{{ 'curtain-calculator.js' | asset_url }}" defer="defer"></script>
+                      <div id="curtain-calculator"></div>
+                      <button
+                        type="button"
+                        class="modal__close-button link button-unstyled focus-inset"
+                        aria-label="{{ 'accessibility.close' | t }}"
+                      >
+                        {%- render 'icon-close' -%}
+                      </button>
+                    </div>
+                  </div>
+                </details>
+              </details-modal>
+            {%- when 'quantity_selector' -%}
+              <div
+                class="product-form__input product-form__quantity{% if product.type == 'Fabric By The Yard' or product.type == 'Wallpaper' or product.type == 'Artwork' %}{% unless product.type == 'Wallpaper' and product.tags contains 'solid grasscloth' %} product-form__quantity-hidden{% endunless %}{% endif %}{% if product.type contains 'Trim' or product.type contains 'Piping' %} product-form__quantity-hidden{% endif %}{% if product.metafields.pepper.external_product_page_link != blank %} product-form__quantity-hidden{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <label class="form__label" for="Quantity-{{ section.id }}">
+                  {% if product.type == 'Curtain' %}
+                    {{ 'products.product.quantity.curtain_label' | t }}
+                  {% elsif product.type == 'Wallpaper' and product.tags contains 'solid grasscloth' %}
+                    {{ 'products.product.quantity.rolls_label' | t }}
+                  {% else %}
+                    {{ 'products.product.quantity.label' | t }}
+                  {% endif %}
+                </label>
+
+                <quantity-input class="quantity" data-section="{{ section.id }}">
+                  <button
+                    class="quantity__button no-js-hidden{% if product.type == 'Fabric By The Yard' or product.type == 'Wallpaper' or product.type == 'Artwork' %}{% unless product.type == 'Wallpaper' and product.tags contains 'solid grasscloth' %} visually-hidden{% endunless %}{% endif %}"
+                    name="minus"
+                    type="button"
+                    {% if product.type == 'Fabric By The Yard' or product.type == 'Wallpaper' %}
+                      {% unless product.type == 'Wallpaper' and product.tags contains 'solid grasscloth' %}
+                        disabled
+                      {% endunless %}
+                    {% endif %}
+                  >
+                    <span class="visually-hidden">
+                      {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                    </span>
+                    -
+                  </button>
+                  <input
+                    class="quantity-input"
+                    type="number"
+                    name="quantity"
+                    id="Quantity-{{ section.id }}"
+                    min="{{ section.settings.minimum }}"
+                    {% if product.type == 'Sample Sale' %}
+                      max="{{ product.selected_or_first_available_variant.inventory_quantity }}"
+                    {% endif %}
+                    value="{{ section.settings.minimum }}"
+                    form="product-form-{{ section.id }}"
+                    {% if product.type == 'Artwork' %}
+                      {% unless product.tags contains 'solid grasscloth' %}
+                        disabled
+                      {% endunless %}
+                    {% endif %}
+                  >
+                  <button
+                    class="quantity__button no-js-hidden{% if product.type == 'Fabric By The Yard' or product.type == 'Wallpaper' or product.type == 'Artwork' %}{% unless product.type == 'Wallpaper' and product.tags contains 'solid grasscloth' %} visually-hidden{% endunless %}{% endif %}"
+                    name="plus"
+                    type="button"
+                  >
+                    <span class="visually-hidden">
+                      {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                    </span>
+                    +
+                  </button>
+                </quantity-input>
+              </div>
+            {%- when 'bundle_buy_buttons' -%}
+              <script src="{{ 'bundle-button.js' | asset_url }} " defer="defer"></script>
+              <bundle-button>
+                {% for variant in product.variants %}
+                  {% if variant.metafields.pepper.bundle_variants.value != blank %}
+                    <script type="application/json" data-variant-id="{{ variant.id }}">
+                      {%- for bundle_variants in variant.metafields.pepper.bundle_variants.value -%}
+                        {%- if forloop.first %}[{%- endif -%}
+                        {"id": "{{ bundle_variants.id }}", "quantity": "{{ variant.metafields.pepper.bundle_quantities.value | slice: forloop.index0 }}", "properties": { "Trim": "{{ variant.metafields.pepper.bundle_trims.value | slice: forloop.index0 }}", "_bundled": "true", "_Embroidery": "false", "Embroidery Color": "", "_customized_image": "", "Typeface": "", "_product_image": "", "_Max Width": "", "_Max Height": "", "_Embroidery Type": "", "Personalization": ""}
+                        {%- unless forloop.last -%}},{%- endunless -%}
+                        {%- if forloop.last -%}}]{%- endif -%}
+                      {%- endfor -%}
+                    </script>
+                  {% endif %}
+                {% endfor %}
+                <div class="product-form__buttons">
+                  <button
+                    type="button"
+                    name="bundle"
+                    class="product-form__submit button button--primary"
+                    {% if product.selected_or_first_available_variant.available == false %}
+                      disabled
+                    {% endif %}
+                  >
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      {% assign price = product.selected_or_first_available_variant.price
+                        | money_without_trailing_zeros
+                      %}
+                      {{ 'products.product.add_to_cart_html' | t: price: price }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </button>
+                </div>
+              </bundle-button>
+            {%- when 'buy_buttons' -%}
+              <div class="product-form__buy" {{ block.shopify_attributes }}>
+                <product-form class="product-form">
+                  <div class="product-form__error-message-wrapper" role="alert" hidden>
+                    <span class="product-form__error-message"></span>
+                  </div>
+                  {%- form 'product', product, id: product_form_id, class: 'form', data-type: 'add-to-cart-form', data-product-id: product.id -%}
+                    {% if product.template_suffix contains 'wallpaper-minimum' or product.template_suffix contains 'wallpaper-panels' %}
+                      <input type="hidden" name="properties[_wallpaper_minimum]" value="true">
+                    {% endif %}
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <input type="hidden" name="properties[_QtyMinimum]" value="{{ section.settings.minimum }}">
+                    
+                    {% assign product_type = product.type | downcase %}
+
+                    {% unless product.template_suffix == 'swatch-and-samples'
+                      or product.template_suffix == 'yardage'
+                      or product_type == 'wallpaper'
+                      or product_type == 'wallpaper swatch'
+                    %}
+                      {% if product.metafields.custom.fabric_type != blank %}
+                        <input
+                          type="hidden"
+                          name="properties[Fabric Type]"
+                          value="{{ product.metafields.custom.fabric_type | escape }}"
+                        >
+                      {% endif %}
+                    {% endunless %}
+
+                    {%- if customer and customer.b2b? -%}
+                      {%- liquid
+                        assign company = customer.current_company
+                        assign trade_tier = company.metafields.custom.trade_tier.value
+                        case trade_tier
+                          when 'TIER 2', 'Tier 2'
+                            assign discount_percent = 20
+                          when 'TIER 3', 'Tier 3'
+                            assign discount_percent = 25
+                          else
+                            assign discount_percent = 15
+                        endcase
+                        assign discount_decimal = discount_percent | divided_by: 100.0
+                        assign multiplier = 1.0 | minus: discount_decimal
+                        assign minimum = section.settings.minimum | default: 1
+                        assign original_price = product.selected_or_first_available_variant.price | times: 1.0 | divided_by: multiplier | round
+                        assign original_price_with_qty = original_price | times: minimum
+                      -%}
+                      <input type="hidden" 
+                              name="properties[Original Price]" 
+                              id="b2b-original-price-input"
+                              value="{{ original_price_with_qty | money_without_trailing_zeros }}">
+                      <input type="hidden" 
+                            name="properties[Trade Discount]" 
+                            value="{{ discount_percent }}%">
+                    {%- endif -%}
+
+                    <div class="product-form__buttons">
+                      <button
+                        type="submit"
+                        name="add"
+                        class="product-form__submit button {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                        {% if product.selected_or_first_available_variant.available == false %}
+                          disabled
+                        {% endif %}
+                      >
+                        {%- if product.selected_or_first_available_variant.available -%}
+                          {% assign price = product.selected_or_first_available_variant.price | times: section.settings.minimum
+                            | money_without_trailing_zeros
+                          %}
+                          {{ 'products.product.add_to_cart_html' | t: price: price }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
+                      </button>
+                      {%- if block.settings.show_dynamic_checkout -%}
+                        {{ form | payment_button }}
+                      {%- endif -%}
+                    </div>
+                  {%- endform -%}
+                </product-form>
+              </div>
+              <div class="b2b-mobile">
+                {% render 'b2b-trade-info-wallpaper', product: product, minimum: section.settings.minimum %}
+              </div>
+            {%- when 'shop_pay' -%}
+              <div {{ block.shopify_attributes }}>
+                {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                  {{ form | payment_terms }}
+                {%- endform -%}
+              </div>
+            {%- when 'tabset' -%}
+              {% render 'product-details-tabset', block: block, product: product %}
+            {%- when 'color_matching' -%}
+              <div class="product-form__input product-form__input-color-matching product-form__input-checkbox">
+                <input
+                  type="checkbox"
+                  id="{{ section.id }}-color-matching"
+                  name="properties[_color_matching]"
+                  value="1"
+                  form="product-form-{{ section.id }}"
+                  class="input-color-matching visually-hidden"
+                >
+                <label for="{{ section.id }}-color-matching" class="form__label">
+                  {{- 'products.product.color_matching' | t -}}
+                </label>
+                <label for="{{ section.id }}-color-matching-order" class="form__label visually-hidden">
+                  {{ 'products.product.color_matching_order' | t }}
+                </label>
+                <input
+                  type="text"
+                  id="{{ section.id }}-color-matching-order"
+                  name="properties[Color Match Order]"
+                  value=""
+                  form="product-form-{{ section.id }}"
+                  class="color-match-input additional-input"
+                  pattern="[0-9]{5,7}"
+                  placeholder="{{ 'products.product.color_matching_order' | t }}"
+                  title="{{ 'products.product.color_matching_order_msg' | t }}"
+                >
+                {{ 'products.product.color_matching_description_html' | t }}
+              </div>
+            {%- when 'rush_processing' -%}
+              {%- liquid
+                assign rush_price = block.settings.rush_processing_product.price | divided_by: 100
+                assign rush_product = block.settings.rush_processing_product.selected_or_first_available_variant
+              -%}
+              <div class="product-form__input product-form__input-rush-processing">
+                <input
+                  type="checkbox"
+                  id="{{ section.id }}-rush-processing"
+                  name="properties[Rush Processing]"
+                  value="{{ block.settings.rush_processing_product.handle }}"
+                  form="product-form-{{ section.id }}"
+                  class="input-rush-processing visually-hidden"
+                  data-product="{{ rush_product.id }}"
+                >
+                <label for="{{ section.id }}-rush-processing" class="form__label">
+                  Add {{ block.settings.rush_processing_product.title }} +${{ rush_price }}
+                </label>
+              </div>
+            {%- when 'embroidery_options' -%}
+              <link
+                rel="stylesheet"
+                href="{{ 'embroidery-webfonts.css' | asset_url }}"
+              >
+              <script src="{{ 'html2canvas.min.js' | asset_url }}" defer></script>
+              {%- assign embroidery_product = block.settings.product -%}
+              {%- if template.suffix contains 'pouch' -%}
+                <input
+                  type="hidden"
+                  name="properties[_product_image]"
+                  form="product-form-{{ section.id }}"
+                  value="{{ product.media.last | image_url: width: 1500 }}"
+                >
+              {%- endif -%}
+              {% unless product.metafields.custom.disable_personalization %}
+                <details-modal class="product__modal product__modal-embroidery">
+                <details>
+                  <summary
+                    class="modal__toggle button button--outline"
+                    aria-haspopup="dialog"
+                    aria-label="Add embroidery"
+                  >
+                    Personalize (+{{ embroidery_product.price | money_without_trailing_zeros }})
+                  </summary>
+                  <div
+                    class="product-modal modal__content"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Add embroidery"
+                  >
+                    <div class="modal-overlay"></div>
+                    <div class="product-modal__content template-embroidery" tabindex="-1">
+                      <link
+                        rel="stylesheet"
+                        href="{{ 'embroidery-modal.css' | asset_url }}"
+                        media="print"
+                        onload="this.media='all'"
+                      >
+                      <noscript>{{ 'embroidery-modal.css' | asset_url | stylesheet_tag }}</noscript>
+                      <script src="{{ 'embroidery-options.js' | asset_url }}" defer="defer"></script>
+                      {% render 'embroidery-options',
+                        embroidery_product: embroidery_product,
+                        product_form_id: product_form_id
+                      %}
+                      <button
+                        type="button"
+                        class="modal__close-button modal__close-back link button-unstyled focus-inset"
+                        aria-label="{{ 'accessibility.close' | t }}"
+                      >
+                        <div class="modal__close-left">
+                          {%- render 'icon-arrow-left' -%}
+                          Back to product
+                        </div>
+                        <div class="modal__close-right">
+                          {%- render 'icon-close' -%}
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </details>
+              </details-modal>
+              {% endunless %}
+            {%- when 'personalization' -%}
+              {%- unless product.title contains 'STACKER' -%}
+                {{ 'personalization-input.css' | asset_url | stylesheet_tag }}
+                {{ '//fonts.googleapis.com/css2?family=Comfortaa&display=swap' | stylesheet_tag }}
+                <personalization-input
+                  class="line-item-property__field product-form__input line-item__customization field letter__color-{{ letter_color_options.first | handleize | downcase | default: 'white' }}"
+                  data-section="{{ section.id }}"
+                  data-spacer-option="{{ product.metafields.namesforgood.spacer_options.value | handleize | default: 'heart' }}"
+                >
+                  <label for="Customization-{{ section.id }}" class="form__label">
+                    {{ block.settings.label }}
+                  </label>
+                  <div class="field__button--end field">
+                    <input
+                      class="required focus-inset focus-visible"
+                      type="text"
+                      maxlength="10"
+                      placeholder=""
+                      id="Customization-{{ section.id }}"
+                      name="properties[{{ block.settings.label | escape }}]"
+                      form="{{ product_form_id }}"
+                      required
+                    >
+                    <details class="customization-options-wrapper">
+                      <summary>
+                        <i class="fas fa-keyboard icon"></i>
+                      </summary>
+                      <div class="customization-options">
+                        <div class="h6">Choose Symbol</div>
+                        <ul class="customization-symbols" role="list">
+                          <li class="symbol">&hearts;</li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+                  <div id="Customization-Output-{{ section.id }}" class="customization-output"></div>
+                  <div id="Customization-Error-{{ section.id }}" class="customization-error"></div>
+                  {%- if product.metafields.namesforgood.personalization_note.value != blank -%}
+                    <p class="rte">{{ product.metafields.namesforgood.personalization_note.value }}</p>
+                  {%- else -%}
+                    <p class="rte">{{ block.settings.note }}</p>
+                  {%- endif -%}
+                </personalization-input>
+                <script src="{{ 'personalization-input.js' | asset_url }}" defer></script>
+              {%- endunless -%}
+            {%- when 'quick_add' -%}
+              {%- unless block.settings.product == blank -%}
+                <script src="{{ 'quick-add-button.js' | asset_url }}" defer></script>
+                {%- assign quick_add_product = block.settings.product -%}
+                {%- capture sample_or_swatch -%}
+                {%- if quick_add_product.type contains 'Trim'
+                  or quick_add_product.type contains 'Piping'
+                  or quick_add_product.type contains 'Rug'
+                  or quick_add_product.type contains 'Fringe'
+                -%}Sample{%- elsif quick_add_product.type contains 'Wallpaper'
+                  or quick_add_product.type contains 'Fabric'
+                -%}Swatch{%- endif -%}{%- endcapture -%}
+                <div {{ block.shopify_attributes }}>
+                  <quick-add-button>
+                    <button
+                      type="button"
+                      class="button-unstyled button button--quick-add no-js-hidden"
+                      data-variant-id="{{ quick_add_product.selected_or_first_available_variant.id }}"
+                    >
+                      {{ 'products.product.quick_add' | t: item: sample_or_swatch }}
+                    </button>
+                    <a href="{{ quick_add_product.url }}" class="button-unstyled button button--quick-add no-js">
+                      {{ 'products.product.quick_add' | t: item: sample_or_swatch }}
+                    </a>
+                  </quick-add-button>
+                </div>
+              {%- endunless -%}
+            {%- when 'notify_me' -%}
+              <script src="{{ 'component-klaviyo-notify.js' | asset_url }}" defer="defer"></script>
+              <klaviyo-notify class="no-js-hidden" {{ block.shopify_attributes }}>
+                <form action="post" class="stack">
+                  <p class="rte">{{ block.settings.heading }}</p>
+                  <input
+                    type="email"
+                    name="email"
+                    id="Email"
+                    placeholder="Enter your email address"
+                    required
+                    class="additional-input"
+                  >
+                  <input type="hidden" name="product" value="{{ product.id }}">
+                  <input type="hidden" name="variant" value="{{ product.selected_or_first_available_variant.id }}">
+                  <button type="submit" class="button button--primary button--full-width">Notify Me</button>
+                  <p class="notify-message notify-message__success hidden">You’re on the list!</p>
+                  <p class="notify-message notify-message__error form-error hidden">Opps, something went wrong!</p>
+                  <p class="notify-message notify-message__error-email form-error hidden">
+                    Please enter a valid email address.
+                  </p>
+                </form>
+              </klaviyo-notify>
+            {%- when 'switch_option_color' %}
+              {%- render 'switch-option', type: 'color', block: block -%}
+            {%- when 'switch_option_type' %}
+              {%- render 'switch-option', type: 'type', block: block -%}
+            {%- when 'breadcrumbs' -%}
+              {%- render 'multi-collection-breadcrumb', block: block -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": {{ product.title | json }},
+    "url": {{ shop.url | append: product.url | json }},
+    {%- if product.selected_or_first_available_variant.featured_media -%}
+      "image": [
+        {{ product.selected_or_first_available_variant.featured_media | image_url: width: product.selected_or_first_available_variant.featured_media.preview_image.width | prepend: "https:" | json }}
+      ],
+    {%- endif -%}
+    "description": {{ product.description | strip_html | json }},
+    {%- if product.selected_or_first_available_variant.sku != blank -%}
+      "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    {%- endif -%}
+    "brand": {
+      "@type": "Thing",
+      "name": {{ product.vendor | json }}
+    },
+    "offers": [
+      {%- for variant in product.variants -%}
+        {
+          "@type" : "Offer",
+          {%- if variant.sku != blank -%}
+            "sku": {{ variant.sku | json }},
+          {%- endif -%}
+          "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : {{ variant.price | divided_by: 100.00 | json }},
+          "priceCurrency" : {{ cart.currency.iso_code | json }},
+          "url" : {{ shop.url | append: variant.url | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Main Product Minimum",
+  "tag": "section",
+  "class": "product-section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "title",
+      "name": "Product Title",
+      "limit": 1
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1
+    },
+    {
+      "type": "spacer_block",
+      "name": "Spacer",
+      "settings": [
+        {
+          "type": "range",
+          "id": "spacing",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "unit": "px",
+          "label": "Spacing",
+          "default": 10
+        }
+      ]
+    },
+    {
+      "type": "quantity_selector",
+      "name": "Quantity Selector",
+      "limit": 1
+    },
+    {
+      "type": "rush_processing",
+      "name": "Rush shipping",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product",
+          "id": "rush_processing_product",
+          "label": "Rush shipping product",
+          "info": "Select the product that gets added when rush shipping is for this template"
+        }
+      ]
+    },
+    {
+      "type": "color_matching",
+      "name": "Color matching",
+      "limit": 1
+    },
+    {
+      "type": "quick_add",
+      "name": "Quick Add",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Used for swatch/sample or single variant product"
+        }
+      ]
+    },
+    {
+      "type": "variant_picker",
+      "name": "Variant picker",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "picker_type",
+          "label": "Type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            },
+            {
+              "value": "button",
+              "label": "Button"
+            }
+          ],
+          "default": "button"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_wallpaper_calculator",
+          "label": "Show wallpaper calculator",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Intro text",
+          "default": "Not sure what size you need?"
+        }
+      ]
+    },
+    {
+      "type": "shop_pay",
+      "name": "Shop pay installments",
+      "limit": 1
+    },
+    {
+      "type": "bundle_buy_buttons",
+      "name": "Bundle buy button",
+      "limit": 1
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": true,
+          "label": "Show dynamic checkout buttons",
+          "info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+        }
+      ]
+    },
+    {
+      "type": "wallpaper_calculator",
+      "name": "Wallpaper calculator link",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Intro text",
+          "default": "Not sure what size you need?"
+        }
+      ]
+    },
+    {
+      "type": "curtain_calculator",
+      "name": "Curtain calculator link",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Intro text",
+          "default": "Not sure how much you need?"
+        }
+      ]
+    },
+    {
+      "type": "embroidery_options",
+      "name": "Embroidery options",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Used for pricing and additional line item"
+        }
+      ]
+    },
+    {
+      "type": "personalization",
+      "name": "N4G Personalization",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Customization"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Note",
+          "default": "NOTE: Standard letters and numbers only - only symbol available is a HEART ♥︎."
+        }
+      ]
+    },
+    {
+      "type": "tabset",
+      "name": "Tabs",
+      "limit": 1
+    },
+    {
+      "type": "notify_me",
+      "name": "Notify form",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Get notified when this product is in stock."
+        }
+      ]
+    },
+    {
+      "type": "switch_option_color",
+      "name": "Switch Option Color",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "color_title",
+          "label": "Color title",
+          "default": "ALSO AVAILABLE IN THESE FABRICS:"
+        },
+        {
+          "type": "richtext",
+          "id": "text_under",
+          "label": "Text under expanded options",
+          "default": "<p>LOOKING FOR MORE OPTIONS? YOU CAN CHOOSE FROM ANY FABRIC WITHIN OUR FURNITURE ASSORTMENT. EMAIL HELLO@PEPPER-HOME.COM TO PLACE YOUR ORDER</p>"
+        }
+      ]
+    },
+    {
+      "type": "switch_option_type",
+      "name": "Switch Option Type",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "url",
+          "label": "Tooltip link",
+          "id": "tooltip_link"
+        }
+      ]
+    },
+    {
+  "type": "breadcrumbs",
+  "name": "Breadcrumbs",
+  "limit" : 1,
+  "settings": [
+    {
+    "type": "text",
+    "label": "Current title",
+    "id": "current_title"
+  },
+  {
+    "type": "url",
+    "id": "previous_link_1",
+    "label": "Previous link level 1",
+  },
+  {
+    "type": "text",
+    "id": "previous_text_1",
+    "label": "Previous text level 1",
+    "default": "Custom Furniture"
+  },
+  {
+    "type": "url",
+    "id": "previous_link_2",
+    "label": "Previous link level 2",
+  },
+  {
+    "type": "text",
+    "id": "previous_text_2",
+    "label": "Previous text level 2"
+  },
+  {
+    "type": "url",
+    "id": "previous_link_3",
+    "label": "Previous link level 3",
+  },
+  {
+    "type": "text",
+    "id": "previous_text_3",
+    "label": "Previous text level 3"
+  }
+    ]
+  }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "media_thumbnail",
+      "label": "Media thumbnail position",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variants",
+      "default": true,
+      "label": "Hide variants’ media"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_buttons",
+      "label": "Show buttons",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "minimum",
+      "label": "Minimum quantity",
+      "default": 5,
+      "min": 1,
+      "max": 100
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable zoom (desktop)",
+      "id": "enable_zoom",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable zoom (mobile)",
+      "id": "enable_zoom_mobile",
+      "default": true
+    },
+     {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 40
+    }
+  ]
+}
+{% endschema %}

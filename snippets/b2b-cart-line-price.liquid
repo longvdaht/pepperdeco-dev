@@ -1,0 +1,121 @@
+{% comment %}
+  B2B Cart Line Item Pricing
+  Shows original price and trade discount in cart
+
+  Trade members viewing a SAMPLESALE product (and legacy 'sample' products)
+  get the regular retail markup instead, including compare-at price.
+
+  Usage: {% render 'b2b-cart-line-price', item: item %}
+{% endcomment %}
+
+{%- if customer and customer.b2b? -%}
+  {%- liquid
+    # Legacy 'sample' tag check
+    assign is_sample = false
+    for tag in item.product.tags
+      if tag == 'sample'
+        assign is_sample = true
+        break
+      endif
+    endfor
+
+    # Customer holds any trade tag?
+    assign trade_tag_list = 'trade,trade15,trade20,trade30' | split: ','
+    assign is_trade_member = false
+    for tag in customer.tags
+      assign tag_clean = tag | downcase | strip
+      if trade_tag_list contains tag_clean
+        assign is_trade_member = true
+        break
+      endif
+    endfor
+
+    # Product tagged SAMPLESALE?
+    assign is_sample_sale = false
+    for tag in item.product.tags
+      assign tag_clean = tag | downcase | strip
+      if tag_clean == 'samplesale'
+        assign is_sample_sale = true
+        break
+      endif
+    endfor
+
+    # Hide trade pricing when a trade member views a SAMPLESALE product
+    assign hide_trade_info = false
+    if is_trade_member and is_sample_sale
+      assign hide_trade_info = true
+    endif
+
+    # Get company and trade tier
+    assign company = customer.current_company
+    assign trade_tier = company.metafields.custom.trade_tier.value
+    assign trade_tier_display = trade_tier | replace: 'TIER ', 'Tier '
+
+    case trade_tier
+      when 'TIER 2', 'Tier 2'
+        assign discount_percent = 20
+      when 'TIER 3', 'Tier 3'
+        assign discount_percent = 25
+      else
+        assign discount_percent = 15
+    endcase
+
+    assign discount_decimal = discount_percent | divided_by: 100.0
+    assign multiplier = 1.0 | minus: discount_decimal
+
+    # Unit prices
+    assign unit_price = item.final_price | times: 1.0
+    assign original_unit_price = unit_price | divided_by: multiplier | round
+
+    # Line prices (unit x quantity)
+    assign line_price = item.final_line_price | times: 1.0
+    assign original_line_price = line_price | divided_by: multiplier | round
+
+    # Savings
+    assign unit_savings = original_unit_price | minus: item.final_price
+    assign line_savings = original_line_price | minus: item.final_line_price
+
+    # Retail totals for the excluded-product case
+    assign compare_at = item.variant.compare_at_price
+    assign total_final_price = item.final_price | times: item.quantity
+    assign total_compare_price = compare_at | times: item.quantity
+  -%}
+
+  {%- if is_sample or hide_trade_info -%}
+    {%- comment -%} Excluded from trade pricing — render like a regular line item {%- endcomment -%}
+    <p class="cart-product-price">
+      {%- if compare_at and compare_at > item.final_price -%}
+        <span class="visually-hidden">
+          {{ 'products.product.price.regular_price' | t }}
+        </span>
+        <s class="cart-item__old-price product-option">
+          {{- total_compare_price | money_without_trailing_zeros -}}
+        </s>
+        <span class="visually-hidden">
+          {{ 'products.product.price.sale_price' | t }}
+        </span>
+        <span class="cart-item__final-price product-option">
+          {{ total_final_price | money_without_trailing_zeros }}
+        </span>
+      {%- else -%}
+        <span class="product-option">
+          {{ total_final_price | money_without_trailing_zeros }}
+        </span>
+      {%- endif -%}
+    </p>
+  {%- else -%}
+    {%- comment -%} Regular B2B pricing with trade discount {%- endcomment -%}
+    <div class="b2b-cart-pricing cart-product-price">
+      <div class="b2b-cart-pricing__row b2b-cart-pricing__original">
+        <span class="b2b-cart-pricing__value b2b-cart-pricing__value--strikethrough">
+          <s>{{ original_unit_price | money_without_trailing_zeros }}</s>
+        </span>
+      </div>
+      <div class="b2b-cart-pricing__row b2b-cart-pricing__trade">
+        <span class="b2b-cart-pricing__value b2b-cart-pricing__value--trade">
+          {{ item.final_price | money_without_trailing_zeros }}
+        </span>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,19 @@
+{% assign easylockdownLocationsCan = '' | split: ',' %}{% assign easylockdownLocationsCannot = '' | split: ',' %}{% assign easylockdownPasswordItems = '' | split: ',' %}
+{% assign easylockdownNow = 'now' | date:'%s' | times: 1 %}{% assign easylockdownNowWeekDay = easylockdownNow | date:'%u' %}{% assign easylockdownNowMonthDay = easylockdownNow | date:'%d' %}{% assign easylockdownNowHM = easylockdownNow | date:'%H%M' | times: 1 %}{% if customer %}{% assign easylockdownPlacedOrder = customer.orders.first.created_at | date:'%s' %}{% assign easylockdownOldestPlacedOrder = customer.orders.last.created_at | date:'%s' %}{% assign easylockdownDateDifference = easylockdownNow | minus: easylockdownPlacedOrder %}{% endif %}
+{% assign easylockdownCollectionException = false %}
+{% unless easylockdownCollectionException %}
+{% if easylockdown_filter_collection.collections %}
+{% assign easylockdownItemOff = false %}
+{% for c in easylockdown_filter_collection.collections %}
+{% if c.id == 301629571251 %}
+{% assign easylockdownItemOff = true %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% if easylockdownItemOff %}
+{% assign easylockdownTmp = 'e1b0773439' | split: ',' %}
+{% assign easylockdownPasswordItems = easylockdownPasswordItems | concat: easylockdownTmp | uniq %}
+{% endif %}
+{% endif %}
+{% endunless %}
+{% unless easylockdownItemSelectorOff %}<div class='easylockdown-item-selector easy-item-selector' data-eld-loc-can='{{ easylockdownLocationsCan | join: "," }}' data-eld-loc-cannot='{{ easylockdownLocationsCannot | join: "," }}' data-eld-loc-auth='{{ easylockdownPasswordItems | join: "," }}' style='display:none;'></div>{% endunless %}

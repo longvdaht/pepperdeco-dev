@@ -1,0 +1,44 @@
+{%- assign lining_types = 'Unlined,Lined' | split: ',' -%}
+<shower-lining-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ first_child_product.url }}">
+  <fieldset class="js product-form__input product-form__input-sc-lining">
+    <option-dropdown data-dropdown-key="sc-lining">
+      <button type="button" data-dropdown-trigger aria-expanded="false">
+        <legend class="form__label">
+          <span class="contruction-wrapper">
+            {{ 'products.product.lining' | t }}: 
+          </span>
+          <span id="{{ section.id }}-option-sc-lining"><span class="option-not-selected">{{ 'products.product.select_lining' | t }}</span></span>
+        </legend>
+        {% render 'icon-chevron-up' %}
+        {% render 'icon-chevron-down-pdp' %}
+      </button>
+      <div data-dropdown-panel>
+        {%- for type in lining_types -%}
+          {%- assign type_handle = type | handle -%}
+          <input
+            type="radio"
+            id="{{ section.id }}-sc-lining-{{ forloop.index0 }}"
+            name="lining"
+            value="{{ type | escape }}"
+            form="product-form-{{ section.id }}"
+            class="input-sc-lining"
+            data-url="{{ product.url | append: '-' | append: type_handle }}"
+            {% comment %} {% if product.title contains type or forloop.first %}
+              checked
+            {% endif %} {% endcomment %}
+          >
+          <label
+            for="{{ section.id }}-sc-lining-{{ forloop.index0 }}"
+            class="lining-radio lining-{{ value | handleize }} lining-{{ type | handleize }}"
+          >
+            {{ type }}
+          </label>
+        {%- endfor -%}
+        <div class="lining-message-wrapper">
+          <span class="lining-message lining-message-unlined visually-hidden">{{ 'products.product.lining_message.unlined' | t }}</span>
+          <span class="lining-message lining-message-lined visually-hidden">{{ 'products.product.lining_message.lined' | t }}</span>
+        </div>
+      </div>
+    </option-dropdown>
+  </fieldset>
+</shower-lining-radios>

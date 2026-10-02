@@ -1,0 +1,402 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero_hrybck": {
+      "type": "page-hero",
+      "settings": {
+        "word_graphic": "shopify://shop_images/The.png",
+        "word_graphic_width": 48,
+        "text_icon": "1",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "A library of helpful resources for every project.",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "image": "shopify://shop_images/Collection-Moodboard-Furniture-Samples.png",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "main": {
+      "type": "main-design-hub",
+      "disabled": true,
+      "settings": {
+        "lead": "Welcome to the",
+        "heading": "DesignHub",
+        "title": "Complimentary Design Assistance",
+        "link": "shopify://pages/design-assistance",
+        "label": "Get Started",
+        "image": "shopify://shop_images/DESIGNHUB.png",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product_guides_wR688N": {
+      "type": "product-guides",
+      "blocks": {
+        "product_guide_item_Cjdw6t": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "CURTAINS",
+            "title_content": "CURTAIN GUIDES",
+            "article_1": "shopify://pages/curtain-calculator",
+            "cover_article_1": "shopify://shop_images/Resource-Curtain-Calculator-Desktop.png",
+            "article_2": "shopify://blogs/the-thread/curtain-faqs",
+            "article_3": "shopify://blogs/the-thread/curtain-hardware",
+            "article_4": "shopify://blogs/the-thread/curtain-measurement-and-installment-guide",
+            "article_5": "shopify://blogs/the-thread/cafe-curtain-hardware",
+            "article_6": "shopify://blogs/the-thread/cafe-curtain-measurement-guide",
+            "article_7": "shopify://blogs/the-thread/cafe-curtain-faqs",
+            "article_8": "shopify://blogs/the-thread/fabric-care-guide",
+            "cover_article_8": "shopify://shop_images/Resource-Fabric-Care-Guide-Desktop.png",
+            "article_9": "shopify://blogs/the-thread/curtain-trim-what-its-all-about",
+            "article_10": "shopify://blogs/the-thread/paint-guide-fabric",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_Wy3TUw": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "ROMAN SHADES",
+            "title_content": "ROMAN SHADE GUIDES",
+            "article_1": "",
+            "cover_article_1": "shopify://shop_images/Resource-Roman-Calculator-Desktop.png",
+            "article_2": "shopify://blogs/the-thread/roman-shade-faqs",
+            "article_3": "shopify://blogs/the-thread/roman-shade-measurement-guide",
+            "article_4": "shopify://blogs/the-thread/roman-shade-construction-guide",
+            "article_5": "shopify://blogs/the-thread/fabric-care-guide",
+            "cover_article_5": "shopify://shop_images/Resource-Fabric-Care-Guide-Desktop.png",
+            "article_6": "shopify://blogs/the-thread/paint-guide-fabric",
+            "article_7": "shopify://blogs/the-thread/curtain-trim-what-its-all-about",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_YNVFqJ": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "PILLOWS",
+            "title_content": "PILLOW GUIDES",
+            "article_1": "shopify://blogs/the-thread/pillow-size-guide",
+            "article_2": "shopify://blogs/the-thread/pillow-faqs",
+            "article_3": "shopify://blogs/the-thread/how-to-create-an-embroidered-pillow",
+            "article_4": "shopify://blogs/the-thread/how-to-create-a-custom-pillow",
+            "article_5": "shopify://blogs/the-thread/fabric-care-guide",
+            "cover_article_5": "shopify://shop_images/Resource-Fabric-Care-Guide-Desktop.png",
+            "article_6": "shopify://blogs/the-thread/pillow-piping-and-trim-guide",
+            "cover_article_6": "shopify://shop_images/Resource-Pillow-Piping-and-Trim-Mobile.png",
+            "article_7": "shopify://blogs/the-thread/pillow-piping-basics",
+            "article_8": "shopify://blogs/the-thread/fabric-guide",
+            "article_9": "shopify://blogs/the-thread/paint-guide-fabric",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_U9PPam": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "FURNITURE",
+            "title_content": "FURNITURE GUIDES",
+            "article_1": "shopify://blogs/the-thread/furniture-faqs",
+            "article_2": "shopify://blogs/the-thread/fabric-guide",
+            "article_3": "shopify://blogs/the-thread/bed-and-headboard-style-overview",
+            "article_4": "shopify://blogs/the-thread/bed-assembly-guide",
+            "article_5": "shopify://blogs/the-thread/bench-customization-guide",
+            "article_6": "https://cdn.shopify.com/s/files/1/2137/1325/files/PepperHome-Furniture-Tear-Sheets.pdf?v=1752282235",
+            "cover_article_6": "shopify://shop_images/Resource-Furniture-Tear-Sheets-Desktop.png",
+            "article_7": "shopify://blogs/the-thread/bed-customization-guide",
+            "article_8": "shopify://blogs/the-thread/sofa-sectional-customization-guide",
+            "article_9": "shopify://blogs/the-thread/chair-customization-guide",
+            "article_10": "shopify://blogs/the-thread/fabric-faqs",
+            "article_11": "shopify://blogs/the-thread/paint-guide-fabric",
+            "article_12": "shopify://blogs/the-thread/fabric-care-guide"
+          }
+        },
+        "product_guide_item_qFT6XJ": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "WALLPAPER",
+            "title_content": "WALLPAPER GUIDES",
+            "article_1": "shopify://pages/wallpaper-calculator",
+            "cover_article_1": "shopify://shop_images/Resource-Wallpaper-Calculator-Desktop.png",
+            "article_2": "shopify://blogs/the-thread/wallpaper-faqs",
+            "article_3": "shopify://blogs/the-thread/wallpaper-guide",
+            "article_4": "https://cdn.shopify.com/s/files/1/2137/1325/files/Care-Instructions-Wallpaper.png?v=1752178639",
+            "cover_article_4": "shopify://shop_images/Resource-Wallpaper-Care-Guide-Desktop.png",
+            "article_5": "shopify://blogs/the-thread/paint-guide-wallpaper",
+            "article_6": "shopify://blogs/the-thread/upholsterer-recommendations-and-wallpaper-installers",
+            "article_7": "shopify://blogs/the-thread/perfect-pairs-solid-grasscloth",
+            "article_8": "https://cdn.shopify.com/s/files/1/2137/1325/files/Wallpaper-Hanging-Instructions-Clay-Coated.pdf?v=1752632038",
+            "cover_article_8": "shopify://shop_images/Resource-Clay-Coated-Hanging-Instructions-Desktop.png",
+            "article_9": "https://cdn.shopify.com/s/files/1/2137/1325/files/Wallpaper-Hanging-Instructions-Removable.pdf?v=1752616680",
+            "cover_article_9": "shopify://shop_images/Resource-Removable-Hanging-Instructions-Desktop.png",
+            "article_10": "https://cdn.shopify.com/s/files/1/2137/1325/files/Wallpaper-Hanging-Instructions-Performance.pdf?v=1752632061",
+            "cover_article_10": "shopify://shop_images/Resource-Performance-Hanging-Instructions-Desktop.png",
+            "article_11": "https://cdn.shopify.com/s/files/1/2137/1325/files/Wallpaper-Hanging-Instructions-Solid-Grasscloth.pdf?v=1752853805",
+            "cover_article_11": "shopify://shop_images/Resource-Solid-Grasscloth-Hanging-Instructions-Desktop.png",
+            "article_12": "https://cdn.shopify.com/s/files/1/2137/1325/files/Wallpaper-Hanging-Instructions-Patterned-Grasscloth.pdf?v=1752854145",
+            "cover_article_12": "shopify://shop_images/Resource-Patterned-Grasscloth-Hanging-Instructions-Desktop.png"
+          }
+        },
+        "product_guide_item_kUJjHx": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "SHOWER CURTAINS",
+            "title_content": "SHOWER CURTAIN GUIDES",
+            "article_1": "shopify://blogs/the-thread/shower-curtain-faqs",
+            "article_2": "shopify://blogs/the-thread/lined-vs-unlined-shower-curtains",
+            "article_3": "shopify://blogs/the-thread/shower-curtain-size-guide",
+            "article_4": "shopify://blogs/the-thread/shower-curtain-hardware",
+            "article_5": "shopify://blogs/the-thread/fabric-guide",
+            "article_6": "shopify://blogs/the-thread/fabric-care-guide",
+            "cover_article_6": "shopify://shop_images/Resource-Fabric-Care-Guide-Desktop.png",
+            "article_7": "shopify://blogs/the-thread/paint-guide-fabric",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_cEpEC9": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "VALANCES & CORNICES",
+            "title_content": "VALANCE & CORNICE GUIDES",
+            "article_1": "shopify://blogs/the-thread/cornice-and-valence-faqs",
+            "article_2": "shopify://blogs/the-thread/cornice-and-valence-measurement-guide",
+            "article_3": "shopify://blogs/the-thread/cornice-vs-valence-whats-the-difference",
+            "article_4": "",
+            "article_5": "",
+            "article_6": "",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_zfdWkE": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "FABRIC",
+            "title_content": "FABRIC GUIDES",
+            "article_1": "shopify://blogs/the-thread/fabric-faqs",
+            "article_2": "shopify://blogs/the-thread/paint-guide-fabric",
+            "article_3": "shopify://blogs/the-thread/fabric-guide",
+            "article_4": "shopify://blogs/the-thread/upholsterer-recommendations-and-wallpaper-installers",
+            "article_5": "shopify://blogs/the-thread/fabric-care-guide",
+            "cover_article_5": "shopify://shop_images/Resource-Fabric-Care-Guide-Desktop.png",
+            "article_6": "",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_guide_item_Cjdw6t",
+        "product_guide_item_Wy3TUw",
+        "product_guide_item_YNVFqJ",
+        "product_guide_item_U9PPam",
+        "product_guide_item_qFT6XJ",
+        "product_guide_item_kUJjHx",
+        "product_guide_item_cEpEC9",
+        "product_guide_item_zfdWkE"
+      ],
+      "custom_css": [],
+      "settings": {
+        "section_heading": "Product Guides",
+        "content": "<p>Select the product to see its guides.</p>",
+        "show_item_title": false,
+        "color_scheme": "background-primary"
+      }
+    },
+    "16515208536cce1945": {
+      "type": "image-content",
+      "settings": {
+        "section_full_width": "yes",
+        "word_graphic_width_erin_kelsey": 104,
+        "word_graphic_width_xoxo": 104,
+        "section_heading": "",
+        "section_heading_size": "h2",
+        "heading": "Complimentary Design Assistance",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>Speak to one of our design experts, free of charge. Use the link to email us and one of our designers will reply within 48 hours.</p>",
+        "signature": "",
+        "signature_image_width": 150,
+        "image": "shopify://shop_images/Collection-Thatcher-Forest-Pillow.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "color_scheme": "background-secondary",
+        "background_color": "",
+        "link": "shopify://pages/design-assistance",
+        "label": "EMAIL A DESIGNER",
+        "icon_show": "yes",
+        "hub_section": "curtains"
+      }
+    },
+    "1651534570f4219f78": {
+      "type": "ugc-images",
+      "blocks": {
+        "1651534570b3206af5-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cafecurtain.png",
+            "heading": "CURTAIN CALCULATOR",
+            "link": "shopify://pages/curtain-calculator"
+          }
+        },
+        "1651534570b3206af5-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Wallpaper-Annabelle_Mauve.png",
+            "heading": "WALLPAPER CALCULATOR",
+            "link": "shopify://pages/wallpaper-calculator"
+          }
+        },
+        "1651534570b3206af5-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/beatricepillow.png",
+            "heading": "PILLOW SIZE GUIDE",
+            "link": "shopify://blogs/pep-talk/pillow-size-guide"
+          }
+        },
+        "1651534570b3206af5-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PaintFanBook.png",
+            "heading": "WALLPAPER PAINT GUIDE",
+            "link": "shopify://blogs/pep-talk/paint-guide-wallpaper"
+          }
+        }
+      },
+      "block_order": [
+        "1651534570b3206af5-2",
+        "1651534570b3206af5-3",
+        "1651534570b3206af5-0",
+        "1651534570b3206af5-1"
+      ],
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "yes",
+        "is_slider": false,
+        "heading": "Popular Resources",
+        "subheading": "",
+        "label_view_all": "SEE ALL",
+        "link_view_all": "https://pepper-home.com/blogs/the-thread/tagged/resources",
+        "background_color": "#ffffff",
+        "hub_section": "curtains"
+      }
+    },
+    "16515212308ca65078": {
+      "type": "image-content",
+      "settings": {
+        "section_full_width": "yes",
+        "word_graphic_width_erin_kelsey": 104,
+        "word_graphic_width_xoxo": 104,
+        "section_heading": "",
+        "section_heading_size": "h2",
+        "heading": "Make It Easy",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>See something you love? Shop directly from our customer photos.</p>",
+        "signature": "",
+        "signature_image_width": 150,
+        "image": "shopify://shop_images/Collection_Hero.jpg",
+        "text_alignment": "right",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-secondary",
+        "background_color": "",
+        "link": "shopify://pages/justaddpepper",
+        "label": "SHOP CUSTOMER PHOTOS",
+        "icon_show": "no",
+        "hub_section": "wallpaper"
+      }
+    },
+    "section_faq_NDxnwX": {
+      "type": "section-faq",
+      "blocks": {
+        "faq_item_RpDMKk": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I choose the correct curtain width and length?",
+            "content": "<p>Our team of trusted engineers created a simple-to-use <a href=\"/pages/curtain-calculator\" title=\"Curtain Calculator\">Curtain Measurement Calculator</a> to help you determine your curtain panel size. Choose your style and tailoring, give us two measurements, and we'll do the rest.</p>",
+            "action_text": "MORE CURTAIN FAQS",
+            "action_link": "shopify://blogs/pep-talk/curtain-faqs"
+          }
+        },
+        "faq_item_iDgwty": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What PILLOW SIZES DO YOU OFFER?",
+            "content": "<p>We offer Square (18\", 20\", 22\"), Euro (26\" x 26\"), Bolster (8.5\" x 24\"), Petite Lumbar (12\" x 21\"), Midi Lumbar (16\" x 24\") and XL Lumbar (19\" x 47\").<br/><br/>Please see our <a href=\"/blogs/pep-talk/pillow-faqs\" title=\"Pillow FAQs\">Size Guide</a> to determine your perfect size.</p>",
+            "action_text": "MORE PILLOW FAQS",
+            "action_link": "shopify://blogs/pep-talk/pillow-faqs"
+          }
+        },
+        "faq_item_A3ykG6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "IS THE WALLPAPER BATHROOM FRIENDLY?",
+            "content": "<p>Yes! We recommend using our performance wallpaper in bathrooms. The water and stain resistant material is extremely durable and wipeable. Clay coated wallpaper may be used in ventilated bathrooms as long as it is not placed in splash zones.</p>",
+            "action_text": "MORE WALLPAPER FAQS",
+            "action_link": "shopify://blogs/pep-talk/wallpaper-faqs"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_RpDMKk",
+        "faq_item_iDgwty",
+        "faq_item_A3ykG6"
+      ],
+      "settings": {
+        "heading": "FAQ",
+        "color_scheme": "background-primary"
+      }
+    },
+    "section_help_center_xkbDGh": {
+      "type": "section-help-center",
+      "settings": {
+        "first_title": "Visit our Help Center",
+        "visit_link": "https://pepper-home.gorgias.help/en-US",
+        "second_title": "Get in touch",
+        "live_chat": "M-F 10am-5pm EST",
+        "live_chat_link": "",
+        "email": "hello@pepper-home.com",
+        "color_scheme": "background-tertiary-dark"
+      }
+    }
+  },
+  "order": [
+    "page_hero_hrybck",
+    "main",
+    "product_guides_wR688N",
+    "16515208536cce1945",
+    "1651534570f4219f78",
+    "16515212308ca65078",
+    "section_faq_NDxnwX",
+    "section_help_center_xkbDGh"
+  ]
+}

@@ -1,0 +1,201 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "16339093648561cdfb": {
+      "type": "accordion-section",
+      "blocks": {
+        "e6be41ee-20da-4204-a057-62aa7ce8bb3f": {
+          "type": "accordion",
+          "settings": {
+            "title": "When will my order ship?",
+            "content": "<p>Our custom-made pillows, curtains, and table linens are shipped in just 10 days or less! <\/p><p><\/p><p>Our wallpaper is printed-to-order on a continuous bolt and ships in 4 weeks.<\/p><p><\/p><p>Samples ship in 3 business days.<\/p>"
+          }
+        },
+        "c5171506-e8ae-4600-8cdc-03b06738240c": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "title": "I have a question about my order, what should I do?",
+            "content": "<p>If you’ve created a profile (and we suggest you do!), you can see all of your previous orders <a href=\"\/account\" title=\"Account page\">here<\/a>. Or, chat with us or shoot an email at <a href=\"mailto:hello@pepper-home.com\" title=\"Email us\">hello@pepper-home.com<\/a>.<\/p>"
+          }
+        },
+        "58ee130e-c010-45d0-8912-b37c43238d75": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is my shipping cost?",
+            "content": "<p>Orders of $300 or more ship for free via FedEx within the Continental US! If your order is smaller, we charge $5-18 depending on the weight. If you are shipping to Canada, Alaska, Hawaii, or Puerto Rico, your shipping cost will appear at checkout. Please note that orders over $550 will require a signature. If you would like to change this, please email us at <a href=\"mailto:hello@pepper-home.com\" title=\"Email us\">hello@pepper-home.com<\/a>.<\/p>"
+          }
+        },
+        "9629f090-d689-4853-bf7c-f18d9c48ec15": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can you ship internationally?",
+            "content": "<p>We currently ship to the US and Canada. Looking to ship elsewhere? Send an email to <a href=\"mailto:hello@pepper-home.com\" title=\"Email us\">hello@pepper-home.com<\/a>.<\/p>"
+          }
+        },
+        "a590e06b-a953-4ff2-9811-311759738e13": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I track my order?",
+            "content": "<p>You will receive an email when your order is shipped that contains tracking information. If you’ve created a profile, your shipping information is found on your <a href=\"\/account\" title=\"Account page\">Orders Page<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e6be41ee-20da-4204-a057-62aa7ce8bb3f",
+        "c5171506-e8ae-4600-8cdc-03b06738240c",
+        "58ee130e-c010-45d0-8912-b37c43238d75",
+        "9629f090-d689-4853-bf7c-f18d9c48ec15",
+        "a590e06b-a953-4ff2-9811-311759738e13"
+      ],
+      "settings": {
+        "heading": "Orders & Shipping",
+        "hub_section": ""
+      }
+    },
+    "1633909500d13bfe8e": {
+      "type": "accordion-section",
+      "blocks": {
+        "e2a98ad8-191c-4806-b59f-0a4ec66eab5a": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is your Return Policy?",
+            "content": "<p>Our curtains, pillows, wallpaper, fabric, rugs and tablecloths are <strong>FINAL SALE<\/strong> as they are custom and made-to-order. Once an order is placed, there is a 24-hour window to make any changes. We offer <a href=\"\/collections\/fabric-wallpaper-swatches\" target=\"_blank\" title=\"Samples\">samples<\/a> so you can experience the color, pattern, and texture before you purchase.<br\/><\/p><p><\/p><p>We accept returns of unused, unwashed, and undamaged napkins, table runners, and throws within 30 days of the order date.<\/p><p><\/p><p>If you are unhappy with your selections, we will let you exchange your product and choose something else for 50% of the price of new product (offer valid for 30 days after delivery). Offer not valid on Loom & Co X Pepper rugs.<\/p><p><\/p><p>Gift cards cannot be returned.<\/p>"
+          }
+        },
+        "0221843b-2a62-4295-b224-55a5fb62ead9": {
+          "type": "accordion",
+          "settings": {
+            "title": "What if there is a workroom error?",
+            "content": "<p>In the unlikely event that there is a workroom error, we will repair or replace your products right away. Please send a photo and details to <a href=\"mailto:hello@pepper-home.com\" target=\"_blank\" title=\"mailto:hello@pepper-home.com\">hello@pepper-home.com<\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e2a98ad8-191c-4806-b59f-0a4ec66eab5a",
+        "0221843b-2a62-4295-b224-55a5fb62ead9"
+      ],
+      "settings": {
+        "heading": "Returns",
+        "hub_section": ""
+      }
+    },
+    "1633909361ade851bf": {
+      "type": "accordion-section",
+      "blocks": {
+        "53ab79f9-5bbf-4504-8305-e7ada4c860fe": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I clean my products?",
+            "content": "<p>Please professionally dry clean or spot treat all of your Pepper fabric products. Our cotton fabrics can be steamed; velvets can be brushed but cannot be steamed.<\/p>"
+          }
+        },
+        "fbb14df3-5940-4e4e-8fd0-b526f98898fc": {
+          "type": "accordion",
+          "settings": {
+            "title": "Where do you make your products?",
+            "content": "<p>Made in the USA, we work with our trusted team in the Southern states to produce and sew our textiles. Our wallpaper is printed in Connecticut.<\/p>"
+          }
+        },
+        "20b671c0-87f0-4288-9eb0-809087e7c6ad": {
+          "type": "accordion",
+          "settings": {
+            "title": "What are your products made out of?",
+            "content": "<p>Our cotton textiles are all natural, 100% cotton. Our digital print operation is set up to print natural fiber fabrics with fiber reactive dyes. Fiber reactive dyes are more environmentally friendly than pigment dyes. In addition, all of our fabrics are free of flame retardants and PFAS chemicals.<\/p><p><\/p><p>Our wallpaper is digitally printed in Connecticut with water-based inks on eco-friendly clay-coated paper.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "53ab79f9-5bbf-4504-8305-e7ada4c860fe",
+        "fbb14df3-5940-4e4e-8fd0-b526f98898fc",
+        "20b671c0-87f0-4288-9eb0-809087e7c6ad"
+      ],
+      "settings": {
+        "heading": "Products",
+        "hub_section": ""
+      }
+    },
+    "1633909800af262e2f": {
+      "type": "accordion-section",
+      "blocks": {
+        "8f0d6fc5-e2fb-4fe6-b8fe-89cd7a89b3d8": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you have gift cards?",
+            "content": "<p>Yes! We have digital <a href=\"\/products\/gift-card-digital\" title=\"Digital Gift Card\">gift cards<\/a>. They are sent electronically so you can easily share via email or print out to give in person!<\/p>"
+          }
+        },
+        "996cccca-054e-49bb-a391-6ad4fe03be65": {
+          "type": "accordion",
+          "settings": {
+            "title": "Are prices listed on packing slips?",
+            "content": "<p>No, our packing slips only include product names and quantities.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8f0d6fc5-e2fb-4fe6-b8fe-89cd7a89b3d8",
+        "996cccca-054e-49bb-a391-6ad4fe03be65"
+      ],
+      "settings": {
+        "heading": "Gifts",
+        "hub_section": ""
+      }
+    },
+    "16339099679800f841": {
+      "type": "accordion-section",
+      "blocks": {
+        "10c0e7f6-7b9c-46a8-9c0e-78e9919d6253": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you have a trade program?",
+            "content": "<p>We offer trade accounts to interior designers and architects for purchasing finished goods, fabric, wallpaper, and swatches. Trade Program members enjoy benefits such as discounts, free swatches, customization, social media features, tax-exemption and a dedicated service team.<\/p><p>You can apply for membership <a href=\"https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSdhu4kqurfaEY4EBEU1TKo0HUhmp3bFGQcFxggrSHzV8M_6jQ\/viewform?fbzx=6841568879748866585\" target=\"_blank\" title=\"Apply for trade program membership\">here<\/a> and send your questions to <a href=\"mailto:trade@pepper-home.com\" title=\"Email about our trade program\">trade@pepper-home.com<\/a>.<\/p>"
+          }
+        },
+        "3502e347-82b9-4171-99e7-ccbb0549c610": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you have an affiliate program?",
+            "content": "<p>Yes! We would love to chat about partnerships and affiliations. Please send an email to <a href=\"mailto:hello@pepper-home.com\" title=\"Email us\">hello@pepper-home.com<\/a>.<\/p>"
+          }
+        },
+        "eac10dcb-b84e-4e24-a83c-4ea9e2690d4f": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I add a promotion code?",
+            "content": "<p>Lucky you! You can use your code (1 per order) at checkout. Promo codes cannot be used on gift cards.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "10c0e7f6-7b9c-46a8-9c0e-78e9919d6253",
+        "3502e347-82b9-4171-99e7-ccbb0549c610",
+        "eac10dcb-b84e-4e24-a83c-4ea9e2690d4f"
+      ],
+      "settings": {
+        "heading": "General",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16339093648561cdfb",
+    "1633909500d13bfe8e",
+    "1633909361ade851bf",
+    "1633909800af262e2f",
+    "16339099679800f841"
+  ]
+}

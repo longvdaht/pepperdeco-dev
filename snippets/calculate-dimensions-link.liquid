@@ -1,0 +1,35 @@
+{%- comment -%}
+  "CALCULATE DIMENSIONS" link shown inside a dimension accordion (Width, Length,
+  Height, Depth, Headrail depth). It opens the single calculator modal rendered
+  once per page by 'curtain-calculator-modal', so the calculator app only ever
+  mounts on one element.
+
+  Accepts:
+  - block: the variant picker block holding the curtain calculator settings
+{%- endcomment -%}
+{%- if block.settings.show_calculator -%}
+  <div class="calculate-dimensions-link">
+    <button
+      type="button"
+      class="calculate-dimensions-trigger modal__toggle{% if block.settings.icon != blank %} has-icon{% endif %}"
+      aria-haspopup="dialog"
+      aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+      {{ block.shopify_attributes }}
+    >
+      {{ block.settings.content }}
+      <span class="wrapper-content">
+        {%- if block.settings.icon != blank -%}
+          <span class="svg-wrapper">
+            <img
+              src="{{ block.settings.icon | image_url: width: 50 }}"
+              width="30"
+              height="30"
+              alt="{{ block.settings.text_link }}"
+            >
+          </span>
+        {%- endif -%}
+        <span class="text-link">{{ 'products.product.calculate_dimension' | t }}</span>
+      </span>
+    </button>
+  </div>
+{%- endif -%}

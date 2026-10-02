@@ -1,0 +1,310 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero_hrybck": {
+      "type": "page-hero",
+      "settings": {
+        "text_icon": "0",
+        "mobile_display": "2",
+        "title": "Installation Guides",
+        "subheading": "A library of helpful resources to get started.",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "image": "shopify://shop_images/PH-DesignHub_03.png",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "main": {
+      "type": "main-design-hub",
+      "disabled": true,
+      "settings": {
+        "lead": "Welcome to the",
+        "heading": "DesignHub",
+        "title": "Complimentary Design Assistance",
+        "link": "shopify://pages/design-assistance",
+        "label": "Get Started",
+        "image": "shopify://shop_images/DESIGNHUB.png",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "product_guides_wR688N": {
+      "type": "product-guides",
+      "blocks": {
+        "product_guide_item_Cjdw6t": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "CURTAINS",
+            "title_content": "CURTAIN GUIDES",
+            "article_1": "shopify://blogs/pep-talk/curtain-measurement-and-installment-guide",
+            "article_2": "shopify://blogs/pep-talk/curtain-faqs",
+            "article_3": "shopify://blogs/pep-talk/curtain-hardware",
+            "article_4": "shopify://blogs/pep-talk/cafe-curtain-faqs",
+            "article_5": "shopify://blogs/pep-talk/cafe-curtain-hardware",
+            "article_6": "shopify://blogs/pep-talk/curtain-training-101",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_YNVFqJ": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "PILLOWS",
+            "title_content": "PILLOW GUIDES",
+            "article_1": "shopify://blogs/pep-talk/pillow-size-guide",
+            "article_2": "shopify://blogs/pep-talk/how-to-create-an-embroidered-pillow",
+            "article_3": "shopify://blogs/pep-talk/pillow-faqs",
+            "article_4": "shopify://blogs/pep-talk/pillow-piping-and-trim-guide",
+            "article_5": "shopify://blogs/pep-talk/how-to-perfectly-style-your-bed",
+            "article_6": "shopify://blogs/pep-talk/paint-guide-fabric",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_qFT6XJ": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "WALLPAPER",
+            "title_content": "WALLPAPER GUIDES",
+            "article_1": "shopify://blogs/pep-talk/wallpaper-faqs",
+            "article_2": "shopify://blogs/pep-talk/paint-guide-wallpaper",
+            "article_3": "shopify://blogs/pep-talk/perfect-pairs-solid-grasscloth",
+            "article_4": "shopify://blogs/pep-talk/wallpaper-guide",
+            "article_5": "shopify://blogs/pep-talk/upholsterer-recommendations-and-wallpaper-installers",
+            "article_6": "",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_kUJjHx": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "SHOWER CURTAINS",
+            "title_content": "SHOWER GUIDES",
+            "article_1": "shopify://blogs/pep-talk/shower-curtain-size-guide",
+            "article_2": "shopify://blogs/pep-talk/shower-curtain-faqs",
+            "article_3": "shopify://blogs/pep-talk/lined-vs-unlined-shower-curtains",
+            "article_4": "shopify://blogs/pep-talk/paint-guide-fabric",
+            "article_5": "shopify://blogs/pep-talk/style-guide-the-bath-collection",
+            "article_6": "shopify://blogs/pep-talk/style-guide-shower-curtains",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        },
+        "product_guide_item_zfdWkE": {
+          "type": "product_guide_item",
+          "settings": {
+            "title": "FABRIC",
+            "title_content": "FABRIC GUIDES",
+            "article_1": "shopify://blogs/pep-talk/fabric-faqs",
+            "article_2": "shopify://blogs/pep-talk/paint-guide-fabric",
+            "article_3": "shopify://blogs/pep-talk/upholsterer-recommendations-and-wallpaper-installers",
+            "article_4": "",
+            "article_5": "",
+            "article_6": "",
+            "article_7": "",
+            "article_8": "",
+            "article_9": "",
+            "article_10": "",
+            "article_11": "",
+            "article_12": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_guide_item_Cjdw6t",
+        "product_guide_item_YNVFqJ",
+        "product_guide_item_qFT6XJ",
+        "product_guide_item_kUJjHx",
+        "product_guide_item_zfdWkE"
+      ],
+      "settings": {
+        "section_heading": "Installation Guides",
+        "content": "<p>Select the product to see its installation and care guide</p>",
+        "color_scheme": "background-primary"
+      }
+    },
+    "16515208536cce1945": {
+      "type": "image-content",
+      "settings": {
+        "section_full_width": "yes",
+        "section_heading": "",
+        "section_heading_size": "h2",
+        "heading": "Complimentary Design Assistance",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>Speak to one of our design experts, free of charge. Use the link to email us and one of our designers will reply within 48 hours.</p>",
+        "signature": "",
+        "image": "shopify://shop_images/PH-DesignHub_02.png",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "color_scheme": "background-secondary",
+        "link": "shopify://pages/design-assistance",
+        "label": "EMAIL A DESIGNER",
+        "icon_show": "yes",
+        "hub_section": "curtains"
+      }
+    },
+    "1651534570f4219f78": {
+      "type": "ugc-images",
+      "blocks": {
+        "1651534570b3206af5-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cafecurtain.png",
+            "heading": "CURTAIN CALCULATOR",
+            "link": "shopify://pages/curtain-calculator"
+          }
+        },
+        "1651534570b3206af5-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/suzywallpaper.png",
+            "heading": "WALLPAPER CALCULATOR",
+            "link": "shopify://pages/wallpaper-calculator"
+          }
+        },
+        "1651534570b3206af5-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/beatricepillow.png",
+            "heading": "PILLOW SIZE GUIDE",
+            "link": "shopify://blogs/pep-talk/pillow-size-guide"
+          }
+        },
+        "1651534570b3206af5-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PaintFanBook.png",
+            "heading": "WALLPAPER PAINT GUIDE",
+            "link": "shopify://blogs/pep-talk/paint-guide-wallpaper"
+          }
+        }
+      },
+      "block_order": [
+        "1651534570b3206af5-2",
+        "1651534570b3206af5-3",
+        "1651534570b3206af5-0",
+        "1651534570b3206af5-1"
+      ],
+      "settings": {
+        "section_full_width": "yes",
+        "heading": "POPULAR RESOURCES",
+        "subheading": "",
+        "label_view_all": "SEE ALL",
+        "link_view_all": "https://pepper-home.com/blogs/pep-talk/tagged/resources",
+        "hub_section": "curtains"
+      }
+    },
+    "16515212308ca65078": {
+      "type": "image-content",
+      "settings": {
+        "section_full_width": "yes",
+        "section_heading": "",
+        "section_heading_size": "h2",
+        "heading": "Make It Easy",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>See something you love? Shop directly from our customer photos.</p>",
+        "signature": "",
+        "image": "shopify://shop_images/PH-DesignHub_19.png",
+        "text_alignment": "right",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-secondary",
+        "link": "shopify://pages/justaddpepper",
+        "label": "SHOP CUSTOMER PHOTOS",
+        "icon_show": "no",
+        "hub_section": "wallpaper"
+      }
+    },
+    "section_faq_NDxnwX": {
+      "type": "section-faq",
+      "blocks": {
+        "faq_item_RpDMKk": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I choose the correct curtain width and length?",
+            "content": "<p>Our team of trusted engineers created a simple-to-use <a href=\"/pages/curtain-calculator\" title=\"Curtain Calculator\">Curtain Measurement Calculator</a> to help you determine your curtain panel size. Choose your style and tailoring, give us two measurements, and we'll do the rest.</p>",
+            "action_text": "MORE CURTAIN FAQS",
+            "action_link": "shopify://blogs/pep-talk/curtain-faqs"
+          }
+        },
+        "faq_item_iDgwty": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What PILLOW SIZES DO YOU OFFER?",
+            "content": "<p>We offer Square (18\", 20\", 22\"), Euro (26\" x 26\"), Bolster (8.5\" x 24\"), Petite Lumbar (12\" x 21\"), Midi Lumbar (16\" x 24\") and XL Lumbar (19\" x 47\").<br/><br/>Please see our <a href=\"/blogs/pep-talk/pillow-faqs\" title=\"Pillow FAQs\">Size Guide</a> to determine your perfect size.</p>",
+            "action_text": "MORE PILLOW FAQS",
+            "action_link": "shopify://blogs/pep-talk/pillow-faqs"
+          }
+        },
+        "faq_item_A3ykG6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "IS THE WALLPAPER BATHROOM FRIENDLY?",
+            "content": "<p>Yes! We recommend using our performance wallpaper in bathrooms. The water and stain resistant material is extremely durable and wipeable. Clay coated wallpaper may be used in ventilated bathrooms as long as it is not placed in splash zones.</p>",
+            "action_text": "MORE WALLPAPER FAQS",
+            "action_link": "shopify://blogs/pep-talk/wallpaper-faqs"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_RpDMKk",
+        "faq_item_iDgwty",
+        "faq_item_A3ykG6"
+      ],
+      "settings": {
+        "heading": "FAQ",
+        "color_scheme": "background-primary"
+      }
+    },
+    "section_help_center_xkbDGh": {
+      "type": "section-help-center",
+      "settings": {
+        "first_title": "Visit our Help Center",
+        "visit_link": "https://pepper-home.gorgias.help/en-US",
+        "second_title": "Get in touch",
+        "live_chat": "M-F 10am-5pm EST",
+        "live_chat_link": "",
+        "email": "hello@pepper-home.com",
+        "color_scheme": "background-tertiary-dark"
+      }
+    }
+  },
+  "order": [
+    "page_hero_hrybck",
+    "main",
+    "product_guides_wR688N",
+    "16515208536cce1945",
+    "1651534570f4219f78",
+    "16515212308ca65078",
+    "section_faq_NDxnwX",
+    "section_help_center_xkbDGh"
+  ]
+}

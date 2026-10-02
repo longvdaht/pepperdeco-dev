@@ -1,0 +1,114 @@
+{% comment %}
+  Renders an additional thumbnail entry for trim, fringe, pom pom images
+  Accepts:
+  - media: {Object} Article Liquid object
+  - image_ratio: {String} Default: square (optional)
+  - type: {String} Options: Piping, Fringe, Pom Pom (optional) Default: Piping
+  - image_count:
+  Usage:
+  {% render 'additional-thumbnail',
+    media: media,
+    image_count: image_count
+  %}
+{% endcomment %}
+
+
+{%- assign media_title_array = media_title_array | handleize | remove_first: 'files-' | remove: '-png' | remove: '-jpg' | remove: type %}
+{%- liquid  
+  assign construction = ''
+  assign mount = ''
+  assign trim_option = ''
+  assign tail = ''
+  assign style = ''
+
+  if media_title_array contains 'flat'
+    assign construction = 'flat'
+  elsif media_title_array contains 'relaxed'
+    assign construction = 'relaxed'
+  elsif media_title_array contains 'knife-pleat'
+    assign construction = 'knife-pleat'
+  elsif media_title_array contains 'scalloped'
+    assign construction = 'scalloped'
+  else
+    assign construction = 'classic'
+  endif
+
+  if media_title_array contains '-waterfall'
+    assign style = 'waterfall'
+  elsif media_title_array contains '-classic'
+    assign style = 'classic'
+  endif
+
+  if media_title_array contains '-inside'
+    assign mount = 'inside'
+  elsif media_title_array contains '-outside'
+    assign mount = 'outside'
+  endif
+
+  if media_title_array contains 'tail'
+    assign tail = 'tail'
+  endif
+
+  if type == 'cornice' or type == 'valance'
+    if media_title_array contains '-none'
+      assign trim_option = 'none'
+    else
+      assign trim_option = media_title_array | split: construction | last | remove_first: '-'
+    endif
+  else
+    assign trim_option = media_title_array | split: mount | last | remove: '-tail' | remove_first: '-'
+  endif
+-%}
+
+{%- if media.alt -%}
+  {%- assign alt = media.alt -%}
+{%- else -%}
+  {%- capture alt_trim = value -%}{{ trim | first | replace: '-', ' ' -}}{%- endcapture -%}
+  {%- assign alt = size
+    | append: ' '
+    | append: product.title
+    | append: ' Custom '
+    | append: product.metafields.pepper.seo_product_title
+    | append: alt_trim
+    | append: 'on white background'
+    | capitalize
+  -%}
+{%- endif -%}
+{%- capture data_variant -%}
+  {%- if type == 'cornice' or type == 'valance' -%}
+    {%- if construction != '' -%}{{ construction }}{%- endif -%}
+    {%- if trim_option != '' -%}-{{ trim_option }}{%- endif -%}
+  {%- else -%}
+    {%- if construction != '' -%}{{ construction }}{%- endif -%}
+    {%- if style != '' -%}-{{ style }}{%- endif -%}
+    {%- if mount != '' -%}-{{ mount }}{%- endif -%}
+    {%- if tail != '' -%}-{{ tail }}{%- endif -%}
+    {%- if trim_option != '' -%}-{{ trim_option }}{%- endif -%}
+  {%- endif -%}
+{%- endcapture -%}
+<li
+  class="grid__item carousel-cell product__media-item--additional-image"
+  data-media-id="{{ section.id }}-{{ media | handleize }}"
+  data-additional-image
+  data-base="{{ base }}"
+  data-type="{{ type | default: 'curtain' }}"
+  data-variant="{{ data_variant }}"
+>
+  <div class="media media--{{ image_ratio | default: 'square' }} media--transparent">
+    <img
+      srcset="
+        {% if media.width >= 288 %}{{ media | image_url: width: 288 }} 288w,{% endif %}
+        {% if media.width >= 576 %}{{ media | image_url: width: 576 }} 576w,{% endif %}
+        {% if media.width >= 750 %}{{ media | image_url: width: 750 }} 750w,{% endif %}
+        {% if media.width >= 1100 %}{{ media | image_url: width: 1100 }} 1100w,{% endif %}
+      "
+      src="{{ media | image_url: width: 1000 }}"
+      sizes="(min-width: 40em) 60vw, 100vw"
+      loading="lazy"
+      width="{{ media.width }}"
+      height="{{ media.width | divided_by: media.aspect_ratio }}"
+      alt="{{ alt | escape }}"
+      class="image-magnify-hover"
+    >
+  </div>
+</li>

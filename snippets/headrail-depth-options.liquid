@@ -1,0 +1,68 @@
+<div class="product-form__input product-form__input-headrail-depth {% if weight_group %} {{ weight_group }}{% endif %}">
+  <option-dropdown data-dropdown-key="headrail">
+    <button type="button" data-dropdown-trigger aria-expanded="false">
+      <legend class="form__label">
+        <div class="contruction-wrapper headrail">
+          {{ 'products.product.shade_headrail.label' | t }}:
+          <span class="option-link headrail-modal-trigger" data-modal="headrailModal">?</span>
+        </div>
+        <span id="option-headrail-depth-legend">
+          {% comment %} {{ 'products.product.shade_headrail.option_1_5' | t }} {% endcomment %}
+          <span class="option-not-selected">{{ 'products.product.select_headrail' | t }}</span>
+        </span>
+         
+      </legend>
+      {% render 'icon-chevron-up' %}
+      {% render 'icon-chevron-down-pdp' %}
+    </button>
+    <div data-dropdown-panel>
+      <input
+        type="radio"
+        id="{{ section.id }}-headrail-depth-1.5"
+        name="properties[Headrail Depth]"
+        value="{{ 'products.product.shade_headrail.option_1_5' | t }}"
+        form="product-form-{{ section.id }}"
+        class="required input-lining"
+        inputmode="numeric"
+      >
+      <label for="{{ section.id }}-headrail-depth-1.5" class="headrail-radio headrail-first">
+        {{ 'products.product.shade_headrail.option_1_5' | t }}
+      </label>
+
+      <input
+        type="radio"
+        id="{{ section.id }}-headrail-depth-2.5"
+        name="properties[Headrail Depth]"
+        value="{{ 'products.product.shade_headrail.option_2_5' | t }}"
+        form="product-form-{{ section.id }}"
+        class="required input-lining"
+      >
+      <label for="{{ section.id }}-headrail-depth-2.5" class="headrail-radio headrail-second">
+        {{ 'products.product.shade_headrail.option_2_5' | t }}
+      </label>
+      {% render 'calculate-dimensions-link', block: block %}
+    </div>
+  </option-dropdown>
+  {% if product.type contains 'Wooden Woven' %}
+    {% render 'headrail-ww-depth-modal' %}
+  {% else %}
+    {% render 'headrail-depth-modal' %}
+  {% endif %}
+</div>
+<script>
+  document.addEventListener('click', function(e) {
+    const trigger = e.target.closest('.headrail-modal-trigger');
+    if (!trigger) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const modal = document.getElementById('headrailModal');
+
+    if (!modal) return;
+
+    const summary = modal.querySelector('summary');
+
+    summary?.click();
+  });
+</script>

@@ -1,0 +1,527 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </noscript>
+
+    <link rel="preload" href="{{ 'gt-super-display-light.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'gt-super-display-regular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ 'SweetSansProRegular.woff2' | asset_url }}" as="font" type="font/woff2" crossorigin>
+
+    {%- if template contains 'product' and product.metafields.seo.hidden == 1 -%}
+      <meta name="robots" content="noindex, nofollow">
+    {%- endif -%}
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+{% if request.path contains 'type-' %}
+  <meta name="robots" content="noindex">
+{% endif %}
+    {% if request.path == '/collections/curtains/color-blue' %}
+  <!-- Set custom meta description for Blue Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom blue curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room in your home.">
+  <!-- Set custom title tag for Blue Curtains -->
+  <title>Blue Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% elsif request.path == '/collections/curtains/color-green' %}
+  <!-- Set custom meta description for Green Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom green curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room in your home.">
+  <!-- Set custom title tag for Green Curtains -->
+  <title>Green Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% elsif request.path == '/collections/curtains/color-orange' %}
+  <!-- Set custom meta description for Orange Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom orange curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room.">
+  <!-- Set custom title tag for Orange Curtains -->
+  <title>Orange Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% elsif request.path == '/collections/curtains/color-pink' %}
+  <!-- Set custom meta description for Pink Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom pink curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room in your home.">
+  <!-- Set custom title tag for Pink Curtains -->
+  <title>Pink Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% elsif request.path == '/collections/curtains/color-purple' %}
+  <!-- Set custom meta description for Purple Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom purple curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room.">
+  <!-- Set custom title tag for Purple Curtains -->
+  <title>Purple Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% elsif request.path == '/collections/curtains/color-red' %}
+  <!-- Set custom meta description for Red Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom red curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room in your home.">
+  <!-- Set custom title tag for Red Curtains -->
+  <title>Red Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% elsif request.path == '/collections/curtains/color-yellow' %}
+  <!-- Set custom meta description for Yellow Curtains -->
+  <meta name="description" content="Mix, match & make it your own with our custom yellow curtains. Choose your fabric, width, length, lining & trim to elevate the elegance of any room.">
+  <!-- Set custom title tag for Yellow Curtains -->
+  <title>Yellow Curtains: Choose Custom Size & Finish | Pepper Home</title>
+{% else %}
+  <!-- Default meta description and title logic -->
+  <title>
+    {{ page_title }}
+    {%- if current_tags %}
+      {%- assign tags = current_tags | reverse | join: ', ' | replace: 'color:', '' | replace: 'print:', '' -%}
+      |
+      {%- render 'title-case', string: tags -%}
+    {%- endif -%}
+    {%- if current_page != 1 %} | Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains shop.name %} | {{ shop.name }}{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+{% endif %}
+
+
+    {% render 'meta-tags' %}
+
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'custom.js' | asset_url }}" async></script>
+
+    {%- comment -%}
+      Dawn ships without Shopify.formatMoney, so the trade pricing app falls back to
+      its own toFixed(2) output and flashes cents into the cart subtotal. Providing
+      the function makes that app format money the same way Liquid does.
+    {%- endcomment -%}
+    <script>
+      window.Shopify = window.Shopify || {};
+      if (typeof window.Shopify.formatMoney !== 'function') {
+        window.Shopify.formatMoney = function (cents) {
+          var amount = Number(cents);
+          if (isNaN(amount)) return '';
+
+          // Mirrors money_without_trailing_zeros: cents only when not a whole number.
+          var digits = amount % 100 === 0 ? 0 : 2;
+
+          return '$' + (amount / 100).toLocaleString('en-US', {
+            minimumFractionDigits: digits,
+            maximumFractionDigits: digits
+          });
+        };
+      }
+    </script>
+
+    {{ content_for_header }}
+
+    <link rel="preconnect" href="https://content.cylindo.com" crossorigin />
+    <script
+      type="module"
+      src="https://viewer-cdn.cylindo.com/v1/index.mjs"
+      async
+    ></script>
+    <script
+      type="module"
+      src="https://viewer-cdn.cylindo.com/v1/shopify.mjs"
+      async
+    ></script>
+    <script
+      type="module"
+      src="https://viewer-cdn.cylindo.com/v1/bar.mjs"
+      async
+    ></script>
+
+    {% style %}
+      @font-face {
+        font-family: 'sweet-sans-pro';
+        src: url({{ 'SweetSansProRegular.woff2' | asset_url }}) format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'sweet-sans-pro';
+        src: url({{ 'SweetSansProMedium.woff2' | asset_url }}) format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'sweet-sans-pro';
+        src: url({{ 'SweetSansProMediumItalic.woff2' | asset_url }}) format('woff2');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'sweet-sans-pro';
+        src: url({{ 'SweetSansProBold.woff2' | asset_url }}) format('woff2');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'sweet-sans-pro';
+        src: url({{ 'SweetSansProBoldItalic.woff2' | asset_url }}) format('woff2');
+        font-weight: 800;
+        font-style: italic;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'canela-text';
+        src: url({{ 'canela-text-light.woff2' | asset_url }}) format('woff2');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'canela-text';
+        src: url({{ 'canela-text-light-italic.woff2' | asset_url }}) format('woff2');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+      }
+    {% endstyle %}
+    
+    {% style %}
+        @font-face {
+          font-family: 'gt-super';
+          src: url({{ 'gt-super-display-light.woff2' | asset_url }}) format('woff2'),
+            url({{ 'gt-super-display-light.woff' | asset_url }}) format('woff'),
+            url({{ 'gt-super-display-light.ttf' | asset_url }}) format('truetype');
+          font-weight: 100;
+          font-style: normal;
+          font-display: swap;
+        }
+      @font-face {
+          font-family: 'gt-super';
+          src: url({{ 'gt-super-display-light-italic.woff2' | asset_url }}) format('woff2'),
+            url({{ 'gt-super-display-light-italic.woff' | asset_url }}) format('woff'),
+            url({{ 'gt-super-display-light-italic.ttf' | asset_url }}) format('truetype');
+          font-weight: 100;
+          font-style: italic;
+          font-display: swap;
+        }
+        @font-face {
+          font-family: 'gt-super';
+          src: url({{ 'gt-super-display-regular.woff2' | asset_url }}) format('woff2'),
+            url({{ 'gt-super-display-regular.woff' | asset_url }}) format('woff'),
+            url({{ 'gt-super-display-regular.ttf' | asset_url }}) format('truetype');
+          font-weight: normal;  
+          font-style: normal;
+          font-display: swap;
+        }
+
+        @font-face {
+          font-family: 'Mint Magnolia';
+          src: url({{ 'mint-magnolia.otf' | asset_url }}) format('opentype');
+          font-weight: 100;
+          font-style: normal;
+          font-display: swap;
+        }
+        
+        :root {
+          --font-heading-family: 'canela-text', sans-serif;
+          --font-heading-weight: 300;
+
+          --font-body-family: 'sweet-sans-pro', sans-serif;
+          --font-body-style: normal;
+          --font-body-lightest: 100;
+          --font-body-light: 300;
+          --font-body-weight: 400;
+          --font-body-medium: 500;
+          --font-body-bold: 800;
+          --font-button-weight: 500;
+
+          --color-base-text: {{ settings.colors_text_primary.red }}, {{ settings.colors_text_primary.green }}, {{ settings.colors_text_primary.blue }};
+          --color-base-text-hover: {{ settings.colors_text_primary_hover.red }}, {{ settings.colors_text_primary_hover.green }}, {{ settings.colors_text_primary_hover.blue }};
+          --color-base-background-primary: {{ settings.colors_background_primary.red }}, {{ settings.colors_background_primary.green }}, {{ settings.colors_background_primary.blue }};
+          --color-base-background-secondary: {{ settings.colors_background_secondary.red }}, {{ settings.colors_background_secondary.green }}, {{ settings.colors_background_secondary.blue }};
+          --color-base-background-tertiary: {{ settings.colors_background_tertiary.red }}, {{ settings.colors_background_tertiary.green }}, {{ settings.colors_background_tertiary.blue }};
+          --color-base-background-quaternary: {{ settings.colors_background_quaternary.red }}, {{ settings.colors_background_quaternary.green }}, {{ settings.colors_background_quaternary.blue }};
+          --color-base-button-label: {{ settings.colors_button_label.red }}, {{ settings.colors_button_label.green }}, {{ settings.colors_button_label.blue }};
+          --color-base-button-background: {{ settings.colors_button_background.red }}, {{ settings.colors_button_background.green }}, {{ settings.colors_button_background.blue }};
+          --color-base-button-background-hover: {{ settings.colors_button_background_hover.red }}, {{ settings.colors_button_background_hover.green }}, {{ settings.colors_button_background_hover.blue }};
+          --color-base-button-background-secondary: {{ settings.colors_secondary_button_background.red }}, {{ settings.colors_secondary_button_background.green }}, {{ settings.colors_secondary_button_background.blue }};
+          --color-base-button-background-secondary-hover: {{ settings.colors_secondary_button_background_hover.red }}, {{ settings.colors_secondary_button_background_hover.green }}, {{ settings.colors_secondary_button_background_hover.blue }};
+          --color-base-button-background-outline: {{ settings.colors_outline_button_background.red }}, {{ settings.colors_outline_button_background.green }}, {{ settings.colors_outline_button_background.blue }};
+          --color-base-button-background-outline-hover: {{ settings.colors_outline_button_background_hover.red }}, {{ settings.colors_outline_button_background_hover.green }}, {{ settings.colors_outline_button_background_hover.blue }};
+          --color-base-border: {{ settings.colors_border.red }}, {{ settings.colors_border.green }}, {{ settings.colors_border.blue }};
+          --color-base-border: {{ settings.colors_border.red }}, {{ settings.colors_border.green }}, {{ settings.colors_border.blue }};
+          
+          --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+          --popup-border-width: 1px;
+
+          --spacing-sections-desktop: {{ settings.spacing_sections }}px;
+          --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+
+          --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
+          --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
+          --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
+          --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+
+          --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
+          --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+          --product-card-text-alignment: {{ settings.card_text_alignment }};
+          --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
+          --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
+          --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
+          --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+          --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+          --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+          --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
+
+          --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
+          --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
+          --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
+          --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
+          --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
+          --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
+          --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+          --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+          --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+          --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
+        }
+
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+        }
+
+        html {
+          box-sizing: border-box;
+          font-size: 62.5%;
+          height: 100%;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+          color: rgb(var(--color-base-text));
+          margin: 0;
+          min-height: 100%;
+          font-family: var(--font-body-family);
+          font-size: 1.2rem;
+          font-style: var(--font-body-style);
+          font-weight: var(--font-body-weight);
+          line-height: 1.2;
+          letter-spacing: 0.05em;
+        }
+
+        @media screen and (min-width: 40em) {
+          body {
+            font-size: 1.2rem;
+            line-height: 1.5;
+          }
+        }
+    {% endstyle %}
+
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+
+    <link
+      rel="stylesheet"
+      href="{{ 'component-predictive-search.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'"
+    >
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MZPDQ8D');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNT0G3V79P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-KNT0G3V79P');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY6KKVD6FJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-HY6KKVD6FJ');
+    </script>
+    <!-- Microsoft Clairity start for pepper-home.com -->
+    <script type="text/javascript"> (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(window, document, "clarity", "script", "ocguy6hq8b"); </script>
+    <!-- Microsoft Clairity end for pepper-home.com -->
+    <script defer src="https://static.shopmy.us/Affiliates/sms_aff_clicktrack.js"></script>
+  </head>
+
+  {%- assign product_type = product.type | handle -%}
+  <body class="template-{{ template.name }}
+    {% if template.suffix %} template-{{ template.name }}-{{ template.suffix }} 
+    {% if product_type == 'chair' or product_type == 'ottoman' %}template-{{ template.name }}-chair{% endif %}{% endif %}
+    {% if page %} page-{{ page.handle | handleize }}{% endif %}
+    {% if request.path == shop.shipping_policy.url %} template-shipping-policy{% endif %}
+     {% if current_tags and template.name == 'blog' %}template-blog-tagged{% endif %}">
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+      {{ 'accessibility.skip_to_text' | t }}
+    </a>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MZPDQ8D"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {% section 'cart-drawer' %}
+
+    <script>
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}',
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t }}`,
+        notSelected: `{{ 'products.product.not_selected' | t }}`,
+        selectLength: `{{ 'products.product.select_length' | t }}`,
+        selectTrim: `{{ 'products.product.select_trim' | t }}`,
+      };
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        addToCartHtml: `{{ 'products.product.add_to_cart_html' | t }}`,
+        pompomOosHtml: `{{ 'products.product.pom_pom_oos_html' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        chooseOptions: `{{ 'products.product.choose_options' | t }}`,
+        chooseOptionSize: `{{ 'products.product.choose_option_size' | t }}`,
+        chooseOptionBase: `{{ 'products.product.choose_option_base' | t }}`,
+        chooseOptionConstruction: `{{ 'products.product.choose_option_construction' | t }}`,
+      };
+
+      window.accessibilityStrings = {
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+      };
+    </script>
+
+    <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+
+    {% comment %} SCRIPTS {% endcomment %}
+
+    {% comment %} Facebook {% endcomment %}
+    <script type="text/javascript">
+      (() => {
+        if (window.fbq) {
+          window.fbq('init', '2159623904124609');
+        }
+      })();
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=2159623904124609&ev=PageView&noscript=1"
+        loading="eager"
+      >
+    </noscript>
+
+    {% comment %} KLAVIYO {% endcomment %}
+    <script
+      async
+      type="text/javascript"
+      src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=MJeKYj"
+    ></script>
+
+    {% comment %}
+    {% endcomment %}
+    <script>
+      document.addEventListener("click", function(event) {
+        const banner = document.getElementById("shopify-pc__banner");
+        const acceptBtn = document.getElementById("shopify-pc__banner__btn-accept");
+
+        if (banner && acceptBtn && banner.style.display !== "none") {
+          if (!banner.contains(event.target)) {
+            acceptBtn.click();
+            console.log('Button accept clicked');
+          }
+        }
+      });
+    </script>
+    {% if page.handle == 'ccpa-opt-out' %}
+      {%- comment -%}
+        Reopens the native cookie preferences modal from /pages/ccpa-opt-out.
+        The modal exposes the data sale/sharing toggle for California visitors.
+
+        The button is hidden by CSS rather than a `hidden` attribute: the page's
+        rich text editor strips attributes on save, but cannot touch theme styles.
+      {%- endcomment -%}
+
+      <script>
+        (function () {
+          const btn = document.getElementById('pepper-privacy-optout');
+          if (!btn) return;
+
+          window.Shopify.loadFeatures(
+            [{ name: 'consent-tracking-api', version: '0.1' }],
+            function (error) {
+              if (error) return;
+
+              // The banner is configured for California only, so the button mirrors
+              // Shopify's footer link and stays hidden everywhere else.
+              if (!window.Shopify.customerPrivacy.saleOfDataRegion()) return;
+
+              btn.classList.add('is-eligible');
+
+              btn.addEventListener('click', function () {
+                if (typeof privacyBanner === 'undefined' || !privacyBanner.showPreferences) {
+                  window.location.href = 'mailto:hello@pepper-home.com?subject=Do%20Not%20Sell%20or%20Share%20My%20Information';
+                  return;
+                }
+
+                privacyBanner.showPreferences();
+              });
+            }
+          );
+        })();
+      </script>
+    {% endif %}
+  </body>
+</html>

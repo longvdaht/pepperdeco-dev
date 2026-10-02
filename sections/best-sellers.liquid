@@ -1,0 +1,245 @@
+{% comment %} TODO: COME BACK TO THIS {% endcomment %}
+<link rel="stylesheet" href="{{ 'section-best-sellers.css' | asset_url }}">
+
+<div class="section-outer section-best-sellers section-color-{{ section.settings.color_scheme }} center">
+  {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+    <div class="section-heading-outer page-width">
+      {%- if section.settings.heading != blank -%}
+        <div class="word word-shop">
+          {%- render 'word-shop', word: section.settings.word_graphic -%}
+        </div>
+        <h2 class="{{ section.settings.heading_size }} section-heading">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="section-subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  <div class="page-width">
+    <div class="grid">
+      {%- for block in section.blocks -%}
+        <div class="grid__item">
+          <div class="card card--best-seller">
+            {%- assign product = block.settings.product -%}
+            {%- if product != blank -%}
+              <a href="{{ product.url }}" class="full-unstyled-link">
+                <span class="visually-hidden">{{ product.title }}</span>
+              </a>
+            {%- endif -%}
+            {%- if product.featured_media != blank and block.settings.image == blank -%}
+              <div
+                class="media media--{{ section.settings.image_ratio }}"
+                {% if section.settings.image_ratio == 'adapt' %}
+                  style="padding-bottom: {{ 1 | divided_by: product.featured_media.aspect_ratio | times: 100 }}%;"
+                {% endif %}
+              >
+                <img
+                  srcset="
+                    {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | image_url: width: 1066 }} 1066w{%- endif -%}
+                  "
+                  src="{{ product.featured_media | image_url: width: 533 }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | divided_by: 3 }}px, (min-width: 990px) calc(100vw / 3), (min-width: 750px) calc(100vw / 3), 95vw"
+                  alt="{{ product.featured_media.alt | escape }}"
+                  loading="lazy"
+                  class="motion-reduce"
+                  width="{{ product.featured_media.width }}"
+                  height="{{ product.featured_media.height }}"
+                >
+              </div>
+            {%- elsif block.settings.image != blank -%}
+              <div
+                class="media media--{{ section.settings.image_ratio }}"
+                {% if section.settings.image_ratio == 'adapt' %}
+                  style="padding-bottom: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%;"
+                {% endif %}
+              >
+                <img
+                  srcset="
+                    {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w{%- endif -%}
+                  "
+                  src="{{ block.settings.image | image_url: width: 533 }}"
+                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | divided_by: 3 }}px, (min-width: 990px) calc(100vw / 3), (min-width: 750px) calc(100vw / 3), 95vw"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  loading="lazy"
+                  class="motion-reduce"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </div>
+            {%- endif -%}
+            <h3 class="card-title">
+              {%- unless block.settings.product_title != blank -%}
+                {{ block.settings.product.title }}
+                {{ product.metafields.pepper.type.value }}
+              {%- else -%}
+                {{ block.settings.product_title }}
+              {%- endunless -%}
+            </h3>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    {% if section.settings.link != blank and section.settings.label != blank %}
+      <a href="{{ section.settings.link }}" class="button--underline">{{ section.settings.label }}</a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Best sellers",
+  "class": "section-best-sellers spaced-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "word_graphic",
+      "label": "Word graphic",
+      "default": "new",
+      "options": [
+        {
+          "value": "new",
+          "label": "Shop 1",
+        },
+        {
+          "value": "old",
+          "label": "Shop 2",
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "Heading 1"
+        },
+        {
+          "value": "h2",
+          "label": "Heading 2"
+        },
+        {
+          "value": "h3",
+          "label": "Heading 3"
+        },
+        {
+          "value": "h4",
+          "label": "Heading 4"
+        }
+      ],
+      "default": "h3"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "header",
+      "content": "Cards"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Aspect Ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        }
+      ],
+      "default": "adapt"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "product_title",
+          "label": "Product title",
+          "info": "(optional) override"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best sellers"
+    }
+  ]
+}
+{% endschema %}

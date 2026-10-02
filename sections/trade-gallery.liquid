@@ -1,0 +1,245 @@
+
+<link rel="stylesheet" href="{{ 'section-trade-gallery.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<style>
+  [data-section-id="{{ section.id }}"] {
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+    background-color: {{ section.settings.background_color }};
+  }
+  @media (min-width: 768px) {
+    [data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+</style>
+
+{% if section.blocks.size > 0 %}
+  <div
+    class="section-outer section-trade-gallery center"
+    data-section-id="{{ section.id }}"
+  >
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-heading-outer page-width">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="display section-heading">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="section-subheading intro" {% if section.settings.subheading_width != blank %}style="max-width: {{ section.settings.subheading_width | times: 1 }}px;"{% endif %}>{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="section-trade-gallery-content page-width">
+      <slider-component>
+        <ul class="slider slider--everywhere product-slider-mobile product-slider-3-items" role="list" id="Slider-trade-gallery-{{ section.id }}">
+          {% for block in section.blocks %}
+            <li id="Slide-{{ forloop.index }}" class="slide__mobile trade-gallery-slide" {{ block.shopify_attributes }}>
+              {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}" class="trade-gallery-slide-wrapper">
+              {% else %}
+                <div class="trade-gallery-slide-wrapper">
+              {% endif %}
+
+                <div class="trade-gallery-image-wrapper image-{{ section.settings.image_ratio }}">
+                  {% if block.settings.image != blank %}
+                    <img
+                      src="{{ block.settings.image | image_url: width: 800 }}"
+                      srcset="{{ block.settings.image | image_url: width: 400 }} 400w,
+                              {{ block.settings.image | image_url: width: 800 }} 800w,
+                              {{ block.settings.image | image_url: width: 1200 }} 1200w"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      alt="{{ block.settings.image.alt | default: block.settings.designer_handle }}"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                    >
+                  {% else %}
+                    <div class="trade-gallery-placeholder">{{ 'image' | placeholder_svg_tag }}</div>
+                  {% endif %}
+                </div>
+
+                <div class="trade-gallery-caption">
+                  {% if block.settings.designer_handle != blank %}
+                    <p class="trade-gallery-designer">{{ block.settings.designer_handle }}</p>
+                  {% endif %}
+                  {% if block.settings.photo_credit != blank %}
+                    <p class="trade-gallery-photo-credit">{{ block.settings.photo_credit }}</p>
+                  {% endif %}
+                </div>
+
+              {% if block.settings.link != blank %}
+                </a>
+              {% else %}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="slider-buttons no-js-hidden {% if wallpaper_options.value.size <= 1 %} visually-hidden{% endif %}">
+          <button
+            type="button"
+            class="slider-button slider-button--prev slider-mobile-box"
+            name="previous"
+            aria-label="{{ 'accessibility.previous_slide' | t }}"
+          >
+            {% render 'icon-arrow-left' %}
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+            <span class="slider-counter--total">3</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next slider-mobile-box"
+            name="next"
+            aria-label="{{ 'accessibility.next_slide' | t }}"
+          >
+            {% render 'icon-arrow-right' %}
+          </button>
+        </div>
+      </slider-component>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Trade gallery",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F3F1EC"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Projects"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "See how our trade members have peppered their homes and shop directly from their photos."
+    },
+    {
+      "type": "text",
+      "id": "subheading_width",
+      "label": "Subheading width",
+      "info": "Unit: px. Leave it blank to config full width"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        }
+      ],
+      "default": "portrait"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project_image",
+      "name": "Project",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "designer_handle",
+          "label": "Designer handle",
+          "default": "@DESIGNER"
+        },
+        {
+          "type": "text",
+          "id": "photo_credit",
+          "label": "Photo credit",
+          "default": "Photo:"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trade gallery",
+      "blocks": [
+        { "type": "project_image" },
+        { "type": "project_image" },
+        { "type": "project_image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

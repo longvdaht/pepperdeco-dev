@@ -1,0 +1,568 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero_Cy7Wy4": {
+      "type": "page-hero",
+      "disabled": true,
+      "settings": {
+        "word_graphic": "shopify://shop_images/The.png",
+        "word_graphic_width": 44,
+        "text_icon": "1",
+        "mobile_display": "2",
+        "title": "",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "image": "shopify://shop_images/TRADE_26ef8298-ce73-4869-a4f4-cad90d555e33.jpg",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "main": {
+      "type": "main-trade",
+      "disabled": true,
+      "settings": {
+        "lead": "The Pepper Home",
+        "heading": "TRADEPROGRAM",
+        "title": "Become a trade member",
+        "subheading": "",
+        "hide_content": false,
+        "link": "https://docs.google.com/forms/d/e/1FAIpQLSdhu4kqurfaEY4EBEU1TKo0HUhmp3bFGQcFxggrSHzV8M_6jQ/viewform?fbzx=6841568879748866585",
+        "label": "Apply Now",
+        "image": "shopify://shop_images/TRADE_26ef8298-ce73-4869-a4f4-cad90d555e33.jpg",
+        "color_scheme": "background-primary"
+      }
+    },
+    "become_trade_member_cLqWrm": {
+      "type": "become-trade-member",
+      "blocks": {
+        "card_hXzE4i": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Fabric_Swatch-Lulie_Parsley-Madeline.png",
+            "title": "Free Samples",
+            "text": "Explore our extensive materials library. Expertly curated and exclusive to us."
+          }
+        },
+        "card_tbkwrE": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/TearSheet-Bench.png",
+            "title": "concierge support",
+            "text": "A dedicated design team to help with questions, quotes, and customization."
+          }
+        },
+        "card_kjwRNB": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Chair-Adeline-Serena-SeaSalt_eca29178-243a-47db-ab7c-f5807248dbbb.png",
+            "title": "Preferred Pricing",
+            "text": "Exclusive trade pricing designed to support projects of every size."
+          }
+        },
+        "card_rQzRgB": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/HowItWorks-Step2.png_5.png",
+            "title": "get featured",
+            "text": "Share your work for a chance to be featured across Pepper channels."
+          }
+        },
+        "card_34UiW9": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Roman_Shade_icon_-_Flat.png",
+            "title": "seamless online ordering",
+            "text": "Place and track orders online with ease, whenever inspiration strikes."
+          }
+        },
+        "card_ULhM8Y": {
+          "type": "card",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/HowItWorks-Step2.png_4.png",
+            "title": "early access",
+            "text": "Be the first to access new launches, collections, and exclusive releases."
+          }
+        }
+      },
+      "block_order": [
+        "card_hXzE4i",
+        "card_tbkwrE",
+        "card_kjwRNB",
+        "card_rQzRgB",
+        "card_34UiW9",
+        "card_ULhM8Y"
+      ],
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Trade Application",
+        "content": "<p>Thanks for getting in touch. We've received your submission and someone from our team will follow up shortly. Questions in the meantime? Reach us at <a href=\"mailto:trade@pepper-home.com\" target=\"_blank\" title=\"mailto:trade@pepper-home.com\">trade@pepper-home.com</a>.</p>",
+        "link": "",
+        "label": "",
+        "link_2": "",
+        "label_2": "",
+        "color_scheme": "background-primary",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_collection_block_wNbHXU": {
+      "type": "section-collection-block",
+      "blocks": {
+        "slide_NfLFN7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Nantucket2025-Cottage-MillieHarborBed-3x4.jpg",
+            "title": "Window Treatments",
+            "url": "shopify://collections/curtains"
+          }
+        },
+        "slide_VdJfzz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Furniture-Blaire-MargotFlour-_lavinlabel_and_margaret.wright-3x4.jpg",
+            "title": "Furniture",
+            "url": "shopify://pages/custom-furniture"
+          }
+        },
+        "slide_r9rfEe": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Nantucket-CafeCurtain-OatSheer-Florence-Rosewood-Pillow-Fern-Velvet-Pillow3x4.jpg",
+            "title": "Decor",
+            "url": "shopify://collections/decor"
+          }
+        },
+        "slide_VxaeVN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Spring_25_100.jpg1.png",
+            "title": "Wallpaper",
+            "url": "shopify://collections/wallpaper"
+          }
+        },
+        "slide_9aRTnL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-Fabric-ChenilleJacqaurd-Willow-Orchid-3x4.jpg",
+            "title": "Fabric",
+            "url": "shopify://collections/fabric"
+          }
+        }
+      },
+      "block_order": [
+        "slide_NfLFN7",
+        "slide_VdJfzz",
+        "slide_r9rfEe",
+        "slide_VxaeVN",
+        "slide_9aRTnL"
+      ],
+      "name": "Collection block",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Product Offering",
+        "subheading": "Design a whole room or start with a single piece—pillows, curtains, and more.",
+        "cta_text": "SHOP ALL",
+        "cta_link": "shopify://pages/shop-all",
+        "slide_to_show": 5,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "51cbd6e0-23c5-4f63-945a-947233fd342f": {
+      "type": "trade-design-hub",
+      "blocks": {
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-0": {
+          "type": "link",
+          "settings": {
+            "heading": "Tell us a little bit about yourself!",
+            "content": "I'm the founder and lead designer of Molly Basile Interiors, a full-service interiors design firm based in Charleston, SC.",
+            "link": ""
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-2": {
+          "type": "link",
+          "settings": {
+            "heading": "Where do you find inspiration?",
+            "content": "I love finding inspiration through travel, fashion, design books and our clients.",
+            "link": ""
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-3": {
+          "type": "link",
+          "settings": {
+            "heading": "What does your home say about you?",
+            "content": "I want my home to feel warm, layered, and welcoming. It’s classic with traditional and formal elements but comfortable.",
+            "link": ""
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-4": {
+          "type": "link",
+          "settings": {
+            "heading": "Do you stick to any design rules when mixing and matching patterns?",
+            "content": "I suggest mixing both large and small scale patterns and incorporating florals and geometric patterns to play off each other.",
+            "link": ""
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-5": {
+          "type": "link",
+          "settings": {
+            "heading": "Color crush of the moment?",
+            "content": "Neutrals; ivories, tans, and browns",
+            "link": ""
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly-Basile-3.png"
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly-Basile-6.png"
+          }
+        },
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Molly_Basile.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-0",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-2",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-3",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-4",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-5",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-6",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-7",
+        "template--14979182362684__51cbd6e0-23c5-4f63-945a-947233fd342f-16650002544a42e09c-8"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Trade Member Spotlight",
+        "subheading": "Molly Basile, Molly Basile Interiors",
+        "color_scheme": "background-secondary",
+        "show_tips": false,
+        "show_dots": false,
+        "show_buttons": true
+      }
+    },
+    "trade_gallery_3LAeHk": {
+      "type": "trade-gallery",
+      "blocks": {
+        "project_image_7PbmHE": {
+          "type": "project_image",
+          "settings": {
+            "image": "shopify://shop_images/UGC-furniture-chair-lila-printedlinen-florence-eucalyptus-2-3x4.jpg",
+            "designer_handle": "Monica Lavin",
+            "photo_credit": "Photo: Cameron Wilder",
+            "link": "shopify://products/chair-lila-printedlinen-florence-eucalyptus"
+          }
+        },
+        "project_image_WMTChz": {
+          "type": "project_image",
+          "settings": {
+            "image": "shopify://shop_images/HomePage-UGC-StyledImage-ShowerCurtain-Louisa-Camel-rosehilldesigns-tamaraflanagan-3x4.jpg",
+            "designer_handle": "Rose Hill Designs",
+            "photo_credit": "Photo: Tamara Flanagan",
+            "link": "shopify://products/showercurtain-woven-louisa-camel"
+          }
+        },
+        "project_image_fGCPrC": {
+          "type": "project_image",
+          "settings": {
+            "image": "shopify://shop_images/HomePage-UGC-StyledImage-Bed-Walnut-Velvet-kristenfrancis-3x4.png",
+            "designer_handle": "Hannah Zari Interiors",
+            "photo_credit": "Photo: Kirsten Francis",
+            "link": "shopify://products/bed-hudson-solid-velvet-walnut"
+          }
+        },
+        "project_image_KarRMK": {
+          "type": "project_image",
+          "settings": {
+            "image": "shopify://shop_images/StyledImage-UGC-Wallpaper-Georgia-Tulle-MattKisiday-3x4.jpg",
+            "designer_handle": "Lindsey Crowley",
+            "photo_credit": "Photo: Matt Kisday",
+            "link": "shopify://products/wallpaper-claycoated-georgia-mint"
+          }
+        },
+        "project_image_HrehTa": {
+          "type": "project_image",
+          "settings": {
+            "image": "shopify://shop_images/HomePage-UGC-StyledImage-Wallpaper-Florence-Eucalyptus-clairethomas-3x4.png",
+            "designer_handle": "Claire Thomas",
+            "photo_credit": "Photo: Claire Thomas",
+            "link": "shopify://products/wallpaper-claycoated-florence-eucalyptus"
+          }
+        },
+        "project_image_iQDmXr": {
+          "type": "project_image",
+          "settings": {
+            "image": "shopify://shop_images/QuinnSteel-_mollyboyd-3x4.jpg",
+            "designer_handle": "Molly Boyd",
+            "photo_credit": "Photo: Molly Boyd",
+            "link": "shopify://products/pillow-embroidered-margot-fern-custom"
+          }
+        }
+      },
+      "block_order": [
+        "project_image_7PbmHE",
+        "project_image_WMTChz",
+        "project_image_fGCPrC",
+        "project_image_KarRMK",
+        "project_image_HrehTa",
+        "project_image_iQDmXr"
+      ],
+      "name": "Trade gallery",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Featured Projects",
+        "subheading": "See how our trade members have peppered their homes and shop directly from their photos.",
+        "subheading_width": "",
+        "image_ratio": "portrait",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "fc3a2d97-4336-4250-8301-39852ff05c28": {
+      "type": "content-carousel",
+      "blocks": {
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-1": {
+          "type": "content",
+          "settings": {
+            "heading": "Kevin O'Gara",
+            "image": "shopify://shop_images/Kevin-OGara-6_ab166462-7171-4e45-acaf-cd26b246dc37.png",
+            "link": "https://pepper-home.com/blogs/pep-talk/table-talk-with-kevin-ogara"
+          }
+        },
+        "f02a2a76-18fa-4bc5-892c-bc44512b9bcf": {
+          "type": "content",
+          "settings": {
+            "heading": "Ashley Dalton Interiors",
+            "image": "shopify://shop_images/Untitled_design_10_33cbf87b-b903-4775-bc13-e44fb7167741.png",
+            "link": "https://pepper-home.com/blogs/pep-talk/hockney-moss-office"
+          }
+        },
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-0": {
+          "type": "content",
+          "settings": {
+            "heading": "Mariana Dorey Veiga",
+            "image": "shopify://shop_images/BlakeMoss-_marianadoreyveiga_AND_jacobsnavely_AdApproved.jpg",
+            "link": "https://pepper-home.com/blogs/pep-talk/designer-spotlight-susanna-harbins-perfectly-pink-nursery"
+          }
+        },
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-2": {
+          "type": "content",
+          "settings": {
+            "heading": "Bowdre Longo Interiors",
+            "image": "shopify://shop_images/wallpaper-suzymaroon1.jpg",
+            "link": ""
+          }
+        },
+        "26c379c1-8710-49a4-9a7f-f5da1757caa5": {
+          "type": "content",
+          "settings": {
+            "heading": "Shannon Claire Interiors",
+            "image": "shopify://shop_images/Untitled_design_13_d3432dc3-077b-4b6f-877a-b8e55036ed2a.png",
+            "link": "https://pepper-home.com/blogs/pep-talk/table-talk-with-shannon-claire"
+          }
+        },
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-3": {
+          "type": "content",
+          "settings": {
+            "heading": "Studio 36 Design",
+            "image": "shopify://shop_images/Untitled_design_12_d4d71820-de91-41a2-bd46-aa62e9ee5033.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-1",
+        "f02a2a76-18fa-4bc5-892c-bc44512b9bcf",
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-0",
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-2",
+        "26c379c1-8710-49a4-9a7f-f5da1757caa5",
+        "template--14979182362684__fc3a2d97-4336-4250-8301-39852ff05c28-1666887201374a54b2-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Featured Projects",
+        "subheading": "",
+        "color_scheme": "background-primary",
+        "image_ratio": "square"
+      }
+    },
+    "accordion_section_M4PVtR": {
+      "type": "accordion-section",
+      "blocks": {
+        "accordion_qmDXTQ": {
+          "type": "accordion",
+          "settings": {
+            "title": "Who qualifies for the Trade Program?",
+            "content": "<p>Interior designers, architects, and other design professionals working on residential or commercial projects are eligible to join. To be accepted, applicants must provide one of the following:</p><p>Proof of professional design credentials or membership (e.g., ASID, IIDA, IDC)</p><p>An active business license or resale certificate for a design-related business</p><p>A company website or portfolio showcasing current design work</p>"
+          }
+        },
+        "accordion_dM7BG6": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I apply for the Trade Program?",
+            "content": "<p>You can apply by filling out our trade application <a href=\"https://pepper-home.com/pages/trade-application\" target=\"_blank\" title=\"Pepper Home Trade Application\">here</a>. Our trade team will follow up shortly after with any questions.</p>"
+          }
+        },
+        "accordion_pUc4eh": {
+          "type": "accordion",
+          "settings": {
+            "title": "How does trade pricing work?",
+            "content": "<p>Pepper Home offers a tiered discount structure based on your lifetime spend with us—the more you order, the more you save. Reach out to our trade team for full pricing details.</p>"
+          }
+        },
+        "accordion_nBHRnX": {
+          "type": "accordion",
+          "settings": {
+            "title": "Where do I see my trade pricing?",
+            "content": "<p>Once you're logged into your trade account, your trade price is shown right on the product page alongside retail pricing, so you always know exactly what you're paying before you order.</p>"
+          }
+        },
+        "accordion_H8TPLX": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I place an order?",
+            "content": "<p>All orders are placed directly on our website. Once you're logged into your trade account, your discount is applied automatically at checkout—no codes or extra steps needed.</p>"
+          }
+        },
+        "accordion_t3ttkC": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can multiple people on my team place orders?",
+            "content": "<p>Yes! You can add more than one email address to your company's trade account. Every approved user can place orders using your trade discount, making it easy for your whole team to order seamlessly.</p>"
+          }
+        },
+        "accordion_tcAkqh": {
+          "type": "accordion",
+          "settings": {
+            "title": "Are swatches complimentary?",
+            "content": "<p>Trade members enjoy complimentary swatches, giving you access to our full library of fabric, wallpaper, and finishes.</p>"
+          }
+        },
+        "accordion_UkTJkM": {
+          "type": "accordion",
+          "settings": {
+            "title": "Do you offer tax exemption?",
+            "content": "<p>Yes! If you're purchasing merchandise for resale, we're happy to waive sales tax on qualifying orders with the appropriate tax exemption documentation.</p>"
+          }
+        },
+        "accordion_yKqEVx": {
+          "type": "accordion",
+          "settings": {
+            "title": "What kind of support does the trade team provide?",
+            "content": "<p>Our dedicated concierge team is here to help with quotes, custom orders, and design guidance from concept through installation, so you're never navigating a project alone. Email trade@pepper-home.com with any questions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_qmDXTQ",
+        "accordion_dM7BG6",
+        "accordion_pUc4eh",
+        "accordion_nBHRnX",
+        "accordion_H8TPLX",
+        "accordion_t3ttkC",
+        "accordion_tcAkqh",
+        "accordion_UkTJkM",
+        "accordion_yKqEVx"
+      ],
+      "name": "Accordion Section",
+      "settings": {
+        "heading": "FAQ",
+        "hub_section": "",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_4awqG6": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_ihQCRJ": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c_png.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_KH3eCr": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Chair-Florence-Eucalyptus.png",
+            "image_width": 140,
+            "title": "View Product Guides",
+            "content": "Get all the answers—from customization to measuring.",
+            "link_text": "EXPLORE",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_BgPeJr": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Pillows-2_png.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance"
+          }
+        }
+      },
+      "block_order": [
+        "column_ihQCRJ",
+        "column_KH3eCr",
+        "column_BgPeJr"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "page_hero_Cy7Wy4",
+    "main",
+    "become_trade_member_cLqWrm",
+    "section_collection_block_wNbHXU",
+    "51cbd6e0-23c5-4f63-945a-947233fd342f",
+    "trade_gallery_3LAeHk",
+    "fc3a2d97-4336-4250-8301-39852ff05c28",
+    "accordion_section_M4PVtR",
+    "section_text_with_icon_column_4awqG6"
+  ]
+}

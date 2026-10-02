@@ -1,0 +1,237 @@
+{{ 'section-page-hero.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+<div class="section-outer section-page-hero section-color-{{ section.settings.color_scheme }} {% if section.settings.mobile_display == '2' %} modile-display--type2 {% endif %}">
+  <div class="grid">
+    <div class="grid__item hero-image mobile-one desktop-three-thurs">
+      {% if section.settings.image != blank %}
+        {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+        <div class="media media--cropped">
+          <img
+            srcset="
+              {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+            "
+            sizes="(min-width: 60em) 70vw, 100vw"
+            src="{{ section.settings.image | image_url: width: 1780 }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+          >
+        </div>
+      {% elsif collection.image != blank %}
+        <div class="media media--cropped">
+          <img
+            srcset="
+              {%- if collection.image.width >= 375 -%}{{ collection.image | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if collection.image.width >= 1100 -%}{{ collection.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if collection.image.width >= 1780 -%}{{ collection.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if collection.image.width >= 2000 -%}{{ collection.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if collection.image.width >= 3000 -%}{{ collection.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if collection.image.width >= 3840 -%}{{ collection.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+            "
+            sizes="(min-width: 60em) 70vw, 100vw"
+            src="{{ collection.image | image_url: width: 1780 }}"
+            alt="{{ collection.image.alt | escape }}"
+            width="{{ collection.image.width }}"
+            height="{{ collection.image.width | divided_by: collection.image.aspect_ratio }}"
+          >
+        </div>
+        {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+      {% elsif request.design_mode %}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+
+    <div class="grid__item hero-content mobile-one desktop-two-thurs padded">
+      <div class="content-grid">
+        {%- if template.suffix == 'wallpaper-calculator' or template.suffix == 'curtain-calculator' -%}
+          <div class="secondary-color">
+            {% if section.settings.word_graphic %}
+              <div class="word-graphic">
+                {% assign graphic_width = section.settings.word_graphic_width %}
+                <img src="{{ section.settings.word_graphic | image_url: width: graphic_width }}" role="presentation" loading="lazy" width="{{ graphic_width }}" height="{{ graphic_width }}">
+              </div>
+            {% else %}
+              {% render 'text-the' %}
+            {% endif %}
+          </div>
+        {%- endif -%}
+        {% unless template.suffix == 'wallpaper-calculator' or template.suffix == 'curtain-calculator' %}
+          <div class="secondary-color">
+            {% if section.settings.word_graphic %}
+              <div class="word-graphic">
+                {% assign graphic_width = section.settings.word_graphic_width %}
+                <img src="{{ section.settings.word_graphic | image_url: width: graphic_width }}" role="presentation" loading="lazy" width="{{ graphic_width }}" height="{{ graphic_width }}">
+              </div>
+            {% else %}
+            {% if section.settings.text_icon == '1' %}
+              {% render 'text-the' %}
+            {% elsif section.settings.text_icon == '2' %}
+              {% render 'word-shop' %}
+            {% endif %}
+          {% endif %}
+          </div>
+        {% endunless %}
+        {% if page and section.settings.title == blank %}
+          <h1 class="display">{{ page.title }}</h1>
+        {% elsif collection %}
+             <h1 class="display desktop-hidden {%if collection.metafields.custom.mobile_collection_title_rich == blank%} mobile-hidden {% endif %}">{{ collection.metafields.custom.mobile_collection_title_rich |  metafield_tag }}</h1>
+            <h1 class="display {%if collection.metafields.custom.mobile_collection_title_rich != blank%} mobile-hidden {% endif %}">{{ collection.title }}</h1>
+          {% if collection.description != blank %}
+            {% assign mobile_description = collection.metafields.custom.mobile_collection_description_rich_text |  metafield_tag %}
+            <div class="h5 heading-family rte desktop-hidden {%if collection.metafields.custom.mobile_collection_description_rich_text == blank%} mobile-hidden {% endif %}">{% render 'no-widows', content: mobile_description %}</div>
+            <div class="h5 heading-family rte {%if collection.metafields.custom.mobile_collection_description_rich_text != blank%} mobile-hidden {% endif %}">{% render 'no-widows', content: collection.description %}</div>
+          {% endif %}
+        {% elsif section.settings.title != blank %}
+          <h1 class="h1">{{ section.settings.title }}</h1>
+        {% endif %}
+        {%- if section.settings.subheading != blank -%}
+          <p class="section-subheading h5 heading-family">{% render 'no-widows', content: section.settings.subheading %}</p>
+        {%- endif -%}
+        {%- if section.settings.quote != blank -%}
+          <div class="quote-wrapper">
+            {{ section.settings.quote }}
+          </div>
+        {%- endif -%}
+        {% if section.settings.link != blank and section.settings.label != blank %}
+          <a href="{{ section.settings.link }}" class="button button--secondary">{{ section.settings.label }}</a>
+        {% endif %}
+        {% if section.settings.custom_link != blank and section.settings.link == blank %}
+          {{ section.settings.custom_link }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page / Collection Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "word_graphic",
+      "label": "Word graphic (image)"
+    },
+    {
+      "type": "range",
+      "id": "word_graphic_width",
+      "label": "Word graphic image width",
+      "default": 104,
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "text_icon",
+      "label": "Text Icon",
+      "options": [
+        {
+          "value": "0",
+          "label": "Not show icon"
+        },
+        {
+          "value": "1",
+          "label": "Show icon the"
+        },
+        {
+          "value": "2",
+          "label": "Show icon shop"
+        }
+      ],
+      "default": "0"
+    },
+    {
+      "type": "select",
+      "id": "mobile_display",
+      "label": "Mobile display style",
+      "options": [
+        {
+          "value": "1",
+          "label": "Type 1"
+        },
+        {
+          "value": "2",
+          "label": "Type 2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Override page title (optional)"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "richtext",
+      "id": "quote",
+      "label": "Quote"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "html",
+      "id": "custom_link",
+      "label": "Custom link",
+      "info": "Only shown if link is empty"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Aspect ratio 5:3 (Optional, overrides default image)"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "background-secondary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Hero"
+    }
+  ]
+}
+{% endschema %}

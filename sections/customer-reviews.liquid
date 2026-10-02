@@ -1,0 +1,311 @@
+<link rel="stylesheet" href="{{ 'section-customer-reviews.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-customer-reviews.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="section-outer section-customer-reviews section-color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+    <div class="section-heading-outer">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="{{ section.settings.heading_size }} display section-heading">
+          {% render 'no-widows', content: section.settings.heading %}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="section-subheading intro">{% render 'no-widows', content: section.settings.subheading %}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+  <slider-component class="{% unless section.settings.show_buttons %} slider-hide-buttons {% endunless %}{% unless section.settings.show_dots %} slider-hide-dots {% endunless %} review-slider">
+    <ul
+      class="list-unstyled slider grid grid-nowrap mobile-one desktop-one"
+      id="Slider-{{ section.id }}"
+      role="list"
+    >
+      {% for block in section.blocks %}
+        <li
+          class="grid__item carousel-cell section-color-{{ section.settings.card_color_scheme }}"
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.image != blank %}
+            <div class="media-wrapper">
+              {%- if section.settings.image_link != blank -%}
+                <a href="{{ section.settings.image_link }}" class="full-unstyled-link">
+                  <span class="visually-hidden">Reviews</span>
+                </a>
+              {%- endif -%}
+              <div class="media media--square">
+                <img
+                  srcset="
+                    {%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                    {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                    {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                    {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                    {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                  "
+                  sizes="(min-width: 40em) calc({{ settings.page_width }}px - 500px), 100vw"
+                  src="{{ block.settings.image | image_url: width: 1780 }}"
+                  loading="lazy"
+                  alt="{{ block.settings.image.alt | escape }}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio }}"
+                >
+              </div>
+            </div>
+          {% elsif block.settings.product != blank %}
+            <div class="media-wrapper">
+              <a href="{{ block.settings.product.url }}">
+                <div class="media media--square">
+                  <img
+                    srcset="
+                      {%- if block.settings.product.featured_media.image.width >= 375 -%}{{ block.settings.product.featured_media.image | image_url: width: 375 }} 375w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 750 -%}{{ block.settings.product.featured_media.image | image_url: width: 750 }} 750w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 1100 -%}{{ block.settings.product.featured_media.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 1500 -%}{{ block.settings.product.featured_media.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 1780 -%}{{ block.settings.product.featured_media.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 2000 -%}{{ block.settings.product.featured_media.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 3000 -%}{{ block.settings.product.featured_media.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                      {%- if block.settings.product.featured_media.image.width >= 3840 -%}{{ block.settings.product.featured_media.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                    "
+                    sizes="(min-width: 40em) calc({{ settings.page_width }}px - 500px), 100vw"
+                    src="{{ block.settings.product.featured_media.image | image_url: width: 1780 }}"
+                    loading="lazy"
+                    alt="{{ block.settings.product.featured_media.image.alt | escape }}"
+                    width="{{ block.settings.product.featured_media.image.width }}"
+                    height="{{ block.settings.product.featured_media.image.width | divided_by: block.settings.product.featured_media.image.aspect_ratio }}"
+                  >
+                </div>
+              </a>
+            </div>
+          {% elsif request.design_mode %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg hide-on-desktop' }}
+          {% endif %}
+          <a
+            href="{{ section.settings.image_link | default: '/pages/reviews' }}"
+            class="card card-review center{% if block.settings.image != blank or block.settings.product != blank %} has-media{% endif %}"
+          >
+            <div class="card-stars">
+              {% assign stars = block.settings.stars | floor %}
+              {% for star in (1..stars) %}
+                {% render 'icon-star' %}
+              {% endfor %}
+            </div>
+            <div class="serif">&ldquo;{{ block.settings.content | strip_html }}&rdquo;</div>
+            <div class="h6 card-review-info">
+              {{ block.settings.source -}}
+              {%- if block.settings.product != blank %}, {{ block.settings.product.title }}{% endif %}
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="slider-dots no-js-hidden">
+      {% for dot in (1..section.blocks.size) %}
+        <button
+          type="button"
+          data-index="{{ forloop.index }}"
+          class="slider-dot{% if forloop.index0 == 0 %} is-active{% endif %}"
+          name="index"
+          aria-label="{{ 'accessibility.slide_index' | t: index: forloop.index }}"
+        ></button>
+      {% endfor %}
+    </div>
+    <div class="slider-buttons no-js-hidden">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'accessibility.previous_slide' | t }}"
+      >
+        {% render 'icon-arrow-left' %}
+      </button>
+      <div class="slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+        <span class="slider-counter--total">{{ section.blocks.size }}</span>
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'accessibility.next_slide' | t }}"
+      >
+        {% render 'icon-arrow-right' %}
+      </button>
+    </div>
+  </slider-component>
+  {% if section.settings.link != blank and section.settings.label != blank %}
+    <div class="section-invert-text">
+      <a href="{{ section.settings.link }}" class="button button--secondary">{{ section.settings.label }}</a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Customer reviews",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "background-secondary"
+    },
+    {
+      "type": "select",
+      "id": "card_color_scheme",
+      "label": "Card color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-tertiary",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "background-secondary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_buttons",
+      "label": "Show buttons",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "image_link",
+      "label": "Image link"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "review",
+      "name": "Customer review",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1:1 Aspect Ratio (minimum: 1500x1500)"
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star rating",
+          "default": 5
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Review content"
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Source",
+          "placeholder": "Reviewer Name"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer reviews",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>This is a sample review about a product. Lorem ipsum dolor sit amet.</p>",
+            "source": "Review name"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>This is a sample review about a product. Lorem ipsum dolor sit amet.</p>",
+            "source": "Review name"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>This is a sample review about a product. Lorem ipsum dolor sit amet.</p>",
+            "source": "Review name"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

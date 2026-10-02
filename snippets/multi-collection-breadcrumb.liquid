@@ -1,0 +1,38 @@
+{{ 'template-collection-breadcrumb.css' | asset_url | stylesheet_tag }}
+
+<section class="breadcrumb-section"> 
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ul class="breadcrumb-list">
+      {% if block.settings.previous_link_1 != blank and block.settings.previous_text_1 != blank %}
+        <li class="breadcrumb-item">
+          <a href="{{ block.settings.previous_link_1 }}">{{ block.settings.previous_text_1 }}</a> /
+        </li>
+      {% endif %}
+      {% if block.settings.previous_link_2 != blank and block.settings.previous_text_2 != blank %}
+        <li class="breadcrumb-item">
+          <a href="{{ block.settings.previous_link_2 }}">{{ block.settings.previous_text_2 }}</a> /
+        </li>
+      {% endif %}
+      {% if block.settings.previous_link_3 != blank and block.settings.previous_text_3 != blank %}
+        <li class="breadcrumb-item">
+          <a href="{{ block.settings.previous_link_3 }}">{{ block.settings.previous_text_3 }}</a> /
+        </li>
+      {% endif %}
+      <li class="breadcrumb-item">
+        <span class="current">
+          {% if block.settings.current_title != blank %}
+            {{- block.settings.current_title -}}
+          {% else %}
+            {% if template.name == 'collection' %}
+              {{- collection.title -}}
+            {% elsif template.name == 'page' %}
+              {{- page.title -}}
+            {% elsif template.name == 'product' %}
+              {{- product.title -}}
+            {% endif %}
+          {% endif %}
+        </span>
+      </li>
+    </ul>
+  </nav>
+</section>

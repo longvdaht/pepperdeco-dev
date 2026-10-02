@@ -1,0 +1,92 @@
+{%- if customer and customer.b2b? -%}
+  {%- liquid
+    # Get company and trade tier
+    assign company = customer.current_company
+    assign trade_tier = company.metafields.custom.trade_tier.value
+    assign discount_percent = company.metafields.custom.discount_percent.value
+    assign trade_tier_display = trade_tier | replace: 'TIER ', 'Tier '
+
+    case trade_tier
+      when 'TIER 2', 'Tier 2'
+        assign discount_percent = 20
+      when 'TIER 3', 'Tier 3'
+        assign discount_percent = 25
+      else
+        assign discount_percent = 15
+    endcase
+
+    assign current_variant = product.selected_or_first_available_variant
+
+    assign discount_decimal = discount_percent | divided_by: 100.0
+    assign multiplier = 1.0 | minus: discount_decimal
+    assign catalog_price = current_variant.price | times: 1.0
+    assign original_price = catalog_price | divided_by: multiplier | round
+
+    assign trade_tag_list = 'trade,trade15,trade20,trade30' | split: ','
+    assign is_trade_member = false
+    for tag in customer.tags
+      assign tag_clean = tag | downcase | strip
+      if trade_tag_list contains tag_clean
+        assign is_trade_member = true
+        break
+      endif
+    endfor
+
+    assign is_sample_sale = false
+    for tag in product.tags
+      assign tag_clean = tag | downcase | strip
+      if tag_clean == 'samplesale'
+        assign is_sample_sale = true
+        break
+      endif
+    endfor
+
+    assign hide_trade_info = false
+    if is_trade_member and is_sample_sale
+      assign hide_trade_info = true
+    endif
+
+    assign is_sample = false
+    for tag in product.tags
+      if tag == 'sample'
+        assign is_sample = true
+        break
+      endif
+    endfor
+  -%}
+
+  {% comment %} Expose B2B data to JavaScript {% endcomment %}
+  <script>
+    window.b2bTradeData = {
+      isB2B: true,
+      tradeTier: {{ trade_tier | json }},
+      discountPercent: {{ discount_percent }},
+      multiplier: {{ multiplier }},
+      currentVariantId: {{ current_variant.id }},
+      currentOriginalPrice: {{ original_price }},
+      isTradeMember: {{ is_trade_member | json }},
+      isSampleSale: {{ is_sample_sale | json }},
+      hideTradeInfo: {{ hide_trade_info | json }}
+    };
+  </script>
+
+  {%- unless is_sample or hide_trade_info -%}
+    <div class="b2b-trade-info" data-b2b-trade-info data-discount-percent="{{ discount_percent }}" data-multiplier="{{ multiplier }}">
+      <span class="b2b-trade-info__tier">
+        <span>{{- 'customer.b2b.trade_discount' | t -}}</span> : {{ discount_percent }}%
+      </span>
+      <span class="b2b-trade-info__divider">|</span>
+      <span class="b2b-trade-info__original" data-original-price>
+        {{- 'customer.b2b.original_price' | t -}}: <span class="original-price-value">{{ original_price | money_without_trailing_zeros }}</span>
+      </span>
+    </div>
+  {%- endunless -%}
+{%- else -%}
+  <script>
+    window.b2bTradeData = {
+      isB2B: false,
+      discountPercent: 0,
+      multiplier: 1
+    };
+  </script>
+{%- endif -%}

@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="{{ 'two-col-features.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'two-col-features.css' | asset_url | stylesheet_tag }}</noscript>
+
+<style>
+  [data-section-id="{{ section.id }}"] {
+    width: 100%;
+    padding-top: {{ section.settings.padding_top_mobile | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mobile | append: 'px' }};
+    background-color: {{ section.settings.background_color }};
+  }
+  @media (min-width: 768px) {
+    [data-section-id="{{ section.id }}"] {
+      padding-top: {{ section.settings.padding_top | append: 'px' }};
+      padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+  }
+</style>
+
+<section class="two-col-features" data-section-id="{{ section.id }}">
+  <div class="two-col-features__grid">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'feature_column' %}
+          <div class="two-col-features__col" {{ block.shopify_attributes }}>
+            <div class="two-col-features__image-wrap">
+              {%- if block.settings.button_url != blank -%}
+                <a href="{{ block.settings.button_url | default: '#' }}">
+              {%- endif -%}
+                {% if block.settings.image != blank %}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 1200 }}"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="1200"
+                    height="1200"
+                  >
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'two-col-features__placeholder' }}
+                {% endif %}
+              {%- if block.settings.button_url != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+
+            <div class="two-col-features__content">
+              {% if block.settings.title != blank %}
+                <h3 class="two-col-features__title">{{ block.settings.title }}</h3>
+              {% endif %}
+
+              {% if block.settings.description != blank %}
+                <p class="two-col-features__desc">{{ block.settings.description }}</p>
+              {% endif %}
+
+              {% if block.settings.button_label != blank %}
+                <a
+                  href="{{ block.settings.button_url | default: '#' }}"
+                  class="two-col-features__btn button--link button--link-secondary"
+                >
+                  {{ block.settings.button_label }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Two Column Features",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_column",
+      "name": "Feature column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Custom To You"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Your piece doesn't exist until you design it. Our furniture is made to order and shipped directly from our workroom."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "ORDER SAMPLES"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Column Features",
+      "blocks": [
+        {
+          "type": "feature_column",
+          "settings": {
+            "title": "Custom To You",
+            "description": "Your piece doesn't exist until you design it. Our furniture is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES"
+          }
+        },
+        {
+          "type": "feature_column",
+          "settings": {
+            "title": "Sustainably Made",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

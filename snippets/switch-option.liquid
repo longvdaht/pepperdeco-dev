@@ -1,0 +1,409 @@
+<script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+{% assign countLinkList = 1 %}
+{% for type in product.metafields.custom.type_link_list.value %}
+  {% assign countLinkList = countLinkList | plus: 1 %}
+{% endfor %}
+
+<div class="switch-option-wrapper switch-option-{{ type }} switch{% if product.metafields.custom.type_link_list and type == 'type' %} option-{{ countLinkList }}-item{% endif %}">
+  {%- if product.metafields.custom.type_link_list and type == 'type' -%}
+    <option-dropdown data-dropdown-key="type">
+      <button type="button" data-dropdown-trigger aria-expanded="false">
+        <legend class="form__label">
+          <span class="contruction-wrapper">
+            {{ 'products.product.switch_option.type_title' | t }}:
+            {% assign fabric_options_tooltip = product.metafields.custom.compare_fabric_options %}
+            {% if fabric_options_tooltip %}
+              <div class="option-link option-tooltip--wrapper">
+                <span class="tooltip-icon">?</span>
+                {% render 'fabric-options', fabric_options: fabric_options_tooltip %}
+              </div>
+            {% elsif block.settings.tooltip_link != blank %}
+              <div class="option-link option-tooltip--wrapper">
+                <a href="{{ block.settings.tooltip_link }}" class="tooltip-icon tooltip-link">?</a>
+              </div>
+              <script>
+                document.addEventListener("click", (e) => {
+                  const tooltipLink = e.target.closest(".tooltip-link");
+
+                  if (!tooltipLink) return;
+
+                  e.stopPropagation();
+
+                  e.preventDefault();
+
+                  const targetId = tooltipLink.getAttribute("href");
+                  const targetEl = document.querySelector(targetId);
+
+                  if (targetEl) {
+                    targetEl.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+
+                    history.replaceState(null, "", targetId);
+                  }
+                });
+
+                document.addEventListener("pointerdown", (e) => {
+                  if (e.target.closest(".tooltip-link")) {
+                    e.stopPropagation();
+                  }
+                });
+              </script>
+            {% endif %}
+          </span>
+          <span>
+            {{ product.metafields.custom.type_title }}
+          </span>
+        </legend>
+        {% render 'icon-chevron-up' %}
+        {% render 'icon-chevron-down-pdp' %}
+      </button>
+      <div data-dropdown-panel>
+        {%- liquid
+          assign type_current_position = product.metafields.custom.type_link_position.value
+          assign type_position_first = true
+          assign type_link_list_size = 0
+          for product in product.metafields.custom.type_link_list.value
+            assign type_link_list_size = type_link_list_size | plus: 1
+          endfor
+          if type_current_position > 0
+            assign type_position_first = false
+          endif 
+        -%}
+        
+        {%- capture type_link_current -%}
+          <p class="current-option">{{ product.metafields.custom.type_title }}</p>
+        {%- endcapture -%}
+        
+        <div class="option-wrapper">
+          {%- for typeProduct in product.metafields.custom.type_link_list.value -%}
+            {%- if type_current_position == 1 and forloop.index0 == 1 -%}
+              {{ type_link_current }}
+            {%- elsif type_current_position == forloop.index0 and type_current_position != false -%}
+              {{ type_link_current }}
+            {%- endif -%}
+        
+            <a class="option" href="{{ typeProduct.url }}">
+              {{ typeProduct.metafields.custom.type_title }}
+            </a>
+        
+            {%- if type_current_position == type_link_list_size and forloop.last -%}
+              {{ type_link_current }}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </option-dropdown>
+  {%- endif -%}
+
+  {%- if product.metafields.custom.fabric_group_1 and type == 'color' -%}
+    {%- liquid
+      assign current_product_id = product.id
+      assign current_fabric_type = product.metafields.custom.fabric_type
+      assign group1 = product.metafields.custom.fabric_group_1.value.product_lists.value
+      assign group2 = product.metafields.custom.fabric_group_2.value.product_lists.value
+
+      assign has_fabric_groups = false
+      for p in group1
+        if p.metafields.custom.fabric_type != blank
+          assign has_fabric_groups = true
+          break
+        endif
+      endfor
+      if has_fabric_groups == false
+        for p in group2
+          if p.metafields.custom.fabric_type != blank
+            assign has_fabric_groups = true
+            break
+          endif
+        endfor
+      endif
+    -%}
+    
+    {%- assign fabric_order_list = settings.fabric_type_order | split: ',' -%}
+
+    {%- capture color_current -%}
+      <span class="image-option current">
+        <span class="image-block">
+          <img src="{{ product.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ product.title }}">
+        </span>
+      </span>
+    {%- endcapture -%}
+
+    <option-dropdown data-dropdown-key="color">
+      <button type="button" data-dropdown-trigger aria-expanded="false">
+        <p class="form__label">
+          {{ block.settings.color_title }}
+          <span class="shade-selected">
+            {{ product.title }}
+            {{ color_current }}
+          </span>
+        </p>
+        {% render 'icon-chevron-up' %}
+        {% render 'icon-chevron-down-pdp' %}
+      </button>
+      <div data-dropdown-panel>
+
+        {%- if has_fabric_groups -%}
+          <div class="option-wrapper dropdown-content fabric-type">
+
+            {%- comment -%} PASS 1: Current product group {%- endcomment -%}
+            {%- if current_fabric_type != blank -%}
+              <div class="option-group is-current-group" data-fabric-group="{{ current_fabric_type | handle }}">
+                <p class="option-group__label form__label">{{ current_fabric_type }}:</p>
+                <div class="option-wrapper dropdown-content option-group__items">
+                  {{ color_current }}
+                  {%- assign current_group_count = 1 -%}
+                  {%- assign seen_in_current = '' -%}
+                  {%- paginate group1 by 150 -%}
+                    {%- for otherProduct in group1 -%}
+                      {%- if otherProduct.id == current_product_id -%}{%- continue -%}{%- endif -%}
+                      {%- assign other_ft = otherProduct.metafields.custom.fabric_type | default: 'Other' -%}
+                      {%- if other_ft == current_fabric_type -%}
+                        {%- assign op_id_str = '|' | append: otherProduct.id | append: '|' -%}
+                        {%- unless seen_in_current contains op_id_str -%}
+                          {%- assign seen_in_current = seen_in_current | append: op_id_str -%}
+                          {%- assign current_group_count = current_group_count | plus: 1 -%}
+                          <a class="image-option{% if current_group_count > 12 %} image-option-after{% endif %}" href="{{ otherProduct.url }}">
+                            <span class="image-block">
+                              <img src="{{ otherProduct.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ otherProduct.title }}">
+                            </span>
+                          </a>
+                        {%- endunless -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endpaginate -%}
+                  {%- paginate group2 by 150 -%}
+                    {%- for otherProduct in group2 -%}
+                      {%- if otherProduct.id == current_product_id -%}{%- continue -%}{%- endif -%}
+                      {%- assign other_ft = otherProduct.metafields.custom.fabric_type | default: 'Other' -%}
+                      {%- if other_ft == current_fabric_type -%}
+                        {%- assign op_id_str = '|' | append: otherProduct.id | append: '|' -%}
+                        {%- unless seen_in_current contains op_id_str -%}
+                          {%- assign seen_in_current = seen_in_current | append: op_id_str -%}
+                          {%- assign current_group_count = current_group_count | plus: 1 -%}
+                          <a class="image-option{% if current_group_count > 12 %} image-option-after{% endif %}" href="{{ otherProduct.url }}">
+                            <span class="image-block">
+                              <img src="{{ otherProduct.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ otherProduct.title }}">
+                            </span>
+                          </a>
+                        {%- endunless -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endpaginate -%}
+                </div>
+              </div>
+            {%- endif -%}
+
+            {%- assign available_types = '' -%}
+            {%- paginate group1 by 150 -%}
+              {%- for p in group1 -%}
+                {%- assign ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                {%- unless ft == current_fabric_type -%}
+                  {%- assign ft_handle = ft | handle -%}
+                  {%- unless available_types contains ft_handle -%}
+                    {%- assign available_types = available_types | append: ft_handle | append: '|' -%}
+                  {%- endunless -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+            {%- paginate group2 by 150 -%}
+              {%- for p in group2 -%}
+                {%- assign ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                {%- unless ft == current_fabric_type -%}
+                  {%- assign ft_handle = ft | handle -%}
+                  {%- unless available_types contains ft_handle -%}
+                    {%- assign available_types = available_types | append: ft_handle | append: '|' -%}
+                  {%- endunless -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+
+            {%- assign ordered_types = '' -%}
+            {%- for ft_name in fabric_order_list -%}
+              {%- assign ft_handle = ft_name | handle -%}
+              {%- if available_types contains ft_handle -%}
+                {%- assign ordered_types = ordered_types | append: ft_name | append: '||' -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- assign seen_extra = '' -%}
+            {%- paginate group1 by 150 -%}
+              {%- for p in group1 -%}
+                {%- assign ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                {%- unless ft == current_fabric_type -%}
+                  {%- assign ft_handle = ft | handle -%}
+                  {%- assign in_order = false -%}
+                  {%- for ft_name in fabric_order_list -%}
+                    {%- assign ft_name_handle = ft_name | handle -%}
+                    {%- if ft_name_handle == ft_handle -%}
+                      {%- assign in_order = true -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- unless in_order -%}
+                    {%- unless seen_extra contains ft_handle -%}
+                      {%- assign seen_extra = seen_extra | append: ft_handle | append: '|' -%}
+                      {%- assign ordered_types = ordered_types | append: ft | append: '||' -%}
+                    {%- endunless -%}
+                  {%- endunless -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+            {%- paginate group2 by 150 -%}
+              {%- for p in group2 -%}
+                {%- assign ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                {%- unless ft == current_fabric_type -%}
+                  {%- assign ft_handle = ft | handle -%}
+                  {%- assign in_order = false -%}
+                  {%- for ft_name in fabric_order_list -%}
+                    {%- assign ft_name_handle = ft_name | handle -%}
+                    {%- if ft_name_handle == ft_handle -%}
+                      {%- assign in_order = true -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- unless in_order -%}
+                    {%- unless seen_extra contains ft_handle -%}
+                      {%- assign seen_extra = seen_extra | append: ft_handle | append: '|' -%}
+                      {%- assign ordered_types = ordered_types | append: ft | append: '||' -%}
+                    {%- endunless -%}
+                  {%- endunless -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+
+            {%- assign type_list = ordered_types | split: '||' -%}
+
+            {%- comment -%} PASS 3 render: 1 group per fabric type {%- endcomment -%}
+            {%- for fabric_type_name in type_list -%}
+              {%- if fabric_type_name == blank -%}{%- continue -%}{%- endif -%}
+              {%- if fabric_type_name == current_fabric_type -%}{%- continue -%}{%- endif -%}
+
+              {%- assign ft_has_products = false -%}
+              {%- paginate group1 by 150 -%}
+                {%- for p in group1 -%}
+                  {%- assign p_ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                  {%- if p_ft == fabric_type_name -%}
+                    {%- assign ft_has_products = true -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endpaginate -%}
+              {%- unless ft_has_products -%}
+                {%- paginate group2 by 150 -%}
+                  {%- for p in group2 -%}
+                    {%- assign p_ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                    {%- if p_ft == fabric_type_name -%}
+                      {%- assign ft_has_products = true -%}
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endpaginate -%}
+              {%- endunless -%}
+
+              {%- if ft_has_products -%}
+                <div class="option-group" data-fabric-group="{{ fabric_type_name | handle }}">
+                  <p class="option-group__label form__label">{{ fabric_type_name }}:</p>
+                  <div class="option-wrapper dropdown-content option-group__items">
+                    {%- assign ft_count = 0 -%}
+                    {%- assign seen_in_group = '' -%}
+                    {%- paginate group1 by 150 -%}
+                      {%- for p in group1 -%}
+                        {%- assign p_ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                        {%- if p_ft == fabric_type_name -%}
+                          {%- assign p_id_str = '|' | append: p.id | append: '|' -%}
+                          {%- unless seen_in_group contains p_id_str -%}
+                            {%- assign seen_in_group = seen_in_group | append: p_id_str -%}
+                            {%- assign ft_count = ft_count | plus: 1 -%}
+                            {%- if p.id == current_product_id -%}
+                              {{ color_current }}
+                            {%- else -%}
+                              <a class="image-option{% if ft_count > 12 %} image-option-after{% endif %}" href="{{ p.url }}">
+                                <span class="image-block">
+                                  <img src="{{ p.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ p.title }}">
+                                </span>
+                              </a>
+                            {%- endif -%}
+                          {%- endunless -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endpaginate -%}
+                    {%- paginate group2 by 150 -%}
+                      {%- for p in group2 -%}
+                        {%- assign p_ft = p.metafields.custom.fabric_type | default: 'Other' -%}
+                        {%- if p_ft == fabric_type_name -%}
+                          {%- assign p_id_str = '|' | append: p.id | append: '|' -%}
+                          {%- unless seen_in_group contains p_id_str -%}
+                            {%- assign seen_in_group = seen_in_group | append: p_id_str -%}
+                            {%- assign ft_count = ft_count | plus: 1 -%}
+                            {%- if p.id == current_product_id -%}
+                              {{ color_current }}
+                            {%- else -%}
+                              <a class="image-option{% if ft_count > 12 %} image-option-after{% endif %}" href="{{ p.url }}">
+                                <span class="image-block">
+                                  <img src="{{ p.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ p.title }}">
+                                </span>
+                              </a>
+                            {%- endif -%}
+                          {%- endunless -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endpaginate -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          {%- comment -%} FLAT LAYOUT {%- endcomment -%}
+          <div class="option-wrapper dropdown-content">
+            {%- assign idx = 0 -%}
+            {%- assign seen_flat = '' -%}
+            {%- paginate group1 by 150 -%}
+              {%- for otherProduct in group1 -%}
+                {%- assign op_id_str = '|' | append: otherProduct.id | append: '|' -%}
+                {%- unless seen_flat contains op_id_str -%}
+                  {%- assign seen_flat = seen_flat | append: op_id_str -%}
+                  {%- assign idx = idx | plus: 1 -%}
+                  {%- if otherProduct.id == current_product_id -%}
+                    {{ color_current }}
+                  {%- else -%}
+                    <a class="image-option{% if idx > 12 %} image-option-after{% endif %}" href="{{ otherProduct.url }}">
+                      <span class="image-block">
+                        <img src="{{ otherProduct.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ otherProduct.title }}">
+                      </span>
+                    </a>
+                  {%- endif -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+            {%- paginate group2 by 150 -%}
+              {%- for otherProduct in group2 -%}
+                {%- assign op_id_str = '|' | append: otherProduct.id | append: '|' -%}
+                {%- unless seen_flat contains op_id_str -%}
+                  {%- assign seen_flat = seen_flat | append: op_id_str -%}
+                  {%- assign idx = idx | plus: 1 -%}
+                  {%- if otherProduct.id == current_product_id -%}
+                    {{ color_current }}
+                  {%- else -%}
+                    <a class="image-option{% if idx > 12 %} image-option-after{% endif %}" href="{{ otherProduct.url }}">
+                      <span class="image-block">
+                        <img src="{{ otherProduct.metafields.custom.option_image | image_url: width: '100' }}" width="45" height="45" loading="lazy" alt="{{ otherProduct.title }}">
+                      </span>
+                    </a>
+                  {%- endif -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endpaginate -%}
+          </div>
+        {%- endif -%}
+
+        {% if block.settings.text_under != blank %}
+          <div class="switch-option-text-under">
+            {{ block.settings.text_under }}
+          </div>
+        {% endif %}
+      </div>
+    </option-dropdown>
+  {%- endif -%}
+</div>

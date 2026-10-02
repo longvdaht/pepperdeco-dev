@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0"
+    >
+    <meta name="referrer" content="origin">
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    {% comment %} Added by Permalight on Jan 19th, 2023 {% endcomment %}
+    {%- if settings.checkout_customization -%}
+      <style>
+        /*@import url("https://use.typekit.net/alh5ogf.css");
+        @font-face {
+          font-family: 'gt-super';
+          src: url({{ 'gt-super-display-light.woff2' | asset_url }}) format('woff2'),
+            url({{ 'gt-super-display-light.woff' | asset_url }}) format('woff'),
+            url({{ 'gt-super-display-light.ttf' | asset_url }}) format('truetype');
+          font-weight: 100;
+          font-style: normal;
+          font-display: swap;
+        }
+        @font-face {
+            font-family: 'gt-super';
+            src: url({{ 'gt-super-display-light-italic.woff2' | asset_url }}) format('woff2'),
+              url({{ 'gt-super-display-light-italic.woff' | asset_url }}) format('woff'),
+              url({{ 'gt-super-display-light-italic.ttf' | asset_url }}) format('truetype');
+            font-weight: 100;
+            font-style: italic;
+            font-display: swap;
+          }
+        @font-face {
+          font-family: 'gt-super';
+          src: url({{ 'gt-super-display-regular.woff2' | asset_url }}) format('woff2'),
+            url({{ 'gt-super-display-regular.woff' | asset_url }}) format('woff'),
+            url({{ 'gt-super-display-regular.ttf' | asset_url }}) format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+        :root {
+
+          --font-heading-family: 'sweet-sans-pro', sans-serif;
+          --font-heading-weight: 700;
+
+          --font-body-family: 'gt-super', sans-serif;
+          --font-body-style: normal;
+          --font-body-light: 400;
+          --font-body-weight: 600;
+          --font-button-weight: 800;
+
+          --color-base-text: {{ settings.colors_text_primary.red }}, {{ settings.colors_text_primary.green }}, {{ settings.colors_text_primary.blue }};
+        }
+
+        body {
+          color: rgb(var(--color-base-text));
+          font-family: var(--font-heading-family);
+          font-style: var(--font-body-style);
+          font-weight: var(--font-body-weight);
+        }
+        p {
+          font-family: var(--font-heading-family);
+          font-size: 0.8rem;
+          font-weight: var(--font-body-weight);
+        }
+        .section__title,
+        .breadcrumb__item,
+        .dynamic-checkout__title {
+          font-family: var(--font-heading-family);
+          font-weight: var(--font-body-weight);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        .section__title {
+          font-size: 0.7rem;
+        }
+        .field__input {
+          border-radius: 0;
+          font-family: var(--font-heading-family);
+          font-weight: var(--font-body-light);
+        }
+        .product__description__name,
+        .checkbox__label,
+        .btn {
+          font-family: var(--font-heading-family);
+          font-weight: var(--font-body-weight);
+        }
+        .product__description__name {
+
+          text-transform: uppercase;
+        }
+        .btn,
+        .step__footer__previous-link {
+          border-radius: 0;
+          font-size: 0.6rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        */
+        :root {
+          --color-error: 141,68,66;
+        }
+        .buyer_accepts_policy,
+        .buyer_signature_optout {
+          margin-top: 1rem;
+        }
+        .error-message:not(:empty) {
+          color: rgb(var(--color-error));
+          padding-bottom: 1rem;
+        }
+        .input--error {
+          border-radius: 4px;
+          border: 1px solid #d9d9d9;
+          padding: 1rem 1rem 0;
+        }
+        .step-footer {
+          clear: both;
+        }
+        .visually-hidden {
+          position: absolute !important;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          padding: 0;
+          border: 0;
+          clip: rect(0 0 0 0);
+          word-wrap: normal !important;
+        }
+        .input-checkbox,
+        .btn,
+        .sp-modal-toggle {
+          border-radius: 0;
+        }
+      </style>
+    {%- endif -%}
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+            {%- if settings.checkout_customization -%}
+              {% render 'checkout-policy-checkbox' %}
+            {%- endif -%}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {% comment %} Added by Permalight on Dec 19th, 2022 {% endcomment %}
+    {%- if settings.checkout_customization -%}
+      {% render 'checkout-scripts' %}
+    {%- endif -%}
+
+    {{ tracking_code }}
+  </body>
+</html>

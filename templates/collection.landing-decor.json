@@ -1,0 +1,322 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "",
+        "title_type": "type-2",
+        "description": "Layer in color, pattern, and polish with versatile decor.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "table-linens",
+            "image": "shopify://shop_images/collection-windowtreatments-curtains.jpg",
+            "collection_title": "Table Linens",
+            "override_url": "https://pepper-home.com/collections/custom-curtains",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "throw-pillows",
+            "image": "shopify://shop_images/collection-windowtreatments-cafecurtains.jpg",
+            "collection_title": "Pillows",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-shower-curtains",
+            "image": "shopify://shop_images/Styled-Nantucket-RomanShade-Square.jpg",
+            "collection_title": "Shower Curtains",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw"
+      ],
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "main_list_collection_2_HhXLKe": {
+      "type": "main-list-collection-2",
+      "blocks": {
+        "featured_collection_QWwMjz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "throw-pillows",
+            "image": "shopify://shop_images/Pillow-Beatrice-MidiLumbar.png",
+            "collection_title": "Pillows",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_tdirqA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "custom-shower-curtains",
+            "image": "shopify://shop_images/Bath_Tub_Shower_Curtain_Towels_pom.png",
+            "collection_title": "Shower Curtains",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_8yWjU4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "table-linens",
+            "image": "shopify://shop_images/table.png",
+            "collection_title": "Table Linens",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_QWwMjz",
+        "featured_collection_tdirqA",
+        "featured_collection_8yWjU4"
+      ],
+      "name": "Collection list small",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "1"
+      }
+    },
+    "product-grid": {
+      "type": "main-multi-collections",
+      "blocks": {
+        "67897ccc-f572-4b32-ae92-393654a5de3d": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "throw-pillows",
+            "collection_title": "Throw Pillows",
+            "collection_description": "",
+            "button_text": "Shop all pillows"
+          }
+        },
+        "collection_dVMAHn": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-shower-curtains",
+            "collection_title": "Shower Curtains",
+            "collection_description": "",
+            "button_text": "Shop all shower curtains"
+          }
+        },
+        "collection_n6Vcp8": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "table-linens",
+            "collection_title": "",
+            "collection_description": "Dress your table in effortless style.",
+            "button_text": "SHOP ALL table linens"
+          }
+        }
+      },
+      "block_order": [
+        "67897ccc-f572-4b32-ae92-393654a5de3d",
+        "collection_dVMAHn",
+        "collection_n6Vcp8"
+      ],
+      "settings": {
+        "collection_layout": "grid",
+        "product_limit": 9,
+        "product_limit_mobile": 8,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": true,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-third",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_xeGt7J": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_EmmKG9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-pillow-woven-millie-moss-3x4.jpg",
+            "product": "pillow-woven-millie-moss-custom"
+          }
+        },
+        "slide_m3eFLb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-tablelinens-gemmarose.jpg",
+            "product": "tablecloth-printedlinen-gemma-rose"
+          }
+        },
+        "slide_PnXm74": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-pillow-chenillejacquard-quinn-steel-3x4.jpg",
+            "product": "pillow-embroidered-margot-fern-custom"
+          }
+        },
+        "slide_yWbhdR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-tablelinens-serenaseasalt.jpg",
+            "product": "napkins-printedcotton-serena-seasalt"
+          }
+        },
+        "slide_VF3RFA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-pillow-woven-louisa-sage-3x4.jpg",
+            "product": "pillow-embroidered-hayes-seasalt-custom"
+          }
+        },
+        "slide_KfWJCn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-TableLinen-Embroidered-Vivienne-Pistachio-KatWedding-20251119-3-Cropped.jpg",
+            "product": "tablecloth-embroidered-vivienne-pistachio"
+          }
+        },
+        "slide_pTCx8N": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Pillow-Velvet-Sky-_sarahgtucker-20250505-10-AdApproved-CroppedUGC-Fabric-S.jpg",
+            "product": "pillow-solid-velvet-sky-custom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_EmmKG9",
+        "slide_m3eFLb",
+        "slide_PnXm74",
+        "slide_yWbhdR",
+        "slide_VF3RFA",
+        "slide_KfWJCn",
+        "slide_pTCx8N"
+      ],
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at <i>Your Place<i></i></i>",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Expert guidance for your space—on the house.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/design-assistance"
+          }
+        },
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Samples-Furniture.png",
+            "image_width": 140,
+            "title": "Order Fabric Swatches",
+            "content": "Try before you buy to make sure your choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatch-fabric"
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/Trim-Curtain-Pillow.png",
+            "image_width": 140,
+            "title": "View Trim Options",
+            "content": "From timeless to playful—it's all about a finishing touch.",
+            "link_text": "VISIT",
+            "link_url": "shopify://collections/curtain-trim-samples"
+          }
+        }
+      },
+      "block_order": [
+        "column_7L6p3y",
+        "column_9NGpgg",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "main_list_collection_2_HhXLKe",
+    "product-grid",
+    "curated_spaces_xeGt7J",
+    "section_text_with_icon_column_XBbHQ8"
+  ]
+}

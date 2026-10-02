@@ -1,0 +1,332 @@
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-collection-list.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- if section.settings.layout_item == 'text-inside' -%}
+  <link rel="preload" href="{{ 'mint-magnolia.otf' | asset_url }}" as="font" type="font/woff2" crossorigin>
+{%- endif -%}
+
+<noscript>{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+
+<style>
+  .section-collection-list .grid__item {
+    padding: 1.7rem;
+  }
+  [data-section-id="{{ section.id }}"] {
+    background-color: {{ section.settings.background_color }};
+  }
+</style>
+
+<div class="section-outer section-collection-list section-collection-list-small" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.layout == 'grid' %}
+        <div class="grid mobile-2 desktop-one-sixth list-unstyled">
+    {% else %}
+
+      <slider-component class="collections-carousel-outer{% if section.blocks.size >= 7 %} slider-desktop-over{% endif %}{% if section.blocks.size > 4 %} slider-mobile-over{% endif %}">
+        <ul class="slider grid grid-nowrap">
+    {% endif %}
+
+    {% assign section_block = section.blocks %}
+    {% comment %} {% assign has_meta_collections = false %}
+    {% if collection.metafields.custom.sub_collections %}
+      {% assign has_meta_collections = true %}
+      {% assign section_block = collection.metafields.custom.sub_collections.value %}
+    {% elsif page.metafields.custom.sub_collections %}  
+      {% assign has_meta_collections = true %}
+      {% assign section_block = page.metafields.custom.sub_collections.value %}
+    {% endif %} {% endcomment %}
+
+    {%- for block in section_block -%}
+      {{ block.title }}
+      <li
+        class="grid__item carousel-cell collection-text-below{% if forloop.last %} grid__item--last{% elsif forloop.first %} grid__item--first{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {% assign override_url = block.settings.override_url %}
+        {% assign collection_block = block.settings.collection %}
+        {% assign collection_title = block.settings.collection_title %}
+        {% assign collection_image = block.settings.image %}
+        {% comment %} {% if has_meta_collections %}
+          {% assign override_url = block.url %}
+          {% assign collection_block = block.collection.value %}
+          {% assign collection_title = block.custom_title %}
+          {% assign collection_image = block.image %}
+        {% endif %} {% endcomment %}
+        <a
+          {% if override_url != blank %}
+            href="{{ override_url }}"
+          {% elsif collection_block != blank and collection_block.all_products_count > 0 %}
+            href="{{ collection_block.url }}"
+          {% endif %}
+          class="full-unstyled-link{% if block.settings.trigger_filter_click != blank %} trigger-filter-js{% endif %}"
+          style="aspect-ratio: {{ section.settings.image_ratio }}"
+          {% if block.settings.trigger_filter_click != blank %}
+            data-filter-trigger="{{ block.settings.trigger_filter_click | handle }}"
+          {% endif %}
+        >
+          {%- if collection_image != blank -%}
+            <img
+              srcset="
+                {%- if collection_image.width >= 375 -%}{{ collection_image | image_url: width: 375 }} 375w,{%- endif -%}
+                {%- if collection_image.width >= 750 -%}{{ collection_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if collection_image.width >= 1100 -%}{{ collection_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if collection_image.width >= 1500 -%}{{ collection_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if collection_image.width >= 1780 -%}{{ collection_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                {%- if collection_image.width >= 2000 -%}{{ collection_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                {%- if collection_image.width >= 3000 -%}{{ collection_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {%- if collection_image.width >= 3840 -%}{{ collection_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+              "
+              sizes="(min-width: 60em) 40vw, 90vw"
+              src="{{ collection_image | image_url: width: 530 }}"
+              loading="lazy"
+              alt="{{ collection_image.alt | escape }}"
+              width="{{ collection_image.width }}"
+              height="{{ collection_image.width | divided_by: collection_image.aspect_ratio }}"
+              style="aspect-ratio: {{ section.settings.image_ratio }}"
+            >
+          {%- elsif collection_block.featured_image != blank -%}
+            <img
+              srcset="
+                {%- if collection_block.featured_image.width >= 375 -%}{{ collection_block.featured_image | image_url: width: 375 }} 375w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 750 -%}{{ collection_block.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 1100 -%}{{ collection_block.featured_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 1500 -%}{{ collection_block.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 1780 -%}{{ collection_block.featured_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 2000 -%}{{ collection_block.featured_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 3000 -%}{{ collection_block.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {%- if collection_block.featured_image.width >= 3840 -%}{{ collection_block.featured_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+              "
+              sizes="(min-width: 60em) 40vw, 90vw"
+              src="{{ collection_block.featured_image | image_url: width: 530 }}"
+              loading="lazy"
+              alt="{{ collection_block.featured_image.alt | escape }}"
+              width="{{ collection_block.featured_image.width }}"
+              height="{{ collection_block.featured_image.width | divided_by: collection_block.featured_image.aspect_ratio }}"
+              style="aspect-ratio: {{ section.settings.image_ratio }}"
+            >
+          {%- else -%}
+            {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <span class="h3 collection-title body">
+            {% if collection_title != blank %}
+              {{ collection_title }}
+            {% else %}
+              {{ collection_block.title }}
+            {% endif %}
+          </span>
+        </a>
+        
+      </li>
+    {%- endfor -%}
+
+    {% if section.settings.layout == 'grid' %}
+      </div>
+    {% else %}
+      </ul>
+      <div class="slider-buttons no-js-hidden">
+        <button
+          type="button"
+          class="slider-button slider-button--prev"
+          name="previous"
+          aria-label="{{ 'accessibility.previous_slide' | t }}"
+        >
+          {% render 'icon-arrow-left' %}
+        </button>
+        <div class="visually-hidden slider-counter caption">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+          <span class="slider-counter--total">{{ section.blocks.size }}</span>
+        </div>
+        <button
+          type="button"
+          class="slider-button slider-button--next"
+          name="next"
+          aria-label="{{ 'accessibility.next_slide' | t }}"
+        >
+          {% render 'icon-arrow-right' %}
+        </button>
+      </div>
+      </slider-component>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    {% comment %} const banners = document.querySelectorAll('.trigger-filter-js');
+    const filterCollection = document.querySelector('facet-filters-form #FacetFiltersForm');
+
+    if (!banners && !filterCollection) return;
+    banners.forEach((banner) => {
+      banner.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tagValue = e.target.getAttribute('data-filter-trigger');
+        const inputTrigger = filterCollection.querySelector(`input[data-tag="${tagValue}"]`);
+        if (inputTrigger) {
+          inputTrigger.click();
+        }
+      });
+    }); {% endcomment %}
+
+    const banners = document.querySelectorAll('.trigger-filter-js');
+    const filterCollection = document.querySelector('facet-filters-form #FacetFiltersForm');
+
+    if (!banners.length || !filterCollection) {
+      console.warn('No banners or filter collection found');
+      return;
+    }
+
+    banners.forEach((banner) => {
+      banner.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tagValue = banner.getAttribute('data-filter-trigger');
+        console.log('Banner clicked with filter:', tagValue);
+        
+        const inputTrigger = filterCollection.querySelector(`input[data-tag="${tagValue}"]`);
+        if (inputTrigger) {
+          inputTrigger.click();
+        }
+      });
+    });
+
+    let debouncedOnSubmit = debounce((event) => {
+      banners.forEach((banner) => banner.classList.remove('active'));
+
+      let filterActives = filterCollection.querySelectorAll('input:checked');
+
+      filterActives.forEach((input) => {
+        let tagActive = input.getAttribute('data-tag');
+        banners.forEach((banner) => {
+          const tagValue = banner.getAttribute('data-filter-trigger');
+          if (tagActive == tagValue) {
+            banner.classList.add('active');
+          }
+        });
+      });
+    }, 800);
+
+    filterCollection.addEventListener('input', debouncedOnSubmit());
+
+    const observer = new MutationObserver(() => {
+      const newFilterCollection = document.querySelector('facet-filters-form #FacetFiltersForm');
+      if (newFilterCollection && !newFilterCollection.hasEventListener) {
+        newFilterCollection.addEventListener('change', debouncedOnSubmit);
+        newFilterCollection.hasEventListener = true;
+      }
+      const filterRemoves = newFilterCollection.querySelectorAll('facet-remove');
+      filterRemoves.forEach((removeBtn) => {
+        removeBtn.addEventListener('click', debouncedOnSubmit());
+      })
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Collection list small",
+  "tag": "section",
+  "class": "spaced-section collection-list-section",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color",
+      "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "1:1"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3"
+        },
+        {
+          "value": "9/16",
+          "label": "9:16"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "Featured Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Featured collections"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "label": "Collection title",
+          "id": "collection_title"
+        },
+        {
+          "type": "url",
+          "id": "override_url",
+          "label": "Override link URL (optional)",
+          "info": "If set, clicking this item will use this URL instead of the collection link."
+        },
+        {
+          "type": "text",
+          "id": "trigger_filter_click",
+          "label": "Trigger filter click",
+          "info": "Filter type: tag. Ex: 'color: pink'"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection list small",
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

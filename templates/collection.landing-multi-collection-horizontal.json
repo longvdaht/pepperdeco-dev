@@ -1,0 +1,284 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_page_title_xqVtqH": {
+      "type": "section-page-title",
+      "name": "Page Title",
+      "settings": {
+        "background_color": "#ffffff",
+        "color_text": "#242524",
+        "title": "Custom Beds",
+        "title_type": "type-2",
+        "description": "Design your perfect piece—select your silhouette, fabric, finish, and trim. Handcrafted in the USA and shipped in 6 weeks."
+      }
+    },
+    "main_list_collections_nL3Jjb": {
+      "type": "main-list-collections",
+      "blocks": {
+        "featured_collection_369NhG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "curtains-blues-and-greens",
+            "image": "shopify://shop_images/Frame_18_1.png",
+            "collection_title": "Beds",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_3HJeCd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sample-cafecurtains",
+            "image": "shopify://shop_images/Frame_16_1.png",
+            "collection_title": "Chairs",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_kAGUzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "fabric-chenillejacquard",
+            "image": "shopify://shop_images/Frame_15_1.png",
+            "collection_title": "Headboards",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        },
+        "featured_collection_ewUHzA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "best-sellers",
+            "image": "shopify://shop_images/Frame_17_1.png",
+            "collection_title": "Benches",
+            "override_url": "",
+            "trigger_filter_click": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_369NhG",
+        "featured_collection_3HJeCd",
+        "featured_collection_kAGUzw",
+        "featured_collection_ewUHzA"
+      ],
+      "name": "Collection List",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "layout": "slider",
+        "image_ratio": "3/4",
+        "layout_item": "text-inside"
+      }
+    },
+    "product-grid": {
+      "type": "main-multi-collections",
+      "blocks": {
+        "67897ccc-f572-4b32-ae92-393654a5de3d": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-furniture-beds",
+            "collection_title": "THEODORA",
+            "collection_description": "Choose from our signature silhouettes",
+            "button_text": "SHOP ALL"
+          }
+        },
+        "collection_6HwMjV": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "#f3f1ec",
+            "collection": "custom-furniture-beds",
+            "collection_title": "DELANEY",
+            "collection_description": "Choose from our signature silhouettes",
+            "button_text": "Shop all"
+          }
+        },
+        "collection_HbCMhE": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-furniture-beds",
+            "collection_title": "REGINA",
+            "collection_description": "Choose from our signature silhouettes",
+            "button_text": "Shop all"
+          }
+        },
+        "collection_n3R6Mh": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "#f3f1ec",
+            "collection": "custom-furniture-beds",
+            "collection_title": "JAMES",
+            "collection_description": "Choose from our signature silhouettes",
+            "button_text": "Shop all"
+          }
+        }
+      },
+      "block_order": [
+        "67897ccc-f572-4b32-ae92-393654a5de3d",
+        "collection_6HwMjV",
+        "collection_HbCMhE",
+        "collection_n3R6Mh"
+      ],
+      "settings": {
+        "collection_layout": "slider",
+        "product_limit": 9,
+        "product_limit_mobile": 8,
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_product_type": false,
+        "show_color_switch_option": true,
+        "enable_filtering": true,
+        "hide_color_filter": false,
+        "hide_material_filter": false,
+        "hide_type_filter": true,
+        "hide_fabric_filter": false,
+        "hide_trim_filter": false,
+        "hide_filter_silhouette": false,
+        "hide_kidscolor_filter": true,
+        "hide_pricing_filter": true,
+        "enable_grid_view_mobile": true,
+        "mobile_columns": "one-half",
+        "desktop_columns": "one-third",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "16331219115bcaaf78-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_18_5d237cf6-9358-4d18-844c-18e9d25fa310.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_17.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-3": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_153.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "two_image_AyGnyf": {
+          "type": "two_image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_19.png",
+            "heading": "",
+            "link": "",
+            "image_2": "shopify://shop_images/Frame_20.png"
+          }
+        },
+        "16331219115bcaaf78-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_21.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "16331219115bcaaf78-1",
+        "16331219115bcaaf78-0",
+        "16331219115bcaaf78-3",
+        "two_image_AyGnyf",
+        "16331219115bcaaf78-2"
+      ],
+      "settings": {
+        "apply_new_style": true,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Just Add Pepper",
+        "subheading": "Click to shop customer photos",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "section_text_with_icon_column_XBbHQ8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_7L6p3y": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Get Design Assistance",
+            "content": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing.",
+            "link_text": "EMAIL",
+            "link_url": ""
+          }
+        },
+        "column_9NGpgg": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_4.png",
+            "image_width": 140,
+            "title": "Order Fabric Swatches",
+            "content": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing.",
+            "link_text": "ORDER",
+            "link_url": ""
+          }
+        },
+        "column_BMdei7": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Trim_Measuring_Tape_copy_2.png",
+            "image_width": 140,
+            "title": "View Trim Options",
+            "content": "Lorem ipsum dolor sit amet,\nconsectetur adipiscing.",
+            "link_text": "VISIT",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_7L6p3y",
+        "column_9NGpgg",
+        "column_BMdei7"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "section_page_title_xqVtqH",
+    "main_list_collections_nL3Jjb",
+    "product-grid",
+    "16331219115bcaaf78",
+    "section_text_with_icon_column_XBbHQ8"
+  ]
+}

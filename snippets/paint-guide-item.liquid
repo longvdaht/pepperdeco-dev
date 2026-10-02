@@ -1,0 +1,71 @@
+{%- liquid
+  assign tag_class = ''
+  if item.tag_color.value
+    for color in item.tag_color.value
+      assign color_handle = color | handle
+      assign tag_class = tag_class | append: 'color-' | append: color_handle | append: ' '
+    endfor
+  endif
+  if item.tag_material.value
+    for material in item.tag_material.value
+      assign material_handle = material | handle
+      assign tag_class = tag_class | append: 'material-' | append: material_handle | append: ' '
+    endfor
+  endif
+  if item.tag_print.value
+    for print in item.tag_print.value
+      assign print_handle = print | handle
+      assign tag_class = tag_class | append: 'print-' | append: print_handle | append: ' '
+    endfor
+  endif 
+-%}
+
+<div class="grid__item paint-guide-swatch-item{% if tag_class != '' %} {{ tag_class }}{% endif %}">
+  {% if item.swatch_url.value.url %}
+    <a href="{{ item.swatch_url.value.url | default: '#' }}" title="{{ item.swatch_name }}" class="swatch-title">
+      {{ item.swatch_name }}
+    </a>
+  {% else %}
+    <span title="{{ item.swatch_name }}" class="swatch-title">
+      {{ item.swatch_name }}
+    </span>
+  {% endif %}
+  
+  <div class="paint-guide-swatch-item-wrapper">
+  {% if item.swatch_url.value.url %}
+    <a href="{{ item.swatch_url.value.url | default: '#' }}" title="{{ item.swatch_name }}" class="swatch-image">
+      <img src="{{ item.swatch_image | image_url: width: 700 }}" width="700" height="700"/> 
+    </a>
+  {% else %}
+    <div title="{{ item.swatch_name }}" class="swatch-image">
+      <img src="{{ item.swatch_image | image_url: width: 700 }}" width="700" height="700"/> 
+    </div>
+  {% endif %}
+  {% if item.paint_color %}
+    <div class="paint-guide-color-list">
+      {% for color in item.paint_color.value %}
+        <div class="color-item">
+          <div class="color-block" style="background-color: {{ color.color_hex }};{% if color.image_pattern != blank %}background-image: url({{ color.image_pattern | image_url: width: 220 }});{% endif %}">
+            color: {{ color.color_hex }}
+          </div>
+          <div class="color-content">
+            {% if color.color_link %}
+              <a href="{{ color.color_link | default: '#' }}" title="{{ color.color_name }}">
+            {% else %}
+              <div title="{{ color.color_name }}">
+            {% endif %}
+              <span class="color-title">{{ color.color_name }}</span>
+              <span class="color-brand">{{ color.color_brand }}</span>
+              <span class="color-code">{{ color.color_code }}</span>
+            {% if color.color_link %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  </div>
+</div>

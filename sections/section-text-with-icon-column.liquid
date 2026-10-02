@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="{{ 'section-text-with-icon-column.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-text-with-icon-column.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% if section.blocks.size > 0 %}
+  <div class="section-text-with-icon" data-section-id="{{ section.id }}" style="--background-color: {{ section.settings.background_color }}">
+    <div class="{% if section.settings.fullwidth %}page-fullwidth{% else %}page-width{% endif %}">
+      <div class="section-text-with-icon-wrapper column-grid-{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+          <div class="column-item">
+            {% if block.settings.icon != blank %}
+              <div class="image-wrapper">
+                <img src="{{ block.settings.icon | image_url: width: 300 }}" width="{{ block.settings.image_width }}" height="{{ block.settings.image_width }}">
+              </div>
+            {% endif %}
+            <div class="content-wrapper">
+              {% if block.settings.title != blank %}
+                <h4 class="title body">{{ block.settings.title }}</h4>
+              {% endif %}
+              {% if block.settings.content != blank %}
+                <p class="content">{{ block.settings.content }}</p>
+              {% endif %}
+              {% if block.settings.link_text != blank %}
+                <a href="{{ block.settings.link_url | default: '#' }}" title="{{ block.settings.link_text }}" class="link--text">{{ block.settings.link_text }}</a>
+              {% endif %}
+            </div>
+            {% unless forloop.last %}
+              <div class="svg-divided">
+                <svg width="1" class="icon-desktop" height="330" viewBox="0 0 1 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.5 0V330" stroke="#BEB9B1"/>
+                </svg>
+
+                {% comment %} <svg class="icon-mobile" width="290" height="4" viewBox="0 0 290 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.1624 2.27891C17.2828 2.24997 21.4137 2.26191 25.5342 2.25342C25.875 2.25272 26.2159 2.26565 26.5565 2.23086C26.6288 2.2239 26.7006 2.06015 26.7726 1.95776C42.6145 1.97284 58.4461 1.98794 74.2879 2.00302C114.037 2.04383 153.787 2.08463 193.526 2.11865C214.81 2.13615 236.094 2.15365 257.368 2.17117C262.602 1.56735 267.839 1.97237 273.085 1.90703C278.3 1.84175 283.516 1.89917 288.731 1.90206C288.875 1.90176 289.03 1.881 289.288 1.8532C289.288 1.65552 289.287 1.45784 289.287 1.26016C289.131 1.17186 288.987 1.09036 288.842 1.00205L288.842 1.22018C288.398 1.23472 287.996 1.26964 287.593 1.26365C263.149 1.24584 238.694 1.22806 214.249 1.21025C206.465 1.83978 198.666 1.39232 190.88 1.46289C183.073 1.53351 175.265 1.46779 167.458 1.46343C159.692 1.45898 151.926 1.45453 144.149 1.44328C136.342 1.43892 128.535 1.43455 120.727 1.42337C115.607 2.06104 110.473 1.60809 105.351 1.68681C100.177 1.76563 94.993 1.70133 89.819 1.69154C84.6761 1.6885 79.5332 1.67865 74.4006 1.67559C69.2576 1.67255 64.1147 1.66951 58.9821 1.66645C53.8082 1.66348 48.6239 1.66053 43.45 1.65755C38.3071 1.65451 33.1641 1.63784 28.0316 1.66205C27.6185 1.6629 27.1322 1.35716 26.7932 1.94408L3.19559 1.91771C2.79345 2.12304 2.39133 2.33518 1.99955 2.5473L12.1718 2.56043C12.4281 1.94641 12.8526 2.27955 13.183 2.27887L13.1624 2.27891Z" fill="#847865" stroke="#847865" stroke-miterlimit="10"/>
+                </svg> {% endcomment %}
+              </div>
+            {% endunless %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Text with icon column",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "Full width"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon" 
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "Desktop image width",
+          "default": 140,
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Text link",
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL",
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Text with icon column",
+  }]
+}
+{% endschema %}

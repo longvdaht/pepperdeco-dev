@@ -1,0 +1,848 @@
+<link rel="stylesheet" href="{{ 'section-product-guides.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-product-guides.css' | asset_url | stylesheet_tag }}</noscript>
+<script src="{{ 'product-guides.js' | asset_url }}" defer="defer"></script>
+
+<div class="section-color-{{ section.settings.color_scheme }} center">
+  <div class="page-width">
+    <div class="product-guide-top">
+      <h2 class="product-guide-title">{{ section.settings.section_heading }}</h2>
+      <div class="product-guide-des">
+        {{ section.settings.content }}
+      </div>
+    </div>
+    <div class="product-guide-main">
+      <div class="product-guide-sidebar">
+        <div class="guide-sidebar-label">Filter by:</div>
+        <ul class="guide-sidebar-nav">
+          {% assign count = 0 %}
+          {% for block in section.blocks %}
+            {% assign count = count | plus: 1 %}
+            <li>
+              <div class ="product-sidebar-item" data-sidebar="{{ count }}">{{ block.settings.title }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="product-guide-content">
+        {% assign count_tab = 0 %}
+        {% for block in section.blocks %}
+          {% assign count_tab = count_tab | plus: 1 %}
+          <div id="{{ count_tab }}" class="product-guide-items">
+            <h3 class="guide-item-title">{{ block.settings.title_content }}</h3>
+            {% if block.settings.article_1 != blank %}
+              {% assign article_image_1 = block.settings.cover_article_1 %}
+              {% assign page_url = block.settings.article_1 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_1 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_1 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_1.width }}"
+                        height="{{ article_image_1.width | divided_by: article_image_1.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_1 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_1 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_1 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_1.width }}"
+                          height="{{ article_image_1.width | divided_by: article_image_1.aspect_ratio }}">
+                      </div>
+                      
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_2 != blank  %}
+              {% assign article_image_2 = block.settings.cover_article_2 %}
+              {% assign page_url = block.settings.article_2 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                {% if article_object.image != blank %}
+                  {% assign article_image_2 = article_object.image %}
+                {% endif %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      <img src="{{ article_image_2 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_2.width }}"
+                        height="{{ article_image_2.width | divided_by: article_image_2.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_2 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_2 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_2 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_2.width }}"
+                          height="{{ article_image_2.width | divided_by: article_image_2.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_3 != blank  %}
+              {% assign article_image_3 = block.settings.cover_article_3 %}
+              {% assign page_url = block.settings.article_3 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_3 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_3 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_3.width }}"
+                        height="{{ article_image_3.width | divided_by: article_image_3.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_3 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_3 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_3 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_3.width }}"
+                          height="{{ article_image_3.width | divided_by: article_image_3.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_4 != blank  %}
+              {% assign article_image_4 = block.settings.cover_article_4 %}
+              {% assign page_url = block.settings.article_4 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_4 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_4 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_4.width }}"
+                        height="{{ article_image_4.width | divided_by: article_image_4.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_4 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_4 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_4 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_4.width }}"
+                          height="{{ article_image_4.width | divided_by: article_image_4.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_5 != blank  %}
+              {% assign article_image_5 = block.settings.cover_article_5 %}
+              {% assign page_url = block.settings.article_5 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_5 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_5 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_5.width }}"
+                        height="{{ article_image_5.width | divided_by: article_image_5.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_5 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_5 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_5 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_5.width }}"
+                          height="{{ article_image_5.width | divided_by: article_image_5.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_6 != blank %}
+              {% assign article_image_6 = block.settings.cover_article_6 %}
+              {% assign page_url = block.settings.article_6 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_6 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_6 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_6.width }}"
+                        height="{{ article_image_6.width | divided_by: article_image_6.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_6 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_6 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_6 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_6.width }}"
+                          height="{{ article_image_6.width | divided_by: article_image_6.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_7 != blank  %}
+              {% assign article_image_7 = block.settings.cover_article_7 %}
+              {% assign page_url = block.settings.article_7 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_7 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_7 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_7.width }}"
+                        height="{{ article_image_7.width | divided_by: article_image_7.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_7 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_7 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_7 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_7.width }}"
+                          height="{{ article_image_7.width | divided_by: article_image_7.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_8 != blank  %}
+              {% assign article_image_8 = block.settings.cover_article_8 %}
+              {% assign page_url = block.settings.article_8 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_8 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_8 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_8.width }}"
+                        height="{{ article_image_8.width | divided_by: article_image_8.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_8 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_8 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_8 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_8.width }}"
+                          height="{{ article_image_8.width | divided_by: article_image_8.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_9 != blank  %}
+              {% assign article_image_9 = block.settings.cover_article_9 %}
+              {% assign page_url = block.settings.article_9 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_9 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_9 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_9.width }}"
+                        height="{{ article_image_9.width | divided_by: article_image_9.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_9 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_9 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_9 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_9.width }}"
+                          height="{{ article_image_9.width | divided_by: article_image_9.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_10 != blank  %}
+              {% assign article_image_10 = block.settings.cover_article_10 %}
+              {% assign page_url = block.settings.article_10 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_10 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_10 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_10.width }}"
+                        height="{{ article_image_10.width | divided_by: article_image_10.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_10 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_10 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_10 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_10.width }}"
+                          height="{{ article_image_10.width | divided_by: article_image_10.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_11 != blank  %}
+              {% assign article_image_11 = block.settings.cover_article_11 %}
+              {% assign page_url = block.settings.article_11 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_11 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_11 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_11.width }}"
+                        height="{{ article_image_11.width | divided_by: article_image_11.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_11 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_11 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_11 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_11.width }}"
+                          height="{{ article_image_11.width | divided_by: article_image_11.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.article_12 != blank  %}
+              {% assign article_image_12 = block.settings.cover_article_12 %}
+              {% assign page_url = block.settings.article_12 %}
+              {% assign url_parts = page_url | split: '/' %}
+              {% if page_url contains 'blogs' %}
+                {% assign trimmed_url = page_url | remove: '/blogs/' %}
+                {% assign article_handle = trimmed_url %}
+                {% assign article_object = articles[article_handle] %}
+                <div class="product-guide-item">
+                  <a href="{{ article_object.url }}">
+                    <div class="product-guide-image">
+                      {% if article_object.image != blank %}
+                        {% assign article_image_12 = article_object.image %}
+                      {% endif %}
+                      <img src="{{ article_image_12 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                        width="{{ article_image_12.width }}"
+                        height="{{ article_image_12.width | divided_by: article_image_12.aspect_ratio }}">
+                    </div>
+                    {% if section.settings.show_item_title %}
+                      <div class="product-guide-name">{{ article_object.title }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% else %}
+                {% assign page_url = block.settings.article_12 %}
+                {% assign page_handle = page_url | split: '/' | last %}
+                {% assign page_object = pages[page_handle] %}
+                {% if page_object %}
+                  <div class="product-guide-item">
+                    <a href="{{ page_url }}">
+                      <div class="product-guide-image">
+                        {% if page_object.metafields.pages.featured_image.image != blank %}
+                          {% assign article_image_12 = page_object.metafields.pages.featured_image.image %}
+                        {% endif %}
+                        <img src="{{ article_image_12 | img_url: '600x' }}" alt="{{ article_object.title }}"
+                          width="{{ article_image_12.width }}"
+                          height="{{ article_image_12.width | divided_by: article_image_12.aspect_ratio }}">
+                      </div>
+                      {% if section.settings.show_item_title %}
+                        <div class="product-guide-name">{{ page_object.title }}</div>
+                      {% endif %}
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            <div class="product-guide-action"><a href="#" class="product-guide-item__see-all">
+                <span class="read-more more">{{ 'general.read_more_title' | t }}</span>
+                <span class="read-less less">{{ 'general.read_less_title' | t }}</span></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const tabTitles = document.querySelectorAll(".product-sidebar-item");
+    const tabContents = document.querySelectorAll(".product-guide-items");
+
+    tabTitles.forEach(function(title) {
+      title.addEventListener("click", function() {
+        const tabId = title.getAttribute("data-sidebar");
+
+        tabTitles.forEach(function(title) {
+          title.classList.remove("active");
+        });
+        title.classList.add("active");
+
+        tabContents.forEach(function(content) {
+          content.classList.remove("active");
+          if (content.getAttribute("id") === tabId) {
+            content.classList.add("active");
+          }
+        });
+      });
+    });
+
+    // Activate the first tab by default
+    if (tabTitles.length > 0) {
+      tabTitles[0].click();
+    }
+
+    const actionReadmores = document.querySelectorAll(".product-guide-action .product-guide-item__see-all");
+
+    actionReadmores.forEach(function(actionReadmore) {
+      var items = actionReadmore.closest(".product-guide-items").querySelectorAll(".product-guide-item");
+      if (items.length < 7) {
+        actionReadmore.classList.add("hidden");
+      }
+
+      actionReadmore.addEventListener("click", function(e) {
+       e.preventDefault();
+    
+        // Toggle the visibility of additional items
+        let guideItems = actionReadmore.closest(".product-guide-items");
+        guideItems.classList.toggle("show-all");
+    
+        // If it's now in "Read Less" mode (i.e., show-all class is removed)
+        if (!guideItems.classList.contains("show-all")) {
+          // Scroll smoothly to the top of the product guide section
+          guideItems.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product guides",
+  "tag": "section",
+  "class": "section-product-guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show guide item title",
+      "id": "show_item_title",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_guide_item",
+      "name": "Product guide item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Filter by item title"
+        },
+        {
+          "type": "text",
+          "id": "title_content",
+          "label": "Filter by item content title"
+        },
+        {
+          "type": "url",
+          "id": "article_1",
+          "label": "Article 1",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 1",
+          "id": "cover_article_1"
+        },
+        {
+          "type": "url",
+          "id": "article_2",
+          "label": "Article 2",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 2",
+          "id": "cover_article_2"
+        },
+        {
+          "type": "url",
+          "id": "article_3",
+          "label": "Article 3",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 3",
+          "id": "cover_article_3"
+        },
+        {
+          "type": "url",
+          "id": "article_4",
+          "label": "Article 4",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 4",
+          "id": "cover_article_4"
+        },
+        {
+          "type": "url",
+          "id": "article_5",
+          "label": "Article 5",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 5",
+          "id": "cover_article_5"
+        },
+        {
+          "type": "url",
+          "id": "article_6",
+          "label": "Article 6",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 6",
+          "id": "cover_article_6"
+        },
+        {
+          "type": "url",
+          "id": "article_7",
+          "label": "Article 7",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 7",
+          "id": "cover_article_7"
+        },
+        {
+          "type": "url",
+          "id": "article_8",
+          "label": "Article 8",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 8",
+          "id": "cover_article_8"
+        },
+        {
+          "type": "url",
+          "id": "article_9",
+          "label": "Article 9",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 9",
+          "id": "cover_article_9"
+        },
+        {
+          "type": "url",
+          "id": "article_10",
+          "label": "Article 10",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 10",
+          "id": "cover_article_10"
+        },
+        {
+          "type": "url",
+          "id": "article_11",
+          "label": "Article 11",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 11",
+          "id": "cover_article_11"
+        },
+        {
+          "type": "url",
+          "id": "article_12",
+          "label": "Article 12",
+          "info": "Enter the URL of the article or page you want to link to."
+        },
+        {
+          "type": "image_picker",
+          "label": "Cover article 12",
+          "id": "cover_article_12"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product guides"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,52 @@
+# we use Shopify as our ecommerce platform
+{%- comment -%}
+# Caution! Please read https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt before proceeding to make changes to this file.
+{% endcomment %}
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
+
+  {% for rule in group.rules %}
+    {{- rule -}}
+  {% endfor %}
+
+  {%- if group.sitemap != blank -%}
+    {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}
+
+
+# Shopify default robots.txt.liquid with custom disallow rule
+
+User-agent: *
+Disallow: /cart
+Disallow: /checkout
+Disallow: /orders
+Disallow: /account
+Disallow: /collections/*+*  # Prevents multiple tag filtering
+Disallow: /collections/*/type-*  # Blocks filtered pages like /type-fabric
+
+# Allow Shopify's search and collection filtering tools unless otherwise needed
+Allow: /collections/*
+
+# Allow OpenAI crawlers for ChatGPT/SearchGPT visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Allow other AI crawlers (optional)
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

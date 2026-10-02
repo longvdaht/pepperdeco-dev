@@ -1,0 +1,218 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .template-search__search {
+    margin: 0 auto;
+    max-width: 29.5rem;
+  }
+  .template-search.spaced-section {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+  .template-search__search .search {
+    margin-top: 3rem;
+  }
+
+  .template-search__search button {
+    padding: 1.5rem;
+  }
+
+  .template-search__results {
+    margin-top: 6rem;
+  }
+
+  .template-search__results .product-grid {
+    align-items: flex-start;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+  }
+  .template-search__results .product-grid > .grid__item {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  @media (min-width: 750px) {
+    .template-search__results .product-grid {
+      margin-left: -1.2rem;
+      margin-right: -1.2rem;
+    }
+    .template-search__results .product-grid > .grid__item {
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+  }
+
+  .template-search .type-page:not(:has(.media)) {
+    align-self: center !important;
+  }
+  .template-search--empty {
+    padding-bottom: 18rem;
+  }
+
+  .template-search .article-card,
+  .template-search .card-page {
+    padding: 1.4rem;
+  }
+
+  .search__button .icon {
+    height: 1.8rem;
+  }
+
+  @media (min-width: 40em) {
+    .template-search .type-page:not(:has(.card-text--only)) .card--text-only .h3 {
+      margin-bottom: 30%;
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (min-width: 75rem) {
+    .template-search__search {
+      max-width: 47.8rem;
+    }
+  }
+  .template-search__results .article-card__title,
+  .template-search__results .card-page h2.card__text.h3 {
+    font-family: var(--font-body-family);
+    font-size: 1.4rem;
+    font-weight: var(--font-body-weight);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  .template-search__results .card__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .template-search__results .card-information {
+    padding-bottom: 1.6rem;
+  }
+  @media (min-width: 40rem) {
+    .template-search__results .card-information {
+      padding-bottom: 2.4rem;
+    }
+    .template-search__results .desktop-one-quarter .grid__item {
+      width: 25%;
+    }
+  }
+</style>
+
+<div class="template-search spaced-section{% unless search.performed and search.results.size > 0 %} template-search--empty{% endunless %}">
+  <div class="page-width center">
+    {%- if search.performed -%}
+      <h1 class="h2">{{ 'templates.search.title' | t }}</h1>
+    {%- else -%}
+      <h1 class="h2">{{ 'general.search.search' | t }}</h1>
+    {%- endif -%}
+    <div class="template-search__search">
+      <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+          <div class="field">
+            <input
+              class="search__input field__input"
+              id="Search-In-Template"
+              type="search"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder="{{ 'general.search.search' | t }}"
+              {%- if settings.predictive_search_enabled -%}
+                role="combobox"
+                aria-expanded="false"
+                aria-owns="predictive-search-results-list"
+                aria-controls="predictive-search-results-list"
+                aria-haspopup="listbox"
+                aria-autocomplete="list"
+                autocorrect="off"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+              {%- endif -%}
+            >
+            <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+            <input name="options[prefix]" type="hidden" value="last">
+
+            <div class="predictive-search predictive-search--search-template" tabindex="-1" data-predictive-search>
+              <div class="predictive-search__loading-state">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  role="presentation"
+                  class="spinner"
+                  viewBox="0 0 66 66"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </div>
+
+            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+
+            <button
+              type="submit"
+              class="search__button field__button button-unstyled"
+              aria-label="{{ 'general.search.search' | t }}"
+            >
+              {%- render 'icon-search' -%}
+            </button>
+          </div>
+        </form>
+      </predictive-search>
+    </div>
+    {%- if search.performed -%}
+      <p class="element-margin visually-hidden" role="status">
+        {%- if search.results_count == 0 -%}
+          {{ 'templates.search.no_results' | t: terms: search.terms }}
+        {%- else -%}
+          {{ 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+  </div>
+  {%- if search.performed and search.results.size > 0 -%}
+    {% paginate search.results by 24 %}
+      <div class="template-search__results page-width  {{ search.results_count }}">
+        <ul class="grid mobile-one-half desktop-one-quarter list-unstyled product-grid" role="list">
+          {%- for item in search.results -%}
+            {%- if item.tags contains 'no search' -%}
+            {%- else -%}
+              {% if item.metafields.seo.hidden == 1 %}
+                {% continue %}
+              {% endif %}
+              <li class="grid__item center type-{{ item.object_type }}">
+                {%- case item.object_type -%}
+                  {%- when 'product' -%}
+                    {% render 'product-card',
+                      product: item,
+                      show_secondary_image: true
+                    %}
+                  {%- when 'article' -%}
+                    {% render 'article-card', article: item, mobile_per_row: 1, desktop_per_row: 4 %}
+                  {%- when 'page' -%}
+                    <a href="{{ item.url }}" class="card-wrapper full-unstyled-link">
+                      <div class="card card-page card--search card--soft{% if item.metafields.pages.featured_image == blank %} card--text-only{% else %}card--media{% endif %}">
+                        <div class="card-inner">
+                          {%- if item.metafields.pages.featured_image != blank -%}
+                            <div class="media media--square media--hover-effect media--transparent">
+                              {{ item.metafields.pages.featured_image | metafield_tag }}
+                              {% comment %} {{ image.metafields.pages.featured_image.value | image_tag }} {% endcomment %}
+                            </div>
+                          {%- endif -%}
+                          <div class="card__content">
+                            <h2 class="card__text h3">{{ item.title | truncate: 50 | escape }}</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                {%- endcase -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      </div>
+    {% endpaginate %}
+  {%- endif -%}
+</div>

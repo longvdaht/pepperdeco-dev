@@ -1,0 +1,252 @@
+{%- capture 'icon_up' -%}
+  <svg class="icon icon-chevron-down" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.3984 5.80078L7.99967 10.1997L3.60075 5.80078" stroke="#242524"/>
+  </svg>
+{%- endcapture -%}
+{%- capture 'icon_down' -%}
+  <svg class="icon icon-chevron-up" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.60156 10.1997L8.00033 5.80078L12.3993 10.1997" stroke="#242524"/>
+  </svg>
+{%- endcapture -%}
+<div class="product-details-collapse">
+  <details>
+    <summary>
+      <span class="product-details-title">
+        {{ 'products.product.details.details' | t }}
+      </span>
+      <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+    </summary>
+    <div class="details-content description rte">
+      {% assign product_details_metaobject = product.metafields.custom.product_details_metaobject %}
+        {% if product_details_metaobject %}
+          {% for detail in product_details_metaobject.value %}
+            {% if detail.product_details != blank %}
+              {{ detail.product_details | metafield_tag }}
+            {% endif %}
+            {% if detail.image != blank %}
+              <p>
+                <img src="{{ detail.image | image_url: width: 500, height: 500 }}" alt="{{ detail.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+    </div>
+  </details>
+
+  {% if product.metafields.custom.dimension != blank %}
+    <details>
+      <summary>
+        <span class="product-details-title">
+          {{ 'products.product.details.dimension' | t }}
+        </span>
+        <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+      </summary>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Guides }} {% endcomment %}
+        {% assign dimension_metaobject = product.metafields.custom.dimension %}
+        {% if dimension_metaobject %}
+          {% for dimension in dimension_metaobject.value %}
+            {% if dimension.details != blank %}
+              {{ dimension.details | metafield_tag }}
+            {% endif %}
+            {% if dimension.image != blank %}
+              <p>
+                <img src="{{ dimension.image | image_url: width: 500, height: 500 }}" alt="{{ dimension.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.measuring != blank %}
+    <details>
+      <summary>
+        <span class="product-details-title">
+          {{ 'products.product.details.measuring' | t }}
+        </span>
+        <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+      </summary>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Guides }} {% endcomment %}
+        {% assign measuring_metaobject = product.metafields.custom.measuring %}
+        {% if measuring_metaobject %}
+          {% for measuring in measuring_metaobject.value %}
+            {% if measuring.details != blank %}
+              {{ measuring.details | metafield_tag }}
+            {% endif %}
+            {% if measuring.image != blank %}
+              <p>
+                <img src="{{ measuring.image | image_url: width: 500, height: 500 }}" alt="{{ measuring.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.sizing != blank %}
+    <details>
+      <summary>
+        <span class="product-details-title">
+          {{ 'products.product.details.sizing' | t }}
+        </span>
+        <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+      </summary>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Guides }} {% endcomment %}
+        {% assign sizing_metaobject = product.metafields.custom.sizing %}
+        {% if sizing_metaobject %}
+          {% for sizing in sizing_metaobject.value %}
+            {% if sizing.details != blank %}
+              {{ sizing.details | metafield_tag }}
+            {% endif %}
+            {% if sizing.image != blank %}
+              <p>
+                <img src="{{ sizing.image | image_url: width: 500, height: 500 }}" alt="{{ sizing.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.helpful_guides_metaobject != blank %}
+    <details>
+      <summary>
+        <span class="product-details-title">
+          {% assign product_type = product.type | handle %}
+          {% if product_type != 'bed' %}
+            {{ 'products.product.details.care' | t }}
+          {% else %}
+            {{ 'products.product.details.assembly_care' | t }}
+          {% endif %}
+        </span>
+        <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+      </summary>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Guides }} {% endcomment %}
+        {% assign helpful_guides_metaobject = product.metafields.custom.helpful_guides_metaobject %}
+        {% if helpful_guides_metaobject %}
+          {% for guide in helpful_guides_metaobject.value %}
+            {% if guide.guide_details != blank %}
+              {{ guide.guide_details | metafield_tag }}
+            {% endif %}
+            {% if guide.image != blank %}
+              <p>
+                <img src="{{ guide.image | image_url: width: 500, height: 500 }}" alt="{{ guide.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.product_certifications_metaobject != blank %}
+    <details>
+      <summary>
+        <span class="product-details-title">
+          {{ 'products.product.details.certifications' | t }}
+        </span>
+        <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+      </summary>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Guides }} {% endcomment %}
+        {% assign product_certifications_metaobject = product.metafields.custom.product_certifications_metaobject %}
+        {% if product_certifications_metaobject %}
+          {% for certification in product_certifications_metaobject.value %}
+            {% if certification.details != blank %}
+              {{ certification.details | metafield_tag }}
+            {% endif %}
+            {% if certification.image != blank %}
+              <p>
+                <img src="{{ certification.image | image_url: width: 500, height: 500 }}" alt="{{ certification.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+  {% endif %}
+
+  {% if product.metafields.custom.shipping_returns_metaobject != blank %}
+    <details>
+      <summary>
+        <span class="product-details-title">
+          {{ 'products.product.details.shipping_return' | t }}
+        </span>
+        <span class="svg-wrapper">
+          <span class="icon-plus">
+            {{ icon_down }}
+          </span>
+          <span class="icon-minus">
+            {{ icon_up }}
+          </span>
+        </span>
+      </summary>
+      <div class="details-content rte">
+        {% comment %} {{ product.metafields.global.Shipping }} {% endcomment %}
+        {% assign shipping_returns_metaobject = product.metafields.custom.shipping_returns_metaobject %}
+        {% if shipping_returns_metaobject %}
+          {% for shipping in shipping_returns_metaobject.value %}
+            {% if shipping.shipping_details != blank %}
+              {{ shipping.shipping_details | metafield_tag }}
+            {% endif %}
+            {% if shipping.image != blank %}
+              <p>
+                <img src="{{ shipping.image | image_url: width: 500, height: 500 }}" alt="{{ shipping.image.alt | default: product.title }}" width="500" height="500"/> 
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </details>
+  {% endif %}
+
+</div>

@@ -1,0 +1,104 @@
+<div class="section-outer section-color-{{ section.settings.color_scheme }}">
+  <div class="page-width{% if section.settings.padded %} divider-padded-extra{% endif %}">
+    <div class="divider center divider-color-{{ section.settings.color }}">
+      {%- unless section.settings.simple -%}
+        <div class="media media--transparent media--contain" style="padding-bottom: 5%;">
+          <img
+            srcset="{{ 'divider.png' | asset_img_url: '375x' }} 375w, {{ 'divider.png' | asset_img_url: '750x' }} 750w"
+            sizes="(min-width: 40em) 300px, 150px"
+            src="{{ 'divider.png' | asset_img_url: '400x' }}"
+            loading="lazy"
+            alt="Squiggle page divider"
+            width="400"
+            height="49"
+          >
+        </div>
+      {%- else -%}
+        {%- if section.settings.color == 'grey' -%}
+          <div class="page-width">
+            <div class="border-top"></div>
+          </div>
+        {%- else -%}
+          <style>
+            .divider hr {
+              appearance: none;
+              border: 0;
+              border-bottom: 1px solid #E1DCD0;
+              padding: 0;
+              margin: 0 auto;
+              max-width: 40rem;
+            }
+            .divider {
+              padding-block: 0;
+            }
+          </style>
+          <hr>
+        {%- endif -%}
+      {%- endunless -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Divider",
+  "tag": "section",
+  "class": "section-divider",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color",
+      "label": "Divider color",
+      "options": [
+        {
+          "value": "dark-green",
+          "label": "Dark Green"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        },
+        {
+          "value": "grey",
+          "label": "Grey"
+        }
+      ],
+      "default": "dark-green"
+    },
+    {
+      "type": "checkbox",
+      "id": "simple",
+      "label": "Simple divider",
+      "default": false,
+      "info": "Create’s a line divider instead of a squiggle"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    },
+    {
+      "type": "checkbox",
+      "id": "padded",
+      "label": "Add extra mobile and desktop padding",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Divider"
+    }
+  ]
+}
+{% endschema %}

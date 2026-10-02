@@ -1,0 +1,14 @@
+{%- comment -%}
+  Size guide link shown inside a dimension accordion (Width, Length) on the
+  shower curtain PDP. Shower curtains have no calculator app, so this is the
+  counterpart of 'calculate-dimensions-link': the content comes from the
+  variant picker's "Content" richtext setting instead of opening the modal.
+
+  Accepts:
+  - block: the variant picker block holding the "Content" setting
+{%- endcomment -%}
+{%- if block.settings.text != blank -%}
+  <div class="rte product-form__text calculator-curtain-text">
+    {{ block.settings.text | replace: '<a ', '<a target="_blank" rel="noopener" ' }}
+  </div>
+{%- endif -%}

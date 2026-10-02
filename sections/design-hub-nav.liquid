@@ -1,0 +1,130 @@
+{{ 'section-design-hub-content.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="{{ 'section-image-content.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-image-content.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- capture nav_order -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'nav' -%}
+    <option value="{{ block.settings.type }}">{{ block.settings.type }}</option>
+  {%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+
+<div class="section-hub-nav section-color-{{ section.settings.nav_color_scheme }}">
+  <div class="grid center">
+    <div class="grid__item mobile-one desktop-one">
+      <h2>
+        {{ section.settings.nav_intro }}
+        {%- if nav_order != blank -%}
+          <div class="section-design-hub-select">
+            <select name="hub-nav" id="hub-nav" class="h2">
+              {{ nav_order }}
+            </select>
+            {% render 'icon-arrow-right' %}
+          </div>
+        {%- endif -%}
+      </h2>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  const hubNav = document.querySelector('#hub-nav');
+  const hash = window.location.hash;
+  const hubSections = document.querySelectorAll('.section-hub-content');
+
+  const changeSections = (type = 'curtains') => {
+    hubSections.forEach((section) => {
+      if (!section.classList.contains(`section-hub-${type}`)) {
+        section.classList.add('visually-hidden');
+      } else {
+        section.classList.remove('visually-hidden');
+      }
+    });
+  };
+
+  if (hash) {
+    hubNav.value = hash.replace('#', '');
+    window.scrollTo({ top: hubNav.offsetTop });
+    changeSections(hash.replace('#', ''));
+  } else {
+    changeSections();
+  }
+
+  hubNav.addEventListener('change', function (e) {
+    e.preventDefault();
+    window.location.hash = e.currentTarget.value;
+    changeSections(e.currentTarget.value);
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Design hub content",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "nav_intro",
+      "label": "Nav intro",
+      "default": "Get help with"
+    },
+    {
+      "type": "select",
+      "id": "nav_color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "background-dark",
+          "label": "Tertiary"
+        }
+      ],
+      "default": "background-dark"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nav",
+      "name": "Navigation block",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "select",
+          "id": "type",
+          "label": "Section",
+          "options": [
+            {
+              "value": "curtains",
+              "label": "Curtains"
+            },
+            {
+              "value": "pillows",
+              "label": "Pillows"
+            },
+            {
+              "value": "wallpaper",
+              "label": "Wallpaper"
+            }
+          ],
+          "default": "curtains"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Design hub content"
+    }
+  ]
+}
+{% endschema %}

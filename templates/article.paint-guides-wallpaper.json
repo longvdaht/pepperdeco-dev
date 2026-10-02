@@ -1,0 +1,154 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "section_feature_image_jgdGeB": {
+      "type": "section-feature-image",
+      "name": "Hero image",
+      "settings": {
+        "image": "shopify://shop_images/Group_15.png",
+        "height": "nature",
+        "logo_desktop": "shopify://shop_images/The_Thread_1.png",
+        "logo_width": "40%",
+        "image_mobile": "shopify://shop_images/Group_121.png",
+        "height_mobile": "nature",
+        "logo_width_mobile": "221px"
+      }
+    },
+    "main_blog_search_VeNQgK": {
+      "type": "main-blog-search",
+      "name": "Blog search",
+      "settings": {
+        "menu_desktop": "blog-menu-desktop",
+        "show_search": true
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "298e62f3-08e3-4b65-bf49-8b8e18fd1d32": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false,
+            "blog_show_tags": true
+          }
+        },
+        "7ce2e013-0c7e-4dff-838f-2e3111873978": {
+          "type": "content",
+          "settings": {}
+        },
+        "blog_grid_image_LGHKiJ": {
+          "type": "blog_grid_image",
+          "settings": {}
+        },
+        "d04d3862-82c8-4119-92b3-ab6cd351af00": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "blog_swatches_6cVTFy": {
+          "type": "blog_swatches",
+          "settings": {
+            "filter_swatch": "neutral[#ebe5db], green[#969e79], blue[#97aebe], purple[#dcd0e2], pink[#d4b3b1], red[#814844], orange[#dfab83], yellow[#e9d88b]",
+            "filter_material": "clay coated, removable, grasscloth, performance",
+            "filter_print": "patterns, solid"
+          }
+        }
+      },
+      "block_order": [
+        "298e62f3-08e3-4b65-bf49-8b8e18fd1d32",
+        "7ce2e013-0c7e-4dff-838f-2e3111873978",
+        "blog_grid_image_LGHKiJ",
+        "d04d3862-82c8-4119-92b3-ab6cd351af00",
+        "blog_swatches_6cVTFy"
+      ],
+      "settings": {
+        "show_tags": false
+      }
+    },
+    "section_product_carousel_VdYejc": {
+      "type": "section-product-carousel",
+      "blocks": {
+        "product_DKRW8t": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "fabric-printedcotton-annabelle-peacock"
+          }
+        },
+        "product_Xrkyk3": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "curtain-printedcotton-annabelle-peacock-custom"
+          }
+        },
+        "product_chEiCj": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "pillow-printedcotton-annabelle-peacock-custom"
+          }
+        },
+        "product_66p6eq": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "cafecurtain-printedcotton-annabelle-peacock-custom"
+          }
+        },
+        "product_nVLNDa": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "wallpaper-claycoated-annabelle-peacock"
+          }
+        }
+      },
+      "block_order": [
+        "product_DKRW8t",
+        "product_Xrkyk3",
+        "product_chEiCj",
+        "product_66p6eq",
+        "product_nVLNDa"
+      ],
+      "name": "Product carousel",
+      "settings": {
+        "color_scheme": "background-secondary",
+        "heading": "Shop the Post",
+        "word_image": "shopify://shop_images/PH-The.png",
+        "product_list": "{{ article.metafields.custom.product_list.value }}"
+      }
+    },
+    "section_featured_blog_mz7RJt": {
+      "type": "section-featured-blog",
+      "name": "Featured blog",
+      "settings": {
+        "heading": "Related Posts",
+        "desktop_per_row": 3,
+        "mobile_per_row": 2,
+        "show_tags": true,
+        "show_date": false,
+        "use_metafields": true,
+        "color_scheme": "background-primary"
+      }
+    }
+  },
+  "order": [
+    "section_feature_image_jgdGeB",
+    "main_blog_search_VeNQgK",
+    "main",
+    "section_product_carousel_VdYejc",
+    "section_featured_blog_mz7RJt"
+  ]
+}

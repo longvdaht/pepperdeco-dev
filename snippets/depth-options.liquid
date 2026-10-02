@@ -1,0 +1,44 @@
+<div class="product-form__input product-form__input-depth">
+  <option-dropdown data-dropdown-key="depth">
+    <button type="button" data-dropdown-trigger aria-expanded="false">
+      <legend class="form__label">
+        {{ 'products.product.depth.label' | t }}: 
+        <span id="option-depth-legend">
+          {% comment %} {{ 'products.product.depth.option_3_5' | t }} {% endcomment %}
+          <span class="option-not-selected">{{ 'products.product.select_depth' | t }}</span>
+        </span>
+      </legend>
+      {% render 'icon-chevron-up' %}
+      {% render 'icon-chevron-down-pdp' %}
+    </button>
+    <div data-dropdown-panel>
+      <input
+        type="radio"
+        id="{{ section.id }}-depth-3.5"
+        required
+        name="properties[Depth]"
+        value="{{ 'products.product.depth.option_3_5' | t }}"
+        form="product-form-{{ section.id }}"
+        class="required input-depth"
+        inputmode="numeric"
+      >
+      <label for="{{ section.id }}-depth-3.5" class="depth-radio depth-first">
+        {{ 'products.product.depth.option_3_5' | t }}
+      </label>
+
+      <input
+        type="radio"
+        id="{{ section.id }}-depth-5.5"
+        required
+        name="properties[Depth]"
+        value="{{ 'products.product.depth.option_5_5' | t }}"
+        form="product-form-{{ section.id }}"
+        class="required input-depth"
+      >
+      <label for="{{ section.id }}-depth-5.5" class="depth-radio depth-second">
+        {{ 'products.product.depth.option_5_5' | t }}
+      </label>
+      {% render 'calculate-dimensions-link', block: block %}
+    </div>
+  </option-dropdown>
+</div>

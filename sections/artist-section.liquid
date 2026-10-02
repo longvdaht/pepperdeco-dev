@@ -1,0 +1,221 @@
+{%- assign grid_mobile_column = 'one' -%}
+{%- assign grid_desktop_column = 'one-half' -%}
+
+{% assign artist = product.metafields.custom.artist_section.value %}
+{% if artist %}
+<link rel="stylesheet" href="{{ 'section-image-content.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-artist.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-image-content.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'section-artist.css' | asset_url | stylesheet_tag }}</noscript>
+
+<style>
+  .section-{{ section.id }}.section-color-background {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .section-{{ section.id }} .desktop-one-half .grid__item.media--type-image {
+    flex-grow: 1;
+  }
+
+  .section-{{ section.id }} .desktop-one-half .grid__item.has-background-image {
+    flex-grow: 1;
+  }
+
+  @media (min-width: 60em) {
+    .section-{{ section.id }} .desktop-one-half .grid__item.media--type-image {
+      flex: 0 0 60%;
+    }
+
+    .section-{{ section.id }} .desktop-one-half .grid__item.has-background-image {
+      flex: 0 0 40%;
+    }
+
+    .section-{{ section.id }} .desktop-one-half .grid__item.media--type-image.has-video {
+      flex: 0 0 50%;
+    }
+  }
+</style>
+
+  <div class="section-outer section-{{ section.id }} section-artist {% if section.settings.section_full_width == "no" %} section-image-content {% else %}section-image-content-full-w{% endif %} section-color-background center">
+    <div class="{% if section.settings.section_full_width == "no" %} page-width {% else %} full-width {% endif %}">
+      <div class="grid mobile-{{ grid_mobile_column }} desktop-{{ grid_desktop_column }}">
+        <div class="grid__item has-background-image">
+          <div class="section-content {{ section.settings.text_alignment }}">
+            {%- if section.settings.graphic_heading -%}
+              <div class="image-heading">
+                <img src="{{ section.settings.graphic_heading | img_url: 'master' }}" alt="{{ section.settings.graphic_heading }}">
+              </div>
+            {%- endif -%}
+            {%- if artist.artist_name != blank -%}
+              <h2 class="h2 section-heading artist-heading">
+                {% render 'no-widows', content: artist.artist_name.value %}
+              </h2>
+            {%- endif -%}
+            {%- if artist.description != blank -%}
+              <div class="rte artist-description">
+                {{ artist.description | metafield_tag }}
+              </div>
+            {%- endif -%}
+            {% if artist.button_link != blank %}
+              <a href="{{ artist.button_link.value }}" class="button button--secondary artist-button">{% if section.settings.icon_show == 'yes' %}<span>{% render 'icon-email' %}</span>{% endif %} {{ artist.button_text.value }}</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="grid__item mobile-align-{{ section.settings.mobile_alignment }} desktop-align-{{ section.settings.desktop_alignment }} media--type-image{% if artist.video != blank %} has-video{% endif %}">
+          {% if artist.video != blank %}
+            <div class="media--type-video">
+              <div class="media media--square">
+                <video class="lazy" 
+                  height="{{ artist.video.value.sources[1].height }}" 
+                  width="{{ artist.video.value.sources[1].width }}" 
+                  id="video-{{ section.id }}" playsinline controls loop autoplay muted preload="metadata">
+                    <source data-src="{{ artist.video.value.sources[1].url }}">
+                </video>
+              </div>
+            </div>
+          {% elsif artist.featured_image != blank %}
+              <div
+                class="media"
+                style="padding-bottom: 100%;"
+              >
+                <img
+                  src="{{ artist.featured_image.value | image_url: width: 800 }}" width="{{ artist.featured_image.width }}" height="{{ artist.featured_image.height }}"
+                  loading="lazy"
+                >
+              </div>
+          {% elsif request.design_mode %}
+            {{ 'collection-6' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if artist.video != blank %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lazyVideos = [].slice.call(document.querySelectorAll(".section-artist video.lazy"));
+
+        if ("IntersectionObserver" in window) {
+          var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (video) {
+              if (video.isIntersecting) {
+                for (var source in video.target.children) {
+                  var videoSource = video.target.children[source];
+                  if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                    videoSource.src = videoSource.dataset.src;
+                  }
+                }
+
+                video.target.load();
+                video.target.classList.remove("lazy");
+                lazyVideoObserver.unobserve(video.target);
+                video.target.play();
+              }
+            });
+          });
+
+          lazyVideos.forEach(function (lazyVideo) {
+            lazyVideoObserver.observe(lazyVideo);
+          });
+        }
+      });
+    </script>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Artist section",
+  "tag": "section",
+  "class": "spaced-section section-image-content-wrapper artist-section-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_full_width",
+      "label": "Is the section full width?",
+      "options": [
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "yes",
+          "label": "Yes"
+        }
+      ],
+      "default": "no"
+    },
+    {
+      "type": "image_picker",
+      "id": "graphic_heading",
+      "label": "Graphic heading",
+      "info": "Select a graphic heading to display above the artist name"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "desktop_alignment",
+      "label": "Desktop image alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "mobile_alignment",
+      "label": "Mobile image order",
+      "options": [
+        {
+          "value": "first",
+          "label": "First"
+        },
+        {
+          "value": "last",
+          "label": "Last"
+        }
+      ],
+      "default": "first"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#F3F1EC"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Artist section"
+    }
+  ]
+}
+{% endschema %}

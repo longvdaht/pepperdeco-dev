@@ -1,0 +1,404 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-valance",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_LTpFhN": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_wktAgE": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": "<p>LOOKING FOR MORE OPTIONS? We’ve got you covered with custom colorways—any pattern, any ground. Email <a href=\"mailto:HELLO@PEPPER-HOME.COM\" target=\"_blank\" title=\"mailto:HELLO@PEPPER-HOME.COM\">hello@pepper-home.com</a> to place your order<br/><br/></p>"
+          }
+        },
+        "switch_option_type_jkHVD4": {
+          "type": "switch_option_type",
+          "settings": {}
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_calculator": true,
+            "content": ""
+          }
+        },
+        "curtain_calculator_eJXCG7": {
+          "type": "curtain_calculator",
+          "disabled": true,
+          "settings": {
+            "content": "Not sure how much you need?"
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "quick_add_T867Lw": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03",
+        "description_LTpFhN",
+        "switch_option_color_wktAgE",
+        "switch_option_type_jkHVD4",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "curtain_calculator_eJXCG7",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "quick_add_T867Lw",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "show_buttons_mobile": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "Pre-order, ETA 10/16",
+        "pompom_trims": "Camel Velvet Band,Sky Velvet Band"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Perfect Pairs",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "product_additional_G7xGem": {
+      "type": "product-additional",
+      "blocks": {
+        "tab_dgfGyi": {
+          "type": "tab",
+          "settings": {
+            "heading": "Classic",
+            "image_content_width": 126,
+            "content": "<p>E7E2D8</p>",
+            "image_1": "shopify://shop_images/Valance-Scalloped-Vivienne.png"
+          }
+        }
+      },
+      "block_order": [
+        "tab_dgfGyi"
+      ],
+      "disabled": true,
+      "name": "Additional Product Info",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "color_scheme": "background-secondary",
+        "bg_color": "",
+        "tab_style": "only-text",
+        "show_dots": true,
+        "show_buttons": false
+      }
+    },
+    "section_construction_options_pDXrj8": {
+      "type": "section-construction-options",
+      "disabled": true,
+      "name": "Construction options",
+      "settings": {
+        "background_color": "",
+        "heading": "Construction Options",
+        "subheading": "",
+        "subheading_width": "400",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "two_column_features_mDrRA9": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_mDPWiY": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1_81ec19f5-b219-4fc2-b40d-634522111bbc.png",
+            "title": "Made Just for You",
+            "description": "Your piece doesn’t exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_wmedfV": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-1_a65311f6-3764-48cf-a11a-d32a6628d9da.jpg",
+            "title": "Sustainable by Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_mDPWiY",
+        "feature_column_wmedfV"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_6cg4p3": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_Ppjje4": {
+          "type": "slide",
+          "settings": {
+            "product": ""
+          }
+        },
+        "slide_i9Uy9L": {
+          "type": "slide",
+          "settings": {
+            "product": ""
+          }
+        },
+        "slide_Ydxezm": {
+          "type": "slide",
+          "settings": {
+            "product": ""
+          }
+        },
+        "slide_DEi7Jq": {
+          "type": "slide",
+          "settings": {
+            "product": ""
+          }
+        },
+        "slide_DBQmAb": {
+          "type": "slide",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_Ppjje4",
+        "slide_i9Uy9L",
+        "slide_Ydxezm",
+        "slide_DEi7Jq",
+        "slide_DBQmAb"
+      ],
+      "disabled": true,
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Real Customers. Curated Spaces.",
+        "subheading": "See how our customers pepperd their homes.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "c166d93d-961e-4693-ac9e-2391913f984b": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "c166d93d-961e-4693-ac9e-2391913f984b"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_kp7TmE": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_7pbjcq": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_7pbjcq"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_UMprfc": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_cEykL8": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_YeRW9z": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_TqCJmi": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_mHwMcX": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5_png.png",
+            "image_width": 140,
+            "title": "Find Your Fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_YeRW9z",
+        "column_TqCJmi",
+        "column_mHwMcX"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "product_additional_G7xGem",
+    "section_construction_options_pDXrj8",
+    "two_column_features_mDrRA9",
+    "curated_spaces_6cg4p3",
+    "1633988363790b2161",
+    "163398841244446eb7",
+    "app_review_kp7TmE",
+    "recently_viewed_products_UMprfc",
+    "section_text_with_icon_column_cEykL8"
+  ]
+}

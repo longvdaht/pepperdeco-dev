@@ -1,0 +1,47 @@
+<div class="field--show-floating-label buyer_accepts_policy visually-hidden" id="buyer_accepts_policy">
+  <div class="checkbox-wrapper">
+    <div class="checkbox__input">
+      <input name="checkout[attributes][buyer_accepts_policy]" type="hidden" value="0" autocomplete="off"
+      ><input
+        class="input-checkbox"
+        data-backup="buyer_accepts_policy"
+        type="checkbox"
+        value="1"
+        name="checkout[attributes][buyer_accepts_policy]"
+        id="checkout_buyer_accepts_policy"
+      >
+    </div>
+    <label class="checkbox__label" for="checkout_buyer_accepts_policy">
+      {{- 'shopify.checkout.terms_checkbox_label_html' | t -}}
+    </label>
+  </div>
+  <p class="error-message" id="checkout_buyer_accepts_policy_error"></p>
+</div>
+
+<div
+  class="field--show-floating-label buyer_signature_optout{% if checkout.subtotal_price < 55000 %} visually-hidden{% endif %}"
+  id="buyer_signature_optout"
+  data-subtotal="{{ checkout.subtotal_price }}"
+>
+  <div class="checkbox-wrapper">
+    <div class="checkbox__input">
+      <input name="checkout[attributes][buyer_signature_optout]" type="hidden" value="0" autocomplete="off"
+      ><input
+        class="input-checkbox"
+        data-backup="buyer_signature_optout"
+        type="checkbox"
+        value="1"
+        name="checkout[attributes][buyer_signature_optout]"
+        id="checkout_buyer_signature_optout"
+      >
+    </div>
+    <label class="checkbox__label" for="checkout_buyer_signature_optout">
+      {{- 'shopify.checkout.signature_optout_label' | t -}}
+    </label>
+  </div>
+  <p class="error-message" id="checkout_signature_optout_error"></p>
+</div>
+
+{% for attribute in checkout.attributes %}
+  <input type="hidden" name="checkout[attributes][{{ attribute.first }}]" value="{{ attribute.last }}">
+{% endfor %}

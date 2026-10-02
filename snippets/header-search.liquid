@@ -1,0 +1,137 @@
+{% comment %}
+  Renders a header search modal. Should be used with 'header.liquid'
+
+  Accepts:
+  - input_id: {String} Id for the search input element (required)
+
+  Usage:
+  {% render 'header-search', input_id: 'My-Id'%}
+{% endcomment %}
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+
+<details-modal class="header__search">
+  <details>
+    <summary
+      class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
+      aria-haspopup="dialog"
+      aria-label="{{ 'general.search.search' | t }}"
+    >
+      <span class="search-icon">
+        {%- render 'icon-search' -%}
+      </span>
+      <span class="header-list-text text-search">{{ 'general.search.search' | t }}</span>
+    </summary>
+    <div
+      class="search-modal modal__content gradient"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ 'general.search.search' | t }}"
+    >
+      <div class="modal-overlay"></div>
+      <div
+        class="page-width search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}"
+        tabindex="-1"
+      >
+        <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+            <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+            <div class="field">
+                <input
+                class="search__input field__input"
+                id="{{ input_id }}"
+                type="search"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="{{ 'general.search.search' | t }}"
+                role="combobox"
+                aria-expanded="false"
+                aria-owns="predictive-search-results"
+                aria-controls="predictive-search-results"
+                aria-haspopup="listbox"
+                aria-autocomplete="list"
+                autocorrect="off"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                >
+                <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+                <input type="hidden" name="options[prefix]" value="last">
+                <button
+                type="reset"
+                class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+                aria-label="{{ 'templates.search.reset' | t }}"
+                >
+                    <span>{{ 'templates.search.reset' | t }}</span>
+                </button>
+                <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                    <use href="#icon-search">
+                </svg>
+                </button>
+            </div>
+
+            <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+
+            </div>
+
+            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+            </form>
+        </predictive-search>
+        <div class="predictive-search predictive-search--empty" data-popular-searches="">
+            <div class="wrapper page-width">
+                <div class="predictive-search__layout">
+                    <div class="predictive-search__column popular-search">
+                        <p class="predictive-search__heading">{{- 'templates.search.popular_searches' | t -}}</p>
+                        <div class="predictive-search__group">
+                            {% for link in linklists[settings.search_menu].links %}
+                                <div class="predictive-search__item">
+                                    <a class="predictive-search__link" href="{{ link.url }}">{{ link.title }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="predictive-search__column popular-products">
+                        <p class="predictive-search__heading">{{- 'templates.search.popular_products' | t -}}</p>
+                        <div class="predictive-search__group">
+                            <div class="predictive-search__products__list grid-outer">
+                                <div class="grid">
+                                    {% assign featured_products = settings.search_featured_products | parse_json %}
+                                    {% assign skip_card_product_styles = false %}
+                                    {% for product in featured_products %}
+                                        {% if product.metafields.seo.hidden == 1 %}
+                                            {% continue %}
+                                        {% endif %}
+                                        {% assign product_handle = product.handle %}
+                                        {% assign product_obj = all_products[product_handle] %}
+
+                                        {% if product_obj %}
+                                            {% render 'card-product',
+                                                card_product: product,
+                                                lazy_load: lazy_load,
+                                                skip_styles: skip_card_product_styles,
+                                                section_id: section.id,
+                                                show_product_type: false,
+                                                show_price: true,
+                                                show_color_switch_option: true
+                                            %}
+                                        {%- assign skip_card_product_styles = true -%}
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button
+          type="button"
+          class="search-modal__close-button modal__close-button link link--text focus-inset"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+            {%- render 'icon-close' -%}
+        </button>
+      </div>
+    </div>
+  </details>
+</details-modal>

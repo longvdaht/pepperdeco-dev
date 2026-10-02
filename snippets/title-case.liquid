@@ -1,0 +1,16 @@
+{% comment %}
+  Title case a string of text.
+  Usage: {% include 'title-case' string: 'my string' %}
+{% endcomment %}
+
+{%- capture str -%}{%- endcapture -%}
+{%- assign small_words = 'a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs|vs.|via|with' | split: '|' -%}
+{%- assign string_parts = string | split: ' ' -%}
+{%- for p in string_parts -%}
+  {%- assign is_small = false -%}
+  {%- for s in small_words -%}
+    {% if p == s %}{%- assign is_small = true -%}{% endif %}
+  {%- endfor -%}
+  {%- capture str %}{% unless forloop.first %}{{ str }} {% endunless %}{% if is_small %}{{ p }}{% else %}{{ p | capitalize }}{% endif %}{% endcapture -%}
+{%- endfor -%}
+{{- str -}}

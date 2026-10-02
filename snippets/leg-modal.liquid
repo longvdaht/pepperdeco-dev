@@ -1,0 +1,56 @@
+<details-modal id="legModal" class="product__modal mount-modal wood-finish" {{ block.shopify_attributes }}>
+  <details>
+  <summary
+    class="modal__toggle"
+    aria-haspopup="dialog"
+    aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+  >
+    <span class="option-link">?</span>
+  </summary>
+  <div
+      class="product-modal modal__content"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+  >
+      <div class="modal-overlay"></div>
+      <div class="product-modal__content" tabindex="-1">
+      <div id="mount-modal-content" class="mount-modal-content">
+        <div class="product-modal__content--heading">{{ 'products.product.wood_finishes' | t }}:</div>
+        <div class="mount-modal-content-wrapper wood-finishes-wrapper">
+          {% assign wood_finishes = product.metafields.custom.leg_options.value %}
+          {% if wood_finishes %}
+            {% for finish in wood_finishes %}
+              <div class="mount-inside mount-item wood-finish-item">
+                <div class="mount-item-wrapper">
+                  <div class="mount-image">
+                    {% if finish.wood_image %}
+                      <img
+                        src="{{ finish.wood_image | image_url: width: 300 }}"
+                        alt="{{ finish.name | escape }}"
+                        width="150"
+                        height="150"
+                        loading="lazy"
+                      >
+                    {% endif %}
+                  </div>
+                  <div class="mount-content">
+                    <span class="mount-title">{{ finish.name }}</span>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <button
+            type="button"
+            class="modal__close-button link button-unstyled focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+        >
+            {%- render 'icon-close' -%}
+        </button>
+      </div>
+    </div>
+  </div>
+  </details>
+</details-modal>

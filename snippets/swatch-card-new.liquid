@@ -1,0 +1,161 @@
+{% comment %}
+  Renders a swatch card
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: true (optional)
+  - show_price: {Boolean} Show the price on the card. Default: false (optional)
+  Usage:
+  {% render 'swatch-card', product: product, show_secondary_image: section.settings.show_secondary_image %}
+{% endcomment %}
+
+<div class="card-wrapper swatch-card-wrapper">
+  {% if product.has_only_default_variant
+    and product.type != 'Wallpaper'
+    and product.metafields.pepper.child_products.value == blank
+  %}
+    <button
+      class="card-button"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    >
+  {% endif %}
+  <span class="visually-hidden">{{ product.title | escape }}</span>
+  <div class="card card-product" tabindex="-1">
+    <div class="card-inner">
+      {%- if product.featured_media -%}
+        <div
+          class="media media--square media--hover-effect show-on-tablet"
+        >
+          <img
+            srcset="
+              {%- if product.featured_media.width >= 165 -%}{{ product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+              {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+              {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | image_url: width: 1066 }} 1066w{%- endif -%}
+            "
+            src="{{ product.featured_media | image_url: width: 350 }}"
+            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | divided_by: 3 }}px, (min-width: 990px) calc(100vw / 3), (min-width: 750px) calc(100vw / 3), 95vw"
+            alt="{{ product.featured_media.alt | escape }}"
+            loading="lazy"
+            class="motion-reduce"
+            width="{{ product.featured_media.width }}"
+            height="{{ product.featured_media.height }}"
+            data-product-image="{{ product.selected_or_first_available_variant.id }}"
+          >
+          {%- if product.media[1] != null and show_secondary_image -%}
+            <img
+              srcset="
+                {%- if product.media[1].width >= 165 -%}{{ product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if product.media[1].width >= 360 -%}{{ product.media[1] | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if product.media[1].width >= 533 -%}{{ product.media[1] | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if product.media[1].width >= 720 -%}{{ product.media[1] | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if product.media[1].width >= 940 -%}{{ product.media[1] | image_url: width: 940 }} 940w,{%- endif -%}
+                {%- if product.media[1].width >= 1066 -%}{{ product.media[1] | image_url: width: 1066 }} 1066w{%- endif -%}
+              "
+              src="{{ product.media[1] | image_url: width: 350 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | divided_by: 3 }}px, (min-width: 990px) calc(100vw / 3), (min-width: 750px) calc(100vw / 3), 95vw"
+              alt="{{ product.media[1].alt | escape }}"
+              loading="lazy"
+              class="motion-reduce"
+              width="{{ product.media[1].width }}"
+              height="{{ product.media[1].height }}"
+            >
+          {%- endif -%}
+        </div>
+        <slider-component class="hide-on-tablet hide-on-desktop card card-product">
+          <ul
+            class="list-unstyled slider grid grid-nowrap mobile-one desktop-one"
+            id="Slider-{{ section.id }}"
+            role="list"
+          >
+            {%- for image in product.images -%}
+              <li class="carousel-cell grid__item" {{ block.shopify_attributes }}>
+                <div class="media media--square">
+                  <a href="{{ product.url | default: '#' }}" class="full-unstyled-link">
+                    {{
+                      image
+                      | image_url: width: image.width
+                      | image_tag:
+                        widths: '200, 300',
+                        loading: 'lazy',
+                        height: image.height,
+                        width: image.width,
+                        alt: image.alt
+                      | default: product.title
+                    }}
+                  </a>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </slider-component>
+      {%- else -%}
+        <div class="card__content">
+          <h2 class="card__text h5">{{ product.title }}</h2>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="card-information">
+    <div class="card-info-wrapper">
+      {%- liquid
+        if product.metafields.pepper.type.value != blank
+          assign show_type = true
+
+          if show_product_type != nil
+            assign show_type = show_product_type
+          endif
+        endif
+      -%}
+      {%- if product.featured_media -%}
+        <div class="h3 card-information__text{% unless show_type %} no-type{% endunless %}">
+          {{ product.title | escape }}
+        </div>
+      {%- endif -%}
+      {% comment %} {%- liquid
+        if product.metafields.pepper.type.value != blank
+          if collection.template_suffix == 'landing-subcollections'
+            if show_product_type == true
+              render 'type', product: product
+            endif
+          else
+            render 'type', product: product
+          endif
+        endif
+      -%} {% endcomment %}
+      {%- liquid
+        if show_type
+          render 'type', product: product
+        endif
+      -%}
+      {%- if show_price == true -%}
+        {%- render 'price', product: product -%}
+      {%- endif -%}
+    </div>
+    <div class="card-hover">
+      {%- if product.selected_or_first_available_variant.available
+        and product.has_only_default_variant
+        and product.type != 'Wallpaper'
+        and product.metafields.pepper.child_products.value == blank
+      -%}
+        <span class="text-link no-js-hidden">
+          {% render 'plus-icon' %}
+        </span>
+        <div class="text-link in-cart no-js-hidden">
+          {% render 'icon-close' %}
+        </div>
+        <a href="{{ product.url }}" class="text-link no-js full-unstyled-link"></a>
+      {%- elsif product.selected_or_first_available_variant -%}
+        <a href="{{ product.url }}" class="text-link full-unstyled-link"></a>
+      {%- endif -%}
+    </div>
+  </div>
+  {% if product.has_only_default_variant
+    and product.type != 'Wallpaper'
+    and product.metafields.pepper.child_products.value == blank
+  %}
+    </button>
+  {% endif %}
+</div>

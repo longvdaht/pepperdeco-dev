@@ -1,0 +1,65 @@
+{% assign should_hide = false %}
+{% if product %}
+  {% assign rc = product.metafields["app--1576377--reviews"].review_count | plus: 0 %}
+  {% if rc == 0 %}
+    {% assign should_hide = true %}
+  {% endif %}
+{% endif %}
+
+{% unless should_hide %}
+  <div class="section-outer section-app section-color-{{ section.settings.color_scheme }}">
+    <div class="{% if section.settings.include_margins %}page-width{% endif %}{% if section.settings.padded %} page-width-narrow{% endif %}">
+      {%- for block in section.blocks -%}
+        {% render block %}
+      {%- endfor -%}
+    </div>
+  </div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Apps - Reviews",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": true,
+      "label": "Make section margins the same as theme"
+    },
+    {
+      "type": "checkbox",
+      "id": "padded",
+      "label": "Add extra mobile and desktop padding",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apps - Reviews"
+    }
+  ]
+}
+{% endschema %}

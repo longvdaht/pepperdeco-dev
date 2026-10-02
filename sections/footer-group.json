@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "newsletter_KgKVTz": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "heading": "No Spam. Just Spice",
+        "subheading": "<p>Including 10% off your first purchase</p>",
+        "newsletter_code": "<div class=\"klaviyo-form-PR9Smt\"></div>"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "d8e00814-1597-4896-a4e8-0db8244a2dce": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer-shop-2026",
+            "menu_toggle_mobile": true,
+            "menu_toggle_mobile_open": true
+          }
+        },
+        "dd3da4f9-d0c1-479a-b8d5-9946ffd3b703": {
+          "type": "link_list",
+          "settings": {
+            "heading": "RESOURCES",
+            "menu": "footer-resources-2026",
+            "menu_toggle_mobile": true,
+            "menu_toggle_mobile_open": false
+          }
+        },
+        "footer-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "Need Help?",
+            "subtext": "<p><strong>Email:</strong> <a href=\"mailto:hello@pepper-home.com\" title=\"mailto:hello@pepper-home.com\">Hello@Pepper-home.Com</a></p>"
+          }
+        },
+        "footer_contact_TMRr47": {
+          "type": "footer_contact",
+          "settings": {
+            "heading": "Support",
+            "subtext": "<p><strong>Email:</strong> <a href=\"mailto:hello@pepper-home.com\" title=\"mailto:hello@pepper-home.com\">hello@pepper-home.com</a></p>",
+            "sms_text": "<p>\n<strong>Live Chat:</strong> <a href=\"https://pepper-home.com/?remark_open=true\" class=\"js-open-chat\" onclick=\"event.preventDefault(); window.remark('open');\">7 Days A Week</a>\n</p>\n<p><strong>Call/Text:</strong> <a href=\"tel:+18668647143\">866.864.7143 (M-F: 9-5 EST)</a>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.gorgias.help/\">Help Center</a></strong>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.com/policies/shipping-policy/\">Shipping</a></strong>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.com/policies/refund-policy\">Returns</a></strong>\n</p>",
+            "menu_toggle_mobile": true,
+            "menu_toggle_mobile_open": false
+          }
+        }
+      },
+      "block_order": [
+        "d8e00814-1597-4896-a4e8-0db8244a2dce",
+        "dd3da4f9-d0c1-479a-b8d5-9946ffd3b703",
+        "footer-1",
+        "footer_contact_TMRr47"
+      ],
+      "settings": {
+        "color_scheme": "background-secondary",
+        "footer_logo": "shopify://shop_images/PH_Vertical.png",
+        "show_logo": "bottom",
+        "show_newsletter": true,
+        "newsletter_heading": "Stay Connected",
+        "newsletter_code": "<p>Sign up for 10% off and to receive updates on exclusive new products, restocks and the latest news before anyone else.</p>\n<div class=\"klaviyo-form-PR9Smt\"></div>",
+        "show_newsletter_logo_social": true,
+        "menu_bottom_footer": "footer-bottom-2026",
+        "small_logo_bottom": "shopify://shop_images/Numbers.png"
+      }
+    }
+  },
+  "order": [
+    "newsletter_KgKVTz",
+    "footer"
+  ]
+}

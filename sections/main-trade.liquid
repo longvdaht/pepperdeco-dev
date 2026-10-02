@@ -1,0 +1,166 @@
+{{ 'section-main-design-hub.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+<div class="section-outer section-design-hub-hero section-color-{{ section.settings.color_scheme }}">
+  {%- if section.settings.image != blank -%}
+    <div class="media media--transparent">
+      {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+      <img
+        srcset="
+          {%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+          {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+          {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {%- if section.settings.image.width >= 1780 -%}{{ section.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+          {%- if section.settings.image.width >= 2000 -%}{{ section.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+          {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+          {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+        "
+        sizes="100vw"
+        src="{{ section.settings.image | image_url: width: 1780 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.width | divided_by: section.settings.image.aspect_ratio }}"
+        class="{% if section.settings.mobile_image != blank %} mobile-hidden {% endif %}"
+      >
+
+      {% if section.settings.mobile_image != blank %}
+        <img
+          sizes="100vw"
+          src="{{ section.settings.mobile_image | image_url: width: 960 }}"
+          alt="{{ section.settings.mobile_image.alt | escape }}"
+          width="{{ section.settings.mobile_image.width }}"
+          height="{{ section.settings.mobile_image.width | divided_by: section.settings.mobile_image.aspect_ratio }}"
+          class="{% if section.settings.mobile_image == blank %} mobile-hidden {% endif %} desktop-hidden"
+        >
+      {% endif %}
+      {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+    </div>
+  {%- endif -%}
+  <div class="section-hero-content">
+    {%- if section.settings.lead != blank or section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section-heading">
+        {%- if section.settings.lead != blank -%}
+          <em class="h3">{{ section.settings.lead }}</em>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h1 class="display">
+            {{ section.settings.heading }}
+          </h1>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <div class="section-subheading">
+            {{- section.settings.subheading -}}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if section.settings.hide_content != true -%}
+  <div class="section-outer section-design-hub-content section-color-{{ section.settings.color_scheme }}">
+    <div class="page-width page-width--narrow padded-extra center">
+      <div class="grid">
+        <div class="grid__item mobile-one desktop-two-thirds padded">
+          {%- if section.settings.title != blank -%}
+            <h1 class="h1 section-heading">{{ section.settings.title }}</h1>
+          {%- else -%}
+            <h1 class="h1 section-heading">{{ page.title }}</h1>
+          {%- endif -%}
+          <div class="section-content rte">
+            <p>
+              {{ page.content }}
+            </p>
+          </div>
+
+          {% if section.settings.link != blank and section.settings.label != blank %}
+            <a href="{{ section.settings.link }}" class="button button--secondary">{{ section.settings.label }}</a>
+          {% endif %}
+          {% if section.settings.custom_link != blank and section.settings.link == blank %}
+            {{ section.settings.custom_link }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Full width hero",
+  "class": "main-trade",
+  "settings": [
+    {
+      "type": "text",
+      "id": "lead",
+      "label": "Intro lead"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Override page title (optional)"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subhead"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_content",
+      "label": "Hide page content below",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image",
+      "info": "Aspect ratio 5:3 (Optional, overrides default image)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "info": "For mobile image"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-secondary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full width hero"
+    }
+  ]
+}
+{% endschema %}

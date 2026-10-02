@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="{{ 'section-text-column.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'section-text-column.css' | asset_url | stylesheet_tag }}</noscript>
+{% style %}
+  [data-section-id="{{ section.id }}"] {
+    background-color: {{ section.settings.background_color }};
+  }
+  [data-section-id="{{ section.id }}"] .column-item {
+    color: {{ section.settings.text_color }};
+  }
+  [data-section-id="{{ section.id }}"] .column-item.has-divided:before {
+    background-color: {{ section.settings.border_color }};
+  }
+{% endstyle %}
+
+{% if section.blocks.size > 0 %}
+  <div class="section-text-column" data-section-id="{{ section.id }}">
+    <div class="page-width">
+      <div class="section-text-column-wrapper column-grid-{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+          <div class="column-item{% unless forloop.last %} has-divided{% endunless %}">
+            <div class="content-wrapper">
+              {% if block.settings.title != blank %}
+                <h4 class="title">{{ block.settings.title }}</h4>
+              {% endif %}
+              {% if block.settings.content != blank %}
+                <p class="content">{{ block.settings.content }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Text column",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#D4D1BD"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Text column",
+  }]
+}
+{% endschema %}

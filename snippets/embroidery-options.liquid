@@ -1,0 +1,347 @@
+<embroidery-options data-section="{{ section.id }}">
+  <button
+    type="button"
+    class="modal__close-button modal__close-back link button-unstyled focus-inset"
+    aria-label="{{ 'accessibility.close' | t }}"
+  >
+    <div class="modal__close-left">
+      <h2 class="h3 center hide-on-desktop">
+        {{ product.title | escape }}
+        <span id="pillow-size-{{ section.id }}" class="pillow-size-{{ section.id }}"></span>
+      </h2>
+    </div>
+    <div class="modal__close-right">
+      {%- render 'icon-close-new' -%}
+    </div>
+  </button>
+  <image-wrapper class="embroidery-color">
+    <div id="personalization-text"></div>
+  </image-wrapper>
+  <div class="form-wrapper">
+    <h2 class="h3 center show-on-desktop">
+      {{ product.title | escape }}
+      <span id="pillow-size-{{ section.id }}" class="pillow-size-{{ section.id }}"></span>
+    </h2>
+    <div class="visually-hidden">
+      <label for="{{ section.id }}-embroidery-embroidery-image">Embroidery Image</label>
+      <input
+        type="file"
+        accept="image/*"
+        id="{{ section.id }}-embroidery-embroidery-image"
+        name="properties[_customized_image]"
+        form="product-form-{{ section.id }}"
+      >
+      <input
+        required
+        class="embroidery-type-radio field__input"
+        id="{{ section.id }}-embroidery-embroidery-true"
+        type="radio"
+        name="properties[_Embroidery]"
+        value="true"
+        form="product-form-{{ section.id }}"
+        data-embroidery-id="{{ embroidery_product.selected_or_first_available_variant.id }}"
+      >
+      <label
+        for="{{ section.id }}-embroidery-embroidery-true"
+        class="embroidery-type-radio embroidery-monogram"
+      >
+        Embroidery: true
+      </label>
+      <input
+        required
+        class="embroidery-type-radio field__input"
+        id="{{ section.id }}-embroidery-embroidery-false"
+        type="radio"
+        name="properties[_Embroidery]"
+        value="false"
+        form="product-form-{{ section.id }}"
+        checked
+      >
+      <label
+        for="{{ section.id }}-embroidery-embroidery-false"
+        class="embroidery-type-radio embroidery-monogram"
+      >
+        Embroidery: false
+      </label>
+    </div>
+    <div class="type-embroidery">
+      <option-dropdown data-dropdown-key="embroidery-type">
+        <button type="button" data-dropdown-trigger aria-expanded="false">
+          <legend class="form__label">
+            {{ 'products.product.type' | t }}
+            <span id="type-selected">
+              <span class="option-not-selected">{{ 'products.product.select_type' | t }}</span>
+            </span>
+          </legend>
+          {% render 'icon-chevron-up' %}
+          {% render 'icon-chevron-down-pdp' %}
+        </button>
+        <div data-dropdown-panel>
+          <div class="product-form__input embroidery-type">
+            <input
+              class="embroidery-type-radio field__input"
+              id="{{ section.id }}-embroidery-type-none"
+              type="radio"
+              name="properties[_Embroidery Type]"
+              value=""
+              form="product-form-{{ section.id }}"
+              checked
+            >
+            <label
+              for="{{ section.id }}-embroidery-type-none"
+              class="embroidery-type-radio embroidery-monogram visually-hidden"
+            >
+              None
+            </label>
+            <input
+              class="embroidery-type-radio field__input"
+              id="{{ section.id }}-embroidery-type-monogram"
+              type="radio"
+              name="properties[_Embroidery Type]"
+              value="Monogram"
+              form="product-form-{{ section.id }}"
+            >
+            <label
+              for="{{ section.id }}-embroidery-type-monogram"
+              class="embroidery-type-radio embroidery-monogram"
+            >
+              Monogram
+            </label>
+            <input
+              class="embroidery-type-radio field__input"
+              id="{{ section.id }}-embroidery-type-text"
+              type="radio"
+              name="properties[_Embroidery Type]"
+              value="Text"
+              form="product-form-{{ section.id }}"
+            >
+            <label
+              for="{{ section.id }}-embroidery-type-text"
+              class="embroidery-type-radio embroidery-text"
+            >
+              Text
+            </label>
+          </div>
+          <div class="product-form__input type-options hidden">
+            {% comment %} FONTS {% endcomment %}
+            {%- assign typefaces = 'Cornelia, Ludlow, Love Lane, Bowery, Mulberry' | split: ', ' -%}
+            <div class="form__label">Typeface: <span id="type-option-legend"></span></div>
+            <div class="type-options-wrapper">
+              <input
+                class="embroidery-type-radio field__input"
+                id="{{ section.id }}-embroidery-typeface-none"
+                type="radio"
+                name="properties[Typeface]"
+                value=""
+                form="product-form-{{ section.id }}"
+                title="Please select a typeface"
+                checked
+              >
+              <label
+                for="{{ section.id }}-embroidery-typeface-none"
+                class="embroidery-type-radio embroidery-text type-option-none"
+              >
+                None
+              </label>
+              {%- for typeface in typefaces -%}
+                {%- assign typeface_handle = typeface | downcase | handleize -%}
+                <input
+                  class="embroidery-type-radio field__input{% unless typeface_handle == 'ludlow' %} is-active{% endunless %}"
+                  id="{{ section.id }}-embroidery-typeface-{{ typeface_handle }}"
+                  type="radio"
+                  name="properties[Typeface]"
+                  value="{{ typeface | escape }}"
+                  form="product-form-{{ section.id }}"
+                  title="Please select a typeface"
+                  {%- unless typeface_handle == 'ludlow' -%}
+                    data-monogram="{{ typeface_handle | append: '-monogram.png' | asset_url }}"
+                  {%- endunless -%}
+                  {%- unless typeface_handle == 'cornelia' -%}
+                    data-text="{{ typeface_handle | append: '-name.png' | asset_url }}"
+                  {%- endunless -%}
+                >
+                <label
+                  for="{{ section.id }}-embroidery-typeface-{{ typeface_handle }}"
+                  class="embroidery-type-radio embroidery-text type-option-{{ typeface_handle }}"
+                >
+                  {{ typeface }}
+                </label>
+              {%- endfor -%}
+            </div>
+          </div>
+          <div class="product-form__input personalization">
+            <label
+              for="{{ section.id }}-embroidery-personalization"
+              class="form__label embroidery-type-radio embroidery-text"
+            >
+              Personalization
+            </label>
+            <input
+              class="embroidery-type-radio field__input"
+              id="{{ section.id }}-embroidery-personalization"
+              type="text"
+              name="properties[Personalization]"
+              value=""
+              form="product-form-{{ section.id }}"
+              autocomplete="off"
+            >
+            <div id="personalization-helper">3 Letters—First Initial, Last Initial, Middle Initial</div>
+            <a href="/pages/embroidery-guide" class="button-unstyled button button--quick-add" target="blank">
+              Embroidery Guide
+              {%- render 'icon-arrow-right' -%}
+              <div class="visually-hidden">(opens in a new window)</div>
+            </a>
+          </div>
+        </div>
+      </option-dropdown>
+    </div>
+
+    {%- assign thread_colors = 'Snow, Cream, Pebble, Antique Gold, Walnut, Moss, Fern, Mint, Peacock, Midnight, Powder, Sky, Lilac, Petal, Dusty Rose, Raspberry, Cherry, Clementine'
+      | split: ', '
+    -%}
+    <div class="product-form__input trim-options thread">
+      <option-dropdown data-dropdown-key="embroidery-color">
+        <button type="button" data-dropdown-trigger aria-expanded="false">
+          <legend class="form__label">
+            {{ 'products.product.thread_color' | t }}:
+            <div class="trim-thread-color trim-select-option">
+              <span id="embroidery-color-legend"><span class="option-not-selected">{{ 'products.product.not_selected' | t }}</span></span>
+              <span class="thread-color trigger-swatch" data-thread-color></span>
+            </div>
+          </legend>
+          {% render 'icon-chevron-up' %}
+          {% render 'icon-chevron-down-pdp' %}
+        </button>
+        <div data-dropdown-panel>
+          <div class="thread-options">
+            <input
+            class="embroidery-type-radio field__input visually-hidden"
+            id="{{ section.id }}-embroidery-color-none"
+            type="radio"
+            name="properties[Embroidery Color]"
+            title="Please select a thread color"
+            value=""
+            form="product-form-{{ section.id }}"
+            checked
+          >
+          <label
+            for="{{ section.id }}-embroidery-color-none"
+            class="embroidery-type-radio embroidery-color color-none visually-hidden"
+          >
+            None
+          </label>
+          {%- for thread_color in thread_colors -%}
+            <input
+              class="embroidery-type-radio field__input"
+              id="{{ section.id }}-embroidery-color-{{ thread_color | handleize }}"
+              type="radio"
+              name="properties[Embroidery Color]"
+              title="Please select a thread color"
+              value="{{ thread_color | escape }}"
+              form="product-form-{{ section.id }}"
+            >
+            <label
+              for="{{ section.id }}-embroidery-color-{{ thread_color | handleize }}"
+              class="embroidery-type-radio field__input embroidery-color color-{{ thread_color | downcase | handleize }}"
+            >
+              {{ thread_color }}
+            </label>
+          {%- endfor -%}
+          </div>
+        </div>
+      </option-dropdown>
+    </div>
+    {% unless template.suffix contains 'pouch' %}
+      <div class="product-form__input welf-options">
+        <option-dropdown data-dropdown-key="piping-radios-embroidery">
+          <button type="button" data-dropdown-trigger aria-expanded="false">
+            <legend class="form__label">
+              {{ 'products.product.trim' | t }}:
+              <div class="trim-select-option">
+                <span id="data-trim-selected" data-trim-selected>None</span>
+                <span class="trigger-swatch" data-trim-swatch></span>
+              </div>
+            </legend>
+            {% render 'icon-chevron-up' %}
+            {% render 'icon-chevron-down-pdp' %}
+          </button>
+          <div data-dropdown-panel>
+            {% render 'piping-radios-embroidery' %}
+          </div>
+        </option-dropdown>
+      </div>
+    {% endunless %}
+    <div class="product-form__input confirmation">
+      <label for="embroidery-confirmation" class="field__checkbox">
+        <input
+          type="hidden"
+          name="properties[_Embroidery Acknowledgement]"
+          value=""
+          form="product-form-{{ section.id }}"
+        >
+        <input
+          class="visually-hidden"
+          id="embroidery-confirmation"
+          type="checkbox"
+          name="properties[_Embroidery Acknowledgement]"
+          value="Yes"
+          form="product-form-{{ section.id }}"
+        >
+        <span class="field__radio-text">{{ 'products.product.personalization.confirmation' | t -}}</span>
+      </label>
+    </div>
+    <div class="visually-hidden">
+      <div class="product-form__input">
+        <label
+          for="{{ section.id }}-embroidery-max-width"
+          class="embroidery-type-radio embroidery-text form__label"
+        >
+          Max Width
+        </label>
+        <input
+          class="embroidery-type-radio field__input"
+          id="{{ section.id }}-embroidery-max-width"
+          type="text"
+          name="properties[_Max Width]"
+          value=""
+          form="product-form-{{ section.id }}"
+        >
+      </div>
+      <div class="product-form__input">
+        <label
+          for="{{ section.id }}-embroidery-max-height"
+          class="embroidery-type-radio embroidery-text form__label"
+        >
+          Max Height
+        </label>
+        <input
+          class="embroidery-type-radio field__input"
+          id="{{ section.id }}-embroidery-max-height"
+          type="text"
+          name="properties[_Max Height]"
+          value=""
+          form="product-form-{{ section.id }}"
+        >
+      </div>
+    </div>
+    <div class="embroidery-modal__error-message-wrapper" role="alert" hidden>
+      <span class="embroidery__error-message"></span>
+    </div>
+    <div class="product-form__buy full-width" {{ block.shopify_attributes }}>
+      <button id="embroidery-capture-and-validate" type="button" class="button" form="product-form-{{ section.id }}">
+        <span id="embroidery_price" data-price="{{ embroidery_product.price }}">
+          {{-
+            product.selected_or_first_available_variant.price
+            | plus: embroidery_product.price
+            | money_without_trailing_zeros
+          -}}
+        </span>
+        | Add to cart
+      </button>
+    </div>
+    <p class="preview-statement">
+      {{ 'products.product.embroidery.review' | t }}
+    </p>
+  </div>
+  <div class="loading-overlay" data-html2canvas-ignore>Adding to cart...</div>
+</embroidery-options>

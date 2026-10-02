@@ -1,0 +1,240 @@
+<div class="section-outer section-app section-color-{{ section.settings.color_scheme }}">
+  <div class="{% if section.settings.include_margins %}page-width{% endif %}{% if section.settings.padded %} page-width-narrow{% endif %}">
+    {%- for block in section.blocks -%}
+      {% render block %}
+    {%- endfor -%}
+  </div>
+</div>
+{%- if template.suffix == 'trade-application' -%}
+  <style>
+    .template-page-trade-application .spaced-section .section-outer.section-app {
+      padding-top: 4rem;
+      padding-bottom: 8rem;
+    }
+    .template-page-trade-application .section-page-title-wrapper .rte, .template-page-trade-application .section-page-title-wrapper .rte > * {
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: var(--font-body-spacing);
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .template-page-trade-application .spaced-section .section-outer.section-app {
+        padding-bottom: 4rem;
+      }
+    }
+  </style>
+  <script>
+    (function () {
+      function tryInject(el) {
+        if (!el || !el.shadowRoot) return false;
+
+        let style = el.shadowRoot.querySelector('#custom-style-override');
+        if (!style) {
+          style = document.createElement('style');
+          style.id = 'custom-style-override';
+          el.shadowRoot.appendChild(style);
+        }
+        style.textContent = `
+          #app-embed {
+            --body-text-color: #242524;
+            --body-text-color-hover: #7D7364;
+            --forms-body-font: normal 400 12px 'sweet-sans-pro', sans-serif !important;
+            --buttons-radius: 0 !important;
+            --form-field-border-radius: 0 !important;
+            --form-field-border: 0 0 0 1px #7D7364;
+            --form-field-border-focused: 0 0 0 1px #7D7364;
+            --form-text-color: #7D7364;
+            --form-placeholder-color: #7D7364;
+            --forms-accent-color: #7D7364;
+            --forms-accent-color-hovered-modifier: #7d736433;
+            --button-border-radius: 0 !important;
+            --inline-container-max-width: 560px;
+            --input-label-transform: none;
+            --form-field-padding: 1.1rem;
+            --form-field-padding-top: 1.1rem;
+            --form-field-padding-bottom: 1.1rem;
+            --form-background-color: transparent;
+            --forms-padding-top: 40px;
+            --forms-padding-bottom: 40px;
+            --forms-padding-left: 40px;
+            --forms-padding-right: 40px;
+          }
+          #app-embed input, #app-embed legend, #app-embed fieldset label span, {
+            text-transform: uppercase!important;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+          }
+          #app-embed label, ._formFileInputButton_k0hif_37 {
+            text-transform: uppercase;
+          }
+          ._inline_1q1d2_47 ._formContainer_1q1d2_30 {
+            background: #fff;
+          }
+          #app-embed form._formFieldset_jnbzb_92 {
+            gap: 2.4rem;
+            margin-top: -2.4rem;
+          }
+          #app-embed div._formFieldContainer_1mxsl_5 {
+            flex-direction: column-reverse;
+          }
+          #app-embed input._formInputField_nag3b_7, #app-embed input._formPhoneInputField_piv1u_17 {
+            padding: 1.1rem 1.6rem;
+          }
+          #app-embed div._formFieldContainer_1mxsl_5 label {
+            position: relative;
+            top: 0!important;
+            left: 0;
+            margin-bottom: 4px;
+            transform: none;
+            color: #242524;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+          }
+          #app-embed ._textBody_2aowh_10, #app-embed span._textBody_2aowh_10, #app-embed p._textBody_2aowh_10 {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+            color: #242524;
+          }
+          #app-embed .phone-country-selector {
+            align-self: flex-end;
+          }
+          #app-embed div._consentCheckboxContainer_jnbzb_49 {
+            padding: 0;
+            margin: 0;
+          }
+          #app-embed legend + ._nonMultineFieldLine_exnrn_11 {
+            margin-top: -2rem;
+          }
+          #app-embed ._selectToggleText_12thd_25, #app-embed legend + ._verticalLayout_1hja3_8 ._checkboxWrapper_1hja3_33 + span,
+          #app-embed legend + ._verticalLayout_nw6va_6 ._radioField_nw6va_1 span {
+            font-size: 1rem;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+          #app-embed legend + ._verticalLayout_1hja3_8 {
+            gap: 8px;
+          }
+          #app-embed ._fieldContainer_exnrn_16 {
+            align-self: flex-end;
+          }
+          #app-embed ._formDisclaimer_jnbzb_38 a {
+            text-decorate: underline;
+            color: var(--body-text-color);
+          }
+          #app-embed ._formDisclaimer_jnbzb_38 a:hover {
+            color: var(--body-text-color-hover);
+          }
+          #app-embed button._formSubmitButton_jnbzb_106 {
+            max-width: fit-content;
+            padding: 13.5px 35px;
+            margin: 0 auto; 
+          }
+          #app-embed button._formSubmitButton_jnbzb_106:hover {
+            background-color: #a39f73;
+          }
+          #app-embed ._optionListItem_12thd_102 > div {
+            font-size: 1rem;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+          #app-embed ._selectToggle_12thd_25 {
+            max-height: 40px;
+          }
+          #app-embed ._radioInput_nw6va_31{
+            width: 20px;
+            height: 20px;
+          }
+          #app-embed ._radioField_nw6va_1 {
+            gap: 16px;
+          }
+          @media (max-width: 767px) {
+            #app-embed {
+              --forms-padding-top: 24px;
+              --forms-padding-bottom: 24px;
+              --forms-padding-left: 16px;
+              --forms-padding-right: 16px;
+            }
+          }
+        `;
+        console.log('✅ Style injected into shopify-forms-embed');
+        return true;
+      }
+
+      function init() {
+        const existing = document.querySelector('shopify-forms-embed');
+        if (tryInject(existing)) return;
+        const observer = new MutationObserver(() => {
+          const el = document.querySelector('shopify-forms-embed');
+          if (tryInject(el)) {
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.documentElement, {
+          childList: true,
+          subtree: true
+        });
+        setTimeout(() => observer.disconnect(), 20000);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Apps",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default": true,
+      "label": "Make section margins the same as theme"
+    },
+    {
+      "type": "checkbox",
+      "id": "padded",
+      "label": "Add extra mobile and desktop padding",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Apps"
+    }
+  ]
+}
+{% endschema %}

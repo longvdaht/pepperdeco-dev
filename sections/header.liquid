@@ -1,0 +1,553 @@
+
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<link rel="preload" href="{{ 'header.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'header.css' | asset_url }}"></noscript>
+<script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
+<{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<header>
+  <div class="header__full">
+      {%- if section.settings.menu != blank -%}
+        <nav class="header__inline-menu header__inline-mobile-menu{% if section.settings.quick-menu-mobile != blank or section.settings.hide_quick_menu_mobile %} show-on-desktop{% endif %}">
+          <slider-component>
+            <div class="slider-buttons no-js-hidden hide-on-desktop">
+              <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">&lsaquo;</button>
+              <div class="visually-hidden slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                  <span aria-hidden="true"> / </span>
+                  <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+                <span class="slider-counter--total">{{ section.blocks.size }}</span>
+              </div>
+              <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">&rsaquo;</button>
+            </div>
+            <ul class="list-menu list-menu--inline slider slider--everywhere" role="list">
+              {% for link in section.settings.menu.links %}
+                <li id="Slide-{{ link.title | handle }}" class="slide__mobile">
+                  {%- if link.links != blank -%}
+                    <details-disclosure class="header mobile--header">
+                      <details>
+                        <summary class="header__menu-item list-menu__item link focus-inset">
+                          {% unless link.url != '#' %}
+                            <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                          {% else %}
+                            <span data-href="{{ link.url }}" {%- if link.child_active or link.active %} class="header__active-menu-item"{% endif %}>
+                              {{ link.title | escape }}
+                            </span>
+                          {% endunless %}
+                        </summary>
+                        <div class="header__submenu header__submenu-primary list-menu--disclosure motion-reduce" tabindex="-1">
+                          <div class="grid grid-spread page-width">
+                            {%- for childlink in link.links -%}
+                              {%- if childlink.links == blank -%}
+                                <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link text-link focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                  {{ childlink.title | escape }}
+                                </a>
+                              {%- else -%}
+                                {%- unless childlink.title contains 'Featured' -%}
+                                  <div class="list-submenu list-submenu-{{ childlink.title | handleize }}">
+                                      <h6 class="heading">{{ childlink.title | escape }}</h6>
+                                    <ul class="list-menu">
+                                      {% for grandchildlink in childlink.links %}
+                                        <li>
+                                          <a href="{{ grandchildlink.url }}"{% if grandchildlink.title == 'Live Chat' %} onclick="event.preventDefault(); window.remark('open');"{% endif %} class="header__menu-item list-menu__item link text-link focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                            {{ grandchildlink.title | escape }}
+                                          </a>
+                                        </li>
+                                      {% endfor %}
+                                    </ul>
+                                  </div>
+                                {%- else -%}
+                                <div class="list-submenu list-submenu-{{  childlink.title | handleize }}">
+                                  <ul class="list-featured list-unstyled">
+                                    {%- for grandchildlink in childlink.links -%}
+                                      <li>
+                                        <a href="{{ grandchildlink.url }}" class="header__menu-featured-collection {% if grandchildlink.current %}list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                          {%- assign grandchildlinkhandle = grandchildlink.handle -%}
+                                          {%- if grandchildlink.object.metafields.pepper.nav_featured_image.value -%}
+                                            <div class="media media--square">
+                                              {{ grandchildlink.object.metafields.pepper.nav_featured_image | image_url: width: 250, height: 250, crop: 'center' | image_tag : loading: 'lazy'}}
+                                            </div>
+                                          {%- else -%}
+                                            <div class="media media--square">
+                                              {{ grandchildlink.object.image | image_url: width: 250, height: 250, crop: 'center' | image_tag: loading: 'lazy' }}
+                                            </div>
+                                          {%- endif -%}
+                                          <h4 class="left">{{ grandchildlink.title | escape }}</h4>
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                </div>
+                                {%- endunless -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </div>
+                        </div>
+                      </details>
+                    </details-disclosure>
+                  {%- else -%} 
+                    <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu--inline summary list-menu__item link text-link focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                    </a>
+                 {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </slider-component>
+        </nav>
+      {%- endif -%}
+      {%- if section.settings.quick-menu-mobile != blank -%}
+        <nav class="header__inline-menu header__inline-mobile-menu hide-on-desktop">
+          <slider-component>
+            <div class="slider-buttons no-js-hidden hide-on-desktop">
+              <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">
+                {%- render 'icon-chevron-left' -%}
+              </button>
+              <div class="visually-hidden slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                  <span aria-hidden="true"> / </span>
+                  <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+                <span class="slider-counter--total">{{ section.blocks.size }}</span>
+              </div>
+              <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">
+                {%- render 'icon-chevron-right' -%}
+              </button>
+            </div>
+            <ul class="list-menu list-menu--inline slider slider--everywhere" role="list">
+              {% for link in section.settings.quick-menu-mobile.links %}
+                <li id="Slide-{{ link.title | handle }}" class="slide__mobile">
+                  {%- if link.links != blank -%}
+                    <details-disclosure class="header mobile--header">
+                      <details>
+                        <summary class="header__menu-item list-menu__item link focus-inset">
+                          {% unless link.url != '#' %}
+                            <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                          {% else %}
+                            <span data-href="{{ link.url }}" {%- if link.child_active or link.active %} class="header__active-menu-item"{% endif %}>
+                              {{ link.title | escape }}
+                            </span>
+                          {% endunless %}
+                        </summary>
+                        <div class="header__submenu header__submenu-primary list-menu--disclosure motion-reduce" tabindex="-1">
+                          <div class="grid grid-spread page-width">
+                            {%- for childlink in link.links -%}
+                              {%- if childlink.links == blank -%}
+                                <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link text-link focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                  {{ childlink.title | escape }}
+                                </a>
+                              {%- else -%}
+                                {%- unless childlink.title contains 'Featured' -%}
+                                  <div class="list-submenu list-submenu-{{ childlink.title | handleize }}">
+                                      <h6 class="heading"><a href="{{ childlink.url }}" title="{{ childlink.title }}">{{ childlink.title | escape }}</a></h6>
+                                    <ul class="list-menu">
+                                      {% for grandchildlink in childlink.links %}
+                                        <li>
+                                          <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link text-link focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                            {{ grandchildlink.title | escape }}
+                                          </a>
+                                        </li>
+                                      {% endfor %}
+                                    </ul>
+                                  </div>
+                                {%- else -%}
+                                <div class="list-submenu list-submenu-{{  childlink.title | handleize }}">
+                                  <ul class="list-featured list-unstyled">
+                                    {%- for grandchildlink in childlink.links -%}
+                                      <li>
+                                        <a href="{{ grandchildlink.url }}" class="header__menu-featured-collection {% if grandchildlink.current %}list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                          {%- assign grandchildlinkhandle = grandchildlink.handle -%}
+                                          <div class="media media--square">
+                                            {{ grandchildlink.object.image | image_url: width: 250, height: 250, crop: 'center' | image_tag: loading: 'lazy' }}
+                                          </div>
+                                          <h4 class="left">
+                                            {{ grandchildlink.title | escape }}
+                                            {% render 'icon-arrow-right' %}
+                                          </h4>
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                </div>
+                                {%- endunless -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </div>
+                        </div>
+                      </details>
+                    </details-disclosure>
+                  {%- else -%}
+                    <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link text-link focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                    </a>
+                  {%- endif -%}
+                </li>
+              {% endfor %}
+            </ul>
+          </slider-component>
+        </nav>
+      {%- endif -%}
+    </div>
+
+    <div class="header__inner">
+      <header-drawer data-breakpoint="tablet" class="header-button expand">
+        {% render 'menu-drawer', section: section, block: block %}
+      </header-drawer>
+
+      <div class="header__left">
+        <a href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+          {%- render 'ph-logo' -%}
+        </a>
+      </div>
+
+      <div class="header__middle">
+
+        {%- if section.settings.desktop_menu != blank -%}
+          <nav class="header__inline-menu" aria-label="Left navigation">
+            <ul class="list-menu list-menu--inline" role="list">
+              {% for link in section.settings.desktop_menu.links %}
+                <li>
+                  {%- if link.links != blank -%}
+                    <details-disclosure class="header">
+                      <details>
+                        <summary class="header__menu-item list-menu__item link focus-inset">
+                          {% unless link.url != '#' %}
+                            <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                          {% else %}
+                            <span data-href="{{ link.url }}" {%- if link.child_active or link.active %} class="header__active-menu-item"{% endif %}>
+                              {{ link.title | escape }}<span class="icon">&rsaquo;</span>
+                            </span>
+                          {% endunless %}
+                        </summary>
+                        <div class="header__submenu header__submenu-primary list-menu--disclosure motion-reduce" tabindex="-1">
+                          <div class="grid grid-spread grid-header-list-menu">
+                            {%- for childlink in link.links -%}
+                              {%- if childlink.links == blank -%}
+                                <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link text-link focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                  {{ childlink.title | escape }}
+                                </a>
+                              {%- else -%}
+                                {%- assign has_featured_banner = false -%}
+                                {%- unless childlink.title contains 'Featured' -%}
+                                  <div class="list-submenu list-submenu-{{ childlink.title | handleize }}">
+                                      <h6 class="heading"><a href="{{ childlink.url }}" title="{{ childlink.title }}">{{ childlink.title | escape }}</a></h6>
+                                    <ul class="list-menu">
+                                      {% for grandchildlink in childlink.links %}
+                                        <li>
+                                          <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link text-link focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                            {{ grandchildlink.title | escape }}
+                                          </a>
+                                        </li>
+                                      {% endfor %}
+                                    </ul>
+                                  </div>
+                                {%- else -%}
+                                  {%- assign has_featured_banner = true -%}
+                                {%- endunless -%}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </div>
+                          {%- if has_featured_banner -%}
+                            <div class="grid grid-spread grid-header-banner">
+                              {%- for childlink in link.links -%}
+                                {%- if childlink.title contains 'Featured' -%}
+                                  <div class="list-submenu list-submenu-{{  childlink.title | handleize }}">
+                                    <ul class="list-featured list-unstyled">
+                                      {%- for grandchildlink in childlink.links -%}
+                                        <li>
+                                          <a href="{{ grandchildlink.url }}" class="header__menu-featured-collection {% if grandchildlink.current %}list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                            {%- assign grandchildlinkhandle = grandchildlink.handle -%}
+                                            {%- if grandchildlink.object.metafields.pepper.nav_featured_image.value -%}
+                                              <div class="media media--square">
+                                                {{ grandchildlink.object.metafields.pepper.nav_featured_image | image_url: width: 250, height: 250, crop: 'center' | image_tag : loading: 'lazy'}}
+                                              </div>
+                                            {%- else -%}
+                                              <div class="media media--square">
+                                                {{ grandchildlink.object.image | image_url: width: 250, height: 250, crop: 'center' | image_tag: loading: 'lazy' }}
+                                              </div>
+                                            {%- endif -%}
+                                            <h4 class="left">
+                                              {{ grandchildlink.title | escape }}
+                                              {% render 'icon-arrow-right' %}
+                                            </h4>
+                                          </a>
+                                        </li>
+                                      {%- endfor -%}
+                                    </ul>
+                                  </div>
+                                {%- endif -%}
+                              {%- endfor -%}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </details>
+                    </details-disclosure>
+                  {%- else -%}
+                    <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link text-link focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                      <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                    </a>
+                  {%- endif -%}
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        {%- endif -%}
+
+      </div>
+
+      <div class="header__right">
+        {% render 'header-search', input_id: 'Search-In-Modal' %}
+
+        {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header-button text-link account" aria-label="Account">
+          <span class="icon-account">
+            {%- render 'icon-user' -%}
+          </span>
+          <span class="header-text text-account">
+            {%- liquid
+              if customer
+                echo 'customer.account_fallback' | t
+              else
+                echo 'customer.log_in' | t
+              endif
+            -%}
+          </span>
+        </a>
+        {% endif %}
+
+        <a href="{{ routes.cart_url }}" id="cart-reveal" class="header-button header__icon--cart" aria-label="Expand Cart" style="display: flex; flex-direction: row; align-items: center; text-decoration: none;">
+          {%- liquid
+              assign total_count = 0
+              for item in cart.items
+                if item.title contains 'Rush' or item.title contains 'Setup' or item.title contains 'Embroidery' or item.title == 'Monogramming fee' or item.title contains "Order Processing Fee" or item.properties['_hidden'] == 'true'
+                  continue
+                endif
+                assign quantity = item.quantity | times: 1
+                assign total_count = total_count | plus: quantity
+              endfor
+          -%}
+          <span class="icon cart__icon" style="display: flex; flex-direction: row; align-items: center;">
+            {%- liquid
+              render 'icon-cart'
+            -%}
+          </span>
+          <span class="cart__indicator">{% if total_count == 0 %}{% else %}{{ total_count | default: null }}{% endif %}</span>
+        </a>
+      </div>
+    </div>
+</header>
+</{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
+
+{% javascript %}
+class StickyHeader extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.header = document.getElementById('shopify-section-header');
+    this.headerBounds = {};
+    this.currentScrollTop = 0;
+    this.preventReveal = false;
+
+    if (document.body.classList.contains('template-page-curtain-calculator')) {
+      this.preventReveal = true;
+    }
+
+    this.onScrollHandler = this.onScroll.bind(this);
+    this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+
+    this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+    window.addEventListener('scroll', this.onScrollHandler, false);
+
+    this.createObserver();
+    this.checkInitialScrollPosition();
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+    window.removeEventListener('scroll', this.onScrollHandler);
+  }
+
+  createObserver() {
+    let observer = new IntersectionObserver((entries, observer) => {
+      this.headerBounds = entries[0].intersectionRect;
+      observer.disconnect();
+      // Check initial scroll position after headerBounds are set
+      this.checkInitialScrollPosition();
+    });
+
+    observer.observe(this.header);
+  }
+
+  checkInitialScrollPosition() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const offset = 90; 
+    if (scrollTop > this.headerBounds.bottom - offset) {
+      this.sticky();
+    }
+  }
+
+  onScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const offset = 90;
+
+    if (scrollTop > this.currentScrollTop) {
+      if (scrollTop > this.headerBounds.bottom - offset) {
+        requestAnimationFrame(this.sticky.bind(this));
+      }
+    } else if (scrollTop <= this.headerBounds.top) {
+      requestAnimationFrame(this.reset.bind(this));
+    }
+
+    this.currentScrollTop = scrollTop;
+  }
+
+  sticky() {
+    if (!this.header.classList.contains('shopify-section-header-sticky')) {
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+    }
+  }
+
+  hide() {
+    this.header.classList.add('shopify-section-header-sticky', 'animate');
+    this.closeMenuDisclosure();
+    this.closeSearchModal();
+  }
+
+  reveal() {
+    this.header.classList.add('shopify-section-header-sticky', 'animate');
+  }
+
+  reset() {
+    this.header.classList.remove('shopify-section-header-sticky', 'animate');
+  }
+
+  closeMenuDisclosure() {
+    this.disclosures = this.disclosures || this.header.querySelectorAll('details-disclosure');
+    this.disclosures.forEach(disclosure => disclosure.close());
+  }
+
+  closeSearchModal() {
+    this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+    this.searchModal.close(false);
+  }
+}
+
+customElements.define('sticky-header', StickyHeader);
+
+{% endjavascript %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    {% if section.settings.logo %}
+      "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
+    {% endif %}
+    "sameAs": [
+      {{ settings.social_twitter_link | json }},
+      {{ settings.social_facebook_link | json }},
+      {{ settings.social_pinterest_link | json }},
+      {{ settings.social_instagram_link | json }},
+      {{ settings.social_tumblr_link | json }},
+      {{ settings.social_snapchat_link | json }},
+      {{ settings.social_youtube_link | json }},
+      {{ settings.social_vimeo_link | json }}
+    ],
+    "url": {{ shop.url | append: page.url | json }}
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ potential_action_target | json }},
+        "query-input": "required name=search_term_string"
+      },
+      "url": {{ shop.url | append: page.url | json }}
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Quick menu"
+    },
+    {
+      "type": "link_list",
+      "id": "quick-menu-mobile",
+      "label": "Quick menu mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_quick_menu_mobile",
+      "label": "Hide quick menu mobile"
+    },
+    {
+      "type": "link_list",
+      "id": "desktop_menu",
+      "default": "main-menu",
+      "label": "Desktop menu",
+      "info": "Left menu with regular dropdowns"
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu",
+      "label": "Mobile menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_header",
+      "default": true,
+      "label": "Enable sticky header",
+      "info": "Header shows on the screen as customers scroll up."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "parent_title",
+          "label": "Parent title"
+        },
+        {
+          "type": "text",
+          "id": "child_title",
+          "label": "Child title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

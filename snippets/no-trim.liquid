@@ -1,0 +1,18 @@
+{%- if product_type contains 'Cafe' -%}
+  <input
+    required
+    type="radio"
+    name="properties[Trim Style]"
+    value="None"
+    form="product-form-{{ section.id }}"
+    data-luxe="false"
+    checked
+  >
+  <input
+    name="properties[Trim]"
+    value="None"
+    form="product-form-{{ section.id }}"
+    type="radio"
+    checked
+  >
+{%- endif -%}

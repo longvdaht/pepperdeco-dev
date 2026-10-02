@@ -1,0 +1,236 @@
+{{ 'section-main-gallery.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="border-top"></div>
+</div>
+
+{%- assign gallery_collections = 'room,product,color' | split: ',' -%}
+
+<div class="section-outer section-main-gallery section-color-{{ section.settings.color_scheme }}">
+  <div class="page-width center">
+    {%- if section.settings.heading != blank %}
+      <h1 class="h1">{{ section.settings.heading }}</h1>
+    {% endif %}
+    {%- if section.settings.subheading != blank -%}
+      <p class="section-subheading intro">{% render 'no-widows', content: section.settings.subheading %}</p>
+    {%- endif -%}
+    <gallery-switcher
+      data-section="{{ section.id }}"
+      data-url="{{ page.url }}"
+    >
+      <h2 class="h3">{{ 'sections.gallery.step_1' | t }}</h2>
+      <div class="collection-radios">
+        {%- for collection in gallery_collections -%}
+          <div class="tab-outer">
+            <input
+              type="radio"
+              name="shop_by"
+              id="{{ section.id }}-{{ collection }}"
+              value="{{ collection }}"
+              class="collection-radio hidden"
+            >
+            <label for="{{ section.id }}-{{ collection }}">{{ collection | capitalize }}</label>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- for collection in gallery_collections -%}
+        <div
+          class="hidden page-width page-width-narrow"
+          data-collection="{{ section.id }}-{{ collection }}"
+        >
+          <slider-component>
+            <ul
+              class="grid mobile-2 desktop-4 list-unstyled slider"
+              id="Slider-{{ section.id }}"
+              role="list"
+            >
+              {%- for block in section.blocks -%}
+                {%- if collection == block.settings.collection -%}
+                  <li class="grid__item carousel-cell">
+                    <div
+                      class="card card-product"
+                    >
+                      <div class="card-inner">
+                        {%- if block.settings.image != blank -%}
+                          <div class="media media--square">
+                            <img
+                              srcset="
+                                {%- if block.settings.image.width >= 375 -%}{{ block.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
+                                {%- if block.settings.image.width >= 750 -%}{{ block.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
+                                {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                                {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                                {%- if block.settings.image.width >= 1780 -%}{{ block.settings.image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                                {%- if block.settings.image.width >= 2000 -%}{{ block.settings.image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                                {%- if block.settings.image.width >= 3000 -%}{{ block.settings.image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                                {%- if block.settings.image.width >= 3840 -%}{{ block.settings.image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                              "
+                              sizes="(min-width: 40em) 20vw, calc(100vw - 4rem)"
+                              src="{{ block.settings.image | image_url: width: 400 }}"
+                              loading="lazy"
+                              alt="{{ block.settings.image.alt | escape }}"
+                              width="{{ block.settings.image.width }}"
+                              height="{{ block.settings.image.width | divided_by: block.settings.image.aspect_ratio }}"
+                            >
+                          </div>
+                        {%- endif -%}
+                        <div class="card-information">
+                          <h3 class="h5">
+                            <a
+                              href="?collection={{ collection }}&gallery={{ block.settings.heading | handleize }}"
+                              data-id="{{ section.id }}-{{ block.settings.heading | handleize }}"
+                              data-gallery-handle="{{ block.settings.heading | handleize }}"
+                              class="card-gallery"
+                            >
+                              <div class="arrow-hover">
+                                {%- render 'icon-arrow-right' -%}
+                                {{- block.settings.heading -}}
+                              </div>
+                            </a>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </slider-component>
+        </div>
+      {%- endfor -%}
+
+      <div class="covet-pics-gallery gallery-all" data-id="65545" data-collection="all"></div>
+      <div class="tab-galleries">
+        {%- for block in section.blocks -%}
+          <div
+            class="hidden"
+            data-gallery="{{ section.id }}-{{ block.settings.heading | handleize }}"
+          >
+            <h2 class="h3">{{ 'sections.gallery.step_2' | t }}</h2>
+            <p class="intro">{{ block.settings.heading }}</p>
+            <div
+              class="covet-pics-gallery"
+              data-id="{{ block.settings.gallery_id }}"
+            ></div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </gallery-switcher>
+  </div>
+</div>
+
+<script src="{{ 'gallery-switcher.js' | asset_url }}" defer></script>
+<script src="https://shopify.covet.pics/covet-pics-widget-inject.js" defer></script>
+
+<script>
+  document.addEventListener('galleryReady:covetPics', function (e) {
+    if (location.search.indexOf('open-covet-upload=true') >= 0) {
+      const uploadWidget = document.querySelector('covet-pics-upload');
+      uploadWidget.openUpload();
+    }
+    const widgets = document.querySelectorAll('covet-pics-widget, covet-pics-popup, covet-pics-upload');
+    const widget = document.querySelector('covet-pics-widget');
+
+    widgets.forEach((el) => {
+      el.style.setProperty('--covet-font-family', "'sweet-sans-pro', sans-serif");
+    });
+
+    document.querySelector('#covet-upload').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector('covet-pics-upload').openUpload();
+    });
+  });
+
+
+  
+</script>
+
+{% schema %}
+{
+  "name": "Main gallery",
+  "class": "main-gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Override page title (optional)"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "background-primary",
+          "label": "Primary"
+        },
+        {
+          "value": "background-secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "background-primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery",
+      "name": "Gallery",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "collection",
+          "label": "Shop by",
+          "options": [
+            {
+              "value": "",
+              "label": "Select the category"
+            },
+            {
+              "value": "room",
+              "label": "Room"
+            },
+            {
+              "value": "product",
+              "label": "Product"
+            },
+            {
+              "value": "color",
+              "label": "Color"
+            }
+          ],
+          "default": ""
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "number",
+          "id": "gallery_id",
+          "label": "Gallery ID"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main gallery"
+    }
+  ]
+}
+{% endschema %}

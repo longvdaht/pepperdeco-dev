@@ -1,0 +1,60 @@
+{% comment %}
+    Renders an article card
+    Accepts:
+    - article: {Object} Article Liquid object
+    - mobile_per_row:
+    - desktop_per_row:
+    - squiggle: {Boolean} on whether or not to show squiggle after title
+    Usage:
+    {% render 'article-list',
+            article: block.settings.article,
+            mobile_per_row: grid_mobile_column,
+            desktop_per_row: grid_desktop_column,
+            squiggle: true %}
+{% endcomment %}
+
+
+<article class="article-list{% if article.image == blank %} article-list__no-media{% endif %}" {{ block.shopify_attributes }}>
+  <a href="{{ article.url }}" class="full-unstyled-link">
+    {% if article.image != blank %}
+      <div class="article-list-wrapper">
+        <div class="media media--transparent media--square">
+          <img
+            srcset="{%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+              {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+              {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}"
+            src="{{ article.image.src | image_url: width: 533 }}"
+            sizes="(min-width: 40em) calc((100vw - 2.8rem) / {{ desktop_per_row }}), calc((100vw - 2rem) / {{ mobile_per_row }})"
+            alt="{{ article.image.src.alt | escape }}"
+            width="{{ article.image.width }}"
+            height="{{ article.image.height }}"
+            loading="lazy"
+            class="motion-reduce"
+          >
+        </div>
+      </div>
+    {% endif %}
+    {%- unless blog.title contains 'Spice' -%}
+      <div class="article-list__info">
+        <h3 class="article-list__title h3" id="Article-{{ article.id }}">
+          {{ article.title | escape }}
+        </h3>
+        {% if squiggle %}
+          <div class="squiggle">
+            {% render 'squiggle' %}
+          </div>
+        {% endif %}
+        {% if show_tags %}
+          <p class="article-list__tags">
+            {%- for tag in article.tags -%}
+              {{ tag }}
+            {%- endfor -%}
+          </p>
+        {% endif %}
+      </div>
+    {%- endunless -%}
+  </a>
+</article>

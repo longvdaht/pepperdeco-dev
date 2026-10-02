@@ -1,0 +1,31 @@
+{% comment %}
+    Renders a design card or design tip
+    Accepts:
+    - block: {Object} Product Liquid object
+    - tip: {Number} for including in pepper tips (optional)
+    Usage:
+    {% render 'design-card', background %}
+{% endcomment %}
+
+
+<div class="card-wrapper" {{ block.shopify_attributes }}>
+  {%- if block.settings.link != blank -%}
+    <a href="{{ block.settings.link | default: '#' }}" class="full-unstyled-link">
+  {%- endif -%}
+  <div class="card card-design card-design-tip card-with-background" tabindex="-1">
+    <div class="card-inner">
+      <div class="card-content">
+        <div class="tip-heading">
+          <!-- {% render 'pepper-tip' %} -->
+          <img src="{{ 'pepper-tip-new.png' | asset_img_url: '160x' }}" width="160" height="auto" alt="pepper-tip"/>
+        </div>
+        <div class="rte intro">
+          {% render 'no-widows', content: block.settings.content %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- if block.settings.link != blank -%}
+    </a>
+  {%- endif -%}
+</div>

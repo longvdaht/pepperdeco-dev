@@ -1,0 +1,106 @@
+<script src="{{ 'welt-radios.js' | asset_url }}" defer></script>
+{%- assign welt_label = true -%}
+{%- liquid
+  assign welt_options = product.metafields.custom.welt_options.value
+-%}
+{%- assign has_no_welt = false -%}
+{% if welt_options contains 'No Welt' %}
+  {%- assign has_no_welt = true -%}
+{% endif %}
+{% assign bed_products = product.metafields.custom.bed_construction.value %}
+
+{%- if welt_options -%}
+  <welt-radios class="line-item-property__field line-item-property__field-welt" data-section="{{ section.id }}" data-product-type="{{ product.type }}">
+    <input type="hidden" name="properties[_product_image]" form="product-form-{{ section.id }}">
+    <input type="hidden" name="properties[_welt_custom]" form="product-form-{{ section.id }}"> 
+    <input type="file" accept="image/*" name="properties[_customized_image]" form="product-form-{{ section.id }}" class="hidden">
+    <input type="hidden" name="properties[_base_welt_image]" form="product-form-{{ section.id }}">
+    <canvas id="canvas-custom-builder" class="hidden"></canvas>
+    <div class="overlay-image-zoom hidden">
+      <img width="1000" height="1000">
+    </div>
+    
+    <div class="trim-options js product-form__input product-form__input-welt {% if bed_products %} has-bed-construction{% endif %}">
+      <option-dropdown data-dropdown-key="welt">
+        <button type="button" data-dropdown-trigger aria-expanded="false">
+          <legend class="form__label">
+            {{ 'products.product.trim' | t }}:
+            <span id="{{ section.id }}-option-welt">
+              {% comment %} {%- unless has_no_welt -%}
+                Self Welt
+              {%- else -%}
+                No Welt
+              {%- endunless -%} {% endcomment %}
+              <span class="option-not-selected">{{ 'products.product.select_trim' | t }}</span>
+            </span>
+          </legend>
+          {% render 'icon-chevron-up' %}
+          {% render 'icon-chevron-down-pdp' %}
+        </button>
+
+        <div data-dropdown-panel>
+          <div class="options-wrapper">
+            {%- assign welt_label = true -%}
+
+            {%- for welt_option in welt_options -%}
+
+              {%- if welt_label -%}
+                <input
+                  {% comment %} required {% endcomment %}
+                  class="input-trim-option"
+                  id="{{ section.id }}-welt-option-selfwelt"
+                  type="radio"
+                  name="properties[Trim]"
+                  value="Self Welt"
+                  form="product-form-{{ section.id }}"
+                  data-type="Self welt"
+                  {% comment %} {%- unless has_no_welt -%}
+                    checked
+                  {%- endunless -%} {% endcomment %}
+                >
+
+                <label
+                  for="{{ section.id }}-welt-option-selfwelt"
+                  class="trim-option-radio trim-self-welt"
+                  {% if product.metafields.custom.option_image != blank %}
+                    style="--self-welt-bg: url({{ product.metafields.custom.option_image.value | image_url: width: 100 }})"
+                  {% endif %}
+                >
+                  Self Welt
+                </label>
+
+                {%- assign welt_label = false -%}
+              {%- endif -%}
+
+              {% assign welt_option_handle = welt_option | handleize %}
+
+              <input
+                {% comment %} required {% endcomment %}
+                class="input-trim-option"
+                id="{{ section.id }}-welt-option-{{ welt_option_handle }}"
+                type="radio"
+                name="properties[Trim]"
+                value="{{ welt_option | escape }}"
+                form="product-form-{{ section.id }}"
+                data-type="Welt"
+                data-trim-handle="{{ section.id }}-{{ welt_option_handle }}"
+                {% comment %} {%- if welt_option_handle == 'no-welt' -%}
+                  checked
+                {%- endif -%} {% endcomment %}
+              >
+
+              <label
+                for="{{ section.id }}-welt-option-{{ welt_option_handle }}"
+                class="trim-option-radio trim-welt-{{ welt_option_handle }}{% if welt_option_handle == 'no-welt' %} trim-none{% endif %}"
+              >
+                {{ welt_option | escape }}
+              </label>
+
+            {%- endfor -%}
+          </div>
+        </div>
+      </option-dropdown>
+    </div>
+  </welt-radios>
+  
+{%- endif -%}

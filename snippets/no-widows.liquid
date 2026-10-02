@@ -1,0 +1,1 @@
+{% if content %}{% assign no_widows = content | split: '' | reverse | join: '' | replace_first: ' ', ';psbn&' | split: '' | reverse | join: '' %}{{ no_widows }}{% endif %}

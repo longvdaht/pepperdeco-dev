@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="{{ 'component-cart-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+
+<cart-drawer>
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer-outer is-empty" id="cart-drawer-outer" aria-modal="true" role="dialog" tabindex="-1" aria-label="Shopping cart">
+    <div class="cart-header">
+      <button type="button" class="cart-close button-unstyled" aria-label="Close cart">
+        {%- render 'icon-close' -%}
+      </button>
+      <div class="h3 cart-header-title">
+        {%- liquid
+          assign total_count = 0
+          for item in cart.items
+            if item.title contains 'Rush' or item.title contains 'Setup' or item.title contains 'Embroidery' or item.title == 'Monogramming fee' or item.title contains "Order Processing Fee" or item.properties['_hidden'] == 'true'
+              continue
+            endif
+            assign quantity = item.quantity | times: 1
+            assign total_count = total_count | plus: quantity
+          endfor
+        -%}
+        {{ 'sections.cart.title' | t }}
+        (<span class="cart-count">{{ total_count }}</span>)
+      </div>
+    </div>
+    <div class="cart-content">
+      <div class="cart-empty center">
+        <p>{{ 'sections.cart.empty' | t }}</p>
+        {% if section.settings.link != blank %}
+          <a href="{{ section.settings.link }}" class="button button-hover">
+            {{ 'sections.cart.continue' | t }}
+          </a>
+        {% endif %}
+      </div>
+      <form action="{{ routes.cart_url }}" method="post" id="cart">
+        <div id="main-cart-items" class="cart__contents js-contents" data-id="{{ section.id }}"></div>
+      </form>
+    </div>
+    <div class="cart-footer">
+      <form action="{{ routes.cart_url }}" method="post" id="cart">
+        <div class="cart-totals">
+          <div class="cart-subtotal">
+            {{ 'sections.cart.subtotal' | t }}
+            <span id="cart-subtotal">{{ cart.total_price | money_without_trailing_zeros }}</span>
+          </div>
+          {% render 'cart-afterpay' %}
+        </div>
+        <div class="tax-note">
+          {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+            {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+          {%- elsif cart.taxes_included -%}
+            {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+          {%- elsif shop.shipping_policy.body != blank -%}
+            {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+          {%- else -%}
+            {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+          {%- endif -%}
+        </div>
+        <div class="button-list">
+          <a href="/cart" class="button button--outline" title="">{{ 'sections.cart.view_edit_cart' | t }}</a>
+          <button class="button button-hover" name="checkout" form="cart">
+            <span class="total-price">{{ cart.total_price | money_without_trailing_zeros }}</span> | {{ 'sections.cart.checkout' | t }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</cart-drawer>
+
+{% javascript %}
+  class CartNote extends HTMLElement {
+    constructor() {
+      super();
+
+      this.addEventListener(
+        'change',
+        debounce((event) => {
+          const body = JSON.stringify({ note: event.target.value });
+          fetch(`${routes.cart_update_url}`, { ...fetchConfig(), ...{ body } });
+        }, 300)
+      );
+    }
+  }
+
+  customElements.define('cart-note', CartNote);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Cart",
+  "class": "section-cart-drawer-outer",
+  "settings": [
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ]
+}
+{% endschema %}

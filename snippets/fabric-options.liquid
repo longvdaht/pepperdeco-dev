@@ -1,0 +1,54 @@
+<div class="tooltip-hover tooltip-fabric-options">
+  {% for item in fabric_options.value %}
+    <div class="section-product-option-wrapper">
+      <div class="fabric-option-block-wrapper cotten-block">
+        <span class="fabric-option-title">Printed Cotton
+          {% comment %} {{ 'sections.compare_options.cotton' | t }} {% endcomment %}
+        </span>
+        <div class="fabric-option-block">
+          <div class="fabric-option-image">
+            <img src="{{ item.printed_cotton_image | image_url: width: 200 }}" width="600" height="600"/>
+          </div>
+          <div class="rte">
+            {% for child in item.printed_cotton_description.value.children %}
+              {% for subchild in child.children %}
+                {% assign subchild_content = subchild.value | raw | strip | split: '•' %}
+                <ul>
+                  {% for content in subchild_content %}
+                    {% if content != '' %}
+                      <li>{{ content }}</li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="fabric-option-block-wrapper linen-block">
+        <span class="fabric-option-title">Printed Linen
+          {% comment %} {{ 'sections.compare_options.linen' | t }} {% endcomment %}
+        </span>
+        <div class="fabric-option-block">
+          <div class="fabric-option-image">
+            <img src="{{ item.printed_linen_image | image_url: width: 200 }}" width="600" height="600"/>
+          </div>
+          <div class="rte">
+            {% for child in item.printed_linen_description.value.children %}
+              {% for subchild in child.children %}
+                {% assign subchild_content = subchild.value | raw | strip | split: '•' %}
+                <ul>
+                  {% for content in subchild_content %}
+                    {% if content != '' %}
+                      <li>{{ content }}</li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,69 @@
+{%- comment -%}
+  The curtain calculator modal. Render this once per page, outside of any
+  option accordion panel (panels are height: 0 / overflow: hidden when closed).
+  Every "CALCULATE DIMENSIONS" link rendered by 'calculate-dimensions-link'
+  opens this modal.
+
+  Accepts:
+  - block: the variant picker block holding the curtain calculator settings
+{%- endcomment -%}
+{%- if block.settings.show_calculator -%}
+  <details-modal
+    id="curtain_calculator"
+    class="product__modal curtain-calculator-modal"
+    {{ block.shopify_attributes }}
+  >
+    <details>
+      <summary
+        class="modal__toggle visually-hidden"
+        aria-haspopup="dialog"
+        aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+      >
+        <span class="text-link">{{ 'products.product.calculate_dimension' | t }}</span>
+      </summary>
+      <div
+        class="product-modal modal__content"
+        role="dialog"
+        aria-modal="true"
+        aria-label="{{ block.settings.content }} {{ 'products.product.calculate_dimension' | t }}"
+      >
+        <div class="modal-overlay"></div>
+        <div class="product-modal__content" tabindex="-1">
+          <link
+            rel="stylesheet"
+            href="{{ 'curtain-calculator.css' | asset_url }}"
+            media="print"
+            onload="this.media='all'"
+          >
+          <noscript>{{ 'curtain-calculator.css' | asset_url | stylesheet_tag }}</noscript>
+          <script src="{{ 'curtain-calculator.js' | asset_url }}" defer="defer"></script>
+          <div id="curtain-calculator"></div>
+          <button
+            type="button"
+            class="modal__close-button link button-unstyled focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            <i class="fas fa-xmark icon"></i>
+          </button>
+        </div>
+      </div>
+    </details>
+  </details-modal>
+  <script>
+    document.addEventListener('click', function (e) {
+      const trigger = e.target.closest('.calculate-dimensions-trigger');
+      if (!trigger) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const modal = document.getElementById('curtain_calculator');
+
+      if (!modal) return;
+
+      const summary = modal.querySelector('summary');
+
+      summary?.click();
+    });
+  </script>
+{%- endif -%}

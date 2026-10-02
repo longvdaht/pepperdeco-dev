@@ -1,0 +1,657 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "general": {
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_twitter": "Tweet on Twitter",
+        "share_on_pinterest": "Pin on Pinterest"
+      },
+      "links": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "read_more_title": "See more",
+    "read_less_title": "See less",
+    "cart": {
+      "view": "View my cart ({{ count }})",
+      "item_added": "Item added to your cart"
+    },
+    "share": {
+      "close": "Close share",
+      "copy_to_clipboard": "Copy link",
+      "share_url": "Link",
+      "success_message": "Link copied to clipboard"
+    },
+    "search": {
+      "search": "Search"
+    },
+    "continue_shopping": "Continue shopping",
+    "pagination": {
+      "label": "Pagination",
+      "page": "Page {{ number }}",
+      "next": "Next page",
+      "previous": "Previous page"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "Announcement",
+      "menu": "Menu"
+    },
+    "collection_template": {
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Clear all",
+      "empty": "No products found",
+      "from": "From",
+      "show_more": "+ more",
+      "filter_and_sort": "Filters",
+      "filter_by_label": "Filter:",
+      "filter_button": "Filters",
+      "filters_selected": {
+        "one": "{{ count }} selected",
+        "other": "{{ count }} selected"
+      },
+      "max_price": "The highest price is {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} of {{ count }} product",
+        "other": "{{ product_count }} of {{ count }} products"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "infinite_scroll": {
+        "loading": "Loading...",
+        "last": "",
+        "error": "You've reached the end of the {{ title }}"
+      },
+      "reset": "Reset",
+      "sort_button": "Sort",
+      "sort_by_label": "Sort by:",
+      "title": "Collection",
+      "to": "To",
+      "use_fewer_filters_html": "Use fewer filters or <a class=\"{{ class }}\" href=\"{{ link }}\">clear all</a>",
+      "add_to_cart": "Add to cart",
+      "add_hover": "+ Add",
+      "remove_hover": "- Remove",
+      "warning": "Make sure you finish adding your items to the cart.",
+      "selected_swatches": "Swatches In Cart",
+      "shop_all": "Shop all"
+    },
+    "cart": {
+      "title": "Your Cart",
+      "title_italic": "Bag",
+      "caption": "Cart items",
+      "remove_title": "Remove {{ title }}",
+      "remove": "Remove",
+      "subtotal": "Subtotal",
+      "new_subtotal": "New subtotal",
+      "note": "Note to the Pepper Team",
+      "checkout": "Checkout",
+      "continue": "Continue browsing",
+      "empty": "Your cart is empty",
+      "embroidery_lead_time": "Ships in 2 weeks",
+      "fabric_type": "Fabric Type",
+      "preorder_eta": "Pre-order, ETA 30 days",
+      "review": "Please review your selections, as we embroider exactly what is entered. Embroidered items cannot be returned or exchanged.",
+      "cart_error": "There was an error while updating your cart. Please try again.",
+      "cart_quantity_error_html": "You can only add [quantity] of this item to your cart.",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout",
+      "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+      "shipping_threshold_not_met": "{{ amount }} away from free shipping",
+      "shipping_threshold_met": "You've unlocked free shipping",
+      "discounts_not_applied": "Discounts cannot be applied to this product",
+      "trade_discount_applied": "Trade Discount Applied",
+      "headings": {
+        "product": "Product",
+        "price": "Price",
+        "total": "Total",
+        "quantity": "Quantity"
+      },
+      "update": "Update",
+      "login": {
+        "title": "Have an account?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
+      },
+      "furniture_review": "Please ensure your furniture items fit your space—furniture purchases cannot be returned or exchanged.",
+      "curtain_warning_message": "Just to confirm—do you want the trim on the same side of all curtain panels?",
+      "view_edit_cart": "View and edit cart",
+      "order_summary": "Order Summary",
+      "delivery": "Delivery",
+      "total": "Total",
+      "shipping_bar_message": "* Does not apply for furniture"
+    },
+    "gallery": {
+      "upload": "Upload your image",
+      "step_1": "Filter Photos By:",
+      "step_2": "Shop the look"
+    },
+    "compare_options": {
+      "cotton": "Printed Cotton",
+      "linen": "Printed Linen"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "skip_to_product_info": "Skip to product information",
+    "close": "Close",
+    "unit_price_separator": "per",
+    "vendor": "Vendor:",
+    "error": "Error",
+    "refresh_page": "Choosing a selection results in a full page refresh.",
+    "link_messages": {
+      "new_window": "Opens in a new window.",
+      "external": "Opens external website."
+    },
+    "of": "of",
+    "next_slide": "Slide right",
+    "previous_slide": "Slide left",
+    "slide_index": "Slide {{ index }}",
+    "loading": "Loading...",
+    "total_reviews": "total reviews",
+    "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "add_to_cart_html": "<span id=\"price_buy\">{{ price }}</span>&nbsp;|&nbsp;Add to cart",
+      "pom_pom_oos_html": "<span id=\"price_buy\">{{ price }}</span>&nbsp;|&nbsp;PRE-ORDER, ETA 10/30",
+      "pom_pom_oos_cart": "PRE-ORDER, ETA 10/30",
+      "description": "Description",
+      "embroidery_color_name": "EMBROIDERY THREAD COLOR",
+      "on_sale": "Sale",
+      "shade": "Shade",
+      "type": "Type",
+      "monogram": "Monogram",
+      "not_selected": "Not selected",
+      "not_entered": "Not entered",
+      "trim": "Trim",
+      "leg": "Leg",
+      "thread_color": "Thread color",
+      "construction_text": "Construction",
+      "mount": "Mount",
+      "inside": "Inside",
+      "outside": "Outside",
+      "lining": "Lining",
+      "no_lining": "No Lining",
+      "privacy": "Privacy",
+      "blackout": "Blackout",
+      "room_darkening": "Room Darkening",
+      "bed_platform_option": "Base construction",
+      "bed_construction": "Bed Construction",
+      "product_variants": "Product variants",
+      "color_matching": "Color match to prior order",
+      "color_matching_order": "Enter your order number",
+      "color_matching_order_msg": "Enter your previous numerical order number",
+      "color_matching_description_html": "<p>When we produce additional yardage to match a prior order, we use the cutting from the first order as our sample to match to. Although variables exist that do prevent an exact match, we do our very best.<p>Enough wallpaper should be ordered so that the two dye lots are NOT installed side by side on a flat wall. The installer should always merge the two lots in a discrete location, such as in a corner or around a window, and order more if necessary to allow for this.</p>",
+      "quick_add": "Add {{ item }} to cart",
+      "rush_shipping": "Add rush shipping +${{ price }}",
+      "yard_dropdown_label": "Select your yardage",
+      "shade_headrail_ww": {
+        "label": "Headrail depth",
+        "image_alt": "Woven wood shade showing headrail and depth",
+        "table": {
+          "header_shade_weight": "Shade weight",
+          "header_max_size": "1.5” headrail maximum size",
+          "header_width": "Width",
+          "light": "Light",
+          "medium": "Medium",
+          "heavy": "Heavy",
+          "light_value_html": "W: 54\", L: 54\"",
+          "medium_value_html": "W: up to 36\", L: 54\"<br>W: up to 60\", L: 36\"<br>W: > 60”, must have 2.5\"",
+          "heavy_value_html": "W: up to 30\", L: 48\"<br>W: up to 60\", L: 24\"<br>W: > 60\", must have 2.5\""
+        },
+        "note_html": {
+          "note": "Please note:",
+          "outside": "For outside mount, ensure the selected headrail depth is greater than the depth of your window molding.",
+          "inside": "For inside mount, ensure the selected headrail depth is less than the depth of your window molding."
+        }
+      },
+      "media": {
+        "open_featured_media": "Open featured media in gallery view",
+        "open_media": "Open media {{ index }} in gallery view",
+        "play_model": "Play 3D Viewer",
+        "play_video": "Play video"
+      },
+      "quantity": {
+        "label": "Quantity",
+        "input_label": "Quantity for {{ product }}",
+        "increase": "Increase quantity for {{ product }}",
+        "decrease": "Decrease quantity for {{ product }}",
+        "curtain_label": "# of Panels",
+        "rolls_label": "Rolls",
+        "yardage_label": "Yards"
+      },
+      "pickup_availability": {
+        "view_store_info": "View store information",
+        "check_other_stores": "Check availability at other stores",
+        "pick_up_available": "Pickup available",
+        "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Couldn't load pickup availability",
+        "refresh": "Refresh"
+      },
+      "price": {
+        "from_price_html": "From {{ price }}",
+        "starting_price_html": "Starting at {{ price }}",
+        "regular_price": "Regular price",
+        "sale_price": "Sale price",
+        "unit_price": "Unit price"
+      },
+      "personalization": {
+        "confirmation": "I confirm that my personalization is correct. Personalized items cannot be returned, see our return policy for full terms. We are not responsible for misspellings, mistypes, etc."
+      },
+      "share": "Share this product",
+      "sold_out": "Sold out",
+      "select_size": "Select size",
+      "select_trim": "Select trim",
+      "select_insert": "Select insert",
+      "select_style": "Select style",
+      "style": "Style",
+      "classic": "Classic",
+      "waterfall": "Waterfall",
+      "select_width": "Select width",
+      "select_length": "Select length",
+      "select_lining": "Select lining",
+      "select_construction": "Select construction",
+      "select_type": "Select type",
+      "select_base": "Select base",
+      "select_leg": "Select leg",
+      "select_swivel": "Select swivel",
+      "select_detail": "Select detail",
+      "select_configuration": "Select configuration",
+      "select_seat": "Select seat",
+      "select": "Select",
+      "select_mount": "Select mount",
+      "select_headrail": "Select headrail",
+      "select_height": "Select height",
+      "select_depth": "Select depth",
+      "select_wood_finish": "Select wood finish",
+      "choose_option_size": "Select your size",
+      "choose_option_base": "Select your base",
+      "choose_option_construction": "Select construction",
+      "unavailable": "SELECT OPTIONS",
+      "vendor": "Vendor",
+      "video_exit_message": "{{ title }} opens full screen video in same window.",
+      "view_full_details": "View full details",
+      "xr_button": "View in your space",
+      "xr_button_label": "View in your space, loads item in augmented reality window",
+      "construction": {
+        "rod-pocket": "*Please note, a 3/8\" or smaller rod is needed to accommodate sewn pocket",
+        "rod-w-header": "*Please note, a 3/8\" or smaller rod is needed to accommodate sewn pocket",
+        "double-rod-w-header": "*Please note, a 3/8\" or smaller rod is needed to accommodate sewn pocket",
+        "double-rod": "*Please note, a 3/8\" or smaller rod is needed to accommodate sewn pocket",
+        "ring-top": "",
+        "grommet": "*Please note, our grommets will be black metal",
+        "pinch-pleat": "",
+        "tailored-pleat": "",
+        "flat": "",
+        "ribbed": "",
+        "relaxed": "*Best suited as a decorative statement piece rather than for everyday use. Relaxed Roman shades require manual dressing after each raise.",
+        "scalloped": "",
+        "knife-pleat": "",
+        "classic": "",
+        "woven_scalloped": "Scalloped Woven Wooden shade construction requires a gimp band for finishing."
+      },
+      "trim_options_select_message": "Select a trim location to preview options",
+      "trim_options_none_message": "Select NONE to remove your trim",
+      "trim_options_message": "Select trim style and color below to see preview.",
+      "woven_trim_options_message": "Select color below to see preview.",
+      "tooltips": {
+        "trim": "PLEASE NOTE our curtains are sold individually. If you would like trim on the inside of a set of curtains, order 1 panel with trim on the left and 1 panel with trim on the right."
+      },
+      "embroidery": {
+        "review": "Please note the preview is approximate. Pattern placement will vary. Embroidered items cannot be exchanged and require 1 additional week to process."
+      },
+      "calculate_dimension": "Calculate dimensions",
+      "switch_option": {
+        "type_title": "Type",
+        "color_title": "Colors"
+      },
+      "shade_headrail": {
+        "label": "Headrail Depth",
+        "tooltip_question": "?",
+        "tooltip_table": {
+          "header_shade_width": "Shade Width or Length",
+          "header_recommended_depth": "Recommended Headrail Depth",
+          "under_60": "Under 60\"",
+          "under_60_value": "1.5\"",
+          "over_60": "60\" and Over",
+          "over_60_value": "2.5\" (Required)",
+          "mixed_sizes": "Mixed Sizes in Same Room",
+          "mixed_sizes_value": "2.5\" (Recommended for Consistency)"
+        },
+        "note_html": {
+          "note": "Please note:",
+          "inside": "For outside mount, ensure the selected headrail depth is greater than the depth of your window molding.",
+          "outside": "For inside mount, ensure the selected headrail depth is less than the depth of your window molding."
+        },
+        "option_1_5": "1.5\"",
+        "option_2_5": "2.5\""
+      },
+      "depth": {
+        "label": "Depth",
+        "option_3_5": "3.5\"",
+        "option_5_5": "5.5\""
+      },
+      "details": {
+        "measuring": "Measuring",
+        "dimension": "Dimensions",
+        "sizing": "Sizing",
+        "details": "Details",
+        "care": "Care",
+        "assembly_care": "Assembly + Care",
+        "shipping_return": "Shipping &amp; Returns",
+        "certifications": "Certifications"
+      },
+      "lining_message": {
+        "privacy": "",
+        "blackout": "Our blackout fabric provides 100% light blocking. As with all fabric roman shades, slight light leakage may appear at the edges or seams",
+        "room_darkening": "Our Room Darkening lining minimizes light while preserving the natural character of woven wood shades. Due to the organic weave and lining attachment process, small amounts of light may still be visible through the shade and around the edges.",
+        "unlined": "",
+        "lined": "*Cotton lining only. Plastic shower liner not included."
+      },
+      "mount_message": {
+        "inside": "For inside mount, provide the distance between the inner edges of the window frame. We will subtract 1/2\" to ensure proper side clearance.",
+        "outside": ""
+      },
+      "mount_modal": {
+        "title": "Mount Detail",
+        "inside": {
+          "title": "Inside Mount",
+          "description": "Clean, streamlined look; best for highlighting window molding",
+          "require": "Requires 1½ inches of window depth; 2½ inches for 60”+ W/L shades"
+        },
+        "outside": {
+          "title": "Outside Mount",
+          "description": "Best for privacy and light control; ideal for covering or enlarging a window",
+          "require": "Requires 4.5” of flat mounting space above the window"
+        }
+      },
+      "wood_finish": "Wood Finish",
+      "wood_finishes": "Wood Finishes",
+      "choose_options": "Choose options",
+      "shop_now": "Shop now"
+    },
+    "modal": {
+      "label": "Media gallery"
+    },
+    "facets": {
+      "filter_and_operator_subtitle": "Match all",
+      "apply": "Apply",
+      "clear": "Clear",
+      "clear_all": "Clear All",
+      "from": "From",
+      "filter_and_sort": "Filter and sort",
+      "filter_by_label": "Filter:",
+      "filter_button": "Filters",
+      "filters_selected": {
+        "one": "{{ count }} selected",
+        "other": "{{ count }} selected"
+      },
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filters selected)",
+      "show_more": "Show more",
+      "show_less": "Show less",
+      "max_price": "The highest price is {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} of {{ count }} product",
+        "other": "{{ product_count }} of {{ count }} products"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "reset": "Reset",
+      "sort_button": "Sort",
+      "sort_by_label": "Sort by:",
+      "to": "To",
+      "clear_filter": "Remove filter"
+    }
+  },
+  "blogs": {
+    "article": {
+      "blog": "Blog",
+      "read_more_title": "Read more: {{ title }}",
+      "comments": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      },
+      "moderated": "Please note, comments need to be approved before they are published.",
+      "comment_form_title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post": "Post comment",
+      "back_to_blog": "Back to blog",
+      "share": "Share this article",
+      "success": "Your comment was posted successfully! Thank you!",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "metaobject_shop": "Shop",
+      "thread": "The thread",
+      "empty_swatches": "No swatches found",
+      "search": "Search"
+    },
+    "search": {
+      "search_placeholder": "Search the blog",
+      "all": "All"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404"
+    },
+    "search": {
+      "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
+      "products": "Products",
+      "results_with_count": {
+        "one": "{{ count }} result",
+        "other": "{{ count }} results"
+      },
+      "results_pages_with_count": {
+        "one": "{{ count }} page",
+        "other": "{{ count }} pages"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} suggestion",
+        "other": "{{ count }} suggestions"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ count }} result found for “{{ terms }}”",
+        "other": "{{ count }} results found for “{{ terms }}”"
+      },
+      "title": "Search results",
+      "search_for": "Search for “{{ terms }}”",
+      "suggestions": "Suggestions",
+      "pages": "Pages",
+      "popular_searches": "Popular searches",
+      "popular_products": "Popular products",
+      "reset": "Clear"
+    },
+    "contact": {
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number",
+        "comment": "Comment",
+        "send": "Send",
+        "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
+        "error_heading": "Please adjust the following:"
+      }
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Account",
+      "details": "Account details",
+      "view_addresses": "View addresses",
+      "return": "Return to Account details"
+    },
+    "account_fallback": "My account",
+    "activate_account": {
+      "title": "Activate account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Activate account",
+      "cancel": "Decline invitation"
+    },
+    "addresses": {
+      "title": "Addresses",
+      "default": "Default",
+      "add_new": "Add a new address",
+      "edit_address": "Edit address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "city": "City",
+      "country": "Country/region",
+      "province": "Province",
+      "zip": "Postal/ZIP code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add address",
+      "update": "Update address",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "delete_confirm": "Are you sure you wish to delete this address?"
+    },
+    "log_in": "Sign in",
+    "log_out": "Sign out",
+    "login_page": {
+      "cancel": "Cancel",
+      "create_account": "Create account",
+      "email": "Email",
+      "forgot_password": "Forgot your password?",
+      "guest_continue": "Continue",
+      "guest_title": "Continue as a guest",
+      "password": "Password",
+      "title": "Sign in",
+      "sign_in": "Sign in",
+      "submit": "Submit"
+    },
+    "b2b": {
+      "trade_discount": "Trade discount",
+      "original_price": "Original price"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date_html": "Placed on {{ date }}",
+      "cancelled_html": "Order Cancelled on {{ date }}",
+      "cancelled_reason": "Reason: {{ reason }}",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "fulfillment_status": "Fulfillment Status",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "track_shipment": "Track shipment",
+      "tracking_url": "Tracking link",
+      "tracking_company": "Carrier",
+      "tracking_number": "Tracking number",
+      "subtotal": "Subtotal"
+    },
+    "orders": {
+      "title": "Order history",
+      "order_number": "Order",
+      "order_number_link": "Order number {{ number }}",
+      "date": "Date",
+      "payment_status": "Payment status",
+      "fulfillment_status": "Fulfillment status",
+      "total": "Total",
+      "none": "You haven't placed any orders yet."
+    },
+    "recover_password": {
+      "title": "Reset your password",
+      "subtext": "We will send you an email to reset your password",
+      "success": "We've sent you an email with a link to update your password."
+    },
+    "register": {
+      "title": "New here?",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "login": "Already have an account?"
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Enter a new password",
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "submit": "Reset password"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Your gift card",
+      "gift_card_code": "Gift card code",
+      "shop_link": "Continue shopping",
+      "remaining_html": "Remaining {{ balance }}",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "copy_code": "Copy code",
+      "expired": "Expired",
+      "copy_code_success": "Code copied successfully",
+      "print_gift_card": "Print"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "shipping_method_title": "Shipping Method"
+      },
+      "signature_optout_label": "Deliver my package without collecting a signature. I accept responsibility for any loss or damage that may occur",
+      "terms_checkbox_label_html": "Accept our terms to complete your purchase. Our products are manufactured to your exact specifications and preferences. As such, they cannot be returned or refunded. Please see our full return policy <a href='https://pepper-home.com/policies/refund-policy' target='_blank'>here</a>.",
+      "general": {
+        "cart": "Shopping Bag",
+        "back_to_cart": "Return to Shopping Bag"
+      },
+      "stock": {
+        "removed_from_cart_notice": "Removed from Shopping Bag",
+        "remove_from_cart_button_label": "Remove from Shopping Bag",
+        "go_back_to_cart_button_label": "Go back to my Shopping Bag",
+        "empty_cart_label": "Your Shopping Bag is empty"
+      },
+      "contact": {
+        "optional_phone_label": "Phone (optional)"
+      }
+    }
+  }
+}

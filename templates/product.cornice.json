@@ -1,0 +1,383 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-cornice",
+      "blocks": {
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02": {
+          "type": "title",
+          "settings": {}
+        },
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e": {
+          "type": "price",
+          "settings": {}
+        },
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        },
+        "description_E6g8cA": {
+          "type": "description",
+          "settings": {}
+        },
+        "switch_option_color_NNE88h": {
+          "type": "switch_option_color",
+          "settings": {
+            "color_title": "Fabric:",
+            "text_under": "<p>LOOKING FOR MORE OPTIONS? We’ve got you covered with custom colorways—any pattern, any ground. Email <a href=\"mailto:HELLO@PEPPER-HOME.COM\" target=\"_blank\" title=\"mailto:HELLO@PEPPER-HOME.COM\">hello@pepper-home.com</a> to place your order<br/><br/></p>"
+          }
+        },
+        "switch_option_type_XzJb9C": {
+          "type": "switch_option_type",
+          "settings": {}
+        },
+        "b79821f0-2042-4c25-8a13-b95da3079520": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_calculator": true,
+            "content": ""
+          }
+        },
+        "8e7e69eb-e149-466a-b591-af976db81ba4": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "225ad4ca-9454-494b-89a6-f8902c1991d6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "quick_add_bCpz43": {
+          "type": "quick_add",
+          "settings": {
+            "product": "{{ product.metafields.pepper.swatch_sample.value }}"
+          }
+        },
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8": {
+          "type": "tabset",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "31dc3312-114b-45ef-b606-80c9a4a9cd02",
+        "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
+        "9527cb5e-3b01-4f8d-9111-130f1f534c03",
+        "description_E6g8cA",
+        "switch_option_color_NNE88h",
+        "switch_option_type_XzJb9C",
+        "b79821f0-2042-4c25-8a13-b95da3079520",
+        "8e7e69eb-e149-466a-b591-af976db81ba4",
+        "225ad4ca-9454-494b-89a6-f8902c1991d6",
+        "quick_add_bCpz43",
+        "0ea508bb-db3a-49ad-90ac-6aa302a0c0c8"
+      ],
+      "settings": {
+        "media_thumbnail": "vertical",
+        "hide_variants": true,
+        "show_dots": false,
+        "show_buttons": false,
+        "show_buttons_mobile": false,
+        "enable_zoom": true,
+        "enable_zoom_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 40,
+        "pompom_message": "Pre-order, ETA 9/30",
+        "pompom_trims": "Rose Velvet Band,Harbor Band,Sky Velvet Band"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Perfect Pairs",
+        "subheading": "",
+        "show_secondary_image": true
+      }
+    },
+    "1633988363790b2161": {
+      "type": "ugc-images",
+      "blocks": {
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d": {
+          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
+          "settings": {
+            "show_text": false,
+            "hide_title_if_empty": false,
+            "title_text": "Covet.pics gallery",
+            "title_color": "#000000",
+            "title_size": 22,
+            "subtitle_text": "",
+            "subtitle_color": "#000000",
+            "subtitle_size": 14,
+            "text_alignment": "center",
+            "margin": 20,
+            "custom_html_above": "",
+            "custom_html_below": ""
+          }
+        }
+      },
+      "block_order": [
+        "df231ddf-0be2-4cdc-88f2-249719e6dd5d"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "#JustAddPepper",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    },
+    "two_column_features_AhfhXi": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_9X8y7p": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1_81ec19f5-b219-4fc2-b40d-634522111bbc.png",
+            "title": "Made Just for You",
+            "description": "Your piece doesn’t exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_4ykHMa": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-1.jpg",
+            "title": "Sustainable by Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_9X8y7p",
+        "feature_column_4ykHMa"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "curated_spaces_Pz7jer": {
+      "type": "curated-spaces",
+      "blocks": {
+        "slide_tQJBtP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Curtain-Embroidered-Lilith-_mollybasileinteriors-_margaret.wright-1-Cropped.jpg",
+            "product": "curtain-embroidered-lilith-orchid-custom"
+          }
+        },
+        "slide_H6BwhC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-sheers-snow.jpg",
+            "product": "sheercurtain-sheer-solid-flour-custom"
+          }
+        },
+        "slide_WzQFtR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-curtains-oat.jpg",
+            "product": "curtain-solid-linen-oat-custom"
+          }
+        },
+        "slide_qhLBnM": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Curtain-Embroidered-Margot-Fern-_kyrosedesigns-20251105-1-AdApproved-Cropped.jpg",
+            "product": "curtain-embroidered-margot-fern-custom"
+          }
+        },
+        "slide_CMcxHh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Image_4.jpg",
+            "product": "curtain-printedcotton-serena-seasalt-custom"
+          }
+        },
+        "slide_e3DWz4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-curtains-millieharbor.jpg",
+            "product": "curtain-woven-millie-harbor-custom"
+          }
+        },
+        "slide_JfR3Kz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Curtain-PrintedCotton-Julia-_visionandhammer_AND_rachelalysemanning-1-AdApproved-Cropped.jpg",
+            "product": "curtain-printedcotton-julia-blue-custom"
+          }
+        },
+        "slide_cxtt6r": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-sheers-eloiseorchid.jpg",
+            "product": "sheercurtain-sheer-eloise-orchid-custom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tQJBtP",
+        "slide_H6BwhC",
+        "slide_WzQFtR",
+        "slide_qhLBnM",
+        "slide_CMcxHh",
+        "slide_e3DWz4",
+        "slide_JfR3Kz",
+        "slide_cxtt6r"
+      ],
+      "disabled": true,
+      "name": "Curated Spaces",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Pepper at <i>Your</i> Place",
+        "subheading": "See how our pieces come to life in homes like yours.",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "163398841244446eb7": {
+      "type": "apps",
+      "blocks": {
+        "c166d93d-961e-4693-ac9e-2391913f984b": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{ product }}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "c166d93d-961e-4693-ac9e-2391913f984b"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "app_review_x3cJiA": {
+      "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_AaamYr": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_AaamYr"
+      ],
+      "name": "Apps - Reviews",
+      "settings": {
+        "include_margins": true,
+        "padded": true,
+        "color_scheme": "background-primary"
+      }
+    },
+    "recently_viewed_products_xFzN9L": {
+      "type": "recently-viewed-products",
+      "name": "Recently Viewed Products",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "title": "Recently Viewed",
+        "cta_text": "SHOP NOW",
+        "max_products": 10,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "section_text_with_icon_column_4LtpUK": {
+      "type": "section-text-with-icon-column",
+      "blocks": {
+        "column_AC9mzW": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Fabric_Swatches-Annabelle-Louisa_1e28acfa-8f21-4335-a4ff-9ba1321f1f5c.png",
+            "image_width": 140,
+            "title": "Order Swatches",
+            "content": "Try before you buy to make sure\nyour choice is solid.",
+            "link_text": "ORDER",
+            "link_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "column_DHNDfa": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Paint_Fan_Book-Mauve_5.png",
+            "image_width": 140,
+            "title": "Visit the Design Hub",
+            "content": "All of our product guidance,\nin one place.",
+            "link_text": "VISIT",
+            "link_url": "shopify://pages/design-hub"
+          }
+        },
+        "column_W3mjBk": {
+          "type": "column",
+          "settings": {
+            "icon": "shopify://shop_images/Calculator-1.png",
+            "image_width": 140,
+            "title": "Find Your Fit",
+            "content": "Share a few measurements and\nwe’ll tailor the perfect fit.",
+            "link_text": "BEGIN",
+            "link_url": "shopify://pages/curtain-calculator"
+          }
+        }
+      },
+      "block_order": [
+        "column_AC9mzW",
+        "column_DHNDfa",
+        "column_W3mjBk"
+      ],
+      "name": "Text with icon column",
+      "settings": {
+        "background_color": "",
+        "fullwidth": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations",
+    "1633988363790b2161",
+    "two_column_features_AhfhXi",
+    "curated_spaces_Pz7jer",
+    "163398841244446eb7",
+    "app_review_x3cJiA",
+    "recently_viewed_products_xFzN9L",
+    "section_text_with_icon_column_4LtpUK"
+  ]
+}

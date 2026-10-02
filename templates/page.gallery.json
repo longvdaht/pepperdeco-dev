@@ -1,0 +1,471 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1641828005e1332a01": {
+      "type": "page-hero",
+      "settings": {
+        "word_graphic": "shopify://shop_images/Shop_532b56c9-4067-4242-82a8-80740af064dd.png",
+        "word_graphic_width": 60,
+        "text_icon": "2",
+        "mobile_display": "2",
+        "title": "Customer  Photos",
+        "subheading": "",
+        "quote": "",
+        "link": "",
+        "label": "",
+        "custom_link": "",
+        "image": "shopify://shop_images/Collection-UGC-PoorLittleItGirl.jpg",
+        "color_scheme": "background-tertiary"
+      }
+    },
+    "hero_text_zEJ9DG": {
+      "type": "hero-text",
+      "settings": {
+        "subheading": "#J U S T A D D P E P P E R",
+        "heading": "Designed by us. Styled by you.",
+        "content": "<p>See how our customers have peppered their<br/>homes and shop directly from their photos.</p>",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "d59b739b-a534-4be6-8643-27e1ee7ac67d": {
+      "type": "main-gallery",
+      "blocks": {
+        "0d1769bc-460a-4b40-bf09-e6b5251bea5d": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-curtains-serenaseasalt.jpg",
+            "collection": "product",
+            "heading": "Curtains",
+            "gallery_id": 233723
+          }
+        },
+        "cf05297c-3fd0-4eba-94c7-7cfaca69ba6d": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-cafecurtains-flour.jpg",
+            "collection": "product",
+            "heading": "Cafe Curtains",
+            "gallery_id": 246890
+          }
+        },
+        "gallery_fFWq4F": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-romanshade-florenceeucalyptus-2.jpg",
+            "collection": "product",
+            "heading": "Roman Shades",
+            "gallery_id": 247484
+          }
+        },
+        "82ea0617-fe63-422a-aea1-7c6744833f77": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Furniture.jpg",
+            "collection": "product",
+            "heading": "Furniture",
+            "gallery_id": 245963
+          }
+        },
+        "4d3902c8-03b1-405b-b037-71fb867906f9": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/CollectionUGC-3x4-pillows-suzypink.jpg",
+            "collection": "product",
+            "heading": "Pillows",
+            "gallery_id": 233722
+          }
+        },
+        "83094dc8-8d4a-4310-aab7-1e5340b38ce1": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-Annabelle-Peacock-_jennifersmithdesign_and_AndyFramePhotography-20250828-2-AdApproved-Cropped.jpg",
+            "collection": "product",
+            "heading": "Wallpaper",
+            "gallery_id": 233721
+          }
+        },
+        "d1572ad1-929d-40cf-ba6c-bd0156acb7e8": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/Julia-_mollyboyd_1-cropped.jpg",
+            "collection": "product",
+            "heading": "Shower Curtains",
+            "gallery_id": 233724
+          }
+        },
+        "6ddbd1b8-c7be-4661-bf25-8747e133607f": {
+          "type": "gallery",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Fabric-2.jpg",
+            "collection": "product",
+            "heading": "Fabric",
+            "gallery_id": 233720
+          }
+        },
+        "25f66359-9076-48c0-b76d-f3a7592ff9af": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-TableLinens.jpg",
+            "collection": "product",
+            "heading": "Table Linens",
+            "gallery_id": 233718
+          }
+        },
+        "9652c807-e79d-49b8-89c7-1f060c326490": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Living.jpg",
+            "collection": "room",
+            "heading": "Living",
+            "gallery_id": 233701
+          }
+        },
+        "a6713587-93d3-4677-8794-d8afc005e4bd": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-BathLaundry.jpg",
+            "collection": "room",
+            "heading": "Bath & Laundry",
+            "gallery_id": 233707
+          }
+        },
+        "9047d875-a6a5-4c4e-b3f2-054d75cf85cf": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Bedroom.jpg",
+            "collection": "room",
+            "heading": "Bedroom",
+            "gallery_id": 233706
+          }
+        },
+        "0ea24238-abca-49de-a739-312ff6585a83": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/Lee-KristinChambless.png",
+            "collection": "room",
+            "heading": "Kitchen & Dining",
+            "gallery_id": 233702
+          }
+        },
+        "01cd5c51-7165-400c-af0c-60738cf90374": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-NurseryKids.jpg",
+            "collection": "room",
+            "heading": "Nursery & Kids",
+            "gallery_id": 233700
+          }
+        },
+        "4c9371dc-c6bc-4821-b93d-d3bccfe2c435": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Office-1.jpg",
+            "collection": "room",
+            "heading": "Office",
+            "gallery_id": 233704
+          }
+        },
+        "21429275-9f7f-4918-9e47-dbc0c5af94c1": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-EntryHallway.jpg",
+            "collection": "room",
+            "heading": "Entry & Hallway",
+            "gallery_id": 233708
+          }
+        },
+        "08886bb2-59a9-4385-a938-a586f80e0746": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Curtain-Embroidered-Lilith-_mollybasileinteriors-_margaret.wright-1-Cropped.jpg",
+            "collection": "room",
+            "heading": "Commercial",
+            "gallery_id": 233703
+          }
+        },
+        "2c529594-6fe4-4a6b-a1a8-3ca66fc265a0": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Blue.jpg",
+            "collection": "color",
+            "heading": "Blue",
+            "gallery_id": 233715
+          }
+        },
+        "8b205a00-b0bd-4904-a8d6-ec642f052b69": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Wallpaper-Removable-Louisa-Sage-_athomeontheboulevard-20251104-1-AdApproved-Cropped.jpg",
+            "collection": "color",
+            "heading": "Green",
+            "gallery_id": 233714
+          }
+        },
+        "7ba1f462-901c-4480-81ed-457303f16768": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-ShowerCurtain-Woven-Louisa-Camel-_rose_hill_designs_and_tamara_flanagan_photo-20251110-1-AdApproved-Cropped.jpg",
+            "collection": "color",
+            "heading": "Neutral",
+            "gallery_id": 233716
+          }
+        },
+        "9601eb05-b3f1-4fb0-b5fc-0dd96d2544f2": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Pink.jpg",
+            "collection": "color",
+            "heading": "Pink",
+            "gallery_id": 233709
+          }
+        },
+        "801f9417-dbee-40bd-a8e0-7ce9c18067f1": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Red.jpg",
+            "collection": "color",
+            "heading": "Red",
+            "gallery_id": 233713
+          }
+        },
+        "c87a6c67-7509-44c6-93a0-f554bb4c7465": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/orange.png",
+            "collection": "color",
+            "heading": "Orange",
+            "gallery_id": 233712
+          }
+        },
+        "03955bf3-c52b-4fd9-abe1-0cafe9731d03": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-Nursey_Kids-3.jpg",
+            "collection": "color",
+            "heading": "Purple",
+            "gallery_id": 233710
+          }
+        },
+        "59bf9860-0b8f-451d-9e72-2ab21e40f043": {
+          "type": "gallery",
+          "settings": {
+            "image": "shopify://shop_images/UGC-CategoryCover-Yellow.jpg",
+            "collection": "color",
+            "heading": "Yellow",
+            "gallery_id": 233711
+          }
+        }
+      },
+      "block_order": [
+        "0d1769bc-460a-4b40-bf09-e6b5251bea5d",
+        "cf05297c-3fd0-4eba-94c7-7cfaca69ba6d",
+        "gallery_fFWq4F",
+        "82ea0617-fe63-422a-aea1-7c6744833f77",
+        "4d3902c8-03b1-405b-b037-71fb867906f9",
+        "83094dc8-8d4a-4310-aab7-1e5340b38ce1",
+        "d1572ad1-929d-40cf-ba6c-bd0156acb7e8",
+        "6ddbd1b8-c7be-4661-bf25-8747e133607f",
+        "25f66359-9076-48c0-b76d-f3a7592ff9af",
+        "9652c807-e79d-49b8-89c7-1f060c326490",
+        "a6713587-93d3-4677-8794-d8afc005e4bd",
+        "9047d875-a6a5-4c4e-b3f2-054d75cf85cf",
+        "0ea24238-abca-49de-a739-312ff6585a83",
+        "01cd5c51-7165-400c-af0c-60738cf90374",
+        "4c9371dc-c6bc-4821-b93d-d3bccfe2c435",
+        "21429275-9f7f-4918-9e47-dbc0c5af94c1",
+        "08886bb2-59a9-4385-a938-a586f80e0746",
+        "2c529594-6fe4-4a6b-a1a8-3ca66fc265a0",
+        "8b205a00-b0bd-4904-a8d6-ec642f052b69",
+        "7ba1f462-901c-4480-81ed-457303f16768",
+        "9601eb05-b3f1-4fb0-b5fc-0dd96d2544f2",
+        "801f9417-dbee-40bd-a8e0-7ce9c18067f1",
+        "c87a6c67-7509-44c6-93a0-f554bb4c7465",
+        "03955bf3-c52b-4fd9-abe1-0cafe9731d03",
+        "59bf9860-0b8f-451d-9e72-2ab21e40f043"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "color_scheme": "background-primary"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "163391755731a680b3": {
+      "type": "custom-code",
+      "disabled": true,
+      "custom_css": [
+        "body {--covet-pics-font-family: \"sweet-sans-pro\", serif;}"
+      ],
+      "settings": {
+        "background_color": "",
+        "include_margins": true,
+        "title": "",
+        "description": "",
+        "code": "",
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "hero_text_with_action_Vf74Hb": {
+      "type": "hero-text-with-action",
+      "settings": {
+        "heading": "Share how <i>you</i> peppered your home, and we will add your photo to our gallery.",
+        "content": "",
+        "button_text": "UPLOAD YOUR PHOTO",
+        "color_scheme": "background-quaternary"
+      }
+    },
+    "image_grid_dAMpf6": {
+      "type": "image-grid",
+      "blocks": {
+        "image_DLtYik": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0002_logo-my-domaine.webp",
+            "link": ""
+          }
+        },
+        "image_dNyn8P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-elle-decor_3f4dc360-46e3-4d4e-b376-58e16b309d43.webp",
+            "link": ""
+          }
+        },
+        "image_CHC6Q6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-fast-company_73ab98b8-2625-4ae7-90bf-8388b0ba940f.webp",
+            "link": ""
+          }
+        },
+        "image_xkgfmN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-house-beautiful.webp",
+            "link": ""
+          }
+        },
+        "image_nXaMCh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0007_logo-traditional-co.webp",
+            "link": ""
+          }
+        },
+        "image_XFDUpH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0001_logo-apartment-therapy_adf545fd-9290-4fd2-a10d-0d8ede4cd588.png",
+            "link": ""
+          }
+        },
+        "image_YXmnQ9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/press-_0009_logo-clever_62bbabbb-30fd-425f-8795-30929f2a3502.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_DLtYik",
+        "image_dNyn8P",
+        "image_CHC6Q6",
+        "image_xkgfmN",
+        "image_nXaMCh",
+        "image_XFDUpH",
+        "image_YXmnQ9"
+      ],
+      "settings": {
+        "heading": "FEATURED IN",
+        "subheading": "",
+        "padded": false,
+        "enable_slider": true,
+        "autoplay": true,
+        "autoplay_timing": 5,
+        "desktop_per_row": 6,
+        "mobile_per_row": 2,
+        "color_scheme": "background-primary"
+      }
+    },
+    "customer_reviews_simple_HkJxGQ": {
+      "type": "customer-reviews-simple",
+      "blocks": {
+        "review_eMrpFj": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>I had received an outrageous quote for drapes and looked for alternatives and found Pepper Home. I took a chance and I am so glad I did! The drapes are beautiful, and the fabric is heavyweight and quality.</p>",
+            "source": "LAUREN E."
+          }
+        },
+        "review_UtXYbj": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>The bed is STUNNING. The quality is top notch. And the best part was that it arrived so quickly. I couldn’t believe when I got a notification that it was on its way. Custom + quality is so hard to find, and then you add in the quick turnaround and it’s just the cherry on top.</p>",
+            "source": "Julianna M."
+          }
+        },
+        "review_WWdRYi": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>This is the first time I’ve ever ordered drapes online, and I could not be happier with the purchase. Very high quality and craftsmanship. I am obsessed with the beauty!</p>",
+            "source": "Jennifer B."
+          }
+        },
+        "review_EW87Rj": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "content": "<p>I’m so in love with these curtains in every way. Love the fabric, the colors, the pattern, the workmanship, and the very speedy delivery. I have no issues to report other than this one: when you discover Pepper Home and maybe upgrade one or two rooms with their products, you can’t stop. I’m finding excuses all over my house to go back to their website and find the next perfect thing.</p>",
+            "source": "Melissa H."
+          }
+        }
+      },
+      "block_order": [
+        "review_eMrpFj",
+        "review_UtXYbj",
+        "review_WWdRYi",
+        "review_EW87Rj"
+      ],
+      "settings": {
+        "heading": "Reviews",
+        "subheading": "",
+        "button_text": "",
+        "button_link": "",
+        "color_scheme": "background-secondary",
+        "show_dots": false,
+        "show_buttons": true,
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "1641828005e1332a01",
+    "hero_text_zEJ9DG",
+    "d59b739b-a534-4be6-8643-27e1ee7ac67d",
+    "main",
+    "163391755731a680b3",
+    "hero_text_with_action_Vf74Hb",
+    "image_grid_dAMpf6",
+    "customer_reviews_simple_HkJxGQ"
+  ]
+}
