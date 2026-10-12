@@ -91,12 +91,13 @@
         "show_buttons_mobile": false,
         "enable_zoom": true,
         "enable_zoom_mobile": true,
+        "enable_image_progress_bar": true,
         "padding_top": 40,
         "padding_bottom": 40,
         "padding_top_mobile": 24,
         "padding_bottom_mobile": 40,
-        "pompom_message": "Pre-order, ETA 9/30",
-        "pompom_trims": "Rose Velvet Band,Harbor Band,Sky Velvet Band"
+        "pompom_message": "Pre-order, ETA 10/30",
+        "pompom_trims": "Camel Velvet Band, Sky Velvet Band"
       }
     },
     "product-recommendations": {

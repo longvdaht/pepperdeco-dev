@@ -85,6 +85,7 @@
         "show_buttons": false,
         "enable_zoom": true,
         "enable_zoom_mobile": true,
+        "enable_image_progress_bar": true,
         "enable_pillow_ruffle": false,
         "padding_top": 40,
         "padding_bottom": 40,
@@ -259,7 +260,7 @@
       "type": "recently-viewed-products",
       "name": "Recently Viewed Products",
       "settings": {
-        "background_color": "#F3F1EC",
+        "background_color": "#f3f1ec",
         "title": "Recently Viewed",
         "cta_text": "SHOP NOW",
         "max_products": 10,

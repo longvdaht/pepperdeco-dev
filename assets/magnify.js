@@ -48,8 +48,36 @@ function magnify(image, zoomRatio, isOverlay) {
   overlay.onmouseleave = () => overlay.remove();
 }
 
+// PinchZoom binds update() to window resize and to every image inside the
+// element it wraps, and gives us no way to unbind them. Those listeners outlive
+// the DOM we take apart below, and update() then reads
+// container.parentElement.offsetHeight off nothing - the console flood on every
+// variant/trim change - or, if it got that far, would write a stale transform
+// onto an image that is still on the page. Holding on to the instances lets us
+// switch the retired ones off.
+const pinchZoomInstances = new Set();
+
+// updatePlaned is PinchZoom's own re-entrancy guard: leaving it set makes every
+// one of those listeners return before it touches anything.
+function retirePinchZoom(instance) {
+  if (!instance) return;
+  instance.updatePlaned = true;
+  instance.disable();
+  pinchZoomInstances.delete(instance);
+}
+
+// An instance whose container has left the document was orphaned by something
+// else rebuilding the media it was attached to - a variant or trim change - so
+// destroyZoom() never got the chance to retire it.
+function retireDetachedPinchZooms() {
+  pinchZoomInstances.forEach((instance) => {
+    if (!instance.container?.isConnected) retirePinchZoom(instance);
+  });
+}
+
 function enableZoomOnHover(zoomRatio) {
   const images = document.querySelectorAll('.enable-zoom .image-magnify-hover');
+  retireDetachedPinchZooms();
   images.forEach((image) => {
     destroyZoom(image);
     
@@ -59,6 +87,7 @@ function enableZoomOnHover(zoomRatio) {
       const el = image.parentElement;
       const instance = new PinchZoom.default(el, { minZoom: 1 });
       el.pzInstance = instance;
+      pinchZoomInstances.add(instance);
 
       const container = el.parentElement;
       const zoomInBtn = document.querySelector('.zoom-in');
@@ -95,6 +124,7 @@ function destroyZoom(image) {
 
   const el = image.parentElement;
   if (el?.pzInstance) {
+    retirePinchZoom(el.pzInstance);
     el.pzInstance = null;
   }
 

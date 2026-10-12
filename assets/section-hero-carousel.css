@@ -1,7 +1,6 @@
 .section-hero-carousel .slider.grid {
   align-items: stretch;
 }
-
 .section-hero-carousel .carousel-cell {
   display: flex;
   flex-grow: 1;
@@ -20,7 +19,7 @@
   color: red;
   position: absolute;
   z-index: 2;
-  cursor: none;
+  /* cursor: none; */
 }
 .section-hero-carousel .media {
   padding-bottom: calc(100vh - 42rem);
@@ -156,6 +155,11 @@
   }
 }
 /* hero video */
+.hero-link-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
 .hero-video .media {
   padding: 0;
   aspect-ratio: 3/4;
@@ -178,8 +182,11 @@
   padding: 4rem 1.6rem;
   color: #fff;
   text-align: left;
+  pointer-events: none;
 }
-
+.section-hero-carousel .video-content-wrapper .button {
+  pointer-events: auto;
+}
 .section-hero-carousel .video-content-wrapper .page-width {
   max-width: 100%;
   width: 100%;

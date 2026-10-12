@@ -145,7 +145,7 @@
                   class="full-unstyled-link"
                   aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 >
-                  {{ card_product.title | escape }}
+                  {{ card_product.title | escape }}{%- if collection.metafields.custom.show_product_type_in_title == true -%} {{ card_product.metafields.pepper.type.value | prepend: ' ' }}{%- endif -%}
                 </a>
               </h2>
             </div>
@@ -268,6 +268,9 @@
                 endif
               endif
             -%}
+            {%- if collection.metafields.custom.show_product_type_in_title == true -%}
+              {%- assign show_type = false -%}
+            {%- endif -%}
             <h2
               class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}{% unless show_type %} no-type{% endunless %}"
               {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -280,7 +283,7 @@
                 class="full-unstyled-link"
                 aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
               >
-                {{ card_product.title | escape }}
+                {{ card_product.title | escape }}{%- if collection.metafields.custom.show_product_type_in_title == true -%}{{ card_product.metafields.pepper.type.value | prepend: ' ' }}{%- endif -%}
               </a>
             </h2>
             <div class="card-information">

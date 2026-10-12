@@ -92,6 +92,7 @@
         "show_buttons": false,
         "enable_zoom": true,
         "enable_zoom_mobile": true,
+        "enable_image_progress_bar": true,
         "enable_pillow_ruffle": false,
         "padding_top": 40,
         "padding_bottom": 40,

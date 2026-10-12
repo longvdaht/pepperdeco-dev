@@ -54,7 +54,7 @@
           "settings": {
             "heading": "Support",
             "subtext": "<p><strong>Email:</strong> <a href=\"mailto:hello@pepper-home.com\" title=\"mailto:hello@pepper-home.com\">hello@pepper-home.com</a></p>",
-            "sms_text": "<p>\n<strong>Live Chat:</strong> <a href=\"https://pepper-home.com/?remark_open=true\" class=\"js-open-chat\" onclick=\"event.preventDefault(); window.remark('open');\">7 Days A Week</a>\n</p>\n<p><strong>Call/Text:</strong> <a href=\"tel:+18668647143\">866.864.7143 (M-F: 9-5 EST)</a>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.gorgias.help/\">Help Center</a></strong>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.com/policies/shipping-policy/\">Shipping</a></strong>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.com/policies/refund-policy\">Returns</a></strong>\n</p>",
+            "sms_text": "<p>\n<strong>Live Chat:</strong> <a href=\"https://pepper-home.com/?remark_open=true\" class=\"js-open-chat\" onclick=\"event.preventDefault(); window.remark('open');\">7 Days A Week</a>\n</p>\n<p><strong>Call/Text:</strong> <a href=\"tel:+18668647143\">866.864.7143 (M-F: 9-5 EST)</a>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.gorgias.help/\">Help Center</a></strong>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.com/policies/shipping-policy/\">Shipping</a></strong>\n</p>\n<p>\n<strong><a href=\"https://pepper-home.com/policies/refund-policy\">Orders &amp; Returns</a></strong>\n</p>",
             "menu_toggle_mobile": true,
             "menu_toggle_mobile_open": false
           }

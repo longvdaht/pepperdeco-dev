@@ -93,6 +93,7 @@
         "minimum": 1,
         "enable_zoom": true,
         "enable_zoom_mobile": true,
+        "enable_image_progress_bar": true,
         "padding_top": 40,
         "padding_bottom": 40,
         "padding_top_mobile": 24,
@@ -173,6 +174,43 @@
         "link_view_all": "",
         "background_color": "#f3f1ec",
         "hub_section": ""
+      }
+    },
+    "two_column_features_fWnHwN": {
+      "type": "two-column-features",
+      "blocks": {
+        "feature_column_PQegA4": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
+            "title": "Made Just For You",
+            "description": "Your piece doesn't exist until you design it. Each piece is made to order and shipped directly from our workroom.",
+            "button_label": "ORDER SAMPLES",
+            "button_url": "shopify://collections/swatches-samples"
+          }
+        },
+        "feature_column_q8Tf7N": {
+          "type": "feature_column",
+          "settings": {
+            "image": "shopify://shop_images/PDP-SustainablyMade-2.png",
+            "title": "Sustainable By Design",
+            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
+            "button_label": "LEARN MORE",
+            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
+          }
+        }
+      },
+      "block_order": [
+        "feature_column_PQegA4",
+        "feature_column_q8Tf7N"
+      ],
+      "name": "Two Column Features",
+      "settings": {
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     },
     "163398841244446eb7": {
@@ -265,43 +303,6 @@
       "settings": {
         "background_color": "",
         "fullwidth": false
-      }
-    },
-    "two_column_features_fWnHwN": {
-      "type": "two-column-features",
-      "blocks": {
-        "feature_column_PQegA4": {
-          "type": "feature_column",
-          "settings": {
-            "image": "shopify://shop_images/PDP-CustomToYou-1.png",
-            "title": "Made Just For You",
-            "description": "Your piece doesn't exist until you design it. Each piece is made to order and shipped directly from our workroom.",
-            "button_label": "ORDER SAMPLES",
-            "button_url": "shopify://collections/swatches-samples"
-          }
-        },
-        "feature_column_q8Tf7N": {
-          "type": "feature_column",
-          "settings": {
-            "image": "shopify://shop_images/PDP-SustainablyMade-2.png",
-            "title": "Sustainable By Design",
-            "description": "From thoughtfully sourced materials to low waste production methods, sustainability is at the heart of everything we do.",
-            "button_label": "LEARN MORE",
-            "button_url": "shopify://blogs/the-thread/celebrating-sustainable-style"
-          }
-        }
-      },
-      "block_order": [
-        "feature_column_PQegA4",
-        "feature_column_q8Tf7N"
-      ],
-      "name": "Two Column Features",
-      "settings": {
-        "background_color": "",
-        "padding_top": 0,
-        "padding_bottom": 40,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
       }
     }
   },

@@ -55,7 +55,7 @@
 {%- if media.alt -%}
   {%- assign alt = media.alt -%}
 {%- else -%}
-  {%- capture alt_trim = value -%}{{ trim | first | replace: '-', ' ' -}}
+  {%- capture alt_trim -%}{{ trim | first | replace: '-', ' ' -}}
   {%- unless trim contains 'none' or trim contains 'pom-pom' or trim contains 'ruffle' %} {{ type | default: 'piping' }}{% endunless %}{%- endcapture -%}
   {%- assign alt = size
     | append: ' '
@@ -95,3 +95,13 @@
     >
   </div>
 </li>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- capture alt_trim = value -%}"
+  to: "{%- capture alt_trim -%}"
+  position: 2406..2430
+{% endcomment %}

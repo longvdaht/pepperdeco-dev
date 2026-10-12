@@ -3,6 +3,7 @@ slider-component {
   display: block;
 }
 
+
 .slider {
   position: relative;
   flex-wrap: inherit;
@@ -216,4 +217,132 @@ slider-component:not(.slider-hide-dots) .slider-dots {
 .slider-dot.is-active {
   opacity: 0.3;
   cursor: default;
+}
+
+
+/* Thumbnail rail. A column beside the main image on desktop, scrolled with
+   the hover arrows below while it holds more than fits, and a strip below it
+   on mobile, where a swipe does the same and touch has no hover (see
+   SliderComponent in global.js). */
+@media (min-width: 768px) {
+  .thumbnail-slider {
+    position: relative;
+    overflow: hidden;
+    height: var(--main-media-height, 100%);
+  }
+
+  .thumbnail-slider > .grid.grid-nowrap {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    height: 100%;
+    scroll-snap-type: y proximity;
+    overscroll-behavior-y: contain;
+  }
+
+  .thumbnail-slider .carousel-cell {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+  }
+
+  .thumbnail-slider .slider-dots {
+    display: none;
+  }
+
+  slider-component.thumbnail-slider--scrollable .slider-buttons {
+    display: block;
+  }
+
+  slider-component.thumbnail-slider--scrollable .slider-counter {
+    display: none;
+  }
+
+  slider-component.thumbnail-slider--scrollable .slider-button--next, slider-component.thumbnail-slider--scrollable .slider-button--prev {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3.2rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(var(--color-background), 0) 0%,
+      rgb(var(--color-background)) 80%
+    );
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+  slider-component.thumbnail-slider--scrollable .slider-button--prev {
+    top: 0;
+    bottom: auto;
+    transform: translateY(-4px);
+    background: linear-gradient(
+      to top,
+      rgba(var(--color-background), 0) 0%,
+      rgb(var(--color-background)) 80%
+    );
+  }
+  slider-component.thumbnail-slider--scrollable .slider-button--prev svg {
+    transform: rotate(90deg);
+    margin: 0 auto 12px;
+  }
+  slider-component.thumbnail-slider--scrollable .slider-button--next svg {
+    transform: rotate(90deg);
+    margin: -12px auto 0;
+  }
+  slider-component.thumbnail-slider--scrollable:hover .slider-button--next:not([disabled]), slider-component.thumbnail-slider--scrollable:hover .slider-button--prev:not([disabled]) {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  /* The media wrapper is `flex-wrap: wrap`, and a flex item never shrinks below
+     its content's min-content width by default. A slide that reports a wide
+     one (the Cylindo viewer on furniture, a video's intrinsic width) would push
+     the main image onto a line of its own under the thumbnail column. */
+  .main-images-slider {
+    height: 100%;
+    min-width: 0;
+  }
+}
+
+/* Progress bar on the bottom edge of the main PDP image, above the caption
+   some slides carry under it (SliderComponent in global.js builds it and sets
+   the custom properties below). The highlighted portion is one slide's share
+   of the track, so the more images the carousel holds, the shorter it is, and
+   it travels the track as the carousel is swiped. */
+.slider-progress {
+  display: none;
+}
+
+.main-images-slider.enable-progress-bar.slider-has-progress .slider-progress {
+  background-color: var(--slider-progress-track, #e6e2d9);
+  display: block;
+  height: 0.4rem;
+  left: var(--slider-progress-left, 0);
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: var(--slider-progress-top, 100%);
+  width: var(--slider-progress-width, 100%);
+  z-index: 1;
+}
+
+/* Room for the bar between the image and its caption, so it covers neither. */
+.main-images-slider.enable-progress-bar.slider-has-progress .slider > li > .media,
+.main-images-slider.enable-progress-bar.slider-has-progress .slider > li > .media--type-video {
+  margin-bottom: 0.4rem;
+}
+
+.main-images-slider .slider-progress__indicator {
+  background-color: var(--slider-progress-highlight, #a39f78);
+  bottom: 0;
+  display: block;
+  left: var(--slider-progress-offset, 0%);
+  position: absolute;
+  top: 0;
+  width: var(--slider-progress-size, 100%);
 }

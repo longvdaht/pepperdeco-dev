@@ -86,6 +86,17 @@
     "product-grid": {
       "type": "main-multi-collections",
       "blocks": {
+        "collection_gpe9iN": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-sofas-marlow",
+            "collection_title": "marlow",
+            "collection_description": "",
+            "button_text": "Shop All"
+          }
+        },
         "collection_WKyDz7": {
           "type": "collection",
           "settings": {
@@ -95,6 +106,28 @@
             "collection_title": "Simone",
             "collection_description": "",
             "button_text": "Shop All"
+          }
+        },
+        "collection_jE9ABB": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-sofas-maron",
+            "collection_title": "Maron",
+            "collection_description": "",
+            "button_text": "Shop All"
+          }
+        },
+        "collection_xpiDJP": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-sofas-holden",
+            "collection_title": "Holden",
+            "collection_description": "A modern silhouette with inviting details.",
+            "button_text": "SHOP ALL"
           }
         },
         "collection_iQGPET": {
@@ -108,13 +141,13 @@
             "button_text": "SHOP ALL"
           }
         },
-        "collection_jE9ABB": {
+        "collection_pExwYK": {
           "type": "collection",
           "settings": {
             "title_as_link": false,
             "background_color": "",
-            "collection": "custom-sofas-maron",
-            "collection_title": "Maron",
+            "collection": "custom-sofas-pierce",
+            "collection_title": "Pierce",
             "collection_description": "",
             "button_text": "Shop All"
           }
@@ -129,57 +162,23 @@
             "collection_description": "",
             "button_text": "Shop all"
           }
-        },
-        "collection_pExwYK": {
-          "type": "collection",
-          "settings": {
-            "title_as_link": false,
-            "background_color": "",
-            "collection": "custom-sofas-pierce",
-            "collection_title": "Pierce",
-            "collection_description": "",
-            "button_text": "Shop All"
-          }
-        },
-        "collection_xpiDJP": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "title_as_link": false,
-            "background_color": "",
-            "collection": "custom-sofas-holden",
-            "collection_title": "Holden",
-            "collection_description": "TBD",
-            "button_text": "SHOP ALL"
-          }
-        },
-        "collection_gpe9iN": {
-          "type": "collection",
-          "settings": {
-            "title_as_link": false,
-            "background_color": "",
-            "collection": "custom-sofas-marlow",
-            "collection_title": "marlow",
-            "collection_description": "",
-            "button_text": "Shop All"
-          }
         }
       },
       "block_order": [
+        "collection_gpe9iN",
         "collection_WKyDz7",
-        "collection_iQGPET",
         "collection_jE9ABB",
-        "collection_bjQ7DD",
-        "collection_pExwYK",
         "collection_xpiDJP",
-        "collection_gpe9iN"
+        "collection_iQGPET",
+        "collection_pExwYK",
+        "collection_bjQ7DD"
       ],
       "settings": {
         "collection_layout": "slider",
         "product_limit": 50,
         "product_limit_mobile": 9,
         "show_secondary_image": true,
-        "show_price": false,
+        "show_price": true,
         "show_vendor": false,
         "show_rating": false,
         "show_product_type": false,

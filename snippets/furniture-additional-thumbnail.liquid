@@ -129,7 +129,7 @@
 {%- if media.alt -%}
   {%- assign alt = media.alt -%}
 {%- else -%}
-  {%- capture alt_trim = value -%}{{ trim | first | replace: '-', ' ' -}}{%- endcapture -%}
+  {%- capture alt_trim -%}{{ trim | first | replace: '-', ' ' -}}{%- endcapture -%}
   {%- assign alt = size
     | append: ' '
     | append: product.title
@@ -174,3 +174,13 @@
     >
   </div>
 </li>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- capture alt_trim = value -%}"
+  to: "{%- capture alt_trim -%}"
+  position: 4228..4252
+{% endcomment %}

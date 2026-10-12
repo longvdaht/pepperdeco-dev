@@ -810,20 +810,19 @@ const thumbnailSlider = document.querySelector(".thumbnail-slider");
 const mainSlider = document.querySelector(".main-images-slider");
 
 if (thumbnailSlider && mainSlider) {
-  const thumbnailImages = thumbnailSlider.querySelectorAll("li");
-  thumbnailImages.forEach((thumbnail) => {
-    thumbnail.addEventListener("click", (e) => {
-      const li = e.target.closest("li");
-      const mediaId = li.dataset.mediaId;
-      thumbnailImages.forEach((thumbnail) => {
-        thumbnail.classList.remove("is-active");
-      });
-      li.classList.add("is-active");
-      mainSlider.querySelector("ul").scroll({
-        top: 0,
-        left: mainSlider.querySelector(`li[data-media-id="${mediaId}"]`)
-          .offsetLeft,
-      });
+  thumbnailSlider.addEventListener("click", (e) => {
+    const thumbnail = e.target.closest("li");
+    if (!thumbnail || !thumbnailSlider.contains(thumbnail)) return;
+
+    const mainMedia = mainSlider.querySelector(
+      `li[data-media-id="${thumbnail.dataset.mediaId}"]`
+    );
+    if (!mainMedia) return;
+
+    setActiveThumbnail(thumbnailSlider, thumbnail.dataset.mediaId);
+    mainSlider.querySelector("ul").scroll({
+      top: 0,
+      left: mainMedia.offsetLeft,
     });
   });
 }

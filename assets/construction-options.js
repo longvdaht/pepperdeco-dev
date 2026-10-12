@@ -673,10 +673,7 @@ class ChildRadios extends HTMLElement {
         })
         imageNoneThumbnail.classList.remove('product__media-item--additional-image');
         imageNoneThumbnail.classList.add("is-active");
-        thumbnailSlider.querySelector("ul").scroll({
-          top: 0,
-          left: imageNoneThumbnail.offsetLeft,
-        });
+        scrollThumbnailIntoView(thumbnailSlider, imageNoneThumbnail);
       }
 
       if (window.matchMedia(`(min-width: 40em)`).matches) return;

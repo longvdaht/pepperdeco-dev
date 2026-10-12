@@ -1,11 +1,9 @@
 {% if section.blocks.size > 0 %}
-  <link
-    rel="stylesheet"
-    href="{{ 'section-shop-by-categories.css' | asset_url }}"
-    media="print"
-    onload="this.media='all'"
-  >
-  <noscript>{{ 'section-shop-by-categories.css' | asset_url | stylesheet_tag }}</noscript>
+  {%- comment -%}
+    Load synchronously: async CSS changes item widths after first layout, and Chrome's
+    scroll-snap re-snap then leaves the slider scrolled ~35-40px (first card cut off).
+  {%- endcomment -%}
+  {{ 'section-shop-by-categories.css' | asset_url | stylesheet_tag }}
 
   {% style %}
     [data-section-id="{{ section.id }}"] {

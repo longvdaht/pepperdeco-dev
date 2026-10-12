@@ -17,6 +17,9 @@
   >
     {%- for block in section.blocks -%}
       <li class="carousel-cell grid__item{% if block.settings.enable_overlay %} enable-overlay{% endif %} {{ block.settings.style_text }}" style="--overlay-color: {{ block.settings.overlay | color_modify: 'alpha', block.settings.overlay_opacity }};" {{ block.shopify_attributes }}>
+        {%- if block.settings.link != blank -%}
+          <a href="{{ block.settings.link }}" class="hero-link-overlay" aria-hidden="true" tabindex="-1"></a>
+        {%- endif -%}
         {%- if block.settings.video != blank -%}
           <div class="media--type-video {% if block.settings.video_mobile != blank %}hide-mobile{% endif %} {% if block.settings.square_video_mobile %}square-video{% endif %}">
             <div class="media media--square">

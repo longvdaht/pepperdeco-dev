@@ -383,7 +383,7 @@
                             </a>
                           </cart-remove-button>
                         </h3>
-                        {%- if item.properties['Fabric Type'] != blank -%}
+                        {%- if item.properties['Fabric Type'] != blank and item.properties['Fabric Type'] != 'Woven Wood' -%}
                           <p class="cart-fabric-type cart-variant-title"><span class="item-label">{{ 'sections.cart.fabric_type' | t }}: </span> {{ item.properties['Fabric Type'] }}</p>
                         {%- endif -%}
 
@@ -392,6 +392,7 @@
                           or item.product.type == 'Shower Curtain'
                           or item.product.type == 'Cafe Curtain'
                           or item.product.type == 'Sheer Curtain'
+                          or item.product.type contains 'Woven Wood'
                           or item.product.metafields.pepper.type.value contains 'Pillow'
                           or item.product.type == 'Roman Shade'
                           or item.product.type == 'Roman Sheer'
@@ -623,7 +624,7 @@
                           <span class="wallpaper-setup-fee{% unless setup_fee %} wallpaper-hide-fee{% endunless %}">
                             {%- assign setup_product = all_products['wallpaper-setup-fee'] -%}
                             {% if item.variant.title contains 'Panels' %}
-                              <span class="item-label">2-5 Panels Setup Fee: 
+                              <span class="item-label">SMALL ORDER FEE (<6 PANELS):
                                 <span>{{
                                   setup_product.selected_or_first_available_variant.price
                                   | divided_by: 100
@@ -631,7 +632,7 @@
                                 }}</span>
                               </span>
                             {% else %}
-                              <span class="item-label">{{ setup_product.title }}: 
+                              <span class="item-label">SMALL ORDER FEE (<20 YARDS):
                                 <span>{{
                                     setup_product.selected_or_first_available_variant.price
                                     | divided_by: 100

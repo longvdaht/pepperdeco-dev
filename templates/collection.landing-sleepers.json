@@ -86,6 +86,17 @@
     "product-grid": {
       "type": "main-multi-collections",
       "blocks": {
+        "collection_Wg4wTU": {
+          "type": "collection",
+          "settings": {
+            "title_as_link": false,
+            "background_color": "",
+            "collection": "custom-sleeper-sofas-holden",
+            "collection_title": "Holden",
+            "collection_description": "A modern silhouette with inviting details.",
+            "button_text": "SHOP ALL"
+          }
+        },
         "collection_DzKbrz": {
           "type": "collection",
           "settings": {
@@ -99,6 +110,7 @@
         }
       },
       "block_order": [
+        "collection_Wg4wTU",
         "collection_DzKbrz"
       ],
       "settings": {
@@ -106,7 +118,7 @@
         "product_limit": 50,
         "product_limit_mobile": 10,
         "show_secondary_image": true,
-        "show_price": false,
+        "show_price": true,
         "show_vendor": false,
         "show_rating": false,
         "show_product_type": false,

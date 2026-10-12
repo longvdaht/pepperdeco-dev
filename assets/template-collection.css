@@ -3035,3 +3035,6 @@ facet-filters-form .active-facets__button--light .active-facets__button-inner {
 .button-wrapper-top.mobile-hide {
   margin-left: 1rem;
 }
+.main-collection-title-type-inline .card__heading .show-type-inline {
+  display: inline;
+}

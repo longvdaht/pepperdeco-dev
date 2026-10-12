@@ -96,20 +96,7 @@
                 data-media-id="{{ section.id }}-{{ media.id }}"
               >
                 <div class="media--type-video">
-                  <div class="media media--square mobile-only">
-                    {% if media.sources[1] %}
-                      {% assign video_source = media.sources[1] %}
-                    {% else %}
-                      {% assign video_source = media.sources[0] %}
-                    {% endif %}
-                    <video class="lazy" 
-                      height="{{ video_source.height }}" 
-                      width="{{ video_source.width }}" 
-                      id="video-{{ section.id }}" playsinline controls loop autoplay muted preload="metadata">
-                        <source data-src="{{ video_source.url }}">
-                    </video>
-                  </div>
-                  <div class="desktop-only video-preview-image">
+                  <div class="video-preview-image">
                     <img
                       srcset="
                         {% if media.width >= 288 %}{{ media.preview_image | image_url: width: 288 }} 288w,{% endif %}
@@ -227,7 +214,7 @@
         selected_or_first_available_variant.featured_image
       {% endcomment %}
 
-      <slider-component class="main-images-slider slider-hide-buttons slider-hide-dots {% if section.settings.enable_zoom %} enable-zoom{% endif %}">
+      <slider-component class="main-images-slider slider-hide-buttons slider-hide-dots {% if section.settings.enable_zoom %} enable-zoom{% endif %}{% if section.settings.enable_image_progress_bar %} enable-progress-bar{% endif %}">
         <ul tabindex="0"
           class="list-unstyled slider grid grid-nowrap mobile-one desktop-one main-images-slider-list"
           id="Slider-{{ section.id }}"
@@ -1711,7 +1698,14 @@
         {% endfor %}
       {% endpaginate %}
     },
-  };
+    size: {
+      {% paginate shop.metaobjects['cylindo_size_map'].values by 100 %}
+        {% for item in shop.metaobjects['cylindo_size_map'].values %}
+          {{ item.title | json }}: {{ item.size_code | json }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      {% endpaginate %}
+    },
+  }; 
 </script>
 
 <script>
@@ -1723,6 +1717,7 @@
     var WELT_MAP   = maps.welt   || {};
     var FOUR_CHANNEL_MAP = maps.four_channel || {};
     var STYLE_MAP = maps.style || {};
+    var SIZE_MAP = maps.size || {};
 
     var FABRIC_KEY = 'FABRIC';
     var productType = (window.productType || '').toLowerCase();
@@ -1732,12 +1727,14 @@
       productType === 'sectional' ||
       (productType === 'chair' && silhouette === 'milo') ||
       (productType === 'chair' && silhouette === 'lila') ||
-      (productType === 'chair' && silhouette === 'henry')) && silhouette != 'waverly' && silhouette != 'colette'
+      (productType === 'chair' && silhouette === 'henry')) && silhouette != 'waverly' && silhouette != 'colette' && silhouette != 'holden'
     ) {
       var LEG_KEY   = 'BASE LEG COLOR';
     } else if ((productType === 'chair' || productType === 'sofa') && silhouette === 'waverly') {
       var LEG_KEY   = 'LEG COLOR';
     } else if ((productType === 'chair' || productType === 'sofa' || productType === 'ottoman' || productType === 'settee') && silhouette === 'colette') {
+      var LEG_KEY   = 'LEG COLOR';
+    } else if (silhouette === 'holden') {
       var LEG_KEY   = 'LEG COLOR';
     } else {
       var LEG_KEY   = 'LEG FINISH';
@@ -1747,6 +1744,7 @@
     var WELT_KEY   = 'WELT COLOR';
     var FOUR_CHANNEL_KEY = '4 CHANNEL';
     var STYLE_KEY = 'STYLE';
+    var SIZE_KEY = 'SIZE';
 
     var fabricName    = window.__cylindoFabricName || '';
     var currentFabric = FABRIC_MAP[fabricName] || '';
@@ -1763,16 +1761,35 @@
     var isFourChannelProduct = silhouette === 'delaney' || silhouette === 'cecilia';
     var isMaronSleeperSofaProduct =
                                 (silhouette === 'maron' && (productType === 'sofa' || productType === 'sleeper')) ||
-                                (silhouette === 'waverly' && productType === 'sofa');
+                                (silhouette === 'waverly' && productType === 'sofa') || 
+                                (silhouette === 'holden' && (productType === 'sofa' || productType === 'sleeper'));
     var isSectionalProduct = productType === 'sectional';
+    var isHoldenProduct = silhouette === 'holden'
+    var isHoldenSofaSleeperProduct = isHoldenProduct && (productType === 'sofa' || productType === 'sleeper');
     var currentFourChannel = '';
     var currentStyleMaron = '';
+    var currentSize = '';
     var isHenryChairProduct = silhouette === 'henry' && productType === 'chair';
     var isWaverlyChairProduct = silhouette === 'waverly' && productType === 'chair';
     var sizeCodeMap = window.__cylindoProductCodes || {};
 
     function hasMultipleOptions(selector) {
       return document.querySelectorAll(selector).length > 1;
+    }
+
+    // Size value can carry a prefix (e.g. sleeper 'Queen 75"'), so match by contains.
+    // Longest key first so a shorter key can't match inside a longer one.
+    function getSizeCode(value) {
+      if (!value) return '';
+      if (SIZE_MAP[value] !== undefined) return SIZE_MAP[value];
+
+      var matchedKey = Object.keys(SIZE_MAP)
+        .sort(function (a, b) { return b.length - a.length; })
+        .find(function (key) {
+          return value.indexOf(key) !== -1;
+        });
+
+      return matchedKey ? SIZE_MAP[matchedKey] : '';
     }
 
     // function getMappedCode(selector) {
@@ -1798,16 +1815,25 @@
     //   return Object.values(sizeCodeMap)[0] || '';
     // }
 
-    function getMappedCode(selector) {
+    function getMappedCode(selector, selector2) {
       var input = document.querySelector(selector);
       var handle = input ? (input.getAttribute('data-handle') || '') : '';
+      var input2 = document.querySelector(selector2);
+      var handle2 = input2 ? (input2.getAttribute('data-handle') || '') : '';
 
       if (handle) {
         var matchedKey = Object.keys(sizeCodeMap).find(function (key) {
-          return (
-            key.includes('-' + handle + '-') ||
-            key.endsWith('-' + handle)
-          );
+          if (!handle2) {
+            return (
+              key.includes('-' + handle + '-') ||
+              key.endsWith('-' + handle)
+            );
+          } else {
+            return (
+              (key.includes('-' + handle + '-') || key.endsWith('-' + handle)) && 
+              (key.includes('-' + handle2 + '-') || key.endsWith('-' + handle2))
+            );
+          }
         });
 
         if (matchedKey) return sizeCodeMap[matchedKey];
@@ -1821,8 +1847,12 @@
         return getMappedCode('input.input-seat:checked');
       }
 
-      if (isSectionalProduct) {
+      if (isSectionalProduct && !isHoldenProduct) {
         return getMappedCode('input.input-configuration:checked');
+      }
+
+      if (isSectionalProduct && isHoldenProduct) {
+        return getMappedCode('input.input-seat:checked', 'input.input-configuration:checked');
       }
 
       var sizeInput = document.querySelector('input.input-size:checked');
@@ -1870,6 +1900,19 @@
       if (isMaronSleeperSofaProduct && currentStyleMaron)
         parts.push(STYLE_KEY + ':' + currentStyleMaron);
 
+      // Holden sofa/sleeper: SIZE only exists on the Bench seat in Cylindo
+      if (isHoldenSofaSleeperProduct && currentSize) {
+        var checkedSeat = document.querySelector('input.input-seat:checked');
+        var seatHandle = checkedSeat ? (checkedSeat.getAttribute('data-handle') || '') : '';
+        if (seatHandle === 'bench') {
+          // Sleeper only comes in 75", so it always uses its own size.
+          // TEMP (sofa): show the 88" render for every size until Cylindo has 75"/100" content.
+          // Revert to: var cylindoSize = currentSize;
+          var cylindoSize = productType === 'sofa' ? (SIZE_MAP['88"'] || currentSize) : currentSize;
+          parts.push(SIZE_KEY + ':' + cylindoSize);
+        }
+      }
+
       viewers.forEach(function (v) {
         if (code) v.setAttribute('code', code);
         if (parts.length > 0) {
@@ -1898,6 +1941,7 @@
           firstLeg.checked = true;
           firstLeg.dispatchEvent(new Event('change'));
         } {% endcomment %}
+        if (isHoldenSofaSleeperProduct) currentSize = getSizeCode(this.value);
         updateCylindo();
       });
     });
@@ -1913,11 +1957,23 @@
 
     // Sectional change
     if (isSectionalProduct) {
-      document.querySelectorAll('input.input-configuration').forEach(function (el) {
-        el.addEventListener('change', function() {
-          updateCylindo();
+      if (document.querySelectorAll('input.input-configuration')) {
+        document.querySelectorAll('input.input-configuration').forEach(function (el) {
+          el.addEventListener('change', function() {
+            updateCylindo();
+          });
         });
-      });
+      }
+    }
+
+    if (isHoldenProduct) {
+      if (document.querySelectorAll('input.input-seat')) {
+        document.querySelectorAll('input.input-seat').forEach(function (el) {
+          el.addEventListener('change', function() {
+            updateCylindo();
+          });
+        });
+      }
     }
    
     // Base change
@@ -2048,6 +2104,12 @@
         var initDetailCode = STYLE_MAP[checkedDetail.value];
         if (initDetailCode !== undefined) currentStyleMaron = initDetailCode;
       }
+    }
+
+    // Init size holden sofa/sleeper
+    if (isHoldenSofaSleeperProduct) {
+      var checkedSize = document.querySelector('input.input-size:checked');
+      if (checkedSize) currentSize = getSizeCode(checkedSize.value);
     }
 
     // Init on load
@@ -2498,6 +2560,12 @@
       "type": "checkbox",
       "label": "Enable zoom (mobile)",
       "id": "enable_zoom_mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable image progress bar",
+      "id": "enable_image_progress_bar",
       "default": false
     },
     {

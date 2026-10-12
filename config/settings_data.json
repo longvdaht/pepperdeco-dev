@@ -113,6 +113,7 @@
           },
           "cdc8e559-0bbe-41dc-8063-7c87f3e92df9": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Shop the sample sale! Enjoy up to 60% off.",
               "link": "shopify://collections/sample-sale"
@@ -275,9 +276,9 @@
           "image_mjwgxA": {
             "type": "image",
             "settings": {
-              "parent_title": "design resources",
+              "parent_title": "product resources",
               "child_title": "",
-              "image": "shopify://shop_images/Image_6.png"
+              "image": "shopify://shop_images/Image_9.png"
             }
           },
           "image_HTkEDY": {
@@ -285,13 +286,13 @@
             "settings": {
               "parent_title": "TRADE PROGRAM",
               "child_title": "",
-              "image": "shopify://shop_images/Image_9.png"
+              "image": "shopify://shop_images/Fabric_Swatch-Lulie_Parsley-Madeline.png"
             }
           },
           "image_63YMAn": {
             "type": "image",
             "settings": {
-              "parent_title": "FREE DESIGN HELP",
+              "parent_title": "complimentary design help",
               "child_title": "",
               "image": "shopify://shop_images/Image_10_a3f758d7-02bb-48d3-89d5-94879aa49022.png"
             }
@@ -408,6 +409,13 @@
         "disabled": false,
         "settings": {
           "show_preview_data": false
+        }
+      },
+      "9431864395560886015": {
+        "type": "shopify://apps/polar-analytics/blocks/polar-tracker/019c2e93-19fa-7dab-8368-903d1c54902c",
+        "disabled": false,
+        "settings": {
+          "debug_mode": false
         }
       }
     }

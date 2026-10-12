@@ -660,6 +660,17 @@
 
                 window.setTimeout(function () {
                     this.updatePlaned = false;
+
+                    // pepperhome: the markup this instance wrapped can be taken
+                    // back apart while its window-resize and image-load
+                    // listeners stay bound (see destroyZoom in magnify.js).
+                    // Stop here rather than read offsetHeight off a detached
+                    // container, or write a stale transform onto an element
+                    // that is still on the page.
+                    if (!this.container || !this.container.parentElement) {
+                        return;
+                    }
+
                     this.updateAspectRatio();
 
                     if (event && event.type === 'resize') {

@@ -1,9 +1,9 @@
-{%- capture 'icon_up' -%}
+{%- capture icon_up -%}
   <svg class="icon icon-chevron-down" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12.3984 5.80078L7.99967 10.1997L3.60075 5.80078" stroke="#242524"/>
   </svg>
 {%- endcapture -%}
-{%- capture 'icon_down' -%}
+{%- capture icon_down -%}
   <svg class="icon icon-chevron-up" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3.60156 10.1997L8.00033 5.80078L12.3993 10.1997" stroke="#242524"/>
   </svg>
@@ -249,4 +249,16 @@
     </details>
   {% endif %}
 
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- capture 'icon_up' -%}"
+  to: "{%- capture icon_up -%}"
+  position: 0..23
+- from: "{%- capture 'icon_down' -%}"
+  to: "{%- capture icon_down -%}"
+  position: 263..288
+{%- endcomment -%}

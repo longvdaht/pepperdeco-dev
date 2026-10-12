@@ -219,7 +219,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-cecilia.png",
             "title": "Cecilia",
-            "subtitle": "Customize your fabric, legs, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-cecilia"
           }
         },
@@ -228,7 +228,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-cleo.png",
             "title": "Cleo",
-            "subtitle": "Customize your fabric and legs",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-cleo"
           }
         },
@@ -237,7 +237,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-regina.png",
             "title": "Regina",
-            "subtitle": "Customize your fabric, legs, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-regina"
           }
         },
@@ -246,7 +246,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-theodora.png",
             "title": "Theodora",
-            "subtitle": "Customize your fabric, legs, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-theodora"
           }
         },
@@ -255,7 +255,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-hudson.png",
             "title": "Hudson",
-            "subtitle": "Customize your fabric, base, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-hudson"
           }
         },
@@ -264,7 +264,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-james.png",
             "title": "James",
-            "subtitle": "Customize your fabric, legs, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-james"
           }
         },
@@ -273,8 +273,17 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bed-delaney.png",
             "title": "Delaney",
-            "subtitle": "Customize your fabric, legs, details, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-beds-delaney"
+          }
+        },
+        "collection_HpQdjM": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "subtitle": "",
+            "collection_url": ""
           }
         }
       },
@@ -285,13 +294,14 @@
         "collection_tXbLRC",
         "collection_DeneBN",
         "collection_VpRkHg",
-        "collection_d3d6AG"
+        "collection_d3d6AG",
+        "collection_HpQdjM"
       ],
       "name": "Shop by categories",
       "settings": {
         "background_color": "",
         "heading": "Beds",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, base, legs, details, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-beds",
         "show_border_bottom": true,
@@ -307,7 +317,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-theodora.png",
             "title": "Theodora",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-theodora"
           }
         },
@@ -316,7 +326,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-delaney.png",
             "title": "delaney",
-            "subtitle": "Customize your material, detail, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-delaney"
           }
         },
@@ -325,7 +335,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-regina.png",
             "title": "regina",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-regina"
           }
         },
@@ -334,7 +344,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-hudson.png",
             "title": "hudson",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-hudson"
           }
         },
@@ -343,7 +353,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-cecilia.png",
             "title": "Cecilia",
-            "subtitle": "Customize your material, detail, and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-cecilia"
           }
         },
@@ -352,7 +362,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-cleo.png",
             "title": "Cleo",
-            "subtitle": "Customize your material",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-cleo"
           }
         },
@@ -361,7 +371,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-headboard-james.png",
             "title": "james",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in Twin, Full, Queen, King",
             "collection_url": "shopify://collections/custom-headboards-james"
           }
         }
@@ -379,7 +389,7 @@
       "settings": {
         "background_color": "#ffffff",
         "heading": "Headboards",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, detail, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-headboards",
         "show_border_bottom": true,
@@ -395,7 +405,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-adeline-upholstered.png",
             "title": "adeline upholstered",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Swivel available",
             "collection_url": "shopify://collections/custom-chairs-adeline"
           }
         },
@@ -404,7 +414,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-adeline-skirt.png",
             "title": "adeline with skirt",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Swivel available",
             "collection_url": "shopify://collections/custom-chairs-adeline"
           }
         },
@@ -413,7 +423,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-henry.png",
             "title": "Henry",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available with tapered or rounded stacked legs",
             "collection_url": "shopify://collections/custom-chairs-henry"
           }
         },
@@ -422,7 +432,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-marlow-legs.png",
             "title": "marlow with legs",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 4 wood finishes",
             "collection_url": "shopify://collections/custom-chairs-marlow"
           }
         },
@@ -431,7 +441,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-marlow-kickpleatskirt.png",
             "title": "marlow with skirt",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Swivel or glider available",
             "collection_url": "shopify://collections/custom-chairs-marlow"
           }
         },
@@ -439,8 +449,8 @@
           "type": "collection",
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-marlow-upholsteredbase.png",
-            "title": "Marlow Glider",
-            "subtitle": "Customize your material and trim",
+            "title": "Marlow Upholstered",
+            "subtitle": "Swivel or glider available",
             "collection_url": "shopify://collections/custom-chairs-marlow"
           }
         },
@@ -449,7 +459,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-dorothy-legs.png",
             "title": "dorothy with legs",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 5 wood finishes",
             "collection_url": "shopify://collections/custom-chairs-dorothy"
           }
         },
@@ -458,7 +468,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-dorothy-skirt.png",
             "title": "dorothy with skirt",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Also available with legs",
             "collection_url": "shopify://collections/custom-chairs-dorothy"
           }
         },
@@ -467,7 +477,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-milo.png",
             "title": "Milo",
-            "subtitle": "Customize your material and finish",
+            "subtitle": "Available in 4 wood finishes",
             "collection_url": "shopify://collections/custom-chairs-milo"
           }
         },
@@ -476,7 +486,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-waverly.png",
             "title": "Waverly",
-            "subtitle": "Customize your material, finish, leg, and trim",
+            "subtitle": "Available with tapered or bun legs, on casters",
             "collection_url": "shopify://collections/custom-chairs-waverly"
           }
         },
@@ -485,7 +495,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-colette.png",
             "title": "Colette",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 4 wood finishes",
             "collection_url": "shopify://collections/custom-chairs-colette"
           }
         },
@@ -494,7 +504,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-lila-2.png",
             "title": "Lila",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 4 wood finishes",
             "collection_url": "shopify://collections/custom-chairs-lila"
           }
         },
@@ -503,7 +513,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-cameron.png",
             "title": "Cameron",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 4 wood finishes",
             "collection_url": "shopify://collections/custom-chairs-cameron"
           }
         },
@@ -512,7 +522,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-chair-simone-1.png",
             "title": "Simone",
-            "subtitle": "Customize your material",
+            "subtitle": "Available in 20+ fabrics",
             "collection_url": "shopify://collections/custom-chairs-simone"
           }
         }
@@ -537,7 +547,7 @@
       "settings": {
         "background_color": "#ffffff",
         "heading": "Chairs",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, leg, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-chairs",
         "show_border_bottom": false,
@@ -553,7 +563,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-simone.png",
             "title": "Simone",
-            "subtitle": "Customize your material",
+            "subtitle": "Available in 85\" and 100\"",
             "collection_url": "shopify://collections/custom-sofas-simone"
           }
         },
@@ -562,7 +572,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-waverly.png",
             "title": "Waverly",
-            "subtitle": "Customize your material, finish, leg, and trim",
+            "subtitle": "Available in 79\" and 93\"",
             "collection_url": "shopify://collections/custom-sofas-waverly"
           }
         },
@@ -571,7 +581,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-marlow-skirt.png",
             "title": "Marlow with Skirt",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in 75\", 85\", 95\", 105\"",
             "collection_url": "shopify://collections/custom-sofas-marlow"
           }
         },
@@ -580,7 +590,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-marlow-legs.png",
             "title": "Marlow with Legs",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 75\", 85\", 95\", 105\"",
             "collection_url": "shopify://collections/custom-sofas-marlow"
           }
         },
@@ -589,7 +599,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-maron.png",
             "title": "Maron",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in 85\" and 95\", also as a sleeper",
             "collection_url": "shopify://collections/custom-sofas-maron"
           }
         },
@@ -598,16 +608,16 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-colette.png",
             "title": "Colette",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 71\" and 90\"",
             "collection_url": "shopify://collections/custom-sofas-colette"
           }
         },
-        "collection_jnhjke": {
+        "collection_FzgyzH": {
           "type": "collection",
-          "disabled": true,
           "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sofa-holden.png",
             "title": "Holden",
-            "subtitle": "Customize your materials",
+            "subtitle": "Available in 75”, 88”, 100”, also as a sleeper",
             "collection_url": "shopify://collections/custom-sofas-holden"
           }
         },
@@ -616,7 +626,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sofa-pierce.png",
             "title": "Pierce",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 72\", 85\", 97\"",
             "collection_url": "shopify://collections/custom-sofas-pierce"
           }
         }
@@ -628,14 +638,14 @@
         "collection_g7wPCF",
         "collection_QnRefm",
         "collection_AKXxRz",
-        "collection_jnhjke",
+        "collection_FzgyzH",
         "collection_L3QxzF"
       ],
       "name": "Shop by categories",
       "settings": {
         "background_color": "#f3f1ec",
         "heading": "Sofas",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, leg, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-sofas",
         "show_border_bottom": false,
@@ -651,19 +661,29 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sectional-pierce.png",
             "title": "Pierce",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 114\", left or right chaise",
             "collection_url": "shopify://collections/custom-sectionals-pierce"
+          }
+        },
+        "collection_9ap9kC": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sectional-holden.png",
+            "title": "Holden",
+            "subtitle": "Available in 110”, left or right arm",
+            "collection_url": "shopify://collections/custom-sectionals-holden"
           }
         }
       },
       "block_order": [
-        "collection_bqXqyL"
+        "collection_bqXqyL",
+        "collection_9ap9kC"
       ],
       "name": "Shop by categories",
       "settings": {
         "background_color": "",
         "heading": "Sectionals",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-sectionals",
         "show_border_bottom": false,
@@ -679,19 +699,29 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-sleeper-maron.png",
             "title": "Maron",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Available in 85\", queen sleeper",
             "collection_url": "shopify://collections/custom-sleeper-sofas-maron"
+          }
+        },
+        "collection_w7gBhg": {
+          "type": "collection",
+          "settings": {
+            "feature_image": "shopify://shop_images/landingpage-furniture-sleeper-holden.png",
+            "title": "Holden",
+            "subtitle": "Available in 75\", queen sleeper",
+            "collection_url": "shopify://collections/custom-sleeper-sofas-holden"
           }
         }
       },
       "block_order": [
-        "collection_JAcaXD"
+        "collection_JAcaXD",
+        "collection_w7gBhg"
       ],
       "name": "Shop by categories",
       "settings": {
         "background_color": "#f3f1ec",
         "heading": "Sleeper Sofas",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-sleeper-sofas",
         "show_border_bottom": false,
@@ -707,7 +737,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-settee-colette.png",
             "title": "Colette",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 69\"",
             "collection_url": "shopify://collections/custom-settees-colette"
           }
         }
@@ -719,7 +749,7 @@
       "settings": {
         "background_color": "",
         "heading": "Settees",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-settees-daybeds",
         "show_border_bottom": false,
@@ -735,7 +765,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bench-scarlett.png",
             "title": "scarlett",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 50\"",
             "collection_url": "shopify://collections/custom-benches-scarlett"
           }
         },
@@ -744,7 +774,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bench-celeste.png",
             "title": "celeste",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in Twin, Queen, King",
             "collection_url": "shopify://collections/custom-benches-celeste"
           }
         },
@@ -753,7 +783,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-bench-blaire.png",
             "title": "blaire",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in Twin, Queen, King",
             "collection_url": "shopify://collections/custom-benches-blaire"
           }
         }
@@ -767,7 +797,7 @@
       "settings": {
         "background_color": "#f3f1ed",
         "heading": "Benches",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-benches",
         "show_border_bottom": false,
@@ -783,7 +813,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-ottoman-colette.png",
             "title": "Colette",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 3 wood finishes",
             "collection_url": "shopify://collections/custom-ottomans-colette"
           }
         },
@@ -792,7 +822,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-ottoman-marlow-legs.png",
             "title": "Marlow with legs",
-            "subtitle": "Customize your material, finish, and trim",
+            "subtitle": "Available in 4 wood finishes",
             "collection_url": "shopify://collections/custom-ottomans-marlow"
           }
         },
@@ -801,7 +831,7 @@
           "settings": {
             "feature_image": "shopify://shop_images/landingpage-furniture-ottoman-marlow-skirt.png",
             "title": "Marlow with Skirt",
-            "subtitle": "Customize your material and trim",
+            "subtitle": "Also available with legs",
             "collection_url": "shopify://collections/custom-ottomans-marlow"
           }
         }
@@ -815,7 +845,7 @@
       "settings": {
         "background_color": "#ffffff",
         "heading": "Ottomans",
-        "subheading": "Choose from our signature silhouettes",
+        "subheading": "Customize your fabric, wood finish, and trim",
         "button_text": "SHOP ALL",
         "button_url": "shopify://collections/custom-furniture-ottomans",
         "show_border_bottom": false,

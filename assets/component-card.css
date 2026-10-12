@@ -1060,6 +1060,9 @@
 .product-grid-container .collection .card__heading.no-type {
   font-weight: var(--font-body-weight);
 }
+.card__heading .show-type-inline {
+  display: none;
+}
 @media (max-width: 749px) {
   .card-wrapper .card__inner {
     padding-bottom: 3.5rem;

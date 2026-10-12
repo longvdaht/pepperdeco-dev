@@ -120,20 +120,7 @@
                 data-media-id="{{ section.id }}-{{ media.id }}"
               >
                 <div class="media--type-video">
-                  <div class="media media--square mobile-only">
-                    {% if media.sources[1] %}
-                      {% assign video_source = media.sources[1] %}
-                    {% else %}
-                      {% assign video_source = media.sources[0] %}
-                    {% endif %}
-                    <video class="lazy" 
-                      height="{{ video_source.height }}" 
-                      width="{{ video_source.width }}" 
-                      id="video-{{ section.id }}" playsinline controls loop autoplay muted preload="metadata">
-                        <source data-src="{{ video_source.url }}">
-                    </video>
-                  </div>
-                  <div class="desktop-only video-preview-image">
+                  <div class="video-preview-image">
                     <img
                       srcset="
                         {% if media.width >= 288 %}{{ media.preview_image | image_url: width: 288 }} 288w,{% endif %}
@@ -294,7 +281,7 @@
       {% comment %}
         selected_or_first_available_variant.featured_image
       {% endcomment %}
-      <slider-component class="main-images-slider slider-hide-buttons slider-hide-dots {% if section.settings.enable_zoom %} enable-zoom{% endif %}">
+      <slider-component class="main-images-slider slider-hide-buttons slider-hide-dots {% if section.settings.enable_zoom %} enable-zoom{% endif %}{% if section.settings.enable_image_progress_bar %} enable-progress-bar{% endif %}">
         <ul tabindex="0"
           class="list-unstyled slider grid grid-nowrap mobile-one desktop-one main-images-slider-list"
           id="Slider-{{ section.id }}"
@@ -1313,6 +1300,12 @@
       "label": "Enable zoom (mobile)",
       "id": "enable_zoom_mobile",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable image progress bar",
+      "id": "enable_image_progress_bar",
+      "default": false
     },
     {
       "type": "header",

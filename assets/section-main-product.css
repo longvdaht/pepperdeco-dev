@@ -1852,14 +1852,17 @@ label.size-custom.size-radio-sofa {
     top: 0;
   }
   .thumbnail-slider {
-    width: 80px;
+    width: 84px;
   }
   .thumbnail-slider > .grid.grid-nowrap {
     flex-wrap: wrap;
     gap: 16px;
   }
   .thumbnail-slider .carousel-cell {
-    border: 1px solid rgb(var(--color-background));
+    /* Colour only. The width comes from the border every cell carries; this is
+       a custom property rather than `border-color` because the rule holding
+       that border sits further down the file and would win on source order. */
+    --thumbnail-cell-border: rgb(var(--color-background));
   }
   .main-images-slider {
     flex: 1;
@@ -3543,12 +3546,28 @@ length-input + .product__modal {
 /* product thumbnail horizontal */
 
 .thumbnail-slider .carousel-cell {
-  width: 80px;
-  flex: 1 0 80px;
-  max-width: 80px;
+  /* 84px holding an 80px image: `is-active` puts a 2px border on the cell, and
+     the theme has no border-box reset, so that border used to widen the cell by
+     4px and shove every cell after it sideways each time the border moved - and
+     it now moves as the main image is swiped, not only when a thumbnail is
+     clicked. Every cell carries the same border inside a box 4px wider
+     instead, so only the colour changes, the image keeps its size, and the
+     rail's geometry - which the thumbnail carousel measures to place itself -
+     stays put. */
+  box-sizing: border-box;
+  width: 84px;
+  flex: 1 0 84px;
+  max-width: 84px;
+  border: 2px solid var(--thumbnail-cell-border, transparent);
 }
 .thumbnail-slider .carousel-cell.is-active {
   border: 2px solid rgba(var(--color-base-text-hover), .2);
+}
+/* On a trim/piping thumbnail `is-active` is also what puts it in the rail, so
+   the one that is no longer the media on show keeps it and drops the border
+   instead (see setActiveThumbnail in global.js). */
+.thumbnail-slider .carousel-cell.is-active.is-not-current {
+  border-color: transparent;
 }
 .thumbnail-slider .carousel-cell.is-active .media {
   background-color:  rgba(var(--primary-light-cream), 1);

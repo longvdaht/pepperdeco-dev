@@ -1,11 +1,9 @@
-<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'section-collection-list.css' | asset_url }}" media="print" onload="this.media='all'">
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {%- if section.settings.layout_item == 'text-inside' -%}
   <link rel="preload" href="{{ 'mint-magnolia.otf' | asset_url }}" as="font" type="font/woff2" crossorigin>
 {%- endif -%}
 
-<noscript>{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
   .section-collection-list .grid__item {

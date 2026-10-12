@@ -193,7 +193,10 @@
 }
 @media (min-width: 1400px) {
   .section-shop-by-categories.section-shop-slider .shop-by-categories-wrapper {
-    padding-left: 104px;
+    padding-left: 89px;
+  }
+  .section-shop-by-categories.section-shop-slider slider-component .slider.grid {
+    margin-left: 0;
   }
   .section-shop-by-categories.section-shop-slider slider-component .slider-buttons {
     right: 104px;

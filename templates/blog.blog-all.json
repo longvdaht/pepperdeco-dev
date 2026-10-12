@@ -1,0 +1,256 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "163581666552dbd298": {
+      "type": "page-hero",
+      "disabled": true,
+      "settings": {
+        "word_graphic_width": 104,
+        "text_icon": "0",
+        "mobile_display": "1",
+        "title": "Featured Blog Title",
+        "subheading": "Subtitle",
+        "quote": "",
+        "link": "shopify://blogs/the-thread/privacy-vs-blackout-curtains",
+        "label": "Get the Guide",
+        "custom_link": "",
+        "color_scheme": "background-secondary"
+      }
+    },
+    "section_feature_image_GdCAjj": {
+      "type": "section-feature-image",
+      "name": "Hero image",
+      "settings": {
+        "image": "shopify://shop_images/Group_15.png",
+        "height": "nature",
+        "logo_desktop": "shopify://shop_images/The_Thread_1.png",
+        "logo_width": "40%",
+        "image_mobile": "shopify://shop_images/Group_121.png",
+        "height_mobile": "nature",
+        "logo_width_mobile": "221px"
+      }
+    },
+    "blog-search": {
+      "type": "main-blog-search",
+      "settings": {
+        "menu_desktop": "blog-menu-desktop",
+        "show_search": true
+      }
+    },
+    "section_featured_blog_yiQ3FC": {
+      "type": "section-featured-blog",
+      "blocks": {
+        "article_qi8yjE": {
+          "type": "article",
+          "settings": {
+            "article": "the-thread/curtain-measurement-and-installment-guide"
+          }
+        },
+        "article_QnhVzJ": {
+          "type": "article",
+          "settings": {
+            "article": "the-thread/why-designers-love-using-linen"
+          }
+        },
+        "article_RFnttD": {
+          "type": "article",
+          "settings": {
+            "article": "the-thread/florence-eucalyptus"
+          }
+        }
+      },
+      "block_order": [
+        "article_qi8yjE",
+        "article_QnhVzJ",
+        "article_RFnttD"
+      ],
+      "name": "Featured blog",
+      "settings": {
+        "heading": "Featured Stories",
+        "desktop_per_row": 3,
+        "mobile_per_row": 2,
+        "show_tags": true,
+        "show_date": false,
+        "use_metafields": false,
+        "color_scheme": "background-primary"
+      }
+    },
+    "section_image_with_text_column_QhMq77": {
+      "type": "section-image-with-text-column",
+      "name": "Image with text column",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Design Resources",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>Our go-to tips for measuring, pattern pairing, paint guides, and more.</p>",
+        "image": "shopify://shop_images/Screenshot_2025-07-01_at_1.27.13_PM_2.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "left",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "shopify://pages/design-hub",
+        "label": "Explore",
+        "button_type": "underline"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "blocks": {
+        "article_NrTiQR": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "the-thread/curtain-measurement-and-installment-guide"
+          }
+        },
+        "article_G9tVGQ": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "the-thread/curtain-hardware"
+          }
+        },
+        "article_4NKMtE": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "the-thread/pillow-size-guide"
+          }
+        },
+        "article_HBYDmz": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "the-thread/shower-curtain-size-guide"
+          }
+        },
+        "article_GWzdnw": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "the-thread/cafe-curtain-measurement-guide"
+          }
+        },
+        "article_a3dbFP": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "the-thread/cafe-curtain-hardware"
+          }
+        }
+      },
+      "block_order": [
+        "article_NrTiQR",
+        "article_G9tVGQ",
+        "article_4NKMtE",
+        "article_HBYDmz",
+        "article_GWzdnw",
+        "article_a3dbFP"
+      ],
+      "settings": {
+        "hide_blog_title": true,
+        "layout": "grid",
+        "show_list_tags": false,
+        "show_tags": true,
+        "show_date": false,
+        "articles_per_page": 12,
+        "desktop_per_row": 3,
+        "mobile_per_row": 2,
+        "color_scheme": "background-primary"
+      }
+    },
+    "section_image_with_text_column_NjgnFw": {
+      "type": "section-image-with-text-column",
+      "name": "Image with text column",
+      "settings": {
+        "background_color": "#f3f1ec",
+        "heading": "Behind the Seams",
+        "heading_size": "h3",
+        "subheading": "",
+        "content": "<p>Take a peek behind the curtain of our featured artist collections.</p>",
+        "image": "shopify://shop_images/Frame_267.jpg",
+        "text_alignment": "left",
+        "desktop_alignment": "right",
+        "mobile_alignment": "first",
+        "color_scheme": "background-primary",
+        "link": "https://pepper-home.com/blogs/the-thread/tagged/behind-the-seams",
+        "label": "Explore",
+        "button_type": "underline"
+      }
+    },
+    "16331219115bcaaf78": {
+      "type": "ugc-images",
+      "blocks": {
+        "16331219115bcaaf78-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_-_2022-05-04T174944.483.webp",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/thatcherrose_b746587b-67e5-49e2-9658-68c74f911c1c_1024x1024_copy.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/OGara-Pepper-Home-2.jpg",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        },
+        "16331219115bcaaf78-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Lee-KristinChambless_7a558585-46ac-46b9-ad2e-68e0c42dc9b5.png",
+            "heading": "",
+            "link": "shopify://pages/justaddpepper"
+          }
+        }
+      },
+      "block_order": [
+        "16331219115bcaaf78-1",
+        "16331219115bcaaf78-0",
+        "16331219115bcaaf78-3",
+        "16331219115bcaaf78-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "apply_new_style": false,
+        "section_full_width": "no",
+        "is_slider": false,
+        "heading": "Designed by Us, Styled by You.",
+        "subheading": "",
+        "label_view_all": "",
+        "link_view_all": "",
+        "background_color": "#f3f1ec",
+        "hub_section": ""
+      }
+    }
+  },
+  "order": [
+    "163581666552dbd298",
+    "section_feature_image_GdCAjj",
+    "blog-search",
+    "section_featured_blog_yiQ3FC",
+    "section_image_with_text_column_QhMq77",
+    "main",
+    "section_image_with_text_column_NjgnFw",
+    "16331219115bcaaf78"
+  ]
+}

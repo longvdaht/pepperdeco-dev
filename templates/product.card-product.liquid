@@ -171,7 +171,7 @@
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ product.id }} Badge-{{ section_id }}-{{ product.id }}"
             >
-              {{ product.title | escape }}
+              {{ product.title | escape }}<span class="show-type-inline">{{ product.metafields.pepper.type.value | prepend: ' ' }}</span>
             </a>
           </h2>
           <div class="card-information">

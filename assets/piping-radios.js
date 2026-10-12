@@ -137,10 +137,7 @@ class PipingRadios extends HTMLElement {
       });
       if (thumbnail) {
         thumbnail.classList.add("is-active");
-        thumbnailSlider.querySelector("ul").scroll({
-          top: 0,
-          left: thumbnail.offsetLeft,
-        });
+        scrollThumbnailIntoView(thumbnailSlider, thumbnail);
         thumbnailSlider.querySelectorAll('ul.slider li[data-variant]').forEach((thumbnail) => {
           thumbnail.classList.add("product__media-item--additional-image");
         })
@@ -293,35 +290,39 @@ class PipingRadios extends HTMLElement {
             this.setupFileInput(
               this.dataURItoBlob(canvas.toDataURL("image/webp"))
             );
-            this.imageZoom.src = canvas.toDataURL();
-            if (document.querySelector('.media .base-image')) {
-              document.querySelector('.media .base-image').src = canvas.toDataURL();
-            } else {
-              const imageBaseString = `${handleize(this.size)}-none`;
-              const imageBaseMedia = thumbnailSlider.querySelector(`[data-variant="${imageBaseString}"]`);
-              if (imageBaseMedia) {
-                const baseImageMobile = document.createElement('img');
-                baseImageMobile.src = canvas.toDataURL();
+            const composedImage = canvas.toDataURL();
+            this.imageZoom.src = composedImage;
+
+            const imageBaseString = `${handleize(this.size)}-none`;
+            const imageBaseMedia = thumbnailSlider.querySelector(`[data-variant="${imageBaseString}"]`);
+            if (imageBaseMedia) {
+              // Same handling on every selection: this used to run only when no
+              // .base-image existed yet, so a second trim pick could leave the
+              // previous thumbnail active and the trim images unhidden.
+              let baseImageMobile = imageBaseMedia.querySelector('.base-image');
+              if (!baseImageMobile) {
+                baseImageMobile = document.createElement('img');
                 baseImageMobile.sizes = "100vw";
                 baseImageMobile.loading = "eager";
                 baseImageMobile.alt = "overlay";
                 baseImageMobile.classList.add('base-image', 'image-magnify-hover');
-                if (imageBaseMedia) {
-                  thumbnailSlider.querySelectorAll('ul.slider li').forEach((thumbnail) => {
-                    thumbnail.classList.remove("is-active");
-                  })
-                  imageBaseMedia.querySelector('.media').appendChild(baseImageMobile);
-                  imageBaseMedia.classList.add("is-active");
-                  thumbnailSlider.querySelector("ul").scroll({
-                    top: 0,
-                    left: imageBaseMedia.offsetLeft,
-                  });
-                  thumbnailSlider.querySelectorAll('ul.slider li[data-variant]').forEach((thumbnail) => {
-                    thumbnail.classList.add("product__media-item--additional-image");
-                  })
-                  imageBaseMedia.classList.remove("product__media-item--additional-image");
-                }
+                imageBaseMedia.querySelector('.media').appendChild(baseImageMobile);
               }
+              baseImageMobile.src = composedImage;
+
+              thumbnailSlider.querySelectorAll('ul.slider li').forEach((thumbnail) => {
+                thumbnail.classList.remove("is-active");
+              })
+              thumbnailSlider.querySelectorAll('ul.slider li[data-variant]').forEach((thumbnail) => {
+                thumbnail.classList.add("product__media-item--additional-image");
+              })
+              imageBaseMedia.classList.remove("product__media-item--additional-image");
+              // updateMedia() hides this thumbnail from 40em up when the trim is
+              // "None" and never undid it, so the thumbnail holding the composed
+              // image stayed display:none on desktop - nothing to scroll to.
+              imageBaseMedia.classList.remove('tablet-hide');
+              imageBaseMedia.classList.add("is-active");
+              scrollThumbnailIntoView(thumbnailSlider, imageBaseMedia);
             }
             enableZoomOnHover(2);
           })

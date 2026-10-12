@@ -24,8 +24,8 @@
             "heading": "Make Yourself at Home",
             "graphic_heading": "",
             "subheading": "Distinctive patterns, custom pieces, and thoughtful details for every room.",
-            "link": "shopify://collections/new",
-            "label": "SHOP NEW"
+            "link": "shopify://collections/best-sellers",
+            "label": "SHOP BEST SELLERS"
           }
         },
         "video_zV9kUj": {
@@ -493,11 +493,23 @@
       "name": "Best seller collection",
       "settings": {
         "background_color": "#ffffff",
-        "title": "Best Sellers",
-        "featured_collection": "best-sellers",
+        "title": "New Arrivals",
+        "featured_collection": "new",
+        "featured_product_list": [
+          "wallpaper-grasscloth-betty-cornflower",
+          "sofa-holden-solid-performancewoven-sky",
+          "curtain-printedcotton-quinn-chestnut-custom",
+          "sectional-holden-solid-velvet-honey",
+          "wovenwoodshade-wovenwoods-semisheer-hazelnut-custom",
+          "settee-colette-solid-performancewoven-coconut",
+          "curtain-printedcotton-quinn-wisteria-custom",
+          "wovenwoodshade-wovenwoods-semisheer-cider-custom",
+          "sleeper-holden-performancewoven-hadley-sisal",
+          "wallpaper-removable-betty-chocolate"
+        ],
         "cta_text": "SHOP ALL",
-        "cta_link": "shopify://collections/best-sellers",
-        "max_products": 4,
+        "cta_link": "shopify://collections/new",
+        "max_products": 10,
         "padding_top": 80,
         "padding_bottom": 80,
         "padding_top_mobile": 48,
@@ -512,6 +524,7 @@
         "background_color": "#f3f1ec",
         "title": "New Arrivals",
         "featured_collection": "new",
+        "featured_product_list": [],
         "cta_text": "SHOP NOW",
         "cta_link": "",
         "max_products": 10,
@@ -908,11 +921,11 @@
     "curated_spaces_r89nCX": {
       "type": "curated-spaces",
       "blocks": {
-        "slide_F8yQaa": {
+        "slide_zcPaRD": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/UGC-pillow-woven-millie-moss-3x4.jpg",
-            "product": "pillow-printedlinen-gemma-rose-custom"
+            "image": "shopify://shop_images/StyledImage-UGC-romanshade-printedlinen-annabelle-maroon-_meander.home-1.jpg",
+            "product": "romanshade-printedlinen-annabelle-maroon-custom"
           }
         },
         "slide_KFwm7i": {
@@ -920,6 +933,13 @@
           "settings": {
             "image": "shopify://shop_images/UGC-Lila-Chair-FlorenceEucalyptus-MonicaLavin-10-Cropped.jpg",
             "product": "chair-lila-printedlinen-florence-eucalyptus"
+          }
+        },
+        "slide_F8yQaa": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-pillow-woven-millie-moss-3x4.jpg",
+            "product": "pillow-printedlinen-gemma-rose-custom"
           }
         },
         "slide_wUTJzf": {
@@ -936,36 +956,37 @@
             "product": "showercurtain-woven-louisa-camel"
           }
         },
+        "slide_xPp8MY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/UGC-RomanShade-SolidLinen-Harbor-_clairethomas-20260107-4-AdApproved.jpg",
+            "product": "romanshade-solid-linen-harbor-custom"
+          }
+        },
         "slide_eAdcpT": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/UGC-cafecurtain-printedsheer-madeline-flour-3x4.jpg",
+            "image": "shopify://shop_images/UGC-CafeCurtain-Sheer-Madeline-Flour-_suzannahstanley-202508122025-2-AdApproved-Cropped.jpg",
             "product": "cafecurtain-sheer-madeline-flour-custom"
           }
         },
         "slide_FKrcAw": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/UGC-curtain-solid-cotton-snow-3x4.jpg",
-            "product": "curtain-solid-cotton-snow-custom"
-          }
-        },
-        "slide_zcPaRD": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/UGC-RomanShade-Woven-MillieMoss-_homeworthy-20260106-1-AdApproved_with_Credit.jpg",
-            "product": "romanshade-woven-millie-moss-custom"
+            "image": "shopify://shop_images/UGC-Curtain-ChenilleJacquard-Willow-Orchid-_lillysisto-3-AdApproved-Cropped.jpg",
+            "product": "curtain-chenillejacquard-willow-orchid-custom"
           }
         }
       },
       "block_order": [
-        "slide_F8yQaa",
+        "slide_zcPaRD",
         "slide_KFwm7i",
+        "slide_F8yQaa",
         "slide_wUTJzf",
         "slide_D3byGf",
+        "slide_xPp8MY",
         "slide_eAdcpT",
-        "slide_FKrcAw",
-        "slide_zcPaRD"
+        "slide_FKrcAw"
       ],
       "name": "Curated Spaces",
       "settings": {

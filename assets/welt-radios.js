@@ -211,10 +211,7 @@ class WeltRadios extends HTMLElement {
         })
         imageBaseMediaThumbnail.classList.add("is-active");
         imageBaseMediaThumbnail.classList.remove('product__media-item--additional-image');
-        thumbnailSlider.querySelector("ul").scroll({
-          top: 0,
-          left: imageBaseMediaThumbnail.offsetLeft, 
-        });
+        scrollThumbnailIntoView(thumbnailSlider, imageBaseMediaThumbnail);
       }
 
       const existingOverlay = mainSlider.querySelector('.overlay-image.welt-image');
@@ -317,10 +314,7 @@ class WeltRadios extends HTMLElement {
         });
         imageBaseMedia.classList.remove("product__media-item--additional-image");
         imageBaseMedia.classList.add("is-active");
-        thumbnailSlider.querySelector("ul").scroll({
-          top: 0,
-          left: imageBaseMedia.offsetLeft,
-        });
+        scrollThumbnailIntoView(thumbnailSlider, imageBaseMedia);
       }
     }
     enableZoomOnHover(2);
@@ -370,7 +364,9 @@ class LegRadios extends WeltRadios {
 
     this.size = getSelectedSize();
     const productType = (window.productType || '').toLowerCase();
-    this.base = productType === 'sectional' ? '' : getSelectedBase();
+    const productSilhouette = (window.productSilhouette || '').toLowerCase();
+
+    this.base = productType === 'sectional' && productSilhouette != 'holden' ? '' : getSelectedBase();
     this.detail = getSelectedDetail();
     this.setDefaultSize();
     this.getSelectedRadio();
@@ -459,10 +455,7 @@ class LegRadios extends WeltRadios {
         })
         imageBaseMediaThumbnail.classList.remove('product__media-item--additional-image');
         imageBaseMediaThumbnail.classList.add("is-active");
-        thumbnailSlider.querySelector("ul").scroll({
-          top: 0,
-          left: imageBaseMediaThumbnail.offsetLeft, 
-        });
+        scrollThumbnailIntoView(thumbnailSlider, imageBaseMediaThumbnail);
       }
 
       const mainThumbnail = mainSlider.querySelector(
@@ -564,10 +557,7 @@ class LegRadios extends WeltRadios {
             })
             imageBaseMedia.classList.remove('product__media-item--additional-image');
             imageBaseMedia.classList.add("is-active");
-            thumbnailSlider.querySelector("ul").scroll({
-              top: 0,
-              left: imageBaseMedia.offsetLeft,
-            });
+            scrollThumbnailIntoView(thumbnailSlider, imageBaseMedia);
           }
         }
         enableZoomOnHover(2);

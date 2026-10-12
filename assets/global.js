@@ -1156,6 +1156,9 @@ class SliderComponent extends HTMLElement {
     this.isAutoPlay = parseInt(this.dataset.autoplay, 10);
     this.isPlaying = true;
 
+    this.isThumbnailSlider = this.classList.contains('thumbnail-slider');
+    this.desktopMediaQuery = window.matchMedia('(min-width: 768px)');
+
     if (!this.slider || !this.nextButton) return;
 
     const resizeObserver = new ResizeObserver((entries) => this.initPages());
@@ -1181,6 +1184,19 @@ class SliderComponent extends HTMLElement {
     if (this.querySelectorAll("video.lazy")) {
       this.loadVideo()
     }
+
+    if (this.isThumbnailSlider) {
+      this.desktopMediaQuery.addEventListener('change', () => this.update());
+    }
+
+    if (this.classList.contains('main-images-slider')) {
+      this.setupMainMediaHeightSync();
+    }
+
+    // Off unless the section turns it on (`enable_image_progress_bar`).
+    if (this.classList.contains('enable-progress-bar')) {
+      this.setupProgressBar();
+    }
   }
 
   initPages() {
@@ -1203,6 +1219,11 @@ class SliderComponent extends HTMLElement {
   }
 
   update() {
+    if (this.isThumbnailSlider) {
+      this.updateThumbnailColumn();
+      if (this.isThumbnailColumn()) return;
+    }
+
     if (!this.pageCount || !this.pageTotal) return;
     this.currentPage =
       Math.round(this.slider.scrollLeft / this.sliderLastItem?.clientWidth) + 1;
@@ -1213,7 +1234,7 @@ class SliderComponent extends HTMLElement {
     } else {
       this.classList.remove('is-cylindo-active');
     }
-    
+
     if (this.currentPage === 1) {
       this.prevButton.setAttribute("disabled", true);
     } else {
@@ -1283,6 +1304,12 @@ class SliderComponent extends HTMLElement {
 
   onButtonClick(event) {
     event.preventDefault(event.currentTarget.name);
+
+    if (this.isThumbnailColumn()) {
+      this.scrollThumbnailStep(event.currentTarget.name === "next" ? 1 : -1);
+      return;
+    }
+
     this.sliderItems = this.querySelectorAll(".slider > li");
     const sliderItemsToShow = Array.from(this.sliderItems).filter(
       (element) => element.clientWidth > 0
@@ -1361,9 +1388,231 @@ class SliderComponent extends HTMLElement {
       });
     }
   }
+
+  // Desktop stacks the thumbnails in a column beside the main image (its height
+  // is matched to the main image, see setupMainMediaHeightSync), mobile keeps
+  // them in a strip underneath it.
+  isThumbnailColumn() {
+    return this.isThumbnailSlider && this.desktopMediaQuery.matches;
+  }
+
+  // The column scrolls on its own axis, which the page logic in update() knows
+  // nothing about: the hover arrows only show while there is more to scroll to,
+  // and each one disappears at its own end.
+  updateThumbnailColumn() {
+    const isColumn = this.isThumbnailColumn();
+    const maxScroll = this.slider.scrollHeight - this.slider.clientHeight;
+    this.classList.toggle('thumbnail-slider--scrollable', isColumn && maxScroll > 1);
+    if (!isColumn) return;
+
+    this.prevButton.toggleAttribute('disabled', this.slider.scrollTop <= 1);
+    this.nextButton.toggleAttribute('disabled', this.slider.scrollTop >= maxScroll - 1);
+  }
+
+  // Taken from the offset between the first two visible items so it covers the
+  // gap between them as well.
+  measureThumbnailStep() {
+    const [first, second] = Array.from(this.slider.children).filter(
+      (el) => el.tagName === 'LI' && el.clientHeight > 0
+    );
+    if (!first) return 0;
+    if (!second) return first.offsetHeight;
+    return second.offsetTop - first.offsetTop || first.offsetHeight;
+  }
+
+  scrollThumbnailStep(direction) {
+    this.slider.scrollBy({ top: direction * this.measureThumbnailStep(), left: 0, behavior: 'smooth' });
+  }
+
+  // Bring a thumbnail to the start of the rail after a variant/trim selection.
+  // `.slider` is positioned, so an item's own offset is already measured from
+  // the rail's scroll origin.
+  scrollToThumbnail(target, behavior = 'auto') {
+    if (!target) return;
+
+    if (this.isThumbnailColumn()) {
+      this.slider.scroll({ top: target.offsetTop, left: 0, behavior });
+    } else {
+      this.slider.scroll({ top: 0, left: target.offsetLeft, behavior });
+    }
+
+    // Showing or hiding a thumbnail changes how far the column can scroll
+    // without resizing it, so the ResizeObserver never sees it.
+    this.update();
+  }
+
+  // Bring a thumbnail into view when the main image arrives at it, scrolling
+  // only as far as needed so the ones around it stay where they are.
+  revealThumbnail(thumbnail) {
+    if (!this.isThumbnailSlider) return;
+
+    const vertical = this.isThumbnailColumn();
+    const railRect = this.slider.getBoundingClientRect();
+    const rect = thumbnail.getBoundingClientRect();
+    const railSize = vertical ? railRect.height : railRect.width;
+    const start = vertical ? rect.top - railRect.top : rect.left - railRect.left;
+    const end = start + (vertical ? rect.height : rect.width);
+
+    if (start >= -1 && end <= railSize + 1) return;
+
+    const distance = start < 0 ? start : end - railSize;
+    this.slider.scrollBy({
+      top: vertical ? distance : 0,
+      left: vertical ? 0 : distance,
+      behavior: 'smooth',
+    });
+  }
+
+  setupMainMediaHeightSync() {
+    const wrapper = this.closest('.product-media-wrapper') || this.parentElement;
+    if (!wrapper) return;
+
+    const setHeight = () => {
+      wrapper.style.setProperty('--main-media-height', `${this.offsetHeight - 25}px`);
+    };
+
+    setHeight();
+    const resizeObserver = new ResizeObserver(setHeight);
+    resizeObserver.observe(this);
+  }
+
+  // Progress bar along the bottom edge of the main image, above its caption.
+  // The highlighted portion is one slide wide - the more images the carousel holds, the shorter it is - and it
+  // travels with the swipe. Built here rather than in Liquid because every
+  // product template renders its own copy of this slider.
+  setupProgressBar() {
+    // Showing or hiding a slide (variant, trim, ...) changes how many there are
+    // to indicate, and so how long the highlighted portion has to be. Nothing
+    // is resized when that happens, so the ResizeObserver never sees it.
+    this.progressMutationObserver = new MutationObserver(() => this.requestProgressUpdate());
+    this.progressMutationObserver.observe(this.slider, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    // The bar is placed against the image, which moves when the page resizes.
+    new ResizeObserver(this.requestProgressUpdate).observe(this.slider);
+
+    this.slider.addEventListener('scroll', this.requestProgressUpdate);
+    this.requestProgressUpdate();
+  }
+
+  // One update per frame at most: a swipe fires scroll events far faster than
+  // the bar can be repainted, and each update measures the slides.
+  requestProgressUpdate = () => {
+    if (this.progressUpdatePending) return;
+    this.progressUpdatePending = true;
+
+    requestAnimationFrame(() => {
+      this.progressUpdatePending = false;
+      this.updateProgressBar();
+    });
+  };
+
+  // Built on the first update rather than in the constructor, where a custom
+  // element is not allowed to give itself children.
+  buildProgressBar() {
+    this.progressBar = document.createElement('div');
+    this.progressBar.className = 'slider-progress';
+    this.progressBar.setAttribute('aria-hidden', 'true');
+
+    const indicator = document.createElement('span');
+    indicator.className = 'slider-progress__indicator';
+    this.progressBar.appendChild(indicator);
+    this.appendChild(this.progressBar);
+  }
+
+  updateProgressBar() {
+    if (!this.progressBar) this.buildProgressBar();
+
+    const slides = Array.from(this.slider.children).filter(
+      (el) => el.tagName === 'LI' && el.clientWidth > 0
+    );
+
+    // A single slide has nowhere to travel, so there is nothing to indicate.
+    this.classList.toggle('slider-has-progress', slides.length > 1);
+    if (slides.length < 2) return;
+
+    const maxScroll = this.slider.scrollWidth - this.slider.clientWidth;
+    const ratio =
+      maxScroll > 0 ? Math.min(Math.max(this.slider.scrollLeft / maxScroll, 0), 1) : 0;
+    const size = 100 / slides.length;
+
+    // The highlight spans one slide's share of the track and sits that same
+    // share of the way along it, so it reaches the end exactly as the last
+    // slide does.
+    this.progressBar.style.setProperty('--slider-progress-size', `${size}%`);
+    this.progressBar.style.setProperty('--slider-progress-offset', `${ratio * (100 - size)}%`);
+
+    const activeSlide = slides[Math.round(ratio * (slides.length - 1))];
+
+    // The caption sits inside each slide, under its image, so the bar is
+    // positioned onto the image's bottom edge rather than placed after the
+    // list. Only the vertical position is read off the slide - the horizontal
+    // one moves with the swipe - and the width is the list's.
+    const media = activeSlide.querySelector('.media, cylindo-viewer') || activeSlide;
+    const hostRect = this.getBoundingClientRect();
+    const sliderRect = this.slider.getBoundingClientRect();
+    this.progressBar.style.setProperty('--slider-progress-top', `${media.getBoundingClientRect().bottom - hostRect.top}px`);
+    this.progressBar.style.setProperty('--slider-progress-left', `${sliderRect.left - hostRect.left}px`);
+    this.progressBar.style.setProperty('--slider-progress-width', `${this.slider.clientWidth}px`);
+
+    // Moving the border on the rail is only worth doing once per slide, not
+    // per frame of a swipe.
+    const activeMediaId = activeSlide.dataset.mediaId;
+    if (!activeMediaId || activeMediaId === this.activeProgressMediaId) return;
+    this.activeProgressMediaId = activeMediaId;
+
+    // Scoped to this product's media, not the first rail on the page.
+    const scope = this.closest('.product-media-wrapper') || document;
+    setActiveThumbnail(scope.querySelector('.thumbnail-slider'), activeMediaId);
+  }
 }
 
 customElements.define("slider-component", SliderComponent);
+
+// Scroll a thumbnail into view, whichever axis the thumbnail slider uses - a
+// column on desktop, a strip on mobile - so the plain
+// `scroll({ left: offsetLeft })` calls do not land in the right place there.
+function scrollThumbnailIntoView(thumbnailSlider, target, behavior = 'auto') {
+  if (!thumbnailSlider || !target) return;
+
+  if (typeof thumbnailSlider.scrollToThumbnail === 'function') {
+    thumbnailSlider.scrollToThumbnail(target, behavior);
+    return;
+  }
+
+  thumbnailSlider.querySelector('ul')?.scroll({ top: 0, left: target.offsetLeft, behavior });
+}
+
+// Move the border to the thumbnail of the media the main image is showing.
+//
+// `is-active` does double duty on the rail: on a trim/piping thumbnail it is
+// also what puts it in the rail at all, so those are marked `is-not-current`
+// instead of being cleared - they stay where they are and only lose the border.
+function setActiveThumbnail(thumbnailSlider, mediaId) {
+  if (!thumbnailSlider || !mediaId) return;
+
+  const thumbnail = thumbnailSlider.querySelector(`li[data-media-id="${mediaId}"]`);
+  if (!thumbnail) return;
+
+  thumbnailSlider.querySelectorAll('li.is-active').forEach((item) => {
+    if (item === thumbnail) return;
+
+    if (item.classList.contains('product__media-item--additional-image')) {
+      item.classList.add('is-not-current');
+    } else {
+      item.classList.remove('is-active');
+    }
+  });
+
+  thumbnail.classList.add('is-active');
+  thumbnail.classList.remove('is-not-current');
+
+  thumbnailSlider.revealThumbnail?.(thumbnail);
+}
 
 class VariantSelects extends HTMLElement {
   constructor() {
@@ -1580,10 +1829,7 @@ class VariantSelects extends HTMLElement {
           `[data-media-id="${this.dataset.section}-${this.currentVariant.featured_image.id}"]`
         );
         thumbnail.classList.remove("product__media-item--variant");
-        thumbnailSlider.querySelector("ul").scroll({
-          top: 0,
-          left: thumbnail.offsetLeft,
-        });
+        scrollThumbnailIntoView(thumbnailSlider, thumbnail);
       } else {
         const mainThumbnail = mainSlider.querySelector(
           `[data-media-id="${this.dataset.section}-${this.currentVariant.featured_image.id}"]`
@@ -3638,10 +3884,7 @@ class TrimRadios extends HTMLElement {
           if (thumnailNone) {
             thumnailNone.classList.remove("product__media-item--trim-image");
             thumnailNone.classList.add("is-active");
-            thumbnailSlider.querySelector("ul").scroll({
-              top: 0,
-              left: thumnailNone.offsetLeft,
-            });
+            scrollThumbnailIntoView(thumbnailSlider, thumnailNone);
           }
           const mainThumbnailNone = mainSlider.querySelector(
             `[data-media-option="none"]`
@@ -3721,10 +3964,7 @@ class TrimRadios extends HTMLElement {
           if (thumbnail) {
             thumbnail.classList.remove("product__media-item--trim-image");
             thumbnail.classList.add("is-active");
-            thumbnailSlider.querySelector("ul").scroll({
-              top: 0,
-              left: thumbnail.offsetLeft,
-            });
+            scrollThumbnailIntoView(thumbnailSlider, thumbnail);
           }
           if (mainThumbnail) {
 
@@ -4133,10 +4373,7 @@ class RomanShadeTrimTradios extends TrimRadios {
       })
       imageBaseMediaThumbnail.classList.remove('product__media-item--additional-image');
       imageBaseMediaThumbnail.classList.add("is-active");
-      thumbnailSlider.querySelector("ul").scroll({
-        top: 0,
-        left: imageBaseMediaThumbnail.offsetLeft, 
-      });
+      scrollThumbnailIntoView(thumbnailSlider, imageBaseMediaThumbnail);
     }
 
     const mainThumbnail = mainSlider.querySelector(
@@ -4331,10 +4568,7 @@ class ValanceCorniceTrimTradios extends RomanShadeTrimTradios {
       })
       imageBaseMediaThumbnail.classList.remove('product__media-item--additional-image');
       imageBaseMediaThumbnail.classList.add("is-active");
-      thumbnailSlider.querySelector("ul").scroll({
-        top: 0,
-        left: imageBaseMediaThumbnail.offsetLeft, 
-      });
+      scrollThumbnailIntoView(thumbnailSlider, imageBaseMediaThumbnail);
     }
 
     const mainThumbnail = mainSlider.querySelector(
