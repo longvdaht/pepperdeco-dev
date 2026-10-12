@@ -20,12 +20,6 @@
           "type": "price",
           "settings": {}
         },
-        "e781ef56-de3e-4863-8c9e-773695145698": {
-          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{ product }}"
-          }
-        },
         "description_tKbLGe": {
           "type": "description",
           "settings": {}
@@ -75,7 +69,6 @@
       "block_order": [
         "31dc3312-114b-45ef-b606-80c9a4a9cd02",
         "fa95f167-6ea5-46af-81b8-8aed6fa5407e",
-        "e781ef56-de3e-4863-8c9e-773695145698",
         "description_tKbLGe",
         "switch_option_color_FpP8Hp",
         "switch_option_type_Q373XQ",
@@ -141,28 +134,6 @@
     },
     "1636645628890b688a": {
       "type": "ugc-images",
-      "blocks": {
-        "d072249c-88af-4f3e-84e1-25a4b9ca24a7": {
-          "type": "shopify://apps/covet-instagram-feed-reviews/blocks/app-block-product/577480e8-b5be-4890-968c-06ccfb458c74",
-          "settings": {
-            "show_text": false,
-            "hide_title_if_empty": false,
-            "title_text": "Covet.pics gallery",
-            "title_color": "#000000",
-            "title_size": 22,
-            "subtitle_text": "",
-            "subtitle_color": "#000000",
-            "subtitle_size": 14,
-            "text_alignment": "center",
-            "margin": 20,
-            "custom_html_above": "",
-            "custom_html_below": ""
-          }
-        }
-      },
-      "block_order": [
-        "d072249c-88af-4f3e-84e1-25a4b9ca24a7"
-      ],
       "disabled": true,
       "settings": {
         "apply_new_style": false,
@@ -215,18 +186,6 @@
     },
     "163398841244446eb7": {
       "type": "apps",
-      "blocks": {
-        "05f3cb0d-8c70-48e4-8cfa-1a75a2256140": {
-          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{ product }}",
-            "widget_type": "reviews_widget"
-          }
-        }
-      },
-      "block_order": [
-        "05f3cb0d-8c70-48e4-8cfa-1a75a2256140"
-      ],
       "disabled": true,
       "settings": {
         "include_margins": true,
@@ -236,18 +195,6 @@
     },
     "app_review_L7zPTy": {
       "type": "app-review",
-      "blocks": {
-        "okendo_reviews_widget_qXcBiQ": {
-          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{product}}",
-            "widget_type": "reviews_widget"
-          }
-        }
-      },
-      "block_order": [
-        "okendo_reviews_widget_qXcBiQ"
-      ],
       "name": "Apps - Reviews",
       "settings": {
         "include_margins": true,
