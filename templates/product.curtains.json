@@ -699,6 +699,18 @@
     },
     "app_review_E4YWVE": {
       "type": "app-review",
+      "blocks": {
+        "okendo_reviews_widget_3xVA87": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "reviews_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_3xVA87"
+      ],
       "name": "Apps - Reviews",
       "settings": {
         "include_margins": true,
